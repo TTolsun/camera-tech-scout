@@ -1,13 +1,23 @@
-name: Weekly scan and deploy
+name: Weekly scan
 
 # The real weekly run.
 #
 # Runs once a week, persists the incremental scan state, commits the generated
-# JSON, and deploys the site to GitHub Pages.
+# JSON, and produces the built site.
 #
-# The same work is performed by `scripts/run-weekly.sh`, which is what an
-# on-premise cronjob executes. Keeping one script for both means switching the
-# scheduler does not change the pipeline.
+# Publishing has two modes:
+#
+#   default            the built site is uploaded as a workflow artifact. This
+#                      is what works on a private repository under the Free
+#                      plan, where GitHub Pages is not available.
+#   ENABLE_PAGES=true  additionally deploy to GitHub Pages. Set that repository
+#                      variable once the repository is public or the account is
+#                      on Pro or above:
+#                        gh variable set ENABLE_PAGES --body true
+#                      and set Settings -> Pages -> Source to "GitHub Actions".
+#
+# The scan itself is identical either way, and `scripts/run-weekly.sh` performs
+# the same work for an on-premise cronjob.
 
 on:
   schedule:
@@ -61,7 +71,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r pipeline/requirements.txt
 
-      - name: 스캔 상태 복원
+      - name: clone 캐시 복원
         uses: actions/cache@v4
         with:
           # Clones are cached so a weekly run fetches instead of cloning.
@@ -101,7 +111,10 @@ jobs:
         run: |
           git config user.name 'camera-tech-scout'
           git config user.email 'camera-tech-scout@users.noreply.github.com'
-          git add data .cache/candidates.sqlite3 2>/dev/null || git add data
+          git add data
+          # The scan database is committed so the next run can compute status
+          # transitions. .gitignore keeps the rest of .cache out.
+          [ -f .cache/candidates.sqlite3 ] && git add -f .cache/candidates.sqlite3
           if git diff --cached --quiet; then
             echo '변경된 결과가 없습니다. 커밋하지 않습니다.'
           else
@@ -116,8 +129,74 @@ jobs:
           path: data/
           retention-days: 90
 
-  deploy:
+  site:
+    name: 사이트 빌드
+    runs-on: ubuntu-latest
+    needs: scan
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: 최신 결과 가져오기
+        run: git pull --ff-only || true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: 의존성 설치
+        working-directory: site
+        run: npm ci
+
+      - name: 사이트 빌드
+        working-directory: site
+        run: npm run build
+
+      - name: 생성된 페이지 확인
+        run: |
+          COUNT=$(find site/dist -name '*.html' | wc -l)
+          echo "생성된 HTML 페이지: $COUNT개"
+          echo "- 생성된 HTML 페이지 **$COUNT개**" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$COUNT" -lt 10 ]; then
+            echo "::error::페이지가 10개 미만입니다. 라우트 생성에 문제가 있습니다."
+            exit 1
+          fi
+
+      # The default publishing route on a private repository under the Free
+      # plan. Download this artifact, or let the on-premise cronjob publish
+      # instead; `scripts/run-weekly.sh` writes to $SCOUT_PUBLISH_DIR.
+      - name: 사이트 업로드
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: site/dist
+          retention-days: 90
+
+      - name: 배포 안내
+        run: |
+          {
+            echo '### 사이트 배포'
+            echo
+            if [ "${{ vars.ENABLE_PAGES }}" = "true" ]; then
+              echo 'GitHub Pages 배포가 활성화되어 있습니다. `pages` job 결과를 확인하십시오.'
+            else
+              echo '`site` 아티팩트로 업로드했습니다. GitHub Pages로 배포하려면'
+              echo '저장소를 public으로 바꾸거나 Pro 이상 플랜으로 올린 뒤'
+              echo '`gh variable set ENABLE_PAGES --body true` 를 실행하십시오.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  pages:
     name: GitHub Pages 배포
+    # Skipped unless the repository variable is set. GitHub Pages is not
+    # available for a private repository on the Free plan, so enabling this
+    # before that changes would only produce a failing job every week.
+    if: vars.ENABLE_PAGES == 'true'
     runs-on: ubuntu-latest
     needs: scan
     timeout-minutes: 20

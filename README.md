@@ -134,7 +134,7 @@ python -m scout scan --cache C:/scout-cache --db C:/scout-cache/candidates.sqlit
   - `.github/workflows/dry-run.yml` — push와 Pull Request에서 fixture dry-run을 수행합니다.
     수동 실행 시 `live` 모드를 선택하면 실제 Repository를 대상으로 dry-run 할 수 있습니다.
   - `.github/workflows/weekly-scan.yml` — 매주 월요일 18:00 UTC에 실제 스캔을 수행하고 결과를
-    커밋한 뒤 GitHub Pages에 배포합니다.
+    커밋한 뒤 사이트를 빌드합니다.
 - **사내 운영 전환 시**: cronjob
   - `scripts/run-weekly.sh`가 Actions 워크플로와 동일한 작업을 수행합니다. 스케줄러만 바뀌고
     파이프라인과 산출물은 같습니다.
@@ -142,6 +142,46 @@ python -m scout scan --cache C:/scout-cache --db C:/scout-cache/candidates.sqlit
 ```cron
 0 3 * * 1 /opt/camera-tech-scout/scripts/run-weekly.sh >> /var/log/camera-tech-scout.log 2>&1
 ```
+
+## 사이트 배포
+
+세 가지 경로가 있으며, 기본값은 첫 번째입니다.
+
+**1. 워크플로 아티팩트 (기본값)**
+
+`weekly-scan` 워크플로가 빌드 결과를 `site` 아티팩트로 올립니다. 별도 설정이 필요 없고, private
+저장소에서 Free 플랜을 쓰는 경우에도 동작합니다. Actions 실행 화면에서 내려받아 압축을 푼 뒤
+HTTP로 서비스하십시오.
+
+```bash
+gh run download --name site --dir site-build
+python -m http.server 8000 --directory site-build
+```
+
+링크가 `/discoveries/` 같은 절대 경로이므로 `file://`로 직접 열면 이동하지 않습니다. 위와 같이
+간단한 정적 서버를 거쳐야 합니다.
+
+**2. 사내 웹 서버 (cronjob 운영 시 권장)**
+
+`scripts/run-weekly.sh`에 배포 위치를 지정하면 빌드 결과를 그대로 복사합니다.
+
+```bash
+SCOUT_PUBLISH_DIR=/var/www/camera-tech-scout \
+  /opt/camera-tech-scout/scripts/run-weekly.sh
+```
+
+**3. GitHub Pages**
+
+GitHub Pages는 private 저장소에서 Free 플랜으로 동작하지 않습니다. 저장소를 public으로
+전환하거나 Pro 이상 플랜을 쓰는 경우에만 사용할 수 있습니다. 조건이 충족되면 저장소 변수 하나로
+켭니다. 워크플로를 수정할 필요는 없습니다.
+
+```bash
+gh variable set ENABLE_PAGES --body true
+```
+
+그리고 저장소 Settings → Pages → Source를 `GitHub Actions`로 지정합니다. 변수가 설정되지 않은
+동안 `pages` job은 건너뛰므로, 매주 실패하는 job이 남지 않습니다.
 
 ## Scout와 Critic
 
