@@ -25,9 +25,28 @@ from .lexicon.terms import CONFIG_PATH_HINTS
 from .models import Candidate, CriticFinding, Evidence, Rejection
 from .util import log, stable_id
 
-# A change that only moves numbers around, e.g. `kFoo = 4;` becoming `kFoo = 8;`
-_CONSTANT_ONLY_RE = re.compile(
-    r"^[^=]{0,60}=\s*[-+]?\d+(?:\.\d+)?[fuUlL]?\s*[;,]?\s*$", re.MULTILINE
+# A change that only moves numbers around, e.g. `kFoo = 4;` becoming `kFoo = 8;`.
+#
+# These patterns are deliberately not anchored to a line. Evidence snippets are
+# whitespace-collapsed into a single line, so a line-anchored pattern would
+# never match anything the pipeline actually produces.
+_CONSTANT_ASSIGN_RE = re.compile(
+    r"[A-Za-z_]\w*\s*=\s*[-+]?\d+(?:\.\d+)?[fuUlL]?\s*[;,)]"
+)
+# Anything that makes the code more than a table of values: control flow, a
+# comparison, a compound assignment, or arithmetic between names.
+#
+# An evidence snippet mixes the doc comment with the body, so a bare keyword is
+# not enough: the English word "for" in "for auto exposure" is not a loop.
+# Control flow therefore has to carry its parenthesis. A plain `return name;` is
+# deliberately not logic either, since returning a stored constant is exactly
+# what this rule is trying to catch.
+_LOGIC_RE = re.compile(
+    r"\b(?:if|for|while|switch|catch)\s*\("      # control flow, with its paren
+    r"|[<>!=]="                                  # comparison
+    r"|&&|\|\|"                                  # logical operators
+    r"|[+\-*/%]="                                # compound assignment
+    r"|[A-Za-z_)\]]\s*[+*/]\s*[A-Za-z_(\d]"      # arithmetic between terms
 )
 _TUNING_WORDS = re.compile(
     r"\b(threshold|constant|magic number|tweak|tune[d]?|tuning|adjust the value|"
@@ -124,21 +143,40 @@ def _r3_not_a_generic_pattern(candidate: Candidate, items: list[Evidence]):
 
 
 def _r4_not_parameter_tuning(candidate: Candidate, items: list[Evidence]):
+    """Fires when the code assigns constants and does nothing else.
+
+    A record counts as tuning when it contains a constant assignment and no
+    control flow, comparison or arithmetic. The rule only rejects when *every*
+    code record looks like that and the surrounding text talks about adjusting
+    values, because either signal alone is common in perfectly ordinary code.
+    """
     code = [i for i in items if i.kind == "code"]
-    code_text = _text_of(code)
-    constant_only = [i for i in code
-                     if _CONSTANT_ONLY_RE.search(_text_of([i]))]
+    if not code:
+        return True, "코드 증거가 없어 이 항목은 적용되지 않습니다.", []
+
+    tuning_only = []
+    for item in code:
+        text = _text_of([item])
+        if _CONSTANT_ASSIGN_RE.search(text) and not _LOGIC_RE.search(text):
+            tuning_only.append(item)
+
     tuning_talk = [i for i in items if _TUNING_WORDS.search(_text_of([i]))]
-    if code and len(constant_only) == len(code) and tuning_talk:
+
+    if len(tuning_only) == len(code) and tuning_talk:
         return (
             False,
-            "모든 코드 증거가 상수 대입이고, 주변 서술은 값 조정을 이야기합니다. 이는 "
-            "메커니즘이 아니라 parameter tuning입니다.",
-            [i.id for i in constant_only[:6]],
+            "모든 코드 증거가 상수 대입뿐이고 제어 흐름이나 연산이 없으며, 주변 서술은 값 "
+            "조정을 이야기합니다. 이는 메커니즘이 아니라 parameter tuning입니다.",
+            [i.id for i in tuning_only[:6]],
         )
-    if code and not _CONSTANT_ONLY_RE.search(code_text):
-        return True, "코드 증거에 상수 대입 이외의 로직이 존재합니다.", []
-    return True, "코드 증거가 상수 대입만으로 구성되어 있지는 않습니다.", []
+    if tuning_only:
+        return (
+            True,
+            f"코드 증거 {len(code)}건 중 {len(tuning_only)}건이 상수 대입뿐이지만, 나머지에는 "
+            f"제어 흐름이나 연산이 존재합니다.",
+            [],
+        )
+    return True, "코드 증거에 상수 대입 이외의 로직이 존재합니다.", []
 
 
 def _r5_not_platform_standard(candidate: Candidate, items: list[Evidence]):

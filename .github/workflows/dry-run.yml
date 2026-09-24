@@ -66,7 +66,13 @@ jobs:
       - name: 의존성 설치
         run: |
           python -m pip install --upgrade pip
-          pip install -r pipeline/requirements.txt
+          pip install -r pipeline/requirements-dev.txt
+
+      # Runs before the scan on purpose: a broken parser or lexicon should fail
+      # here, with a named test, rather than as a puzzling candidate count later.
+      - name: 테스트 실행
+        working-directory: pipeline
+        run: python -m pytest
 
       - name: 설정 파일 검증
         run: python -m scout check-config --config config/sources.yaml
