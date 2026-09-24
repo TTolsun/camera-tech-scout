@@ -13,14 +13,14 @@ from pathlib import Path
 from typing import Any, Iterable
 
 from . import github as gh
-from .collect import Commit, GitRepo
+from .collect import Commit, DiffText, GitRepo
 from .config import TargetDefaults
 from .lexicon import LEXICON, split_identifier
 from .lexicon.terms import CONFIG_EXTENSIONS, CONFIG_PATH_HINTS, DOC_EXTENSIONS
 from .models import Evidence, Signal
 from .resolver import ResolvedRepo
 from .symbols import Symbol, extract_symbols, fallback_symbols, language_for
-from .util import log, match_any, read_text, stable_id, truncate
+from .util import log, looks_like_comment, match_any, read_text, stable_id, truncate
 
 
 @dataclass
@@ -47,6 +47,69 @@ def _is_interesting(signals: list[Signal]) -> bool:
     if "domain" not in kinds:
         return False
     return "mechanism" in kinds or "problem" in kinds
+
+
+def _prior_signals(diff: DiffText) -> list[Signal]:
+    """Mechanism vocabulary a commit removed and did not put back.
+
+    A term that appears in the removed lines but not in the added lines is the
+    strongest available evidence of what the code used to do. A term present on
+    both sides was merely moved, so it says nothing about a change of approach.
+
+    The context of each signal is the removed line itself, so a narrative can
+    quote the replaced code verbatim instead of describing it.
+    """
+    if not diff.removed:
+        return []
+
+    # A commit that deleted only comments reworded its documentation; it did not
+    # replace a mechanism. Requiring at least one deleted line of real code is
+    # what separates "this approach was removed" from "this sentence was edited".
+    code_lines = [line for line in diff.removed if not looks_like_comment(line)]
+    if not code_lines:
+        return []
+
+    added_terms = {
+        s.term for s in LEXICON.match(_searchable(diff.added_text), kinds=("mechanism",))
+    }
+    out: list[Signal] = []
+    for signal in LEXICON.match(_searchable(diff.removed_text), kinds=("mechanism",)):
+        if signal.term in added_terms:
+            continue
+        # Prefer quoting the deleted code over the deleted comment about it.
+        line = (
+            _line_containing(code_lines, signal.term)
+            or _line_containing(diff.removed, signal.term)
+            or signal.context
+        )
+        out.append(
+            Signal(kind="prior", term=signal.term, family=signal.family,
+                   weight=signal.weight, context=truncate(line, 200))
+        )
+    return out
+
+
+def _searchable(text: str) -> str:
+    """Raw text plus its identifier-split form.
+
+    Most mechanism vocabulary in C++ lives inside camelCase identifiers, where
+    the lexicon cannot see it: the word boundary before `Interpolated` in
+    `getInterpolated` is a letter, so the term never matches. Appending the
+    split form makes those terms visible without losing the raw line, which is
+    what gets quoted.
+    """
+    if not text:
+        return ""
+    return text + "\n" + split_identifier(text)
+
+
+def _line_containing(lines: list[str], term: str) -> str | None:
+    """Find the line a term came from, matching camelCase as well as prose."""
+    lowered = term.lower()
+    for line in lines:
+        if lowered in line.lower() or lowered in split_identifier(line):
+            return line
+    return None
 
 
 def _best_context(signals: list[Signal]) -> str:
@@ -222,11 +285,48 @@ class EvidenceBuilder:
     # ------------------------------------------------------------------
     # History and conversations
     # ------------------------------------------------------------------
+    def _in_scope(self, path: str) -> bool:
+        """The include and exclude rules, reused by the diff reader."""
+        if self.settings.exclude and match_any(path, self.settings.exclude):
+            return False
+        if self.settings.include and not match_any(path, self.settings.include):
+            return False
+        return True
+
     def _scan_commits(self, commits: list[Commit]) -> None:
-        for commit in commits:
-            signals = LEXICON.match(commit.message)
+        """Build evidence from commit messages and, where affordable, diffs.
+
+        The diff matters because the commit message is usually the only place a
+        repository records what the code used to do, and most authors do not
+        write it down. The removed lines do record it, so they are read for the
+        newest commits and mined for mechanism vocabulary that the added lines
+        no longer contain.
+        """
+        limits = self.settings.limits
+        for index, commit in enumerate(commits):
+            diff = None
+            if index < limits.max_diff_commits:
+                diff = self.git.diff_text(
+                    commit.sha,
+                    max_lines=limits.max_diff_lines,
+                    accept_path=self._in_scope,
+                )
+
+            haystack = commit.message
+            if diff:
+                haystack = "\n".join([commit.message, diff.removed_text, diff.added_text])
+
+            signals = LEXICON.match(haystack)
+            prior = _prior_signals(diff) if diff else []
             if not _is_interesting(signals):
                 continue
+
+            snippet = truncate(commit.message, 320)
+            if prior:
+                snippet = truncate(
+                    f"{commit.message}\n[제거된 코드] {prior[0].context}", 400
+                )
+
             self._add(
                 kind="commit",
                 path=commit.files[0] if commit.files else None,
@@ -236,9 +336,9 @@ class EvidenceBuilder:
                 line_end=None,
                 commit_sha=commit.sha,
                 title=truncate(commit.subject, 140),
-                snippet=truncate(commit.message, 320),
+                snippet=snippet,
                 observed_at=commit.date,
-                signals=signals,
+                signals=signals + prior,
                 url=gh.commit_url(self.repo.full_name, commit.sha),
                 extra_id_parts=(commit.sha,),
             )

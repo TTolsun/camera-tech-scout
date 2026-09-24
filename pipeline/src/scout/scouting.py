@@ -54,7 +54,15 @@ from .models import (
     ScoreReason,
 )
 from .technology import component_of
-from .util import clamp, dedupe_keep_order, log, slugify, stable_id, truncate
+from .util import (
+    clamp,
+    dedupe_keep_order,
+    log,
+    looks_like_comment,
+    slugify,
+    stable_id,
+    truncate,
+)
 
 # Phrases an author uses when describing what the code used to do. These give us
 # the "existing approach" without inventing it.
@@ -368,6 +376,16 @@ class Scout:
         )
 
     def _existing_narrative(self, items: list[Evidence]) -> Narrative:
+        """Describe what the code did before, using the strongest source available.
+
+        Removed code outranks prose. A commit that deleted a mechanism shows the
+        previous approach directly, whereas a sentence in a commit message only
+        claims it, and most authors write no such sentence at all.
+        """
+        from_diff = self._existing_from_diff(items)
+        if from_diff is not None:
+            return from_diff
+
         for item in items:
             if item.kind not in ("commit", "pull_request", "issue", "doc"):
                 continue
@@ -384,6 +402,54 @@ class Scout:
             evidence_ids=[],
             confidence=NEEDS_VERIFICATION,
         )
+
+    @staticmethod
+    def _existing_from_diff(items: list[Evidence]) -> Narrative | None:
+        """Build the baseline from mechanism vocabulary a commit deleted."""
+        sources = [i for i in items if any(s.kind == "prior" for s in i.signals)]
+        if not sources:
+            return None
+
+        # Heaviest first: the commit that removed the most mechanism vocabulary
+        # is the one that most likely replaced an approach.
+        sources.sort(key=lambda i: -sum(s.weight for s in i.signals if s.kind == "prior"))
+        best = sources[0]
+
+        # Deleted code outranks a deleted comment, and a heavier term outranks a
+        # lighter one. Ordering matters here: the quote decides the confidence of
+        # the whole section, so taking whichever signal happened to match first
+        # would downgrade a grounded baseline because some unrelated term was
+        # mentioned in a comment.
+        removed = sorted(
+            (s for s in best.signals if s.kind == "prior"),
+            key=lambda s: (looks_like_comment(s.context or ""), -s.weight),
+        )
+        listed = ", ".join(
+            dedupe_keep_order([display_term(s.term) for s in removed])[:3]
+        )
+        quote = next((s.context for s in removed if s.context), "")
+
+        # A term found only in a deleted comment is weaker than one found in
+        # deleted code. The commit may have reworded documentation while leaving
+        # the approach in place, so the section says so instead of asserting it.
+        from_comment = bool(quote) and looks_like_comment(quote)
+
+        if from_comment:
+            text = (f"변경 이력에서 {listed} 기법을 언급하던 주석이 삭제되었고, 추가된 코드에는 "
+                    f"다시 나타나지 않습니다. 다만 해당 어휘가 삭제된 주석에서만 확인되므로, "
+                    f"실제로 기법이 대체되었는지는 확인이 필요합니다. 삭제된 줄은 다음과 "
+                    f"같습니다: “{truncate(quote, 200)}”")
+            return Narrative(
+                text=text,
+                evidence_ids=[i.id for i in sources[:4]],
+                confidence=LOW_CONFIDENCE,
+            )
+
+        text = (f"변경 이력에서 {listed} 기법이 제거되었고, 추가된 코드에는 다시 나타나지 "
+                f"않습니다. 따라서 이것이 대체된 이전 방식입니다.")
+        if quote:
+            text += f" 제거된 코드는 다음과 같습니다: “{truncate(quote, 200)}”"
+        return Narrative(text=text, evidence_ids=[i.id for i in sources[:4]])
 
     def _proposed_narrative(self, cluster: Cluster, mechanism_terms: Counter) -> Narrative:
         code = [i for i in cluster.core if i.kind == "code"]

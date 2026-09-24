@@ -1,0 +1,9 @@
+# Text files are stored with LF, whatever platform wrote them. Without this a
+# Windows editor can rewrite every line of a file and bury the real change.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.sqlite3 binary

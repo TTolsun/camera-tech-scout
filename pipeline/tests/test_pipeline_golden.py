@@ -14,6 +14,10 @@ produce a specific outcome:
 * ``cam-utils``            rejected by R1, because its history is formatting and
                            a tuning constant.
 
+The sensor-sync history is also a replacement: the first commit corrects vblank
+from a calibration lookup table and the second deletes it in favour of
+prediction, which is what lets the diff reader recover the baseline.
+
 When a change moves these numbers, that is the point at which someone has to
 decide whether the change improved the analysis or broke it.
 """
@@ -36,7 +40,9 @@ EXPECTED_ACCEPTED = {
     "sensor-sync|synchronization-mechanism",
 }
 EXPECTED_REJECTED = {"3a|adaptive-control"}
-EXPECTED_EVIDENCE_TOTAL = 24
+# Rose from 24 when commit diffs began to be read: three commits whose
+# messages carry no camera vocabulary turned out to have it in their diffs.
+EXPECTED_EVIDENCE_TOTAL = 27
 EXPECTED_EVIDENCE_KINDS = {"code", "doc", "commit", "pull_request", "issue", "release", "config"}
 
 

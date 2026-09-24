@@ -15,7 +15,12 @@ LOW_CONFIDENCE = "LOW_CONFIDENCE"
 NEEDS_VERIFICATION = "NEEDS_VERIFICATION"
 
 EvidenceKind = Literal["code", "doc", "commit", "pull_request", "issue", "release", "config"]
-SignalKind = Literal["domain", "problem", "mechanism", "effect", "triviality", "evaluation"]
+SignalKind = Literal[
+    "domain", "problem", "mechanism", "effect", "triviality", "evaluation",
+    # Mechanism vocabulary a commit removed and did not put back, which is
+    # how the pipeline learns what the code used to do.
+    "prior",
+]
 CandidateType = Literal["patent", "paper", "patent+paper"]
 CandidateStatus = Literal[
     "NEW", "STRENGTHENED", "WEAKENED", "UPDATED", "REJECTED", "NEEDS_VERIFICATION", "UNCHANGED"
