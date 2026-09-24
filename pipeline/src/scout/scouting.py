@@ -414,7 +414,16 @@ class Scout:
         # is the one that most likely replaced an approach.
         sources.sort(key=lambda i: -sum(s.weight for s in i.signals if s.kind == "prior"))
         best = sources[0]
-        removed = [s for s in best.signals if s.kind == "prior"]
+
+        # Deleted code outranks a deleted comment, and a heavier term outranks a
+        # lighter one. Ordering matters here: the quote decides the confidence of
+        # the whole section, so taking whichever signal happened to match first
+        # would downgrade a grounded baseline because some unrelated term was
+        # mentioned in a comment.
+        removed = sorted(
+            (s for s in best.signals if s.kind == "prior"),
+            key=lambda s: (looks_like_comment(s.context or ""), -s.weight),
+        )
         listed = ", ".join(
             dedupe_keep_order([display_term(s.term) for s in removed])[:3]
         )

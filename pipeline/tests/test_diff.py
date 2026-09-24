@@ -197,6 +197,30 @@ def test_narrative_from_a_removed_comment_is_marked_low_confidence():
     assert "확인이 필요합니다" in narrative.text
 
 
+def test_a_comment_term_does_not_downgrade_a_grounded_baseline():
+    """The quote decides the confidence, so it must be the strongest signal.
+
+    Taking whichever prior signal matched first would mark the whole section
+    LOW_CONFIDENCE because some unrelated term happened to be mentioned in a
+    deleted comment, even though deleted code proves the replacement.
+    """
+    item = evidence_with_prior(
+        [
+            "// mentions calibration in passing",
+            "applyDriftCompensation(offset);",
+        ],
+        ["applyPrediction(offset);"],
+    )
+    terms = [s.term for s in item.signals if s.kind == "prior"]
+    assert "calibrat" in terms and "drift compensat" in terms, "both must be present"
+
+    narrative = existing([item])
+
+    assert narrative is not None
+    assert narrative.confidence == "", "deleted code outranks a deleted comment"
+    assert "applyDriftCompensation" in narrative.text
+
+
 def test_no_prior_signals_yields_no_narrative():
     item = Evidence(id="ev", org="o", repo="r", kind="commit", snippet="plain message")
     item.signals = []
