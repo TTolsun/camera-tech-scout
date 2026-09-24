@@ -339,9 +339,57 @@
         }
       ],
       "verdict": "accepted",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2024-04-10T09:47:37+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function PSysDAG::addTask",
+          "evidenceId": "ev_db0d45ef4f39",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/core/psysprocessor/PSysDAG.cpp#L596-L641"
+        },
+        {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Intel3AParameter::updateAeParameter",
+          "evidenceId": "ev_3ec05164abc3",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/intel3a/Intel3AParameter.cpp#L316-L437"
+        },
+        {
+          "at": "2025-07-21T08:47:27+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct AgcStatus",
+          "evidenceId": "ev_07da9b69f2f7",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/agc_status.h#L28-L44"
+        },
+        {
+          "at": "2025-12-27T10:38:28+09:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ControlSerializer::deserialize<ControlList>",
+          "evidenceId": "ev_15f5b0a0dbe9",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/control_serializer.cpp#L567-L662"
+        },
+        {
+          "at": "2025-12-27T10:38:28+09:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ControlSerializer::deserialize<ControlInfoMap>",
+          "evidenceId": "ev_c84442db5d2c",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/control_serializer.cpp#L422-L555"
+        },
+        {
+          "at": "2025-12-27T10:38:28+09:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ControlSerializer::serialize",
+          "evidenceId": "ev_de71238ec2b0",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/control_serializer.cpp#L322-L388"
+        },
         {
           "at": "2026-03-23T14:59:14Z",
           "kind": "issue",
@@ -349,12 +397,28 @@
           "title": "rpicam-still hangs at dawn when switching from manual AWB gains to auto AWB",
           "evidenceId": "ev_e203d77a59c0",
           "url": "https://github.com/raspberrypi/libcamera/issues/331"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct v4l2_ctrl_vp9_compressed_hdr",
+          "evidenceId": "ev_cd974554036c",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/v4l2-controls.h#L2884-L2902"
+        },
+        {
+          "at": "2026-05-18T15:22:27+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CamHelperImx708::parseAEHist",
+          "evidenceId": "ev_43391071cc96",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/cam_helper/cam_helper_imx708.cpp#L291-L345"
         }
       ],
       "firstSeenAt": "2026-03-23T14:59:14Z",
-      "lastUpdatedAt": "2026-03-23T14:59:14Z",
+      "lastUpdatedAt": "2026-05-18T15:22:27+01:00",
       "typeLabel": "Patent + Paper 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "통과",
       "topicLabel": "Computational Photography",
       "mechanismLabel": "예측 기반 추정",
@@ -1421,9 +1485,73 @@
         }
       ],
       "verdict": "accepted",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2024-04-10T09:47:37+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function PSysDAG::addTask",
+          "evidenceId": "ev_db0d45ef4f39",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/core/psysprocessor/PSysDAG.cpp#L596-L641"
+        },
+        {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Intel3AParameter::updateAeParameter",
+          "evidenceId": "ev_3ec05164abc3",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/intel3a/Intel3AParameter.cpp#L316-L437"
+        },
+        {
+          "at": "2025-07-21T08:47:27+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct AgcStatus",
+          "evidenceId": "ev_07da9b69f2f7",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/agc_status.h#L28-L44"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function RPiController",
+          "evidenceId": "ev_c9e6751f9f1f",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/hdr.h#L22-L85"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct HdrConfig",
+          "evidenceId": "ev_0aad5b65c1ca",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/hdr.h#L24-L56"
+        },
+        {
+          "at": "2025-12-27T10:38:28+09:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ControlSerializer::deserialize<ControlList>",
+          "evidenceId": "ev_15f5b0a0dbe9",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/control_serializer.cpp#L567-L662"
+        },
+        {
+          "at": "2025-12-27T10:38:28+09:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ControlSerializer::deserialize<ControlInfoMap>",
+          "evidenceId": "ev_c84442db5d2c",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/control_serializer.cpp#L422-L555"
+        },
+        {
+          "at": "2025-12-27T10:38:28+09:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ControlSerializer::serialize",
+          "evidenceId": "ev_de71238ec2b0",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/control_serializer.cpp#L322-L388"
+        },
         {
           "at": "2026-03-23T14:59:14Z",
           "kind": "issue",
@@ -1431,12 +1559,20 @@
           "title": "rpicam-still hangs at dawn when switching from manual AWB gains to auto AWB",
           "evidenceId": "ev_e203d77a59c0",
           "url": "https://github.com/raspberrypi/libcamera/issues/331"
+        },
+        {
+          "at": "2026-05-18T15:22:27+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CamHelperImx708::parseAEHist",
+          "evidenceId": "ev_43391071cc96",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/cam_helper/cam_helper_imx708.cpp#L291-L345"
         }
       ],
       "firstSeenAt": "2026-03-23T14:59:14Z",
-      "lastUpdatedAt": "2026-03-23T14:59:14Z",
+      "lastUpdatedAt": "2026-05-18T15:22:27+01:00",
       "typeLabel": "Patent + Paper 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "통과",
       "topicLabel": "Computational Photography",
       "mechanismLabel": "적응 제어",
@@ -2613,9 +2749,33 @@
         }
       ],
       "verdict": "accepted",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2024-04-10T09:47:37+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AiqUtils::dumpAeResults",
+          "evidenceId": "ev_3ddbe118db14",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/AiqUtils.cpp#L30-L78"
+        },
+        {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Intel3AParameter::dumpParameter",
+          "evidenceId": "ev_2a5d6cdedcab",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/intel3a/Intel3AParameter.cpp#L749-L794"
+        },
+        {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Intel3AParameter::initAeParameter",
+          "evidenceId": "ev_8234eed7edbc",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/intel3a/Intel3AParameter.cpp#L108-L126"
+        },
         {
           "at": "2024-12-13T05:20:18Z",
           "kind": "issue",
@@ -2623,6 +2783,14 @@
           "title": "PiSP support for RAW14 MIPI Sensor?",
           "evidenceId": "ev_194506306769",
           "url": "https://github.com/raspberrypi/libcamera/issues/172"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Alsc::switchMode",
+          "evidenceId": "ev_f2e5c93ae150",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/alsc.cpp#L272-L318"
         },
         {
           "at": "2026-05-06T15:46:01-06:00",
@@ -2639,12 +2807,36 @@
           "title": "libcamera: software_isp: Normalize statistics sums to 8-bit",
           "evidenceId": "ev_22172a7f70a2",
           "url": "https://github.com/raspberrypi/libcamera/commit/d3e76fe1d1fbe41d3e075212c03007dc9a834dca"
+        },
+        {
+          "at": "2026-06-08T15:16:04+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AgcMeanLuminance::filterExposure",
+          "evidenceId": "ev_11016ad3fdcd",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/agc_mean_luminance.cpp#L634-L655"
+        },
+        {
+          "at": "2026-06-08T15:16:04+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AgcChannel::divideUpExposure",
+          "evidenceId": "ev_ac6f4a294232",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/agc_channel.cpp#L881-L954"
+        },
+        {
+          "at": "2026-08-07T08:37:15+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function IpaBase::applyAGC",
+          "evidenceId": "ev_4f18796fa947",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/common/ipa_base.cpp#L1809-L1873"
         }
       ],
       "firstSeenAt": "2024-12-13T05:20:18Z",
-      "lastUpdatedAt": "2026-05-06T15:46:28-06:00",
+      "lastUpdatedAt": "2026-08-07T08:37:15+01:00",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "통과",
       "topicLabel": "3A 제어",
       "mechanismLabel": "적응 제어",
@@ -4173,8 +4365,8 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
         {
           "at": "2025-03-03T15:25:00Z",
@@ -4185,12 +4377,52 @@
           "url": "https://github.com/raspberrypi/libcamera/issues/236"
         },
         {
+          "at": "2025-04-27T14:21:24+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ParameterGenerator::updateCommonMetadata",
+          "evidenceId": "ev_ca9100d095bd",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/metadata/ParameterGenerator.cpp#L466-L670"
+        },
+        {
           "at": "2025-09-12T12:55:43Z",
           "kind": "issue",
           "kindLabel": "Issue",
           "title": "HP Spectre x360 Laptop Camera problem with V4L2 and libcamera.",
           "evidenceId": "ev_3d3af88c6511",
           "url": "https://github.com/intel/ipu6-camera-hal/issues/159"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Af::doAF",
+          "evidenceId": "ev_0e8a0b5a0507",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/af.cpp#L588-L690"
+        },
+        {
+          "at": "2026-05-12T16:19:10+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function PipelineHandlerMaliC55::registerMemoryInputCamera",
+          "evidenceId": "ev_b39cee00baa7",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/mali-c55/mali-c55.cpp#L1864-L1925"
+        },
+        {
+          "at": "2026-06-04T17:00:44+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function RPiCameraConfiguration::validate",
+          "evidenceId": "ev_ceb4dcd07bd0",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/rpi/common/pipeline_base.cpp#L160-L304"
+        },
+        {
+          "at": "2026-07-31T12:32:53-04:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "class CameraSensorHelperAr0144",
+          "evidenceId": "ev_578683e1c05f",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/camera_sensor_helper.cpp#L381-L471"
         },
         {
           "at": "2026-08-05T03:55:35Z",
@@ -4204,7 +4436,7 @@
       "firstSeenAt": "2025-03-03T15:25:00Z",
       "lastUpdatedAt": "2026-08-05T03:55:35Z",
       "typeLabel": "Patent + Paper 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "Sensor 제어",
       "mechanismLabel": "적응 제어",
@@ -5382,8 +5614,8 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
         {
           "at": "2025-03-03T15:25:00Z",
@@ -5394,12 +5626,60 @@
           "url": "https://github.com/raspberrypi/libcamera/issues/236"
         },
         {
+          "at": "2025-04-27T14:21:24+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ParameterGenerator::updateCommonMetadata",
+          "evidenceId": "ev_ca9100d095bd",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/metadata/ParameterGenerator.cpp#L466-L670"
+        },
+        {
           "at": "2025-09-12T12:55:43Z",
           "kind": "issue",
           "kindLabel": "Issue",
           "title": "HP Spectre x360 Laptop Camera problem with V4L2 and libcamera.",
           "evidenceId": "ev_3d3af88c6511",
           "url": "https://github.com/intel/ipu6-camera-hal/issues/159"
+        },
+        {
+          "at": "2026-04-27T13:04:17+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ISICameraConfiguration::validate",
+          "evidenceId": "ev_d29978eed46a",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/imx8-isi/imx8-isi.cpp#L494-L607"
+        },
+        {
+          "at": "2026-05-12T16:19:10+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function PipelineHandlerMaliC55::registerMemoryInputCamera",
+          "evidenceId": "ev_b39cee00baa7",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/mali-c55/mali-c55.cpp#L1864-L1925"
+        },
+        {
+          "at": "2026-06-04T17:00:44+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function RPiCameraConfiguration::validate",
+          "evidenceId": "ev_ceb4dcd07bd0",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/rpi/common/pipeline_base.cpp#L160-L304"
+        },
+        {
+          "at": "2026-06-16T13:29:54+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function gst_libcamera_src_class_init",
+          "evidenceId": "ev_8846e5f3f92d",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/gstreamer/gstlibcamerasrc.cpp#L1191-L1240"
+        },
+        {
+          "at": "2026-07-31T12:32:53-04:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "class CameraSensorHelperAr0144",
+          "evidenceId": "ev_578683e1c05f",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/camera_sensor_helper.cpp#L381-L471"
         },
         {
           "at": "2026-08-05T03:55:35Z",
@@ -5413,7 +5693,7 @@
       "firstSeenAt": "2025-03-03T15:25:00Z",
       "lastUpdatedAt": "2026-08-05T03:55:35Z",
       "typeLabel": "Patent + Paper 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "Sensor 제어",
       "mechanismLabel": "자원 중재",
@@ -6649,9 +6929,65 @@
         }
       ],
       "verdict": "accepted",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2024-04-10T09:47:37+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function PSysDAG::addTask",
+          "evidenceId": "ev_db0d45ef4f39",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/core/psysprocessor/PSysDAG.cpp#L596-L641"
+        },
+        {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Intel3AParameter::updateAeParameter",
+          "evidenceId": "ev_3ec05164abc3",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/intel3a/Intel3AParameter.cpp#L316-L437"
+        },
+        {
+          "at": "2025-06-26T18:11:36+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraParser::parseControlElement",
+          "evidenceId": "ev_2c5cd1cb438c",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/platformdata/CameraParser.cpp#L910-L979"
+        },
+        {
+          "at": "2025-07-21T08:47:27+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct AgcStatus",
+          "evidenceId": "ev_07da9b69f2f7",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/agc_status.h#L28-L44"
+        },
+        {
+          "at": "2025-12-27T10:38:28+09:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ControlSerializer::deserialize<ControlList>",
+          "evidenceId": "ev_15f5b0a0dbe9",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/control_serializer.cpp#L567-L662"
+        },
+        {
+          "at": "2025-12-27T10:38:28+09:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ControlSerializer::deserialize<ControlInfoMap>",
+          "evidenceId": "ev_c84442db5d2c",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/control_serializer.cpp#L422-L555"
+        },
+        {
+          "at": "2025-12-27T10:38:28+09:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ControlSerializer::serialize",
+          "evidenceId": "ev_de71238ec2b0",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/control_serializer.cpp#L322-L388"
+        },
         {
           "at": "2026-03-23T14:59:14Z",
           "kind": "issue",
@@ -6659,12 +6995,20 @@
           "title": "rpicam-still hangs at dawn when switching from manual AWB gains to auto AWB",
           "evidenceId": "ev_e203d77a59c0",
           "url": "https://github.com/raspberrypi/libcamera/issues/331"
+        },
+        {
+          "at": "2026-05-18T15:22:27+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CamHelperImx708::parseAEHist",
+          "evidenceId": "ev_43391071cc96",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/cam_helper/cam_helper_imx708.cpp#L291-L345"
         }
       ],
       "firstSeenAt": "2026-03-23T14:59:14Z",
-      "lastUpdatedAt": "2026-03-23T14:59:14Z",
+      "lastUpdatedAt": "2026-05-18T15:22:27+01:00",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "통과",
       "topicLabel": "Computational Photography",
       "mechanismLabel": "Buffer 수명 제어",
@@ -7762,9 +8106,65 @@
         }
       ],
       "verdict": "accepted",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2023-08-07T16:29:19+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AiqUtils",
+          "evidenceId": "ev_9b3e474d1b79",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/AiqUtils.h#L71-L167"
+        },
+        {
+          "at": "2024-04-10T09:47:37+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function PSysDAG::addTask",
+          "evidenceId": "ev_db0d45ef4f39",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/core/psysprocessor/PSysDAG.cpp#L596-L641"
+        },
+        {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Intel3AParameter::updateAeParameter",
+          "evidenceId": "ev_3ec05164abc3",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/intel3a/Intel3AParameter.cpp#L316-L437"
+        },
+        {
+          "at": "2025-07-21T08:47:27+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct AgcStatus",
+          "evidenceId": "ev_07da9b69f2f7",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/agc_status.h#L28-L44"
+        },
+        {
+          "at": "2025-12-27T10:38:28+09:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ControlSerializer::deserialize<ControlList>",
+          "evidenceId": "ev_15f5b0a0dbe9",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/control_serializer.cpp#L567-L662"
+        },
+        {
+          "at": "2025-12-27T10:38:28+09:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ControlSerializer::deserialize<ControlInfoMap>",
+          "evidenceId": "ev_c84442db5d2c",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/control_serializer.cpp#L422-L555"
+        },
+        {
+          "at": "2025-12-27T10:38:28+09:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ControlSerializer::serialize",
+          "evidenceId": "ev_de71238ec2b0",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/control_serializer.cpp#L322-L388"
+        },
         {
           "at": "2026-03-23T14:59:14Z",
           "kind": "issue",
@@ -7772,12 +8172,20 @@
           "title": "rpicam-still hangs at dawn when switching from manual AWB gains to auto AWB",
           "evidenceId": "ev_e203d77a59c0",
           "url": "https://github.com/raspberrypi/libcamera/issues/331"
+        },
+        {
+          "at": "2026-05-18T15:22:27+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CamHelperImx708::parseAEHist",
+          "evidenceId": "ev_43391071cc96",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/cam_helper/cam_helper_imx708.cpp#L291-L345"
         }
       ],
       "firstSeenAt": "2026-03-23T14:59:14Z",
-      "lastUpdatedAt": "2026-03-23T14:59:14Z",
+      "lastUpdatedAt": "2026-05-18T15:22:27+01:00",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "통과",
       "topicLabel": "Computational Photography",
       "mechanismLabel": "캘리브레이션과 보정",
@@ -8965,9 +9373,57 @@
         }
       ],
       "verdict": "accepted",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2020-10-21T06:15:07+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "enum v4l2_colorfx",
+          "evidenceId": "ev_b8cd3c962099",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/include/linux/v4l2-controls.h#L85-L106"
+        },
+        {
+          "at": "2022-08-09T12:22:48+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "typedef icamera_metadata_tag_t",
+          "evidenceId": "ev_3b1e81342642",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/metadata/icamera_metadata_tags.h#L110-L447"
+        },
+        {
+          "at": "2022-08-09T12:22:48+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "enum icamera_metadata_tag",
+          "evidenceId": "ev_432f0b301112",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/metadata/icamera_metadata_tags.h#L110-L447"
+        },
+        {
+          "at": "2024-04-10T09:47:37+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AiqUtils::dumpAeResults",
+          "evidenceId": "ev_3ddbe118db14",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/AiqUtils.cpp#L30-L78"
+        },
+        {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Intel3AParameter::dumpParameter",
+          "evidenceId": "ev_2a5d6cdedcab",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/intel3a/Intel3AParameter.cpp#L749-L794"
+        },
+        {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Intel3AParameter::initAeParameter",
+          "evidenceId": "ev_8234eed7edbc",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/intel3a/Intel3AParameter.cpp#L108-L126"
+        },
         {
           "at": "2024-12-13T05:20:18Z",
           "kind": "issue",
@@ -8993,6 +9449,102 @@
           "url": "https://github.com/raspberrypi/libcamera/issues/254"
         },
         {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Af::findPeak",
+          "evidenceId": "ev_4f5b6adfca18",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/af.cpp#L502-L533"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function RPiController",
+          "evidenceId": "ev_16dad97e9cc1",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/awb.h#L17-L180"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AwbAlgorithm",
+          "evidenceId": "ev_8266e3134fa7",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/awb.h#L66-L170"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function initialise",
+          "evidenceId": "ev_02f386587579",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/awb.h#L71-L166"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "class AwbBayes",
+          "evidenceId": "ev_b615ccca2168",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/awb_bayes.cpp#L78-L97"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AwbBayes::prepareStats",
+          "evidenceId": "ev_174a9a7e73a8",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/awb_bayes.cpp#L193-L213"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AwbBayes::interpolatePrior",
+          "evidenceId": "ev_0ab21edf7f18",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/awb_bayes.cpp#L215-L239"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AwbBayes::coarseSearch",
+          "evidenceId": "ev_a1b64af7530c",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/awb_bayes.cpp#L241-L285"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AwbBayes::fineSearch",
+          "evidenceId": "ev_1a71c9e886f6",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/awb_bayes.cpp#L287-L367"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AwbBayes::awbBayes",
+          "evidenceId": "ev_2f5abc8cd59b",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/awb_bayes.cpp#L369-L413"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Awb::interpolateQuadatric",
+          "evidenceId": "ev_b96fd61a3b13",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/awb.cpp#L427-L445"
+        },
+        {
+          "at": "2025-12-04T16:16:56+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct ipu3_uapi_bnr_static_config",
+          "evidenceId": "ev_1a32c101e3d9",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/intel-ipu3.h#L851-L862"
+        },
+        {
           "at": "2026-01-29T12:17:26Z",
           "kind": "commit",
           "kindLabel": "Commit",
@@ -9001,12 +9553,132 @@
           "url": "https://github.com/raspberrypi/libcamera/commit/b7854fd07d42168f099b5ce30d1702e0e0875bf5"
         },
         {
+          "at": "2026-02-02T10:02:16Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function libcamera",
+          "evidenceId": "ev_efed16148f54",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/awb_bayes.h#L19-L59"
+        },
+        {
+          "at": "2026-02-02T10:02:16Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AwbImplementation",
+          "evidenceId": "ev_3db34ea64aa6",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/awb_bayes.h#L23-L55"
+        },
+        {
+          "at": "2026-02-02T10:02:16Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AwbGrey::init",
+          "evidenceId": "ev_99664bd9bee2",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/awb_grey.cpp#L44-L57"
+        },
+        {
+          "at": "2026-02-02T10:02:16Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AwbGrey::gainsFromColourTemperature",
+          "evidenceId": "ev_d5cfee7930f3",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/awb_grey.cpp#L104-L114"
+        },
+        {
+          "at": "2026-02-02T10:02:16Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AwbBayes::gainsFromColourTemperature",
+          "evidenceId": "ev_c55295531fd4",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/awb_bayes.cpp#L260-L269"
+        },
+        {
+          "at": "2026-02-02T10:02:16Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AwbBayes::coarseSearch",
+          "evidenceId": "ev_d4200695778c",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/awb_bayes.cpp#L309-L366"
+        },
+        {
+          "at": "2026-02-02T10:02:16Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AwbBayes::fineSearch",
+          "evidenceId": "ev_c64ac3dbf78d",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/awb_bayes.cpp#L368-L464"
+        },
+        {
+          "at": "2026-02-02T10:02:16Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AwbBayes::interpolateQuadratic",
+          "evidenceId": "ev_5038698d2842",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/awb_bayes.cpp#L477-L491"
+        },
+        {
+          "at": "2026-02-02T10:02:16Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function libcamera",
+          "evidenceId": "ev_ed26ff6a4431",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/awb_grey.h#L17-L38"
+        },
+        {
+          "at": "2026-02-02T10:02:16Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AwbImplementation",
+          "evidenceId": "ev_93c343225864",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/awb_grey.h#L21-L34"
+        },
+        {
+          "at": "2026-04-24T19:39:17+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AwbNN::prepareStats",
+          "evidenceId": "ev_c5054ea02d78",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/awb_nn.cpp#L283-L299"
+        },
+        {
+          "at": "2026-04-24T19:39:17+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AwbNN::transverseSearch",
+          "evidenceId": "ev_696d416a3f86",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/awb_nn.cpp#L301-L346"
+        },
+        {
           "at": "2026-04-28T19:13:28+01:00",
           "kind": "commit",
           "kindLabel": "Commit",
           "title": "libcamera v0.7.1",
           "evidenceId": "ev_686b0abc59b0",
           "url": "https://github.com/raspberrypi/libcamera/commit/183e37362f57ff3ce7493abf0bc6f1b57b931f55"
+        },
+        {
+          "at": "2026-05-04T01:03:54+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraCapabilities::initializeStaticMetadata",
+          "evidenceId": "ev_20c3557f91df",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/android/camera_capabilities.cpp#L761-L1482"
+        },
+        {
+          "at": "2026-05-04T01:03:54+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraCapabilities::requestTemplatePreview",
+          "evidenceId": "ev_9d6464a36958",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/android/camera_capabilities.cpp#L1511-L1612"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "enum v4l2_colorfx",
+          "evidenceId": "ev_7a6238cdf021",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/v4l2-controls.h#L76-L94"
         },
         {
           "at": "2026-05-06T15:46:28-06:00",
@@ -9018,33 +9690,17 @@
         },
         {
           "at": "2026-05-22T18:53:27+02:00",
-          "kind": "commit",
-          "kindLabel": "Commit",
-          "title": "ipa: mali-c55: Implement Ccm algorithm",
-          "evidenceId": "ev_c20d31f35b8a",
-          "url": "https://github.com/raspberrypi/libcamera/commit/1bf7e9485e2dfc96a4ebd976a41f484dc395b2da"
-        },
-        {
-          "at": "2026-05-28T12:49:09+05:30",
-          "kind": "commit",
-          "kindLabel": "Commit",
-          "title": "ipa: libipa: Handle missing YAML nodes in Interpolator",
-          "evidenceId": "ev_e64b6b45a8b7",
-          "url": "https://github.com/raspberrypi/libcamera/commit/9561bd2ed88002d68e44804d6c3ca111e53be52e"
-        },
-        {
-          "at": "2026-07-10T11:12:38+01:00",
-          "kind": "commit",
-          "kindLabel": "Commit",
-          "title": "libcamera v0.7.2",
-          "evidenceId": "ev_d682f7228fc6",
-          "url": "https://github.com/raspberrypi/libcamera/commit/191e202178f02430b5942397c70d215cdd2056fa"
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Ccm::prepare",
+          "evidenceId": "ev_2a94023fcff5",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/mali-c55/algorithms/ccm.cpp#L130-L155"
         }
       ],
       "firstSeenAt": "2024-12-13T05:20:18Z",
-      "lastUpdatedAt": "2026-07-10T11:12:38+01:00",
+      "lastUpdatedAt": "2026-08-07T08:37:15+01:00",
       "typeLabel": "Patent + Paper 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "통과",
       "topicLabel": "3A 제어",
       "mechanismLabel": "캘리브레이션과 보정",
@@ -13971,8 +14627,8 @@
         }
       ],
       "verdict": "accepted",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
         {
           "at": "2024-06-14T08:13:05Z",
@@ -13981,6 +14637,14 @@
           "title": "utils: raspberrypi: ctt: Add a maximum gain parameter for LSC",
           "evidenceId": "ev_c9fb625f5c63",
           "url": "https://github.com/raspberrypi/libcamera/pull/142"
+        },
+        {
+          "at": "2024-08-04T21:55:43+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function demosaic",
+          "evidenceId": "ev_7faef4edbe84",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/py/cam/helpers.py#L12-L73"
         },
         {
           "at": "2025-03-13T11:40:45Z",
@@ -14021,6 +14685,62 @@
           "title": "No video stream on buildroot",
           "evidenceId": "ev_409a4cad9d6c",
           "url": "https://github.com/raspberrypi/libcamera/issues/267"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "class IPAIPU3",
+          "evidenceId": "ev_fb138bdf26d4",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/ipu3/ipu3.cpp#L139-L188"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function RPiController",
+          "evidenceId": "ev_42457dfd154d",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/alsc.h#L21-L174"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function WideDynamicRange::prepare",
+          "evidenceId": "ev_965b1f314429",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rkisp1/algorithms/wdr.cpp#L394-L445"
+        },
+        {
+          "at": "2025-12-04T16:16:56+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct ipu3_uapi_shd_general_config",
+          "evidenceId": "ev_36594ba6e408",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/intel-ipu3.h#L1163-L1168"
+        },
+        {
+          "at": "2025-12-04T16:16:56+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct ipu3_uapi_isp_lin_vmem_params",
+          "evidenceId": "ev_f6e32da5e814",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/intel-ipu3.h#L2537-L2546"
+        },
+        {
+          "at": "2025-12-04T16:16:56+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct ipu3_uapi_isp_tnr3_vmem_params",
+          "evidenceId": "ev_d7e15e4dd401",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/intel-ipu3.h#L2560-L2567"
+        },
+        {
+          "at": "2025-12-04T16:16:56+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct ipu3_uapi_obgrid_param",
+          "evidenceId": "ev_133b0a9d488d",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/intel-ipu3.h#L2817"
         },
         {
           "at": "2026-01-06T17:00:44Z",
@@ -14079,12 +14799,60 @@
           "url": "https://github.com/raspberrypi/libcamera/commit/e8054c758c3dd87b4a8a5579398d0ab971ed97b0"
         },
         {
+          "at": "2026-02-02T08:42:40Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function DebayerCpu::sizes",
+          "evidenceId": "ev_9990ab29dd4e",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/software_isp/debayer_cpu.cpp#L1121-L1148"
+        },
+        {
+          "at": "2026-02-02T10:02:16Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ipa",
+          "evidenceId": "ev_87a0cc7984e3",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/awb_bayes.h#L21-L57"
+        },
+        {
+          "at": "2026-02-02T10:02:16Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ipa",
+          "evidenceId": "ev_6b35adaa2e87",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/awb_grey.h#L19-L36"
+        },
+        {
+          "at": "2026-02-12T16:05:34+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function IpaVc4::applyDG",
+          "evidenceId": "ev_bb44474b39d1",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/vc4/vc4.cpp#L367-L385"
+        },
+        {
           "at": "2026-03-27T09:02:43Z",
           "kind": "commit",
           "kindLabel": "Commit",
           "title": "ipa: rpi: Fix gamma lookup table generation for PiSP platform",
           "evidenceId": "ev_711e76067023",
           "url": "https://github.com/raspberrypi/libcamera/commit/033bb2cce362385ee535ed7f898dabfd47d8414c"
+        },
+        {
+          "at": "2026-05-04T01:03:54+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Dpf::init",
+          "evidenceId": "ev_f91abbdd09cf",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rkisp1/algorithms/dpf.cpp#L48-L173"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct rkisp1_cif_isp_dpcc_config",
+          "evidenceId": "ev_495f978e5a57",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/rkisp1-config.h#L348-L355"
         },
         {
           "at": "2026-05-06T15:46:42-06:00",
@@ -14096,11 +14864,67 @@
         },
         {
           "at": "2026-05-20T22:38:49+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function libcamera",
+          "evidenceId": "ev_c0ac934019d3",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/ccm.h#L18-L75"
+        },
+        {
+          "at": "2026-05-20T22:38:49+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CcmAlgorithmBase",
+          "evidenceId": "ev_e9d3eff22dde",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/ccm.h#L38-L54"
+        },
+        {
+          "at": "2026-05-20T22:38:49+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CcmAlgorithmBase::configure",
+          "evidenceId": "ev_e5faf1d1f161",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/ccm.cpp#L103-L111"
+        },
+        {
+          "at": "2026-05-20T22:38:49+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CcmAlgorithmBase::queueRequest",
+          "evidenceId": "ev_0241c729cae2",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/ccm.cpp#L137-L154"
+        },
+        {
+          "at": "2026-05-20T22:38:49+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CcmAlgorithmBase::prepare",
+          "evidenceId": "ev_8af494a680cc",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/ccm.cpp#L170-L184"
+        },
+        {
+          "at": "2026-05-20T22:38:49+02:00",
           "kind": "commit",
           "kindLabel": "Commit",
           "title": "ipa: libipa: Add CcmAlgorithm to libipa",
           "evidenceId": "ev_c75c090ad53f",
           "url": "https://github.com/raspberrypi/libcamera/commit/9062131522cb2f4d2384c78f022ee9b8676d064f"
+        },
+        {
+          "at": "2026-05-28T12:49:09+05:30",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function libcamera",
+          "evidenceId": "ev_de910daf17ff",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/interpolator.h#L20-L127"
+        },
+        {
+          "at": "2026-05-28T12:49:09+05:30",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function namespace",
+          "evidenceId": "ev_b95a4fc6f13f",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/interpolator.h#L22-L125"
         },
         {
           "at": "2026-06-02T10:26:01+09:00",
@@ -14125,36 +14949,12 @@
           "title": "ipa: libipa: lsc: Move Interpolator<lsc::Components> to lsc_base",
           "evidenceId": "ev_31a984937bcf",
           "url": "https://github.com/raspberrypi/libcamera/commit/c261d073213d5a7d182a2e34fbe71a5c18bb687c"
-        },
-        {
-          "at": "2026-07-08T21:03:11Z",
-          "kind": "issue",
-          "kindLabel": "Issue",
-          "title": "Missing AIQB tuning for HI556 with module ID `13P2BAD33` (Dell XPS 13 9315, Alder Lake / IPU6EP)",
-          "evidenceId": "ev_f173a708238c",
-          "url": "https://github.com/intel/ipu6-camera-hal/issues/176"
-        },
-        {
-          "at": "2026-08-05T15:38:17+02:00",
-          "kind": "commit",
-          "kindLabel": "Commit",
-          "title": "ipa: libipa: lsc: Specialize Interpolator for uint8_t",
-          "evidenceId": "ev_047f7e4e6814",
-          "url": "https://github.com/raspberrypi/libcamera/commit/62d4bfc450798cbd57722fa349a245b93b11d1cd"
-        },
-        {
-          "at": "2026-09-07T07:57:19Z",
-          "kind": "issue",
-          "kindLabel": "Issue",
-          "title": "IMX477: SensorTemperature missing from still capture metadata, present in preview frames",
-          "evidenceId": "ev_9ba365eef730",
-          "url": "https://github.com/raspberrypi/libcamera/issues/359"
         }
       ],
       "firstSeenAt": "2024-06-14T08:13:05Z",
       "lastUpdatedAt": "2026-09-07T07:57:19Z",
       "typeLabel": "Patent + Paper 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "통과",
       "topicLabel": "ISP 처리",
       "mechanismLabel": "캘리브레이션과 보정",
@@ -18841,9 +19641,33 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2025-04-27T14:21:24+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function SensorManager::setWdrMode",
+          "evidenceId": "ev_4f5dca025205",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/SensorManager.cpp#L131-L158"
+        },
+        {
+          "at": "2025-06-26T18:11:36+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function RequestThread::threadLoop",
+          "evidenceId": "ev_faf3ec3dfca5",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/core/RequestThread.cpp#L333-L397"
+        },
+        {
+          "at": "2025-06-26T18:11:36+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AiqEngine::prepareStatsParams",
+          "evidenceId": "ev_afaeca41ba84",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/AiqEngine.cpp#L176-L241"
+        },
         {
           "at": "2026-03-31T07:42:51Z",
           "kind": "issue",
@@ -18851,6 +19675,22 @@
           "title": "rpicam-vid framerate is not obeyed for frame captures when using --segment along with --sync parameters",
           "evidenceId": "ev_150e836be998",
           "url": "https://github.com/raspberrypi/libcamera/issues/322"
+        },
+        {
+          "at": "2026-04-16T15:14:34+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Request::Private::prepare",
+          "evidenceId": "ev_aef63d48175f",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/request.cpp#L228-L260"
+        },
+        {
+          "at": "2026-06-26T11:20:40+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct drm_mode_modeinfo",
+          "evidenceId": "ev_3e08e06114b5",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/drm_mode.h#L232-L250"
         },
         {
           "at": "2026-08-23T02:57:18Z",
@@ -18872,7 +19712,7 @@
       "firstSeenAt": "2026-03-31T07:42:51Z",
       "lastUpdatedAt": "2026-08-24T20:16:51Z",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "Sensor 동기화",
       "mechanismLabel": "예측 기반 추정",
@@ -19915,9 +20755,49 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2022-08-09T12:22:48+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function validate_icamera_metadata_structure",
+          "evidenceId": "ev_f913118b09aa",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/metadata/icamera_metadata_base.cpp#L280-L410"
+        },
+        {
+          "at": "2023-08-07T16:29:19+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function JpegProcess::doPostProcessing",
+          "evidenceId": "ev_96bf68e94531",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/image_process/PostProcessorBase.cpp#L235-L310"
+        },
+        {
+          "at": "2023-08-07T16:29:19+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function MockCameraHal::streamDqbuf",
+          "evidenceId": "ev_588c6f904dfb",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/hal/MockCameraHal.cpp#L205-L222"
+        },
+        {
+          "at": "2024-08-04T21:55:43+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function validate_and_calculate_camera_metadata_entry_data_size",
+          "evidenceId": "ev_1254005299b6",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/android/metadata/camera_metadata.c#L374-L392"
+        },
+        {
+          "at": "2024-08-04T21:55:43+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function append_camera_metadata",
+          "evidenceId": "ev_879864f751e9",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/android/metadata/camera_metadata.c#L581-L632"
+        },
         {
           "at": "2024-10-11T11:22:36Z",
           "kind": "issue",
@@ -19925,6 +20805,22 @@
           "title": "Failed to open PSYS",
           "evidenceId": "ev_f6e3d27ed0f1",
           "url": "https://github.com/intel/ipu6-camera-hal/issues/125"
+        },
+        {
+          "at": "2025-03-04T13:42:19+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function sortCamera3StreamConfigs",
+          "evidenceId": "ev_b64e334f619b",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/android/camera_device.cpp#L66-L165"
+        },
+        {
+          "at": "2025-03-04T13:42:19+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraDevice::constructDefaultRequestSettings",
+          "evidenceId": "ev_26857d6bfc3f",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/android/camera_device.cpp#L468-L519"
         },
         {
           "at": "2026-05-07T20:09:10+03:00",
@@ -19954,7 +20850,7 @@
       "firstSeenAt": "2024-10-11T11:22:36Z",
       "lastUpdatedAt": "2026-09-23T15:21:34Z",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "Camera HAL",
       "mechanismLabel": "자원 중재",
@@ -21109,8 +22005,8 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
         {
           "at": "2025-03-03T15:25:00Z",
@@ -21121,12 +22017,60 @@
           "url": "https://github.com/raspberrypi/libcamera/issues/236"
         },
         {
+          "at": "2025-04-27T14:21:24+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ParameterGenerator::updateCommonMetadata",
+          "evidenceId": "ev_ca9100d095bd",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/metadata/ParameterGenerator.cpp#L466-L670"
+        },
+        {
           "at": "2025-09-12T12:55:43Z",
           "kind": "issue",
           "kindLabel": "Issue",
           "title": "HP Spectre x360 Laptop Camera problem with V4L2 and libcamera.",
           "evidenceId": "ev_3d3af88c6511",
           "url": "https://github.com/intel/ipu6-camera-hal/issues/159"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "enum drm_vblank_seq_type",
+          "evidenceId": "ev_dcfc2edc79ce",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/drm.h#L453-L463"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct drm_crtc_get_sequence",
+          "evidenceId": "ev_1c5b12fcad47",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/drm.h#L1032-L1037"
+        },
+        {
+          "at": "2026-05-12T16:19:10+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function PipelineHandlerMaliC55::registerMemoryInputCamera",
+          "evidenceId": "ev_b39cee00baa7",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/mali-c55/mali-c55.cpp#L1864-L1925"
+        },
+        {
+          "at": "2026-06-04T17:00:44+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function RPiCameraConfiguration::validate",
+          "evidenceId": "ev_ceb4dcd07bd0",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/rpi/common/pipeline_base.cpp#L160-L304"
+        },
+        {
+          "at": "2026-07-31T12:32:53-04:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "class CameraSensorHelperAr0144",
+          "evidenceId": "ev_578683e1c05f",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/camera_sensor_helper.cpp#L381-L471"
         },
         {
           "at": "2026-08-05T03:55:35Z",
@@ -21140,7 +22084,7 @@
       "firstSeenAt": "2025-03-03T15:25:00Z",
       "lastUpdatedAt": "2026-08-05T03:55:35Z",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "Sensor 제어",
       "mechanismLabel": "타이밍 동기화",
@@ -22385,9 +23329,17 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2024-09-27T16:18:38+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Parameters",
+          "evidenceId": "ev_38ffda84c456",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/include/api/Parameters.h#L1135-L2949"
+        },
         {
           "at": "2025-03-03T15:25:00Z",
           "kind": "issue",
@@ -22397,12 +23349,68 @@
           "url": "https://github.com/raspberrypi/libcamera/issues/236"
         },
         {
+          "at": "2025-04-27T14:21:24+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ParameterGenerator::updateCommonMetadata",
+          "evidenceId": "ev_ca9100d095bd",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/metadata/ParameterGenerator.cpp#L466-L670"
+        },
+        {
+          "at": "2025-08-15T14:46:09+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function std::string",
+          "evidenceId": "ev_664ce461aefc",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/v4l2_subdevice.cpp#L1703-L1737"
+        },
+        {
+          "at": "2025-08-19T05:16:05+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraSensorRaw::sensorInfo",
+          "evidenceId": "ev_465ae5b0aaa5",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/sensor/camera_sensor_raw.cpp#L986-L1052"
+        },
+        {
           "at": "2025-09-12T12:55:43Z",
           "kind": "issue",
           "kindLabel": "Issue",
           "title": "HP Spectre x360 Laptop Camera problem with V4L2 and libcamera.",
           "evidenceId": "ev_3d3af88c6511",
           "url": "https://github.com/intel/ipu6-camera-hal/issues/159"
+        },
+        {
+          "at": "2026-05-12T16:19:10+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function PipelineHandlerMaliC55::registerMemoryInputCamera",
+          "evidenceId": "ev_b39cee00baa7",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/mali-c55/mali-c55.cpp#L1864-L1925"
+        },
+        {
+          "at": "2026-06-04T17:00:44+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function RPiCameraConfiguration::validate",
+          "evidenceId": "ev_ceb4dcd07bd0",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/rpi/common/pipeline_base.cpp#L160-L304"
+        },
+        {
+          "at": "2026-07-09T14:41:51+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Dw100VertexMap::getVertexMap",
+          "evidenceId": "ev_8d32425f88f6",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/converter/converter_dw100_vertexmap.cpp#L503-L627"
+        },
+        {
+          "at": "2026-07-31T12:32:53-04:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "class CameraSensorHelperAr0144",
+          "evidenceId": "ev_578683e1c05f",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/camera_sensor_helper.cpp#L381-L471"
         },
         {
           "at": "2026-08-05T03:55:35Z",
@@ -22416,7 +23424,7 @@
       "firstSeenAt": "2025-03-03T15:25:00Z",
       "lastUpdatedAt": "2026-08-05T03:55:35Z",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "Sensor 제어",
       "mechanismLabel": "캘리브레이션과 보정",
@@ -23794,9 +24802,25 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2025-04-27T14:21:24+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function SensorManager::setWdrMode",
+          "evidenceId": "ev_4f5dca025205",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/SensorManager.cpp#L131-L158"
+        },
+        {
+          "at": "2025-06-26T18:11:36+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AiqEngine::prepareStatsParams",
+          "evidenceId": "ev_afaeca41ba84",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/AiqEngine.cpp#L176-L241"
+        },
         {
           "at": "2026-03-31T07:42:51Z",
           "kind": "issue",
@@ -23804,6 +24828,38 @@
           "title": "rpicam-vid framerate is not obeyed for frame captures when using --segment along with --sync parameters",
           "evidenceId": "ev_150e836be998",
           "url": "https://github.com/raspberrypi/libcamera/issues/322"
+        },
+        {
+          "at": "2026-04-16T15:14:34+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Request::Private::prepare",
+          "evidenceId": "ev_aef63d48175f",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/request.cpp#L228-L260"
+        },
+        {
+          "at": "2026-04-17T14:23:28+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function IPU3CameraData::frameStart",
+          "evidenceId": "ev_e09b1ad71f49",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/ipu3/ipu3.cpp#L1385-L1415"
+        },
+        {
+          "at": "2026-06-04T17:00:44+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraData::handleControlLists",
+          "evidenceId": "ev_66cd696915ce",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/rpi/common/pipeline_base.cpp#L1545-L1582"
+        },
+        {
+          "at": "2026-06-26T11:20:40+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct drm_mode_modeinfo",
+          "evidenceId": "ev_3e08e06114b5",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/drm_mode.h#L232-L250"
         },
         {
           "at": "2026-08-23T02:57:18Z",
@@ -23825,7 +24881,7 @@
       "firstSeenAt": "2026-03-31T07:42:51Z",
       "lastUpdatedAt": "2026-08-24T20:16:51Z",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "Sensor 동기화",
       "mechanismLabel": "타이밍 동기화",
@@ -24970,9 +26026,17 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2020-10-21T06:15:07+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "enum v4l2_mpeg_video_h264_profile",
+          "evidenceId": "ev_2ced31ed3348",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/include/linux/v4l2-controls.h#L437-L460"
+        },
         {
           "at": "2024-03-28T14:40:33Z",
           "kind": "issue",
@@ -24982,12 +26046,124 @@
           "url": "https://github.com/intel/ipu6-camera-hal/issues/93"
         },
         {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CROS_CAMERA_EXPORT",
+          "evidenceId": "ev_384c3730687c",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/modules/v4l2/v4l2_device.h#L260-L290"
+        },
+        {
+          "at": "2025-08-19T05:16:05+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraSensorLegacy::initProperties",
+          "evidenceId": "ev_012b9d57aed3",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/sensor/camera_sensor_legacy.cpp#L556-L651"
+        },
+        {
+          "at": "2025-08-19T05:16:05+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraSensorRaw::initProperties",
+          "evidenceId": "ev_89f76337f47d",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/sensor/camera_sensor_raw.cpp#L561-L658"
+        },
+        {
+          "at": "2026-01-06T09:37:30Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2CameraProxy::ioctl",
+          "evidenceId": "ev_f1f7976bc9f9",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/v4l2/v4l2_camera_proxy.cpp#L857-L959"
+        },
+        {
           "at": "2026-03-23T12:06:27Z",
           "kind": "release",
           "kindLabel": "Release",
           "title": "v1.4.0",
           "evidenceId": "ev_a1ba9f916f49",
           "url": "https://github.com/raspberrypi/libpisp/releases/tag/v1.4.0"
+        },
+        {
+          "at": "2026-03-24T13:32:14+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2Device::updateControlInfo",
+          "evidenceId": "ev_0981f7eb8de5",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/v4l2_device.cpp#L779-L799"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "enum v4l2_mpeg_video_h264_profile",
+          "evidenceId": "ev_8ab83f0c3257",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/v4l2-controls.h#L539-L558"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "enum v4l2_cid_mpeg_video_hevc_size_of_length_field",
+          "evidenceId": "ev_5d796971733c",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/v4l2-controls.h#L805-L810"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct v4l2_ctrl_h264_pred_weights",
+          "evidenceId": "ev_b8c9edf10cce",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/v4l2-controls.h#L1542-L1546"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct v4l2_vp8_entropy",
+          "evidenceId": "ev_037aad3b4d7c",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/v4l2-controls.h#L1888-L1894"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct v4l2_ctrl_mpeg2_picture",
+          "evidenceId": "ev_080f93ba45aa",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/v4l2-controls.h#L2056-L2065"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct v4l2_hevc_pred_weight_table",
+          "evidenceId": "ev_a16396ae0359",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/v4l2-controls.h#L2477"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct v4l2_ctrl_hevc_slice_params",
+          "evidenceId": "ev_7587692848af",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/v4l2-controls.h#L2439-L2481"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct v4l2_vp9_segmentation",
+          "evidenceId": "ev_3ee887004535",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/v4l2-controls.h#L2707-L2714"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct v4l2_ctrl_vp9_frame",
+          "evidenceId": "ev_9e48b27b64c7",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/v4l2-controls.h#L2792-L2816"
         },
         {
           "at": "2026-08-04T13:37:09Z",
@@ -25001,7 +26177,7 @@
       "firstSeenAt": "2024-03-28T14:40:33Z",
       "lastUpdatedAt": "2026-08-04T13:37:09Z",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "Camera Driver 계층",
       "mechanismLabel": "예측 기반 추정",
@@ -26529,9 +27705,49 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2023-09-22T17:58:18+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function icamera",
+          "evidenceId": "ev_5fda5205a145",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/metadata/ParameterGenerator.h#L25-L114"
+        },
+        {
+          "at": "2023-09-22T17:58:18+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ParameterGenerator",
+          "evidenceId": "ev_f3bfde2beb9c",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/metadata/ParameterGenerator.h#L48-L112"
+        },
+        {
+          "at": "2024-04-10T09:47:37+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AiqUtils::dumpAeResults",
+          "evidenceId": "ev_3ddbe118db14",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/AiqUtils.cpp#L30-L78"
+        },
+        {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Intel3AParameter::dumpParameter",
+          "evidenceId": "ev_2a5d6cdedcab",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/intel3a/Intel3AParameter.cpp#L749-L794"
+        },
+        {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Intel3AParameter::initAeParameter",
+          "evidenceId": "ev_8234eed7edbc",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/intel3a/Intel3AParameter.cpp#L108-L126"
+        },
         {
           "at": "2024-12-13T05:20:18Z",
           "kind": "issue",
@@ -26541,18 +27757,50 @@
           "url": "https://github.com/raspberrypi/libcamera/issues/172"
         },
         {
+          "at": "2025-06-26T18:11:36+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function RequestThread::handleRequest",
+          "evidenceId": "ev_cc4b3ddb63ec",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/core/RequestThread.cpp#L399-L469"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Af::earlyTerminationByPhase",
+          "evidenceId": "ev_f1c02aad49b1",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/af.cpp#L476-L500"
+        },
+        {
           "at": "2026-05-06T15:46:28-06:00",
           "kind": "commit",
           "kindLabel": "Commit",
           "title": "libcamera: software_isp: Normalize statistics sums to 8-bit",
           "evidenceId": "ev_22172a7f70a2",
           "url": "https://github.com/raspberrypi/libcamera/commit/d3e76fe1d1fbe41d3e075212c03007dc9a834dca"
+        },
+        {
+          "at": "2026-06-08T15:16:04+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AgcChannel::divideUpExposure",
+          "evidenceId": "ev_ac6f4a294232",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/agc_channel.cpp#L881-L954"
+        },
+        {
+          "at": "2026-08-07T08:37:15+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function IpaBase::applyAGC",
+          "evidenceId": "ev_4f18796fa947",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/common/ipa_base.cpp#L1809-L1873"
         }
       ],
       "firstSeenAt": "2024-12-13T05:20:18Z",
-      "lastUpdatedAt": "2026-05-06T15:46:28-06:00",
+      "lastUpdatedAt": "2026-08-07T08:37:15+01:00",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "3A 제어",
       "mechanismLabel": "예측 기반 추정",
@@ -28121,9 +29369,33 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2024-04-10T09:47:37+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AiqUtils::dumpAeResults",
+          "evidenceId": "ev_3ddbe118db14",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/AiqUtils.cpp#L30-L78"
+        },
+        {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Intel3AParameter::dumpParameter",
+          "evidenceId": "ev_2a5d6cdedcab",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/intel3a/Intel3AParameter.cpp#L749-L794"
+        },
+        {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Intel3AParameter::initAeParameter",
+          "evidenceId": "ev_8234eed7edbc",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/intel3a/Intel3AParameter.cpp#L108-L126"
+        },
         {
           "at": "2024-12-13T05:20:18Z",
           "kind": "issue",
@@ -28133,18 +29405,42 @@
           "url": "https://github.com/raspberrypi/libcamera/issues/172"
         },
         {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Af::updateLensPosition",
+          "evidenceId": "ev_3ed7c6ecd6c0",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/af.cpp#L692-L711"
+        },
+        {
           "at": "2026-05-06T15:46:28-06:00",
           "kind": "commit",
           "kindLabel": "Commit",
           "title": "libcamera: software_isp: Normalize statistics sums to 8-bit",
           "evidenceId": "ev_22172a7f70a2",
           "url": "https://github.com/raspberrypi/libcamera/commit/d3e76fe1d1fbe41d3e075212c03007dc9a834dca"
+        },
+        {
+          "at": "2026-06-08T15:16:04+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AgcChannel::divideUpExposure",
+          "evidenceId": "ev_ac6f4a294232",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/agc_channel.cpp#L881-L954"
+        },
+        {
+          "at": "2026-08-07T08:37:15+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function IpaBase::applyAGC",
+          "evidenceId": "ev_4f18796fa947",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/common/ipa_base.cpp#L1809-L1873"
         }
       ],
       "firstSeenAt": "2024-12-13T05:20:18Z",
-      "lastUpdatedAt": "2026-05-06T15:46:28-06:00",
+      "lastUpdatedAt": "2026-08-07T08:37:15+01:00",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "3A 제어",
       "mechanismLabel": "Deadline 인식 스케줄링",
@@ -29485,8 +30781,8 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
         {
           "at": "2025-04-25T07:43:16Z",
@@ -29521,6 +30817,14 @@
           "url": "https://github.com/raspberrypi/libcamera/pull/284"
         },
         {
+          "at": "2025-12-04T16:16:56+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct ipu3_uapi_params",
+          "evidenceId": "ev_05780706842b",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/intel-ipu3.h#L2800-L2818"
+        },
+        {
           "at": "2026-01-28T17:00:30+01:00",
           "kind": "commit",
           "kindLabel": "Commit",
@@ -29529,18 +30833,34 @@
           "url": "https://github.com/raspberrypi/libcamera/commit/e8054c758c3dd87b4a8a5579398d0ab971ed97b0"
         },
         {
+          "at": "2026-02-12T16:05:34+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function IpaVc4::applyDG",
+          "evidenceId": "ev_bb44474b39d1",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/vc4/vc4.cpp#L367-L385"
+        },
+        {
           "at": "2026-06-02T10:26:01+09:00",
           "kind": "commit",
           "kindLabel": "Commit",
           "title": "libcamera: software_isp: debayer_egl: Demote unsupported format log to Info",
           "evidenceId": "ev_f90240ccbf68",
           "url": "https://github.com/raspberrypi/libcamera/commit/2985ca6ac024ff89a077f088de49f7a69ab40d37"
+        },
+        {
+          "at": "2026-08-03T08:56:48+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function PipelineHandlerPiSP::match",
+          "evidenceId": "ev_e3abf88d39ce",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/rpi/pisp/pisp.cpp#L878-L964"
         }
       ],
       "firstSeenAt": "2025-04-25T07:43:16Z",
-      "lastUpdatedAt": "2026-06-02T10:26:01+09:00",
+      "lastUpdatedAt": "2026-08-03T08:56:48+01:00",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "ISP 처리",
       "mechanismLabel": "작업 분할",
@@ -30859,9 +32179,17 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2024-11-26T09:58:20Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function libcamera",
+          "evidenceId": "ev_7e57d1dccfe0",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/libcamera/internal/clock_recovery.h#L11-L68"
+        },
         {
           "at": "2025-01-09T09:05:08Z",
           "kind": "issue",
@@ -30895,6 +32223,14 @@
           "url": "https://github.com/raspberrypi/libcamera/issues/336"
         },
         {
+          "at": "2026-06-16T13:29:54+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function gst_libcamera_src_negotiate",
+          "evidenceId": "ev_fffa41803494",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/gstreamer/gstlibcamerasrc.cpp#L587-L706"
+        },
+        {
           "at": "2026-06-30T10:03:25Z",
           "kind": "issue",
           "kindLabel": "Issue",
@@ -30906,7 +32242,7 @@
       "firstSeenAt": "2025-01-09T09:05:08Z",
       "lastUpdatedAt": "2026-06-30T10:03:25Z",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "카메라 성능",
       "mechanismLabel": "자원 중재",
@@ -31813,8 +33149,8 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
         {
           "at": "2025-04-25T07:43:16Z",
@@ -31841,6 +33177,30 @@
           "url": "https://github.com/raspberrypi/libcamera/issues/267"
         },
         {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Contrast::read",
+          "evidenceId": "ev_c940a2452932",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/contrast.cpp#L41-L59"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function initialise",
+          "evidenceId": "ev_adca4588b596",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/af.h#L51-L186"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct CfgParams",
+          "evidenceId": "ev_72215cbb7e90",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/af.h#L110-L123"
+        },
+        {
           "at": "2026-01-28T17:00:30+01:00",
           "kind": "commit",
           "kindLabel": "Commit",
@@ -31849,18 +33209,34 @@
           "url": "https://github.com/raspberrypi/libcamera/commit/e8054c758c3dd87b4a8a5579398d0ab971ed97b0"
         },
         {
+          "at": "2026-02-12T16:05:34+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function IpaVc4::applyDG",
+          "evidenceId": "ev_bb44474b39d1",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/vc4/vc4.cpp#L367-L385"
+        },
+        {
           "at": "2026-06-02T10:26:01+09:00",
           "kind": "commit",
           "kindLabel": "Commit",
           "title": "libcamera: software_isp: debayer_egl: Demote unsupported format log to Info",
           "evidenceId": "ev_f90240ccbf68",
           "url": "https://github.com/raspberrypi/libcamera/commit/2985ca6ac024ff89a077f088de49f7a69ab40d37"
+        },
+        {
+          "at": "2026-08-03T08:56:48+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function PipelineHandlerPiSP::match",
+          "evidenceId": "ev_e3abf88d39ce",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/rpi/pisp/pisp.cpp#L878-L964"
         }
       ],
       "firstSeenAt": "2025-04-25T07:43:16Z",
-      "lastUpdatedAt": "2026-06-02T10:26:01+09:00",
+      "lastUpdatedAt": "2026-08-03T08:56:48+01:00",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "ISP 처리",
       "mechanismLabel": "적응 제어",
@@ -33235,9 +34611,49 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2024-08-04T21:55:43+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ToneMapping::prepare",
+          "evidenceId": "ev_173fedba4965",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/ipu3/algorithms/tone_mapping.cpp#L60-L74"
+        },
+        {
+          "at": "2024-09-02T17:41:57+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function BlackLevelCorrection::prepare",
+          "evidenceId": "ev_8a1c2d92d965",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/ipu3/algorithms/blc.cpp#L47-L65"
+        },
+        {
+          "at": "2024-10-16T16:00:13+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function libcamera",
+          "evidenceId": "ev_cafb4d9076b5",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/fc_queue.h#L15-L135"
+        },
+        {
+          "at": "2024-10-16T16:00:13+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function namespace",
+          "evidenceId": "ev_e37b8b25a3e2",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/fc_queue.h#L17-L133"
+        },
+        {
+          "at": "2024-10-16T16:00:13+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function clear",
+          "evidenceId": "ev_5db905780b28",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/fc_queue.h#L40-L122"
+        },
         {
           "at": "2025-04-25T07:43:16Z",
           "kind": "issue",
@@ -33271,6 +34687,14 @@
           "url": "https://github.com/raspberrypi/libcamera/commit/e8054c758c3dd87b4a8a5579398d0ab971ed97b0"
         },
         {
+          "at": "2026-02-12T16:05:34+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function IpaVc4::applyDG",
+          "evidenceId": "ev_bb44474b39d1",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/vc4/vc4.cpp#L367-L385"
+        },
+        {
           "at": "2026-05-08T13:57:43+01:00",
           "kind": "commit",
           "kindLabel": "Commit",
@@ -33285,12 +34709,20 @@
           "title": "libcamera: software_isp: debayer_egl: Demote unsupported format log to Info",
           "evidenceId": "ev_f90240ccbf68",
           "url": "https://github.com/raspberrypi/libcamera/commit/2985ca6ac024ff89a077f088de49f7a69ab40d37"
+        },
+        {
+          "at": "2026-08-03T08:56:48+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function PipelineHandlerPiSP::match",
+          "evidenceId": "ev_e3abf88d39ce",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/rpi/pisp/pisp.cpp#L878-L964"
         }
       ],
       "firstSeenAt": "2025-04-25T07:43:16Z",
-      "lastUpdatedAt": "2026-06-02T10:26:01+09:00",
+      "lastUpdatedAt": "2026-08-03T08:56:48+01:00",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "ISP 처리",
       "mechanismLabel": "타이밍 동기화",
@@ -35163,9 +36595,41 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2024-04-10T09:47:37+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AiqUtils::dumpAeResults",
+          "evidenceId": "ev_3ddbe118db14",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/AiqUtils.cpp#L30-L78"
+        },
+        {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Intel3AParameter::dumpParameter",
+          "evidenceId": "ev_2a5d6cdedcab",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/intel3a/Intel3AParameter.cpp#L749-L794"
+        },
+        {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Intel3AParameter::initAeParameter",
+          "evidenceId": "ev_8234eed7edbc",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/3a/intel3a/Intel3AParameter.cpp#L108-L126"
+        },
+        {
+          "at": "2024-08-04T21:55:43+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ToneMapping::process",
+          "evidenceId": "ev_1f6b856ab0bf",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/ipu3/algorithms/tone_mapping.cpp#L87-L114"
+        },
         {
           "at": "2024-12-13T05:20:18Z",
           "kind": "issue",
@@ -35183,18 +36647,50 @@
           "url": "https://github.com/raspberrypi/libcamera/issues/258"
         },
         {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Agc::process",
+          "evidenceId": "ev_05a4ade84266",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/ipu3/algorithms/agc.cpp#L205-L249"
+        },
+        {
           "at": "2026-05-06T15:46:28-06:00",
           "kind": "commit",
           "kindLabel": "Commit",
           "title": "libcamera: software_isp: Normalize statistics sums to 8-bit",
           "evidenceId": "ev_22172a7f70a2",
           "url": "https://github.com/raspberrypi/libcamera/commit/d3e76fe1d1fbe41d3e075212c03007dc9a834dca"
+        },
+        {
+          "at": "2026-06-08T15:16:04+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Agc::process",
+          "evidenceId": "ev_94ed456b1fcc",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rkisp1/algorithms/agc.cpp#L533-L650"
+        },
+        {
+          "at": "2026-06-08T15:16:04+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function AgcChannel::divideUpExposure",
+          "evidenceId": "ev_ac6f4a294232",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/agc_channel.cpp#L881-L954"
+        },
+        {
+          "at": "2026-08-07T08:37:15+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function IpaBase::applyAGC",
+          "evidenceId": "ev_4f18796fa947",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/common/ipa_base.cpp#L1809-L1873"
         }
       ],
       "firstSeenAt": "2024-12-13T05:20:18Z",
-      "lastUpdatedAt": "2026-05-06T15:46:28-06:00",
+      "lastUpdatedAt": "2026-08-07T08:37:15+01:00",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "3A 제어",
       "mechanismLabel": "타이밍 동기화",
@@ -36944,8 +38440,8 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
         {
           "at": "2025-04-25T07:43:16Z",
@@ -36980,18 +38476,42 @@
           "url": "https://github.com/raspberrypi/libcamera/commit/e8054c758c3dd87b4a8a5579398d0ab971ed97b0"
         },
         {
+          "at": "2026-02-12T16:05:34+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function IpaVc4::applyDG",
+          "evidenceId": "ev_bb44474b39d1",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/vc4/vc4.cpp#L367-L385"
+        },
+        {
           "at": "2026-06-02T10:26:01+09:00",
           "kind": "commit",
           "kindLabel": "Commit",
           "title": "libcamera: software_isp: debayer_egl: Demote unsupported format log to Info",
           "evidenceId": "ev_f90240ccbf68",
           "url": "https://github.com/raspberrypi/libcamera/commit/2985ca6ac024ff89a077f088de49f7a69ab40d37"
+        },
+        {
+          "at": "2026-08-03T08:56:48+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function PipelineHandlerPiSP::match",
+          "evidenceId": "ev_e3abf88d39ce",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/rpi/pisp/pisp.cpp#L878-L964"
+        },
+        {
+          "at": "2026-08-07T08:37:15+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function IpaBase::init",
+          "evidenceId": "ev_62094f253695",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/common/ipa_base.cpp#L142-L198"
         }
       ],
       "firstSeenAt": "2025-04-25T07:43:16Z",
-      "lastUpdatedAt": "2026-06-02T10:26:01+09:00",
+      "lastUpdatedAt": "2026-08-07T08:37:15+01:00",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "ISP 처리",
       "mechanismLabel": "Deadline 인식 스케줄링",
@@ -38259,8 +39779,8 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
         {
           "at": "2025-04-25T07:43:16Z",
@@ -38287,6 +39807,14 @@
           "url": "https://github.com/raspberrypi/libcamera/issues/267"
         },
         {
+          "at": "2025-06-26T18:11:36+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function IspParamAdaptor::updatePalDataForVideoPipe",
+          "evidenceId": "ev_1950c340a8e9",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/core/IspParamAdaptor.cpp#L412-L483"
+        },
+        {
           "at": "2026-01-28T17:00:30+01:00",
           "kind": "commit",
           "kindLabel": "Commit",
@@ -38295,18 +39823,34 @@
           "url": "https://github.com/raspberrypi/libcamera/commit/e8054c758c3dd87b4a8a5579398d0ab971ed97b0"
         },
         {
+          "at": "2026-02-12T16:05:34+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function IpaVc4::applyDG",
+          "evidenceId": "ev_bb44474b39d1",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/vc4/vc4.cpp#L367-L385"
+        },
+        {
           "at": "2026-06-02T10:26:01+09:00",
           "kind": "commit",
           "kindLabel": "Commit",
           "title": "libcamera: software_isp: debayer_egl: Demote unsupported format log to Info",
           "evidenceId": "ev_f90240ccbf68",
           "url": "https://github.com/raspberrypi/libcamera/commit/2985ca6ac024ff89a077f088de49f7a69ab40d37"
+        },
+        {
+          "at": "2026-08-03T08:56:48+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function PipelineHandlerPiSP::match",
+          "evidenceId": "ev_e3abf88d39ce",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/rpi/pisp/pisp.cpp#L878-L964"
         }
       ],
       "firstSeenAt": "2025-04-25T07:43:16Z",
-      "lastUpdatedAt": "2026-06-02T10:26:01+09:00",
+      "lastUpdatedAt": "2026-08-03T08:56:48+01:00",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "ISP 처리",
       "mechanismLabel": "Buffer 수명 제어",
@@ -39575,13 +41119,86 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
-      "timeline": [],
-      "firstSeenAt": null,
-      "lastUpdatedAt": null,
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
+      "timeline": [
+        {
+          "at": "2021-11-01T14:58:19+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function icamera",
+          "evidenceId": "ev_3ad744908a2a",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/v4l2/SysCall.h#L33-L86"
+        },
+        {
+          "at": "2021-11-01T14:58:19+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function SysCall",
+          "evidenceId": "ev_35f07d7e3307",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/v4l2/SysCall.h#L35-L84"
+        },
+        {
+          "at": "2025-04-27T14:21:24+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraBuffer::allocateMemory",
+          "evidenceId": "ev_51e2602ab776",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/core/CameraBuffer.cpp#L191-L213"
+        },
+        {
+          "at": "2026-03-02T08:54:13Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function alloc",
+          "evidenceId": "ev_f5517e88c0d0",
+          "url": "https://github.com/raspberrypi/libpisp/blob/f8a5eb2af4c5dea76442785ef42b2fb1aa9e62f9/src/helpers/dma_heap.hpp#L61-L88"
+        },
+        {
+          "at": "2026-04-08T11:55:07+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4l2Device::DequeueBuffer",
+          "evidenceId": "ev_c72f89c3d3b4",
+          "url": "https://github.com/raspberrypi/libpisp/blob/f8a5eb2af4c5dea76442785ef42b2fb1aa9e62f9/src/helpers/v4l2_device.cpp#L241-L275"
+        },
+        {
+          "at": "2026-06-16T13:29:54+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function GstLibcameraSrcState::processRequest",
+          "evidenceId": "ev_a4c7a7132e29",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/gstreamer/gstlibcamerasrc.cpp#L334-L451"
+        },
+        {
+          "at": "2026-06-16T13:29:54+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function gst_libcamera_create_video_pool",
+          "evidenceId": "ev_3ebbcd370b3e",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/gstreamer/gstlibcamerasrc.cpp#L537-L584"
+        },
+        {
+          "at": "2026-07-09T11:30:45-07:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function DmaBufAllocator::allocFromHeap",
+          "evidenceId": "ev_9ba25237f2cb",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/dma_buf_allocator.cpp#L163-L187"
+        },
+        {
+          "at": "2026-07-29T11:55:57+09:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function eGL::createDMABufTexture2D",
+          "evidenceId": "ev_08a513483386",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/egl.cpp#L173-L238"
+        }
+      ],
+      "firstSeenAt": "2021-11-01T14:58:19+08:00",
+      "lastUpdatedAt": "2026-07-29T11:55:57+09:00",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "Buffer 및 메모리 관리",
       "mechanismLabel": "자원 중재",
@@ -40683,8 +42300,8 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
         {
           "at": "2025-04-25T07:43:16Z",
@@ -40711,6 +42328,14 @@
           "url": "https://github.com/raspberrypi/libcamera/issues/267"
         },
         {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function BlackLevelCorrection::init",
+          "evidenceId": "ev_8b986ae35bbe",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rkisp1/algorithms/blc.cpp#L56-L107"
+        },
+        {
           "at": "2026-01-28T17:00:30+01:00",
           "kind": "commit",
           "kindLabel": "Commit",
@@ -40719,18 +42344,50 @@
           "url": "https://github.com/raspberrypi/libcamera/commit/e8054c758c3dd87b4a8a5579398d0ab971ed97b0"
         },
         {
+          "at": "2026-02-12T16:05:34+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function IpaVc4::applyDG",
+          "evidenceId": "ev_bb44474b39d1",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/vc4/vc4.cpp#L367-L385"
+        },
+        {
+          "at": "2026-04-17T14:23:28+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function IPU3CameraData::loadIPA",
+          "evidenceId": "ev_9c744941209e",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/ipu3/ipu3.cpp#L1151-L1199"
+        },
+        {
           "at": "2026-06-02T10:26:01+09:00",
           "kind": "commit",
           "kindLabel": "Commit",
           "title": "libcamera: software_isp: debayer_egl: Demote unsupported format log to Info",
           "evidenceId": "ev_f90240ccbf68",
           "url": "https://github.com/raspberrypi/libcamera/commit/2985ca6ac024ff89a077f088de49f7a69ab40d37"
+        },
+        {
+          "at": "2026-07-29T11:55:57+09:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function SoftwareIsp::SoftwareIsp",
+          "evidenceId": "ev_29f1f109dfef",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/software_isp/software_isp.cpp#L82-L182"
+        },
+        {
+          "at": "2026-08-03T08:56:48+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function PipelineHandlerPiSP::match",
+          "evidenceId": "ev_e3abf88d39ce",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/rpi/pisp/pisp.cpp#L878-L964"
         }
       ],
       "firstSeenAt": "2025-04-25T07:43:16Z",
-      "lastUpdatedAt": "2026-06-02T10:26:01+09:00",
+      "lastUpdatedAt": "2026-08-03T08:56:48+01:00",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "ISP 처리",
       "mechanismLabel": "점진적 성능 저하 대응",
@@ -42258,13 +43915,78 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
-      "timeline": [],
-      "firstSeenAt": null,
-      "lastUpdatedAt": null,
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
+      "timeline": [
+        {
+          "at": "2021-11-01T14:58:19+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function icamera",
+          "evidenceId": "ev_3ad744908a2a",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/v4l2/SysCall.h#L33-L86"
+        },
+        {
+          "at": "2021-11-01T14:58:19+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function SysCall",
+          "evidenceId": "ev_35f07d7e3307",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/v4l2/SysCall.h#L35-L84"
+        },
+        {
+          "at": "2025-04-27T14:21:24+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraBuffer::allocateMemory",
+          "evidenceId": "ev_51e2602ab776",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/core/CameraBuffer.cpp#L191-L213"
+        },
+        {
+          "at": "2025-10-15T17:06:51+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2VideoDevice::queueBuffer",
+          "evidenceId": "ev_897f8ca7428e",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/v4l2_videodevice.cpp#L1648-L1803"
+        },
+        {
+          "at": "2026-03-02T08:54:13Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function alloc",
+          "evidenceId": "ev_f5517e88c0d0",
+          "url": "https://github.com/raspberrypi/libpisp/blob/f8a5eb2af4c5dea76442785ef42b2fb1aa9e62f9/src/helpers/dma_heap.hpp#L61-L88"
+        },
+        {
+          "at": "2026-04-08T11:55:07+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4l2Device::DequeueBuffer",
+          "evidenceId": "ev_c72f89c3d3b4",
+          "url": "https://github.com/raspberrypi/libpisp/blob/f8a5eb2af4c5dea76442785ef42b2fb1aa9e62f9/src/helpers/v4l2_device.cpp#L241-L275"
+        },
+        {
+          "at": "2026-07-09T11:30:45-07:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function DmaBufAllocator::allocFromHeap",
+          "evidenceId": "ev_9ba25237f2cb",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/dma_buf_allocator.cpp#L163-L187"
+        },
+        {
+          "at": "2026-07-29T11:55:57+09:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function eGL::createDMABufTexture2D",
+          "evidenceId": "ev_08a513483386",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/egl.cpp#L173-L238"
+        }
+      ],
+      "firstSeenAt": "2021-11-01T14:58:19+08:00",
+      "lastUpdatedAt": "2026-07-29T11:55:57+09:00",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "Buffer 및 메모리 관리",
       "mechanismLabel": "Deadline 인식 스케줄링",
@@ -43262,9 +44984,25 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2024-11-26T09:58:20Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ClockRecovery",
+          "evidenceId": "ev_bf0292fa3d5c",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/libcamera/internal/clock_recovery.h#L13-L66"
+        },
+        {
+          "at": "2024-11-26T09:58:20Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function libcamera",
+          "evidenceId": "ev_7e57d1dccfe0",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/libcamera/internal/clock_recovery.h#L11-L68"
+        },
         {
           "at": "2025-01-09T09:05:08Z",
           "kind": "issue",
@@ -43272,6 +45010,14 @@
           "title": "Random Gstreamer pipeline crash in libcamerasrc",
           "evidenceId": "ev_bd3da7ef9f7f",
           "url": "https://github.com/raspberrypi/libcamera/issues/228"
+        },
+        {
+          "at": "2025-08-25T20:44:35+09:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ClockRecovery::configure",
+          "evidenceId": "ev_563257252e35",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/clock_recovery.cpp#L66-L76"
         },
         {
           "at": "2025-09-23T21:53:54Z",
@@ -43301,7 +45047,7 @@
       "firstSeenAt": "2025-01-09T09:05:08Z",
       "lastUpdatedAt": "2026-06-30T10:03:25Z",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "카메라 성능",
       "mechanismLabel": "타이밍 동기화",
@@ -44133,9 +45879,81 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2022-08-09T12:22:48+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function validate_icamera_metadata_structure",
+          "evidenceId": "ev_f913118b09aa",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/metadata/icamera_metadata_base.cpp#L280-L410"
+        },
+        {
+          "at": "2023-08-07T16:29:19+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function JpegProcess::doPostProcessing",
+          "evidenceId": "ev_96bf68e94531",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/image_process/PostProcessorBase.cpp#L235-L310"
+        },
+        {
+          "at": "2023-08-07T16:29:19+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function MockCameraHal::streamDqbuf",
+          "evidenceId": "ev_588c6f904dfb",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/hal/MockCameraHal.cpp#L205-L222"
+        },
+        {
+          "at": "2024-08-04T21:55:43+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function validate_and_calculate_camera_metadata_entry_data_size",
+          "evidenceId": "ev_1254005299b6",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/android/metadata/camera_metadata.c#L374-L392"
+        },
+        {
+          "at": "2024-08-04T21:55:43+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function append_camera_metadata",
+          "evidenceId": "ev_879864f751e9",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/android/metadata/camera_metadata.c#L581-L632"
+        },
+        {
+          "at": "2025-03-04T13:42:19+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraDevice::getResultMetadata",
+          "evidenceId": "ev_b9969c7ceb2c",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/android/camera_device.cpp#L1423-L1676"
+        },
+        {
+          "at": "2025-03-04T13:42:19+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraDevice::constructDefaultRequestSettings",
+          "evidenceId": "ev_26857d6bfc3f",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/android/camera_device.cpp#L468-L519"
+        },
+        {
+          "at": "2025-11-03T15:31:01+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraHalManager::getCameraInfo",
+          "evidenceId": "ev_11ff4ca690c2",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/android/camera_hal_manager.cpp#L247-L269"
+        },
+        {
+          "at": "2026-02-12T17:15:59+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraStream::waitFence",
+          "evidenceId": "ev_40050f390d7f",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/android/camera_stream.cpp#L139-L166"
+        },
         {
           "at": "2026-05-07T20:09:10+03:00",
           "kind": "commit",
@@ -44148,7 +45966,7 @@
       "firstSeenAt": "2026-05-07T20:09:10+03:00",
       "lastUpdatedAt": "2026-05-07T20:09:10+03:00",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "Camera HAL",
       "mechanismLabel": "캘리브레이션과 보정",
@@ -45189,9 +47007,17 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2020-10-21T06:15:07+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "enum v4l2_exposure_auto_type",
+          "evidenceId": "ev_44ad48b4444b",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/include/linux/v4l2-controls.h#L689-L695"
+        },
         {
           "at": "2024-03-28T14:40:33Z",
           "kind": "issue",
@@ -45201,12 +47027,60 @@
           "url": "https://github.com/intel/ipu6-camera-hal/issues/93"
         },
         {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CROS_CAMERA_EXPORT",
+          "evidenceId": "ev_384c3730687c",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/modules/v4l2/v4l2_device.h#L260-L290"
+        },
+        {
+          "at": "2025-08-19T05:16:05+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraSensorLegacy::initProperties",
+          "evidenceId": "ev_012b9d57aed3",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/sensor/camera_sensor_legacy.cpp#L556-L651"
+        },
+        {
+          "at": "2025-08-19T05:16:05+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraSensorRaw::initProperties",
+          "evidenceId": "ev_89f76337f47d",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/sensor/camera_sensor_raw.cpp#L561-L658"
+        },
+        {
+          "at": "2025-10-19T15:28:34+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function Af::prepare",
+          "evidenceId": "ev_7d87c5db43dd",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/af.cpp#L775-L822"
+        },
+        {
+          "at": "2026-01-06T09:37:30Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2CameraProxy::ioctl",
+          "evidenceId": "ev_f1f7976bc9f9",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/v4l2/v4l2_camera_proxy.cpp#L857-L959"
+        },
+        {
           "at": "2026-03-23T12:06:27Z",
           "kind": "release",
           "kindLabel": "Release",
           "title": "v1.4.0",
           "evidenceId": "ev_a1ba9f916f49",
           "url": "https://github.com/raspberrypi/libpisp/releases/tag/v1.4.0"
+        },
+        {
+          "at": "2026-03-24T13:32:14+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2Device::updateControlInfo",
+          "evidenceId": "ev_0981f7eb8de5",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/v4l2_device.cpp#L779-L799"
         },
         {
           "at": "2026-08-04T13:37:09Z",
@@ -45220,7 +47094,7 @@
       "firstSeenAt": "2024-03-28T14:40:33Z",
       "lastUpdatedAt": "2026-08-04T13:37:09Z",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "Camera Driver 계층",
       "mechanismLabel": "적응 제어",
@@ -46253,8 +48127,8 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
         {
           "at": "2024-03-28T14:40:33Z",
@@ -46265,12 +48139,68 @@
           "url": "https://github.com/intel/ipu6-camera-hal/issues/93"
         },
         {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CROS_CAMERA_EXPORT",
+          "evidenceId": "ev_384c3730687c",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/modules/v4l2/v4l2_device.h#L260-L290"
+        },
+        {
+          "at": "2024-10-23T09:01:18+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "enum v4l2_subdev_format_whence",
+          "evidenceId": "ev_594bd344fed6",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/v4l2-subdev.h#L25-L28"
+        },
+        {
+          "at": "2025-08-19T05:16:05+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraSensorLegacy::initProperties",
+          "evidenceId": "ev_012b9d57aed3",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/sensor/camera_sensor_legacy.cpp#L556-L651"
+        },
+        {
+          "at": "2025-08-19T05:16:05+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraSensorRaw::initProperties",
+          "evidenceId": "ev_89f76337f47d",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/sensor/camera_sensor_raw.cpp#L561-L658"
+        },
+        {
+          "at": "2026-01-06T09:37:30Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2CameraProxy::tryFormat",
+          "evidenceId": "ev_832ae5424531",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/v4l2/v4l2_camera_proxy.cpp#L344-L372"
+        },
+        {
+          "at": "2026-01-06T09:37:30Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2CameraProxy::ioctl",
+          "evidenceId": "ev_f1f7976bc9f9",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/v4l2/v4l2_camera_proxy.cpp#L857-L959"
+        },
+        {
           "at": "2026-03-23T12:06:27Z",
           "kind": "release",
           "kindLabel": "Release",
           "title": "v1.4.0",
           "evidenceId": "ev_a1ba9f916f49",
           "url": "https://github.com/raspberrypi/libpisp/releases/tag/v1.4.0"
+        },
+        {
+          "at": "2026-03-24T13:32:14+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2Device::updateControlInfo",
+          "evidenceId": "ev_0981f7eb8de5",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/v4l2_device.cpp#L779-L799"
         },
         {
           "at": "2026-08-04T13:37:09Z",
@@ -46284,7 +48214,7 @@
       "firstSeenAt": "2024-03-28T14:40:33Z",
       "lastUpdatedAt": "2026-08-04T13:37:09Z",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "Camera Driver 계층",
       "mechanismLabel": "자원 중재",
@@ -47318,9 +49248,17 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2020-10-21T06:15:07+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "enum v4l2_vp8_num_partitions",
+          "evidenceId": "ev_663e627d009b",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/include/linux/v4l2-controls.h#L574-L580"
+        },
         {
           "at": "2024-03-28T14:40:33Z",
           "kind": "issue",
@@ -47330,12 +49268,84 @@
           "url": "https://github.com/intel/ipu6-camera-hal/issues/93"
         },
         {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CROS_CAMERA_EXPORT",
+          "evidenceId": "ev_384c3730687c",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/modules/v4l2/v4l2_device.h#L260-L290"
+        },
+        {
+          "at": "2025-08-19T05:16:05+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraSensorLegacy::initProperties",
+          "evidenceId": "ev_012b9d57aed3",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/sensor/camera_sensor_legacy.cpp#L556-L651"
+        },
+        {
+          "at": "2025-08-19T05:16:05+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraSensorRaw::initProperties",
+          "evidenceId": "ev_89f76337f47d",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/sensor/camera_sensor_raw.cpp#L561-L658"
+        },
+        {
+          "at": "2026-01-06T09:37:30Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2CameraProxy::ioctl",
+          "evidenceId": "ev_f1f7976bc9f9",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/v4l2/v4l2_camera_proxy.cpp#L857-L959"
+        },
+        {
           "at": "2026-03-23T12:06:27Z",
           "kind": "release",
           "kindLabel": "Release",
           "title": "v1.4.0",
           "evidenceId": "ev_a1ba9f916f49",
           "url": "https://github.com/raspberrypi/libpisp/releases/tag/v1.4.0"
+        },
+        {
+          "at": "2026-03-24T13:32:14+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2Device::updateControlInfo",
+          "evidenceId": "ev_0981f7eb8de5",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/v4l2_device.cpp#L779-L799"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "enum v4l2_vp8_num_partitions",
+          "evidenceId": "ev_92b9fc7562f9",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/v4l2-controls.h#L669-L674"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "enum v4l2_cid_mpeg_video_hevc_loop_filter_mode",
+          "evidenceId": "ev_598c8fcf3cd7",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/v4l2-controls.h#L780-L784"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct v4l2_ctrl_vp8_frame",
+          "evidenceId": "ev_4daf19d92121",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/v4l2-controls.h#L1953-L1982"
+        },
+        {
+          "at": "2026-05-07T18:46:02+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function setEnabled",
+          "evidenceId": "ev_62358cde9df3",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rkisp1/params.h#L146-L156"
         },
         {
           "at": "2026-08-04T13:37:09Z",
@@ -47349,7 +49359,7 @@
       "firstSeenAt": "2024-03-28T14:40:33Z",
       "lastUpdatedAt": "2026-08-04T13:37:09Z",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "Camera Driver 계층",
       "mechanismLabel": "작업 분할",
@@ -48533,8 +50543,8 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
         {
           "at": "2024-03-28T14:40:33Z",
@@ -48545,12 +50555,76 @@
           "url": "https://github.com/intel/ipu6-camera-hal/issues/93"
         },
         {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CROS_CAMERA_EXPORT",
+          "evidenceId": "ev_384c3730687c",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/modules/v4l2/v4l2_device.h#L260-L290"
+        },
+        {
+          "at": "2025-08-19T05:16:05+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraSensorLegacy::initProperties",
+          "evidenceId": "ev_012b9d57aed3",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/sensor/camera_sensor_legacy.cpp#L556-L651"
+        },
+        {
+          "at": "2025-08-19T05:16:05+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraSensorRaw::initProperties",
+          "evidenceId": "ev_89f76337f47d",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/sensor/camera_sensor_raw.cpp#L561-L658"
+        },
+        {
+          "at": "2026-01-06T09:37:30Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2CameraProxy::ioctl",
+          "evidenceId": "ev_f1f7976bc9f9",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/v4l2/v4l2_camera_proxy.cpp#L857-L959"
+        },
+        {
           "at": "2026-03-23T12:06:27Z",
           "kind": "release",
           "kindLabel": "Release",
           "title": "v1.4.0",
           "evidenceId": "ev_a1ba9f916f49",
           "url": "https://github.com/raspberrypi/libpisp/releases/tag/v1.4.0"
+        },
+        {
+          "at": "2026-03-24T13:32:14+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2Device::updateControlInfo",
+          "evidenceId": "ev_0981f7eb8de5",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/v4l2_device.cpp#L779-L799"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "enum v4l2_av1_reference_frame",
+          "evidenceId": "ev_19eb34ba2f38",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/v4l2-controls.h#L3027-L3036"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "enum v4l2_av1_interpolation_filter",
+          "evidenceId": "ev_2b4ae8e7890e",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/v4l2-controls.h#L3426"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct v4l2_ctrl_av1_frame",
+          "evidenceId": "ev_8800490a0757",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/v4l2-controls.h#L3411-L3440"
         },
         {
           "at": "2026-08-04T13:37:09Z",
@@ -48564,7 +50638,7 @@
       "firstSeenAt": "2024-03-28T14:40:33Z",
       "lastUpdatedAt": "2026-08-04T13:37:09Z",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "Camera Driver 계층",
       "mechanismLabel": "캘리브레이션과 보정",
@@ -49700,8 +51774,8 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
         {
           "at": "2024-03-28T14:40:33Z",
@@ -49712,12 +51786,84 @@
           "url": "https://github.com/intel/ipu6-camera-hal/issues/93"
         },
         {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CROS_CAMERA_EXPORT",
+          "evidenceId": "ev_384c3730687c",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/modules/v4l2/v4l2_device.h#L260-L290"
+        },
+        {
+          "at": "2025-08-19T05:16:05+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraSensorLegacy::initProperties",
+          "evidenceId": "ev_012b9d57aed3",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/sensor/camera_sensor_legacy.cpp#L556-L651"
+        },
+        {
+          "at": "2025-08-19T05:16:05+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraSensorRaw::initProperties",
+          "evidenceId": "ev_89f76337f47d",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/sensor/camera_sensor_raw.cpp#L561-L658"
+        },
+        {
+          "at": "2025-10-15T17:06:51+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2VideoDevice::dequeueBuffer",
+          "evidenceId": "ev_5c5fb0c79d65",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/v4l2_videodevice.cpp#L1832-L1979"
+        },
+        {
+          "at": "2026-01-06T09:37:30Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2CameraProxy::ioctl",
+          "evidenceId": "ev_f1f7976bc9f9",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/v4l2/v4l2_camera_proxy.cpp#L857-L959"
+        },
+        {
+          "at": "2026-02-12T16:05:34+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function DelayedControls::applyControls",
+          "evidenceId": "ev_91273288db67",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/delayed_controls.cpp#L232-L283"
+        },
+        {
           "at": "2026-03-23T12:06:27Z",
           "kind": "release",
           "kindLabel": "Release",
           "title": "v1.4.0",
           "evidenceId": "ev_a1ba9f916f49",
           "url": "https://github.com/raspberrypi/libpisp/releases/tag/v1.4.0"
+        },
+        {
+          "at": "2026-03-24T13:32:14+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2Device::updateControlInfo",
+          "evidenceId": "ev_0981f7eb8de5",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/v4l2_device.cpp#L779-L799"
+        },
+        {
+          "at": "2026-05-04T02:20:11+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "struct v4l2_event_motion_det",
+          "evidenceId": "ev_3ee74a2877f4",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/linux/videodev2.h#L2548-L2552"
+        },
+        {
+          "at": "2026-05-08T13:57:41+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function DelayedControls::applyControls",
+          "evidenceId": "ev_500fe206ec17",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/rpi/common/delayed_controls.cpp#L248-L299"
         },
         {
           "at": "2026-08-04T13:37:09Z",
@@ -49731,7 +51877,7 @@
       "firstSeenAt": "2024-03-28T14:40:33Z",
       "lastUpdatedAt": "2026-08-04T13:37:09Z",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "Camera Driver 계층",
       "mechanismLabel": "타이밍 동기화",
@@ -50859,9 +53005,25 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
+        {
+          "at": "2020-10-21T06:15:07+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function icamera_metadata_enum_snprint",
+          "evidenceId": "ev_d9607eae5f35",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/metadata/icamera_metadata_tag_info.c#L532-L2696"
+        },
+        {
+          "at": "2024-11-26T09:58:20Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function libcamera",
+          "evidenceId": "ev_7e57d1dccfe0",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/libcamera/internal/clock_recovery.h#L11-L68"
+        },
         {
           "at": "2025-01-09T09:05:08Z",
           "kind": "issue",
@@ -50869,6 +53031,14 @@
           "title": "Random Gstreamer pipeline crash in libcamerasrc",
           "evidenceId": "ev_bd3da7ef9f7f",
           "url": "https://github.com/raspberrypi/libcamera/issues/228"
+        },
+        {
+          "at": "2025-06-26T18:11:36+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraParser::handleStaticMetaData",
+          "evidenceId": "ev_964852de7251",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/platformdata/CameraParser.cpp#L1871-L2042"
         },
         {
           "at": "2025-09-23T21:53:54Z",
@@ -50898,7 +53068,7 @@
       "firstSeenAt": "2025-01-09T09:05:08Z",
       "lastUpdatedAt": "2026-06-30T10:03:25Z",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "카메라 성능",
       "mechanismLabel": "캘리브레이션과 보정",
@@ -51700,8 +53870,8 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "NEW",
-      "statusReason": "이 기술 영역과 메커니즘 조합을 처음 발견했습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
         {
           "at": "2024-03-28T14:40:33Z",
@@ -51712,12 +53882,84 @@
           "url": "https://github.com/intel/ipu6-camera-hal/issues/93"
         },
         {
+          "at": "2024-07-18T14:37:27+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CROS_CAMERA_EXPORT",
+          "evidenceId": "ev_384c3730687c",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/modules/v4l2/v4l2_device.h#L260-L290"
+        },
+        {
+          "at": "2025-08-19T05:16:05+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraSensorLegacy::initProperties",
+          "evidenceId": "ev_012b9d57aed3",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/sensor/camera_sensor_legacy.cpp#L556-L651"
+        },
+        {
+          "at": "2025-08-19T05:16:05+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraSensorRaw::initProperties",
+          "evidenceId": "ev_89f76337f47d",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/sensor/camera_sensor_raw.cpp#L561-L658"
+        },
+        {
+          "at": "2025-10-15T17:06:51+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2VideoDevice::streamOn",
+          "evidenceId": "ev_d6f9a33c0345",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/v4l2_videodevice.cpp#L1990-L2008"
+        },
+        {
+          "at": "2025-10-15T17:06:51+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2VideoDevice::streamOff",
+          "evidenceId": "ev_bccc1425ba1d",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/v4l2_videodevice.cpp#L2023-L2056"
+        },
+        {
+          "at": "2025-10-15T17:06:51+03:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2VideoDevice::watchdogExpired",
+          "evidenceId": "ev_d687678f62b0",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/v4l2_videodevice.cpp#L2094-L2100"
+        },
+        {
+          "at": "2026-01-06T09:37:30Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2CameraProxy::ioctl",
+          "evidenceId": "ev_f1f7976bc9f9",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/v4l2/v4l2_camera_proxy.cpp#L857-L959"
+        },
+        {
           "at": "2026-03-23T12:06:27Z",
           "kind": "release",
           "kindLabel": "Release",
           "title": "v1.4.0",
           "evidenceId": "ev_a1ba9f916f49",
           "url": "https://github.com/raspberrypi/libpisp/releases/tag/v1.4.0"
+        },
+        {
+          "at": "2026-03-24T13:32:14+01:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function V4L2Device::updateControlInfo",
+          "evidenceId": "ev_0981f7eb8de5",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/v4l2_device.cpp#L779-L799"
+        },
+        {
+          "at": "2026-07-27T13:08:52+02:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function State",
+          "evidenceId": "ev_25b0af97ebc3",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/libcamera/internal/v4l2_videodevice.h#L241-L293"
         },
         {
           "at": "2026-08-04T13:37:09Z",
@@ -51731,7 +53973,7 @@
       "firstSeenAt": "2024-03-28T14:40:33Z",
       "lastUpdatedAt": "2026-08-04T13:37:09Z",
       "typeLabel": "Patent 후보",
-      "statusLabel": "신규",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "Camera Driver 계층",
       "mechanismLabel": "점진적 성능 저하 대응",
@@ -52539,8 +54781,8 @@
       "title": "Computational Photography: 프레임 정합성 결함 대응을 위한 예측",
       "type": "patent+paper",
       "typeLabel": "Patent + Paper 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted",
       "verdictLabel": "통과",
       "topic": "computational-photography",
@@ -52571,7 +54813,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-03-23T14:59:14Z",
+      "lastUpdatedAt": "2026-05-18T15:22:27+01:00",
       "firstSeenAt": "2026-03-23T14:59:14Z"
     },
     {
@@ -52580,8 +54822,8 @@
       "title": "Computational Photography: 프레임 정합성 결함 대응을 위한 적응 제어",
       "type": "patent+paper",
       "typeLabel": "Patent + Paper 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted",
       "verdictLabel": "통과",
       "topic": "computational-photography",
@@ -52612,7 +54854,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-03-23T14:59:14Z",
+      "lastUpdatedAt": "2026-05-18T15:22:27+01:00",
       "firstSeenAt": "2026-03-23T14:59:14Z"
     },
     {
@@ -52621,8 +54863,8 @@
       "title": "3A 제어: 프레임 정합성 결함 대응을 위한 적응 제어",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted",
       "verdictLabel": "통과",
       "topic": "3a",
@@ -52653,7 +54895,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-05-06T15:46:28-06:00",
+      "lastUpdatedAt": "2026-08-07T08:37:15+01:00",
       "firstSeenAt": "2024-12-13T05:20:18Z"
     },
     {
@@ -52662,8 +54904,8 @@
       "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 closed-loop 제어",
       "type": "patent+paper",
       "typeLabel": "Patent + Paper 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "sensor-control",
@@ -52703,8 +54945,8 @@
       "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 협상",
       "type": "patent+paper",
       "typeLabel": "Patent + Paper 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "sensor-control",
@@ -52744,8 +54986,8 @@
       "title": "Computational Photography: 프레임 정합성 결함 대응을 위한 watermark 기반 buffer 제어",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted",
       "verdictLabel": "통과",
       "topic": "computational-photography",
@@ -52776,7 +55018,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-03-23T14:59:14Z",
+      "lastUpdatedAt": "2026-05-18T15:22:27+01:00",
       "firstSeenAt": "2026-03-23T14:59:14Z"
     },
     {
@@ -52785,8 +55027,8 @@
       "title": "Computational Photography: 프레임 정합성 결함 대응을 위한 보간",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted",
       "verdictLabel": "통과",
       "topic": "computational-photography",
@@ -52817,7 +55059,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-03-23T14:59:14Z",
+      "lastUpdatedAt": "2026-05-18T15:22:27+01:00",
       "firstSeenAt": "2026-03-23T14:59:14Z"
     },
     {
@@ -52826,8 +55068,8 @@
       "title": "3A 제어: 확장성 한계 대응을 위한 보간",
       "type": "patent+paper",
       "typeLabel": "Patent + Paper 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted",
       "verdictLabel": "통과",
       "topic": "3a",
@@ -52858,7 +55100,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-07-10T11:12:38+01:00",
+      "lastUpdatedAt": "2026-08-07T08:37:15+01:00",
       "firstSeenAt": "2024-12-13T05:20:18Z"
     },
     {
@@ -52867,8 +55109,8 @@
       "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 보간",
       "type": "patent+paper",
       "typeLabel": "Patent + Paper 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted",
       "verdictLabel": "통과",
       "topic": "isp",
@@ -52908,8 +55150,8 @@
       "title": "Sensor 동기화: 타이밍 편차 대응을 위한 예측",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "sensor-sync",
@@ -52949,8 +55191,8 @@
       "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 협상",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "camera-hal",
@@ -52990,8 +55232,8 @@
       "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "sensor-control",
@@ -53031,8 +55273,8 @@
       "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 보정",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "sensor-control",
@@ -53072,8 +55314,8 @@
       "title": "Sensor 동기화: 타이밍 편차 대응을 위한 시퀀스 번호 부여",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "sensor-sync",
@@ -53113,8 +55355,8 @@
       "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 예측",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "camera-driver",
@@ -53155,8 +55397,8 @@
       "title": "3A 제어: 프레임 정합성 결함 대응을 위한 예측",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "3a",
@@ -53187,7 +55429,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-05-06T15:46:28-06:00",
+      "lastUpdatedAt": "2026-08-07T08:37:15+01:00",
       "firstSeenAt": "2024-12-13T05:20:18Z"
     },
     {
@@ -53196,8 +55438,8 @@
       "title": "3A 제어: 프레임 정합성 결함 대응을 위한 처리율 제한",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "3a",
@@ -53228,7 +55470,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-05-06T15:46:28-06:00",
+      "lastUpdatedAt": "2026-08-07T08:37:15+01:00",
       "firstSeenAt": "2024-12-13T05:20:18Z"
     },
     {
@@ -53237,8 +55479,8 @@
       "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 accelerator 오프로딩",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "isp",
@@ -53268,7 +55510,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-06-02T10:26:01+09:00",
+      "lastUpdatedAt": "2026-08-03T08:56:48+01:00",
       "firstSeenAt": "2025-04-25T07:43:16Z"
     },
     {
@@ -53277,8 +55519,8 @@
       "title": "카메라 성능: 프레임 정합성 결함 대응을 위한 협상",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "performance",
@@ -53317,8 +55559,8 @@
       "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 hysteresis 감쇠",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "isp",
@@ -53348,7 +55590,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-06-02T10:26:01+09:00",
+      "lastUpdatedAt": "2026-08-03T08:56:48+01:00",
       "firstSeenAt": "2025-04-25T07:43:16Z"
     },
     {
@@ -53357,8 +55599,8 @@
       "title": "ISP 처리: 자원 고갈 대응을 위한 시퀀스 번호 부여",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "isp",
@@ -53388,7 +55630,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-06-02T10:26:01+09:00",
+      "lastUpdatedAt": "2026-08-03T08:56:48+01:00",
       "firstSeenAt": "2025-04-25T07:43:16Z"
     },
     {
@@ -53397,8 +55639,8 @@
       "title": "3A 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "3a",
@@ -53429,7 +55671,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-05-06T15:46:28-06:00",
+      "lastUpdatedAt": "2026-08-07T08:37:15+01:00",
       "firstSeenAt": "2024-12-13T05:20:18Z"
     },
     {
@@ -53438,8 +55680,8 @@
       "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 처리율 제한",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "isp",
@@ -53469,7 +55711,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-06-02T10:26:01+09:00",
+      "lastUpdatedAt": "2026-08-07T08:37:15+01:00",
       "firstSeenAt": "2025-04-25T07:43:16Z"
     },
     {
@@ -53478,8 +55720,8 @@
       "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 ring buffer 운용",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "isp",
@@ -53510,7 +55752,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-06-02T10:26:01+09:00",
+      "lastUpdatedAt": "2026-08-03T08:56:48+01:00",
       "firstSeenAt": "2025-04-25T07:43:16Z"
     },
     {
@@ -53519,8 +55761,8 @@
       "title": "Buffer 및 메모리 관리: 프레임 정합성 결함 대응을 위한 협상",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "memory-buffer",
@@ -53552,8 +55794,8 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": null,
-      "firstSeenAt": null
+      "lastUpdatedAt": "2026-07-29T11:55:57+09:00",
+      "firstSeenAt": "2021-11-01T14:58:19+08:00"
     },
     {
       "id": "cand_8024ee726221",
@@ -53561,8 +55803,8 @@
       "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 fallback 경로",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "isp",
@@ -53592,7 +55834,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-06-02T10:26:01+09:00",
+      "lastUpdatedAt": "2026-08-03T08:56:48+01:00",
       "firstSeenAt": "2025-04-25T07:43:16Z"
     },
     {
@@ -53601,8 +55843,8 @@
       "title": "Buffer 및 메모리 관리: 타이밍 편차 대응을 위한 요청 병합",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "memory-buffer",
@@ -53634,8 +55876,8 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": null,
-      "firstSeenAt": null
+      "lastUpdatedAt": "2026-07-29T11:55:57+09:00",
+      "firstSeenAt": "2021-11-01T14:58:19+08:00"
     },
     {
       "id": "cand_0a7e2de377db",
@@ -53643,8 +55885,8 @@
       "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "performance",
@@ -53683,8 +55925,8 @@
       "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 특성화",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "camera-hal",
@@ -53724,8 +55966,8 @@
       "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 적응 제어",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "camera-driver",
@@ -53766,8 +56008,8 @@
       "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 협상",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "camera-driver",
@@ -53808,8 +56050,8 @@
       "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 분할",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "camera-driver",
@@ -53850,8 +56092,8 @@
       "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 보간",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "camera-driver",
@@ -53892,8 +56134,8 @@
       "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 시퀀스 번호 부여",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "camera-driver",
@@ -53934,8 +56176,8 @@
       "title": "카메라 성능: 타이밍 편차 대응을 위한 보정",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "performance",
@@ -53975,8 +56217,8 @@
       "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 watchdog 복구",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "camera-driver",

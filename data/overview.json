@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T12:53:24.001744+00:00",
+  "generatedAt": "2026-09-24T13:06:43.693505+00:00",
   "dryRun": false,
   "organizationCount": 2,
   "organizations": [
@@ -7,16 +7,16 @@
     "raspberrypi"
   ],
   "repositoryCount": 3,
-  "lastScanTime": "2026-09-24T12:53:22.838961+00:00",
+  "lastScanTime": "2026-09-24T13:06:43.101838+00:00",
   "evidenceCount": 411,
   "candidateCount": 36,
   "counts": {
-    "new": 36,
+    "new": 0,
     "strengthened": 0,
     "weakened": 0,
     "updated": 0,
     "needsVerification": 0,
-    "unchanged": 0,
+    "unchanged": 36,
     "patent": 30,
     "paper": 0,
     "patentAndPaper": 6,
@@ -67,8 +67,8 @@
       "title": "Computational Photography: 프레임 정합성 결함 대응을 위한 예측",
       "type": "patent+paper",
       "typeLabel": "Patent + Paper 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted",
       "verdictLabel": "통과",
       "topic": "computational-photography",
@@ -99,7 +99,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-03-23T14:59:14Z",
+      "lastUpdatedAt": "2026-05-18T15:22:27+01:00",
       "firstSeenAt": "2026-03-23T14:59:14Z"
     },
     {
@@ -108,8 +108,8 @@
       "title": "Computational Photography: 프레임 정합성 결함 대응을 위한 적응 제어",
       "type": "patent+paper",
       "typeLabel": "Patent + Paper 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted",
       "verdictLabel": "통과",
       "topic": "computational-photography",
@@ -140,7 +140,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-03-23T14:59:14Z",
+      "lastUpdatedAt": "2026-05-18T15:22:27+01:00",
       "firstSeenAt": "2026-03-23T14:59:14Z"
     },
     {
@@ -149,8 +149,8 @@
       "title": "3A 제어: 프레임 정합성 결함 대응을 위한 적응 제어",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted",
       "verdictLabel": "통과",
       "topic": "3a",
@@ -181,7 +181,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-05-06T15:46:28-06:00",
+      "lastUpdatedAt": "2026-08-07T08:37:15+01:00",
       "firstSeenAt": "2024-12-13T05:20:18Z"
     },
     {
@@ -190,8 +190,8 @@
       "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 closed-loop 제어",
       "type": "patent+paper",
       "typeLabel": "Patent + Paper 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "sensor-control",
@@ -231,8 +231,8 @@
       "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 협상",
       "type": "patent+paper",
       "typeLabel": "Patent + Paper 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "sensor-control",
@@ -272,8 +272,8 @@
       "title": "Computational Photography: 프레임 정합성 결함 대응을 위한 watermark 기반 buffer 제어",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted",
       "verdictLabel": "통과",
       "topic": "computational-photography",
@@ -304,7 +304,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-03-23T14:59:14Z",
+      "lastUpdatedAt": "2026-05-18T15:22:27+01:00",
       "firstSeenAt": "2026-03-23T14:59:14Z"
     },
     {
@@ -313,8 +313,8 @@
       "title": "Computational Photography: 프레임 정합성 결함 대응을 위한 보간",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted",
       "verdictLabel": "통과",
       "topic": "computational-photography",
@@ -345,7 +345,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-03-23T14:59:14Z",
+      "lastUpdatedAt": "2026-05-18T15:22:27+01:00",
       "firstSeenAt": "2026-03-23T14:59:14Z"
     },
     {
@@ -354,8 +354,8 @@
       "title": "3A 제어: 확장성 한계 대응을 위한 보간",
       "type": "patent+paper",
       "typeLabel": "Patent + Paper 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted",
       "verdictLabel": "통과",
       "topic": "3a",
@@ -386,7 +386,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-07-10T11:12:38+01:00",
+      "lastUpdatedAt": "2026-08-07T08:37:15+01:00",
       "firstSeenAt": "2024-12-13T05:20:18Z"
     }
   ],
@@ -396,28 +396,28 @@
       "technologyLabel": "ISP 처리",
       "evidenceCount": 327,
       "candidateCount": 7,
-      "newCandidates": 7
+      "newCandidates": 0
     },
     {
       "technology": "camera-driver",
       "technologyLabel": "Camera Driver 계층",
       "evidenceCount": 148,
       "candidateCount": 7,
-      "newCandidates": 7
+      "newCandidates": 0
     },
     {
       "technology": "3a",
       "technologyLabel": "3A 제어",
       "evidenceCount": 134,
       "candidateCount": 5,
-      "newCandidates": 5
+      "newCandidates": 0
     },
     {
       "technology": "sensor-control",
       "technologyLabel": "Sensor 제어",
       "evidenceCount": 92,
       "candidateCount": 4,
-      "newCandidates": 4
+      "newCandidates": 0
     },
     {
       "technology": "camera-framework",
@@ -431,14 +431,14 @@
       "technologyLabel": "카메라 성능",
       "evidenceCount": 46,
       "candidateCount": 3,
-      "newCandidates": 3
+      "newCandidates": 0
     },
     {
       "technology": "memory-buffer",
       "technologyLabel": "Buffer 및 메모리 관리",
       "evidenceCount": 32,
       "candidateCount": 2,
-      "newCandidates": 2
+      "newCandidates": 0
     },
     {
       "technology": "image-quality",
@@ -459,12 +459,12 @@
       "technologyLabel": "Camera HAL",
       "evidenceCount": 22,
       "candidateCount": 2,
-      "newCandidates": 2
+      "newCandidates": 0
     }
   ],
   "scanHealth": {
-    "repositoriesOk": 3,
-    "repositoriesPartial": 0,
+    "repositoriesOk": 0,
+    "repositoriesPartial": 3,
     "repositoriesError": 0,
     "apiProblemCount": 0
   }

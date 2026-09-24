@@ -27,7 +27,7 @@
       "recheck_conditions": [
         "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
       ],
-      "rejected_at": "2026-09-24T12:53:23.544713+00:00",
+      "rejected_at": "2026-09-24T13:06:43.238553+00:00",
       "scores": {
         "evidence_strength": {
           "value": 52.0,
@@ -138,7 +138,7 @@
           ]
         }
       },
-      "timesSeen": 1,
+      "timesSeen": 2,
       "recheckConditions": [
         "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
       ],
@@ -171,7 +171,7 @@
       "recheck_conditions": [
         "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
       ],
-      "rejected_at": "2026-09-24T12:53:23.544713+00:00",
+      "rejected_at": "2026-09-24T13:06:43.238553+00:00",
       "scores": {
         "evidence_strength": {
           "value": 48.0,
@@ -277,7 +277,7 @@
           ]
         }
       },
-      "timesSeen": 1,
+      "timesSeen": 2,
       "recheckConditions": [
         "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
       ],
@@ -312,7 +312,7 @@
       "recheck_conditions": [
         "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
       ],
-      "rejected_at": "2026-09-24T12:53:23.544713+00:00",
+      "rejected_at": "2026-09-24T13:06:43.238553+00:00",
       "scores": {
         "evidence_strength": {
           "value": 52.0,
@@ -418,7 +418,7 @@
           ]
         }
       },
-      "timesSeen": 1,
+      "timesSeen": 2,
       "recheckConditions": [
         "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
       ],
@@ -449,7 +449,7 @@
       "recheck_conditions": [
         "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
       ],
-      "rejected_at": "2026-09-24T12:53:23.544713+00:00",
+      "rejected_at": "2026-09-24T13:06:43.238553+00:00",
       "scores": {
         "evidence_strength": {
           "value": 36.0,
@@ -550,7 +550,7 @@
           ]
         }
       },
-      "timesSeen": 1,
+      "timesSeen": 2,
       "recheckConditions": [
         "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
       ],
@@ -581,7 +581,7 @@
       "recheck_conditions": [
         "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
       ],
-      "rejected_at": "2026-09-24T12:53:23.544713+00:00",
+      "rejected_at": "2026-09-24T13:06:43.238553+00:00",
       "scores": {
         "evidence_strength": {
           "value": 36.0,
@@ -677,7 +677,7 @@
           ]
         }
       },
-      "timesSeen": 1,
+      "timesSeen": 2,
       "recheckConditions": [
         "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
       ],
