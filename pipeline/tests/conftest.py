@@ -7,7 +7,6 @@ API, no network, no rate limit.
 
 from __future__ import annotations
 
-import shutil
 import subprocess
 from pathlib import Path
 
@@ -65,17 +64,3 @@ def config_path() -> Path:
     if not path.exists():
         pytest.skip("config/sources.yaml is not present")
     return path
-
-
-@pytest.fixture
-def run_dirs(tmp_path: Path) -> dict[str, Path]:
-    """Isolated cache, data and database locations for a pipeline run."""
-    dirs = {
-        "cache": tmp_path / "cache",
-        "data": tmp_path / "data",
-        "db": tmp_path / "cache" / "candidates.sqlite3",
-    }
-    dirs["cache"].mkdir(parents=True, exist_ok=True)
-    dirs["data"].mkdir(parents=True, exist_ok=True)
-    yield dirs
-    shutil.rmtree(tmp_path, ignore_errors=True)

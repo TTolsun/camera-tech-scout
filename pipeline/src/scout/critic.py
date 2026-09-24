@@ -30,23 +30,32 @@ from .util import log, stable_id
 # These patterns are deliberately not anchored to a line. Evidence snippets are
 # whitespace-collapsed into a single line, so a line-anchored pattern would
 # never match anything the pipeline actually produces.
+# The terminator is optional: snippets are truncated at a fixed length, so the
+# semicolon of the last assignment is often past the cut.
 _CONSTANT_ASSIGN_RE = re.compile(
-    r"[A-Za-z_]\w*\s*=\s*[-+]?\d+(?:\.\d+)?[fuUlL]?\s*[;,)]"
+    r"[A-Za-z_]\w*\s*=\s*[-+]?\d+(?:\.\d+)?[fuUlL]?\s*(?:[;,)]|$)",
+    re.MULTILINE,
 )
 # Anything that makes the code more than a table of values: control flow, a
 # comparison, a compound assignment, or arithmetic between names.
 #
-# An evidence snippet mixes the doc comment with the body, so a bare keyword is
-# not enough: the English word "for" in "for auto exposure" is not a loop.
-# Control flow therefore has to carry its parenthesis. A plain `return name;` is
-# deliberately not logic either, since returning a stored constant is exactly
-# what this rule is trying to catch.
+# An evidence snippet mixes the doc comment with the body, so neither a bare
+# keyword nor a bare operator character is enough to conclude "this is code":
+#
+#   - the English word "for" in "for auto exposure" is not a loop, so control
+#     flow has to carry its parenthesis;
+#   - the slash in "src/foo.cpp", "read/write" and "3A/AE" is not a division, so
+#     arithmetic requires whitespace on both sides of the operator, which prose
+#     slashes and hyphenated words do not have;
+#   - a plain `return name;` is deliberately not logic, since returning a stored
+#     constant is exactly what this rule is trying to catch.
 _LOGIC_RE = re.compile(
-    r"\b(?:if|for|while|switch|catch)\s*\("      # control flow, with its paren
-    r"|[<>!=]="                                  # comparison
-    r"|&&|\|\|"                                  # logical operators
-    r"|[+\-*/%]="                                # compound assignment
-    r"|[A-Za-z_)\]]\s*[+*/]\s*[A-Za-z_(\d]"      # arithmetic between terms
+    r"\b(?:if|for|while|switch|catch)\s*\("          # control flow, with its paren
+    r"|[<>!=]="                                      # comparison
+    r"|&&|\|\|"                                      # logical operators
+    r"|[+\-*/%]="                                    # compound assignment
+    r"|[A-Za-z_)\]\d]\s+[+*/]\s+[A-Za-z_(\d]"        # spaced arithmetic: a + b
+    r"|[A-Za-z_)\]]\s*\*\s*[A-Za-z_(]"               # pointer arithmetic: a*b
 )
 _TUNING_WORDS = re.compile(
     r"\b(threshold|constant|magic number|tweak|tune[d]?|tuning|adjust the value|"
@@ -169,11 +178,20 @@ def _r4_not_parameter_tuning(candidate: Candidate, items: list[Evidence]):
             "조정을 이야기합니다. 이는 메커니즘이 아니라 parameter tuning입니다.",
             [i.id for i in tuning_only[:6]],
         )
+    if len(tuning_only) == len(code):
+        # Everything looks like tuning, but nothing in the surrounding text says
+        # values were being adjusted, so the rule withholds judgement.
+        return (
+            True,
+            f"코드 증거 {len(code)}건이 모두 상수 대입뿐이지만, 값 조정을 이야기하는 서술이 "
+            f"없어 parameter tuning으로 단정하지 않았습니다.",
+            [i.id for i in tuning_only[:6]],
+        )
     if tuning_only:
         return (
             True,
-            f"코드 증거 {len(code)}건 중 {len(tuning_only)}건이 상수 대입뿐이지만, 나머지에는 "
-            f"제어 흐름이나 연산이 존재합니다.",
+            f"코드 증거 {len(code)}건 중 {len(tuning_only)}건이 상수 대입뿐이지만, 나머지 "
+            f"{len(code) - len(tuning_only)}건에는 제어 흐름이나 연산이 존재합니다.",
             [],
         )
     return True, "코드 증거에 상수 대입 이외의 로직이 존재합니다.", []

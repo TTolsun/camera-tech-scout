@@ -217,6 +217,59 @@ def test_r4_fires_on_constant_assignment_with_tuning_talk():
     assert "parameter tuning" in detail
 
 
+@pytest.mark.parametrize(
+    "comment",
+    [
+        "See src/sensor_sync.cpp for the reference implementation.",
+        "Controls read/write access to the tuning table.",
+        "Shared by the input/output buffers.",
+        "Used by the 3A/AE convergence loop.",
+    ],
+)
+def test_r4_is_not_silenced_by_a_slash_in_prose(comment):
+    """A slash in a comment is not division.
+
+    The first attempt at this rule treated any `a/b` as arithmetic, which meant
+    a doc comment mentioning a file path was enough to classify the record as
+    logic and silence R4 again.
+    """
+    evidence = [
+        make_evidence(
+            id="ev_code",
+            snippet=f"{comment} Adaptive metering threshold. int threshold = 96;",
+        ),
+    ]
+    passed, _ = check("R4", evidence)
+
+    assert not passed, f"a prose slash must not count as arithmetic: {comment}"
+
+
+def test_r4_recognises_an_assignment_cut_off_by_truncation():
+    """Snippets are truncated, so the trailing semicolon is often missing."""
+    evidence = [
+        make_evidence(
+            id="ev_code",
+            snippet="Adaptive metering threshold for auto exposure. int threshold = 96",
+        ),
+    ]
+    passed, _ = check("R4", evidence)
+
+    assert not passed
+
+
+def test_r4_reports_no_remainder_when_there_is_none():
+    """The detail text must not claim records that do not exist."""
+    evidence = [
+        make_evidence(id="ev_a", snippet="int kGain = 4;"),
+        make_evidence(id="ev_b", snippet="int kOffset = 8;"),
+    ]
+    passed, detail = check("R4", evidence)
+
+    assert passed, "without tuning wording the rule withholds judgement"
+    assert "나머지" not in detail, detail
+    assert "모두 상수 대입" in detail
+
+
 def test_r4_stays_quiet_when_there_is_logic():
     evidence = [
         make_evidence(
