@@ -331,7 +331,8 @@ def _signal_summary(item: Evidence) -> list[dict[str, Any]]:
         if signal.term not in grouped[signal.kind]:
             grouped[signal.kind].append(signal.term)
     label = {"domain": "기술 영역", "problem": "문제", "mechanism": "메커니즘",
-             "effect": "효과", "evaluation": "평가", "triviality": "사소한 변경"}
+             "effect": "효과", "evaluation": "평가", "triviality": "사소한 변경",
+             "prior": "제거된 이전 방식"}
     return [
         {"kind": kind, "label": label.get(kind, kind), "terms": terms[:8]}
         for kind, terms in grouped.items()

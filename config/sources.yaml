@@ -89,6 +89,12 @@ defaults:
     max_issues: 120
     max_releases: 30
 
+    # Diff reading costs one `git show` per commit. Only the newest
+    # `max_diff_commits` commits are read, and each contributes at most
+    # `max_diff_lines` changed lines, so one refactor cannot dominate a scan.
+    max_diff_commits: 150
+    max_diff_lines: 80
+
 engine:
   # `rules` - deterministic, evidence-anchored analysis. Always executed.
   # `llm`   - additionally run the model layer on top of the rules output. The

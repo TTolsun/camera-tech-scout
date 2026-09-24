@@ -31,6 +31,10 @@ class Limits:
     max_pull_requests: int = 120
     max_issues: int = 120
     max_releases: int = 30
+    # Reading a diff costs one `git show` per commit, so it is budgeted
+    # separately from the commit list itself.
+    max_diff_commits: int = 150
+    max_diff_lines: int = 80
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "Limits":

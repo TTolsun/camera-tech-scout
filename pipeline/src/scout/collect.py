@@ -10,7 +10,7 @@ import shutil
 import subprocess
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 from .util import log
 
@@ -60,6 +60,33 @@ def _run(args: list[str], cwd: Path | None = None, timeout: int = 900) -> tuple[
         text=True, encoding="utf-8", errors="replace", timeout=timeout, check=False,
     )
     return result.returncode, result.stdout or "", result.stderr or ""
+
+
+@dataclass
+class DiffText:
+    """The lines a commit removed and the lines it added.
+
+    Removed lines are the interesting half: they are what the author replaced,
+    which is the only place the previous behaviour is recorded when the commit
+    message does not describe it.
+    """
+
+    sha: str
+    removed: list[str] = field(default_factory=list)
+    added: list[str] = field(default_factory=list)
+    paths: list[str] = field(default_factory=list)
+    truncated: bool = False
+
+    @property
+    def removed_text(self) -> str:
+        return "\n".join(self.removed)
+
+    @property
+    def added_text(self) -> str:
+        return "\n".join(self.added)
+
+    def __bool__(self) -> bool:
+        return bool(self.removed or self.added)
 
 
 @dataclass
@@ -154,6 +181,63 @@ class GitRepo:
 
     def is_shallow(self) -> bool:
         return (self.path / ".git" / "shallow").exists()
+
+    # ------------------------------------------------------------------
+    def diff_text(self, sha: str, max_lines: int = 80,
+                  max_line_length: int = 200,
+                  accept_path: Callable[[str], bool] | None = None) -> DiffText:
+        """Read what a commit removed and added.
+
+        Uses ``-U0`` so only changed lines come back, not surrounding context:
+        context lines are unchanged code and would dilute the signal that the
+        removed lines carry. Output is capped, because one refactor commit can
+        otherwise dominate an entire scan.
+
+        ``accept_path`` applies the same include and exclude rules the file scan
+        uses. Without it the diff would read generated metadata and vendored
+        trees that the rest of the pipeline deliberately ignores, and a term
+        inside an enumeration there would be mistaken for a replaced mechanism.
+        """
+        result = DiffText(sha=sha)
+        code, out, _ = _run(
+            ["git", "show", "--format=", "--unified=0", "--no-color",
+             "--no-renames", sha],
+            cwd=self.path,
+        )
+        if code != 0:
+            return result
+
+        in_scope = True
+        for line in out.splitlines():
+            if line.startswith("diff --git "):
+                # `diff --git a/<path> b/<path>`
+                parts = line.split(" b/", 1)
+                path = parts[1] if len(parts) == 2 else ""
+                in_scope = accept_path(path) if (accept_path and path) else True
+                if in_scope and path and path not in result.paths:
+                    result.paths.append(path)
+                continue
+            if not in_scope:
+                continue
+            if line.startswith(("---", "+++", "@@", "index ", "similarity ",
+                                "new file", "deleted file", "old mode",
+                                "new mode", "Binary files")):
+                continue
+
+            if len(result.removed) + len(result.added) >= max_lines:
+                result.truncated = True
+                break
+
+            if line.startswith("-"):
+                body = line[1:].strip()
+                if body:
+                    result.removed.append(body[:max_line_length])
+            elif line.startswith("+"):
+                body = line[1:].strip()
+                if body:
+                    result.added.append(body[:max_line_length])
+
+        return result
 
 
 def _parse_log(raw: str) -> list[Commit]:

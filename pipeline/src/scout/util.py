@@ -144,3 +144,13 @@ def warn_if_path_too_long(path: Path, what: str) -> bool:
         what, length,
     )
     return True
+
+
+# Comment markers across the languages the scanner reads. Used to tell a deleted
+# line of code from a deleted line of documentation, which is the difference
+# between "this approach was removed" and "this sentence was edited".
+_COMMENT_PREFIXES = ("//", "/*", "*", "*/", "#", "<!--", "-->", "--", ";", '"""', "'''")
+
+
+def looks_like_comment(line: str) -> bool:
+    return line.lstrip().startswith(_COMMENT_PREFIXES)

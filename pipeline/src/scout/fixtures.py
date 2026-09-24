@@ -119,6 +119,32 @@ int32_t SensorSyncController::predictNextSof(int64_t observedSofNs) {
 }  // namespace camera
 """
 
+# The first revision of the implementation. It corrects vblank from a stored
+# calibration lookup table, which is a real mechanism and a real baseline: the
+# second commit deletes it, so a diff-based reading of the history can recover
+# what the prediction replaced.
+_SYNC_SOURCE_V1 = """// SPDX-License-Identifier: Apache-2.0
+#include "sensor_sync_controller.h"
+
+namespace camera {
+
+// Fixed vblank correction taken from a calibration lookup table.
+//
+// The table is measured once per board at production time. It cannot react to
+// clock drift between the two sensors, but it is cheap and deterministic.
+static const int32_t kVblankLookupTable[8] = {0, 2, 4, 6, 8, 10, 12, 14};
+
+void SensorSyncController::configure(int64_t frameDurationNs) {
+    frameDurationNs_ = frameDurationNs;
+}
+
+int32_t SensorSyncController::correctVblank(int calibrationIndex) {
+    return kVblankLookupTable[calibrationIndex];
+}
+
+}  // namespace camera
+"""
+
 _SYNC_DOC = """# Multi-camera synchronisation design
 
 ## Problem
@@ -281,14 +307,15 @@ FIXTURE_REPOS: list[FixtureRepo] = [
         commits=[
             FixtureCommit(
                 message=(
-                    "camera: add fixed vblank configuration\n\n"
-                    "Programs a static vertical blanking value for both sensors at "
-                    "configuration time."
+                    "camera: correct vblank from the calibration lookup table\n\n"
+                    "Programs a static vertical blanking correction for both sensors "
+                    "from a table measured once per board."
                 ),
                 files={
                     "src/sensor_sync_controller.h": _SYNC_HEADER.replace(
                         "// This controller instead predicts", "// TODO: predicts"
                     ),
+                    "src/sensor_sync_controller.cpp": _SYNC_SOURCE_V1,
                 },
             ),
             FixtureCommit(
