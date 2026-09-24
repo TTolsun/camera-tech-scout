@@ -61,7 +61,7 @@
         "intel/ipu6-camera-hal",
         "raspberrypi/libcamera"
       ],
-      "evidenceCount": 59,
+      "evidenceCount": 60,
       "scores": {
         "evidence_strength": {
           "value": 100.0,
@@ -1053,7 +1053,7 @@
     {
       "id": "cand_fb3a967b42e5",
       "slug": "camera-hal-calibration",
-      "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 보정",
+      "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 특성화",
       "type": "patent",
       "typeLabel": "Patent 후보",
       "status": "NEW",
@@ -1064,7 +1064,7 @@
       "topicLabel": "Camera HAL",
       "mechanismFamily": "calibration",
       "mechanismLabel": "캘리브레이션과 보정",
-      "summary": "Camera HAL 영역의 코드가 보정 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다.",
+      "summary": "Camera HAL 영역의 코드가 특성화 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다.",
       "repositories": [
         "raspberrypi/libcamera",
         "intel/ipu6-camera-hal"
@@ -2272,7 +2272,7 @@
       "commit_sha": null,
       "ref": null,
       "title": "function IpaBase::init",
-      "snippet": "er provider frames at a * rate higher than this, we rate-limit the controller Prepare() and * Process() calls to l",
+      "snippet": "ler provider frames at a * rate higher than this, we rate-limit the controller Prepare() and * Process() calls to lo",
       "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/common/ipa_base.cpp#L142-L198",
       "observed_at": "2026-08-07T08:37:15+01:00",
       "first_seen_commit": "ca0ba53ef1eec5e59dee7255863b943f5eaf6cfd",
@@ -2290,35 +2290,35 @@
           "term": "kernel driver",
           "family": "camera-driver",
           "weight": 2.6,
-          "context": "s tells us all the device specific stuff * that the kernel driver doesn't. We only do this the first time; we don't need"
+          "context": "is tells us all the device specific stuff * that the kernel driver doesn't. We only do this the first time; we don't need"
         },
         {
           "kind": "domain",
           "term": "pipeline handler",
           "family": "camera-framework",
           "weight": 2.6,
-          "context": "EINVAL; } /* Pass out the sensor metadata to the pipeline handler */ int sensorMetadata = helper_->sensorEmbeddedDataP"
+          "context": "n -EINVAL; } /* Pass out the sensor metadata to the pipeline handler */ int sensorMetadata = helper_->sensorEmbeddedDataPr"
         },
         {
           "kind": "domain",
           "term": "tuning file",
           "family": "image-quality",
           "weight": 2.8,
-          "context": "onfig.sensorMetadata = sensorMetadata; /* Load the tuning file for this sensor. */ int ret = controller_.read(setti"
+          "context": "rConfig.sensorMetadata = sensorMetadata; /* Load the tuning file for this sensor. */ int ret = controller_.read(settin"
         },
         {
           "kind": "mechanism",
           "term": "rate limit",
           "family": "scheduling-mechanism",
           "weight": 3.6,
-          "context": "er provider frames at a * rate higher than this, we rate-limit the controller Prepare() and * Process() calls to l"
+          "context": "ler provider frames at a * rate higher than this, we rate-limit the controller Prepare() and * Process() calls to lo"
         },
         {
           "kind": "effect",
           "term": "lower",
           "family": "reduction",
           "weight": 2.6,
-          "context": "t the controller Prepare() and * Process() calls to lower than or equal to this rate. */ controllerMinFrame"
+          "context": "it the controller Prepare() and * Process() calls to lower than or equal to this rate. */ controllerMinFrameDu"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -2364,7 +2364,7 @@
       "commit_sha": null,
       "ref": null,
       "title": "function IpaBase::setMode",
-      "snippet": "it does, try adjusting the minimum line * length to compensate if possible. */ Duration minPixelTime = controlle",
+      "snippet": "it does, try adjusting the minimum line * length to compensate if possible. */ Duration minPixelTime = controller_",
       "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/common/ipa_base.cpp#L582-L686",
       "observed_at": "2026-08-07T08:37:15+01:00",
       "first_seen_commit": "ca0ba53ef1eec5e59dee7255863b943f5eaf6cfd",
@@ -2382,7 +2382,7 @@
           "term": "pipeline handler",
           "family": "camera-framework",
           "weight": 2.6,
-          "context": "o.outputSize.height; /* * We're not told by the pipeline handler how scaling is split between * binning and digital"
+          "context": "Info.outputSize.height; /* * We're not told by the pipeline handler how scaling is split between * binning and digital s"
         },
         {
           "kind": "domain",
@@ -2396,21 +2396,21 @@
           "term": "line length",
           "family": "sensor-control",
           "weight": 3.0,
-          "context": "rt(mode_.binX * mode_.binY); /* * Calculate the line length as the ratio between the line length in * pixels an"
+          "context": ":sqrt(mode_.binX * mode_.binY); /* * Calculate the line length as the ratio between the line length in * pixels and"
         },
         {
           "kind": "domain",
           "term": "isp",
           "family": "isp",
           "weight": 3.0,
-          "context": "the maximum pixel processing rate does not exceed the ISP * hardware capabilities. If it does, try adjusting"
+          "context": "the maximum pixel processing rate does not exceed the ISP * hardware capabilities. If it does, try adjusting t"
         },
         {
           "kind": "mechanism",
           "term": "compensat",
           "family": "calibration",
           "weight": 3.4,
-          "context": "it does, try adjusting the minimum line * length to compensate if possible. */ Duration minPixelTime = controlle"
+          "context": "it does, try adjusting the minimum line * length to compensate if possible. */ Duration minPixelTime = controller_"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -2475,56 +2475,56 @@
           "term": "exposure time",
           "family": "sensor-control",
           "weight": 3.0,
-          "context": "nGainCode, maxGainCode); /* getBlanking might clip exposure time to the fps limits. */ Duration exposure = agcStatus-"
+          "context": "minGainCode, maxGainCode); /* getBlanking might clip exposure time to the fps limits. */ Duration exposure = agcStatus->"
         },
         {
           "kind": "domain",
           "term": "fps",
           "family": "performance",
           "weight": 2.6,
-          "context": "e); /* getBlanking might clip exposure time to the fps limits. */ Duration exposure = agcStatus->exposureTi"
+          "context": "ode); /* getBlanking might clip exposure time to the fps limits. */ Duration exposure = agcStatus->exposureTim"
         },
         {
           "kind": "domain",
           "term": "vblank",
           "family": "sensor-control",
           "weight": 3.0,
-          "context": "Duration exposure = agcStatus->exposureTime; auto [vblank, hblank] = helper_->getBlanking(exposure, minFrameDura"
+          "context": "/ Duration exposure = agcStatus->exposureTime; auto [vblank, hblank] = helper_->getBlanking(exposure, minFrameDura"
         },
         {
           "kind": "domain",
           "term": "hblank",
           "family": "sensor-control",
           "weight": 3.0,
-          "context": "on exposure = agcStatus->exposureTime; auto [vblank, hblank] = helper_->getBlanking(exposure, minFrameDuration_ -"
+          "context": "ion exposure = agcStatus->exposureTime; auto [vblank, hblank] = helper_->getBlanking(exposure, minFrameDuration_ -"
         },
         {
           "kind": "domain",
           "term": "v4l2",
           "family": "camera-driver",
           "weight": 2.6,
-          "context": "(Gain Code: \" << gainCode << \")\"; ctrls.set(V4L2_CID_VBLANK, static_cast<int32_t>(vblank)); ctrls.set"
+          "context": "\" (Gain Code: \" << gainCode << \")\"; ctrls.set(V4L2_CID_VBLANK, static_cast<int32_t>(vblank)); ctrls.set("
         },
         {
           "kind": "domain",
           "term": "analogue gain",
           "family": "sensor-control",
           "weight": 3.0,
-          "context": "4L2_CID_EXPOSURE, exposureLines); ctrls.set(V4L2_CID_ANALOGUE_GAIN, gainCode); /* * We must update the digital gai"
+          "context": "V4L2_CID_EXPOSURE, exposureLines); ctrls.set(V4L2_CID_ANALOGUE_GAIN, gainCode); /* * We must update the digital gain t"
         },
         {
           "kind": "domain",
           "term": "digital gain",
           "family": "sensor-control",
           "weight": 3.0,
-          "context": "ALOGUE_GAIN, gainCode); /* * We must update the digital gain to make up for any quantisation that happens, and *"
+          "context": "_ANALOGUE_GAIN, gainCode); /* * We must update the digital gain to make up for any quantisation that happens, and *"
         },
         {
           "kind": "domain",
           "term": "frame length",
           "family": "sensor-control",
           "weight": 3.0,
-          "context": ", static_cast<int32_t>(hblank)); /* * Store the frame length times in a circular queue, up-to Fra"
+          "context": "ANK, static_cast<int32_t>(hblank)); /* * Store the frame length times in a circular queue, up-to FrameLengthsQueueSize"
         },
         {
           "kind": "problem",
@@ -2538,7 +2538,7 @@
           "term": "lower",
           "family": "reduction",
           "weight": 2.6,
-          "context": "* DelayedControls. The AGC will correctly handle a lower gain returned * by the sensor, provided it knows th"
+          "context": "o * DelayedControls. The AGC will correctly handle a lower gain returned * by the sensor, provided it knows the"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -2576,114 +2576,6 @@
       ]
     },
     {
-      "id": "ev_fc20c428aa2c",
-      "org": "raspberrypi",
-      "repo": "libcamera",
-      "kind": "code",
-      "path": "src/ipa/libipa/lsc.cpp",
-      "symbol": "Interpolator<lsc::Components<uint16_t>>::\r\n\tinterpolate",
-      "symbol_kind": "function",
-      "line_start": 96,
-      "line_end": 104,
-      "commit_sha": null,
-      "ref": null,
-      "title": "function Interpolator<lsc::Components<uint16_t>>::\r\n\tinterpolate",
-      "snippet": "interpolator<lsc components<uint16 t>> interpolate void Interpol",
-      "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/lsc.cpp#L96-L104",
-      "observed_at": "2026-08-05T15:38:17+02:00",
-      "first_seen_commit": "62d4bfc450798cbd57722fa349a245b93b11d1cd",
-      "first_seen_at": "2026-08-05T15:38:17+02:00",
-      "signals": [
-        {
-          "kind": "domain",
-          "term": "lsc",
-          "family": "isp",
-          "weight": 3.0,
-          "context": "interpolator<lsc components<uint16 t>> interpolate void Interpolator"
-        },
-        {
-          "kind": "mechanism",
-          "term": "interpolat",
-          "family": "calibration",
-          "weight": 3.4,
-          "context": "interpolator<lsc components<uint16 t>> interpolate void Interpol"
-        }
-      ],
-      "repository": "raspberrypi/libcamera",
-      "kindLabel": "Source Code",
-      "location": "raspberrypi/libcamera / src/ipa/libipa/lsc.cpp / Interpolator<lsc::Components<uint16_t>>::\r\n\tinterpolate / L96-L104",
-      "signalSummary": [
-        {
-          "kind": "domain",
-          "label": "기술 영역",
-          "terms": [
-            "lsc"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "label": "메커니즘",
-          "terms": [
-            "interpolat"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ev_4ffbce8a1f8a",
-      "org": "raspberrypi",
-      "repo": "libcamera",
-      "kind": "code",
-      "path": "src/ipa/libipa/lsc.cpp",
-      "symbol": "Interpolator<lsc::Components<uint8_t>>::\r\n\tinterpolate",
-      "symbol_kind": "function",
-      "line_start": 107,
-      "line_end": 115,
-      "commit_sha": null,
-      "ref": null,
-      "title": "function Interpolator<lsc::Components<uint8_t>>::\r\n\tinterpolate",
-      "snippet": "interpolator<lsc components<uint8 t>> interpolate void Interpola",
-      "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/lsc.cpp#L107-L115",
-      "observed_at": "2026-08-05T15:38:17+02:00",
-      "first_seen_commit": "62d4bfc450798cbd57722fa349a245b93b11d1cd",
-      "first_seen_at": "2026-08-05T15:38:17+02:00",
-      "signals": [
-        {
-          "kind": "domain",
-          "term": "lsc",
-          "family": "isp",
-          "weight": 3.0,
-          "context": "interpolator<lsc components<uint8 t>> interpolate void Interpolator<"
-        },
-        {
-          "kind": "mechanism",
-          "term": "interpolat",
-          "family": "calibration",
-          "weight": 3.4,
-          "context": "interpolator<lsc components<uint8 t>> interpolate void Interpola"
-        }
-      ],
-      "repository": "raspberrypi/libcamera",
-      "kindLabel": "Source Code",
-      "location": "raspberrypi/libcamera / src/ipa/libipa/lsc.cpp / Interpolator<lsc::Components<uint8_t>>::\r\n\tinterpolate / L107-L115",
-      "signalSummary": [
-        {
-          "kind": "domain",
-          "label": "기술 영역",
-          "terms": [
-            "lsc"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "label": "메커니즘",
-          "terms": [
-            "interpolat"
-          ]
-        }
-      ]
-    },
-    {
       "id": "ev_075617e73e11",
       "org": "raspberrypi",
       "repo": "libcamera",
@@ -2707,21 +2599,21 @@
           "term": "lsc",
           "family": "isp",
           "weight": 3.0,
-          "context": "libcamera include \"interpolator.h\" include \"lsc_base.h\" namespace libcamera { namespace ipa { na"
+          "context": "libcamera include \"interpolator.h\" include \"lsc_base.h\" namespace libcamera { namespace ipa { namesp"
         },
         {
           "kind": "domain",
           "term": "ipa",
           "family": "isp",
           "weight": 3.0,
-          "context": "nclude \"lsc_base.h\" namespace libcamera { namespace ipa { namespace lsc { struct ActiveState { bool en"
+          "context": "include \"lsc_base.h\" namespace libcamera { namespace ipa { namespace lsc { struct ActiveState { bool enabled"
         },
         {
           "kind": "mechanism",
           "term": "interpolat",
           "family": "calibration",
           "weight": 3.4,
-          "context": "libcamera include \"interpolator.h\" include \"lsc_base.h\" namespace libcamera { names"
+          "context": "libcamera include \"interpolator.h\" include \"lsc_base.h\" namespace libcamera { namespa"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -2758,7 +2650,7 @@
       "commit_sha": null,
       "ref": null,
       "title": "function ipa",
-      "snippet": "espace lsc */ #ifndef __DOXYGEN__ template<> void Interpolator<lsc::Components<uint16_t>>:: interpolate(const lsc::",
+      "snippet": "namespace lsc */ #ifndef __DOXYGEN__ template<> void Interpolator<lsc::Components<uint16_t>>:: interpolate(const lsc::C",
       "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/lsc.h#L23-L137",
       "observed_at": "2026-08-05T15:38:17+02:00",
       "first_seen_commit": "62d4bfc450798cbd57722fa349a245b93b11d1cd",
@@ -2769,21 +2661,21 @@
           "term": "ipa",
           "family": "isp",
           "weight": 3.0,
-          "context": "ipa namespace ipa { namespace lsc { struct ActiveSta"
+          "context": "ipa namespace ipa { namespace lsc { struct ActiveState {"
         },
         {
           "kind": "domain",
           "term": "lsc",
           "family": "isp",
           "weight": 3.0,
-          "context": "ipa namespace ipa { namespace lsc { struct ActiveState { bool enabled; }; struc"
+          "context": "ipa namespace ipa { namespace lsc { struct ActiveState { bool enabled; }; struct Fram"
         },
         {
           "kind": "mechanism",
           "term": "interpolat",
           "family": "calibration",
           "weight": 3.4,
-          "context": "espace lsc */ #ifndef __DOXYGEN__ template<> void Interpolator<lsc::Components<uint16_t>>:: interpolate(const lsc::"
+          "context": "namespace lsc */ #ifndef __DOXYGEN__ template<> void Interpolator<lsc::Components<uint16_t>>:: interpolate(const lsc::C"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -2820,7 +2712,7 @@
       "commit_sha": null,
       "ref": null,
       "title": "function configure",
-      "snippet": "nabled = true; return 0; } const Components interpolateComponents(unsigned int ct) { return sets_.getInterpolated(c",
+      "snippet": "ate.enabled = true; return 0; } const Components interpolateComponents(unsigned int ct) { return sets_.getInterpolated(ct)",
       "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/lsc.h#L87-L133",
       "observed_at": "2026-08-05T15:38:17+02:00",
       "first_seen_commit": "62d4bfc450798cbd57722fa349a245b93b11d1cd",
@@ -2838,12 +2730,120 @@
           "term": "interpolat",
           "family": "calibration",
           "weight": 3.4,
-          "context": "nabled = true; return 0; } const Components interpolateComponents(unsigned int ct) { return sets_.getInterpolated(c"
+          "context": "ate.enabled = true; return 0; } const Components interpolateComponents(unsigned int ct) { return sets_.getInterpolated(ct)"
         }
       ],
       "repository": "raspberrypi/libcamera",
       "kindLabel": "Source Code",
       "location": "raspberrypi/libcamera / src/ipa/libipa/lsc.h / configure / L87-L133",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "lsc"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "label": "메커니즘",
+          "terms": [
+            "interpolat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_563c3385335d",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "code",
+      "path": "src/ipa/libipa/lsc.cpp",
+      "symbol": "Interpolator<lsc::Components<uint16_t>>::\n\tinterpolate",
+      "symbol_kind": "function",
+      "line_start": 96,
+      "line_end": 104,
+      "commit_sha": null,
+      "ref": null,
+      "title": "function Interpolator<lsc::Components<uint16_t>>::\n\tinterpolate",
+      "snippet": "interpolator<lsc components<uint16 t>> interpolate void Interpola",
+      "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/lsc.cpp#L96-L104",
+      "observed_at": "2026-08-05T15:38:17+02:00",
+      "first_seen_commit": "62d4bfc450798cbd57722fa349a245b93b11d1cd",
+      "first_seen_at": "2026-08-05T15:38:17+02:00",
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "lsc",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "interpolator<lsc components<uint16 t>> interpolate void Interpolator<"
+        },
+        {
+          "kind": "mechanism",
+          "term": "interpolat",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "interpolator<lsc components<uint16 t>> interpolate void Interpola"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Source Code",
+      "location": "raspberrypi/libcamera / src/ipa/libipa/lsc.cpp / Interpolator<lsc::Components<uint16_t>>::\n\tinterpolate / L96-L104",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "lsc"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "label": "메커니즘",
+          "terms": [
+            "interpolat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_126f5dfc37e2",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "code",
+      "path": "src/ipa/libipa/lsc.cpp",
+      "symbol": "Interpolator<lsc::Components<uint8_t>>::\n\tinterpolate",
+      "symbol_kind": "function",
+      "line_start": 107,
+      "line_end": 115,
+      "commit_sha": null,
+      "ref": null,
+      "title": "function Interpolator<lsc::Components<uint8_t>>::\n\tinterpolate",
+      "snippet": "interpolator<lsc components<uint8 t>> interpolate void Interpolat",
+      "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/lsc.cpp#L107-L115",
+      "observed_at": "2026-08-05T15:38:17+02:00",
+      "first_seen_commit": "62d4bfc450798cbd57722fa349a245b93b11d1cd",
+      "first_seen_at": "2026-08-05T15:38:17+02:00",
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "lsc",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "interpolator<lsc components<uint8 t>> interpolate void Interpolator<l"
+        },
+        {
+          "kind": "mechanism",
+          "term": "interpolat",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "interpolator<lsc components<uint8 t>> interpolate void Interpolat"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Source Code",
+      "location": "raspberrypi/libcamera / src/ipa/libipa/lsc.cpp / Interpolator<lsc::Components<uint8_t>>::\n\tinterpolate / L107-L115",
       "signalSummary": [
         {
           "kind": "domain",
@@ -3166,7 +3166,7 @@
       "commit_sha": null,
       "ref": null,
       "title": "function PipelineHandlerPiSP::match",
-      "snippet": "|| !variant.NumBackEnds()) { LOG(RPI, Error) << \"Unsupported PiSP variant\"; break; } std::unique_ptr",
+      "snippet": ") || !variant.NumBackEnds()) { LOG(RPI, Error) << \"Unsupported PiSP variant\"; break; } std::unique_ptr<RPi",
       "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/rpi/pisp/pisp.cpp#L878-L964",
       "observed_at": "2026-08-03T08:56:48+01:00",
       "first_seen_commit": "36fc759bbcc55f656695c5786c1fe93de9ac5a95",
@@ -3184,28 +3184,28 @@
           "term": "media controller",
           "family": "camera-driver",
           "weight": 2.6,
-          "context": "a when an instance * of the CFE has registered with media controller, but has not registered * device nodes due to a sen"
+          "context": "ra when an instance * of the CFE has registered with media controller, but has not registered * device nodes due to a sens"
         },
         {
           "kind": "domain",
           "term": "isp",
           "family": "isp",
           "weight": 3.0,
-          "context": "uire a CFE instance\"; break; } DeviceMatch isp(\"pispbe\"); isp.add(\"pispbe-input\"); isp.add(\"pis"
+          "context": "acquire a CFE instance\"; break; } DeviceMatch isp(\"pispbe\"); isp.add(\"pispbe-input\"); isp.add(\"pispb"
         },
         {
           "kind": "domain",
           "term": "pisp",
           "family": "isp",
           "weight": 3.0,
-          "context": ".NumBackEnds()) { LOG(RPI, Error) << \"Unsupported PiSP variant\"; break; } std::unique_ptr<RPi:"
+          "context": "t.NumBackEnds()) { LOG(RPI, Error) << \"Unsupported PiSP variant\"; break; } std::unique_ptr<RPi::Cam"
         },
         {
           "kind": "problem",
           "term": "unsupported",
           "family": "known-limitation",
           "weight": 2.4,
-          "context": "|| !variant.NumBackEnds()) { LOG(RPI, Error) << \"Unsupported PiSP variant\"; break; } std::unique_ptr"
+          "context": ") || !variant.NumBackEnds()) { LOG(RPI, Error) << \"Unsupported PiSP variant\"; break; } std::unique_ptr<RPi"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -3244,7 +3244,7 @@
       "commit_sha": null,
       "ref": null,
       "title": "class CameraSensorHelperAr0144",
-      "snippet": "/* The recommended minimum gain is 1.6842 to avoid artifacts. */ gain = std::clamp(gain, 1.0 / (1.0 - 13.0 / 32.",
+      "snippet": "{ /* The recommended minimum gain is 1.6842 to avoid artifacts. */ gain = std::clamp(gain, 1.0 / (1.0 - 13.0 / 32.0",
       "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/camera_sensor_helper.cpp#L381-L471",
       "observed_at": "2026-07-31T12:32:53-04:00",
       "first_seen_commit": "e64b507de18774352cbe0bdfd51b637b00a56873",
@@ -3255,28 +3255,28 @@
           "term": "analogue gain",
           "family": "sensor-control",
           "weight": 3.0,
-          "context": ", 1.0 / (1.0 - 13.0 / 32.0), 18.45); /* * The analogue gain is made of a coarse exponential gain in * the rang"
+          "context": "ain, 1.0 / (1.0 - 13.0 / 32.0), 18.45); /* * The analogue gain is made of a coarse exponential gain in * the range"
         },
         {
           "kind": "problem",
           "term": "artifact",
           "family": "quality-defect",
           "weight": 2.6,
-          "context": "/* The recommended minimum gain is 1.6842 to avoid artifacts. */ gain = std::clamp(gain, 1.0 / (1.0 - 13.0 / 32."
+          "context": "{ /* The recommended minimum gain is 1.6842 to avoid artifacts. */ gain = std::clamp(gain, 1.0 / (1.0 - 13.0 / 32.0"
         },
         {
           "kind": "effect",
           "term": "avoid",
           "family": "reduction",
           "weight": 2.6,
-          "context": "de { /* The recommended minimum gain is 1.6842 to avoid artifacts. */ gain = std::clamp(gain, 1.0 / (1.0 -"
+          "context": "ride { /* The recommended minimum gain is 1.6842 to avoid artifacts. */ gain = std::clamp(gain, 1.0 / (1.0 - 1"
         },
         {
           "kind": "effect",
           "term": "lower",
           "family": "reduction",
           "weight": 2.6,
-          "context": "nding errors may cause * the calculated gain to be lower by an amount negligible for * all purposes, except"
+          "context": "unding errors may cause * the calculated gain to be lower by an amount negligible for * all purposes, except"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -3338,28 +3338,28 @@
           "term": "dmabuf",
           "family": "memory-buffer",
           "weight": 3.0,
-          "context": "G(eGL, Debug) << \"eglCreateImageKHR fail\"; eglImage.dmabuf_import_failed_ = true; return -ENODEV; } acti"
+          "context": "OG(eGL, Debug) << \"eglCreateImageKHR fail\"; eglImage.dmabuf_import_failed_ = true; return -ENODEV; } activate"
         },
         {
           "kind": "problem",
           "term": "artifact",
           "family": "quality-defect",
           "weight": 2.6,
-          "context": "FILTER, GL_NEAREST); // Wrap to edge to avoid edge artifacts glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL"
+          "context": "G_FILTER, GL_NEAREST); // Wrap to edge to avoid edge artifacts glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_"
         },
         {
           "kind": "effect",
           "term": "avoid",
           "family": "reduction",
           "weight": 2.6,
-          "context": "EXTURE_MAG_FILTER, GL_NEAREST); // Wrap to edge to avoid edge artifacts glTexParameteri(GL_TEXTURE_2D, GL_TEX"
+          "context": "_TEXTURE_MAG_FILTER, GL_NEAREST); // Wrap to edge to avoid edge artifacts glTexParameteri(GL_TEXTURE_2D, GL_TEXT"
         },
         {
           "kind": "triviality",
           "term": "clang-format",
           "family": "cosmetic",
           "weight": 3.0,
-          "context": "< \"unhandled GL format\"; return -ENODEV; } // clang-format off EGLint image_attrs[] = { EGL_WIDTH, (EGLint)e"
+          "context": "r) << \"unhandled GL format\"; return -ENODEV; } // clang-format off EGLint image_attrs[] = { EGL_WIDTH, (EGLint)egl"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -3398,60 +3398,6 @@
       ]
     },
     {
-      "id": "ev_9939c1d1ba9c",
-      "org": "raspberrypi",
-      "repo": "libcamera",
-      "kind": "code",
-      "path": "src/libcamera/software_isp/debayer_egl.cpp",
-      "symbol": "DebayerEGL::sizes",
-      "symbol_kind": "function",
-      "line_start": 687,
-      "line_end": 714,
-      "commit_sha": null,
-      "ref": null,
-      "title": "function DebayerEGL::sizes",
-      "snippet": "ght == 2) borderHeight = 0; /* * For debayer interpolation a border is kept around the entire image * and the",
-      "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/software_isp/debayer_egl.cpp#L687-L714",
-      "observed_at": "2026-07-29T11:55:57+09:00",
-      "first_seen_commit": "63116875f2853a2e1f891a4ff95c3155e5ec7a50",
-      "first_seen_at": "2026-07-29T11:55:57+09:00",
-      "signals": [
-        {
-          "kind": "domain",
-          "term": "debayer",
-          "family": "isp",
-          "weight": 3.0,
-          "context": "debayer egl sizes SizeRange DebayerEGL::sizes(PixelFormat inpu"
-        },
-        {
-          "kind": "mechanism",
-          "term": "interpolat",
-          "family": "calibration",
-          "weight": 3.4,
-          "context": "ght == 2) borderHeight = 0; /* * For debayer interpolation a border is kept around the entire image * and the"
-        }
-      ],
-      "repository": "raspberrypi/libcamera",
-      "kindLabel": "Source Code",
-      "location": "raspberrypi/libcamera / src/libcamera/software_isp/debayer_egl.cpp / DebayerEGL::sizes / L687-L714",
-      "signalSummary": [
-        {
-          "kind": "domain",
-          "label": "기술 영역",
-          "terms": [
-            "debayer"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "label": "메커니즘",
-          "terms": [
-            "interpolat"
-          ]
-        }
-      ]
-    },
-    {
       "id": "ev_ac7718f1336a",
       "org": "raspberrypi",
       "repo": "libcamera",
@@ -3464,7 +3410,7 @@
       "commit_sha": null,
       "ref": null,
       "title": "function DebayerEGL",
-      "snippet": "3 x 3 */ GLint ccmUniformDataIn_; /* Black Level compensation */ GLi",
+      "snippet": "ts 3 x 3 */ GLint ccmUniformDataIn_; /* Black Level compensation */ GLint blackLevelUniformDataIn_; /* Gamma */ GLi",
       "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/software_isp/debayer_egl.h#L40-L122",
       "observed_at": "2026-07-29T11:55:57+09:00",
       "first_seen_commit": "63116875f2853a2e1f891a4ff95c3155e5ec7a50",
@@ -3475,35 +3421,35 @@
           "term": "debayer",
           "family": "isp",
           "weight": 3.0,
-          "context": "debayer egl class DebayerEGL : public Debayer { public: De"
+          "context": "debayer egl class DebayerEGL : public Debayer { public: Debay"
         },
         {
           "kind": "domain",
           "term": "awb",
           "family": "3a",
           "weight": 3.2,
-          "context": "GLint textureUniformBayerDataIn_; /* Per-frame AWB gains */ GLint awbUniformDataIn_; /* Represent p"
+          "context": "x_; GLint textureUniformBayerDataIn_; /* Per-frame AWB gains */ GLint awbUniformDataIn_; /* Represent per-"
         },
         {
           "kind": "domain",
           "term": "ccm",
           "family": "isp",
           "weight": 3.0,
-          "context": "GLint awbUniformDataIn_; /* Represent per-frame CCM as a uniform vector of floats 3 x 3 */ GLint ccmUnif"
+          "context": "*/ GLint awbUniformDataIn_; /* Represent per-frame CCM as a uniform vector of floats 3 x 3 */ GLint ccmUnifo"
         },
         {
           "kind": "domain",
           "term": "black level",
           "family": "isp",
           "weight": 3.0,
-          "context": "r of floats 3 x 3 */ GLint ccmUniformDataIn_; /* Black Level compensation */ GLi"
+          "context": "ctor of floats 3 x 3 */ GLint ccmUniformDataIn_; /* Black Level compensation */ GLint blackLevelUniformDataIn_; /*"
         },
         {
           "kind": "mechanism",
           "term": "compensat",
           "family": "calibration",
           "weight": 3.4,
-          "context": "3 x 3 */ GLint ccmUniformDataIn_; /* Black Level compensation */ GLi"
+          "context": "ts 3 x 3 */ GLint ccmUniformDataIn_; /* Black Level compensation */ GLint blackLevelUniformDataIn_; /* Gamma */ GLi"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -3525,6 +3471,60 @@
           "label": "메커니즘",
           "terms": [
             "compensat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_9939c1d1ba9c",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "code",
+      "path": "src/libcamera/software_isp/debayer_egl.cpp",
+      "symbol": "DebayerEGL::sizes",
+      "symbol_kind": "function",
+      "line_start": 687,
+      "line_end": 714,
+      "commit_sha": null,
+      "ref": null,
+      "title": "function DebayerEGL::sizes",
+      "snippet": ".height == 2) borderHeight = 0; /* * For debayer interpolation a border is kept around the entire image * and the m",
+      "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/software_isp/debayer_egl.cpp#L687-L714",
+      "observed_at": "2026-07-29T11:55:57+09:00",
+      "first_seen_commit": "63116875f2853a2e1f891a4ff95c3155e5ec7a50",
+      "first_seen_at": "2026-07-29T11:55:57+09:00",
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "debayer",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "debayer egl sizes SizeRange DebayerEGL::sizes(PixelFormat inpu"
+        },
+        {
+          "kind": "mechanism",
+          "term": "interpolat",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": ".height == 2) borderHeight = 0; /* * For debayer interpolation a border is kept around the entire image * and the m"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Source Code",
+      "location": "raspberrypi/libcamera / src/libcamera/software_isp/debayer_egl.cpp / DebayerEGL::sizes / L687-L714",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "debayer"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "label": "메커니즘",
+          "terms": [
+            "interpolat"
           ]
         }
       ]
@@ -3574,21 +3574,21 @@
           "term": "debayer",
           "family": "isp",
           "weight": 3.0,
-          "context": "y.connect(this, &SoftwareIsp::statsReady); #if HAVE_DEBAYER_EGL const GlobalConfiguration &configuration = cm._d"
+          "context": "ady.connect(this, &SoftwareIsp::statsReady); #if HAVE_DEBAYER_EGL const GlobalConfiguration &configuration = cm._d("
         },
         {
           "kind": "domain",
           "term": "tuning file",
           "family": "image-quality",
           "weight": 2.8,
-          "context": "debayer_.reset(); return; } /* * The API tuning file is made from the sensor name. If the tuning file *"
+          "context": "ed\"; debayer_.reset(); return; } /* * The API tuning file is made from the sensor name. If the tuning file * i"
         },
         {
           "kind": "mechanism",
           "term": "fall back to",
           "family": "resilience",
           "weight": 3.2,
-          "context": "the sensor name. If the tuning file * isn't found, fall back to the 'uncalibrated' file. */ std::string ipaTuning"
+          "context": "m the sensor name. If the tuning file * isn't found, fall back to the 'uncalibrated' file. */ std::string ipaTuningFi"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -3628,7 +3628,7 @@
       "commit_sha": null,
       "ref": null,
       "title": "function State",
-      "snippet": "; std::optional<unsigned int> firstFrame_; Timer watchdog_; utils::Duration watchdogDuration_; }",
+      "snippet": "te_; std::optional<unsigned int> firstFrame_; Timer watchdog_; utils::Duration watchdogDuration_; }",
       "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/libcamera/internal/v4l2_videodevice.h#L241-L293",
       "observed_at": "2026-07-27T13:08:52+02:00",
       "first_seen_commit": "53397ea15b69c6dff087fd096899e2f8fdc1c82b",
@@ -3639,14 +3639,14 @@
           "term": "v4l2",
           "family": "camera-driver",
           "weight": 2.6,
-          "context": "rmat); int requestBuffers(unsigned int count, enum v4l2_memory memoryType); int createBuffers(unsigned int c"
+          "context": "Format); int requestBuffers(unsigned int count, enum v4l2_memory memoryType); int createBuffers(unsigned int co"
         },
         {
           "kind": "mechanism",
           "term": "watchdog",
           "family": "resilience",
           "weight": 3.2,
-          "context": "; std::optional<unsigned int> firstFrame_; Timer watchdog_; utils::Duration watchdogDuration_; }"
+          "context": "te_; std::optional<unsigned int> firstFrame_; Timer watchdog_; utils::Duration watchdogDuration_; }"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -3693,35 +3693,35 @@
           "term": "debayer",
           "family": "isp",
           "weight": 3.0,
-          "context": "libcamera include \"debayer.h\" namespace libcamera { class DebayerCpuThread; c"
+          "context": "libcamera include \"debayer.h\" namespace libcamera { class DebayerCpuThread; clas"
         },
         {
           "kind": "domain",
           "term": "bayer",
           "family": "isp",
           "weight": 3.0,
-          "context": "hread; /** * \\brief Called to debayer 1 line of Bayer input data to output format * \\param[out] dst Point"
+          "context": "puThread; /** * \\brief Called to debayer 1 line of Bayer input data to output format * \\param[out] dst Pointe"
         },
         {
           "kind": "mechanism",
           "term": "interpolat",
           "family": "calibration",
           "weight": 3.4,
-          "context": "res access * to the previous and next src lines for interpolating the missing * colors. To allow copying the src line"
+          "context": "ires access * to the previous and next src lines for interpolating the missing * colors. To allow copying the src lines"
         },
         {
           "kind": "effect",
           "term": "faster",
           "family": "improvement",
           "weight": 2.4,
-          "context": "e src * is slow uncached memory it can be copied to faster memory before * debayering. Debayering a standard 2"
+          "context": "he src * is slow uncached memory it can be copied to faster memory before * debayering. Debayering a standard 2x"
         },
         {
           "kind": "effect",
           "term": "avoid",
           "family": "reduction",
           "weight": 2.6,
-          "context": "ayer functions form * a sliding window over the src avoiding the need to copy each * line more than once. *"
+          "context": "bayer functions form * a sliding window over the src avoiding the need to copy each * line more than once. * *"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -3766,7 +3766,7 @@
       "commit_sha": null,
       "ref": null,
       "title": "function DebayerCpu",
-      "snippet": "res access * to the previous and next src lines for interpolating the missing * colors. To allow copying the src line",
+      "snippet": "ires access * to the previous and next src lines for interpolating the missing * colors. To allow copying the src lines",
       "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/software_isp/debayer_cpu.h#L32-L167",
       "observed_at": "2026-07-20T13:39:35+02:00",
       "first_seen_commit": "244572db3efdb473e02c78e2fe7c12e9576b9b25",
@@ -3777,35 +3777,35 @@
           "term": "debayer",
           "family": "isp",
           "weight": 3.0,
-          "context": "debayer cpu class DebayerCpu : public Debayer { public: De"
+          "context": "debayer cpu class DebayerCpu : public Debayer { public: Debay"
         },
         {
           "kind": "domain",
           "term": "bayer",
           "family": "isp",
           "weight": 3.0,
-          "context": "hread; /** * \\brief Called to debayer 1 line of Bayer input data to output format * \\param[out] dst Point"
+          "context": "puThread; /** * \\brief Called to debayer 1 line of Bayer input data to output format * \\param[out] dst Pointe"
         },
         {
           "kind": "mechanism",
           "term": "interpolat",
           "family": "calibration",
           "weight": 3.4,
-          "context": "res access * to the previous and next src lines for interpolating the missing * colors. To allow copying the src line"
+          "context": "ires access * to the previous and next src lines for interpolating the missing * colors. To allow copying the src lines"
         },
         {
           "kind": "effect",
           "term": "faster",
           "family": "improvement",
           "weight": 2.4,
-          "context": "e src * is slow uncached memory it can be copied to faster memory before * debayering. Debayering a standard 2"
+          "context": "he src * is slow uncached memory it can be copied to faster memory before * debayering. Debayering a standard 2x"
         },
         {
           "kind": "effect",
           "term": "avoid",
           "family": "reduction",
           "weight": 2.6,
-          "context": "ayer functions form * a sliding window over the src avoiding the need to copy each * line more than once. *"
+          "context": "bayer functions form * a sliding window over the src avoiding the need to copy each * line more than once. * *"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -3861,14 +3861,14 @@
           "term": "ipa",
           "family": "isp",
           "weight": 3.0,
-          "context": "de \"interpolator.h\" namespace libcamera { namespace ipa { struct LscDescriptor { std::vector<std::string>"
+          "context": "lude \"interpolator.h\" namespace libcamera { namespace ipa { struct LscDescriptor { std::vector<std::string> ke"
         },
         {
           "kind": "mechanism",
           "term": "interpolat",
           "family": "calibration",
           "weight": 3.4,
-          "context": "libcamera include \"interpolator.h\" namespace libcamera { namespace ipa { struct"
+          "context": "libcamera include \"interpolator.h\" namespace libcamera { namespace ipa { struct LscD"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -3991,21 +3991,21 @@
           "term": "awb",
           "family": "3a",
           "weight": 3.2,
-          "context": "RkISP1Params *params) { uint32_t ct = frameContext.awb.colourTemperature; unsigned int quantizedCt = quanti"
+          "context": "RkISP1Params *params) { uint32_t ct = frameContext.awb.colourTemperature; unsigned int quantizedCt = quantiz"
         },
         {
           "kind": "domain",
           "term": "lsc",
           "family": "isp",
           "weight": 3.0,
-          "context": "heck if we can skip the update. */ if (!frameContext.lsc.update) { if (!frameContext.lsc.enabled) return"
+          "context": "Check if we can skip the update. */ if (!frameContext.lsc.update) { if (!frameContext.lsc.enabled) return;"
         },
         {
           "kind": "mechanism",
           "term": "interpolat",
           "family": "calibration",
           "weight": 3.4,
-          "context": "etParameters(*config); copyTable(*config, lscAlgo_.interpolateComponents(quantizedCt)); lastAppliedCt_ = ct; lastAppliedQ"
+          "context": "setParameters(*config); copyTable(*config, lscAlgo_.interpolateComponents(quantizedCt)); lastAppliedCt_ = ct; lastAppliedQuan"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -4365,7 +4365,7 @@
           "term": "sensor crop",
           "family": "sensor-control",
           "weight": 3.0,
-          "context": ". Note that these might * not cover exactly the max sensor crop, as there might be a crop * between ISP and dewarpe"
+          "context": "d. Note that these might * not cover exactly the max sensor crop, as there might be a crop * between ISP and dewarper"
         },
         {
           "kind": "domain",
@@ -4379,7 +4379,7 @@
           "term": "interpolat",
           "family": "calibration",
           "weight": 3.4,
-          "context": "izeT.height); /* * The dw100 has a specialty in interpolation that has to be taken into * account to use in a pix"
+          "context": "opSizeT.height); /* * The dw100 has a specialty in interpolation that has to be taken into * account to use in a pixe"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -4484,7 +4484,7 @@
       "commit_sha": null,
       "ref": null,
       "title": "function DmaBufAllocator::allocFromHeap",
-      "snippet": "< 0) { LOG(DmaBufAllocator, Error) << \"dma-heap allocation failure for \" << name; return {}; } UniqueFD allocFd(",
+      "snippet": "t < 0) { LOG(DmaBufAllocator, Error) << \"dma-heap allocation failure for \" << name; return {}; } UniqueFD allocFd(allo",
       "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/dma_buf_allocator.cpp#L163-L187",
       "observed_at": "2026-07-09T11:30:45-07:00",
       "first_seen_commit": "168b00eb344221c0c1ab27e418d71febc92d3086",
@@ -4502,14 +4502,14 @@
           "term": "heap allocat",
           "family": "memory-buffer",
           "weight": 3.0,
-          "context": "ap(const char *name, std::size_t size) { struct dma_heap_allocation_data alloc = {}; int ret; alloc.len = size; alloc.f"
+          "context": "Heap(const char *name, std::size_t size) { struct dma_heap_allocation_data alloc = {}; int ret; alloc.len = size; alloc.fd_fl"
         },
         {
           "kind": "problem",
           "term": "allocation failure",
           "family": "resource",
           "weight": 3.2,
-          "context": "< 0) { LOG(DmaBufAllocator, Error) << \"dma-heap allocation failure for \" << name; return {}; } UniqueFD allocFd("
+          "context": "t < 0) { LOG(DmaBufAllocator, Error) << \"dma-heap allocation failure for \" << name; return {}; } UniqueFD allocFd(allo"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -4889,21 +4889,21 @@
           "term": "buffer pool",
           "family": "memory-buffer",
           "weight": 3.0,
-          "context": "_libcamera_pad_get_video_info(srcpad); ret = gst_buffer_pool_acquire_buffer(video_pool, &copy, nullptr); if (re"
+          "context": "st_libcamera_pad_get_video_info(srcpad); ret = gst_buffer_pool_acquire_buffer(video_pool, &copy, nullptr); if (ret"
         },
         {
           "kind": "domain",
           "term": "latency",
           "family": "performance",
           "weight": 2.6,
-          "context": "ER_PTS(buffer) = wrap->pts_; gst_libcamera_pad_set_latency(srcpad, wrap->latency_); } else { GST_BUFFER_PT"
+          "context": "FER_PTS(buffer) = wrap->pts_; gst_libcamera_pad_set_latency(srcpad, wrap->latency_); } else { GST_BUFFER_PTS("
         },
         {
           "kind": "mechanism",
           "term": "negotiat",
           "family": "arbitration",
           "weight": 3.8,
-          "context": "{ case GST_FLOW_OK: break; case GST_FLOW_NOT_NEGOTIATED: { bool reconfigure = false; for (GstPad *srcpad"
+          "context": "ret) { case GST_FLOW_OK: break; case GST_FLOW_NOT_NEGOTIATED: { bool reconfigure = false; for (GstPad *srcpad :"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -5019,21 +5019,21 @@
           "term": "framerate",
           "family": "performance",
           "weight": 2.6,
-          "context": "(stream_cfg, caps, &transfer[i]); gst_libcamera_get_framerate_from_caps(caps, element_caps); } /* Validate the"
+          "context": "s(stream_cfg, caps, &transfer[i]); gst_libcamera_get_framerate_from_caps(caps, element_caps); } /* Validate the co"
         },
         {
           "kind": "domain",
           "term": "stream configuration",
           "family": "camera-framework",
           "weight": 2.6,
-          "context": "_->at(i); g_autoptr(GstCaps) caps = gst_libcamera_stream_configuration_to_caps(stream_cfg, transfer[i]); gst_libcamera_fra"
+          "context": "ig_->at(i); g_autoptr(GstCaps) caps = gst_libcamera_stream_configuration_to_caps(stream_cfg, transfer[i]); gst_libcamera_fram"
         },
         {
           "kind": "mechanism",
           "term": "negotiat",
           "family": "arbitration",
           "weight": 3.8,
-          "context": "gst libcamera src negotiate Must be called with stream_lock held. static bool gst"
+          "context": "gst libcamera src negotiate Must be called with stream_lock held. static bool gst_"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -5070,7 +5070,7 @@
       "commit_sha": null,
       "ref": null,
       "title": "function gst_libcamera_src_class_init",
-      "snippet": "depth=10\\\"). \" \"Leave unset to let the pipeline negotiate the sensor mode automatically.\", GST_TYPE_STRUC",
+      "snippet": ",depth=10\\\"). \" \"Leave unset to let the pipeline negotiate the sensor mode automatically.\", GST_TYPE_STRUCT",
       "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/gstreamer/gstlibcamerasrc.cpp#L1191-L1240",
       "observed_at": "2026-06-16T13:29:54+02:00",
       "first_seen_commit": "e091119622c94539a8a3b5aea2b28ec6a6d7a33f",
@@ -5081,21 +5081,21 @@
           "term": "sensor configuration",
           "family": "sensor-control",
           "weight": 3.0,
-          "context": "oxed(\"sensor-config\", \"Sensor Config\", \"Desired sensor configuration as a GstStructure with mandatory \" \"fields widt"
+          "context": "boxed(\"sensor-config\", \"Sensor Config\", \"Desired sensor configuration as a GstStructure with mandatory \" \"fields width"
         },
         {
           "kind": "domain",
           "term": "sensor mode",
           "family": "sensor-control",
           "weight": 3.0,
-          "context": "\"Leave unset to let the pipeline negotiate the sensor mode automatically.\", GST_TYPE_STRUCTURE, (GP"
+          "context": "\" \"Leave unset to let the pipeline negotiate the sensor mode automatically.\", GST_TYPE_STRUCTURE, (GPar"
         },
         {
           "kind": "mechanism",
           "term": "negotiat",
           "family": "arbitration",
           "weight": 3.8,
-          "context": "depth=10\\\"). \" \"Leave unset to let the pipeline negotiate the sensor mode automatically.\", GST_TYPE_STRUC"
+          "context": ",depth=10\\\"). \" \"Leave unset to let the pipeline negotiate the sensor mode automatically.\", GST_TYPE_STRUCT"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -5265,14 +5265,14 @@
           "term": "faster",
           "family": "improvement",
           "weight": 2.4,
-          "context": "/* * If we are close to the desired result, go faster to avoid making * multiple micro-adjustments. *"
+          "context": ".0; /* * If we are close to the desired result, go faster to avoid making * multiple micro-adjustments. * \\t"
         },
         {
           "kind": "effect",
           "term": "avoid",
           "family": "reduction",
           "weight": 2.6,
-          "context": "* If we are close to the desired result, go faster to avoid making * multiple micro-adjustments. * \\todo Mak"
+          "context": "* If we are close to the desired result, go faster to avoid making * multiple micro-adjustments. * \\todo Make"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -5298,6 +5298,98 @@
           "label": "효과",
           "terms": [
             "faster",
+            "avoid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_ac6f4a294232",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "code",
+      "path": "src/ipa/rpi/controller/rpi/agc_channel.cpp",
+      "symbol": "AgcChannel::divideUpExposure",
+      "symbol_kind": "function",
+      "line_start": 881,
+      "line_end": 954,
+      "commit_sha": null,
+      "ref": null,
+      "title": "function AgcChannel::divideUpExposure",
+      "snippet": "} } } /* * Finally adjust exposure time for flicker avoidance (require both * exposure time and gain not",
+      "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/agc_channel.cpp#L881-L954",
+      "observed_at": "2026-06-08T15:16:04+03:00",
+      "first_seen_commit": "474eed8041d3d7f9ce44525ac461a406ef82a9f8",
+      "first_seen_at": "2026-06-08T15:16:04+03:00",
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "agc",
+          "family": "3a",
+          "weight": 3.2,
+          "context": "agc channel divide up exposure void AgcChannel::divideUpEx"
+        },
+        {
+          "kind": "domain",
+          "term": "exposure time",
+          "family": "sensor-control",
+          "weight": 3.0,
+          "context": "hannel::divideUpExposure() { /* * Sending the fixed exposure time/gain cases through the same code may * seem unnecess"
+        },
+        {
+          "kind": "domain",
+          "term": "analogue gain",
+          "family": "sensor-control",
+          "weight": 3.0,
+          "context": "<< exposureTime << \" gain \" << gain; } /* Limit analogue gain to maximum allowed. */ double analogueGain = std::min"
+        },
+        {
+          "kind": "domain",
+          "term": "digital gain",
+          "family": "sensor-control",
+          "weight": 3.0,
+          "context": "ain, mode_.maxAnalogueGain); /* Finally work out the digital gain that we will need. */ filtered_.totalExposureNoDG = a"
+        },
+        {
+          "kind": "problem",
+          "term": "flicker",
+          "family": "correctness",
+          "weight": 3.0,
+          "context": "} } } /* * Finally adjust exposure time for flicker avoidance (require both * exposure time and gain not"
+        },
+        {
+          "kind": "effect",
+          "term": "avoid",
+          "family": "reduction",
+          "weight": 2.6,
+          "context": "} } /* * Finally adjust exposure time for flicker avoidance (require both * exposure time and gain not to be fix"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Source Code",
+      "location": "raspberrypi/libcamera / src/ipa/rpi/controller/rpi/agc_channel.cpp / AgcChannel::divideUpExposure / L881-L954",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "agc",
+            "exposure time",
+            "analogue gain",
+            "digital gain"
+          ]
+        },
+        {
+          "kind": "problem",
+          "label": "문제",
+          "terms": [
+            "flicker"
+          ]
+        },
+        {
+          "kind": "effect",
+          "label": "효과",
+          "terms": [
             "avoid"
           ]
         }
@@ -5348,7 +5440,7 @@
           "term": "exposure time",
           "family": "sensor-control",
           "weight": 3.0,
-          "context": "ze() }; /* * Set the AGC limits using the fixed exposure time and/or gain in * manual mode, or the sensor limits"
+          "context": ".size() }; /* * Set the AGC limits using the fixed exposure time and/or gain in * manual mode, or the sensor limits i"
         },
         {
           "kind": "mechanism",
@@ -5362,14 +5454,14 @@
           "term": "guarantee",
           "family": "guarantee",
           "weight": 3.0,
-          "context": "a hard * requirement for stability of the AGC (the guarantee we need in * automatic mode is a perfect match betw"
+          "context": "t a hard * requirement for stability of the AGC (the guarantee we need in * automatic mode is a perfect match betwe"
         },
         {
           "kind": "effect",
           "term": "lower",
           "family": "reduction",
           "weight": 2.6,
-          "context": "isp1_cif_isp_stat *params = &stats->params; /* The lower 4 bits are fractional and meant to be discarded. */"
+          "context": "rkisp1_cif_isp_stat *params = &stats->params; /* The lower 4 bits are fractional and meant to be discarded. */ H"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -5404,98 +5496,6 @@
       ]
     },
     {
-      "id": "ev_ac6f4a294232",
-      "org": "raspberrypi",
-      "repo": "libcamera",
-      "kind": "code",
-      "path": "src/ipa/rpi/controller/rpi/agc_channel.cpp",
-      "symbol": "AgcChannel::divideUpExposure",
-      "symbol_kind": "function",
-      "line_start": 881,
-      "line_end": 954,
-      "commit_sha": null,
-      "ref": null,
-      "title": "function AgcChannel::divideUpExposure",
-      "snippet": "} } /* * Finally adjust exposure time for flicker avoidance (require both * exposure time and gain no",
-      "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/rpi/controller/rpi/agc_channel.cpp#L881-L954",
-      "observed_at": "2026-06-08T15:16:04+03:00",
-      "first_seen_commit": "474eed8041d3d7f9ce44525ac461a406ef82a9f8",
-      "first_seen_at": "2026-06-08T15:16:04+03:00",
-      "signals": [
-        {
-          "kind": "domain",
-          "term": "agc",
-          "family": "3a",
-          "weight": 3.2,
-          "context": "agc channel divide up exposure void AgcChannel::divideUpEx"
-        },
-        {
-          "kind": "domain",
-          "term": "exposure time",
-          "family": "sensor-control",
-          "weight": 3.0,
-          "context": "nel::divideUpExposure() { /* * Sending the fixed exposure time/gain cases through the same code may * seem unneces"
-        },
-        {
-          "kind": "domain",
-          "term": "analogue gain",
-          "family": "sensor-control",
-          "weight": 3.0,
-          "context": "<< exposureTime << \" gain \" << gain; } /* Limit analogue gain to maximum allowed. */ double analogueGain = std::mi"
-        },
-        {
-          "kind": "domain",
-          "term": "digital gain",
-          "family": "sensor-control",
-          "weight": 3.0,
-          "context": "n, mode_.maxAnalogueGain); /* Finally work out the digital gain that we will need. */ filtered_.totalExposureNoDG ="
-        },
-        {
-          "kind": "problem",
-          "term": "flicker",
-          "family": "correctness",
-          "weight": 3.0,
-          "context": "} } /* * Finally adjust exposure time for flicker avoidance (require both * exposure time and gain no"
-        },
-        {
-          "kind": "effect",
-          "term": "avoid",
-          "family": "reduction",
-          "weight": 2.6,
-          "context": "} /* * Finally adjust exposure time for flicker avoidance (require both * exposure time and gain not to be fi"
-        }
-      ],
-      "repository": "raspberrypi/libcamera",
-      "kindLabel": "Source Code",
-      "location": "raspberrypi/libcamera / src/ipa/rpi/controller/rpi/agc_channel.cpp / AgcChannel::divideUpExposure / L881-L954",
-      "signalSummary": [
-        {
-          "kind": "domain",
-          "label": "기술 영역",
-          "terms": [
-            "agc",
-            "exposure time",
-            "analogue gain",
-            "digital gain"
-          ]
-        },
-        {
-          "kind": "problem",
-          "label": "문제",
-          "terms": [
-            "flicker"
-          ]
-        },
-        {
-          "kind": "effect",
-          "label": "효과",
-          "terms": [
-            "avoid"
-          ]
-        }
-      ]
-    },
-    {
       "id": "ev_ceb4dcd07bd0",
       "org": "raspberrypi",
       "repo": "libcamera",
@@ -5508,7 +5508,7 @@
       "commit_sha": null,
       "ref": null,
       "title": "function RPiCameraConfiguration::validate",
-      "snippet": "nvalid sensor configuration: \" << \"bitDepth/size mismatch\"; return Invalid; } }",
+      "snippet": "Invalid sensor configuration: \" << \"bitDepth/size mismatch\"; return Invalid; } } /* Start with some initi",
       "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/rpi/common/pipeline_base.cpp#L160-L304",
       "observed_at": "2026-06-04T17:00:44+08:00",
       "first_seen_commit": "3e7f663abb1b1f2484d3f71a9c527c77bda3be59",
@@ -5526,28 +5526,28 @@
           "term": "sensor configuration",
           "family": "sensor-control",
           "weight": 3.0,
-          "context": "()) return Invalid; /* * Make sure that if a sensor configuration has been requested it * is valid. */ if (senso"
+          "context": "mpty()) return Invalid; /* * Make sure that if a sensor configuration has been requested it * is valid. */ if (sensorCo"
         },
         {
           "kind": "domain",
           "term": "bayer",
           "family": "isp",
           "weight": 3.0,
-          "context": "ifications. */ if (sensorConfig) { BayerFormat bayer = BayerFormat::fromMbusCode(sensorFormat_.code);"
+          "context": "modifications. */ if (sensorConfig) { BayerFormat bayer = BayerFormat::fromMbusCode(sensorFormat_.code); if"
         },
         {
           "kind": "problem",
           "term": "mismatch",
           "family": "correctness",
           "weight": 3.0,
-          "context": "nvalid sensor configuration: \" << \"bitDepth/size mismatch\"; return Invalid; } }"
+          "context": "Invalid sensor configuration: \" << \"bitDepth/size mismatch\"; return Invalid; } } /* Start with some initi"
         },
         {
           "kind": "effect",
           "term": "save",
           "family": "reduction",
           "weight": 2.6,
-          "context": "t configure() will * need to apply to the sensor to save us working it out again. */ Orientation requested"
+          "context": "at configure() will * need to apply to the sensor to save us working it out again. */ Orientation requestedOr"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -5592,7 +5592,7 @@
       "commit_sha": null,
       "ref": null,
       "title": "function CameraData::loadPipelineConfiguration",
-      "snippet": "; config_.cameraTimeoutValue = phConfig[\"camera_timeout_value_ms\"].get<unsigned int>(config_.cameraTimeoutValu",
+      "snippet": "ag\"; config_.cameraTimeoutValue = phConfig[\"camera_timeout_value_ms\"].get<unsigned int>(config_.cameraTimeoutValu",
       "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/rpi/common/pipeline_base.cpp#L1110-L1162",
       "observed_at": "2026-06-04T17:00:44+08:00",
       "first_seen_commit": "3e7f663abb1b1f2484d3f71a9c527c77bda3be59",
@@ -5603,14 +5603,14 @@
           "term": "pipeline handler",
           "family": "camera-framework",
           "weight": 2.6,
-          "context": "return 0; } const ValueNode &phConfig = (*root)[\"pipeline_handler\"]; if (phConfig.contains(\"disable_startup_frame_dr"
+          "context": "return 0; } const ValueNode &phConfig = (*root)[\"pipeline_handler\"]; if (phConfig.contains(\"disable_startup_frame_drop"
         },
         {
           "kind": "problem",
           "term": "timeout",
           "family": "timing",
           "weight": 3.2,
-          "context": "; config_.cameraTimeoutValue = phConfig[\"camera_timeout_value_ms\"].get<unsigned int>(config_.cameraTimeoutValu"
+          "context": "ag\"; config_.cameraTimeoutValue = phConfig[\"camera_timeout_value_ms\"].get<unsigned int>(config_.cameraTimeoutValu"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -5646,7 +5646,7 @@
       "commit_sha": null,
       "ref": null,
       "title": "function CameraData::handleControlLists",
-      "snippet": "t &paramControls) { /* * The delayContext is the sequence number after it's gone through the various * pipeline dela",
+      "snippet": "List &paramControls) { /* * The delayContext is the sequence number after it's gone through the various * pipeline delay",
       "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/pipeline/rpi/common/pipeline_base.cpp#L1545-L1582",
       "observed_at": "2026-06-04T17:00:44+08:00",
       "first_seen_commit": "3e7f663abb1b1f2484d3f71a9c527c77bda3be59",
@@ -5657,21 +5657,21 @@
           "term": "isp",
           "family": "isp",
           "weight": 3.0,
-          "context": "* Controls that take effect immediately (typically ISP controls) have to be * delayed so as to synchronise"
+          "context": "* * Controls that take effect immediately (typically ISP controls) have to be * delayed so as to synchronise"
         },
         {
           "kind": "domain",
           "term": "synchronis",
           "family": "sensor-sync",
           "weight": 3.6,
-          "context": "pically ISP controls) have to be * delayed so as to synchronise with those controls that do get delayed. So we * mu"
+          "context": "ypically ISP controls) have to be * delayed so as to synchronise with those controls that do get delayed. So we * mus"
         },
         {
           "kind": "mechanism",
           "term": "sequence number",
           "family": "synchronization-mechanism",
           "weight": 4.2,
-          "context": "t &paramControls) { /* * The delayContext is the sequence number after it's gone through the various * pipeline dela"
+          "context": "List &paramControls) { /* * The delayContext is the sequence number after it's gone through the various * pipeline delay"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -5797,21 +5797,21 @@
           "term": "ipa",
           "family": "isp",
           "weight": 3.0,
-          "context": "a { LOG_DECLARE_CATEGORY(Interpolator) namespace ipa { template<typename T> class Interpolator { publ"
+          "context": "amera { LOG_DECLARE_CATEGORY(Interpolator) namespace ipa { template<typename T> class Interpolator { public:"
         },
         {
           "kind": "mechanism",
           "term": "interpolat",
           "family": "calibration",
           "weight": 3.4,
-          "context": "_node.h\" namespace libcamera { LOG_DECLARE_CATEGORY(Interpolator) namespace ipa { template<typename T> class Int"
+          "context": "ue_node.h\" namespace libcamera { LOG_DECLARE_CATEGORY(Interpolator) namespace ipa { template<typename T> class Interpol"
         },
         {
           "kind": "effect",
           "term": "lower",
           "family": "reduction",
           "weight": 2.6,
-          "context": "return lastInterpolatedValue_; auto it = data_.lower_bound(key); if (it == data_.begin()) return it->sec"
+          "context": ") return lastInterpolatedValue_; auto it = data_.lower_bound(key); if (it == data_.begin()) return it->second"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -5854,7 +5854,7 @@
       "commit_sha": null,
       "ref": null,
       "title": "function namespace",
-      "snippet": "namespace LOG_DECLARE_CATEGORY(Interpolator) namespace ipa { template<typename T> class Int",
+      "snippet": "namespace LOG_DECLARE_CATEGORY(Interpolator) namespace ipa { template<typename T> class Interpol",
       "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/ipa/libipa/interpolator.h#L22-L125",
       "observed_at": "2026-05-28T12:49:09+05:30",
       "first_seen_commit": "9561bd2ed88002d68e44804d6c3ca111e53be52e",
@@ -5865,21 +5865,21 @@
           "term": "ipa",
           "family": "isp",
           "weight": 3.0,
-          "context": "espace LOG_DECLARE_CATEGORY(Interpolator) namespace ipa { template<typename T> class Interpolator { publ"
+          "context": "amespace LOG_DECLARE_CATEGORY(Interpolator) namespace ipa { template<typename T> class Interpolator { public:"
         },
         {
           "kind": "mechanism",
           "term": "interpolat",
           "family": "calibration",
           "weight": 3.4,
-          "context": "namespace LOG_DECLARE_CATEGORY(Interpolator) namespace ipa { template<typename T> class Int"
+          "context": "namespace LOG_DECLARE_CATEGORY(Interpolator) namespace ipa { template<typename T> class Interpol"
         },
         {
           "kind": "effect",
           "term": "lower",
           "family": "reduction",
           "weight": 2.6,
-          "context": "return lastInterpolatedValue_; auto it = data_.lower_bound(key); if (it == data_.begin()) return it->sec"
+          "context": ") return lastInterpolatedValue_; auto it = data_.lower_bound(key); if (it == data_.begin()) return it->second"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -6237,14 +6237,14 @@
           "term": "awb",
           "family": "3a",
           "weight": 3.2,
-          "context": "Context, MaliC55Params *params) { if (!frameContext.awb.autoEnabled) { setParameters(params, frameContext);"
+          "context": "meContext, MaliC55Params *params) { if (!frameContext.awb.autoEnabled) { setParameters(params, frameContext);"
         },
         {
           "kind": "mechanism",
           "term": "interpolat",
           "family": "calibration",
           "weight": 3.4,
-          "context": "stricter than the * CcmAlgorithm class and only re-interpolates if the colour temperature * changes of a certain am"
+          "context": "y stricter than the * CcmAlgorithm class and only re-interpolates if the colour temperature * changes of a certain amo"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -6274,7 +6274,7 @@
     {
       "technology": "isp",
       "technologyLabel": "ISP 처리",
-      "evidenceCount": 324,
+      "evidenceCount": 327,
       "candidateCount": 7,
       "newCandidates": 7
     },
@@ -6288,7 +6288,7 @@
     {
       "technology": "3a",
       "technologyLabel": "3A 제어",
-      "evidenceCount": 133,
+      "evidenceCount": 134,
       "candidateCount": 5,
       "newCandidates": 5
     },

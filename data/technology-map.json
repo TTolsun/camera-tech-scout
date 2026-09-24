@@ -25,8 +25,8 @@
         "scheduling-mechanism",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 203,
-      "weight": 972.0,
+      "evidenceCount": 204,
+      "weight": 981.0,
       "crossRepository": true,
       "technologyLabel": "ISP 처리",
       "problemLabels": [
@@ -211,8 +211,8 @@
         "state-machine",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 99,
-      "weight": 425.6,
+      "evidenceCount": 100,
+      "weight": 428.8,
       "crossRepository": true,
       "technologyLabel": "3A 제어",
       "problemLabels": [
@@ -567,7 +567,7 @@
         {
           "id": "cand_fb3a967b42e5",
           "slug": "camera-hal-calibration",
-          "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 보정",
+          "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 특성화",
           "type": "patent"
         }
       ]
@@ -835,32 +835,35 @@
         "id": "org_0a28693c6218",
         "type": "organization",
         "label": "raspberrypi",
-        "weight": 69.6,
-        "evidenceCount": 348,
+        "weight": 70.0,
+        "evidenceCount": 350,
         "evidenceIds": [
           "ev_80ed53b793be",
           "ev_674f01781504",
+          "ev_28aa339fb531",
           "ev_6427a4096a55",
           "ev_8e39881b2c46",
-          "ev_28aa339fb531",
-          "ev_53aa5055bdd2",
-          "ev_53c5a26cd0b6",
-          "ev_72fec3231b6e",
-          "ev_83e53c2850ba",
-          "ev_2858a7f4b5ba",
-          "ev_f5b81d5e3911",
-          "ev_52cc3718d975",
-          "ev_77ff7c816e17",
-          "ev_7a3db45f6e8b",
-          "ev_5f3bbdb92284",
-          "ev_9f81c0e63c0c",
           "ev_344f4e9cc4be",
-          "ev_dcfc2edc79ce",
-          "ev_3087e5d413b3",
-          "ev_0e41afd70240",
-          "ev_1c5b12fcad47",
           "ev_3e08e06114b5",
           "ev_ca3f6303ae21",
+          "ev_7a6238cdf021",
+          "ev_8ab83f0c3257",
+          "ev_92b9fc7562f9",
+          "ev_598c8fcf3cd7",
+          "ev_5d796971733c",
+          "ev_b8c9edf10cce",
+          "ev_044c993c4519",
+          "ev_037aad3b4d7c",
+          "ev_4daf19d92121",
+          "ev_080f93ba45aa",
+          "ev_a16396ae0359",
+          "ev_7587692848af",
+          "ev_3ee887004535",
+          "ev_9e48b27b64c7",
+          "ev_cd974554036c",
+          "ev_19eb34ba2f38",
+          "ev_2b4ae8e7890e",
+          "ev_8800490a0757",
           "ev_5269b98389ca",
           "ev_1a32c101e3d9",
           "ev_c1788df48931",
@@ -869,15 +872,12 @@
           "ev_d7e15e4dd401",
           "ev_133b0a9d488d",
           "ev_05780706842b",
-          "ev_495f978e5a57",
-          "ev_7a6238cdf021",
-          "ev_8ab83f0c3257",
-          "ev_92b9fc7562f9",
-          "ev_598c8fcf3cd7",
-          "ev_5d796971733c",
-          "ev_b8c9edf10cce",
-          "ev_044c993c4519",
-          "ev_037aad3b4d7c"
+          "ev_dcfc2edc79ce",
+          "ev_3087e5d413b3",
+          "ev_0e41afd70240",
+          "ev_1c5b12fcad47",
+          "ev_594bd344fed6",
+          "ev_e2f10db86ca9"
         ],
         "meta": {}
       },
@@ -888,46 +888,46 @@
         "weight": 12.2,
         "evidenceCount": 61,
         "evidenceIds": [
-          "ev_10be601cc844",
-          "ev_38ffda84c456",
+          "ev_384c3730687c",
           "ev_b8cd3c962099",
           "ev_2ced31ed3348",
           "ev_663e627d009b",
           "ev_44ad48b4444b",
-          "ev_384c3730687c",
-          "ev_afaeca41ba84",
-          "ev_3ddbe118db14",
-          "ev_9b3e474d1b79",
-          "ev_4f5dca025205",
-          "ev_320b0c7e9dab",
-          "ev_4b46e3cfbd0c",
-          "ev_51e2602ab776",
-          "ev_ff800acecbf6",
-          "ev_288ea490dc21",
-          "ev_ab9f42312118",
-          "ev_1950c340a8e9",
-          "ev_3d9223cbcb1e",
-          "ev_a3f200b3018c",
-          "ev_8955c7f97293",
-          "ev_73daec554acc",
-          "ev_da4fbb342c78",
-          "ev_faf3ec3dfca5",
-          "ev_cc4b3ddb63ec",
-          "ev_588c6f904dfb",
+          "ev_10be601cc844",
+          "ev_38ffda84c456",
+          "ev_3b1e81342642",
+          "ev_432f0b301112",
+          "ev_5fda5205a145",
+          "ev_f3bfde2beb9c",
+          "ev_f913118b09aa",
+          "ev_d9607eae5f35",
+          "ev_ca9100d095bd",
+          "ev_2a682ad08ace",
+          "ev_96bf68e94531",
+          "ev_3a1a97c6c78b",
           "ev_2388ed300f0d",
           "ev_bb19a3e3b809",
           "ev_35e1750eee39",
-          "ev_3a1a97c6c78b",
-          "ev_96bf68e94531",
-          "ev_2a682ad08ace",
-          "ev_f913118b09aa",
-          "ev_3b1e81342642",
-          "ev_432f0b301112",
-          "ev_d9607eae5f35",
-          "ev_ca9100d095bd",
-          "ev_5fda5205a145",
-          "ev_f3bfde2beb9c",
-          "ev_2c5cd1cb438c"
+          "ev_51e2602ab776",
+          "ev_ff800acecbf6",
+          "ev_320b0c7e9dab",
+          "ev_4b46e3cfbd0c",
+          "ev_288ea490dc21",
+          "ev_ab9f42312118",
+          "ev_8955c7f97293",
+          "ev_73daec554acc",
+          "ev_1950c340a8e9",
+          "ev_3d9223cbcb1e",
+          "ev_a3f200b3018c",
+          "ev_faf3ec3dfca5",
+          "ev_cc4b3ddb63ec",
+          "ev_da4fbb342c78",
+          "ev_afaeca41ba84",
+          "ev_4f5dca025205",
+          "ev_9b3e474d1b79",
+          "ev_3ddbe118db14",
+          "ev_2c5cd1cb438c",
+          "ev_964852de7251"
         ],
         "meta": {}
       },
@@ -935,32 +935,35 @@
         "id": "rep_7944c02b0969",
         "type": "repository",
         "label": "raspberrypi/libcamera",
-        "weight": 166.0,
-        "evidenceCount": 332,
+        "weight": 167.0,
+        "evidenceCount": 334,
         "evidenceIds": [
           "ev_80ed53b793be",
           "ev_674f01781504",
+          "ev_28aa339fb531",
           "ev_6427a4096a55",
           "ev_8e39881b2c46",
-          "ev_28aa339fb531",
-          "ev_53aa5055bdd2",
-          "ev_53c5a26cd0b6",
-          "ev_72fec3231b6e",
-          "ev_83e53c2850ba",
-          "ev_2858a7f4b5ba",
-          "ev_f5b81d5e3911",
-          "ev_52cc3718d975",
-          "ev_77ff7c816e17",
-          "ev_7a3db45f6e8b",
-          "ev_5f3bbdb92284",
-          "ev_9f81c0e63c0c",
           "ev_344f4e9cc4be",
-          "ev_dcfc2edc79ce",
-          "ev_3087e5d413b3",
-          "ev_0e41afd70240",
-          "ev_1c5b12fcad47",
           "ev_3e08e06114b5",
           "ev_ca3f6303ae21",
+          "ev_7a6238cdf021",
+          "ev_8ab83f0c3257",
+          "ev_92b9fc7562f9",
+          "ev_598c8fcf3cd7",
+          "ev_5d796971733c",
+          "ev_b8c9edf10cce",
+          "ev_044c993c4519",
+          "ev_037aad3b4d7c",
+          "ev_4daf19d92121",
+          "ev_080f93ba45aa",
+          "ev_a16396ae0359",
+          "ev_7587692848af",
+          "ev_3ee887004535",
+          "ev_9e48b27b64c7",
+          "ev_cd974554036c",
+          "ev_19eb34ba2f38",
+          "ev_2b4ae8e7890e",
+          "ev_8800490a0757",
           "ev_5269b98389ca",
           "ev_1a32c101e3d9",
           "ev_c1788df48931",
@@ -969,15 +972,12 @@
           "ev_d7e15e4dd401",
           "ev_133b0a9d488d",
           "ev_05780706842b",
-          "ev_495f978e5a57",
-          "ev_7a6238cdf021",
-          "ev_8ab83f0c3257",
-          "ev_92b9fc7562f9",
-          "ev_598c8fcf3cd7",
-          "ev_5d796971733c",
-          "ev_b8c9edf10cce",
-          "ev_044c993c4519",
-          "ev_037aad3b4d7c"
+          "ev_dcfc2edc79ce",
+          "ev_3087e5d413b3",
+          "ev_0e41afd70240",
+          "ev_1c5b12fcad47",
+          "ev_594bd344fed6",
+          "ev_e2f10db86ca9"
         ],
         "meta": {
           "org": "raspberrypi"
@@ -990,46 +990,46 @@
         "weight": 30.5,
         "evidenceCount": 61,
         "evidenceIds": [
-          "ev_10be601cc844",
-          "ev_38ffda84c456",
+          "ev_384c3730687c",
           "ev_b8cd3c962099",
           "ev_2ced31ed3348",
           "ev_663e627d009b",
           "ev_44ad48b4444b",
-          "ev_384c3730687c",
-          "ev_afaeca41ba84",
-          "ev_3ddbe118db14",
-          "ev_9b3e474d1b79",
-          "ev_4f5dca025205",
-          "ev_320b0c7e9dab",
-          "ev_4b46e3cfbd0c",
-          "ev_51e2602ab776",
-          "ev_ff800acecbf6",
-          "ev_288ea490dc21",
-          "ev_ab9f42312118",
-          "ev_1950c340a8e9",
-          "ev_3d9223cbcb1e",
-          "ev_a3f200b3018c",
-          "ev_8955c7f97293",
-          "ev_73daec554acc",
-          "ev_da4fbb342c78",
-          "ev_faf3ec3dfca5",
-          "ev_cc4b3ddb63ec",
-          "ev_588c6f904dfb",
+          "ev_10be601cc844",
+          "ev_38ffda84c456",
+          "ev_3b1e81342642",
+          "ev_432f0b301112",
+          "ev_5fda5205a145",
+          "ev_f3bfde2beb9c",
+          "ev_f913118b09aa",
+          "ev_d9607eae5f35",
+          "ev_ca9100d095bd",
+          "ev_2a682ad08ace",
+          "ev_96bf68e94531",
+          "ev_3a1a97c6c78b",
           "ev_2388ed300f0d",
           "ev_bb19a3e3b809",
           "ev_35e1750eee39",
-          "ev_3a1a97c6c78b",
-          "ev_96bf68e94531",
-          "ev_2a682ad08ace",
-          "ev_f913118b09aa",
-          "ev_3b1e81342642",
-          "ev_432f0b301112",
-          "ev_d9607eae5f35",
-          "ev_ca9100d095bd",
-          "ev_5fda5205a145",
-          "ev_f3bfde2beb9c",
-          "ev_2c5cd1cb438c"
+          "ev_51e2602ab776",
+          "ev_ff800acecbf6",
+          "ev_320b0c7e9dab",
+          "ev_4b46e3cfbd0c",
+          "ev_288ea490dc21",
+          "ev_ab9f42312118",
+          "ev_8955c7f97293",
+          "ev_73daec554acc",
+          "ev_1950c340a8e9",
+          "ev_3d9223cbcb1e",
+          "ev_a3f200b3018c",
+          "ev_faf3ec3dfca5",
+          "ev_cc4b3ddb63ec",
+          "ev_da4fbb342c78",
+          "ev_afaeca41ba84",
+          "ev_4f5dca025205",
+          "ev_9b3e474d1b79",
+          "ev_3ddbe118db14",
+          "ev_2c5cd1cb438c",
+          "ev_964852de7251"
         ],
         "meta": {
           "org": "intel"
@@ -1042,13 +1042,13 @@
         "weight": 8.0,
         "evidenceCount": 16,
         "evidenceIds": [
-          "ev_1167668d44b7",
           "ev_3b8607c3ed91",
-          "ev_6554df3bab2c",
-          "ev_f5517e88c0d0",
+          "ev_1167668d44b7",
+          "ev_2e0ad58a8c12",
           "ev_c72f89c3d3b4",
           "ev_415d06639861",
-          "ev_2e0ad58a8c12",
+          "ev_6554df3bab2c",
+          "ev_f5517e88c0d0",
           "ev_ab05d8ba3398",
           "ev_ff89906ad3d9",
           "ev_3a4f2264af3c",
@@ -1071,45 +1071,45 @@
         "evidenceCount": 54,
         "evidenceIds": [
           "ev_43391071cc96",
+          "ev_bb44474b39d1",
           "ev_2d884392e685",
           "ev_62094f253695",
           "ev_d3fcc670ec19",
           "ev_0fa9abc70bbf",
           "ev_4f18796fa947",
-          "ev_a756a998fc8e",
-          "ev_1f5927fe48cc",
-          "ev_07da9b69f2f7",
-          "ev_1e53453c7b7f",
           "ev_6f4724a9eacd",
           "ev_1b85ce7665a0",
-          "ev_bb44474b39d1",
+          "ev_07da9b69f2f7",
+          "ev_a756a998fc8e",
+          "ev_1f5927fe48cc",
+          "ev_1e53453c7b7f",
+          "ev_a2136c0bcf2c",
+          "ev_49d1c678aa25",
+          "ev_c9e6751f9f1f",
+          "ev_0aad5b65c1ca",
+          "ev_c940a2452932",
+          "ev_953bb63062f2",
+          "ev_c5054ea02d78",
+          "ev_696d416a3f86",
           "ev_f1c02aad49b1",
           "ev_4f5b6adfca18",
           "ev_0e8a0b5a0507",
           "ev_3ed7c6ecd6c0",
           "ev_7d87c5db43dd",
-          "ev_adca4588b596",
-          "ev_72215cbb7e90",
-          "ev_a2136c0bcf2c",
-          "ev_49d1c678aa25",
-          "ev_db9c08ab2254",
-          "ev_d7e7861c92d8",
-          "ev_e005934ce2c5",
-          "ev_06c06e1ebe3d",
-          "ev_ce9d1a4b60fa",
-          "ev_5389fe3d0f70",
-          "ev_ac6f4a294232",
-          "ev_cd7915e3a912",
-          "ev_c025efa9ef00",
-          "ev_f2e5c93ae150",
-          "ev_42457dfd154d",
-          "ev_b96fd61a3b13",
           "ev_16dad97e9cc1",
           "ev_8266e3134fa7",
           "ev_02f386587579",
+          "ev_cd7915e3a912",
+          "ev_c025efa9ef00",
+          "ev_db9c08ab2254",
+          "ev_d7e7861c92d8",
+          "ev_f2e5c93ae150",
+          "ev_42457dfd154d",
           "ev_b615ccca2168",
           "ev_174a9a7e73a8",
-          "ev_0ab21edf7f18"
+          "ev_0ab21edf7f18",
+          "ev_a1b64af7530c",
+          "ev_1a71c9e886f6"
         ],
         "meta": {
           "repository": "raspberrypi/libcamera"
@@ -1122,46 +1122,46 @@
         "weight": 47.0,
         "evidenceCount": 47,
         "evidenceIds": [
-          "ev_1a330af4765a",
-          "ev_11016ad3fdcd",
-          "ev_473fc988594e",
+          "ev_55673a182762",
+          "ev_bfcae8279b3f",
+          "ev_efed16148f54",
+          "ev_87a0cc7984e3",
+          "ev_3db34ea64aa6",
+          "ev_5c75d14a8b2a",
+          "ev_075617e73e11",
+          "ev_8d42eeef5f05",
+          "ev_8135b89f4e96",
+          "ev_1ac8444546a3",
+          "ev_c0ac934019d3",
+          "ev_e9d3eff22dde",
+          "ev_69e5177f6183",
+          "ev_8a7e19c94e8b",
+          "ev_cafb4d9076b5",
+          "ev_e37b8b25a3e2",
+          "ev_5db905780b28",
+          "ev_99664bd9bee2",
+          "ev_183faf8c34bb",
+          "ev_d5cfee7930f3",
+          "ev_e5faf1d1f161",
+          "ev_0241c729cae2",
+          "ev_8af494a680cc",
           "ev_c55295531fd4",
           "ev_d4200695778c",
           "ev_c64ac3dbf78d",
           "ev_5038698d2842",
-          "ev_efed16148f54",
-          "ev_87a0cc7984e3",
-          "ev_3db34ea64aa6",
-          "ev_99664bd9bee2",
-          "ev_183faf8c34bb",
-          "ev_d5cfee7930f3",
+          "ev_578683e1c05f",
+          "ev_e9cd4fde12c0",
           "ev_ed26ff6a4431",
           "ev_6b35adaa2e87",
           "ev_93c343225864",
-          "ev_578683e1c05f",
-          "ev_e9cd4fde12c0",
-          "ev_e5faf1d1f161",
-          "ev_0241c729cae2",
-          "ev_8af494a680cc",
-          "ev_c0ac934019d3",
-          "ev_e9d3eff22dde",
-          "ev_cafb4d9076b5",
-          "ev_e37b8b25a3e2",
-          "ev_5db905780b28",
-          "ev_1ac8444546a3",
+          "ev_473fc988594e",
           "ev_de910daf17ff",
           "ev_b95a4fc6f13f",
-          "ev_fc20c428aa2c",
-          "ev_4ffbce8a1f8a",
-          "ev_5dac66872786",
-          "ev_075617e73e11",
-          "ev_8d42eeef5f05",
-          "ev_8135b89f4e96",
-          "ev_69e5177f6183",
-          "ev_5c75d14a8b2a",
-          "ev_8a7e19c94e8b",
-          "ev_55673a182762",
-          "ev_bfcae8279b3f"
+          "ev_1a330af4765a",
+          "ev_11016ad3fdcd",
+          "ev_563c3385335d",
+          "ev_126f5dfc37e2",
+          "ev_5dac66872786"
         ],
         "meta": {
           "repository": "raspberrypi/libcamera"
@@ -1175,21 +1175,8 @@
         "evidenceCount": 37,
         "evidenceIds": [
           "ev_344f4e9cc4be",
-          "ev_dcfc2edc79ce",
-          "ev_3087e5d413b3",
-          "ev_0e41afd70240",
-          "ev_1c5b12fcad47",
           "ev_3e08e06114b5",
           "ev_ca3f6303ae21",
-          "ev_5269b98389ca",
-          "ev_1a32c101e3d9",
-          "ev_c1788df48931",
-          "ev_36594ba6e408",
-          "ev_f6e32da5e814",
-          "ev_d7e15e4dd401",
-          "ev_133b0a9d488d",
-          "ev_05780706842b",
-          "ev_495f978e5a57",
           "ev_7a6238cdf021",
           "ev_8ab83f0c3257",
           "ev_92b9fc7562f9",
@@ -1208,9 +1195,22 @@
           "ev_19eb34ba2f38",
           "ev_2b4ae8e7890e",
           "ev_8800490a0757",
+          "ev_5269b98389ca",
+          "ev_1a32c101e3d9",
+          "ev_c1788df48931",
+          "ev_36594ba6e408",
+          "ev_f6e32da5e814",
+          "ev_d7e15e4dd401",
+          "ev_133b0a9d488d",
+          "ev_05780706842b",
+          "ev_dcfc2edc79ce",
+          "ev_3087e5d413b3",
+          "ev_0e41afd70240",
+          "ev_1c5b12fcad47",
           "ev_594bd344fed6",
           "ev_e2f10db86ca9",
-          "ev_3ee74a2877f4"
+          "ev_3ee74a2877f4",
+          "ev_495f978e5a57"
         ],
         "meta": {
           "repository": "raspberrypi/libcamera"
@@ -1270,34 +1270,34 @@
         "weight": 28.0,
         "evidenceCount": 28,
         "evidenceIds": [
-          "ev_9cd56ab90412",
-          "ev_563257252e35",
+          "ev_91273288db67",
+          "ev_55b81a198e75",
+          "ev_aef63d48175f",
+          "ev_30ea680ea6f2",
+          "ev_664ce461aefc",
           "ev_de71238ec2b0",
           "ev_c84442db5d2c",
           "ev_15f5b0a0dbe9",
-          "ev_91273288db67",
-          "ev_9ba25237f2cb",
-          "ev_08a513483386",
           "ev_a81752bf2295",
           "ev_974409c20023",
           "ev_ba324e3da6bf",
-          "ev_1643e92e54c0",
-          "ev_55b81a198e75",
-          "ev_cbc92d2dbde5",
-          "ev_aef63d48175f",
-          "ev_9d5416a49600",
-          "ev_c247bcdda64d",
-          "ev_0981f7eb8de5",
-          "ev_007eeb174881",
-          "ev_2361a2eaeb60",
-          "ev_30ea680ea6f2",
-          "ev_664ce461aefc",
           "ev_7a0963f221c3",
           "ev_897f8ca7428e",
           "ev_5c5fb0c79d65",
           "ev_d6f9a33c0345",
           "ev_bccc1425ba1d",
-          "ev_d687678f62b0"
+          "ev_d687678f62b0",
+          "ev_9cd56ab90412",
+          "ev_cbc92d2dbde5",
+          "ev_007eeb174881",
+          "ev_2361a2eaeb60",
+          "ev_563257252e35",
+          "ev_1643e92e54c0",
+          "ev_08a513483386",
+          "ev_9d5416a49600",
+          "ev_c247bcdda64d",
+          "ev_0981f7eb8de5",
+          "ev_9ba25237f2cb"
         ],
         "meta": {
           "repository": "raspberrypi/libcamera"
@@ -1310,7 +1310,7 @@
         "weight": 21.0,
         "evidenceCount": 21,
         "evidenceIds": [
-          "ev_d29978eed46a",
+          "ev_4f73b601c6f6",
           "ev_e4ed3d140d90",
           "ev_33f2e0ffe1fa",
           "ev_9c744941209e",
@@ -1319,17 +1319,17 @@
           "ev_830b0bc74947",
           "ev_b39cee00baa7",
           "ev_14bf7462bea5",
-          "ev_4f73b601c6f6",
-          "ev_500fe206ec17",
-          "ev_ceb4dcd07bd0",
-          "ev_8233693fee99",
-          "ev_66cd696915ce",
-          "ev_85b6743e1c75",
+          "ev_d29978eed46a",
           "ev_e3abf88d39ce",
           "ev_3bedc1b0fa9f",
           "ev_c346da211297",
           "ev_0355593b45da",
           "ev_313cbce98b3f",
+          "ev_500fe206ec17",
+          "ev_ceb4dcd07bd0",
+          "ev_8233693fee99",
+          "ev_66cd696915ce",
+          "ev_85b6743e1c75",
           "ev_53c9723ec17b"
         ],
         "meta": {
@@ -1343,21 +1343,21 @@
         "weight": 18.0,
         "evidenceCount": 18,
         "evidenceIds": [
+          "ev_116b2b5407a8",
+          "ev_9592605b56cc",
           "ev_8cc14fb22f25",
           "ev_28ea7bf07ae9",
           "ev_707a510366b9",
           "ev_7e2fb72545b3",
           "ev_9990ab29dd4e",
-          "ev_116b2b5407a8",
-          "ev_9592605b56cc",
+          "ev_9d3d474a7226",
+          "ev_ac7718f1336a",
           "ev_7e79ad25e51c",
           "ev_2ab46822f830",
           "ev_68ecb41e3899",
           "ev_d432be9636f0",
           "ev_9939c1d1ba9c",
-          "ev_ac7718f1336a",
           "ev_29f1f109dfef",
-          "ev_9d3d474a7226",
           "ev_f90240ccbf68",
           "ev_4796fedc0a74",
           "ev_7b1e839f0ef1"
@@ -1373,20 +1373,20 @@
         "weight": 14.0,
         "evidenceCount": 14,
         "evidenceIds": [
-          "ev_320b0c7e9dab",
-          "ev_4b46e3cfbd0c",
           "ev_51e2602ab776",
           "ev_ff800acecbf6",
+          "ev_320b0c7e9dab",
+          "ev_4b46e3cfbd0c",
           "ev_288ea490dc21",
           "ev_ab9f42312118",
+          "ev_8955c7f97293",
+          "ev_73daec554acc",
           "ev_1950c340a8e9",
           "ev_3d9223cbcb1e",
           "ev_a3f200b3018c",
-          "ev_8955c7f97293",
-          "ev_73daec554acc",
-          "ev_da4fbb342c78",
           "ev_faf3ec3dfca5",
-          "ev_cc4b3ddb63ec"
+          "ev_cc4b3ddb63ec",
+          "ev_da4fbb342c78"
         ],
         "meta": {
           "repository": "intel/ipu6-camera-hal"
@@ -1396,19 +1396,20 @@
         "id": "com_fc5dd540ca68",
         "type": "component",
         "label": "ipa/rkisp1",
-        "weight": 13.0,
-        "evidenceCount": 13,
+        "weight": 14.0,
+        "evidenceCount": 14,
         "evidenceIds": [
           "ev_62358cde9df3",
+          "ev_f91abbdd09cf",
+          "ev_2ed749bb385d",
           "ev_fb51d022847b",
           "ev_94ed456b1fcc",
           "ev_0a19cb9aeaae",
           "ev_8b986ae35bbe",
-          "ev_2ed749bb385d",
+          "ev_965b1f314429",
           "ev_71d54fc90b1c",
           "ev_72deae0ebb44",
           "ev_4380ba149329",
-          "ev_965b1f314429",
           "ev_347d9a436709",
           "ev_f9cd99d31dda",
           "ev_97a68dda7082"
@@ -1424,11 +1425,11 @@
         "weight": 11.0,
         "evidenceCount": 11,
         "evidenceIds": [
-          "ev_7e57d1dccfe0",
-          "ev_bf0292fa3d5c",
           "ev_2a2f5174ff80",
           "ev_86bd784a1a55",
           "ev_25b0af97ebc3",
+          "ev_7e57d1dccfe0",
+          "ev_bf0292fa3d5c",
           "ev_bee9cec75deb",
           "ev_18a413ec9af4",
           "ev_68c79e31d172",
@@ -1468,13 +1469,13 @@
         "weight": 9.0,
         "evidenceCount": 9,
         "evidenceIds": [
+          "ev_40050f390d7f",
+          "ev_11ff4ca690c2",
           "ev_20c3557f91df",
           "ev_9d6464a36958",
           "ev_b64e334f619b",
           "ev_26857d6bfc3f",
           "ev_b9969c7ceb2c",
-          "ev_11ff4ca690c2",
-          "ev_40050f390d7f",
           "ev_be3b24db2f00",
           "ev_75127a5e1c3c"
         ],
@@ -1489,13 +1490,13 @@
         "weight": 7.0,
         "evidenceCount": 7,
         "evidenceIds": [
-          "ev_f913118b09aa",
           "ev_3b1e81342642",
           "ev_432f0b301112",
-          "ev_d9607eae5f35",
-          "ev_ca9100d095bd",
           "ev_5fda5205a145",
-          "ev_f3bfde2beb9c"
+          "ev_f3bfde2beb9c",
+          "ev_f913118b09aa",
+          "ev_d9607eae5f35",
+          "ev_ca9100d095bd"
         ],
         "meta": {
           "repository": "intel/ipu6-camera-hal"
@@ -1540,24 +1541,6 @@
         }
       },
       {
-        "id": "com_9c43e067934f",
-        "type": "component",
-        "label": "Documentation/guides",
-        "weight": 6.0,
-        "evidenceCount": 6,
-        "evidenceIds": [
-          "ev_f5b81d5e3911",
-          "ev_52cc3718d975",
-          "ev_77ff7c816e17",
-          "ev_7a3db45f6e8b",
-          "ev_5f3bbdb92284",
-          "ev_9f81c0e63c0c"
-        ],
-        "meta": {
-          "repository": "raspberrypi/libcamera"
-        }
-      },
-      {
         "id": "com_8af79be15217",
         "type": "component",
         "label": "libcamera/sensor",
@@ -1576,17 +1559,35 @@
         }
       },
       {
+        "id": "com_9c43e067934f",
+        "type": "component",
+        "label": "Documentation/guides",
+        "weight": 6.0,
+        "evidenceCount": 6,
+        "evidenceIds": [
+          "ev_52cc3718d975",
+          "ev_77ff7c816e17",
+          "ev_7a3db45f6e8b",
+          "ev_5f3bbdb92284",
+          "ev_9f81c0e63c0c",
+          "ev_f5b81d5e3911"
+        ],
+        "meta": {
+          "repository": "raspberrypi/libcamera"
+        }
+      },
+      {
         "id": "com_71de0611e528",
         "type": "component",
         "label": "helpers",
         "weight": 6.0,
         "evidenceCount": 6,
         "evidenceIds": [
-          "ev_6554df3bab2c",
-          "ev_f5517e88c0d0",
+          "ev_2e0ad58a8c12",
           "ev_c72f89c3d3b4",
           "ev_415d06639861",
-          "ev_2e0ad58a8c12",
+          "ev_6554df3bab2c",
+          "ev_f5517e88c0d0",
           "ev_01464433d3d8"
         ],
         "meta": {
@@ -1600,11 +1601,11 @@
         "weight": 5.0,
         "evidenceCount": 5,
         "evidenceIds": [
+          "ev_96bf68e94531",
+          "ev_3a1a97c6c78b",
           "ev_2388ed300f0d",
           "ev_bb19a3e3b809",
-          "ev_35e1750eee39",
-          "ev_3a1a97c6c78b",
-          "ev_96bf68e94531"
+          "ev_35e1750eee39"
         ],
         "meta": {
           "repository": "intel/ipu6-camera-hal"
@@ -1628,23 +1629,6 @@
         }
       },
       {
-        "id": "com_7e2e078fadc4",
-        "type": "component",
-        "label": "Documentation/design",
-        "weight": 5.0,
-        "evidenceCount": 5,
-        "evidenceIds": [
-          "ev_53aa5055bdd2",
-          "ev_53c5a26cd0b6",
-          "ev_72fec3231b6e",
-          "ev_83e53c2850ba",
-          "ev_2858a7f4b5ba"
-        ],
-        "meta": {
-          "repository": "raspberrypi/libcamera"
-        }
-      },
-      {
         "id": "com_98d658968437",
         "type": "component",
         "label": "gstreamer",
@@ -1656,6 +1640,23 @@
           "ev_fffa41803494",
           "ev_eeb56ff81179",
           "ev_8846e5f3f92d"
+        ],
+        "meta": {
+          "repository": "raspberrypi/libcamera"
+        }
+      },
+      {
+        "id": "com_7e2e078fadc4",
+        "type": "component",
+        "label": "Documentation/design",
+        "weight": 5.0,
+        "evidenceCount": 5,
+        "evidenceIds": [
+          "ev_53aa5055bdd2",
+          "ev_53c5a26cd0b6",
+          "ev_72fec3231b6e",
+          "ev_83e53c2850ba",
+          "ev_2858a7f4b5ba"
         ],
         "meta": {
           "repository": "raspberrypi/libcamera"
@@ -1702,9 +1703,9 @@
         "evidenceCount": 4,
         "evidenceIds": [
           "ev_afaeca41ba84",
-          "ev_3ddbe118db14",
+          "ev_4f5dca025205",
           "ev_9b3e474d1b79",
-          "ev_4f5dca025205"
+          "ev_3ddbe118db14"
         ],
         "meta": {
           "repository": "intel/ipu6-camera-hal"
@@ -1734,9 +1735,9 @@
         "evidenceCount": 4,
         "evidenceIds": [
           "ev_674f01781504",
+          "ev_28aa339fb531",
           "ev_6427a4096a55",
-          "ev_8e39881b2c46",
-          "ev_28aa339fb531"
+          "ev_8e39881b2c46"
         ],
         "meta": {
           "repository": "raspberrypi/libcamera"
@@ -1893,8 +1894,8 @@
         "weight": 2.0,
         "evidenceCount": 2,
         "evidenceIds": [
-          "ev_1167668d44b7",
-          "ev_3b8607c3ed91"
+          "ev_3b8607c3ed91",
+          "ev_1167668d44b7"
         ],
         "meta": {
           "repository": "raspberrypi/libpisp"
@@ -1914,19 +1915,6 @@
         }
       },
       {
-        "id": "com_a93c5dca55bd",
-        "type": "component",
-        "label": "hal",
-        "weight": 1.0,
-        "evidenceCount": 1,
-        "evidenceIds": [
-          "ev_588c6f904dfb"
-        ],
-        "meta": {
-          "repository": "intel/ipu6-camera-hal"
-        }
-      },
-      {
         "id": "com_7baa4537a9d7",
         "type": "component",
         "label": "iutils",
@@ -1940,16 +1928,16 @@
         }
       },
       {
-        "id": "com_3f488f801194",
+        "id": "com_a93c5dca55bd",
         "type": "component",
-        "label": "apps/qcam",
+        "label": "hal",
         "weight": 1.0,
         "evidenceCount": 1,
         "evidenceIds": [
-          "ev_f97034180f64"
+          "ev_588c6f904dfb"
         ],
         "meta": {
-          "repository": "raspberrypi/libcamera"
+          "repository": "intel/ipu6-camera-hal"
         }
       },
       {
@@ -1979,6 +1967,32 @@
         }
       },
       {
+        "id": "com_54700fb6322e",
+        "type": "component",
+        "label": "apps/common",
+        "weight": 1.0,
+        "evidenceCount": 1,
+        "evidenceIds": [
+          "ev_a290a5bd9ccd"
+        ],
+        "meta": {
+          "repository": "raspberrypi/libcamera"
+        }
+      },
+      {
+        "id": "com_3f488f801194",
+        "type": "component",
+        "label": "apps/qcam",
+        "weight": 1.0,
+        "evidenceCount": 1,
+        "evidenceIds": [
+          "ev_f97034180f64"
+        ],
+        "meta": {
+          "repository": "raspberrypi/libcamera"
+        }
+      },
+      {
         "id": "com_2db6a19678da",
         "type": "component",
         "label": "libcamera/ipa",
@@ -1995,14 +2009,14 @@
         "id": "tec_7082c50ec651",
         "type": "technology",
         "label": "isp",
-        "weight": 972.0,
-        "evidenceCount": 203,
+        "weight": 981.0,
+        "evidenceCount": 204,
         "evidenceIds": [
-          "ev_afaeca41ba84",
-          "ev_9b3e474d1b79",
           "ev_1950c340a8e9",
           "ev_3d9223cbcb1e",
           "ev_a3f200b3018c",
+          "ev_afaeca41ba84",
+          "ev_9b3e474d1b79",
           "ev_9fd4cc600c10",
           "ev_816f00fa24d8",
           "ev_262bb2242057",
@@ -2014,11 +2028,6 @@
           "ev_6c75b84c756e",
           "ev_6427a4096a55",
           "ev_8e39881b2c46",
-          "ev_53c5a26cd0b6",
-          "ev_52cc3718d975",
-          "ev_77ff7c816e17",
-          "ev_7a3db45f6e8b",
-          "ev_9f81c0e63c0c",
           "ev_344f4e9cc4be",
           "ev_5269b98389ca",
           "ev_c1788df48931",
@@ -2031,13 +2040,18 @@
           "ev_2a2f5174ff80",
           "ev_bee9cec75deb",
           "ev_18a413ec9af4",
+          "ev_55b81a198e75",
           "ev_de71238ec2b0",
           "ev_c84442db5d2c",
           "ev_15f5b0a0dbe9",
           "ev_a81752bf2295",
           "ev_974409c20023",
           "ev_ba324e3da6bf",
-          "ev_1643e92e54c0"
+          "ev_1643e92e54c0",
+          "ev_116b2b5407a8",
+          "ev_9592605b56cc",
+          "ev_8cc14fb22f25",
+          "ev_28ea7bf07ae9"
         ],
         "meta": {}
       },
@@ -2045,49 +2059,49 @@
         "id": "tec_27d654440f87",
         "type": "technology",
         "label": "3a",
-        "weight": 425.6,
-        "evidenceCount": 99,
+        "weight": 428.8,
+        "evidenceCount": 100,
         "evidenceIds": [
           "ev_b8cd3c962099",
-          "ev_afaeca41ba84",
-          "ev_3ddbe118db14",
-          "ev_9b3e474d1b79",
-          "ev_cc4b3ddb63ec",
           "ev_3b1e81342642",
           "ev_432f0b301112",
           "ev_5fda5205a145",
           "ev_f3bfde2beb9c",
+          "ev_cc4b3ddb63ec",
+          "ev_afaeca41ba84",
+          "ev_9b3e474d1b79",
+          "ev_3ddbe118db14",
           "ev_8234eed7edbc",
           "ev_3ec05164abc3",
           "ev_2a5d6cdedcab",
           "ev_6427a4096a55",
-          "ev_53aa5055bdd2",
-          "ev_83e53c2850ba",
-          "ev_2858a7f4b5ba",
-          "ev_1a32c101e3d9",
           "ev_7a6238cdf021",
+          "ev_1a32c101e3d9",
           "ev_20c3557f91df",
           "ev_9d6464a36958",
-          "ev_1a330af4765a",
-          "ev_11016ad3fdcd",
-          "ev_473fc988594e",
+          "ev_ac7718f1336a",
+          "ev_a290a5bd9ccd",
+          "ev_efed16148f54",
+          "ev_3db34ea64aa6",
+          "ev_5c75d14a8b2a",
+          "ev_1ac8444546a3",
+          "ev_99664bd9bee2",
+          "ev_183faf8c34bb",
+          "ev_d5cfee7930f3",
           "ev_c55295531fd4",
           "ev_d4200695778c",
           "ev_c64ac3dbf78d",
           "ev_5038698d2842",
-          "ev_efed16148f54",
-          "ev_3db34ea64aa6",
-          "ev_99664bd9bee2",
-          "ev_183faf8c34bb",
-          "ev_d5cfee7930f3",
           "ev_ed26ff6a4431",
           "ev_93c343225864",
-          "ev_1ac8444546a3",
-          "ev_5c75d14a8b2a",
+          "ev_473fc988594e",
+          "ev_1a330af4765a",
+          "ev_11016ad3fdcd",
           "ev_639b9a0dbc51",
           "ev_05a4ade84266",
           "ev_1f6b856ab0bf",
-          "ev_2a94023fcff5"
+          "ev_4f18796fa947",
+          "ev_6f4724a9eacd"
         ],
         "meta": {}
       },
@@ -2098,16 +2112,16 @@
         "weight": 384.8,
         "evidenceCount": 118,
         "evidenceIds": [
+          "ev_384c3730687c",
           "ev_b8cd3c962099",
           "ev_2ced31ed3348",
           "ev_663e627d009b",
           "ev_44ad48b4444b",
-          "ev_384c3730687c",
-          "ev_51e2602ab776",
+          "ev_3a1a97c6c78b",
           "ev_2388ed300f0d",
           "ev_bb19a3e3b809",
           "ev_35e1750eee39",
-          "ev_3a1a97c6c78b",
+          "ev_51e2602ab776",
           "ev_2c5cd1cb438c",
           "ev_3ad744908a2a",
           "ev_35f07d7e3307",
@@ -2121,12 +2135,8 @@
           "ev_3d3af88c6511",
           "ev_0e1b2868b92e",
           "ev_674f01781504",
-          "ev_6427a4096a55",
           "ev_28aa339fb531",
-          "ev_77ff7c816e17",
-          "ev_7a3db45f6e8b",
-          "ev_9f81c0e63c0c",
-          "ev_05780706842b",
+          "ev_6427a4096a55",
           "ev_7a6238cdf021",
           "ev_8ab83f0c3257",
           "ev_92b9fc7562f9",
@@ -2137,7 +2147,11 @@
           "ev_037aad3b4d7c",
           "ev_4daf19d92121",
           "ev_080f93ba45aa",
-          "ev_a16396ae0359"
+          "ev_a16396ae0359",
+          "ev_7587692848af",
+          "ev_3ee887004535",
+          "ev_9e48b27b64c7",
+          "ev_cd974554036c"
         ],
         "meta": {}
       },
@@ -2149,9 +2163,9 @@
         "evidenceCount": 53,
         "evidenceIds": [
           "ev_38ffda84c456",
-          "ev_3ddbe118db14",
-          "ev_2a682ad08ace",
           "ev_ca9100d095bd",
+          "ev_2a682ad08ace",
+          "ev_3ddbe118db14",
           "ev_2c5cd1cb438c",
           "ev_8234eed7edbc",
           "ev_3ec05164abc3",
@@ -2159,34 +2173,34 @@
           "ev_2b91d8ba1e9a",
           "ev_3d3af88c6511",
           "ev_28aa339fb531",
-          "ev_53c5a26cd0b6",
-          "ev_72fec3231b6e",
-          "ev_83e53c2850ba",
+          "ev_ca3f6303ae21",
           "ev_dcfc2edc79ce",
           "ev_1c5b12fcad47",
-          "ev_ca3f6303ae21",
-          "ev_8846e5f3f92d",
           "ev_664ce461aefc",
+          "ev_8846e5f3f92d",
+          "ev_f573fc82c0fa",
+          "ev_465ae5b0aaa5",
+          "ev_8d32425f88f6",
+          "ev_9c744941209e",
+          "ev_b39cee00baa7",
+          "ev_d29978eed46a",
+          "ev_3bedc1b0fa9f",
+          "ev_313cbce98b3f",
+          "ev_ceb4dcd07bd0",
           "ev_578683e1c05f",
           "ev_e9cd4fde12c0",
           "ev_05a4ade84266",
-          "ev_94ed456b1fcc",
+          "ev_bb44474b39d1",
           "ev_d3fcc670ec19",
           "ev_4f18796fa947",
-          "ev_bb44474b39d1",
           "ev_0e8a0b5a0507",
+          "ev_c025efa9ef00",
           "ev_06c06e1ebe3d",
           "ev_ac6f4a294232",
-          "ev_c025efa9ef00",
-          "ev_8d32425f88f6",
-          "ev_f573fc82c0fa",
-          "ev_465ae5b0aaa5",
-          "ev_d29978eed46a",
-          "ev_9c744941209e",
-          "ev_b39cee00baa7",
-          "ev_ceb4dcd07bd0",
-          "ev_3bedc1b0fa9f",
-          "ev_313cbce98b3f",
+          "ev_94ed456b1fcc",
+          "ev_53c5a26cd0b6",
+          "ev_72fec3231b6e",
+          "ev_83e53c2850ba",
           "ev_d682f7228fc6"
         ],
         "meta": {}
@@ -2203,40 +2217,40 @@
           "ev_3d3af88c6511",
           "ev_6427a4096a55",
           "ev_8e39881b2c46",
-          "ev_52cc3718d975",
-          "ev_77ff7c816e17",
-          "ev_7a3db45f6e8b",
-          "ev_5f3bbdb92284",
-          "ev_9f81c0e63c0c",
           "ev_2a2f5174ff80",
-          "ev_20c3557f91df",
-          "ev_be3b24db2f00",
-          "ev_fffa41803494",
-          "ev_9cd56ab90412",
           "ev_55b81a198e75",
-          "ev_cbc92d2dbde5",
           "ev_aef63d48175f",
           "ev_897f8ca7428e",
-          "ev_f97034180f64",
-          "ev_473fc988594e",
-          "ev_cafb4d9076b5",
-          "ev_e37b8b25a3e2",
-          "ev_5db905780b28",
-          "ev_62094f253695",
-          "ev_d3fcc670ec19",
-          "ev_0fa9abc70bbf",
+          "ev_9cd56ab90412",
+          "ev_cbc92d2dbde5",
+          "ev_fffa41803494",
+          "ev_20c3557f91df",
+          "ev_be3b24db2f00",
           "ev_29f1f109dfef",
-          "ev_d29978eed46a",
+          "ev_4f73b601c6f6",
           "ev_e4ed3d140d90",
           "ev_33f2e0ffe1fa",
           "ev_b3fa0e4a6b9d",
           "ev_830b0bc74947",
           "ev_b39cee00baa7",
-          "ev_4f73b601c6f6",
-          "ev_ceb4dcd07bd0",
-          "ev_8233693fee99",
+          "ev_d29978eed46a",
           "ev_e3abf88d39ce",
           "ev_c346da211297",
+          "ev_ceb4dcd07bd0",
+          "ev_8233693fee99",
+          "ev_f97034180f64",
+          "ev_cafb4d9076b5",
+          "ev_e37b8b25a3e2",
+          "ev_5db905780b28",
+          "ev_473fc988594e",
+          "ev_62094f253695",
+          "ev_d3fcc670ec19",
+          "ev_0fa9abc70bbf",
+          "ev_52cc3718d975",
+          "ev_77ff7c816e17",
+          "ev_7a3db45f6e8b",
+          "ev_5f3bbdb92284",
+          "ev_9f81c0e63c0c",
           "ev_8a9452310835"
         ],
         "meta": {}
@@ -2259,17 +2273,17 @@
           "ev_24fc32802ae6",
           "ev_80ed53b793be",
           "ev_8e39881b2c46",
-          "ev_9f81c0e63c0c",
           "ev_7e57d1dccfe0",
           "ev_bf0292fa3d5c",
+          "ev_563257252e35",
+          "ev_a4c7a7132e29",
+          "ev_fffa41803494",
           "ev_20c3557f91df",
           "ev_9d6464a36958",
           "ev_b9969c7ceb2c",
-          "ev_a4c7a7132e29",
-          "ev_fffa41803494",
-          "ev_563257252e35",
-          "ev_4f18796fa947",
           "ev_d29978eed46a",
+          "ev_4f18796fa947",
+          "ev_9f81c0e63c0c",
           "ev_4796fedc0a74",
           "ev_686b0abc59b0",
           "ev_7b1e839f0ef1",
@@ -2297,32 +2311,32 @@
         "weight": 96.0,
         "evidenceCount": 26,
         "evidenceIds": [
+          "ev_51e2602ab776",
           "ev_320b0c7e9dab",
           "ev_4b46e3cfbd0c",
-          "ev_51e2602ab776",
           "ev_3ad744908a2a",
           "ev_35f07d7e3307",
-          "ev_f5b81d5e3911",
-          "ev_9f81c0e63c0c",
           "ev_344f4e9cc4be",
           "ev_2a2f5174ff80",
-          "ev_a4c7a7132e29",
-          "ev_3ebbcd370b3e",
-          "ev_9ba25237f2cb",
-          "ev_08a513483386",
           "ev_55b81a198e75",
           "ev_897f8ca7428e",
+          "ev_08a513483386",
+          "ev_9ba25237f2cb",
+          "ev_a4c7a7132e29",
+          "ev_3ebbcd370b3e",
           "ev_d432be9636f0",
+          "ev_9f81c0e63c0c",
+          "ev_f5b81d5e3911",
           "ev_d682f7228fc6",
           "ev_4796fedc0a74",
           "ev_686b0abc59b0",
           "ev_409a4cad9d6c",
           "ev_876fe59020c2",
-          "ev_1167668d44b7",
           "ev_3b8607c3ed91",
+          "ev_1167668d44b7",
+          "ev_c72f89c3d3b4",
           "ev_6554df3bab2c",
-          "ev_f5517e88c0d0",
-          "ev_c72f89c3d3b4"
+          "ev_f5517e88c0d0"
         ],
         "meta": {}
       },
@@ -2361,22 +2375,22 @@
         "weight": 66.0,
         "evidenceCount": 19,
         "evidenceIds": [
-          "ev_588c6f904dfb",
-          "ev_96bf68e94531",
           "ev_f913118b09aa",
           "ev_ca9100d095bd",
+          "ev_96bf68e94531",
+          "ev_588c6f904dfb",
           "ev_154e1f622091",
           "ev_15a35fc4107c",
           "ev_2b91d8ba1e9a",
           "ev_24fc32802ae6",
           "ev_f6e3d27ed0f1",
           "ev_6c75b84c756e",
+          "ev_40050f390d7f",
+          "ev_11ff4ca690c2",
           "ev_9d6464a36958",
           "ev_b64e334f619b",
           "ev_26857d6bfc3f",
           "ev_b9969c7ceb2c",
-          "ev_11ff4ca690c2",
-          "ev_40050f390d7f",
           "ev_1254005299b6",
           "ev_879864f751e9",
           "ev_75127a5e1c3c"
@@ -2393,20 +2407,20 @@
           "ev_b8cd3c962099",
           "ev_154e1f622091",
           "ev_8e39881b2c46",
-          "ev_d7e15e4dd401",
           "ev_7a6238cdf021",
           "ev_044c993c4519",
+          "ev_d7e15e4dd401",
           "ev_20c3557f91df",
+          "ev_29f1f109dfef",
+          "ev_9c744941209e",
+          "ev_d29978eed46a",
           "ev_fb138bdf26d4",
           "ev_99664bd9bee2",
           "ev_d5cfee7930f3",
           "ev_5dac66872786",
+          "ev_62094f253695",
           "ev_8b986ae35bbe",
           "ev_71d54fc90b1c",
-          "ev_62094f253695",
-          "ev_29f1f109dfef",
-          "ev_d29978eed46a",
-          "ev_9c744941209e",
           "ev_c75c090ad53f",
           "ev_68c79e31d172",
           "ev_5ef44c04b487",
@@ -2426,8 +2440,8 @@
           "ev_afaeca41ba84",
           "ev_9b3e474d1b79",
           "ev_2c5cd1cb438c",
-          "ev_3ec05164abc3",
           "ev_db0d45ef4f39",
+          "ev_3ec05164abc3",
           "ev_cd974554036c",
           "ev_de71238ec2b0",
           "ev_c84442db5d2c",
@@ -2447,9 +2461,9 @@
         "weight": 39.6,
         "evidenceCount": 10,
         "evidenceIds": [
+          "ev_faf3ec3dfca5",
           "ev_afaeca41ba84",
           "ev_4f5dca025205",
-          "ev_faf3ec3dfca5",
           "ev_2b91d8ba1e9a",
           "ev_24fc32802ae6",
           "ev_3e08e06114b5",
@@ -2475,12 +2489,12 @@
           "ev_964852de7251",
           "ev_9525cda1c3df",
           "ev_f173a708238c",
-          "ev_52cc3718d975",
           "ev_8ab83f0c3257",
           "ev_9e48b27b64c7",
           "ev_2a2f5174ff80",
           "ev_40050f390d7f",
-          "ev_5389fe3d0f70"
+          "ev_5389fe3d0f70",
+          "ev_52cc3718d975"
         ],
         "meta": {}
       },
@@ -2492,13 +2506,13 @@
         "evidenceCount": 9,
         "evidenceIds": [
           "ev_24fc32802ae6",
-          "ev_f5b81d5e3911",
+          "ev_eeb56ff81179",
+          "ev_26857d6bfc3f",
+          "ev_33f2e0ffe1fa",
           "ev_52cc3718d975",
           "ev_77ff7c816e17",
           "ev_5f3bbdb92284",
-          "ev_26857d6bfc3f",
-          "ev_eeb56ff81179",
-          "ev_33f2e0ffe1fa",
+          "ev_f5b81d5e3911",
           "ev_8b036124ec24"
         ],
         "meta": {}
@@ -2533,46 +2547,46 @@
         "weight": 222.0,
         "evidenceCount": 73,
         "evidenceIds": [
-          "ev_afaeca41ba84",
-          "ev_3ddbe118db14",
-          "ev_4f5dca025205",
+          "ev_2a682ad08ace",
           "ev_51e2602ab776",
           "ev_1950c340a8e9",
           "ev_3d9223cbcb1e",
           "ev_a3f200b3018c",
-          "ev_2a682ad08ace",
+          "ev_afaeca41ba84",
+          "ev_4f5dca025205",
+          "ev_3ddbe118db14",
+          "ev_db0d45ef4f39",
           "ev_8234eed7edbc",
           "ev_3ec05164abc3",
           "ev_2a5d6cdedcab",
-          "ev_db0d45ef4f39",
           "ev_154e1f622091",
           "ev_3d3af88c6511",
           "ev_28aa339fb531",
-          "ev_53aa5055bdd2",
-          "ev_53c5a26cd0b6",
-          "ev_72fec3231b6e",
-          "ev_2858a7f4b5ba",
           "ev_ca3f6303ae21",
-          "ev_3ebbcd370b3e",
           "ev_15f5b0a0dbe9",
           "ev_1643e92e54c0",
+          "ev_3ebbcd370b3e",
           "ev_f1f7976bc9f9",
-          "ev_473fc988594e",
-          "ev_8a7e19c94e8b",
+          "ev_707a510366b9",
+          "ev_68ecb41e3899",
+          "ev_c346da211297",
+          "ev_ceb4dcd07bd0",
           "ev_55673a182762",
+          "ev_8a7e19c94e8b",
+          "ev_473fc988594e",
           "ev_43391071cc96",
           "ev_2d884392e685",
-          "ev_a756a998fc8e",
-          "ev_1f5927fe48cc",
-          "ev_07da9b69f2f7",
           "ev_6f4724a9eacd",
           "ev_1b85ce7665a0",
+          "ev_07da9b69f2f7",
+          "ev_a756a998fc8e",
+          "ev_1f5927fe48cc",
           "ev_49d1c678aa25",
+          "ev_953bb63062f2",
+          "ev_cd7915e3a912",
+          "ev_c025efa9ef00",
           "ev_db9c08ab2254",
-          "ev_d7e7861c92d8",
-          "ev_e005934ce2c5",
-          "ev_06c06e1ebe3d",
-          "ev_ce9d1a4b60fa"
+          "ev_d7e7861c92d8"
         ],
         "meta": {}
       },
@@ -2580,49 +2594,49 @@
         "id": "pro_3cfb6c512875",
         "type": "problem",
         "label": "known-limitation",
-        "weight": 189.6,
-        "evidenceCount": 79,
+        "weight": 192.0,
+        "evidenceCount": 80,
         "evidenceIds": [
+          "ev_96bf68e94531",
+          "ev_3a1a97c6c78b",
           "ev_2388ed300f0d",
           "ev_bb19a3e3b809",
           "ev_35e1750eee39",
-          "ev_3a1a97c6c78b",
-          "ev_96bf68e94531",
           "ev_663bd909be0a",
           "ev_9fd4cc600c10",
           "ev_816f00fa24d8",
           "ev_262bb2242057",
           "ev_24fc32802ae6",
           "ev_6427a4096a55",
-          "ev_9f81c0e63c0c",
           "ev_344f4e9cc4be",
-          "ev_dcfc2edc79ce",
           "ev_5269b98389ca",
+          "ev_dcfc2edc79ce",
           "ev_e2f10db86ca9",
-          "ev_26857d6bfc3f",
-          "ev_b9969c7ceb2c",
+          "ev_30ea680ea6f2",
           "ev_c84442db5d2c",
           "ev_15f5b0a0dbe9",
           "ev_a81752bf2295",
-          "ev_9d5416a49600",
-          "ev_c247bcdda64d",
+          "ev_7a0963f221c3",
           "ev_007eeb174881",
           "ev_2361a2eaeb60",
-          "ev_30ea680ea6f2",
-          "ev_7a0963f221c3",
-          "ev_f97034180f64",
-          "ev_473fc988594e",
-          "ev_183faf8c34bb",
-          "ev_1ac8444546a3",
-          "ev_5dac66872786",
-          "ev_55673a182762",
-          "ev_bfcae8279b3f",
-          "ev_0a19cb9aeaae",
-          "ev_2ed749bb385d",
-          "ev_71d54fc90b1c",
-          "ev_4f18796fa947",
-          "ev_a2136c0bcf2c",
-          "ev_012b9d57aed3"
+          "ev_9d5416a49600",
+          "ev_c247bcdda64d",
+          "ev_26857d6bfc3f",
+          "ev_b9969c7ceb2c",
+          "ev_8cc14fb22f25",
+          "ev_28ea7bf07ae9",
+          "ev_707a510366b9",
+          "ev_7e2fb72545b3",
+          "ev_7e79ad25e51c",
+          "ev_2ab46822f830",
+          "ev_68ecb41e3899",
+          "ev_012b9d57aed3",
+          "ev_14aa2f9815f8",
+          "ev_89f76337f47d",
+          "ev_3420b8799ade",
+          "ev_4f73b601c6f6",
+          "ev_e4ed3d140d90",
+          "ev_830b0bc74947"
         ],
         "meta": {}
       },
@@ -2634,40 +2648,40 @@
         "evidenceCount": 50,
         "evidenceIds": [
           "ev_384c3730687c",
+          "ev_ca9100d095bd",
           "ev_320b0c7e9dab",
           "ev_4b46e3cfbd0c",
           "ev_ab9f42312118",
           "ev_8955c7f97293",
           "ev_73daec554acc",
           "ev_588c6f904dfb",
-          "ev_ca9100d095bd",
           "ev_3ad744908a2a",
           "ev_35f07d7e3307",
           "ev_6c75b84c756e",
+          "ev_3e08e06114b5",
           "ev_3087e5d413b3",
           "ev_0e41afd70240",
-          "ev_3e08e06114b5",
           "ev_b8ac909a3089",
           "ev_6bd9eae2d08b",
+          "ev_86bd784a1a55",
           "ev_7e57d1dccfe0",
           "ev_bf0292fa3d5c",
-          "ev_86bd784a1a55",
-          "ev_20c3557f91df",
-          "ev_40050f390d7f",
-          "ev_563257252e35",
           "ev_aef63d48175f",
           "ev_d687678f62b0",
-          "ev_0fa9abc70bbf",
-          "ev_7d87c5db43dd",
+          "ev_563257252e35",
+          "ev_40050f390d7f",
+          "ev_20c3557f91df",
           "ev_f5630dd37b36",
           "ev_d8a0274776a5",
           "ev_9551652050e8",
           "ev_d432be9636f0",
           "ev_33f2e0ffe1fa",
-          "ev_8233693fee99",
-          "ev_85b6743e1c75",
           "ev_3bedc1b0fa9f",
           "ev_313cbce98b3f",
+          "ev_8233693fee99",
+          "ev_85b6743e1c75",
+          "ev_0fa9abc70bbf",
+          "ev_7d87c5db43dd",
           "ev_d682f7228fc6",
           "ev_68c79e31d172",
           "ev_53c9723ec17b",
@@ -2683,27 +2697,27 @@
         "weight": 76.8,
         "evidenceCount": 24,
         "evidenceIds": [
-          "ev_9b3e474d1b79",
           "ev_f913118b09aa",
+          "ev_9b3e474d1b79",
           "ev_2b91d8ba1e9a",
           "ev_0e1b2868b92e",
           "ev_bee9cec75deb",
           "ev_18a413ec9af4",
-          "ev_9cd56ab90412",
           "ev_de71238ec2b0",
           "ev_c84442db5d2c",
           "ev_15f5b0a0dbe9",
-          "ev_9ba25237f2cb",
           "ev_a81752bf2295",
           "ev_974409c20023",
           "ev_ba324e3da6bf",
+          "ev_9cd56ab90412",
+          "ev_9ba25237f2cb",
+          "ev_b3fa0e4a6b9d",
           "ev_1254005299b6",
           "ev_879864f751e9",
           "ev_cafb4d9076b5",
           "ev_e37b8b25a3e2",
           "ev_5db905780b28",
           "ev_fb51d022847b",
-          "ev_b3fa0e4a6b9d",
           "ev_dd5c29903733",
           "ev_6554df3bab2c",
           "ev_f5517e88c0d0"
@@ -2747,9 +2761,9 @@
           "ev_c64ac3dbf78d",
           "ev_5038698d2842",
           "ev_1e53453c7b7f",
-          "ev_b96fd61a3b13",
           "ev_a1b64af7530c",
-          "ev_1a71c9e886f6"
+          "ev_1a71c9e886f6",
+          "ev_b96fd61a3b13"
         ],
         "meta": {}
       },
@@ -2757,22 +2771,24 @@
         "id": "mec_a05b0c4ba6a0",
         "type": "mechanism",
         "label": "calibration",
-        "weight": 404.6,
-        "evidenceCount": 116,
+        "weight": 408.0,
+        "evidenceCount": 117,
         "evidenceIds": [
+          "ev_b8cd3c962099",
           "ev_10be601cc844",
           "ev_38ffda84c456",
-          "ev_b8cd3c962099",
-          "ev_9b3e474d1b79",
           "ev_3b1e81342642",
           "ev_432f0b301112",
           "ev_d9607eae5f35",
+          "ev_9b3e474d1b79",
           "ev_964852de7251",
           "ev_f173a708238c",
           "ev_674f01781504",
-          "ev_52cc3718d975",
-          "ev_77ff7c816e17",
-          "ev_7a3db45f6e8b",
+          "ev_7a6238cdf021",
+          "ev_9e48b27b64c7",
+          "ev_19eb34ba2f38",
+          "ev_2b4ae8e7890e",
+          "ev_8800490a0757",
           "ev_1a32c101e3d9",
           "ev_36594ba6e408",
           "ev_f6e32da5e814",
@@ -2780,26 +2796,24 @@
           "ev_133b0a9d488d",
           "ev_05780706842b",
           "ev_495f978e5a57",
-          "ev_7a6238cdf021",
-          "ev_9e48b27b64c7",
-          "ev_19eb34ba2f38",
-          "ev_2b4ae8e7890e",
-          "ev_8800490a0757",
+          "ev_664ce461aefc",
+          "ev_40050f390d7f",
+          "ev_11ff4ca690c2",
           "ev_20c3557f91df",
           "ev_9d6464a36958",
           "ev_b9969c7ceb2c",
-          "ev_11ff4ca690c2",
-          "ev_40050f390d7f",
           "ev_be3b24db2f00",
-          "ev_664ce461aefc",
-          "ev_fb138bdf26d4",
-          "ev_1a330af4765a",
-          "ev_c55295531fd4",
-          "ev_d4200695778c",
-          "ev_c64ac3dbf78d",
-          "ev_5038698d2842",
-          "ev_efed16148f54",
-          "ev_87a0cc7984e3"
+          "ev_116b2b5407a8",
+          "ev_9592605b56cc",
+          "ev_9990ab29dd4e",
+          "ev_9d3d474a7226",
+          "ev_ac7718f1336a",
+          "ev_9939c1d1ba9c",
+          "ev_f573fc82c0fa",
+          "ev_465ae5b0aaa5",
+          "ev_8d32425f88f6",
+          "ev_7faef4edbe84",
+          "ev_fb138bdf26d4"
         ],
         "meta": {}
       },
@@ -2810,17 +2824,19 @@
         "weight": 100.8,
         "evidenceCount": 24,
         "evidenceIds": [
-          "ev_f5b81d5e3911",
           "ev_dcfc2edc79ce",
           "ev_1c5b12fcad47",
           "ev_3ee74a2877f4",
-          "ev_bf0292fa3d5c",
           "ev_2a2f5174ff80",
-          "ev_563257252e35",
+          "ev_bf0292fa3d5c",
           "ev_91273288db67",
           "ev_55b81a198e75",
-          "ev_cbc92d2dbde5",
           "ev_5c5fb0c79d65",
+          "ev_cbc92d2dbde5",
+          "ev_563257252e35",
+          "ev_e09b1ad71f49",
+          "ev_500fe206ec17",
+          "ev_66cd696915ce",
           "ev_cafb4d9076b5",
           "ev_e37b8b25a3e2",
           "ev_5db905780b28",
@@ -2829,9 +2845,7 @@
           "ev_173fedba4965",
           "ev_1f6b856ab0bf",
           "ev_94ed456b1fcc",
-          "ev_e09b1ad71f49",
-          "ev_500fe206ec17",
-          "ev_66cd696915ce",
+          "ev_f5b81d5e3911",
           "ev_e40d3435b666",
           "ev_0dcfbca21928"
         ],
@@ -2845,12 +2859,11 @@
         "evidenceCount": 19,
         "evidenceIds": [
           "ev_2ced31ed3348",
+          "ev_5fda5205a145",
+          "ev_f3bfde2beb9c",
           "ev_288ea490dc21",
           "ev_faf3ec3dfca5",
           "ev_cc4b3ddb63ec",
-          "ev_5fda5205a145",
-          "ev_f3bfde2beb9c",
-          "ev_5f3bbdb92284",
           "ev_8ab83f0c3257",
           "ev_5d796971733c",
           "ev_b8c9edf10cce",
@@ -2862,7 +2875,8 @@
           "ev_3ee887004535",
           "ev_9e48b27b64c7",
           "ev_cd974554036c",
-          "ev_f1c02aad49b1"
+          "ev_f1c02aad49b1",
+          "ev_5f3bbdb92284"
         ],
         "meta": {}
       },
@@ -2879,12 +2893,12 @@
           "ev_f6e3d27ed0f1",
           "ev_80ed53b793be",
           "ev_594bd344fed6",
-          "ev_b64e334f619b",
           "ev_a4c7a7132e29",
           "ev_3ebbcd370b3e",
           "ev_fffa41803494",
           "ev_eeb56ff81179",
           "ev_8846e5f3f92d",
+          "ev_b64e334f619b",
           "ev_832ae5424531",
           "ev_d29978eed46a",
           "ev_4011bb21c335",
@@ -2901,14 +2915,14 @@
         "evidenceIds": [
           "ev_44ad48b4444b",
           "ev_11016ad3fdcd",
-          "ev_0e8a0b5a0507",
-          "ev_7d87c5db43dd",
-          "ev_adca4588b596",
-          "ev_72215cbb7e90",
-          "ev_f2e5c93ae150",
-          "ev_c940a2452932",
           "ev_c9e6751f9f1f",
           "ev_0aad5b65c1ca",
+          "ev_c940a2452932",
+          "ev_0e8a0b5a0507",
+          "ev_7d87c5db43dd",
+          "ev_f2e5c93ae150",
+          "ev_adca4588b596",
+          "ev_72215cbb7e90",
           "ev_53ec60234a70"
         ],
         "meta": {}
@@ -2926,10 +2940,10 @@
           "ev_d6f9a33c0345",
           "ev_bccc1425ba1d",
           "ev_d687678f62b0",
-          "ev_8b986ae35bbe",
-          "ev_0e8a0b5a0507",
           "ev_29f1f109dfef",
           "ev_9c744941209e",
+          "ev_0e8a0b5a0507",
+          "ev_8b986ae35bbe",
           "ev_4796fedc0a74",
           "ev_876fe59020c2"
         ],
@@ -2945,11 +2959,11 @@
           "ev_663e627d009b",
           "ev_ff800acecbf6",
           "ev_da4fbb342c78",
-          "ev_05780706842b",
           "ev_92b9fc7562f9",
           "ev_598c8fcf3cd7",
           "ev_4daf19d92121",
           "ev_cd974554036c",
+          "ev_05780706842b",
           "ev_62358cde9df3",
           "ev_7bd1058e4cb1"
         ],
@@ -2962,10 +2976,10 @@
         "weight": 16.8,
         "evidenceCount": 6,
         "evidenceIds": [
-          "ev_83e53c2850ba",
           "ev_91273288db67",
           "ev_e4ed3d140d90",
           "ev_500fe206ec17",
+          "ev_83e53c2850ba",
           "ev_0b4a2c0adec5",
           "ev_8b036124ec24"
         ],
@@ -3246,7 +3260,7 @@
       {
         "id": "can_91a9f2f02f1b",
         "type": "candidate",
-        "label": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 보정",
+        "label": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 특성화",
         "weight": 62.4,
         "evidenceCount": 0,
         "evidenceIds": [],
@@ -3475,37 +3489,23 @@
       },
       {
         "source": "rep_fc1020ab433f",
-        "target": "com_957783a1ef4c",
+        "target": "com_50c8cd00ac46",
         "type": "contains",
-        "weight": 2.0,
-        "evidenceCount": 2
+        "weight": 1.0,
+        "evidenceCount": 1
       },
       {
-        "source": "com_957783a1ef4c",
-        "target": "tec_b57cc6131571",
+        "source": "com_50c8cd00ac46",
+        "target": "tec_4a0b8741c76e",
         "type": "implements",
         "weight": 2.6,
         "evidenceCount": 1
       },
       {
-        "source": "com_957783a1ef4c",
-        "target": "tec_e73eb10d40b8",
-        "type": "implements",
-        "weight": 5.2,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_957783a1ef4c",
-        "target": "mec_a05b0c4ba6a0",
-        "type": "uses",
-        "weight": 6.8,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_957783a1ef4c",
-        "target": "tec_859bbf8c3fda",
-        "type": "implements",
-        "weight": 3.0,
+        "source": "com_50c8cd00ac46",
+        "target": "pro_c00f61703122",
+        "type": "reports",
+        "weight": 3.2,
         "evidenceCount": 1
       },
       {
@@ -3573,22 +3573,239 @@
       },
       {
         "source": "rep_fc1020ab433f",
-        "target": "com_50c8cd00ac46",
+        "target": "com_957783a1ef4c",
+        "type": "contains",
+        "weight": 2.0,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_957783a1ef4c",
+        "target": "tec_b57cc6131571",
+        "type": "implements",
+        "weight": 2.6,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_957783a1ef4c",
+        "target": "tec_e73eb10d40b8",
+        "type": "implements",
+        "weight": 5.2,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_957783a1ef4c",
+        "target": "mec_a05b0c4ba6a0",
+        "type": "uses",
+        "weight": 6.8,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_957783a1ef4c",
+        "target": "tec_859bbf8c3fda",
+        "type": "implements",
+        "weight": 3.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "rep_fc1020ab433f",
+        "target": "com_45daa3c27527",
+        "type": "contains",
+        "weight": 7.0,
+        "evidenceCount": 7
+      },
+      {
+        "source": "com_45daa3c27527",
+        "target": "tec_e73eb10d40b8",
+        "type": "implements",
+        "weight": 7.8,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_45daa3c27527",
+        "target": "tec_27d654440f87",
+        "type": "implements",
+        "weight": 19.2,
+        "evidenceCount": 4
+      },
+      {
+        "source": "com_45daa3c27527",
+        "target": "mec_a05b0c4ba6a0",
+        "type": "uses",
+        "weight": 10.2,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_45daa3c27527",
+        "target": "mec_0efcd7c6c0a8",
+        "type": "uses",
+        "weight": 8.4,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_45daa3c27527",
+        "target": "tec_16d9494862ee",
+        "type": "implements",
+        "weight": 6.0,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_45daa3c27527",
+        "target": "pro_d86d09f06904",
+        "type": "reports",
+        "weight": 3.2,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_45daa3c27527",
+        "target": "tec_859bbf8c3fda",
+        "type": "implements",
+        "weight": 9.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_45daa3c27527",
+        "target": "pro_c00f61703122",
+        "type": "reports",
+        "weight": 3.2,
+        "evidenceCount": 1
+      },
+      {
+        "source": "rep_fc1020ab433f",
+        "target": "com_7baa4537a9d7",
         "type": "contains",
         "weight": 1.0,
         "evidenceCount": 1
       },
       {
-        "source": "com_50c8cd00ac46",
+        "source": "com_7baa4537a9d7",
+        "target": "tec_859bbf8c3fda",
+        "type": "implements",
+        "weight": 3.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_7baa4537a9d7",
+        "target": "pro_297a563c5a02",
+        "type": "reports",
+        "weight": 3.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "rep_fc1020ab433f",
+        "target": "com_6d57f5a91fa0",
+        "type": "contains",
+        "weight": 5.0,
+        "evidenceCount": 5
+      },
+      {
+        "source": "com_6d57f5a91fa0",
+        "target": "tec_16d9494862ee",
+        "type": "implements",
+        "weight": 3.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_6d57f5a91fa0",
+        "target": "pro_3cfb6c512875",
+        "type": "reports",
+        "weight": 12.0,
+        "evidenceCount": 5
+      },
+      {
+        "source": "com_6d57f5a91fa0",
+        "target": "tec_4a0b8741c76e",
+        "type": "implements",
+        "weight": 10.4,
+        "evidenceCount": 4
+      },
+      {
+        "source": "rep_fc1020ab433f",
+        "target": "com_cf85d9563859",
+        "type": "contains",
+        "weight": 14.0,
+        "evidenceCount": 14
+      },
+      {
+        "source": "com_cf85d9563859",
+        "target": "tec_3c8c51a0ac35",
+        "type": "implements",
+        "weight": 12.0,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_cf85d9563859",
         "target": "tec_4a0b8741c76e",
         "type": "implements",
         "weight": 2.6,
         "evidenceCount": 1
       },
       {
-        "source": "com_50c8cd00ac46",
+        "source": "com_cf85d9563859",
+        "target": "pro_297a563c5a02",
+        "type": "reports",
+        "weight": 12.0,
+        "evidenceCount": 4
+      },
+      {
+        "source": "com_cf85d9563859",
+        "target": "tec_4d5da716b921",
+        "type": "implements",
+        "weight": 6.6,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_cf85d9563859",
+        "target": "mec_50e87b4fec0e",
+        "type": "uses",
+        "weight": 6.8,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_cf85d9563859",
         "target": "pro_c00f61703122",
         "type": "reports",
+        "weight": 16.0,
+        "evidenceCount": 5
+      },
+      {
+        "source": "com_cf85d9563859",
+        "target": "mec_0efcd7c6c0a8",
+        "type": "uses",
+        "weight": 12.6,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_cf85d9563859",
+        "target": "tec_a7752be28ca7",
+        "type": "implements",
+        "weight": 9.0,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_cf85d9563859",
+        "target": "tec_7082c50ec651",
+        "type": "implements",
+        "weight": 18.0,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_cf85d9563859",
+        "target": "mec_99f71c84dda7",
+        "type": "uses",
+        "weight": 3.6,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_cf85d9563859",
+        "target": "tec_d821cb73680b",
+        "type": "implements",
+        "weight": 3.6,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_cf85d9563859",
+        "target": "tec_27d654440f87",
+        "type": "implements",
         "weight": 3.2,
         "evidenceCount": 1
       },
@@ -3643,13 +3860,6 @@
       },
       {
         "source": "com_b171a9c934a3",
-        "target": "tec_859bbf8c3fda",
-        "type": "implements",
-        "weight": 15.0,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_b171a9c934a3",
         "target": "pro_d86d09f06904",
         "type": "reports",
         "weight": 3.2,
@@ -3663,228 +3873,11 @@
         "evidenceCount": 1
       },
       {
-        "source": "rep_fc1020ab433f",
-        "target": "com_cf85d9563859",
-        "type": "contains",
-        "weight": 14.0,
-        "evidenceCount": 14
-      },
-      {
-        "source": "com_cf85d9563859",
-        "target": "tec_3c8c51a0ac35",
-        "type": "implements",
-        "weight": 12.0,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_cf85d9563859",
-        "target": "pro_c00f61703122",
-        "type": "reports",
-        "weight": 16.0,
-        "evidenceCount": 5
-      },
-      {
-        "source": "com_cf85d9563859",
-        "target": "tec_4a0b8741c76e",
-        "type": "implements",
-        "weight": 2.6,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_cf85d9563859",
-        "target": "pro_297a563c5a02",
-        "type": "reports",
-        "weight": 12.0,
-        "evidenceCount": 4
-      },
-      {
-        "source": "com_cf85d9563859",
-        "target": "tec_4d5da716b921",
-        "type": "implements",
-        "weight": 6.6,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_cf85d9563859",
-        "target": "mec_50e87b4fec0e",
-        "type": "uses",
-        "weight": 6.8,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_cf85d9563859",
-        "target": "mec_0efcd7c6c0a8",
-        "type": "uses",
-        "weight": 12.6,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_cf85d9563859",
-        "target": "tec_7082c50ec651",
-        "type": "implements",
-        "weight": 18.0,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_cf85d9563859",
-        "target": "mec_99f71c84dda7",
-        "type": "uses",
-        "weight": 3.6,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_cf85d9563859",
-        "target": "tec_a7752be28ca7",
-        "type": "implements",
-        "weight": 9.0,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_cf85d9563859",
-        "target": "tec_d821cb73680b",
-        "type": "implements",
-        "weight": 3.6,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_cf85d9563859",
-        "target": "tec_27d654440f87",
-        "type": "implements",
-        "weight": 3.2,
-        "evidenceCount": 1
-      },
-      {
-        "source": "rep_fc1020ab433f",
-        "target": "com_a93c5dca55bd",
-        "type": "contains",
-        "weight": 1.0,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_a93c5dca55bd",
-        "target": "tec_16d9494862ee",
-        "type": "implements",
-        "weight": 3.0,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_a93c5dca55bd",
-        "target": "pro_c00f61703122",
-        "type": "reports",
-        "weight": 3.2,
-        "evidenceCount": 1
-      },
-      {
-        "source": "rep_fc1020ab433f",
-        "target": "com_6d57f5a91fa0",
-        "type": "contains",
-        "weight": 5.0,
-        "evidenceCount": 5
-      },
-      {
-        "source": "com_6d57f5a91fa0",
-        "target": "tec_4a0b8741c76e",
-        "type": "implements",
-        "weight": 10.4,
-        "evidenceCount": 4
-      },
-      {
-        "source": "com_6d57f5a91fa0",
-        "target": "pro_3cfb6c512875",
-        "type": "reports",
-        "weight": 12.0,
-        "evidenceCount": 5
-      },
-      {
-        "source": "com_6d57f5a91fa0",
-        "target": "tec_16d9494862ee",
-        "type": "implements",
-        "weight": 3.0,
-        "evidenceCount": 1
-      },
-      {
-        "source": "rep_fc1020ab433f",
-        "target": "com_7baa4537a9d7",
-        "type": "contains",
-        "weight": 1.0,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_7baa4537a9d7",
+        "source": "com_b171a9c934a3",
         "target": "tec_859bbf8c3fda",
         "type": "implements",
-        "weight": 3.0,
+        "weight": 15.0,
         "evidenceCount": 1
-      },
-      {
-        "source": "com_7baa4537a9d7",
-        "target": "pro_297a563c5a02",
-        "type": "reports",
-        "weight": 3.0,
-        "evidenceCount": 1
-      },
-      {
-        "source": "rep_fc1020ab433f",
-        "target": "com_45daa3c27527",
-        "type": "contains",
-        "weight": 7.0,
-        "evidenceCount": 7
-      },
-      {
-        "source": "com_45daa3c27527",
-        "target": "tec_16d9494862ee",
-        "type": "implements",
-        "weight": 6.0,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_45daa3c27527",
-        "target": "pro_d86d09f06904",
-        "type": "reports",
-        "weight": 3.2,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_45daa3c27527",
-        "target": "tec_e73eb10d40b8",
-        "type": "implements",
-        "weight": 7.8,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_45daa3c27527",
-        "target": "tec_27d654440f87",
-        "type": "implements",
-        "weight": 19.2,
-        "evidenceCount": 4
-      },
-      {
-        "source": "com_45daa3c27527",
-        "target": "mec_a05b0c4ba6a0",
-        "type": "uses",
-        "weight": 10.2,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_45daa3c27527",
-        "target": "tec_859bbf8c3fda",
-        "type": "implements",
-        "weight": 9.0,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_45daa3c27527",
-        "target": "pro_c00f61703122",
-        "type": "reports",
-        "weight": 3.2,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_45daa3c27527",
-        "target": "mec_0efcd7c6c0a8",
-        "type": "uses",
-        "weight": 8.4,
-        "evidenceCount": 2
       },
       {
         "source": "rep_fc1020ab433f",
@@ -3951,6 +3944,27 @@
       },
       {
         "source": "rep_fc1020ab433f",
+        "target": "com_a93c5dca55bd",
+        "type": "contains",
+        "weight": 1.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_a93c5dca55bd",
+        "target": "tec_16d9494862ee",
+        "type": "implements",
+        "weight": 3.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_a93c5dca55bd",
+        "target": "pro_c00f61703122",
+        "type": "reports",
+        "weight": 3.2,
+        "evidenceCount": 1
+      },
+      {
+        "source": "rep_fc1020ab433f",
         "target": "com_14d8a46ca1b4",
         "type": "contains",
         "weight": 2.0,
@@ -3976,48 +3990,6 @@
         "type": "reports",
         "weight": 6.4,
         "evidenceCount": 2
-      },
-      {
-        "source": "rep_fc1020ab433f",
-        "target": "com_3eda0560986d",
-        "type": "contains",
-        "weight": 3.0,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_3eda0560986d",
-        "target": "tec_27d654440f87",
-        "type": "implements",
-        "weight": 22.4,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_3eda0560986d",
-        "target": "tec_859bbf8c3fda",
-        "type": "implements",
-        "weight": 18.0,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_3eda0560986d",
-        "target": "pro_297a563c5a02",
-        "type": "reports",
-        "weight": 9.0,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_3eda0560986d",
-        "target": "tec_7a5ca9750ff6",
-        "type": "implements",
-        "weight": 3.4,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_3eda0560986d",
-        "target": "tec_e73eb10d40b8",
-        "type": "implements",
-        "weight": 2.6,
-        "evidenceCount": 1
       },
       {
         "source": "rep_fc1020ab433f",
@@ -4059,6 +4031,48 @@
         "target": "pro_297a563c5a02",
         "type": "reports",
         "weight": 3.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "rep_fc1020ab433f",
+        "target": "com_3eda0560986d",
+        "type": "contains",
+        "weight": 3.0,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_3eda0560986d",
+        "target": "tec_27d654440f87",
+        "type": "implements",
+        "weight": 22.4,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_3eda0560986d",
+        "target": "tec_859bbf8c3fda",
+        "type": "implements",
+        "weight": 18.0,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_3eda0560986d",
+        "target": "pro_297a563c5a02",
+        "type": "reports",
+        "weight": 9.0,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_3eda0560986d",
+        "target": "tec_7a5ca9750ff6",
+        "type": "implements",
+        "weight": 3.4,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_3eda0560986d",
+        "target": "tec_e73eb10d40b8",
+        "type": "implements",
+        "weight": 2.6,
         "evidenceCount": 1
       },
       {
@@ -4191,8 +4205,8 @@
         "source": "org_0a28693c6218",
         "target": "rep_7944c02b0969",
         "type": "owns",
-        "weight": 332.0,
-        "evidenceCount": 332
+        "weight": 334.0,
+        "evidenceCount": 334
       },
       {
         "source": "rep_7944c02b0969",
@@ -4238,6 +4252,20 @@
       },
       {
         "source": "com_0289c7998c76",
+        "target": "tec_859bbf8c3fda",
+        "type": "implements",
+        "weight": 9.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_0289c7998c76",
+        "target": "pro_297a563c5a02",
+        "type": "reports",
+        "weight": 3.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_0289c7998c76",
         "target": "tec_b57cc6131571",
         "type": "implements",
         "weight": 10.4,
@@ -4293,146 +4321,6 @@
         "evidenceCount": 1
       },
       {
-        "source": "com_0289c7998c76",
-        "target": "tec_859bbf8c3fda",
-        "type": "implements",
-        "weight": 9.0,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_0289c7998c76",
-        "target": "pro_297a563c5a02",
-        "type": "reports",
-        "weight": 3.0,
-        "evidenceCount": 1
-      },
-      {
-        "source": "rep_7944c02b0969",
-        "target": "com_7e2e078fadc4",
-        "type": "contains",
-        "weight": 5.0,
-        "evidenceCount": 5
-      },
-      {
-        "source": "com_7e2e078fadc4",
-        "target": "tec_27d654440f87",
-        "type": "implements",
-        "weight": 9.6,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_7e2e078fadc4",
-        "target": "pro_297a563c5a02",
-        "type": "reports",
-        "weight": 12.0,
-        "evidenceCount": 4
-      },
-      {
-        "source": "com_7e2e078fadc4",
-        "target": "tec_7082c50ec651",
-        "type": "implements",
-        "weight": 3.0,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_7e2e078fadc4",
-        "target": "tec_859bbf8c3fda",
-        "type": "implements",
-        "weight": 15.0,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_7e2e078fadc4",
-        "target": "mec_91167ab82837",
-        "type": "uses",
-        "weight": 2.8,
-        "evidenceCount": 1
-      },
-      {
-        "source": "rep_7944c02b0969",
-        "target": "com_9c43e067934f",
-        "type": "contains",
-        "weight": 6.0,
-        "evidenceCount": 6
-      },
-      {
-        "source": "com_9c43e067934f",
-        "target": "tec_9a50b97687ae",
-        "type": "implements",
-        "weight": 11.2,
-        "evidenceCount": 4
-      },
-      {
-        "source": "com_9c43e067934f",
-        "target": "tec_3c8c51a0ac35",
-        "type": "implements",
-        "weight": 6.0,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_9c43e067934f",
-        "target": "mec_d5e788b1e314",
-        "type": "uses",
-        "weight": 4.2,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_9c43e067934f",
-        "target": "tec_b57cc6131571",
-        "type": "implements",
-        "weight": 18.2,
-        "evidenceCount": 5
-      },
-      {
-        "source": "com_9c43e067934f",
-        "target": "tec_7082c50ec651",
-        "type": "implements",
-        "weight": 18.0,
-        "evidenceCount": 4
-      },
-      {
-        "source": "com_9c43e067934f",
-        "target": "tec_4d5da716b921",
-        "type": "implements",
-        "weight": 2.2,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_9c43e067934f",
-        "target": "mec_a05b0c4ba6a0",
-        "type": "uses",
-        "weight": 10.2,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_9c43e067934f",
-        "target": "tec_4a0b8741c76e",
-        "type": "implements",
-        "weight": 13.0,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_9c43e067934f",
-        "target": "mec_0efcd7c6c0a8",
-        "type": "uses",
-        "weight": 4.2,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_9c43e067934f",
-        "target": "tec_e73eb10d40b8",
-        "type": "implements",
-        "weight": 2.6,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_9c43e067934f",
-        "target": "pro_3cfb6c512875",
-        "type": "reports",
-        "weight": 2.4,
-        "evidenceCount": 1
-      },
-      {
         "source": "rep_7944c02b0969",
         "target": "com_df625c4f15b8",
         "type": "contains",
@@ -4462,24 +4350,10 @@
       },
       {
         "source": "com_df625c4f15b8",
-        "target": "tec_859bbf8c3fda",
+        "target": "tec_d821cb73680b",
         "type": "implements",
-        "weight": 9.0,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_df625c4f15b8",
-        "target": "tec_a7752be28ca7",
-        "type": "implements",
-        "weight": 9.0,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_df625c4f15b8",
-        "target": "mec_d5e788b1e314",
-        "type": "uses",
-        "weight": 12.6,
-        "evidenceCount": 3
+        "weight": 3.6,
+        "evidenceCount": 1
       },
       {
         "source": "com_df625c4f15b8",
@@ -4490,10 +4364,10 @@
       },
       {
         "source": "com_df625c4f15b8",
-        "target": "tec_d821cb73680b",
+        "target": "tec_859bbf8c3fda",
         "type": "implements",
-        "weight": 3.6,
-        "evidenceCount": 1
+        "weight": 9.0,
+        "evidenceCount": 3
       },
       {
         "source": "com_df625c4f15b8",
@@ -4504,24 +4378,17 @@
       },
       {
         "source": "com_df625c4f15b8",
+        "target": "tec_4a0b8741c76e",
+        "type": "implements",
+        "weight": 59.8,
+        "evidenceCount": 22
+      },
+      {
+        "source": "com_df625c4f15b8",
         "target": "tec_27d654440f87",
         "type": "implements",
         "weight": 9.6,
         "evidenceCount": 2
-      },
-      {
-        "source": "com_df625c4f15b8",
-        "target": "mec_a05b0c4ba6a0",
-        "type": "uses",
-        "weight": 40.8,
-        "evidenceCount": 12
-      },
-      {
-        "source": "com_df625c4f15b8",
-        "target": "pro_f2d6234611e0",
-        "type": "reports",
-        "weight": 2.6,
-        "evidenceCount": 1
       },
       {
         "source": "com_df625c4f15b8",
@@ -4532,17 +4399,10 @@
       },
       {
         "source": "com_df625c4f15b8",
-        "target": "tec_4a0b8741c76e",
-        "type": "implements",
-        "weight": 59.8,
-        "evidenceCount": 22
-      },
-      {
-        "source": "com_df625c4f15b8",
-        "target": "mec_50e87b4fec0e",
+        "target": "mec_a05b0c4ba6a0",
         "type": "uses",
-        "weight": 17.0,
-        "evidenceCount": 5
+        "weight": 40.8,
+        "evidenceCount": 12
       },
       {
         "source": "com_df625c4f15b8",
@@ -4560,10 +4420,38 @@
       },
       {
         "source": "com_df625c4f15b8",
+        "target": "mec_50e87b4fec0e",
+        "type": "uses",
+        "weight": 17.0,
+        "evidenceCount": 5
+      },
+      {
+        "source": "com_df625c4f15b8",
         "target": "tec_7a5ca9750ff6",
         "type": "implements",
         "weight": 3.4,
         "evidenceCount": 1
+      },
+      {
+        "source": "com_df625c4f15b8",
+        "target": "pro_f2d6234611e0",
+        "type": "reports",
+        "weight": 2.6,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_df625c4f15b8",
+        "target": "tec_a7752be28ca7",
+        "type": "implements",
+        "weight": 9.0,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_df625c4f15b8",
+        "target": "mec_d5e788b1e314",
+        "type": "uses",
+        "weight": 12.6,
+        "evidenceCount": 3
       },
       {
         "source": "com_df625c4f15b8",
@@ -4602,27 +4490,6 @@
       },
       {
         "source": "com_726a9a08c8ae",
-        "target": "tec_e73eb10d40b8",
-        "type": "implements",
-        "weight": 5.2,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_726a9a08c8ae",
-        "target": "pro_c00f61703122",
-        "type": "reports",
-        "weight": 12.8,
-        "evidenceCount": 4
-      },
-      {
-        "source": "com_726a9a08c8ae",
-        "target": "mec_d5e788b1e314",
-        "type": "uses",
-        "weight": 8.4,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_726a9a08c8ae",
         "target": "tec_7082c50ec651",
         "type": "implements",
         "weight": 39.0,
@@ -4658,10 +4525,31 @@
       },
       {
         "source": "com_726a9a08c8ae",
+        "target": "mec_d5e788b1e314",
+        "type": "uses",
+        "weight": 8.4,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_726a9a08c8ae",
+        "target": "pro_c00f61703122",
+        "type": "reports",
+        "weight": 12.8,
+        "evidenceCount": 4
+      },
+      {
+        "source": "com_726a9a08c8ae",
         "target": "mec_35bd212f40af",
         "type": "uses",
         "weight": 3.2,
         "evidenceCount": 1
+      },
+      {
+        "source": "com_726a9a08c8ae",
+        "target": "tec_e73eb10d40b8",
+        "type": "implements",
+        "weight": 5.2,
+        "evidenceCount": 2
       },
       {
         "source": "com_726a9a08c8ae",
@@ -4672,86 +4560,142 @@
       },
       {
         "source": "rep_7944c02b0969",
-        "target": "com_5205c3771f1a",
+        "target": "com_0acef4c67f70",
         "type": "contains",
-        "weight": 9.0,
+        "weight": 28.0,
+        "evidenceCount": 28
+      },
+      {
+        "source": "com_0acef4c67f70",
+        "target": "tec_4a0b8741c76e",
+        "type": "implements",
+        "weight": 54.6,
+        "evidenceCount": 18
+      },
+      {
+        "source": "com_0acef4c67f70",
+        "target": "mec_d5e788b1e314",
+        "type": "uses",
+        "weight": 21.0,
+        "evidenceCount": 5
+      },
+      {
+        "source": "com_0acef4c67f70",
+        "target": "mec_91167ab82837",
+        "type": "uses",
+        "weight": 2.8,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_0acef4c67f70",
+        "target": "tec_b57cc6131571",
+        "type": "implements",
+        "weight": 18.2,
+        "evidenceCount": 5
+      },
+      {
+        "source": "com_0acef4c67f70",
+        "target": "tec_7082c50ec651",
+        "type": "implements",
+        "weight": 30.0,
+        "evidenceCount": 8
+      },
+      {
+        "source": "com_0acef4c67f70",
+        "target": "tec_3c8c51a0ac35",
+        "type": "implements",
+        "weight": 18.0,
+        "evidenceCount": 4
+      },
+      {
+        "source": "com_0acef4c67f70",
+        "target": "tec_d821cb73680b",
+        "type": "implements",
+        "weight": 3.6,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_0acef4c67f70",
+        "target": "pro_c00f61703122",
+        "type": "reports",
+        "weight": 9.6,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_0acef4c67f70",
+        "target": "pro_3cfb6c512875",
+        "type": "reports",
+        "weight": 21.6,
         "evidenceCount": 9
       },
       {
-        "source": "com_5205c3771f1a",
-        "target": "tec_b57cc6131571",
+        "source": "com_0acef4c67f70",
+        "target": "tec_859bbf8c3fda",
         "type": "implements",
-        "weight": 5.2,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_5205c3771f1a",
-        "target": "tec_e73eb10d40b8",
-        "type": "implements",
-        "weight": 7.8,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_5205c3771f1a",
-        "target": "tec_27d654440f87",
-        "type": "implements",
-        "weight": 6.4,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_5205c3771f1a",
-        "target": "tec_05cfe1cf584d",
-        "type": "implements",
-        "weight": 2.8,
+        "weight": 3.0,
         "evidenceCount": 1
       },
       {
-        "source": "com_5205c3771f1a",
-        "target": "pro_c00f61703122",
-        "type": "reports",
-        "weight": 6.4,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_5205c3771f1a",
+        "source": "com_0acef4c67f70",
         "target": "mec_a05b0c4ba6a0",
         "type": "uses",
-        "weight": 20.4,
-        "evidenceCount": 6
-      },
-      {
-        "source": "com_5205c3771f1a",
-        "target": "tec_16d9494862ee",
-        "type": "implements",
-        "weight": 30.0,
-        "evidenceCount": 7
-      },
-      {
-        "source": "com_5205c3771f1a",
-        "target": "mec_5ee0a4a72961",
-        "type": "uses",
-        "weight": 3.8,
+        "weight": 3.4,
         "evidenceCount": 1
       },
       {
-        "source": "com_5205c3771f1a",
-        "target": "tec_9a50b97687ae",
+        "source": "com_0acef4c67f70",
+        "target": "tec_7a5ca9750ff6",
         "type": "implements",
-        "weight": 2.8,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_5205c3771f1a",
-        "target": "pro_3cfb6c512875",
-        "type": "reports",
-        "weight": 7.2,
+        "weight": 10.2,
         "evidenceCount": 3
       },
       {
-        "source": "com_5205c3771f1a",
-        "target": "tec_4d5da716b921",
+        "source": "com_0acef4c67f70",
+        "target": "pro_d86d09f06904",
+        "type": "reports",
+        "weight": 25.6,
+        "evidenceCount": 8
+      },
+      {
+        "source": "com_0acef4c67f70",
+        "target": "pro_297a563c5a02",
+        "type": "reports",
+        "weight": 6.0,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_0acef4c67f70",
+        "target": "mec_67bc622cf834",
+        "type": "uses",
+        "weight": 3.6,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_0acef4c67f70",
+        "target": "mec_35bd212f40af",
+        "type": "uses",
+        "weight": 12.8,
+        "evidenceCount": 4
+      },
+      {
+        "source": "com_0acef4c67f70",
+        "target": "tec_e73eb10d40b8",
         "type": "implements",
-        "weight": 2.2,
+        "weight": 2.6,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_0acef4c67f70",
+        "target": "pro_f2d6234611e0",
+        "type": "reports",
+        "weight": 2.6,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_0acef4c67f70",
+        "target": "pro_3e5564a93c78",
+        "type": "reports",
+        "weight": 2.8,
         "evidenceCount": 1
       },
       {
@@ -4812,143 +4756,87 @@
       },
       {
         "source": "rep_7944c02b0969",
-        "target": "com_0acef4c67f70",
+        "target": "com_5205c3771f1a",
         "type": "contains",
-        "weight": 28.0,
-        "evidenceCount": 28
-      },
-      {
-        "source": "com_0acef4c67f70",
-        "target": "tec_b57cc6131571",
-        "type": "implements",
-        "weight": 18.2,
-        "evidenceCount": 5
-      },
-      {
-        "source": "com_0acef4c67f70",
-        "target": "pro_d86d09f06904",
-        "type": "reports",
-        "weight": 25.6,
-        "evidenceCount": 8
-      },
-      {
-        "source": "com_0acef4c67f70",
-        "target": "tec_e73eb10d40b8",
-        "type": "implements",
-        "weight": 2.6,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_0acef4c67f70",
-        "target": "pro_c00f61703122",
-        "type": "reports",
-        "weight": 9.6,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_0acef4c67f70",
-        "target": "mec_d5e788b1e314",
-        "type": "uses",
-        "weight": 21.0,
-        "evidenceCount": 5
-      },
-      {
-        "source": "com_0acef4c67f70",
-        "target": "tec_7082c50ec651",
-        "type": "implements",
-        "weight": 30.0,
-        "evidenceCount": 8
-      },
-      {
-        "source": "com_0acef4c67f70",
-        "target": "tec_4a0b8741c76e",
-        "type": "implements",
-        "weight": 54.6,
-        "evidenceCount": 18
-      },
-      {
-        "source": "com_0acef4c67f70",
-        "target": "tec_7a5ca9750ff6",
-        "type": "implements",
-        "weight": 10.2,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_0acef4c67f70",
-        "target": "pro_3cfb6c512875",
-        "type": "reports",
-        "weight": 21.6,
+        "weight": 9.0,
         "evidenceCount": 9
       },
       {
-        "source": "com_0acef4c67f70",
-        "target": "pro_297a563c5a02",
+        "source": "com_5205c3771f1a",
+        "target": "tec_4d5da716b921",
+        "type": "implements",
+        "weight": 2.2,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_5205c3771f1a",
+        "target": "tec_16d9494862ee",
+        "type": "implements",
+        "weight": 30.0,
+        "evidenceCount": 7
+      },
+      {
+        "source": "com_5205c3771f1a",
+        "target": "pro_c00f61703122",
         "type": "reports",
-        "weight": 6.0,
+        "weight": 6.4,
         "evidenceCount": 2
       },
       {
-        "source": "com_0acef4c67f70",
-        "target": "mec_91167ab82837",
-        "type": "uses",
-        "weight": 2.8,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_0acef4c67f70",
-        "target": "tec_3c8c51a0ac35",
-        "type": "implements",
-        "weight": 18.0,
-        "evidenceCount": 4
-      },
-      {
-        "source": "com_0acef4c67f70",
-        "target": "pro_f2d6234611e0",
-        "type": "reports",
-        "weight": 2.6,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_0acef4c67f70",
-        "target": "tec_d821cb73680b",
-        "type": "implements",
-        "weight": 3.6,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_0acef4c67f70",
-        "target": "pro_3e5564a93c78",
-        "type": "reports",
-        "weight": 2.8,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_0acef4c67f70",
-        "target": "tec_859bbf8c3fda",
-        "type": "implements",
-        "weight": 3.0,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_0acef4c67f70",
+        "source": "com_5205c3771f1a",
         "target": "mec_a05b0c4ba6a0",
         "type": "uses",
-        "weight": 3.4,
+        "weight": 20.4,
+        "evidenceCount": 6
+      },
+      {
+        "source": "com_5205c3771f1a",
+        "target": "tec_b57cc6131571",
+        "type": "implements",
+        "weight": 5.2,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_5205c3771f1a",
+        "target": "tec_e73eb10d40b8",
+        "type": "implements",
+        "weight": 7.8,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_5205c3771f1a",
+        "target": "tec_27d654440f87",
+        "type": "implements",
+        "weight": 6.4,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_5205c3771f1a",
+        "target": "tec_05cfe1cf584d",
+        "type": "implements",
+        "weight": 2.8,
         "evidenceCount": 1
       },
       {
-        "source": "com_0acef4c67f70",
-        "target": "mec_67bc622cf834",
+        "source": "com_5205c3771f1a",
+        "target": "mec_5ee0a4a72961",
         "type": "uses",
-        "weight": 3.6,
+        "weight": 3.8,
         "evidenceCount": 1
       },
       {
-        "source": "com_0acef4c67f70",
-        "target": "mec_35bd212f40af",
-        "type": "uses",
-        "weight": 12.8,
-        "evidenceCount": 4
+        "source": "com_5205c3771f1a",
+        "target": "tec_9a50b97687ae",
+        "type": "implements",
+        "weight": 2.8,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_5205c3771f1a",
+        "target": "pro_3cfb6c512875",
+        "type": "reports",
+        "weight": 7.2,
+        "evidenceCount": 3
       },
       {
         "source": "rep_7944c02b0969",
@@ -4980,24 +4868,311 @@
       },
       {
         "source": "rep_7944c02b0969",
-        "target": "com_1f6d0d15797e",
+        "target": "com_483e8310721c",
         "type": "contains",
-        "weight": 2.0,
-        "evidenceCount": 2
+        "weight": 18.0,
+        "evidenceCount": 18
       },
       {
-        "source": "com_1f6d0d15797e",
-        "target": "tec_16d9494862ee",
+        "source": "com_483e8310721c",
+        "target": "tec_7082c50ec651",
         "type": "implements",
+        "weight": 93.0,
+        "evidenceCount": 18
+      },
+      {
+        "source": "com_483e8310721c",
+        "target": "mec_a05b0c4ba6a0",
+        "type": "uses",
+        "weight": 20.4,
+        "evidenceCount": 6
+      },
+      {
+        "source": "com_483e8310721c",
+        "target": "pro_3cfb6c512875",
+        "type": "reports",
+        "weight": 21.6,
+        "evidenceCount": 9
+      },
+      {
+        "source": "com_483e8310721c",
+        "target": "pro_297a563c5a02",
+        "type": "reports",
         "weight": 6.0,
         "evidenceCount": 2
       },
       {
-        "source": "com_1f6d0d15797e",
-        "target": "pro_d86d09f06904",
-        "type": "reports",
+        "source": "com_483e8310721c",
+        "target": "tec_27d654440f87",
+        "type": "implements",
         "weight": 6.4,
         "evidenceCount": 2
+      },
+      {
+        "source": "com_483e8310721c",
+        "target": "tec_3c8c51a0ac35",
+        "type": "implements",
+        "weight": 9.0,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_483e8310721c",
+        "target": "pro_c00f61703122",
+        "type": "reports",
+        "weight": 3.2,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_483e8310721c",
+        "target": "tec_b57cc6131571",
+        "type": "implements",
+        "weight": 5.2,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_483e8310721c",
+        "target": "tec_05cfe1cf584d",
+        "type": "implements",
+        "weight": 2.8,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_483e8310721c",
+        "target": "mec_35bd212f40af",
+        "type": "uses",
+        "weight": 6.4,
+        "evidenceCount": 2
+      },
+      {
+        "source": "rep_7944c02b0969",
+        "target": "com_8af79be15217",
+        "type": "contains",
+        "weight": 6.0,
+        "evidenceCount": 6
+      },
+      {
+        "source": "com_8af79be15217",
+        "target": "tec_4a0b8741c76e",
+        "type": "implements",
+        "weight": 28.6,
+        "evidenceCount": 6
+      },
+      {
+        "source": "com_8af79be15217",
+        "target": "pro_3cfb6c512875",
+        "type": "reports",
+        "weight": 9.6,
+        "evidenceCount": 4
+      },
+      {
+        "source": "com_8af79be15217",
+        "target": "tec_a7752be28ca7",
+        "type": "implements",
+        "weight": 3.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_8af79be15217",
+        "target": "tec_859bbf8c3fda",
+        "type": "implements",
+        "weight": 18.0,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_8af79be15217",
+        "target": "mec_a05b0c4ba6a0",
+        "type": "uses",
+        "weight": 6.8,
+        "evidenceCount": 2
+      },
+      {
+        "source": "rep_7944c02b0969",
+        "target": "com_73d78aa2e910",
+        "type": "contains",
+        "weight": 1.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_73d78aa2e910",
+        "target": "tec_859bbf8c3fda",
+        "type": "implements",
+        "weight": 3.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_73d78aa2e910",
+        "target": "tec_7082c50ec651",
+        "type": "implements",
+        "weight": 3.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_73d78aa2e910",
+        "target": "mec_a05b0c4ba6a0",
+        "type": "uses",
+        "weight": 3.4,
+        "evidenceCount": 1
+      },
+      {
+        "source": "rep_7944c02b0969",
+        "target": "com_23bfce7db3f9",
+        "type": "contains",
+        "weight": 21.0,
+        "evidenceCount": 21
+      },
+      {
+        "source": "com_23bfce7db3f9",
+        "target": "tec_b57cc6131571",
+        "type": "implements",
+        "weight": 31.2,
+        "evidenceCount": 12
+      },
+      {
+        "source": "com_23bfce7db3f9",
+        "target": "pro_3cfb6c512875",
+        "type": "reports",
+        "weight": 16.8,
+        "evidenceCount": 7
+      },
+      {
+        "source": "com_23bfce7db3f9",
+        "target": "mec_91167ab82837",
+        "type": "uses",
+        "weight": 5.6,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_23bfce7db3f9",
+        "target": "tec_9a50b97687ae",
+        "type": "implements",
+        "weight": 2.8,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_23bfce7db3f9",
+        "target": "tec_7082c50ec651",
+        "type": "implements",
+        "weight": 45.0,
+        "evidenceCount": 13
+      },
+      {
+        "source": "com_23bfce7db3f9",
+        "target": "pro_c00f61703122",
+        "type": "reports",
+        "weight": 19.2,
+        "evidenceCount": 6
+      },
+      {
+        "source": "com_23bfce7db3f9",
+        "target": "tec_859bbf8c3fda",
+        "type": "implements",
+        "weight": 18.0,
+        "evidenceCount": 6
+      },
+      {
+        "source": "com_23bfce7db3f9",
+        "target": "tec_05cfe1cf584d",
+        "type": "implements",
+        "weight": 5.6,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_23bfce7db3f9",
+        "target": "mec_35bd212f40af",
+        "type": "uses",
+        "weight": 3.2,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_23bfce7db3f9",
+        "target": "tec_d821cb73680b",
+        "type": "implements",
+        "weight": 10.8,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_23bfce7db3f9",
+        "target": "mec_d5e788b1e314",
+        "type": "uses",
+        "weight": 12.6,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_23bfce7db3f9",
+        "target": "pro_d86d09f06904",
+        "type": "reports",
+        "weight": 3.2,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_23bfce7db3f9",
+        "target": "tec_4a0b8741c76e",
+        "type": "implements",
+        "weight": 10.4,
+        "evidenceCount": 4
+      },
+      {
+        "source": "com_23bfce7db3f9",
+        "target": "tec_e73eb10d40b8",
+        "type": "implements",
+        "weight": 2.6,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_23bfce7db3f9",
+        "target": "mec_5ee0a4a72961",
+        "type": "uses",
+        "weight": 3.8,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_23bfce7db3f9",
+        "target": "pro_297a563c5a02",
+        "type": "reports",
+        "weight": 6.0,
+        "evidenceCount": 2
+      },
+      {
+        "source": "rep_7944c02b0969",
+        "target": "com_7657b409a516",
+        "type": "contains",
+        "weight": 1.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_7657b409a516",
+        "target": "tec_7082c50ec651",
+        "type": "implements",
+        "weight": 6.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_7657b409a516",
+        "target": "mec_a05b0c4ba6a0",
+        "type": "uses",
+        "weight": 3.4,
+        "evidenceCount": 1
+      },
+      {
+        "source": "rep_7944c02b0969",
+        "target": "com_54700fb6322e",
+        "type": "contains",
+        "weight": 1.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_54700fb6322e",
+        "target": "tec_27d654440f87",
+        "type": "implements",
+        "weight": 3.2,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_54700fb6322e",
+        "target": "pro_3cfb6c512875",
+        "type": "reports",
+        "weight": 2.4,
+        "evidenceCount": 1
       },
       {
         "source": "rep_7944c02b0969",
@@ -5019,6 +5194,27 @@
         "type": "reports",
         "weight": 2.4,
         "evidenceCount": 1
+      },
+      {
+        "source": "rep_7944c02b0969",
+        "target": "com_1f6d0d15797e",
+        "type": "contains",
+        "weight": 2.0,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_1f6d0d15797e",
+        "target": "tec_16d9494862ee",
+        "type": "implements",
+        "weight": 6.0,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_1f6d0d15797e",
+        "target": "pro_d86d09f06904",
+        "type": "reports",
+        "weight": 6.4,
+        "evidenceCount": 2
       },
       {
         "source": "rep_7944c02b0969",
@@ -5071,10 +5267,59 @@
       },
       {
         "source": "rep_7944c02b0969",
+        "target": "com_fc5dd540ca68",
+        "type": "contains",
+        "weight": 14.0,
+        "evidenceCount": 14
+      },
+      {
+        "source": "com_fc5dd540ca68",
+        "target": "tec_4a0b8741c76e",
+        "type": "implements",
+        "weight": 2.6,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_fc5dd540ca68",
+        "target": "mec_50e87b4fec0e",
+        "type": "uses",
+        "weight": 3.4,
+        "evidenceCount": 1
+      },
+      {
+        "source": "rep_7944c02b0969",
         "target": "com_a8673c81095b",
         "type": "contains",
         "weight": 47.0,
         "evidenceCount": 47
+      },
+      {
+        "source": "com_a8673c81095b",
+        "target": "tec_4a0b8741c76e",
+        "type": "implements",
+        "weight": 13.0,
+        "evidenceCount": 5
+      },
+      {
+        "source": "com_a8673c81095b",
+        "target": "tec_7082c50ec651",
+        "type": "implements",
+        "weight": 153.0,
+        "evidenceCount": 35
+      },
+      {
+        "source": "com_a8673c81095b",
+        "target": "pro_297a563c5a02",
+        "type": "reports",
+        "weight": 9.0,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_a8673c81095b",
+        "target": "pro_3cfb6c512875",
+        "type": "reports",
+        "weight": 14.4,
+        "evidenceCount": 6
       },
       {
         "source": "com_a8673c81095b",
@@ -5092,66 +5337,10 @@
       },
       {
         "source": "com_a8673c81095b",
-        "target": "mec_cb93be7b160d",
-        "type": "uses",
-        "weight": 4.0,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_a8673c81095b",
         "target": "tec_b57cc6131571",
         "type": "implements",
         "weight": 10.4,
         "evidenceCount": 4
-      },
-      {
-        "source": "com_a8673c81095b",
-        "target": "pro_3cfb6c512875",
-        "type": "reports",
-        "weight": 14.4,
-        "evidenceCount": 6
-      },
-      {
-        "source": "com_a8673c81095b",
-        "target": "pro_297a563c5a02",
-        "type": "reports",
-        "weight": 9.0,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_a8673c81095b",
-        "target": "tec_7082c50ec651",
-        "type": "implements",
-        "weight": 153.0,
-        "evidenceCount": 35
-      },
-      {
-        "source": "com_a8673c81095b",
-        "target": "pro_3e5564a93c78",
-        "type": "reports",
-        "weight": 8.4,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_a8673c81095b",
-        "target": "tec_05cfe1cf584d",
-        "type": "implements",
-        "weight": 11.2,
-        "evidenceCount": 4
-      },
-      {
-        "source": "com_a8673c81095b",
-        "target": "tec_859bbf8c3fda",
-        "type": "implements",
-        "weight": 6.0,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_a8673c81095b",
-        "target": "pro_f2d6234611e0",
-        "type": "reports",
-        "weight": 5.2,
-        "evidenceCount": 2
       },
       {
         "source": "com_a8673c81095b",
@@ -5169,30 +5358,37 @@
       },
       {
         "source": "com_a8673c81095b",
-        "target": "tec_4a0b8741c76e",
+        "target": "tec_05cfe1cf584d",
         "type": "implements",
-        "weight": 13.0,
-        "evidenceCount": 5
+        "weight": 11.2,
+        "evidenceCount": 4
       },
       {
-        "source": "rep_7944c02b0969",
-        "target": "com_fc5dd540ca68",
-        "type": "contains",
-        "weight": 13.0,
-        "evidenceCount": 13
+        "source": "com_a8673c81095b",
+        "target": "pro_3e5564a93c78",
+        "type": "reports",
+        "weight": 8.4,
+        "evidenceCount": 3
       },
       {
-        "source": "com_fc5dd540ca68",
-        "target": "tec_4a0b8741c76e",
+        "source": "com_a8673c81095b",
+        "target": "tec_859bbf8c3fda",
         "type": "implements",
-        "weight": 2.6,
-        "evidenceCount": 1
+        "weight": 6.0,
+        "evidenceCount": 2
       },
       {
-        "source": "com_fc5dd540ca68",
-        "target": "mec_50e87b4fec0e",
+        "source": "com_a8673c81095b",
+        "target": "pro_f2d6234611e0",
+        "type": "reports",
+        "weight": 5.2,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_a8673c81095b",
+        "target": "mec_cb93be7b160d",
         "type": "uses",
-        "weight": 3.4,
+        "weight": 4.0,
         "evidenceCount": 1
       },
       {
@@ -5215,97 +5411,6 @@
         "type": "uses",
         "weight": 16.8,
         "evidenceCount": 4
-      },
-      {
-        "source": "rep_7944c02b0969",
-        "target": "com_5724fab043c2",
-        "type": "contains",
-        "weight": 2.0,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_5724fab043c2",
-        "target": "tec_7082c50ec651",
-        "type": "implements",
-        "weight": 15.0,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_5724fab043c2",
-        "target": "tec_27d654440f87",
-        "type": "implements",
-        "weight": 9.6,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_5724fab043c2",
-        "target": "mec_a05b0c4ba6a0",
-        "type": "uses",
-        "weight": 6.8,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_fc5dd540ca68",
-        "target": "tec_27d654440f87",
-        "type": "implements",
-        "weight": 9.6,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_fc5dd540ca68",
-        "target": "tec_7082c50ec651",
-        "type": "implements",
-        "weight": 66.0,
-        "evidenceCount": 12
-      },
-      {
-        "source": "com_fc5dd540ca68",
-        "target": "pro_d86d09f06904",
-        "type": "reports",
-        "weight": 3.2,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_fc5dd540ca68",
-        "target": "tec_859bbf8c3fda",
-        "type": "implements",
-        "weight": 6.0,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_fc5dd540ca68",
-        "target": "mec_d5e788b1e314",
-        "type": "uses",
-        "weight": 4.2,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_fc5dd540ca68",
-        "target": "pro_3cfb6c512875",
-        "type": "reports",
-        "weight": 7.2,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_fc5dd540ca68",
-        "target": "tec_05cfe1cf584d",
-        "type": "implements",
-        "weight": 5.6,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_fc5dd540ca68",
-        "target": "mec_35bd212f40af",
-        "type": "uses",
-        "weight": 3.2,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_fc5dd540ca68",
-        "target": "mec_a05b0c4ba6a0",
-        "type": "uses",
-        "weight": 20.4,
-        "evidenceCount": 5
       },
       {
         "source": "rep_7944c02b0969",
@@ -5337,10 +5442,24 @@
       },
       {
         "source": "com_4f2eca9abc03",
+        "target": "tec_859bbf8c3fda",
+        "type": "implements",
+        "weight": 45.0,
+        "evidenceCount": 7
+      },
+      {
+        "source": "com_4f2eca9abc03",
         "target": "tec_4a0b8741c76e",
         "type": "implements",
         "weight": 13.0,
         "evidenceCount": 5
+      },
+      {
+        "source": "com_4f2eca9abc03",
+        "target": "pro_f2d6234611e0",
+        "type": "reports",
+        "weight": 2.6,
+        "evidenceCount": 1
       },
       {
         "source": "com_4f2eca9abc03",
@@ -5362,13 +5481,6 @@
         "type": "uses",
         "weight": 7.2,
         "evidenceCount": 2
-      },
-      {
-        "source": "com_4f2eca9abc03",
-        "target": "tec_859bbf8c3fda",
-        "type": "implements",
-        "weight": 45.0,
-        "evidenceCount": 7
       },
       {
         "source": "com_4f2eca9abc03",
@@ -5414,9 +5526,16 @@
       },
       {
         "source": "com_4f2eca9abc03",
-        "target": "pro_f2d6234611e0",
-        "type": "reports",
-        "weight": 2.6,
+        "target": "mec_cb93be7b160d",
+        "type": "uses",
+        "weight": 36.0,
+        "evidenceCount": 8
+      },
+      {
+        "source": "com_4f2eca9abc03",
+        "target": "tec_51cc1c8c109c",
+        "type": "implements",
+        "weight": 3.2,
         "evidenceCount": 1
       },
       {
@@ -5425,13 +5544,6 @@
         "type": "uses",
         "weight": 4.2,
         "evidenceCount": 1
-      },
-      {
-        "source": "com_4f2eca9abc03",
-        "target": "mec_cb93be7b160d",
-        "type": "uses",
-        "weight": 36.0,
-        "evidenceCount": 8
       },
       {
         "source": "com_4f2eca9abc03",
@@ -5448,297 +5560,220 @@
         "evidenceCount": 1
       },
       {
-        "source": "com_4f2eca9abc03",
-        "target": "tec_51cc1c8c109c",
-        "type": "implements",
-        "weight": 3.2,
-        "evidenceCount": 1
-      },
-      {
         "source": "rep_7944c02b0969",
-        "target": "com_73d78aa2e910",
+        "target": "com_5724fab043c2",
         "type": "contains",
-        "weight": 1.0,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_73d78aa2e910",
-        "target": "tec_859bbf8c3fda",
-        "type": "implements",
-        "weight": 3.0,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_73d78aa2e910",
-        "target": "tec_7082c50ec651",
-        "type": "implements",
-        "weight": 3.0,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_73d78aa2e910",
-        "target": "mec_a05b0c4ba6a0",
-        "type": "uses",
-        "weight": 3.4,
-        "evidenceCount": 1
-      },
-      {
-        "source": "rep_7944c02b0969",
-        "target": "com_8af79be15217",
-        "type": "contains",
-        "weight": 6.0,
-        "evidenceCount": 6
-      },
-      {
-        "source": "com_8af79be15217",
-        "target": "tec_4a0b8741c76e",
-        "type": "implements",
-        "weight": 28.6,
-        "evidenceCount": 6
-      },
-      {
-        "source": "com_8af79be15217",
-        "target": "pro_3cfb6c512875",
-        "type": "reports",
-        "weight": 9.6,
-        "evidenceCount": 4
-      },
-      {
-        "source": "com_8af79be15217",
-        "target": "tec_a7752be28ca7",
-        "type": "implements",
-        "weight": 3.0,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_8af79be15217",
-        "target": "tec_859bbf8c3fda",
-        "type": "implements",
-        "weight": 18.0,
+        "weight": 2.0,
         "evidenceCount": 2
       },
       {
-        "source": "com_8af79be15217",
+        "source": "com_5724fab043c2",
+        "target": "tec_7082c50ec651",
+        "type": "implements",
+        "weight": 15.0,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_5724fab043c2",
+        "target": "tec_27d654440f87",
+        "type": "implements",
+        "weight": 9.6,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_5724fab043c2",
         "target": "mec_a05b0c4ba6a0",
         "type": "uses",
         "weight": 6.8,
         "evidenceCount": 2
       },
       {
-        "source": "rep_7944c02b0969",
-        "target": "com_483e8310721c",
-        "type": "contains",
-        "weight": 18.0,
-        "evidenceCount": 18
-      },
-      {
-        "source": "com_483e8310721c",
+        "source": "com_fc5dd540ca68",
         "target": "tec_7082c50ec651",
         "type": "implements",
-        "weight": 93.0,
-        "evidenceCount": 18
-      },
-      {
-        "source": "com_483e8310721c",
-        "target": "pro_3cfb6c512875",
-        "type": "reports",
-        "weight": 21.6,
-        "evidenceCount": 9
-      },
-      {
-        "source": "com_483e8310721c",
-        "target": "pro_297a563c5a02",
-        "type": "reports",
-        "weight": 6.0,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_483e8310721c",
-        "target": "mec_a05b0c4ba6a0",
-        "type": "uses",
-        "weight": 20.4,
-        "evidenceCount": 6
-      },
-      {
-        "source": "com_483e8310721c",
-        "target": "tec_3c8c51a0ac35",
-        "type": "implements",
-        "weight": 9.0,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_483e8310721c",
-        "target": "pro_c00f61703122",
-        "type": "reports",
-        "weight": 3.2,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_483e8310721c",
-        "target": "tec_27d654440f87",
-        "type": "implements",
-        "weight": 6.4,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_483e8310721c",
-        "target": "tec_b57cc6131571",
-        "type": "implements",
-        "weight": 5.2,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_483e8310721c",
-        "target": "tec_05cfe1cf584d",
-        "type": "implements",
-        "weight": 2.8,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_483e8310721c",
-        "target": "mec_35bd212f40af",
-        "type": "uses",
-        "weight": 6.4,
-        "evidenceCount": 2
-      },
-      {
-        "source": "rep_7944c02b0969",
-        "target": "com_23bfce7db3f9",
-        "type": "contains",
-        "weight": 21.0,
-        "evidenceCount": 21
-      },
-      {
-        "source": "com_23bfce7db3f9",
-        "target": "tec_b57cc6131571",
-        "type": "implements",
-        "weight": 31.2,
-        "evidenceCount": 12
-      },
-      {
-        "source": "com_23bfce7db3f9",
-        "target": "tec_05cfe1cf584d",
-        "type": "implements",
-        "weight": 5.6,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_23bfce7db3f9",
-        "target": "tec_e73eb10d40b8",
-        "type": "implements",
-        "weight": 2.6,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_23bfce7db3f9",
-        "target": "tec_859bbf8c3fda",
-        "type": "implements",
-        "weight": 18.0,
-        "evidenceCount": 6
-      },
-      {
-        "source": "com_23bfce7db3f9",
-        "target": "mec_5ee0a4a72961",
-        "type": "uses",
-        "weight": 3.8,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_23bfce7db3f9",
-        "target": "pro_3cfb6c512875",
-        "type": "reports",
-        "weight": 16.8,
-        "evidenceCount": 7
-      },
-      {
-        "source": "com_23bfce7db3f9",
-        "target": "mec_91167ab82837",
-        "type": "uses",
-        "weight": 5.6,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_23bfce7db3f9",
-        "target": "tec_9a50b97687ae",
-        "type": "implements",
-        "weight": 2.8,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_23bfce7db3f9",
-        "target": "tec_7082c50ec651",
-        "type": "implements",
-        "weight": 42.0,
+        "weight": 72.0,
         "evidenceCount": 13
       },
       {
-        "source": "com_23bfce7db3f9",
-        "target": "pro_c00f61703122",
-        "type": "reports",
-        "weight": 19.2,
+        "source": "com_fc5dd540ca68",
+        "target": "mec_a05b0c4ba6a0",
+        "type": "uses",
+        "weight": 23.8,
         "evidenceCount": 6
       },
       {
-        "source": "com_23bfce7db3f9",
-        "target": "mec_35bd212f40af",
-        "type": "uses",
-        "weight": 3.2,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_23bfce7db3f9",
-        "target": "tec_d821cb73680b",
-        "type": "implements",
-        "weight": 10.8,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_23bfce7db3f9",
-        "target": "mec_d5e788b1e314",
-        "type": "uses",
-        "weight": 12.6,
+        "source": "com_fc5dd540ca68",
+        "target": "pro_3cfb6c512875",
+        "type": "reports",
+        "weight": 7.2,
         "evidenceCount": 3
       },
       {
-        "source": "com_23bfce7db3f9",
+        "source": "com_fc5dd540ca68",
+        "target": "tec_27d654440f87",
+        "type": "implements",
+        "weight": 9.6,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_fc5dd540ca68",
         "target": "pro_d86d09f06904",
         "type": "reports",
         "weight": 3.2,
         "evidenceCount": 1
       },
       {
-        "source": "com_23bfce7db3f9",
-        "target": "tec_4a0b8741c76e",
+        "source": "com_fc5dd540ca68",
+        "target": "tec_859bbf8c3fda",
         "type": "implements",
-        "weight": 10.4,
-        "evidenceCount": 4
-      },
-      {
-        "source": "com_23bfce7db3f9",
-        "target": "pro_297a563c5a02",
-        "type": "reports",
         "weight": 6.0,
         "evidenceCount": 2
       },
       {
-        "source": "rep_7944c02b0969",
-        "target": "com_7657b409a516",
-        "type": "contains",
-        "weight": 1.0,
+        "source": "com_fc5dd540ca68",
+        "target": "mec_d5e788b1e314",
+        "type": "uses",
+        "weight": 4.2,
         "evidenceCount": 1
       },
       {
-        "source": "com_7657b409a516",
+        "source": "com_fc5dd540ca68",
+        "target": "tec_05cfe1cf584d",
+        "type": "implements",
+        "weight": 5.6,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_fc5dd540ca68",
+        "target": "mec_35bd212f40af",
+        "type": "uses",
+        "weight": 3.2,
+        "evidenceCount": 1
+      },
+      {
+        "source": "rep_7944c02b0969",
+        "target": "com_7e2e078fadc4",
+        "type": "contains",
+        "weight": 5.0,
+        "evidenceCount": 5
+      },
+      {
+        "source": "com_7e2e078fadc4",
+        "target": "tec_27d654440f87",
+        "type": "implements",
+        "weight": 9.6,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_7e2e078fadc4",
+        "target": "pro_297a563c5a02",
+        "type": "reports",
+        "weight": 12.0,
+        "evidenceCount": 4
+      },
+      {
+        "source": "com_7e2e078fadc4",
         "target": "tec_7082c50ec651",
         "type": "implements",
-        "weight": 6.0,
+        "weight": 3.0,
         "evidenceCount": 1
       },
       {
-        "source": "com_7657b409a516",
+        "source": "com_7e2e078fadc4",
+        "target": "tec_859bbf8c3fda",
+        "type": "implements",
+        "weight": 15.0,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_7e2e078fadc4",
+        "target": "mec_91167ab82837",
+        "type": "uses",
+        "weight": 2.8,
+        "evidenceCount": 1
+      },
+      {
+        "source": "rep_7944c02b0969",
+        "target": "com_9c43e067934f",
+        "type": "contains",
+        "weight": 6.0,
+        "evidenceCount": 6
+      },
+      {
+        "source": "com_9c43e067934f",
+        "target": "tec_b57cc6131571",
+        "type": "implements",
+        "weight": 18.2,
+        "evidenceCount": 5
+      },
+      {
+        "source": "com_9c43e067934f",
+        "target": "tec_7082c50ec651",
+        "type": "implements",
+        "weight": 18.0,
+        "evidenceCount": 4
+      },
+      {
+        "source": "com_9c43e067934f",
+        "target": "tec_4d5da716b921",
+        "type": "implements",
+        "weight": 2.2,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_9c43e067934f",
+        "target": "tec_9a50b97687ae",
+        "type": "implements",
+        "weight": 11.2,
+        "evidenceCount": 4
+      },
+      {
+        "source": "com_9c43e067934f",
         "target": "mec_a05b0c4ba6a0",
         "type": "uses",
-        "weight": 3.4,
+        "weight": 10.2,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_9c43e067934f",
+        "target": "tec_4a0b8741c76e",
+        "type": "implements",
+        "weight": 13.0,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_9c43e067934f",
+        "target": "mec_0efcd7c6c0a8",
+        "type": "uses",
+        "weight": 4.2,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_9c43e067934f",
+        "target": "tec_e73eb10d40b8",
+        "type": "implements",
+        "weight": 2.6,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_9c43e067934f",
+        "target": "tec_3c8c51a0ac35",
+        "type": "implements",
+        "weight": 6.0,
+        "evidenceCount": 2
+      },
+      {
+        "source": "com_9c43e067934f",
+        "target": "pro_3cfb6c512875",
+        "type": "reports",
+        "weight": 2.4,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_9c43e067934f",
+        "target": "mec_d5e788b1e314",
+        "type": "uses",
+        "weight": 4.2,
         "evidenceCount": 1
       },
       {
@@ -6177,10 +6212,24 @@
       },
       {
         "source": "com_4eecb29c30b6",
+        "target": "tec_4a0b8741c76e",
+        "type": "implements",
+        "weight": 2.6,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_4eecb29c30b6",
         "target": "tec_3c8c51a0ac35",
         "type": "implements",
         "weight": 6.0,
         "evidenceCount": 2
+      },
+      {
+        "source": "com_4eecb29c30b6",
+        "target": "pro_297a563c5a02",
+        "type": "reports",
+        "weight": 3.0,
+        "evidenceCount": 1
       },
       {
         "source": "com_4eecb29c30b6",
@@ -6194,20 +6243,6 @@
         "target": "pro_3cfb6c512875",
         "type": "reports",
         "weight": 2.4,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_4eecb29c30b6",
-        "target": "tec_4a0b8741c76e",
-        "type": "implements",
-        "weight": 2.6,
-        "evidenceCount": 1
-      },
-      {
-        "source": "com_4eecb29c30b6",
-        "target": "pro_297a563c5a02",
-        "type": "reports",
-        "weight": 3.0,
         "evidenceCount": 1
       },
       {
@@ -6219,30 +6254,16 @@
       },
       {
         "source": "com_71de0611e528",
-        "target": "tec_7082c50ec651",
+        "target": "tec_4a0b8741c76e",
         "type": "implements",
-        "weight": 12.0,
+        "weight": 10.4,
         "evidenceCount": 4
       },
       {
         "source": "com_71de0611e528",
-        "target": "tec_3c8c51a0ac35",
+        "target": "tec_7082c50ec651",
         "type": "implements",
-        "weight": 15.0,
-        "evidenceCount": 3
-      },
-      {
-        "source": "com_71de0611e528",
-        "target": "pro_d86d09f06904",
-        "type": "reports",
-        "weight": 6.4,
-        "evidenceCount": 2
-      },
-      {
-        "source": "com_71de0611e528",
-        "target": "tec_4a0b8741c76e",
-        "type": "implements",
-        "weight": 10.4,
+        "weight": 12.0,
         "evidenceCount": 4
       },
       {
@@ -6254,10 +6275,24 @@
       },
       {
         "source": "com_71de0611e528",
+        "target": "tec_3c8c51a0ac35",
+        "type": "implements",
+        "weight": 15.0,
+        "evidenceCount": 3
+      },
+      {
+        "source": "com_71de0611e528",
         "target": "pro_3cfb6c512875",
         "type": "reports",
         "weight": 2.4,
         "evidenceCount": 1
+      },
+      {
+        "source": "com_71de0611e528",
+        "target": "pro_d86d09f06904",
+        "type": "reports",
+        "weight": 6.4,
+        "evidenceCount": 2
       },
       {
         "source": "rep_e9e93b429bd2",
@@ -7355,7 +7390,7 @@
     "counts": {
       "organization": 2,
       "repository": 3,
-      "component": 45,
+      "component": 46,
       "technology": 16,
       "problem": 6,
       "mechanism": 10,
@@ -7388,8 +7423,8 @@
         "scheduling-mechanism",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 203,
-      "weight": 972.0,
+      "evidenceCount": 204,
+      "weight": 981.0,
       "crossRepository": true,
       "technologyLabel": "ISP 처리",
       "problemLabels": [
@@ -7574,8 +7609,8 @@
         "state-machine",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 99,
-      "weight": 425.6,
+      "evidenceCount": 100,
+      "weight": 428.8,
       "crossRepository": true,
       "technologyLabel": "3A 제어",
       "problemLabels": [
@@ -7930,7 +7965,7 @@
         {
           "id": "cand_fb3a967b42e5",
           "slug": "camera-hal-calibration",
-          "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 보정",
+          "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 특성화",
           "type": "patent"
         }
       ]

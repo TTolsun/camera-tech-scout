@@ -1,25 +1,28 @@
 {
-  "runId": "run_20260923T171848Z",
+  "runId": "run_20260924T124512Z",
   "mode": "live",
-  "startedAt": "2026-09-23T17:18:48.227123+00:00",
-  "generatedAt": "2026-09-23T17:22:19.539612+00:00",
+  "startedAt": "2026-09-24T12:45:12.834924+00:00",
+  "generatedAt": "2026-09-24T12:53:24.001744+00:00",
   "dryRun": false,
   "configPath": "sources.yaml",
   "engine": {
-    "enabled": false,
+    "enabled": true,
+    "reachable": false,
     "runner": "hermes",
-    "base_url": "http://localhost:8000/v1",
-    "api_key_env": "SCOUT_LLM_API_KEY",
-    "model": "qwen",
-    "scout_model": "",
-    "critic_model": "",
-    "scout_temperature": 0.3,
-    "critic_temperature": 0.0,
-    "timeout_seconds": 120,
-    "max_candidates": 40,
+    "scoutModel": "qwen",
+    "criticModel": "qwen",
+    "scoutTemperature": 0.3,
+    "criticTemperature": 0.0,
+    "baseUrl": "http://localhost:8000/v1",
+    "candidatesEnriched": 0,
+    "objectionsAdded": 0,
+    "claimsDiscarded": 0,
+    "failures": [
+      "endpoint probe failed: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /v1/models (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+    ],
+    "note": "LLM은 증거를 새로 만들 수 없습니다. evidence id를 인용하지 않은 문장은 버립니다. Scout과 Critic은 같은 모델을 쓰지만 system prompt와 temperature가 다릅니다.",
     "skipped": true,
-    "skipReason": "설정에서 LLM 계층이 비활성화되어 있습니다.",
-    "rulesEngine": "always active"
+    "skipReason": "엔드포인트에 접속할 수 없어 규칙 기반 결과를 그대로 유지했습니다."
   },
   "labels": {
     "status": {

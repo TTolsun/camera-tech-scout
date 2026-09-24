@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T17:22:19.539612+00:00",
+  "generatedAt": "2026-09-24T12:53:24.001744+00:00",
   "dryRun": false,
   "organizationCount": 2,
   "organizations": [
@@ -7,8 +7,8 @@
     "raspberrypi"
   ],
   "repositoryCount": 3,
-  "lastScanTime": "2026-09-23T17:22:10.007335+00:00",
-  "evidenceCount": 409,
+  "lastScanTime": "2026-09-24T12:53:22.838961+00:00",
+  "evidenceCount": 411,
   "candidateCount": 36,
   "counts": {
     "new": 36,
@@ -27,7 +27,7 @@
     {
       "kind": "code",
       "label": "Source Code",
-      "count": 303
+      "count": 305
     },
     {
       "kind": "commit",
@@ -394,7 +394,7 @@
     {
       "technology": "isp",
       "technologyLabel": "ISP 처리",
-      "evidenceCount": 324,
+      "evidenceCount": 327,
       "candidateCount": 7,
       "newCandidates": 7
     },
@@ -408,7 +408,7 @@
     {
       "technology": "3a",
       "technologyLabel": "3A 제어",
-      "evidenceCount": 133,
+      "evidenceCount": 134,
       "candidateCount": 5,
       "newCandidates": 5
     },

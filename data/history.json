@@ -1,8 +1,8 @@
 {
   "runs": [
     {
-      "id": "run_20260923T171848Z",
-      "started_at": "2026-09-23T17:18:48.263680+00:00",
+      "id": "run_20260924T124512Z",
+      "started_at": "2026-09-24T12:45:12.854646+00:00",
       "finished_at": null,
       "mode": "live",
       "repositories": 0,
@@ -13,29 +13,32 @@
     }
   ],
   "currentRun": {
-    "id": "run_20260923T171848Z",
+    "id": "run_20260924T124512Z",
     "mode": "live",
-    "startedAt": "2026-09-23T17:18:48.227123+00:00",
+    "startedAt": "2026-09-24T12:45:12.834924+00:00",
     "dryRun": false,
     "repositories": 3,
-    "evidence": 409,
+    "evidence": 411,
     "candidates": 36,
     "rejected": 5,
     "engine": {
-      "enabled": false,
+      "enabled": true,
+      "reachable": false,
       "runner": "hermes",
-      "base_url": "http://localhost:8000/v1",
-      "api_key_env": "SCOUT_LLM_API_KEY",
-      "model": "qwen",
-      "scout_model": "",
-      "critic_model": "",
-      "scout_temperature": 0.3,
-      "critic_temperature": 0.0,
-      "timeout_seconds": 120,
-      "max_candidates": 40,
+      "scoutModel": "qwen",
+      "criticModel": "qwen",
+      "scoutTemperature": 0.3,
+      "criticTemperature": 0.0,
+      "baseUrl": "http://localhost:8000/v1",
+      "candidatesEnriched": 0,
+      "objectionsAdded": 0,
+      "claimsDiscarded": 0,
+      "failures": [
+        "endpoint probe failed: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /v1/models (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      ],
+      "note": "LLM은 증거를 새로 만들 수 없습니다. evidence id를 인용하지 않은 문장은 버립니다. Scout과 Critic은 같은 모델을 쓰지만 system prompt와 temperature가 다릅니다.",
       "skipped": true,
-      "skipReason": "설정에서 LLM 계층이 비활성화되어 있습니다.",
-      "rulesEngine": "always active"
+      "skipReason": "엔드포인트에 접속할 수 없어 규칙 기반 결과를 그대로 유지했습니다."
     }
   },
   "repositoryStates": [
@@ -44,10 +47,10 @@
       "org": "intel",
       "name": "ipu6-camera-hal",
       "url": "https://github.com/intel/ipu6-camera-hal",
-      "default_branch": "HEAD",
+      "default_branch": "main",
       "head_sha": "6fefa86dfa14bb33d908a46f104a96c59b41c7eb",
       "last_scanned_sha": "6fefa86dfa14bb33d908a46f104a96c59b41c7eb",
-      "last_scan_time": "2026-09-23T17:20:14.844208+00:00",
+      "last_scan_time": "2026-09-24T12:48:47.262307+00:00",
       "scan_mode": "full",
       "status": "ok",
       "status_detail": "",
@@ -65,24 +68,24 @@
         "image-quality"
       ],
       "description": "",
-      "stars": 51,
+      "stars": 50,
       "language": "C",
-      "pushed_at": "2026-08-19T08:07:51Z"
+      "pushed_at": "2026-09-24T09:44:37Z"
     },
     {
       "full_name": "raspberrypi/libcamera",
       "org": "raspberrypi",
       "name": "libcamera",
       "url": "https://github.com/raspberrypi/libcamera",
-      "default_branch": "HEAD",
+      "default_branch": "main",
       "head_sha": "6c1dd9d55573010f710c9e190a73e7e76f0d9432",
       "last_scanned_sha": "6c1dd9d55573010f710c9e190a73e7e76f0d9432",
-      "last_scan_time": "2026-09-23T17:21:58.092018+00:00",
+      "last_scan_time": "2026-09-24T12:52:59.931146+00:00",
       "scan_mode": "full",
       "status": "ok",
       "status_detail": "",
       "files_scanned": 1205,
-      "evidence_count": 332,
+      "evidence_count": 334,
       "candidate_count": 0,
       "topics": [
         "3a",
@@ -95,7 +98,7 @@
         "debug-profiling"
       ],
       "description": "",
-      "stars": 481,
+      "stars": 482,
       "language": "C++",
       "pushed_at": "2026-09-01T08:48:42Z"
     },
@@ -104,10 +107,10 @@
       "org": "raspberrypi",
       "name": "libpisp",
       "url": "https://github.com/raspberrypi/libpisp",
-      "default_branch": "HEAD",
+      "default_branch": "main",
       "head_sha": "f8a5eb2af4c5dea76442785ef42b2fb1aa9e62f9",
       "last_scanned_sha": "f8a5eb2af4c5dea76442785ef42b2fb1aa9e62f9",
-      "last_scan_time": "2026-09-23T17:22:10.007335+00:00",
+      "last_scan_time": "2026-09-24T12:53:22.838961+00:00",
       "scan_mode": "full",
       "status": "ok",
       "status_detail": "",
