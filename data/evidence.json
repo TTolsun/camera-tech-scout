@@ -4312,6 +4312,84 @@
       ]
     },
     {
+      "id": "ev_ba15f0105d79",
+      "org": "intel",
+      "repo": "ipu6-camera-hal",
+      "kind": "commit",
+      "path": "CMakeLists.txt",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "3dbcf7645050870e0ee0bdbf396bc0a784f7d6a2",
+      "ref": null,
+      "title": "Engineer release on 2022-09-16",
+      "snippet": "Engineer release on 2022-09-16 Signed-off-by: Hao Yao <hao.yao@intel.com>",
+      "url": "https://github.com/intel/ipu6-camera-hal/commit/3dbcf7645050870e0ee0bdbf396bc0a784f7d6a2",
+      "observed_at": "2022-09-16T16:34:28+08:00",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "tonemap",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "@%s, req_id:%d:%s, status\", __func__, req_id, // LOCAL_TONEMAP_S if (mLtm) { ret = mLtm->configure(configModes); CheckA"
+        },
+        {
+          "kind": "domain",
+          "term": "isp",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "graphGetStreamIds(streamIds); } #include \"ia_pal_types_isp_ids_autogen.h\" #include \"ia_pal_types_isp.h\" CLEAR(mFr"
+        },
+        {
+          "kind": "domain",
+          "term": "bayer",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "= mFrameResolution.height; LOG3( \"LTM data_format %d, bayer_order %d, data_format_bpp %d, data_bpp %d, frame_width"
+        },
+        {
+          "kind": "domain",
+          "term": "schedul",
+          "family": "scheduling",
+          "weight": 3.0,
+          "context": "camera_resolution_t mFrameResolution; add_subdirectory(scheduler) * Copyright (C) 2015-2022 Intel Corporation. bool Buf"
+        },
+        {
+          "kind": "problem",
+          "term": "timeout",
+          "family": "timing",
+          "weight": 3.2,
+          "context": "Lock& lock, std::map<Port, CameraBufQ>& queue, int64_t timeout) { LOG2(\"@%s waiting buffers\", __func__);"
+        }
+      ],
+      "repository": "intel/ipu6-camera-hal",
+      "kindLabel": "Commit",
+      "location": "intel/ipu6-camera-hal / CMakeLists.txt / 3dbcf76450",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "tonemap",
+            "isp",
+            "bayer",
+            "schedul"
+          ]
+        },
+        {
+          "kind": "problem",
+          "label": "문제",
+          "terms": [
+            "timeout"
+          ]
+        }
+      ]
+    },
+    {
       "id": "ev_80ed53b793be",
       "org": "raspberrypi",
       "repo": "libcamera",
@@ -22222,6 +22300,27 @@
           "context": "and implementation for the base definitions of common lens shading calibration data types, and move re-usable code out fr"
         },
         {
+          "kind": "domain",
+          "term": "tuning file",
+          "family": "image-quality",
+          "weight": 2.8,
+          "context": "uning phase for a specific colour * temperature, and a tuning file usually contains LSC tables generated for * several di"
+        },
+        {
+          "kind": "domain",
+          "term": "sensor configuration",
+          "family": "sensor-control",
+          "weight": 3.0,
+          "context": "* * LSC tables have to be re-sampled every time a new sensor configuration is * used, as each streaming session might use a diffe"
+        },
+        {
+          "kind": "domain",
+          "term": "sensor crop",
+          "family": "sensor-control",
+          "weight": 3.0,
+          "context": "used, as each streaming session might use a different sensor crop rectangle * \\a cropRectangle. * * \\a cropRectangle rep"
+        },
+        {
           "kind": "mechanism",
           "term": "calibrat",
           "family": "calibration",
@@ -22239,7 +22338,10 @@
           "terms": [
             "ipa",
             "lsc",
-            "lens shading"
+            "lens shading",
+            "tuning file",
+            "sensor configuration",
+            "sensor crop"
           ]
         },
         {
@@ -22441,6 +22543,27 @@
           "context": "simply use the DelayedControls values provided by the pipeline handler. Closes: https://github.com/raspberrypi/libcamera/issu"
         },
         {
+          "kind": "domain",
+          "term": "convergence",
+          "family": "3a",
+          "weight": 3.2,
+          "context": "ustCount_) that they won't see. But if zero (i.e. * no convergence necessary), no frames need to be dropped. if (agc) { i"
+        },
+        {
+          "kind": "domain",
+          "term": "agc",
+          "family": "3a",
+          "weight": 3.2,
+          "context": "vergence necessary), no frames need to be dropped. if (agc) { if (agcConvergenceFrames) agcConvergenceFrames += m"
+        },
+        {
+          "kind": "domain",
+          "term": "awb",
+          "family": "3a",
+          "weight": 3.2,
+          "context": "eFrames) agcConvergenceFrames += mistrustCount_; } if (awb) { if (awbConvergenceFrames) awbConvergenceFrames += m"
+        },
+        {
           "kind": "problem",
           "term": "incorrect",
           "family": "correctness",
@@ -22457,7 +22580,10 @@
           "label": "기술 영역",
           "terms": [
             "ipa",
-            "pipeline handler"
+            "pipeline handler",
+            "convergence",
+            "agc",
+            "awb"
           ]
         },
         {
@@ -22987,6 +23113,13 @@
           "context": "There is one case where performance regresses: - Pixel 3a -- Back camera cam -c /base/soc@0/cci@ac4a000/i2c-bus@"
         },
         {
+          "kind": "domain",
+          "term": "mmap",
+          "family": "memory-buffer",
+          "weight": 3.0,
+          "context": "g::Read); if (!in.isValid()) { LOG(Debayer, Error) << \"mmap-ing buffer(s) failed\"; goto error; } if (debayerGPU(in"
+        },
+        {
           "kind": "mechanism",
           "term": "fall back to",
           "family": "resilience",
@@ -23035,7 +23168,8 @@
             "isp",
             "v4l2",
             "cpu usage",
-            "3a"
+            "3a",
+            "mmap"
           ]
         },
         {
@@ -23171,6 +23305,13 @@
           "family": "known-limitation",
           "weight": 2.4,
           "context": "c8a9c Fixes: b01918978c82 (\"libcamera: v4l2_subdevice: Work around false positive warning\") Signed-off-by: Barnabás Pőcze"
+        },
+        {
+          "kind": "effect",
+          "term": "optimiz",
+          "family": "improvement",
+          "weight": 2.4,
+          "context": "ard.com> #if defined __SANITIZE_ADDRESS__ && defined __OPTIMIZE__ #if (defined(__GNUC__) && !defined(__clang__)) && defi"
         }
       ],
       "repository": "raspberrypi/libcamera",
@@ -23189,6 +23330,13 @@
           "label": "문제",
           "terms": [
             "work around"
+          ]
+        },
+        {
+          "kind": "effect",
+          "label": "효과",
+          "terms": [
+            "optimiz"
           ]
         }
       ]
@@ -23220,6 +23368,20 @@
           "context": "ke \"a few frames\" to apply) from \"immediate controls\" (ISP-related controls) that will happen instantly. The imme"
         },
         {
+          "kind": "domain",
+          "term": "synchronis",
+          "family": "sensor-sync",
+          "weight": 3.6,
+          "context": "e don't skip running the * IPAs, as that can mess with synchronisation. Crucially though, we need * to know whether there wer"
+        },
+        {
+          "kind": "domain",
+          "term": "ipa",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "if (!params.requestControls.empty()) rpiMetadata.set(\"ipa.request_controls\", true); RPiController::Metadata &del"
+        },
+        {
           "kind": "mechanism",
           "term": "sequence number",
           "family": "synchronization-mechanism",
@@ -23242,7 +23404,9 @@
           "kind": "domain",
           "label": "기술 영역",
           "terms": [
-            "isp"
+            "isp",
+            "synchronis",
+            "ipa"
           ]
         },
         {
@@ -28151,6 +28315,1242 @@
       ]
     },
     {
+      "id": "ev_1d05c6dd44c4",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "commit",
+      "path": "src/ipa/libipa/lsc.cpp",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "8af719b995a1f72f14ead05dd972d8cd3cf10c2a",
+      "ref": null,
+      "title": "ipa: libipa: lsc: Re-sort lsc.cpp",
+      "snippet": "ipa: libipa: lsc: Re-sort lsc.cpp The LscAlgorithm and LscAlgorithmBase classes implementations had not been resorted in the previous patch to keep the diff short. Re-sort the documentation of the LscAlgorithmBase and LscAlgorithm classes to match the declaration order. Signed-off-by: Jacopo Mondi <jacopo.mondi@ideaso…",
+      "url": "https://github.com/raspberrypi/libcamera/commit/8af719b995a1f72f14ead05dd972d8cd3cf10c2a",
+      "observed_at": "2026-07-20T13:08:01+02:00",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "ipa",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: libipa: lsc: Re-sort lsc.cpp The LscAlgorithm and Lsc"
+        },
+        {
+          "kind": "domain",
+          "term": "lsc",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: libipa: lsc: Re-sort lsc.cpp The LscAlgorithm and LscAlgorithmBase"
+        },
+        {
+          "kind": "domain",
+          "term": "tuning file",
+          "family": "image-quality",
+          "weight": 2.8,
+          "context": ")) { LOG(Lsc, Error) << \"'sets' parameter not found in tuning file\"; return -EINVAL; } int ret = impl_->parseLscData(yaml"
+        },
+        {
+          "kind": "problem",
+          "term": "unsupported",
+          "family": "known-limitation",
+          "weight": 2.4,
+          "context": "< \"Using polynomial Lsc\"; } else { LOG(Lsc, Error) << \"Unsupported Lsc algorithm '\" << type << \"'\"; return -EINVAL; } con"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Commit",
+      "location": "raspberrypi/libcamera / src/ipa/libipa/lsc.cpp / 8af719b995",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "ipa",
+            "lsc",
+            "tuning file"
+          ]
+        },
+        {
+          "kind": "problem",
+          "label": "문제",
+          "terms": [
+            "unsupported"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_b1f232022034",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "commit",
+      "path": "src/ipa/libipa/lsc.cpp",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "adf284506a9017e75c7d927b9d329a12fccd5564",
+      "ref": null,
+      "title": "ipa: libipa: lsc: Quantize gains in LscAlgorithm",
+      "snippet": "ipa: libipa: lsc: Quantize gains in LscAlgorithm Template the LscAlgorithm class with the LSC engine register format and make lsc::Components<> parameteric on the type used to store the quantized LSC gains. This allows to quantize gains in the LscAlgorithm class and not in the IPA modules. Move the Components<> and Co…",
+      "url": "https://github.com/raspberrypi/libcamera/commit/adf284506a9017e75c7d927b9d329a12fccd5564",
+      "observed_at": "2026-07-20T13:03:13+02:00",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "ipa",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: libipa: lsc: Quantize gains in LscAlgorithm Template"
+        },
+        {
+          "kind": "domain",
+          "term": "lsc",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: libipa: lsc: Quantize gains in LscAlgorithm Template the LscAlgori"
+        },
+        {
+          "kind": "domain",
+          "term": "tuning file",
+          "family": "image-quality",
+          "weight": 2.8,
+          "context": "f gains. * * Each key name shall match an entry in the tuning file. * * The list of keys is provided to the LscAlgorithm"
+        },
+        {
+          "kind": "mechanism",
+          "term": "interpolat",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "ures. */ #ifndef __DOXYGEN__ template<typename T> void interpolateVector(const std::vector<T> &a, const std::vector<T> &b, std:"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Commit",
+      "location": "raspberrypi/libcamera / src/ipa/libipa/lsc.cpp / adf284506a",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "ipa",
+            "lsc",
+            "tuning file"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "label": "메커니즘",
+          "terms": [
+            "interpolat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_1b34aff1cc56",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "commit",
+      "path": "src/ipa/libipa/lsc.cpp",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "676140a4c789ff2dc1180fb3ba6bbb89f464dcde",
+      "ref": null,
+      "title": "ipa: libipa: lsc: Make Components a map<>",
+      "snippet": "ipa: libipa: lsc: Make Components a map<> The current definition of lsc::Components assumes 4 gain vectors named after the colour components supported by the RkISP1 ISP (r, gr, gb and b). As different ISP support different colour channels for their Lsc tables make lsc::Components a map that associates the name of the …",
+      "url": "https://github.com/raspberrypi/libcamera/commit/676140a4c789ff2dc1180fb3ba6bbb89f464dcde",
+      "observed_at": "2026-07-02T11:59:12+02:00",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "ipa",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: libipa: lsc: Make Components a map<> The current defi"
+        },
+        {
+          "kind": "domain",
+          "term": "lsc",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: libipa: lsc: Make Components a map<> The current definition of lsc"
+        },
+        {
+          "kind": "domain",
+          "term": "isp",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ed after the colour components supported by the RkISP1 ISP (r, gr, gb and b). As different ISP support different"
+        },
+        {
+          "kind": "domain",
+          "term": "tuning file",
+          "family": "image-quality",
+          "weight": 2.8,
+          "context": "for the map comes from the requirement of parsing the tuning file using string identifiers. Pass the strings to use for"
+        },
+        {
+          "kind": "mechanism",
+          "term": "interpolat",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "\\brief The list of gains for the Blue colour component interpolateVector(a.r, b.r, dest.r, lambda); interpolateVector(a.gr, b.g"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Commit",
+      "location": "raspberrypi/libcamera / src/ipa/libipa/lsc.cpp / 676140a4c7",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "ipa",
+            "lsc",
+            "isp",
+            "tuning file"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "label": "메커니즘",
+          "terms": [
+            "interpolat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_1fe71043034a",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "commit",
+      "path": "src/ipa/rkisp1/algorithms/lsc.cpp",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "88b979dc3789e02d66541f2c8feae263eaca19b2",
+      "ref": null,
+      "title": "ipa: rkisp1: lsc: Port to use LscAlgorithm",
+      "snippet": "ipa: rkisp1: lsc: Port to use LscAlgorithm Port the RkISP1 LSC algorithm to use the LscAlgorithm class by composition. Signed-off-by: Jacopo Mondi <jacopo.mondi@ideasonboard.com> Reviewed-by: Stefan Klug <stefan.klug@ideasonboard.com> Reviewed-by: Kieran Bingham <kieran.bingham@ideasonboard.com>",
+      "url": "https://github.com/raspberrypi/libcamera/commit/88b979dc3789e02d66541f2c8feae263eaca19b2",
+      "observed_at": "2026-07-01T15:33:16+02:00",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "ipa",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: rkisp1: lsc: Port to use LscAlgorithm Port the RkISP1"
+        },
+        {
+          "kind": "domain",
+          "term": "lsc",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: rkisp1: lsc: Port to use LscAlgorithm Port the RkISP1 LSC algorith"
+        },
+        {
+          "kind": "domain",
+          "term": "tuning file",
+          "family": "image-quality",
+          "weight": 2.8,
+          "context": "OG(RkISP1Lsc, Error) << \"'sets' parameter not found in tuning file\"; return -EINVAL; } int ret; std::string type = tuning"
+        },
+        {
+          "kind": "problem",
+          "term": "unsupported",
+          "family": "known-limitation",
+          "weight": 2.4,
+          "context": "parseLscData(sets); } else { LOG(RkISP1Lsc, Error) << \"Unsupported LSC data type '\" << type << \"'\"; ret = -EINVAL; } if ("
+        },
+        {
+          "kind": "mechanism",
+          "term": "interpolat",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "ntext.lsc.enabled); #include <memory> #include \"libipa/interpolator.h\" #include \"libipa/lsc_base.h\" ipa::Interpolator<lsc:"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Commit",
+      "location": "raspberrypi/libcamera / src/ipa/rkisp1/algorithms/lsc.cpp / 88b979dc37",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "ipa",
+            "lsc",
+            "tuning file"
+          ]
+        },
+        {
+          "kind": "problem",
+          "label": "문제",
+          "terms": [
+            "unsupported"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "label": "메커니즘",
+          "terms": [
+            "interpolat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_9498e8c3fcf4",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "commit",
+      "path": "src/ipa/libipa/lsc.cpp",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "afccf69edc41e658226e4d64cc64f5f053abcf87",
+      "ref": null,
+      "title": "ipa: libipa: lsc: Introduce LscAlgorithm",
+      "snippet": "ipa: libipa: lsc: Introduce LscAlgorithm Introduce the lsc.h and lsc.cpp files with the definition of the Lsc algorithm active state, frame context and the LscAlgorithm class. The LscAlgorithm class uses two backends (LscPolynomial and LscTable) to perform tuning file parsing and re-scaling of the LSC gains. Signed-of…",
+      "url": "https://github.com/raspberrypi/libcamera/commit/afccf69edc41e658226e4d64cc64f5f053abcf87",
+      "observed_at": "2026-07-01T11:30:10+02:00",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "ipa",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: libipa: lsc: Introduce LscAlgorithm Introduce the lsc"
+        },
+        {
+          "kind": "domain",
+          "term": "lsc",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: libipa: lsc: Introduce LscAlgorithm Introduce the lsc.h and lsc.cp"
+        },
+        {
+          "kind": "domain",
+          "term": "tuning file",
+          "family": "image-quality",
+          "weight": 2.8,
+          "context": "s two backends (LscPolynomial and LscTable) to perform tuning file parsing and re-scaling of the LSC gains. Signed-off-by"
+        },
+        {
+          "kind": "domain",
+          "term": "lens shading",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "intensity received * by the sensor is not uniform. The Lens Shading Correction algorithm applies * multipliers to all pixe"
+        },
+        {
+          "kind": "domain",
+          "term": "sensor configuration",
+          "family": "sensor-control",
+          "weight": 3.0,
+          "context": "tables support re-sampling and can be * applied to any sensor configuration. Grid-based LSC tables cannot currently * be re-sample"
+        },
+        {
+          "kind": "mechanism",
+          "term": "characteris",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "PA LSC algorithm implementation * * Due to the optical characteristics of the lens, the light intensity received * by the sen"
+        },
+        {
+          "kind": "mechanism",
+          "term": "compensat",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "ction algorithm applies * multipliers to all pixels to compensate for the lens shading effect. * * The LscAlgorithm impl"
+        },
+        {
+          "kind": "mechanism",
+          "term": "interpolat",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "les to * program its LSC engine, it uses LscAlgorithm::interpolateComponents() to get * an LSC table interpolated by the LscAlgorit"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Commit",
+      "location": "raspberrypi/libcamera / src/ipa/libipa/lsc.cpp / afccf69edc",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "ipa",
+            "lsc",
+            "tuning file",
+            "lens shading",
+            "sensor configuration"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "label": "메커니즘",
+          "terms": [
+            "characteris",
+            "compensat",
+            "interpolat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_a011b12d8263",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "commit",
+      "path": "src/ipa/libipa/lsc_polynomial.cpp",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "b4505e47d8836d1967914445bcb367d9cf7b838c",
+      "ref": null,
+      "title": "ipa: libipa: lsc_polynomial: Move LscPolynomial from RkISP1",
+      "snippet": "ipa: libipa: lsc_polynomial: Move LscPolynomial from RkISP1 Move the LscPolynomial class to libipa from RkISP1. Rename the class from LscPolynomialImpl to a simpler LscPolynomial. The class is copied verbatim, only documentation has been added. Signed-off-by: Jacopo Mondi <jacopo.mondi@ideasonboard.com> Reviewed-by: K…",
+      "url": "https://github.com/raspberrypi/libcamera/commit/b4505e47d8836d1967914445bcb367d9cf7b838c",
+      "observed_at": "2026-07-01T10:09:20+02:00",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "ipa",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: libipa: lsc_polynomial: Move LscPolynomial from RkISP"
+        },
+        {
+          "kind": "domain",
+          "term": "lsc",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: libipa: lsc_polynomial: Move LscPolynomial from RkISP1 Move the Ls"
+        },
+        {
+          "kind": "domain",
+          "term": "lens shading",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "klug@ideasonboard.com> * Polynomial class to represent lens shading correction * Polynomial based lens shading correction"
+        },
+        {
+          "kind": "domain",
+          "term": "tuning file",
+          "family": "image-quality",
+          "weight": 2.8,
+          "context": "\\brief Parse polynomial LSC data * \\param[in] sets The tuning file content * * Parse the LSC data in polyomial form from"
+        },
+        {
+          "kind": "domain",
+          "term": "sensor configuration",
+          "family": "sensor-control",
+          "weight": 3.0,
+          "context": "* * LSC tables have to be re-sampled every time a new sensor configuration is * used, as each streaming session might use a diffe"
+        },
+        {
+          "kind": "domain",
+          "term": "sensor crop",
+          "family": "sensor-control",
+          "weight": 3.0,
+          "context": "used, as each streaming session might use a different sensor crop rectangle. * * Polynomial LSC tables can be re-sampled"
+        },
+        {
+          "kind": "problem",
+          "term": "artifact",
+          "family": "quality-defect",
+          "weight": 2.6,
+          "context": "SC support using a Polynomial to represent the shading artifacts * map. * * \\sa LscImplementation */ /** * \\fn LscPolyn"
+        },
+        {
+          "kind": "triviality",
+          "term": "rename",
+          "family": "mechanical",
+          "weight": 2.4,
+          "context": "P1 Move the LscPolynomial class to libipa from RkISP1. Rename the class from LscPolynomialImpl to a simpler LscPolyn"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Commit",
+      "location": "raspberrypi/libcamera / src/ipa/libipa/lsc_polynomial.cpp / b4505e47d8",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "ipa",
+            "lsc",
+            "lens shading",
+            "tuning file",
+            "sensor configuration",
+            "sensor crop"
+          ]
+        },
+        {
+          "kind": "problem",
+          "label": "문제",
+          "terms": [
+            "artifact"
+          ]
+        },
+        {
+          "kind": "triviality",
+          "label": "사소한 변경",
+          "terms": [
+            "rename"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_6b63fe02ceeb",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "commit",
+      "path": "src/ipa/rkisp1/algorithms/lsc.cpp",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "e27f354289b16ce08ab8e10c56637f3c1e8f46cb",
+      "ref": null,
+      "title": "ipa: rkisp1: lsc: Re-architecture Lsc support",
+      "snippet": "ipa: rkisp1: lsc: Re-architecture Lsc support The RkISP1 LSC implementation is realized by the following components: - 2 \"tuning file\" parser classes: - LscPolynomialLoader - LscTableLoader which implement the \"parseLscData\" function that loads from tuning file a polynomial representation of the lsc gains or a table of gains respectively. - A hierachy of \"ShadingDescriptors\" - LscPolynomialShadin…",
+      "url": "https://github.com/raspberrypi/libcamera/commit/e27f354289b16ce08ab8e10c56637f3c1e8f46cb",
+      "observed_at": "2026-06-30T13:52:52+02:00",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "ipa",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: rkisp1: lsc: Re-architecture Lsc support The RkISP1 L"
+        },
+        {
+          "kind": "domain",
+          "term": "lsc",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: rkisp1: lsc: Re-architecture Lsc support The RkISP1 LSC implementa"
+        },
+        {
+          "kind": "domain",
+          "term": "tuning file",
+          "family": "image-quality",
+          "weight": 2.8,
+          "context": "entation is realized by the following components: - 2 \"tuning file\" parser classes: - LscPolynomialLoader - LscTableL"
+        },
+        {
+          "kind": "domain",
+          "term": "lens shading",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "om> /** * \\class LensShadingCorrection * \\brief RkISP1 Lens Shading Correction control * * Due to the optical characterist"
+        },
+        {
+          "kind": "mechanism",
+          "term": "characteris",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "Lens Shading Correction control * * Due to the optical characteristics of the lens, the light intensity received * by the sen"
+        },
+        {
+          "kind": "mechanism",
+          "term": "compensat",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "ction algorithm applies multipliers to all pixels to * compensate for the lens shading effect. The coefficients are spec"
+        },
+        {
+          "kind": "prior",
+          "term": "characteris",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "* Due to the optical characteristics of the lens, the light intensity received"
+        },
+        {
+          "kind": "prior",
+          "term": "compensat",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "* compensate for the lens shading effect. The coefficients are specified in a"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Commit",
+      "location": "raspberrypi/libcamera / src/ipa/rkisp1/algorithms/lsc.cpp / e27f354289",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "ipa",
+            "lsc",
+            "tuning file",
+            "lens shading"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "label": "메커니즘",
+          "terms": [
+            "characteris",
+            "compensat"
+          ]
+        },
+        {
+          "kind": "prior",
+          "label": "제거된 이전 방식",
+          "terms": [
+            "characteris",
+            "compensat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_d342ac7f12fe",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "commit",
+      "path": "include/linux/media/arm/mali-c55-config.h",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "9e3a6ca3c252d533981649f5751b1a857cf0091b",
+      "ref": null,
+      "title": "include: linux: mali-c55: Update to support CCM and Gamma",
+      "snippet": "include: linux: mali-c55: Update to support CCM and Gamma Update the Mali-C55 uAPI header to add support for CCM and the RGB Gamma. Support for CCM and RGB Gamma have been added to the Mali-C55 driver in Linux v7.3 by commits: - bb401df68c06 (\"media: mali-c55: Add support for CCM\") - 6962703102c4 (\"media: mali-c55: Ad…",
+      "url": "https://github.com/raspberrypi/libcamera/commit/9e3a6ca3c252d533981649f5751b1a857cf0091b",
+      "observed_at": "2026-06-16T15:37:13+02:00",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "ccm",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "include: linux: mali-c55: Update to support CCM and Gamma Update the Mali-C55 uAPI header to add suppo"
+        },
+        {
+          "kind": "domain",
+          "term": "demosaic",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "e to known one. * * Colour correction is applied after demosaicing and each pixel is represented * as a column vector of"
+        },
+        {
+          "kind": "domain",
+          "term": "v4l2",
+          "family": "camera-driver",
+          "weight": 2.6,
+          "context": "d blue channels */ struct mali_c55_params_ccm { struct v4l2_isp_params_block_header header; __u16 coeffs[3][3]; __"
+        },
+        {
+          "kind": "domain",
+          "term": "isp",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "e channels */ struct mali_c55_params_ccm { struct v4l2_isp_params_block_header header; __u16 coeffs[3][3]; __u16"
+        },
+        {
+          "kind": "domain",
+          "term": "gamma curve",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ion * * Gamma correction is used to program a standard gamma curve such as the sRGB * one. It provides gains and offsets"
+        },
+        {
+          "kind": "mechanism",
+          "term": "correction curve",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "=0xfff, with the other 127 values * defining the Gamma correction curve. The three gain multipliers are expressed * as 12-bits"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Commit",
+      "location": "raspberrypi/libcamera / include/linux/media/arm/mali-c55-config.h / 9e3a6ca3c2",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "ccm",
+            "demosaic",
+            "v4l2",
+            "isp",
+            "gamma curve"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "label": "메커니즘",
+          "terms": [
+            "correction curve"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_0607491ba549",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "commit",
+      "path": "src/ipa/simple/algorithms/ccm.cpp",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "c875f02456d17a2328d7c12e0fc9c5b20196be49",
+      "ref": null,
+      "title": "ipa: simple: Port to use libipa CcmAlgorithm",
+      "snippet": "ipa: simple: Port to use libipa CcmAlgorithm Now that libipa provides a common CCM algorithm implementation, replace the custom handling with the common Ccm. Signed-off-by: Kieran Bingham <kieran.bingham@ideasonboard.com> Signed-off-by: Jacopo Mondi <jacopo.mondi@ideasonboard.com> Tested-by: Robert Mader <robert.mader@collabora.com> Reviewed-by: Milan Zamazal <mzamazal@redhat.com> Tested-by: Mila…",
+      "url": "https://github.com/raspberrypi/libcamera/commit/c875f02456d17a2328d7c12e0fc9c5b20196be49",
+      "observed_at": "2026-05-20T23:52:35+02:00",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "ipa",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: simple: Port to use libipa CcmAlgorithm Now that libi"
+        },
+        {
+          "kind": "domain",
+          "term": "ccm",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "libipa CcmAlgorithm Now that libipa provides a common CCM algorithm implementation, replace the custom handling"
+        },
+        {
+          "kind": "domain",
+          "term": "tuning file",
+          "family": "image-quality",
+          "weight": 2.8,
+          "context": "ftCcm, Error) << \"Failed to parse 'ccm' parameter from tuning file.\"; return ret; } return 0; void Ccm::prepare(IPAContex"
+        },
+        {
+          "kind": "domain",
+          "term": "awb",
+          "family": "3a",
+          "weight": 3.2,
+          "context": "erParams *params) const unsigned int ct = frameContext.awb.colourTemperature; /* Change CCM only on bigger temper"
+        },
+        {
+          "kind": "mechanism",
+          "term": "interpolat",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "include \"libcamera/internal/matrix.h\" #include <libipa/interpolator.h> Ccm() = default; ~Ccm() = default; /** * \\copydoc l"
+        },
+        {
+          "kind": "prior",
+          "term": "interpolat",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "currentCcm_ = ccm_.getInterpolated(ct);"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Commit",
+      "location": "raspberrypi/libcamera / src/ipa/simple/algorithms/ccm.cpp / c875f02456",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "ipa",
+            "ccm",
+            "tuning file",
+            "awb"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "label": "메커니즘",
+          "terms": [
+            "interpolat"
+          ]
+        },
+        {
+          "kind": "prior",
+          "label": "제거된 이전 방식",
+          "terms": [
+            "interpolat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_83dcbac58367",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "commit",
+      "path": "src/ipa/libipa/meson.build",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "5e1861939099eb82efd4fff51b55802725647cb0",
+      "ref": null,
+      "title": "ipa: libipa: Introduce V4L2Stats",
+      "snippet": "ipa: libipa: Introduce V4L2Stats Add a V4L2Stats class similar in spirit to the existing V4L2Params class to allow IPA modules to easily sub-class it to access ISP statistics blocks serialized into a v4l2_isp_buffer. Signed-off-by: Jacopo Mondi <jacopo.mondi@ideasonboard.com> Reviewed-by: Kieran Bingham <kieran.bingha…",
+      "url": "https://github.com/raspberrypi/libcamera/commit/5e1861939099eb82efd4fff51b55802725647cb0",
+      "observed_at": "2026-04-22T17:38:20+02:00",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "ipa",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: libipa: Introduce V4L2Stats Add a V4L2Stats class sim"
+        },
+        {
+          "kind": "domain",
+          "term": "isp",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "to allow IPA modules to easily sub-class it to access ISP statistics blocks serialized into a v4l2_isp_buffer. S"
+        },
+        {
+          "kind": "domain",
+          "term": "v4l2",
+          "family": "camera-driver",
+          "weight": 2.6,
+          "context": "s it to access ISP statistics blocks serialized into a v4l2_isp_buffer. Signed-off-by: Jacopo Mondi <jacopo.mondi@"
+        },
+        {
+          "kind": "problem",
+          "term": "mismatch",
+          "family": "correctness",
+          "weight": 3.0,
+          "context": "ta_size) { LOG(V4L2Stats, Error) << \"Stats buffer size mismatch: \" << stats->data_size; return; } if (version != stats"
+        },
+        {
+          "kind": "problem",
+          "term": "unsupported",
+          "family": "known-limitation",
+          "weight": 2.4,
+          "context": "version != stats->version) { LOG(V4L2Stats, Error) << \"Unsupported v4l2-isp version: \" << stats->version; return; } /* Co"
+        },
+        {
+          "kind": "effect",
+          "term": "avoid",
+          "family": "reduction",
+          "weight": 2.6,
+          "context": "s not depend on the V4L2Stats template * arguments, to avoid duplicate copies of inline code. */ /** * \\brief Const"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Commit",
+      "location": "raspberrypi/libcamera / src/ipa/libipa/meson.build / 5e18619390",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "ipa",
+            "isp",
+            "v4l2"
+          ]
+        },
+        {
+          "kind": "problem",
+          "label": "문제",
+          "terms": [
+            "mismatch",
+            "unsupported"
+          ]
+        },
+        {
+          "kind": "effect",
+          "label": "효과",
+          "terms": [
+            "avoid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_3b95e942888d",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "commit",
+      "path": "src/libcamera/software_isp/debayer.cpp",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "244572db3efdb473e02c78e2fe7c12e9576b9b25",
+      "ref": null,
+      "title": "libcamera: debayer: Use helpers for strides and frame sizes",
+      "snippet": "libcamera: debayer: Use helpers for strides and frame sizes Clean up some open-coded logic, making the code shorter, more generic and easier to follow. Signed-off-by: Robert Mader <robert.mader@collabora.com> Reviewed-by: Milan Zamazal <mzamazal@redhat.com> Signed-off-by: Kieran Bingham <kieran.bingham@ideasonboard.co…",
+      "url": "https://github.com/raspberrypi/libcamera/commit/244572db3efdb473e02c78e2fe7c12e9576b9b25",
+      "observed_at": "2026-07-20T13:39:35+02:00",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "debayer",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "libcamera: debayer: Use helpers for strides and frame sizes Clean up some"
+        },
+        {
+          "kind": "problem",
+          "term": "unsupported",
+          "family": "known-limitation",
+          "weight": 2.4,
+          "context": "{ config.bpp = 32; return 0; } LOG(Debayer, Info) << \"Unsupported output format \" << outputFormat.toString(); return -EI"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Commit",
+      "location": "raspberrypi/libcamera / src/libcamera/software_isp/debayer.cpp / 244572db3e",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "debayer"
+          ]
+        },
+        {
+          "kind": "problem",
+          "label": "문제",
+          "terms": [
+            "unsupported"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_f099b5006ea1",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "commit",
+      "path": "src/libcamera/software_isp/debayer_egl.cpp",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "13f7b921acdf51d0198a700ae091c90b5ad095f2",
+      "ref": null,
+      "title": "libcamera: software_isp: debayer_egl: Implement input/output frame caching mechanism",
+      "snippet": "libcamera: software_isp: debayer_egl: Implement input/output frame caching mechanism Implement a texture caching mechanism for both input and output frames and for both types of input frame. The before/after on a Qualcomm x1e is: 9.737ms per frame 5.691ms per frame The before/after on a Qualcomm sm8250 is: 21.710ms pe…",
+      "url": "https://github.com/raspberrypi/libcamera/commit/13f7b921acdf51d0198a700ae091c90b5ad095f2",
+      "observed_at": "2026-07-06T23:22:45+01:00",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "isp",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "libcamera: software_isp: debayer_egl: Implement input/output frame caching mec"
+        },
+        {
+          "kind": "domain",
+          "term": "debayer",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "libcamera: software_isp: debayer_egl: Implement input/output frame caching mechanism Im"
+        },
+        {
+          "kind": "domain",
+          "term": "dmabuf",
+          "family": "memory-buffer",
+          "weight": 3.0,
+          "context": "*inMapped, std::optional<DmaSyncer> *inDmaSyncer) bool dmabuf_import_succeeded = false; /* eGL context switch */ egl"
+        },
+        {
+          "kind": "domain",
+          "term": "mmap",
+          "family": "memory-buffer",
+          "weight": 3.0,
+          "context": "inMapped->value().isValid()) { LOG(Debayer, Error) << \"mmap-ing buffer(s) failed\"; return -ENODEV; inputBufferCoun"
+        },
+        {
+          "kind": "problem",
+          "term": "slow path",
+          "family": "timing",
+          "weight": 3.2,
+          "context": "mode fail create/update an existing texture using the slow path */ inDmaSyncer->emplace(input->planes()[0].fd, DmaSync"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Commit",
+      "location": "raspberrypi/libcamera / src/libcamera/software_isp/debayer_egl.cpp / 13f7b921ac",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "isp",
+            "debayer",
+            "dmabuf",
+            "mmap"
+          ]
+        },
+        {
+          "kind": "problem",
+          "label": "문제",
+          "terms": [
+            "slow path"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_3d87ca522e90",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "commit",
+      "path": "src/ipa/rkisp1/algorithms/cproc.cpp",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "ab3fb363d8a0042a79a4949f5d6d6fad3e9fbd76",
+      "ref": null,
+      "title": "ipa: rkisp1: cproc: Fix brightness and contrast value handling",
+      "snippet": "ipa: rkisp1: cproc: Fix brightness and contrast value handling By reverse engineering it was discovered that the transfer curve applied by the CPROC module is Yout = Yin * contrast + brightness/2. However the most common expectation on contrast is to not change the middle gray of an image. So the expected curve is: Yo…",
+      "url": "https://github.com/raspberrypi/libcamera/commit/ab3fb363d8a0042a79a4949f5d6d6fad3e9fbd76",
+      "observed_at": "2026-06-16T16:28:55+02:00",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "ipa",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: rkisp1: cproc: Fix brightness and contrast value hand"
+        },
+        {
+          "kind": "mechanism",
+          "term": "compensat",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "ualBrightness * \\brief Brightness level after contrast compensation * \\var IPAActiveState::cproc.brightness * \\brief Hardw"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Commit",
+      "location": "raspberrypi/libcamera / src/ipa/rkisp1/algorithms/cproc.cpp / ab3fb363d8",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "ipa"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "label": "메커니즘",
+          "terms": [
+            "compensat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_09748ecc3eea",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "commit",
+      "path": "src/ipa/libipa/lux.cpp",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "1e1eecc3f340abd9d9267b74a5a3d3e79d047636",
+      "ref": null,
+      "title": "libcamera: Replace last mentions of YAML",
+      "snippet": "libcamera: Replace last mentions of YAML A few comments and log messages still mention YAML while they now relate to code operating on ValueNode. Replace them with value node or tuning data as appropriate for the context. Signed-off-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com> Reviewed-by: Barnabás Pőcze <…",
+      "url": "https://github.com/raspberrypi/libcamera/commit/1e1eecc3f340abd9d9267b74a5a3d3e79d047636",
+      "observed_at": "2026-06-03T22:11:28+03:00",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "tuning file",
+          "family": "image-quality",
+          "weight": 2.8,
+          "context": "h an even number of /* Enable set if described in YAML tuning file. */ * The Lens Shading Correction algorithm applies mu"
+        },
+        {
+          "kind": "domain",
+          "term": "lens shading",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "Enable set if described in YAML tuning file. */ * The Lens Shading Correction algorithm applies multipliers to all pixels"
+        },
+        {
+          "kind": "mechanism",
+          "term": "compensat",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "ction algorithm applies multipliers to all pixels * to compensate for the lens shading effect. The coefficients are * sp"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Commit",
+      "location": "raspberrypi/libcamera / src/ipa/libipa/lux.cpp / 1e1eecc3f3",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "tuning file",
+            "lens shading"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "label": "메커니즘",
+          "terms": [
+            "compensat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_de7b398c5fd8",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "commit",
+      "path": "src/libcamera/pipeline/rpi/common/delayed_controls.cpp",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "2c0c52be1a7d42c401093542b46d66bd2ca70a36",
+      "ref": null,
+      "title": "pipeline: rpi: Simplify delayed controls",
+      "snippet": "pipeline: rpi: Simplify delayed controls The queueCount_ value is redundant and can be removed. The pipeline handler calls the push and applyControls functions in a an interleaved manner, so queueCount_ was merely tracking writeCount_, and is therefore unnecessary. Signed-off-by: David Plowman <david.plowman@raspberrypi.com> Reviewed-by: Naushir Patuck <naush@raspberrypi.com> Reviewed-by: Jacopo …",
+      "url": "https://github.com/raspberrypi/libcamera/commit/2c0c52be1a7d42c401093542b46d66bd2ca70a36",
+      "observed_at": "2026-05-08T13:57:41+01:00",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "pipeline handler",
+          "family": "camera-framework",
+          "weight": 2.6,
+          "context": "queueCount_ value is redundant and can be removed. The pipeline handler calls the push and applyControls functions in a an int"
+        },
+        {
+          "kind": "mechanism",
+          "term": "sequence number",
+          "family": "synchronization-mechanism",
+          "weight": 4.2,
+          "context": "queue using * push(). The max history from the current sequence number that yields valid * values are thus 16 minus number of"
+        },
+        {
+          "kind": "mechanism",
+          "term": "ring buffer",
+          "family": "buffer-mechanism",
+          "weight": 3.6,
+          "context": "applyControls * advancing the head of the queue in the ring buffer. The valid history in * the queue consists of 16 entri"
+        },
+        {
+          "kind": "effect",
+          "term": "guarantee",
+          "family": "guarantee",
+          "weight": 3.0,
+          "context": "ests queued above the * control depth the controls are guaranteed to take effect for the correct * request. The control"
+        },
+        {
+          "kind": "effect",
+          "term": "increas",
+          "family": "improvement",
+          "weight": 2.4,
+          "context": "1; * Push a set of controls to the control queue. This increases the control queue * depth by one. for (auto &ctrl : va"
+        },
+        {
+          "kind": "prior",
+          "term": "sequence number",
+          "family": "synchronization-mechanism",
+          "weight": 4.2,
+          "context": "* push(). The max history from the current sequence number that yields valid"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Commit",
+      "location": "raspberrypi/libcamera / src/libcamera/pipeline/rpi/common/delayed_controls.cpp / 2c0c52be1a",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "pipeline handler"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "label": "메커니즘",
+          "terms": [
+            "sequence number",
+            "ring buffer"
+          ]
+        },
+        {
+          "kind": "effect",
+          "label": "효과",
+          "terms": [
+            "guarantee",
+            "increas"
+          ]
+        },
+        {
+          "kind": "prior",
+          "label": "제거된 이전 방식",
+          "terms": [
+            "sequence number"
+          ]
+        }
+      ]
+    },
+    {
       "id": "ev_3b8607c3ed91",
       "org": "raspberrypi",
       "repo": "libpisp",
@@ -28913,6 +30313,13 @@
           "context": "en when it is allowed (given we have a 2-pix-per-cycle ISP it's no more objectionable than odd-width 444). Signed"
         },
         {
+          "kind": "domain",
+          "term": "pisp",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "llinghurst@raspberrypi.com> (config.image.width & 1)) !PISP_IMAGE_FORMAT_INTERLEAVED(config.image.format) && (conf"
+        },
+        {
           "kind": "problem",
           "term": "hack",
           "family": "known-limitation",
@@ -28928,7 +30335,8 @@
           "kind": "domain",
           "label": "기술 영역",
           "terms": [
-            "isp"
+            "isp",
+            "pisp"
           ]
         },
         {
@@ -29115,23 +30523,217 @@
           ]
         }
       ]
+    },
+    {
+      "id": "ev_0bfb75ad7c9c",
+      "org": "raspberrypi",
+      "repo": "libpisp",
+      "kind": "commit",
+      "path": "src/helpers/backend_device.cpp",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "51013c37b7fb10df5c5100f3e2cc4de5ab8932ef",
+      "ref": null,
+      "title": "helpers: Use opaque buffers where possible",
+      "snippet": "helpers: Use opaque buffers where possible In some situations, there is no direct mapping of a pisp image format to a V4L2 pixelformat. In such cases, use a generic/opaque buffer format (which happens to be a YUV444 multiplanar format), appropriately sized to fit the image contents. Signed-off-by: Naushir Patuck <naus…",
+      "url": "https://github.com/raspberrypi/libpisp/commit/51013c37b7fb10df5c5100f3e2cc4de5ab8932ef",
+      "observed_at": "2025-08-05T11:32:55+01:00",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "pisp",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "le In some situations, there is no direct mapping of a pisp image format to a V4L2 pixelformat. In such cases, use"
+        },
+        {
+          "kind": "domain",
+          "term": "v4l2",
+          "family": "camera-driver",
+          "weight": 2.6,
+          "context": "there is no direct mapping of a pisp image format to a V4L2 pixelformat. In such cases, use a generic/opaque buffe"
+        },
+        {
+          "kind": "problem",
+          "term": "workaround",
+          "family": "known-limitation",
+          "weight": 2.4,
+          "context": "specified by V4L2, we use an opaque buffer buffer as a workaround. // Size the dimensions down so the kernel drive does"
+        }
+      ],
+      "repository": "raspberrypi/libpisp",
+      "kindLabel": "Commit",
+      "location": "raspberrypi/libpisp / src/helpers/backend_device.cpp / 51013c37b7",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "pisp",
+            "v4l2"
+          ]
+        },
+        {
+          "kind": "problem",
+          "label": "문제",
+          "terms": [
+            "workaround"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_df3d5e87311c",
+      "org": "raspberrypi",
+      "repo": "libpisp",
+      "kind": "commit",
+      "path": "src/examples/convert.cpp",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "69d2084baa65f7c992685ab9b616266da7d63265",
+      "ref": null,
+      "title": "examples: convert: Add support for RGBX output from 2712C1",
+      "snippet": "examples: convert: Add support for RGBX output from 2712C1 By doubling the width, changing the output format to \"UYVY\" and applying a matrix to swap the first two colour components, we can output RGBX. The gotcha is that when downscaling, this can result in an oversharp/aliasy image. No support for RGBX input (though …",
+      "url": "https://github.com/raspberrypi/libpisp/commit/69d2084baa65f7c992685ab9b616266da7d63265",
+      "observed_at": "2025-08-01T10:28:44+01:00",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "pisp",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "eight = out_file.height; o.image.format = libpisp::get_pisp_image_format(out_file.format); if (in_file.format == \""
+        },
+        {
+          "kind": "domain",
+          "term": "ccm",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "rmat = libpisp::get_pisp_image_format(\"UYVY\"); pisp_be_ccm_config csc = {}; // Define a matrix to swap components"
+        },
+        {
+          "kind": "problem",
+          "term": "hack",
+          "family": "known-limitation",
+          "weight": 2.4,
+          "context": "\"RGBX8888\" && !variant->BackendRGB32Supported(0)) { // Hack to generate RGBX even when BE_MINOR_VERSION < 1 using"
+        },
+        {
+          "kind": "problem",
+          "term": "artifact",
+          "family": "quality-defect",
+          "weight": 2.6,
+          "context": "<< \"Backend hardware has limited RGBX support; resize artifacts may be present\" << std::endl; o.image.width = out_file"
+        }
+      ],
+      "repository": "raspberrypi/libpisp",
+      "kindLabel": "Commit",
+      "location": "raspberrypi/libpisp / src/examples/convert.cpp / 69d2084baa",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "pisp",
+            "ccm"
+          ]
+        },
+        {
+          "kind": "problem",
+          "label": "문제",
+          "terms": [
+            "hack",
+            "artifact"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ev_fff34ebc2763",
+      "org": "raspberrypi",
+      "repo": "libpisp",
+      "kind": "commit",
+      "path": "src/libpisp/backend/backend.hpp",
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": "9b5349c61a160ba6ff1c454cf15ba885e9563ad9",
+      "ref": null,
+      "title": "backend: Remove use of std::vector from the default config",
+      "snippet": "backend: Remove use of std::vector from the default config Switch to using std::array types for the default config parameters read from the JSON config file. This allows the BackEnd class to be standard layout compliant. Signed-off-by: Naushir Patuck <naush@raspberrypi.com>",
+      "url": "https://github.com/raspberrypi/libpisp/commit/9b5349c61a160ba6ff1c454cf15ba885e9563ad9",
+      "observed_at": "2025-02-25T13:52:16Z",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "pisp",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "a standard layout. std::vector<std::pair<std::string, pisp_be_ccm_config>> ycbcr_map_; std::vector<std::pair<std:"
+        },
+        {
+          "kind": "domain",
+          "term": "ccm",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ard layout. std::vector<std::pair<std::string, pisp_be_ccm_config>> ycbcr_map_; std::vector<std::pair<std::string"
+        },
+        {
+          "kind": "problem",
+          "term": "incorrect",
+          "family": "correctness",
+          "weight": 3.0,
+          "context": "_list.size()) throw std::runtime_error(\"read_resample: Incorrect number of filters\"); void read_ycbcr(std::vector<std::"
+        }
+      ],
+      "repository": "raspberrypi/libpisp",
+      "kindLabel": "Commit",
+      "location": "raspberrypi/libpisp / src/libpisp/backend/backend.hpp / 9b5349c61a",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "pisp",
+            "ccm"
+          ]
+        },
+        {
+          "kind": "problem",
+          "label": "문제",
+          "terms": [
+            "incorrect"
+          ]
+        }
+      ]
     }
   ],
   "counts": {
-    "total": 411,
+    "total": 430,
     "byKind": {
       "code": 305,
       "issue": 36,
+      "commit": 57,
       "doc": 18,
       "config": 3,
-      "commit": 38,
       "pull_request": 10,
       "release": 1
     },
     "byRepository": {
-      "intel/ipu6-camera-hal": 61,
-      "raspberrypi/libcamera": 334,
-      "raspberrypi/libpisp": 16
+      "intel/ipu6-camera-hal": 62,
+      "raspberrypi/libcamera": 349,
+      "raspberrypi/libpisp": 19
     }
   }
 }

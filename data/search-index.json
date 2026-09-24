@@ -67,8 +67,8 @@
     "type": "candidate",
     "id": "cand_9fe09ed8a807",
     "slug": "isp-calibration",
-    "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 보간",
-    "body": "ISP 처리 영역의 코드가 보간 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 주변 서술에는 180 MHz라는 측정값이 함께 기재되어 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 화질 결함, 타이밍 편차 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “] [265] ERROR IPCPipe ipc_pipe_unixsocket.cpp:134 Call timeout! [0:05:59.429475071] [265] ERROR IPCPipe ipc_pipe_unix” 구현은 ISP 처리 내부에서 보간, 보정, 캘리브레이션, 특성화 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: ipu3_uapi_shd_general_config (include/linux/intel-ipu3.h); ipu3_uapi_isp_lin_vmem_params (include/linux/intel-ipu3.h); ipu3_uapi_isp_tnr3_vmem_params (include/linux/intel-ipu3.h); ipu3_uapi_obgrid_param (include/linux/intel-ipu3.h); rkisp1_cif_isp_dpcc_config (include/linux/rkisp1-config.h); libcamera (src/libcamera/software_isp/debayer_cpu.h). 효과를 서술하는 문장에 수치가 함께 등장합니다. 수집된 자료에서 처음 확인되는 수치는 180 MHz이며, 그것이 개선 후의 값인지 개선 전의 값인지는 아래 인용문에서 직접 확인해야 합니다: “struct ipu3_uapi_isp_tnr3_vmem_params - Temporal noise reduction vector memory parameters @slope: slope setting in interpolation curve for temporal noise reduction. @reserved1: reserved @sigma: knee point setting in interpolation curve for…” isp interpolat camera interpolat interpolat known limitation camera interpolat quality defect camera isp compensat camera compensat compensat known limitation camera compensat quality defect camera isp calibrat camera calibrat intel/ipu6-camera-hal raspberrypi/libcamera ISP 처리 캘리브레이션과 보정",
+    "title": "ISP 처리: 타이밍 편차 대응을 위한 보간",
+    "body": "ISP 처리 영역의 코드가 보간 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다. 주변 서술에는 180 MHz라는 측정값이 함께 기재되어 있습니다. 수집된 자료는 타이밍 편차, 작성자가 직접 기록한 한계, 화질 결함 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “] [265] ERROR IPCPipe ipc_pipe_unixsocket.cpp:134 Call timeout! [0:05:59.429475071] [265] ERROR IPCPipe ipc_pipe_unix” 구현은 ISP 처리 내부에서 보간, 보정, 캘리브레이션, 특성화 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: ipu3_uapi_shd_general_config (include/linux/intel-ipu3.h); ipu3_uapi_isp_lin_vmem_params (include/linux/intel-ipu3.h); ipu3_uapi_isp_tnr3_vmem_params (include/linux/intel-ipu3.h); ipu3_uapi_obgrid_param (include/linux/intel-ipu3.h); rkisp1_cif_isp_dpcc_config (include/linux/rkisp1-config.h); libcamera (src/libcamera/software_isp/debayer_cpu.h). 효과를 서술하는 문장에 수치가 함께 등장합니다. 수집된 자료에서 처음 확인되는 수치는 180 MHz이며, 그것이 개선 후의 값인지 개선 전의 값인지는 아래 인용문에서 직접 확인해야 합니다: “struct ipu3_uapi_isp_tnr3_vmem_params - Temporal noise reduction vector memory parameters @slope: slope setting in interpolation curve for temporal noise reduction. @reserved1: reserved @sigma: knee point setting in interpolation curve for…” isp interpolat camera interpolat interpolat timing camera interpolat known limitation camera isp compensat camera compensat compensat timing camera compensat known limitation camera isp calibrat camera calibrat intel/ipu6-camera-hal raspberrypi/libcamera ISP 처리 캘리브레이션과 보정",
     "url": "/discoveries/isp-calibration/"
   },
   {
@@ -78,6 +78,14 @@
     "title": "Sensor 동기화: 타이밍 편차 대응을 위한 예측",
     "body": "Sensor 동기화 영역의 코드가 예측 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다. 수집된 자료는 타이밍 편차, 프레임 정합성 결함, 자원 고갈 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “ltiple packet header errors detected Transfer FIFO overflow Incomplete long packet detected Frame sync err” 구현은 Sensor 동기화 내부에서 예측 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: RequestThread::threadLoop (src/core/RequestThread.cpp). 효과가 문장으로 주장되어 있습니다(save). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. sensor sync predict camera predict predict timing camera predict correctness camera image sensor sensor sync control intel/ipu6-camera-hal raspberrypi/libcamera Sensor 동기화 예측 기반 추정",
     "url": "/discoveries/sensor-sync-prediction/"
+  },
+  {
+    "type": "candidate",
+    "id": "cand_cecaedf99b18",
+    "slug": "isp-adaptive-control",
+    "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 hysteresis 감쇠",
+    "body": "ISP 처리 영역의 코드가 hysteresis 감쇠 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 주변 서술에는 9.737ms라는 측정값이 함께 기재되어 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 타이밍 편차, 프레임 정합성 결함 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “] [265] ERROR IPCPipe ipc_pipe_unixsocket.cpp:134 Call timeout! [0:05:59.429475071] [265] ERROR IPCPipe ipc_pipe_unix” 구현은 ISP 처리 내부에서 hysteresis 감쇠, 적응 제어, feedback 제어 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: Contrast::read (src/ipa/rpi/controller/rpi/contrast.cpp); initialise (src/ipa/rpi/controller/rpi/af.h); CfgParams (src/ipa/rpi/controller/rpi/af.h). 효과를 서술하는 문장에 수치가 함께 등장합니다. 수집된 자료에서 처음 확인되는 수치는 9.737ms이며, 그것이 개선 후의 값인지 개선 전의 값인지는 아래 인용문에서 직접 확인해야 합니다: “ggering */ double pdafGain; /* coefficient for PDAF feedback loop */ double pdafSquelch; /* PDAF stability parameter” isp hysteresis camera hysteresis hysteresis known limitation camera hysteresis timing camera isp adaptive camera adaptive adaptive known limitation camera adaptive timing camera isp feedback loop camera feedback loop raspberrypi/libcamera intel/ipu6-camera-hal ISP 처리 적응 제어",
+    "url": "/discoveries/isp-adaptive-control/"
   },
   {
     "type": "candidate",
@@ -105,19 +113,51 @@
   },
   {
     "type": "candidate",
+    "id": "cand_f833520f1126",
+    "slug": "isp-scheduling-mechanism",
+    "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 처리율 제한",
+    "body": "ISP 처리 영역의 코드가 처리율 제한 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 주변 서술에는 9.737ms라는 측정값이 함께 기재되어 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 타이밍 편차, 프레임 정합성 결함 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “] [265] ERROR IPCPipe ipc_pipe_unixsocket.cpp:134 Call timeout! [0:05:59.429475071] [265] ERROR IPCPipe ipc_pipe_unix” 구현은 ISP 처리 내부에서 처리율 제한 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: IpaBase::init (src/ipa/rpi/common/ipa_base.cpp). 효과를 서술하는 문장에 수치가 함께 등장합니다. 수집된 자료에서 처음 확인되는 수치는 9.737ms이며, 그것이 개선 후의 값인지 개선 전의 값인지는 아래 인용문에서 직접 확인해야 합니다: “ler provider frames at a * rate higher than this, we rate-limit the controller Prepare() and * Process() calls to lo” isp rate limit camera rate limit rate limit known limitation camera rate limit timing camera image sensor isp control raspberrypi/libcamera intel/ipu6-camera-hal ISP 처리 Deadline 인식 스케줄링",
+    "url": "/discoveries/isp-scheduling-mechanism/"
+  },
+  {
+    "type": "candidate",
     "id": "cand_1da23885c6fa",
     "slug": "sensor-sync-synchronization-mechanism",
     "title": "Sensor 동기화: 타이밍 편차 대응을 위한 시퀀스 번호 부여",
-    "body": "Sensor 동기화 영역의 코드가 시퀀스 번호 부여 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다. 수집된 자료는 타이밍 편차, 프레임 정합성 결함, 자원 고갈 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “ltiple packet header errors detected Transfer FIFO overflow Incomplete long packet detected Frame sync err” 구현은 Sensor 동기화 내부에서 시퀀스 번호 부여 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: IPU3CameraData::frameStart (src/libcamera/pipeline/ipu3/ipu3.cpp); CameraData::handleControlLists (src/libcamera/pipeline/rpi/common/pipeline_base.cpp). 효과가 문장으로 주장되어 있습니다(save). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. sensor sync sequence number camera sequence number sequence number timing camera sequence number correctness camera image sensor sensor sync control raspberrypi/libcamera intel/ipu6-camera-hal Sensor 동기화 타이밍 동기화",
+    "body": "Sensor 동기화 영역의 코드가 시퀀스 번호 부여 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다. 수집된 자료는 타이밍 편차, 프레임 정합성 결함, 자원 고갈 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “ltiple packet header errors detected Transfer FIFO overflow Incomplete long packet detected Frame sync err” 구현은 Sensor 동기화 내부에서 시퀀스 번호 부여 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: IPU3CameraData::frameStart (src/libcamera/pipeline/ipu3/ipu3.cpp); CameraData::handleControlLists (src/libcamera/pipeline/rpi/common/pipeline_base.cpp). 효과가 문장으로 주장되어 있습니다(save, avoid). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. sensor sync sequence number camera sequence number sequence number timing camera sequence number correctness camera image sensor sensor sync control raspberrypi/libcamera intel/ipu6-camera-hal Sensor 동기화 타이밍 동기화",
     "url": "/discoveries/sensor-sync-synchronization-mechanism/"
+  },
+  {
+    "type": "candidate",
+    "id": "cand_845fcf870209",
+    "slug": "isp-partitioning",
+    "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 accelerator 오프로딩",
+    "body": "ISP 처리 영역의 코드가 accelerator 오프로딩 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 주변 서술에는 9.737ms라는 측정값이 함께 기재되어 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 타이밍 편차, 프레임 정합성 결함 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “] [265] ERROR IPCPipe ipc_pipe_unixsocket.cpp:134 Call timeout! [0:05:59.429475071] [265] ERROR IPCPipe ipc_pipe_unix” 구현은 ISP 처리 내부에서 accelerator 오프로딩, 연산 오프로딩 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: ipu3_uapi_params (include/linux/intel-ipu3.h). 효과를 서술하는 문장에 수치가 함께 등장합니다. 수집된 자료에서 처음 확인되는 수치는 9.737ms이며, 그것이 개선 후의 값인지 개선 전의 값인지는 아래 인용문에서 직접 확인해야 합니다: “panded pixel values. By enabling this in the PiSP, we offload the processing to dedicated hardware, improve performa” isp accelerator camera accelerator accelerator known limitation camera accelerator timing camera isp offload camera offload offload known limitation camera offload timing camera image sensor isp control raspberrypi/libcamera intel/ipu6-camera-hal ISP 처리 작업 분할",
+    "url": "/discoveries/isp-partitioning/"
+  },
+  {
+    "type": "candidate",
+    "id": "cand_7abe84b2aa19",
+    "slug": "isp-synchronization-mechanism",
+    "title": "ISP 처리: 자원 고갈 대응을 위한 시퀀스 번호 부여",
+    "body": "ISP 처리 영역의 코드가 시퀀스 번호 부여 기법을 구현하고 있습니다. 그리고 해당 Repository는 자원 고갈 문제를 스스로 보고하고 있습니다. 주변 서술에는 9.737ms라는 측정값이 함께 기재되어 있습니다. 수집된 자료는 자원 고갈, 작성자가 직접 기록한 한계, 타이밍 편차 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “] [265] ERROR IPCPipe ipc_pipe_unixsocket.cpp:134 Call timeout! [0:05:59.429475071] [265] ERROR IPCPipe ipc_pipe_unix” 구현은 ISP 처리 내부에서 시퀀스 번호 부여, clock 복원 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: libcamera (src/ipa/libipa/fc_queue.h); namespace (src/ipa/libipa/fc_queue.h); clear (src/ipa/libipa/fc_queue.h); BlackLevelCorrection::prepare (src/ipa/ipu3/algorithms/blc.cpp); ToneMapping::prepare (src/ipa/ipu3/algorithms/tone_mapping.cpp). 효과를 서술하는 문장에 수치가 함께 등장합니다. 수집된 자료에서 처음 확인되는 수치는 9.737ms이며, 그것이 개선 후의 값인지 개선 전의 값인지는 아래 인용문에서 직접 확인해야 합니다: “include <libcamera/base/log.h>” isp sequence number camera sequence number sequence number resource camera sequence number known limitation camera isp clock recovery camera clock recovery clock recovery resource camera clock recovery known limitation camera image sensor isp control raspberrypi/libcamera intel/ipu6-camera-hal ISP 처리 타이밍 동기화",
+    "url": "/discoveries/isp-synchronization-mechanism/"
   },
   {
     "type": "candidate",
     "id": "cand_8c44de30cae3",
     "slug": "camera-driver-prediction",
     "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 예측",
-    "body": "Camera Driver 계층 영역의 코드가 예측 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 프레임 정합성 결함, 확장성 한계 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “Important memory leak of v4l2-relayd service after each camera start Hi dear” 구현은 Camera Driver 계층 내부에서 예측 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: v4l2_mpeg_video_h264_profile (include/linux/v4l2-controls.h); v4l2_cid_mpeg_video_hevc_size_of_length_field (include/linux/v4l2-controls.h); v4l2_ctrl_h264_pred_weights (include/linux/v4l2-controls.h); v4l2_vp8_entropy (include/linux/v4l2-controls.h); v4l2_ctrl_mpeg2_picture (include/linux/v4l2-controls.h); v4l2_hevc_pred_weight_table (include/linux/v4l2-controls.h). 효과가 문장으로 주장되어 있습니다(prevent). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. camera driver predict camera predict predict known limitation camera predict correctness camera image sensor camera driver control intel/ipu6-camera-hal raspberrypi/libcamera raspberrypi/libpisp Camera Driver 계층 예측 기반 추정",
+    "body": "Camera Driver 계층 영역의 코드가 예측 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 프레임 정합성 결함, 확장성 한계 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “f the box. I'd be awesome if it was documented how to work around these issues. ``` v4l2: Current input: \"unicam-image\"” 구현은 Camera Driver 계층 내부에서 예측 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: v4l2_mpeg_video_h264_profile (include/linux/v4l2-controls.h); v4l2_cid_mpeg_video_hevc_size_of_length_field (include/linux/v4l2-controls.h); v4l2_ctrl_h264_pred_weights (include/linux/v4l2-controls.h); v4l2_vp8_entropy (include/linux/v4l2-controls.h); v4l2_ctrl_mpeg2_picture (include/linux/v4l2-controls.h); v4l2_hevc_pred_weight_table (include/linux/v4l2-controls.h). 효과가 문장으로 주장되어 있습니다(prevent, optimiz). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. camera driver predict camera predict predict known limitation camera predict correctness camera image sensor camera driver control intel/ipu6-camera-hal raspberrypi/libcamera raspberrypi/libpisp Camera Driver 계층 예측 기반 추정",
     "url": "/discoveries/camera-driver-prediction/"
+  },
+  {
+    "type": "candidate",
+    "id": "cand_8024ee726221",
+    "slug": "isp-resilience",
+    "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 fallback 경로",
+    "body": "ISP 처리 영역의 코드가 fallback 경로 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 주변 서술에는 9.737ms라는 측정값이 함께 기재되어 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 타이밍 편차, 프레임 정합성 결함 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “] [265] ERROR IPCPipe ipc_pipe_unixsocket.cpp:134 Call timeout! [0:05:59.429475071] [265] ERROR IPCPipe ipc_pipe_unix” 구현은 ISP 처리 내부에서 fallback 경로 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: SoftwareIsp::SoftwareIsp (src/libcamera/software_isp/software_isp.cpp); IPU3CameraData::loadIPA (src/libcamera/pipeline/ipu3/ipu3.cpp); BlackLevelCorrection::init (src/ipa/rkisp1/algorithms/blc.cpp). 효과를 서술하는 문장에 수치가 함께 등장합니다. 수집된 자료에서 처음 확인되는 수치는 9.737ms이며, 그것이 개선 후의 값인지 개선 전의 값인지는 아래 인용문에서 직접 확인해야 합니다: “s not available the software ISP will automatically fall back to the CPU. Example value: ``gpu`` pipelines.simple.” isp fall back to camera fall back to fall back to known limitation camera fall back to timing camera image sensor isp control raspberrypi/libcamera intel/ipu6-camera-hal ISP 처리 점진적 성능 저하 대응",
+    "url": "/discoveries/isp-resilience/"
   },
   {
     "type": "candidate",
@@ -132,16 +172,16 @@
     "id": "cand_58caa3e73d53",
     "slug": "3a-scheduling-mechanism",
     "title": "3A 제어: 프레임 정합성 결함 대응을 위한 처리율 제한",
-    "body": "3A 제어 영역의 코드가 처리율 제한 기법을 구현하고 있습니다. 그리고 해당 Repository는 프레임 정합성 결함 문제를 스스로 보고하고 있습니다. 수집된 자료는 프레임 정합성 결함, 작성자가 직접 기록한 한계 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “se.cpp:228 Invalid sensor configuration: bitDepth/size mismatch [2:51:25.496768637] [2915] ERROR RPI pipeline_base.cp” 구현은 3A 제어 내부에서 처리율 제한 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: Af::updateLensPosition (src/ipa/rpi/controller/rpi/af.cpp). 효과가 문장으로 주장되어 있습니다(reduc, lower, avoid). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. 3a rate limit camera rate limit rate limit correctness camera rate limit known limitation camera image sensor 3a control raspberrypi/libcamera intel/ipu6-camera-hal 3A 제어 Deadline 인식 스케줄링",
+    "body": "3A 제어 영역의 코드가 처리율 제한 기법을 구현하고 있습니다. 그리고 해당 Repository는 프레임 정합성 결함 문제를 스스로 보고하고 있습니다. 수집된 자료는 프레임 정합성 결함, 작성자가 직접 기록한 한계 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “se.cpp:228 Invalid sensor configuration: bitDepth/size mismatch [2:51:25.496768637] [2915] ERROR RPI pipeline_base.cp” 구현은 3A 제어 내부에서 처리율 제한 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: Af::updateLensPosition (src/ipa/rpi/controller/rpi/af.cpp). 효과가 문장으로 주장되어 있습니다(reduc, lower). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. 3a rate limit camera rate limit rate limit correctness camera rate limit known limitation camera image sensor 3a control raspberrypi/libcamera intel/ipu6-camera-hal 3A 제어 Deadline 인식 스케줄링",
     "url": "/discoveries/3a-scheduling-mechanism/"
   },
   {
     "type": "candidate",
-    "id": "cand_845fcf870209",
-    "slug": "isp-partitioning",
-    "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 accelerator 오프로딩",
-    "body": "ISP 처리 영역의 코드가 accelerator 오프로딩 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 프레임 정합성 결함, 타이밍 편차 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “] [265] ERROR IPCPipe ipc_pipe_unixsocket.cpp:134 Call timeout! [0:05:59.429475071] [265] ERROR IPCPipe ipc_pipe_unix” 구현은 ISP 처리 내부에서 accelerator 오프로딩, 연산 오프로딩 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: ipu3_uapi_params (include/linux/intel-ipu3.h). 효과가 문장으로 주장되어 있습니다(improv, increas). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. isp accelerator camera accelerator accelerator known limitation camera accelerator correctness camera isp offload camera offload offload known limitation camera offload correctness camera image sensor isp control raspberrypi/libcamera ISP 처리 작업 분할",
-    "url": "/discoveries/isp-partitioning/"
+    "id": "cand_f5fcc282bf89",
+    "slug": "isp-buffer-mechanism",
+    "title": "ISP 처리: 프레임 정합성 결함 대응을 위한 ring buffer 운용",
+    "body": "ISP 처리 영역의 코드가 ring buffer 운용 기법을 구현하고 있습니다. 그리고 해당 Repository는 프레임 정합성 결함 문제를 스스로 보고하고 있습니다. 주변 서술에는 9.737ms라는 측정값이 함께 기재되어 있습니다. 수집된 자료는 프레임 정합성 결함, 작성자가 직접 기록한 한계, 타이밍 편차 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “] [265] ERROR IPCPipe ipc_pipe_unixsocket.cpp:134 Call timeout! [0:05:59.429475071] [265] ERROR IPCPipe ipc_pipe_unix” 구현은 ISP 처리 내부에서 ring buffer 운용 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: IspParamAdaptor::updatePalDataForVideoPipe (src/core/IspParamAdaptor.cpp). 효과를 서술하는 문장에 수치가 함께 등장합니다. 수집된 자료에서 처음 확인되는 수치는 9.737ms이며, 그것이 개선 후의 값인지 개선 전의 값인지는 아래 인용문에서 직접 확인해야 합니다: “PAL output buffer is a reference data for next output buffer, but currently a ring buffer is used in HAL, which caused logic mismatching issue. So temporarily copy latest PAL data into PAL output buffer.” isp ring buffer camera ring buffer ring buffer correctness camera ring buffer known limitation camera image sensor isp control intel/ipu6-camera-hal raspberrypi/libcamera ISP 처리 Buffer 수명 제어",
+    "url": "/discoveries/isp-buffer-mechanism/"
   },
   {
     "type": "candidate",
@@ -153,22 +193,6 @@
   },
   {
     "type": "candidate",
-    "id": "cand_cecaedf99b18",
-    "slug": "isp-adaptive-control",
-    "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 hysteresis 감쇠",
-    "body": "ISP 처리 영역의 코드가 hysteresis 감쇠 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 프레임 정합성 결함, 타이밍 편차 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “] [265] ERROR IPCPipe ipc_pipe_unixsocket.cpp:134 Call timeout! [0:05:59.429475071] [265] ERROR IPCPipe ipc_pipe_unix” 구현은 ISP 처리 내부에서 hysteresis 감쇠, 적응 제어, feedback 제어 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: Contrast::read (src/ipa/rpi/controller/rpi/contrast.cpp); initialise (src/ipa/rpi/controller/rpi/af.h); CfgParams (src/ipa/rpi/controller/rpi/af.h). 효과가 문장으로 주장되어 있습니다(lower, improv, increas). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. isp hysteresis camera hysteresis hysteresis known limitation camera hysteresis correctness camera isp adaptive camera adaptive adaptive known limitation camera adaptive correctness camera isp feedback loop camera feedback loop raspberrypi/libcamera ISP 처리 적응 제어",
-    "url": "/discoveries/isp-adaptive-control/"
-  },
-  {
-    "type": "candidate",
-    "id": "cand_7abe84b2aa19",
-    "slug": "isp-synchronization-mechanism",
-    "title": "ISP 처리: 자원 고갈 대응을 위한 시퀀스 번호 부여",
-    "body": "ISP 처리 영역의 코드가 시퀀스 번호 부여 기법을 구현하고 있습니다. 그리고 해당 Repository는 자원 고갈 문제를 스스로 보고하고 있습니다. 수집된 자료는 자원 고갈, 작성자가 직접 기록한 한계, 프레임 정합성 결함 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “] [265] ERROR IPCPipe ipc_pipe_unixsocket.cpp:134 Call timeout! [0:05:59.429475071] [265] ERROR IPCPipe ipc_pipe_unix” 구현은 ISP 처리 내부에서 시퀀스 번호 부여, clock 복원 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: libcamera (src/ipa/libipa/fc_queue.h); namespace (src/ipa/libipa/fc_queue.h); clear (src/ipa/libipa/fc_queue.h); BlackLevelCorrection::prepare (src/ipa/ipu3/algorithms/blc.cpp); ToneMapping::prepare (src/ipa/ipu3/algorithms/tone_mapping.cpp). 효과가 문장으로 주장되어 있습니다(avoid, improv, increas). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. isp sequence number camera sequence number sequence number resource camera sequence number known limitation camera isp clock recovery camera clock recovery clock recovery resource camera clock recovery known limitation camera image sensor isp control raspberrypi/libcamera ISP 처리 타이밍 동기화",
-    "url": "/discoveries/isp-synchronization-mechanism/"
-  },
-  {
-    "type": "candidate",
     "id": "cand_9f4128cd1d1d",
     "slug": "3a-synchronization-mechanism",
     "title": "3A 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여",
@@ -177,35 +201,11 @@
   },
   {
     "type": "candidate",
-    "id": "cand_f833520f1126",
-    "slug": "isp-scheduling-mechanism",
-    "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 처리율 제한",
-    "body": "ISP 처리 영역의 코드가 처리율 제한 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 프레임 정합성 결함, 타이밍 편차 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “] [265] ERROR IPCPipe ipc_pipe_unixsocket.cpp:134 Call timeout! [0:05:59.429475071] [265] ERROR IPCPipe ipc_pipe_unix” 구현은 ISP 처리 내부에서 처리율 제한 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: IpaBase::init (src/ipa/rpi/common/ipa_base.cpp). 효과가 문장으로 주장되어 있습니다(lower, improv, increas). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. isp rate limit camera rate limit rate limit known limitation camera rate limit correctness camera image sensor isp control raspberrypi/libcamera ISP 처리 Deadline 인식 스케줄링",
-    "url": "/discoveries/isp-scheduling-mechanism/"
-  },
-  {
-    "type": "candidate",
-    "id": "cand_f5fcc282bf89",
-    "slug": "isp-buffer-mechanism",
-    "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 ring buffer 운용",
-    "body": "ISP 처리 영역의 코드가 ring buffer 운용 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 프레임 정합성 결함, 타이밍 편차 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “] [265] ERROR IPCPipe ipc_pipe_unixsocket.cpp:134 Call timeout! [0:05:59.429475071] [265] ERROR IPCPipe ipc_pipe_unix” 구현은 ISP 처리 내부에서 ring buffer 운용 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: IspParamAdaptor::updatePalDataForVideoPipe (src/core/IspParamAdaptor.cpp). 효과가 문장으로 주장되어 있습니다(save, improv, increas). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. isp ring buffer camera ring buffer ring buffer known limitation camera ring buffer correctness camera image sensor isp control intel/ipu6-camera-hal raspberrypi/libcamera ISP 처리 Buffer 수명 제어",
-    "url": "/discoveries/isp-buffer-mechanism/"
-  },
-  {
-    "type": "candidate",
     "id": "cand_4e7dd03e97a3",
     "slug": "memory-buffer-arbitration",
     "title": "Buffer 및 메모리 관리: 프레임 정합성 결함 대응을 위한 협상",
     "body": "Buffer 및 메모리 관리 영역의 코드가 협상 기법을 구현하고 있습니다. 그리고 해당 Repository는 프레임 정합성 결함 문제를 스스로 보고하고 있습니다. 수집된 자료는 프레임 정합성 결함, 타이밍 편차, 자원 고갈 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “ching the input. Some webcams and V4L2 sources report incorrect colorimetry (e.g. limited-range when the sensor actual” 구현은 Buffer 및 메모리 관리 내부에서 협상 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: GstLibcameraSrcState::processRequest (src/gstreamer/gstlibcamerasrc.cpp); gst_libcamera_create_video_pool (src/gstreamer/gstlibcamerasrc.cpp). 효과가 문장으로 주장되어 있습니다(avoid). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. memory buffer negotiat camera negotiat negotiat correctness camera negotiat timing camera image sensor memory buffer control raspberrypi/libcamera intel/ipu6-camera-hal raspberrypi/libpisp Buffer 및 메모리 관리 자원 중재",
     "url": "/discoveries/memory-buffer-arbitration/"
-  },
-  {
-    "type": "candidate",
-    "id": "cand_8024ee726221",
-    "slug": "isp-resilience",
-    "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 fallback 경로",
-    "body": "ISP 처리 영역의 코드가 fallback 경로 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 프레임 정합성 결함, 타이밍 편차 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “] [265] ERROR IPCPipe ipc_pipe_unixsocket.cpp:134 Call timeout! [0:05:59.429475071] [265] ERROR IPCPipe ipc_pipe_unix” 구현은 ISP 처리 내부에서 fallback 경로 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: SoftwareIsp::SoftwareIsp (src/libcamera/software_isp/software_isp.cpp); IPU3CameraData::loadIPA (src/libcamera/pipeline/ipu3/ipu3.cpp); BlackLevelCorrection::init (src/ipa/rkisp1/algorithms/blc.cpp). 효과가 문장으로 주장되어 있습니다(avoid, prevent, improv). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. isp fall back to camera fall back to fall back to known limitation camera fall back to correctness camera image sensor isp control raspberrypi/libcamera ISP 처리 점진적 성능 저하 대응",
-    "url": "/discoveries/isp-resilience/"
   },
   {
     "type": "candidate",
@@ -225,6 +225,14 @@
   },
   {
     "type": "candidate",
+    "id": "cand_9126debbf094",
+    "slug": "camera-framework-synchronization-mechanism",
+    "title": "Camera Framework: 작성자가 직접 기록한 한계 대응을 위한 시퀀스 번호 부여",
+    "body": "Camera Framework 영역의 코드가 시퀀스 번호 부여 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 자원 고갈, 타이밍 편차 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “) << \"'\"; /* * Try each pipeline handler until it exhaust * all pipelines it can provide. */ pipelineFac” 구현은 Camera Framework 내부에서 시퀀스 번호 부여 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: PipelineHandler::stop (src/libcamera/pipeline_handler.cpp). 효과가 문장으로 주장되어 있습니다(guarantee, increas, save). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. camera framework sequence number camera sequence number sequence number known limitation camera sequence number resource camera image sensor camera framework control raspberrypi/libcamera Camera Framework 타이밍 동기화",
+    "url": "/discoveries/camera-framework-synchronization-mechanism/"
+  },
+  {
+    "type": "candidate",
     "id": "cand_fb3a967b42e5",
     "slug": "camera-hal-calibration",
     "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 특성화",
@@ -236,7 +244,7 @@
     "id": "cand_30546c4a0715",
     "slug": "camera-driver-adaptive-control",
     "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 적응 제어",
-    "body": "Camera Driver 계층 영역의 코드가 적응 제어 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 타이밍 편차, 프레임 정합성 결함 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “Important memory leak of v4l2-relayd service after each camera start Hi dear” 구현은 Camera Driver 계층 내부에서 적응 제어, feedback 제어 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: v4l2_exposure_auto_type (include/linux/v4l2-controls.h); Af::prepare (src/ipa/rpi/controller/rpi/af.cpp). 효과가 문장으로 주장되어 있습니다(prevent). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. camera driver adaptive camera adaptive adaptive known limitation camera adaptive timing camera camera driver feedback control camera feedback control feedback control known limitation camera feedback control timing camera image sensor camera driver control intel/ipu6-camera-hal raspberrypi/libcamera raspberrypi/libpisp Camera Driver 계층 적응 제어",
+    "body": "Camera Driver 계층 영역의 코드가 적응 제어 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 타이밍 편차, 프레임 정합성 결함 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “f the box. I'd be awesome if it was documented how to work around these issues. ``` v4l2: Current input: \"unicam-image\"” 구현은 Camera Driver 계층 내부에서 적응 제어, feedback 제어 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: v4l2_exposure_auto_type (include/linux/v4l2-controls.h); Af::prepare (src/ipa/rpi/controller/rpi/af.cpp). 효과가 문장으로 주장되어 있습니다(prevent, optimiz). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. camera driver adaptive camera adaptive adaptive known limitation camera adaptive timing camera camera driver feedback control camera feedback control feedback control known limitation camera feedback control timing camera image sensor camera driver control intel/ipu6-camera-hal raspberrypi/libcamera raspberrypi/libpisp Camera Driver 계층 적응 제어",
     "url": "/discoveries/camera-driver-adaptive-control/"
   },
   {
@@ -244,7 +252,7 @@
     "id": "cand_9dbc024d5788",
     "slug": "camera-driver-arbitration",
     "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 협상",
-    "body": "Camera Driver 계층 영역의 코드가 협상 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 프레임 정합성 결함, 확장성 한계 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “Important memory leak of v4l2-relayd service after each camera start Hi dear” 구현은 Camera Driver 계층 내부에서 협상 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: v4l2_subdev_format_whence (include/linux/v4l2-subdev.h); V4L2CameraProxy::tryFormat (src/v4l2/v4l2_camera_proxy.cpp). 효과가 문장으로 주장되어 있습니다(prevent). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. camera driver negotiat camera negotiat negotiat known limitation camera negotiat correctness camera image sensor camera driver control raspberrypi/libcamera raspberrypi/libpisp intel/ipu6-camera-hal Camera Driver 계층 자원 중재",
+    "body": "Camera Driver 계층 영역의 코드가 협상 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 프레임 정합성 결함, 확장성 한계 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “f the box. I'd be awesome if it was documented how to work around these issues. ``` v4l2: Current input: \"unicam-image\"” 구현은 Camera Driver 계층 내부에서 협상 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: v4l2_subdev_format_whence (include/linux/v4l2-subdev.h); V4L2CameraProxy::tryFormat (src/v4l2/v4l2_camera_proxy.cpp). 효과가 문장으로 주장되어 있습니다(prevent, optimiz). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. camera driver negotiat camera negotiat negotiat known limitation camera negotiat correctness camera image sensor camera driver control raspberrypi/libcamera raspberrypi/libpisp intel/ipu6-camera-hal Camera Driver 계층 자원 중재",
     "url": "/discoveries/camera-driver-arbitration/"
   },
   {
@@ -252,7 +260,7 @@
     "id": "cand_1104a00a72c7",
     "slug": "camera-driver-partitioning",
     "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 분할",
-    "body": "Camera Driver 계층 영역의 코드가 분할 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 프레임 정합성 결함, 확장성 한계 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “Important memory leak of v4l2-relayd service after each camera start Hi dear” 구현은 Camera Driver 계층 내부에서 분할, 위임 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: v4l2_vp8_num_partitions (include/linux/v4l2-controls.h); v4l2_cid_mpeg_video_hevc_loop_filter_mode (include/linux/v4l2-controls.h); v4l2_ctrl_vp8_frame (include/linux/v4l2-controls.h); setEnabled (src/ipa/rkisp1/params.h). 효과가 문장으로 주장되어 있습니다(prevent). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. camera driver partition camera partition partition known limitation camera partition correctness camera camera driver delegat camera delegat delegat known limitation camera delegat correctness camera image sensor camera driver control intel/ipu6-camera-hal raspberrypi/libcamera raspberrypi/libpisp Camera Driver 계층 작업 분할",
+    "body": "Camera Driver 계층 영역의 코드가 분할 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 프레임 정합성 결함, 확장성 한계 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “f the box. I'd be awesome if it was documented how to work around these issues. ``` v4l2: Current input: \"unicam-image\"” 구현은 Camera Driver 계층 내부에서 분할, 위임 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: v4l2_vp8_num_partitions (include/linux/v4l2-controls.h); v4l2_cid_mpeg_video_hevc_loop_filter_mode (include/linux/v4l2-controls.h); v4l2_ctrl_vp8_frame (include/linux/v4l2-controls.h); setEnabled (src/ipa/rkisp1/params.h). 효과가 문장으로 주장되어 있습니다(prevent, optimiz). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. camera driver partition camera partition partition known limitation camera partition correctness camera camera driver delegat camera delegat delegat known limitation camera delegat correctness camera image sensor camera driver control intel/ipu6-camera-hal raspberrypi/libcamera raspberrypi/libpisp Camera Driver 계층 작업 분할",
     "url": "/discoveries/camera-driver-partitioning/"
   },
   {
@@ -260,7 +268,7 @@
     "id": "cand_b9adf8eb5c8e",
     "slug": "camera-driver-calibration",
     "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 보간",
-    "body": "Camera Driver 계층 영역의 코드가 보간 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 프레임 정합성 결함, 확장성 한계 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “Important memory leak of v4l2-relayd service after each camera start Hi dear” 구현은 Camera Driver 계층 내부에서 보간, 특성화, golden reference 캘리브레이션 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: v4l2_av1_reference_frame (include/linux/v4l2-controls.h); v4l2_av1_interpolation_filter (include/linux/v4l2-controls.h); v4l2_ctrl_av1_frame (include/linux/v4l2-controls.h). 효과가 문장으로 주장되어 있습니다(prevent). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. camera driver interpolat camera interpolat interpolat known limitation camera interpolat correctness camera camera driver characteris camera characteris characteris known limitation camera characteris correctness camera camera driver golden reference camera golden reference raspberrypi/libcamera raspberrypi/libpisp intel/ipu6-camera-hal Camera Driver 계층 캘리브레이션과 보정",
+    "body": "Camera Driver 계층 영역의 코드가 보간 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 프레임 정합성 결함, 확장성 한계 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “f the box. I'd be awesome if it was documented how to work around these issues. ``` v4l2: Current input: \"unicam-image\"” 구현은 Camera Driver 계층 내부에서 보간, 특성화, golden reference 캘리브레이션 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: v4l2_av1_reference_frame (include/linux/v4l2-controls.h); v4l2_av1_interpolation_filter (include/linux/v4l2-controls.h); v4l2_ctrl_av1_frame (include/linux/v4l2-controls.h). 효과가 문장으로 주장되어 있습니다(prevent, optimiz). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. camera driver interpolat camera interpolat interpolat known limitation camera interpolat correctness camera camera driver characteris camera characteris characteris known limitation camera characteris correctness camera camera driver golden reference camera golden reference raspberrypi/libcamera raspberrypi/libpisp intel/ipu6-camera-hal Camera Driver 계층 캘리브레이션과 보정",
     "url": "/discoveries/camera-driver-calibration/"
   },
   {
@@ -268,7 +276,7 @@
     "id": "cand_445b31297303",
     "slug": "camera-driver-synchronization-mechanism",
     "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 시퀀스 번호 부여",
-    "body": "Camera Driver 계층 영역의 코드가 시퀀스 번호 부여 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 프레임 정합성 결함, 확장성 한계 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “Important memory leak of v4l2-relayd service after each camera start Hi dear” 구현은 Camera Driver 계층 내부에서 시퀀스 번호 부여 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: v4l2_event_motion_det (include/linux/videodev2.h); DelayedControls::applyControls (src/libcamera/delayed_controls.cpp); V4L2VideoDevice::dequeueBuffer (src/libcamera/v4l2_videodevice.cpp); DelayedControls::applyControls (src/libcamera/pipeline/rpi/common/delayed_controls.cpp). 효과가 문장으로 주장되어 있습니다(prevent). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. camera driver sequence number camera sequence number sequence number known limitation camera sequence number correctness camera image sensor camera driver control raspberrypi/libcamera raspberrypi/libpisp intel/ipu6-camera-hal Camera Driver 계층 타이밍 동기화",
+    "body": "Camera Driver 계층 영역의 코드가 시퀀스 번호 부여 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 프레임 정합성 결함, 확장성 한계 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “f the box. I'd be awesome if it was documented how to work around these issues. ``` v4l2: Current input: \"unicam-image\"” 구현은 Camera Driver 계층 내부에서 시퀀스 번호 부여 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: v4l2_event_motion_det (include/linux/videodev2.h); DelayedControls::applyControls (src/libcamera/delayed_controls.cpp); V4L2VideoDevice::dequeueBuffer (src/libcamera/v4l2_videodevice.cpp); DelayedControls::applyControls (src/libcamera/pipeline/rpi/common/delayed_controls.cpp). 효과가 문장으로 주장되어 있습니다(prevent, optimiz). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. camera driver sequence number camera sequence number sequence number known limitation camera sequence number correctness camera image sensor camera driver control raspberrypi/libcamera raspberrypi/libpisp intel/ipu6-camera-hal Camera Driver 계층 타이밍 동기화",
     "url": "/discoveries/camera-driver-synchronization-mechanism/"
   },
   {
@@ -284,7 +292,7 @@
     "id": "cand_3b51353652cc",
     "slug": "camera-driver-resilience",
     "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 watchdog 복구",
-    "body": "Camera Driver 계층 영역의 코드가 watchdog 복구 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 타이밍 편차, 프레임 정합성 결함 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “Important memory leak of v4l2-relayd service after each camera start Hi dear” 구현은 Camera Driver 계층 내부에서 watchdog 복구 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: State (include/libcamera/internal/v4l2_videodevice.h); V4L2VideoDevice::streamOn (src/libcamera/v4l2_videodevice.cpp); V4L2VideoDevice::streamOff (src/libcamera/v4l2_videodevice.cpp); V4L2VideoDevice::watchdogExpired (src/libcamera/v4l2_videodevice.cpp). 효과가 문장으로 주장되어 있습니다(prevent). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. camera driver watchdog camera watchdog watchdog known limitation camera watchdog timing camera image sensor camera driver control raspberrypi/libcamera raspberrypi/libpisp intel/ipu6-camera-hal Camera Driver 계층 점진적 성능 저하 대응",
+    "body": "Camera Driver 계층 영역의 코드가 watchdog 복구 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 타이밍 편차, 프레임 정합성 결함 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “f the box. I'd be awesome if it was documented how to work around these issues. ``` v4l2: Current input: \"unicam-image\"” 구현은 Camera Driver 계층 내부에서 watchdog 복구 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: State (include/libcamera/internal/v4l2_videodevice.h); V4L2VideoDevice::streamOn (src/libcamera/v4l2_videodevice.cpp); V4L2VideoDevice::streamOff (src/libcamera/v4l2_videodevice.cpp); V4L2VideoDevice::watchdogExpired (src/libcamera/v4l2_videodevice.cpp). 효과가 문장으로 주장되어 있습니다(prevent, optimiz). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. camera driver watchdog camera watchdog watchdog known limitation camera watchdog timing camera image sensor camera driver control raspberrypi/libcamera raspberrypi/libpisp intel/ipu6-camera-hal Camera Driver 계층 점진적 성능 저하 대응",
     "url": "/discoveries/camera-driver-resilience/"
   },
   {

@@ -25,8 +25,8 @@
         "scheduling-mechanism",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 204,
-      "weight": 981.0,
+      "evidenceCount": 222,
+      "weight": 1104.0,
       "crossRepository": true,
       "technologyLabel": "ISP 처리",
       "problemLabels": [
@@ -51,25 +51,13 @@
         {
           "id": "cand_9fe09ed8a807",
           "slug": "isp-calibration",
-          "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 보간",
+          "title": "ISP 처리: 타이밍 편차 대응을 위한 보간",
           "type": "patent+paper"
-        },
-        {
-          "id": "cand_845fcf870209",
-          "slug": "isp-partitioning",
-          "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 accelerator 오프로딩",
-          "type": "patent"
         },
         {
           "id": "cand_cecaedf99b18",
           "slug": "isp-adaptive-control",
           "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 hysteresis 감쇠",
-          "type": "patent"
-        },
-        {
-          "id": "cand_7abe84b2aa19",
-          "slug": "isp-synchronization-mechanism",
-          "title": "ISP 처리: 자원 고갈 대응을 위한 시퀀스 번호 부여",
           "type": "patent"
         },
         {
@@ -79,15 +67,27 @@
           "type": "patent"
         },
         {
-          "id": "cand_f5fcc282bf89",
-          "slug": "isp-buffer-mechanism",
-          "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 ring buffer 운용",
+          "id": "cand_845fcf870209",
+          "slug": "isp-partitioning",
+          "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 accelerator 오프로딩",
+          "type": "patent"
+        },
+        {
+          "id": "cand_7abe84b2aa19",
+          "slug": "isp-synchronization-mechanism",
+          "title": "ISP 처리: 자원 고갈 대응을 위한 시퀀스 번호 부여",
           "type": "patent"
         },
         {
           "id": "cand_8024ee726221",
           "slug": "isp-resilience",
           "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 fallback 경로",
+          "type": "patent"
+        },
+        {
+          "id": "cand_f5fcc282bf89",
+          "slug": "isp-buffer-mechanism",
+          "title": "ISP 처리: 프레임 정합성 결함 대응을 위한 ring buffer 운용",
           "type": "patent"
         }
       ]
@@ -119,8 +119,8 @@
         "state-machine",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 118,
-      "weight": 384.8,
+      "evidenceCount": 121,
+      "weight": 392.6,
       "crossRepository": true,
       "technologyLabel": "Camera Driver 계층",
       "problemLabels": [
@@ -211,8 +211,8 @@
         "state-machine",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 100,
-      "weight": 428.8,
+      "evidenceCount": 102,
+      "weight": 441.6,
       "crossRepository": true,
       "technologyLabel": "3A 제어",
       "problemLabels": [
@@ -266,48 +266,6 @@
       ]
     },
     {
-      "technology": "camera-framework",
-      "repositories": [
-        "intel/ipu6-camera-hal",
-        "raspberrypi/libcamera"
-      ],
-      "problems": [
-        "correctness",
-        "known-limitation",
-        "resource",
-        "timing"
-      ],
-      "mechanisms": [
-        "arbitration",
-        "calibration",
-        "prediction",
-        "resilience",
-        "scheduling-mechanism",
-        "state-machine",
-        "synchronization-mechanism"
-      ],
-      "evidenceCount": 54,
-      "weight": 184.6,
-      "crossRepository": true,
-      "technologyLabel": "Camera Framework",
-      "problemLabels": [
-        "프레임 정합성 결함",
-        "작성자가 직접 기록한 한계",
-        "자원 고갈",
-        "타이밍 편차"
-      ],
-      "mechanismLabels": [
-        "자원 중재",
-        "캘리브레이션과 보정",
-        "예측 기반 추정",
-        "점진적 성능 저하 대응",
-        "Deadline 인식 스케줄링",
-        "명시적 상태 기계 제어",
-        "타이밍 동기화"
-      ],
-      "candidates": []
-    },
-    {
       "technology": "sensor-control",
       "repositories": [
         "intel/ipu6-camera-hal",
@@ -329,8 +287,8 @@
         "state-machine",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 53,
-      "weight": 276.0,
+      "evidenceCount": 56,
+      "weight": 291.0,
       "crossRepository": true,
       "technologyLabel": "Sensor 제어",
       "problemLabels": [
@@ -372,6 +330,57 @@
           "id": "cand_5555849c4804",
           "slug": "sensor-control-calibration",
           "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 보정",
+          "type": "patent"
+        }
+      ]
+    },
+    {
+      "technology": "camera-framework",
+      "repositories": [
+        "intel/ipu6-camera-hal",
+        "raspberrypi/libcamera"
+      ],
+      "problems": [
+        "correctness",
+        "known-limitation",
+        "resource",
+        "timing"
+      ],
+      "mechanisms": [
+        "arbitration",
+        "buffer-mechanism",
+        "calibration",
+        "prediction",
+        "resilience",
+        "scheduling-mechanism",
+        "state-machine",
+        "synchronization-mechanism"
+      ],
+      "evidenceCount": 55,
+      "weight": 187.2,
+      "crossRepository": true,
+      "technologyLabel": "Camera Framework",
+      "problemLabels": [
+        "프레임 정합성 결함",
+        "작성자가 직접 기록한 한계",
+        "자원 고갈",
+        "타이밍 편차"
+      ],
+      "mechanismLabels": [
+        "자원 중재",
+        "Buffer 수명 제어",
+        "캘리브레이션과 보정",
+        "예측 기반 추정",
+        "점진적 성능 저하 대응",
+        "Deadline 인식 스케줄링",
+        "명시적 상태 기계 제어",
+        "타이밍 동기화"
+      ],
+      "candidates": [
+        {
+          "id": "cand_9126debbf094",
+          "slug": "camera-framework-synchronization-mechanism",
+          "title": "Camera Framework: 작성자가 직접 기록한 한계 대응을 위한 시퀀스 번호 부여",
           "type": "patent"
         }
       ]
@@ -434,6 +443,46 @@
       ]
     },
     {
+      "technology": "image-quality",
+      "repositories": [
+        "intel/ipu6-camera-hal",
+        "raspberrypi/libcamera"
+      ],
+      "problems": [
+        "correctness",
+        "known-limitation",
+        "quality-defect",
+        "timing"
+      ],
+      "mechanisms": [
+        "arbitration",
+        "calibration",
+        "partitioning",
+        "prediction",
+        "resilience",
+        "scheduling-mechanism"
+      ],
+      "evidenceCount": 33,
+      "weight": 92.4,
+      "crossRepository": true,
+      "technologyLabel": "화질",
+      "problemLabels": [
+        "프레임 정합성 결함",
+        "작성자가 직접 기록한 한계",
+        "화질 결함",
+        "타이밍 편차"
+      ],
+      "mechanismLabels": [
+        "자원 중재",
+        "캘리브레이션과 보정",
+        "작업 분할",
+        "예측 기반 추정",
+        "점진적 성능 저하 대응",
+        "Deadline 인식 스케줄링"
+      ],
+      "candidates": []
+    },
+    {
       "technology": "memory-buffer",
       "repositories": [
         "intel/ipu6-camera-hal",
@@ -454,8 +503,8 @@
         "scheduling-mechanism",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 26,
-      "weight": 96.0,
+      "evidenceCount": 27,
+      "weight": 105.0,
       "crossRepository": true,
       "technologyLabel": "Buffer 및 메모리 관리",
       "problemLabels": [
@@ -486,46 +535,6 @@
           "type": "patent"
         }
       ]
-    },
-    {
-      "technology": "image-quality",
-      "repositories": [
-        "intel/ipu6-camera-hal",
-        "raspberrypi/libcamera"
-      ],
-      "problems": [
-        "correctness",
-        "known-limitation",
-        "quality-defect",
-        "timing"
-      ],
-      "mechanisms": [
-        "arbitration",
-        "calibration",
-        "partitioning",
-        "prediction",
-        "resilience",
-        "scheduling-mechanism"
-      ],
-      "evidenceCount": 23,
-      "weight": 64.4,
-      "crossRepository": true,
-      "technologyLabel": "화질",
-      "problemLabels": [
-        "프레임 정합성 결함",
-        "작성자가 직접 기록한 한계",
-        "화질 결함",
-        "타이밍 편차"
-      ],
-      "mechanismLabels": [
-        "자원 중재",
-        "캘리브레이션과 보정",
-        "작업 분할",
-        "예측 기반 추정",
-        "점진적 성능 저하 대응",
-        "Deadline 인식 스케줄링"
-      ],
-      "candidates": []
     },
     {
       "technology": "camera-hal",
@@ -589,8 +598,8 @@
         "state-machine",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 18,
-      "weight": 69.0,
+      "evidenceCount": 19,
+      "weight": 72.0,
       "crossRepository": true,
       "technologyLabel": "Pipeline 스케줄링",
       "problemLabels": [
@@ -721,8 +730,8 @@
         "prediction",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 10,
-      "weight": 39.6,
+      "evidenceCount": 11,
+      "weight": 43.2,
       "crossRepository": true,
       "technologyLabel": "Sensor 동기화",
       "problemLabels": [
@@ -835,8 +844,8 @@
         "id": "org_0a28693c6218",
         "type": "organization",
         "label": "raspberrypi",
-        "weight": 70.0,
-        "evidenceCount": 350,
+        "weight": 73.6,
+        "evidenceCount": 368,
         "evidenceIds": [
           "ev_80ed53b793be",
           "ev_674f01781504",
@@ -885,8 +894,8 @@
         "id": "org_24a62c6c065e",
         "type": "organization",
         "label": "intel",
-        "weight": 12.2,
-        "evidenceCount": 61,
+        "weight": 12.4,
+        "evidenceCount": 62,
         "evidenceIds": [
           "ev_384c3730687c",
           "ev_b8cd3c962099",
@@ -935,8 +944,8 @@
         "id": "rep_7944c02b0969",
         "type": "repository",
         "label": "raspberrypi/libcamera",
-        "weight": 167.0,
-        "evidenceCount": 334,
+        "weight": 174.5,
+        "evidenceCount": 349,
         "evidenceIds": [
           "ev_80ed53b793be",
           "ev_674f01781504",
@@ -987,8 +996,8 @@
         "id": "rep_fc1020ab433f",
         "type": "repository",
         "label": "intel/ipu6-camera-hal",
-        "weight": 30.5,
-        "evidenceCount": 61,
+        "weight": 31.0,
+        "evidenceCount": 62,
         "evidenceIds": [
           "ev_384c3730687c",
           "ev_b8cd3c962099",
@@ -1039,8 +1048,8 @@
         "id": "rep_e9e93b429bd2",
         "type": "repository",
         "label": "raspberrypi/libpisp",
-        "weight": 8.0,
-        "evidenceCount": 16,
+        "weight": 9.5,
+        "evidenceCount": 19,
         "evidenceIds": [
           "ev_3b8607c3ed91",
           "ev_1167668d44b7",
@@ -1057,10 +1066,65 @@
           "ev_3a10c9a62393",
           "ev_94c4db4259fd",
           "ev_98abaf49b2e8",
-          "ev_a1ba9f916f49"
+          "ev_a1ba9f916f49",
+          "ev_0bfb75ad7c9c",
+          "ev_df3d5e87311c",
+          "ev_fff34ebc2763"
         ],
         "meta": {
           "org": "raspberrypi"
+        }
+      },
+      {
+        "id": "com_a8673c81095b",
+        "type": "component",
+        "label": "ipa/libipa",
+        "weight": 54.0,
+        "evidenceCount": 54,
+        "evidenceIds": [
+          "ev_55673a182762",
+          "ev_bfcae8279b3f",
+          "ev_efed16148f54",
+          "ev_87a0cc7984e3",
+          "ev_3db34ea64aa6",
+          "ev_5c75d14a8b2a",
+          "ev_075617e73e11",
+          "ev_8d42eeef5f05",
+          "ev_8135b89f4e96",
+          "ev_1ac8444546a3",
+          "ev_c0ac934019d3",
+          "ev_e9d3eff22dde",
+          "ev_69e5177f6183",
+          "ev_8a7e19c94e8b",
+          "ev_cafb4d9076b5",
+          "ev_e37b8b25a3e2",
+          "ev_5db905780b28",
+          "ev_99664bd9bee2",
+          "ev_183faf8c34bb",
+          "ev_d5cfee7930f3",
+          "ev_e5faf1d1f161",
+          "ev_0241c729cae2",
+          "ev_8af494a680cc",
+          "ev_c55295531fd4",
+          "ev_d4200695778c",
+          "ev_c64ac3dbf78d",
+          "ev_5038698d2842",
+          "ev_578683e1c05f",
+          "ev_e9cd4fde12c0",
+          "ev_ed26ff6a4431",
+          "ev_6b35adaa2e87",
+          "ev_93c343225864",
+          "ev_473fc988594e",
+          "ev_de910daf17ff",
+          "ev_b95a4fc6f13f",
+          "ev_1a330af4765a",
+          "ev_11016ad3fdcd",
+          "ev_563c3385335d",
+          "ev_126f5dfc37e2",
+          "ev_5dac66872786"
+        ],
+        "meta": {
+          "repository": "raspberrypi/libcamera"
         }
       },
       {
@@ -1110,58 +1174,6 @@
           "ev_0ab21edf7f18",
           "ev_a1b64af7530c",
           "ev_1a71c9e886f6"
-        ],
-        "meta": {
-          "repository": "raspberrypi/libcamera"
-        }
-      },
-      {
-        "id": "com_a8673c81095b",
-        "type": "component",
-        "label": "ipa/libipa",
-        "weight": 47.0,
-        "evidenceCount": 47,
-        "evidenceIds": [
-          "ev_55673a182762",
-          "ev_bfcae8279b3f",
-          "ev_efed16148f54",
-          "ev_87a0cc7984e3",
-          "ev_3db34ea64aa6",
-          "ev_5c75d14a8b2a",
-          "ev_075617e73e11",
-          "ev_8d42eeef5f05",
-          "ev_8135b89f4e96",
-          "ev_1ac8444546a3",
-          "ev_c0ac934019d3",
-          "ev_e9d3eff22dde",
-          "ev_69e5177f6183",
-          "ev_8a7e19c94e8b",
-          "ev_cafb4d9076b5",
-          "ev_e37b8b25a3e2",
-          "ev_5db905780b28",
-          "ev_99664bd9bee2",
-          "ev_183faf8c34bb",
-          "ev_d5cfee7930f3",
-          "ev_e5faf1d1f161",
-          "ev_0241c729cae2",
-          "ev_8af494a680cc",
-          "ev_c55295531fd4",
-          "ev_d4200695778c",
-          "ev_c64ac3dbf78d",
-          "ev_5038698d2842",
-          "ev_578683e1c05f",
-          "ev_e9cd4fde12c0",
-          "ev_ed26ff6a4431",
-          "ev_6b35adaa2e87",
-          "ev_93c343225864",
-          "ev_473fc988594e",
-          "ev_de910daf17ff",
-          "ev_b95a4fc6f13f",
-          "ev_1a330af4765a",
-          "ev_11016ad3fdcd",
-          "ev_563c3385335d",
-          "ev_126f5dfc37e2",
-          "ev_5dac66872786"
         ],
         "meta": {
           "repository": "raspberrypi/libcamera"
@@ -1307,8 +1319,8 @@
         "id": "com_23bfce7db3f9",
         "type": "component",
         "label": "libcamera/pipeline",
-        "weight": 21.0,
-        "evidenceCount": 21,
+        "weight": 22.0,
+        "evidenceCount": 22,
         "evidenceIds": [
           "ev_4f73b601c6f6",
           "ev_e4ed3d140d90",
@@ -1330,7 +1342,8 @@
           "ev_8233693fee99",
           "ev_66cd696915ce",
           "ev_85b6743e1c75",
-          "ev_53c9723ec17b"
+          "ev_53c9723ec17b",
+          "ev_de7b398c5fd8"
         ],
         "meta": {
           "repository": "raspberrypi/libcamera"
@@ -1340,8 +1353,8 @@
         "id": "com_483e8310721c",
         "type": "component",
         "label": "libcamera/software_isp",
-        "weight": 18.0,
-        "evidenceCount": 18,
+        "weight": 20.0,
+        "evidenceCount": 20,
         "evidenceIds": [
           "ev_116b2b5407a8",
           "ev_9592605b56cc",
@@ -1360,7 +1373,38 @@
           "ev_29f1f109dfef",
           "ev_f90240ccbf68",
           "ev_4796fedc0a74",
-          "ev_7b1e839f0ef1"
+          "ev_7b1e839f0ef1",
+          "ev_3b95e942888d",
+          "ev_f099b5006ea1"
+        ],
+        "meta": {
+          "repository": "raspberrypi/libcamera"
+        }
+      },
+      {
+        "id": "com_fc5dd540ca68",
+        "type": "component",
+        "label": "ipa/rkisp1",
+        "weight": 17.0,
+        "evidenceCount": 17,
+        "evidenceIds": [
+          "ev_62358cde9df3",
+          "ev_f91abbdd09cf",
+          "ev_2ed749bb385d",
+          "ev_fb51d022847b",
+          "ev_94ed456b1fcc",
+          "ev_0a19cb9aeaae",
+          "ev_8b986ae35bbe",
+          "ev_965b1f314429",
+          "ev_71d54fc90b1c",
+          "ev_72deae0ebb44",
+          "ev_4380ba149329",
+          "ev_347d9a436709",
+          "ev_f9cd99d31dda",
+          "ev_97a68dda7082",
+          "ev_1fe71043034a",
+          "ev_6b63fe02ceeb",
+          "ev_3d87ca522e90"
         ],
         "meta": {
           "repository": "raspberrypi/libcamera"
@@ -1390,32 +1434,6 @@
         ],
         "meta": {
           "repository": "intel/ipu6-camera-hal"
-        }
-      },
-      {
-        "id": "com_fc5dd540ca68",
-        "type": "component",
-        "label": "ipa/rkisp1",
-        "weight": 14.0,
-        "evidenceCount": 14,
-        "evidenceIds": [
-          "ev_62358cde9df3",
-          "ev_f91abbdd09cf",
-          "ev_2ed749bb385d",
-          "ev_fb51d022847b",
-          "ev_94ed456b1fcc",
-          "ev_0a19cb9aeaae",
-          "ev_8b986ae35bbe",
-          "ev_965b1f314429",
-          "ev_71d54fc90b1c",
-          "ev_72deae0ebb44",
-          "ev_4380ba149329",
-          "ev_347d9a436709",
-          "ev_f9cd99d31dda",
-          "ev_97a68dda7082"
-        ],
-        "meta": {
-          "repository": "raspberrypi/libcamera"
         }
       },
       {
@@ -1541,6 +1559,25 @@
         }
       },
       {
+        "id": "com_71de0611e528",
+        "type": "component",
+        "label": "helpers",
+        "weight": 7.0,
+        "evidenceCount": 7,
+        "evidenceIds": [
+          "ev_2e0ad58a8c12",
+          "ev_c72f89c3d3b4",
+          "ev_415d06639861",
+          "ev_6554df3bab2c",
+          "ev_f5517e88c0d0",
+          "ev_01464433d3d8",
+          "ev_0bfb75ad7c9c"
+        ],
+        "meta": {
+          "repository": "raspberrypi/libpisp"
+        }
+      },
+      {
         "id": "com_8af79be15217",
         "type": "component",
         "label": "libcamera/sensor",
@@ -1577,18 +1614,18 @@
         }
       },
       {
-        "id": "com_71de0611e528",
+        "id": "com_c80c68d17b2a",
         "type": "component",
-        "label": "helpers",
+        "label": "libpisp/backend",
         "weight": 6.0,
         "evidenceCount": 6,
         "evidenceIds": [
-          "ev_2e0ad58a8c12",
-          "ev_c72f89c3d3b4",
-          "ev_415d06639861",
-          "ev_6554df3bab2c",
-          "ev_f5517e88c0d0",
-          "ev_01464433d3d8"
+          "ev_ab05d8ba3398",
+          "ev_ff89906ad3d9",
+          "ev_3a4f2264af3c",
+          "ev_0fe23d73cf79",
+          "ev_3a10c9a62393",
+          "ev_fff34ebc2763"
         ],
         "meta": {
           "repository": "raspberrypi/libpisp"
@@ -1663,23 +1700,6 @@
         }
       },
       {
-        "id": "com_c80c68d17b2a",
-        "type": "component",
-        "label": "libpisp/backend",
-        "weight": 5.0,
-        "evidenceCount": 5,
-        "evidenceIds": [
-          "ev_ab05d8ba3398",
-          "ev_ff89906ad3d9",
-          "ev_3a4f2264af3c",
-          "ev_0fe23d73cf79",
-          "ev_3a10c9a62393"
-        ],
-        "meta": {
-          "repository": "raspberrypi/libpisp"
-        }
-      },
-      {
         "id": "com_851b7a432456",
         "type": "component",
         "label": "linux",
@@ -1744,6 +1764,22 @@
         }
       },
       {
+        "id": "com_28f760831d13",
+        "type": "component",
+        "label": "ipa/simple",
+        "weight": 4.0,
+        "evidenceCount": 4,
+        "evidenceIds": [
+          "ev_53ec60234a70",
+          "ev_c367dcca9f8f",
+          "ev_51acd2903d5c",
+          "ev_0607491ba549"
+        ],
+        "meta": {
+          "repository": "raspberrypi/libcamera"
+        }
+      },
+      {
         "id": "com_f60044137ab3",
         "type": "component",
         "label": "platformdata",
@@ -1771,21 +1807,6 @@
         ],
         "meta": {
           "repository": "intel/ipu6-camera-hal"
-        }
-      },
-      {
-        "id": "com_28f760831d13",
-        "type": "component",
-        "label": "ipa/simple",
-        "weight": 3.0,
-        "evidenceCount": 3,
-        "evidenceIds": [
-          "ev_53ec60234a70",
-          "ev_c367dcca9f8f",
-          "ev_51acd2903d5c"
-        ],
-        "meta": {
-          "repository": "raspberrypi/libcamera"
         }
       },
       {
@@ -1941,6 +1962,19 @@
         }
       },
       {
+        "id": "com_52007e726081",
+        "type": "component",
+        "label": "(root)",
+        "weight": 1.0,
+        "evidenceCount": 1,
+        "evidenceIds": [
+          "ev_ba15f0105d79"
+        ],
+        "meta": {
+          "repository": "intel/ipu6-camera-hal"
+        }
+      },
+      {
         "id": "com_73d78aa2e910",
         "type": "component",
         "label": "libcamera/converter",
@@ -2006,11 +2040,37 @@
         }
       },
       {
+        "id": "com_66c328ab83fb",
+        "type": "component",
+        "label": "linux/media",
+        "weight": 1.0,
+        "evidenceCount": 1,
+        "evidenceIds": [
+          "ev_d342ac7f12fe"
+        ],
+        "meta": {
+          "repository": "raspberrypi/libcamera"
+        }
+      },
+      {
+        "id": "com_395f86e49368",
+        "type": "component",
+        "label": "examples",
+        "weight": 1.0,
+        "evidenceCount": 1,
+        "evidenceIds": [
+          "ev_df3d5e87311c"
+        ],
+        "meta": {
+          "repository": "raspberrypi/libpisp"
+        }
+      },
+      {
         "id": "tec_7082c50ec651",
         "type": "technology",
         "label": "isp",
-        "weight": 981.0,
-        "evidenceCount": 204,
+        "weight": 1104.0,
+        "evidenceCount": 222,
         "evidenceIds": [
           "ev_1950c340a8e9",
           "ev_3d9223cbcb1e",
@@ -2026,6 +2086,7 @@
           "ev_3d3af88c6511",
           "ev_f6e3d27ed0f1",
           "ev_6c75b84c756e",
+          "ev_ba15f0105d79",
           "ev_6427a4096a55",
           "ev_8e39881b2c46",
           "ev_344f4e9cc4be",
@@ -2050,8 +2111,7 @@
           "ev_1643e92e54c0",
           "ev_116b2b5407a8",
           "ev_9592605b56cc",
-          "ev_8cc14fb22f25",
-          "ev_28ea7bf07ae9"
+          "ev_8cc14fb22f25"
         ],
         "meta": {}
       },
@@ -2059,8 +2119,8 @@
         "id": "tec_27d654440f87",
         "type": "technology",
         "label": "3a",
-        "weight": 428.8,
-        "evidenceCount": 100,
+        "weight": 441.6,
+        "evidenceCount": 102,
         "evidenceIds": [
           "ev_b8cd3c962099",
           "ev_3b1e81342642",
@@ -2109,8 +2169,8 @@
         "id": "tec_4a0b8741c76e",
         "type": "technology",
         "label": "camera-driver",
-        "weight": 384.8,
-        "evidenceCount": 118,
+        "weight": 392.6,
+        "evidenceCount": 121,
         "evidenceIds": [
           "ev_384c3730687c",
           "ev_b8cd3c962099",
@@ -2159,8 +2219,8 @@
         "id": "tec_859bbf8c3fda",
         "type": "technology",
         "label": "sensor-control",
-        "weight": 276.0,
-        "evidenceCount": 53,
+        "weight": 291.0,
+        "evidenceCount": 56,
         "evidenceIds": [
           "ev_38ffda84c456",
           "ev_ca9100d095bd",
@@ -2201,7 +2261,7 @@
           "ev_53c5a26cd0b6",
           "ev_72fec3231b6e",
           "ev_83e53c2850ba",
-          "ev_d682f7228fc6"
+          "ev_cdc217a366a3"
         ],
         "meta": {}
       },
@@ -2209,8 +2269,8 @@
         "id": "tec_b57cc6131571",
         "type": "technology",
         "label": "camera-framework",
-        "weight": 184.6,
-        "evidenceCount": 54,
+        "weight": 187.2,
+        "evidenceCount": 55,
         "evidenceIds": [
           "ev_10be601cc844",
           "ev_afaeca41ba84",
@@ -2308,8 +2368,8 @@
         "id": "tec_3c8c51a0ac35",
         "type": "technology",
         "label": "memory-buffer",
-        "weight": 96.0,
-        "evidenceCount": 26,
+        "weight": 105.0,
+        "evidenceCount": 27,
         "evidenceIds": [
           "ev_51e2602ab776",
           "ev_320b0c7e9dab",
@@ -2332,6 +2392,7 @@
           "ev_686b0abc59b0",
           "ev_409a4cad9d6c",
           "ev_876fe59020c2",
+          "ev_f099b5006ea1",
           "ev_3b8607c3ed91",
           "ev_1167668d44b7",
           "ev_c72f89c3d3b4",
@@ -2341,15 +2402,59 @@
         "meta": {}
       },
       {
+        "id": "tec_05cfe1cf584d",
+        "type": "technology",
+        "label": "image-quality",
+        "weight": 92.4,
+        "evidenceCount": 33,
+        "evidenceIds": [
+          "ev_b8cd3c962099",
+          "ev_154e1f622091",
+          "ev_8e39881b2c46",
+          "ev_7a6238cdf021",
+          "ev_044c993c4519",
+          "ev_d7e15e4dd401",
+          "ev_20c3557f91df",
+          "ev_29f1f109dfef",
+          "ev_9c744941209e",
+          "ev_d29978eed46a",
+          "ev_fb138bdf26d4",
+          "ev_99664bd9bee2",
+          "ev_d5cfee7930f3",
+          "ev_5dac66872786",
+          "ev_62094f253695",
+          "ev_8b986ae35bbe",
+          "ev_71d54fc90b1c",
+          "ev_cdc217a366a3",
+          "ev_c75c090ad53f",
+          "ev_68c79e31d172",
+          "ev_5ef44c04b487",
+          "ev_7bd1058e4cb1",
+          "ev_2ae1f5fd18e0",
+          "ev_5877ba833dd0",
+          "ev_1d05c6dd44c4",
+          "ev_b1f232022034",
+          "ev_1b34aff1cc56",
+          "ev_1fe71043034a",
+          "ev_9498e8c3fcf4",
+          "ev_a011b12d8263",
+          "ev_6b63fe02ceeb",
+          "ev_0607491ba549",
+          "ev_09748ecc3eea"
+        ],
+        "meta": {}
+      },
+      {
         "id": "tec_a7752be28ca7",
         "type": "technology",
         "label": "scheduling",
-        "weight": 69.0,
-        "evidenceCount": 18,
+        "weight": 72.0,
+        "evidenceCount": 19,
         "evidenceIds": [
           "ev_8955c7f97293",
           "ev_73daec554acc",
           "ev_da4fbb342c78",
+          "ev_ba15f0105d79",
           "ev_6427a4096a55",
           "ev_dcfc2edc79ce",
           "ev_3087e5d413b3",
@@ -2398,39 +2503,6 @@
         "meta": {}
       },
       {
-        "id": "tec_05cfe1cf584d",
-        "type": "technology",
-        "label": "image-quality",
-        "weight": 64.4,
-        "evidenceCount": 23,
-        "evidenceIds": [
-          "ev_b8cd3c962099",
-          "ev_154e1f622091",
-          "ev_8e39881b2c46",
-          "ev_7a6238cdf021",
-          "ev_044c993c4519",
-          "ev_d7e15e4dd401",
-          "ev_20c3557f91df",
-          "ev_29f1f109dfef",
-          "ev_9c744941209e",
-          "ev_d29978eed46a",
-          "ev_fb138bdf26d4",
-          "ev_99664bd9bee2",
-          "ev_d5cfee7930f3",
-          "ev_5dac66872786",
-          "ev_62094f253695",
-          "ev_8b986ae35bbe",
-          "ev_71d54fc90b1c",
-          "ev_c75c090ad53f",
-          "ev_68c79e31d172",
-          "ev_5ef44c04b487",
-          "ev_7bd1058e4cb1",
-          "ev_2ae1f5fd18e0",
-          "ev_5877ba833dd0"
-        ],
-        "meta": {}
-      },
-      {
         "id": "tec_7a5ca9750ff6",
         "type": "technology",
         "label": "computational-photography",
@@ -2458,8 +2530,8 @@
         "id": "tec_d821cb73680b",
         "type": "technology",
         "label": "sensor-sync",
-        "weight": 39.6,
-        "evidenceCount": 10,
+        "weight": 43.2,
+        "evidenceCount": 11,
         "evidenceIds": [
           "ev_faf3ec3dfca5",
           "ev_afaeca41ba84",
@@ -2470,6 +2542,7 @@
           "ev_aef63d48175f",
           "ev_e09b1ad71f49",
           "ev_66cd696915ce",
+          "ev_e40d3435b666",
           "ev_150e836be998"
         ],
         "meta": {}
@@ -2544,8 +2617,8 @@
         "id": "pro_297a563c5a02",
         "type": "problem",
         "label": "correctness",
-        "weight": 222.0,
-        "evidenceCount": 73,
+        "weight": 228.0,
+        "evidenceCount": 75,
         "evidenceIds": [
           "ev_2a682ad08ace",
           "ev_51e2602ab776",
@@ -2594,8 +2667,8 @@
         "id": "pro_3cfb6c512875",
         "type": "problem",
         "label": "known-limitation",
-        "weight": 192.0,
-        "evidenceCount": 80,
+        "weight": 206.4,
+        "evidenceCount": 86,
         "evidenceIds": [
           "ev_96bf68e94531",
           "ev_3a1a97c6c78b",
@@ -2644,8 +2717,8 @@
         "id": "pro_c00f61703122",
         "type": "problem",
         "label": "timing",
-        "weight": 160.0,
-        "evidenceCount": 50,
+        "weight": 166.4,
+        "evidenceCount": 52,
         "evidenceIds": [
           "ev_384c3730687c",
           "ev_ca9100d095bd",
@@ -2658,6 +2731,7 @@
           "ev_3ad744908a2a",
           "ev_35f07d7e3307",
           "ev_6c75b84c756e",
+          "ev_ba15f0105d79",
           "ev_3e08e06114b5",
           "ev_3087e5d413b3",
           "ev_0e41afd70240",
@@ -2685,8 +2759,7 @@
           "ev_d682f7228fc6",
           "ev_68c79e31d172",
           "ev_53c9723ec17b",
-          "ev_8b036124ec24",
-          "ev_afe88ad85887"
+          "ev_8b036124ec24"
         ],
         "meta": {}
       },
@@ -2728,8 +2801,8 @@
         "id": "pro_f2d6234611e0",
         "type": "problem",
         "label": "quality-defect",
-        "weight": 36.4,
-        "evidenceCount": 14,
+        "weight": 41.6,
+        "evidenceCount": 16,
         "evidenceIds": [
           "ev_f173a708238c",
           "ev_c1788df48931",
@@ -2744,7 +2817,9 @@
           "ev_4a2c9d2a6d34",
           "ev_4fde2efbd889",
           "ev_e3a732a172d2",
-          "ev_74d9d5c84f41"
+          "ev_74d9d5c84f41",
+          "ev_a011b12d8263",
+          "ev_df3d5e87311c"
         ],
         "meta": {}
       },
@@ -2771,8 +2846,8 @@
         "id": "mec_a05b0c4ba6a0",
         "type": "mechanism",
         "label": "calibration",
-        "weight": 408.0,
-        "evidenceCount": 117,
+        "weight": 448.8,
+        "evidenceCount": 126,
         "evidenceIds": [
           "ev_b8cd3c962099",
           "ev_10be601cc844",
@@ -2821,8 +2896,8 @@
         "id": "mec_d5e788b1e314",
         "type": "mechanism",
         "label": "synchronization-mechanism",
-        "weight": 100.8,
-        "evidenceCount": 24,
+        "weight": 105.0,
+        "evidenceCount": 25,
         "evidenceIds": [
           "ev_dcfc2edc79ce",
           "ev_1c5b12fcad47",
@@ -2847,7 +2922,8 @@
           "ev_94ed456b1fcc",
           "ev_f5b81d5e3911",
           "ev_e40d3435b666",
-          "ev_0dcfbca21928"
+          "ev_0dcfbca21928",
+          "ev_de7b398c5fd8"
         ],
         "meta": {}
       },
@@ -2986,6 +3062,19 @@
         "meta": {}
       },
       {
+        "id": "mec_99f71c84dda7",
+        "type": "mechanism",
+        "label": "buffer-mechanism",
+        "weight": 10.8,
+        "evidenceCount": 3,
+        "evidenceIds": [
+          "ev_1950c340a8e9",
+          "ev_2c5cd1cb438c",
+          "ev_de7b398c5fd8"
+        ],
+        "meta": {}
+      },
+      {
         "id": "mec_67bc622cf834",
         "type": "mechanism",
         "label": "scheduling-mechanism",
@@ -2995,18 +3084,6 @@
           "ev_897f8ca7428e",
           "ev_62094f253695",
           "ev_3ed7c6ecd6c0"
-        ],
-        "meta": {}
-      },
-      {
-        "id": "mec_99f71c84dda7",
-        "type": "mechanism",
-        "label": "buffer-mechanism",
-        "weight": 7.2,
-        "evidenceCount": 2,
-        "evidenceIds": [
-          "ev_1950c340a8e9",
-          "ev_2c5cd1cb438c"
         ],
         "meta": {}
       },
@@ -3141,19 +3218,6 @@
         }
       },
       {
-        "id": "can_0d063b3831b0",
-        "type": "candidate",
-        "label": "ISP 처리: 자원 고갈 대응을 위한 시퀀스 번호 부여",
-        "weight": 66.0,
-        "evidenceCount": 0,
-        "evidenceIds": [],
-        "meta": {
-          "slug": "isp-synchronization-mechanism",
-          "type": "patent",
-          "verdict": "accepted_with_reservations"
-        }
-      },
-      {
         "id": "can_e69176848e4a",
         "type": "candidate",
         "label": "3A 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여",
@@ -3175,6 +3239,19 @@
         "evidenceIds": [],
         "meta": {
           "slug": "performance-synchronization-mechanism",
+          "type": "patent",
+          "verdict": "accepted_with_reservations"
+        }
+      },
+      {
+        "id": "can_9fc8a0eb1b8e",
+        "type": "candidate",
+        "label": "Camera Framework: 작성자가 직접 기록한 한계 대응을 위한 시퀀스 번호 부여",
+        "weight": 66.0,
+        "evidenceCount": 0,
+        "evidenceIds": [],
+        "meta": {
+          "slug": "camera-framework-synchronization-mechanism",
           "type": "patent",
           "verdict": "accepted_with_reservations"
         }
@@ -3219,19 +3296,6 @@
         }
       },
       {
-        "id": "can_2c58633ebd94",
-        "type": "candidate",
-        "label": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 ring buffer 운용",
-        "weight": 63.6,
-        "evidenceCount": 0,
-        "evidenceIds": [],
-        "meta": {
-          "slug": "isp-buffer-mechanism",
-          "type": "patent",
-          "verdict": "accepted_with_reservations"
-        }
-      },
-      {
         "id": "can_c1b43eb25220",
         "type": "candidate",
         "label": "Sensor 제어: 프레임 정합성 결함 대응을 위한 보정",
@@ -3240,19 +3304,6 @@
         "evidenceIds": [],
         "meta": {
           "slug": "sensor-control-calibration",
-          "type": "patent",
-          "verdict": "accepted_with_reservations"
-        }
-      },
-      {
-        "id": "can_a343cd3ad275",
-        "type": "candidate",
-        "label": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 accelerator 오프로딩",
-        "weight": 62.4,
-        "evidenceCount": 0,
-        "evidenceIds": [],
-        "meta": {
-          "slug": "isp-partitioning",
           "type": "patent",
           "verdict": "accepted_with_reservations"
         }
@@ -3271,16 +3322,29 @@
         }
       },
       {
-        "id": "can_c7e1a7df1bc0",
+        "id": "can_efa6bf9b53f2",
         "type": "candidate",
-        "label": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 fallback 경로",
-        "weight": 61.2,
+        "label": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 hysteresis 감쇠",
+        "weight": 61.0,
         "evidenceCount": 0,
         "evidenceIds": [],
         "meta": {
-          "slug": "isp-resilience",
+          "slug": "isp-adaptive-control",
           "type": "patent",
-          "verdict": "accepted_with_reservations"
+          "verdict": "accepted"
+        }
+      },
+      {
+        "id": "can_0d063b3831b0",
+        "type": "candidate",
+        "label": "ISP 처리: 자원 고갈 대응을 위한 시퀀스 번호 부여",
+        "weight": 61.0,
+        "evidenceCount": 0,
+        "evidenceIds": [],
+        "meta": {
+          "slug": "isp-synchronization-mechanism",
+          "type": "patent",
+          "verdict": "accepted"
         }
       },
       {
@@ -3299,7 +3363,7 @@
       {
         "id": "can_1accfa593ef8",
         "type": "candidate",
-        "label": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 보간",
+        "label": "ISP 처리: 타이밍 편차 대응을 위한 보간",
         "weight": 57.4,
         "evidenceCount": 0,
         "evidenceIds": [],
@@ -3323,29 +3387,16 @@
         }
       },
       {
-        "id": "can_efa6bf9b53f2",
+        "id": "can_c7e1a7df1bc0",
         "type": "candidate",
-        "label": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 hysteresis 감쇠",
-        "weight": 56.0,
+        "label": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 fallback 경로",
+        "weight": 56.2,
         "evidenceCount": 0,
         "evidenceIds": [],
         "meta": {
-          "slug": "isp-adaptive-control",
+          "slug": "isp-resilience",
           "type": "patent",
-          "verdict": "accepted_with_reservations"
-        }
-      },
-      {
-        "id": "can_bcf0c979c1a7",
-        "type": "candidate",
-        "label": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 처리율 제한",
-        "weight": 53.6,
-        "evidenceCount": 0,
-        "evidenceIds": [],
-        "meta": {
-          "slug": "isp-scheduling-mechanism",
-          "type": "patent",
-          "verdict": "accepted_with_reservations"
+          "verdict": "accepted"
         }
       },
       {
@@ -3388,6 +3439,32 @@
         }
       },
       {
+        "id": "can_bcf0c979c1a7",
+        "type": "candidate",
+        "label": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 처리율 제한",
+        "weight": 50.6,
+        "evidenceCount": 0,
+        "evidenceIds": [],
+        "meta": {
+          "slug": "isp-scheduling-mechanism",
+          "type": "patent",
+          "verdict": "accepted"
+        }
+      },
+      {
+        "id": "can_2c58633ebd94",
+        "type": "candidate",
+        "label": "ISP 처리: 프레임 정합성 결함 대응을 위한 ring buffer 운용",
+        "weight": 50.6,
+        "evidenceCount": 0,
+        "evidenceIds": [],
+        "meta": {
+          "slug": "isp-buffer-mechanism",
+          "type": "patent",
+          "verdict": "accepted"
+        }
+      },
+      {
         "id": "can_8df834a79e1f",
         "type": "candidate",
         "label": "카메라 성능: 타이밍 편차 대응을 위한 보정",
@@ -3424,6 +3501,19 @@
           "slug": "camera-driver-arbitration",
           "type": "patent",
           "verdict": "accepted_with_reservations"
+        }
+      },
+      {
+        "id": "can_a343cd3ad275",
+        "type": "candidate",
+        "label": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 accelerator 오프로딩",
+        "weight": 49.4,
+        "evidenceCount": 0,
+        "evidenceIds": [],
+        "meta": {
+          "slug": "isp-partitioning",
+          "type": "patent",
+          "verdict": "accepted"
         }
       },
       {
@@ -3484,8 +3574,8 @@
         "source": "org_24a62c6c065e",
         "target": "rep_fc1020ab433f",
         "type": "owns",
-        "weight": 61.0,
-        "evidenceCount": 61
+        "weight": 62.0,
+        "evidenceCount": 62
       },
       {
         "source": "rep_fc1020ab433f",
@@ -4202,11 +4292,39 @@
         "evidenceCount": 1
       },
       {
+        "source": "rep_fc1020ab433f",
+        "target": "com_52007e726081",
+        "type": "contains",
+        "weight": 1.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_52007e726081",
+        "target": "tec_7082c50ec651",
+        "type": "implements",
+        "weight": 9.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_52007e726081",
+        "target": "tec_a7752be28ca7",
+        "type": "implements",
+        "weight": 3.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_52007e726081",
+        "target": "pro_c00f61703122",
+        "type": "reports",
+        "weight": 3.2,
+        "evidenceCount": 1
+      },
+      {
         "source": "org_0a28693c6218",
         "target": "rep_7944c02b0969",
         "type": "owns",
-        "weight": 334.0,
-        "evidenceCount": 334
+        "weight": 349.0,
+        "evidenceCount": 349
       },
       {
         "source": "rep_7944c02b0969",
@@ -4870,15 +4988,15 @@
         "source": "rep_7944c02b0969",
         "target": "com_483e8310721c",
         "type": "contains",
-        "weight": 18.0,
-        "evidenceCount": 18
+        "weight": 20.0,
+        "evidenceCount": 20
       },
       {
         "source": "com_483e8310721c",
         "target": "tec_7082c50ec651",
         "type": "implements",
-        "weight": 93.0,
-        "evidenceCount": 18
+        "weight": 102.0,
+        "evidenceCount": 20
       },
       {
         "source": "com_483e8310721c",
@@ -4891,8 +5009,8 @@
         "source": "com_483e8310721c",
         "target": "pro_3cfb6c512875",
         "type": "reports",
-        "weight": 21.6,
-        "evidenceCount": 9
+        "weight": 24.0,
+        "evidenceCount": 10
       },
       {
         "source": "com_483e8310721c",
@@ -4912,15 +5030,15 @@
         "source": "com_483e8310721c",
         "target": "tec_3c8c51a0ac35",
         "type": "implements",
-        "weight": 9.0,
-        "evidenceCount": 2
+        "weight": 18.0,
+        "evidenceCount": 3
       },
       {
         "source": "com_483e8310721c",
         "target": "pro_c00f61703122",
         "type": "reports",
-        "weight": 3.2,
-        "evidenceCount": 1
+        "weight": 6.4,
+        "evidenceCount": 2
       },
       {
         "source": "com_483e8310721c",
@@ -5017,15 +5135,15 @@
         "source": "rep_7944c02b0969",
         "target": "com_23bfce7db3f9",
         "type": "contains",
-        "weight": 21.0,
-        "evidenceCount": 21
+        "weight": 22.0,
+        "evidenceCount": 22
       },
       {
         "source": "com_23bfce7db3f9",
         "target": "tec_b57cc6131571",
         "type": "implements",
-        "weight": 31.2,
-        "evidenceCount": 12
+        "weight": 33.8,
+        "evidenceCount": 13
       },
       {
         "source": "com_23bfce7db3f9",
@@ -5094,8 +5212,8 @@
         "source": "com_23bfce7db3f9",
         "target": "mec_d5e788b1e314",
         "type": "uses",
-        "weight": 12.6,
-        "evidenceCount": 3
+        "weight": 16.8,
+        "evidenceCount": 4
       },
       {
         "source": "com_23bfce7db3f9",
@@ -5269,8 +5387,8 @@
         "source": "rep_7944c02b0969",
         "target": "com_fc5dd540ca68",
         "type": "contains",
-        "weight": 14.0,
-        "evidenceCount": 14
+        "weight": 17.0,
+        "evidenceCount": 17
       },
       {
         "source": "com_fc5dd540ca68",
@@ -5290,36 +5408,36 @@
         "source": "rep_7944c02b0969",
         "target": "com_a8673c81095b",
         "type": "contains",
-        "weight": 47.0,
-        "evidenceCount": 47
+        "weight": 54.0,
+        "evidenceCount": 54
       },
       {
         "source": "com_a8673c81095b",
         "target": "tec_4a0b8741c76e",
         "type": "implements",
-        "weight": 13.0,
-        "evidenceCount": 5
+        "weight": 15.6,
+        "evidenceCount": 6
       },
       {
         "source": "com_a8673c81095b",
         "target": "tec_7082c50ec651",
         "type": "implements",
-        "weight": 153.0,
-        "evidenceCount": 35
+        "weight": 201.0,
+        "evidenceCount": 42
       },
       {
         "source": "com_a8673c81095b",
         "target": "pro_297a563c5a02",
         "type": "reports",
-        "weight": 9.0,
-        "evidenceCount": 3
+        "weight": 12.0,
+        "evidenceCount": 4
       },
       {
         "source": "com_a8673c81095b",
         "target": "pro_3cfb6c512875",
         "type": "reports",
-        "weight": 14.4,
-        "evidenceCount": 6
+        "weight": 19.2,
+        "evidenceCount": 8
       },
       {
         "source": "com_a8673c81095b",
@@ -5332,8 +5450,8 @@
         "source": "com_a8673c81095b",
         "target": "mec_a05b0c4ba6a0",
         "type": "uses",
-        "weight": 115.6,
-        "evidenceCount": 34
+        "weight": 136.0,
+        "evidenceCount": 38
       },
       {
         "source": "com_a8673c81095b",
@@ -5360,8 +5478,8 @@
         "source": "com_a8673c81095b",
         "target": "tec_05cfe1cf584d",
         "type": "implements",
-        "weight": 11.2,
-        "evidenceCount": 4
+        "weight": 30.8,
+        "evidenceCount": 11
       },
       {
         "source": "com_a8673c81095b",
@@ -5374,15 +5492,15 @@
         "source": "com_a8673c81095b",
         "target": "tec_859bbf8c3fda",
         "type": "implements",
-        "weight": 6.0,
-        "evidenceCount": 2
+        "weight": 21.0,
+        "evidenceCount": 5
       },
       {
         "source": "com_a8673c81095b",
         "target": "pro_f2d6234611e0",
         "type": "reports",
-        "weight": 5.2,
-        "evidenceCount": 2
+        "weight": 7.8,
+        "evidenceCount": 3
       },
       {
         "source": "com_a8673c81095b",
@@ -5437,7 +5555,7 @@
         "source": "com_4f2eca9abc03",
         "target": "tec_7082c50ec651",
         "type": "implements",
-        "weight": 132.0,
+        "weight": 135.0,
         "evidenceCount": 34
       },
       {
@@ -5500,8 +5618,8 @@
         "source": "com_4f2eca9abc03",
         "target": "tec_27d654440f87",
         "type": "implements",
-        "weight": 131.2,
-        "evidenceCount": 35
+        "weight": 140.8,
+        "evidenceCount": 36
       },
       {
         "source": "com_4f2eca9abc03",
@@ -5591,22 +5709,22 @@
         "source": "com_fc5dd540ca68",
         "target": "tec_7082c50ec651",
         "type": "implements",
-        "weight": 72.0,
-        "evidenceCount": 13
+        "weight": 90.0,
+        "evidenceCount": 16
       },
       {
         "source": "com_fc5dd540ca68",
         "target": "mec_a05b0c4ba6a0",
         "type": "uses",
-        "weight": 23.8,
-        "evidenceCount": 6
+        "weight": 37.4,
+        "evidenceCount": 9
       },
       {
         "source": "com_fc5dd540ca68",
         "target": "pro_3cfb6c512875",
         "type": "reports",
-        "weight": 7.2,
-        "evidenceCount": 3
+        "weight": 9.6,
+        "evidenceCount": 4
       },
       {
         "source": "com_fc5dd540ca68",
@@ -5640,8 +5758,8 @@
         "source": "com_fc5dd540ca68",
         "target": "tec_05cfe1cf584d",
         "type": "implements",
-        "weight": 5.6,
-        "evidenceCount": 2
+        "weight": 11.2,
+        "evidenceCount": 4
       },
       {
         "source": "com_fc5dd540ca68",
@@ -5890,6 +6008,13 @@
       },
       {
         "source": "com_4f2eca9abc03",
+        "target": "tec_d821cb73680b",
+        "type": "implements",
+        "weight": 3.6,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_4f2eca9abc03",
         "target": "mec_d5e788b1e314",
         "type": "uses",
         "weight": 4.2,
@@ -5913,22 +6038,22 @@
         "source": "rep_7944c02b0969",
         "target": "com_28f760831d13",
         "type": "contains",
-        "weight": 3.0,
-        "evidenceCount": 3
+        "weight": 4.0,
+        "evidenceCount": 4
       },
       {
         "source": "com_28f760831d13",
         "target": "tec_7082c50ec651",
         "type": "implements",
-        "weight": 12.0,
-        "evidenceCount": 3
+        "weight": 18.0,
+        "evidenceCount": 4
       },
       {
         "source": "com_28f760831d13",
         "target": "tec_27d654440f87",
         "type": "implements",
-        "weight": 9.6,
-        "evidenceCount": 3
+        "weight": 12.8,
+        "evidenceCount": 4
       },
       {
         "source": "com_28f760831d13",
@@ -6197,11 +6322,60 @@
         "evidenceCount": 1
       },
       {
+        "source": "rep_7944c02b0969",
+        "target": "com_66c328ab83fb",
+        "type": "contains",
+        "weight": 1.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_66c328ab83fb",
+        "target": "tec_7082c50ec651",
+        "type": "implements",
+        "weight": 12.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_66c328ab83fb",
+        "target": "tec_4a0b8741c76e",
+        "type": "implements",
+        "weight": 2.6,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_66c328ab83fb",
+        "target": "mec_a05b0c4ba6a0",
+        "type": "uses",
+        "weight": 3.4,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_28f760831d13",
+        "target": "tec_05cfe1cf584d",
+        "type": "implements",
+        "weight": 2.8,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_28f760831d13",
+        "target": "mec_a05b0c4ba6a0",
+        "type": "uses",
+        "weight": 3.4,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_23bfce7db3f9",
+        "target": "mec_99f71c84dda7",
+        "type": "uses",
+        "weight": 3.6,
+        "evidenceCount": 1
+      },
+      {
         "source": "org_0a28693c6218",
         "target": "rep_e9e93b429bd2",
         "type": "owns",
-        "weight": 16.0,
-        "evidenceCount": 16
+        "weight": 19.0,
+        "evidenceCount": 19
       },
       {
         "source": "rep_e9e93b429bd2",
@@ -6249,22 +6423,22 @@
         "source": "rep_e9e93b429bd2",
         "target": "com_71de0611e528",
         "type": "contains",
-        "weight": 6.0,
-        "evidenceCount": 6
+        "weight": 7.0,
+        "evidenceCount": 7
       },
       {
         "source": "com_71de0611e528",
         "target": "tec_4a0b8741c76e",
         "type": "implements",
-        "weight": 10.4,
-        "evidenceCount": 4
+        "weight": 13.0,
+        "evidenceCount": 5
       },
       {
         "source": "com_71de0611e528",
         "target": "tec_7082c50ec651",
         "type": "implements",
-        "weight": 12.0,
-        "evidenceCount": 4
+        "weight": 15.0,
+        "evidenceCount": 5
       },
       {
         "source": "com_71de0611e528",
@@ -6284,8 +6458,8 @@
         "source": "com_71de0611e528",
         "target": "pro_3cfb6c512875",
         "type": "reports",
-        "weight": 2.4,
-        "evidenceCount": 1
+        "weight": 4.8,
+        "evidenceCount": 2
       },
       {
         "source": "com_71de0611e528",
@@ -6298,22 +6472,22 @@
         "source": "rep_e9e93b429bd2",
         "target": "com_c80c68d17b2a",
         "type": "contains",
-        "weight": 5.0,
-        "evidenceCount": 5
+        "weight": 6.0,
+        "evidenceCount": 6
       },
       {
         "source": "com_c80c68d17b2a",
         "target": "tec_7082c50ec651",
         "type": "implements",
-        "weight": 21.0,
-        "evidenceCount": 5
+        "weight": 30.0,
+        "evidenceCount": 6
       },
       {
         "source": "com_c80c68d17b2a",
         "target": "pro_297a563c5a02",
         "type": "reports",
-        "weight": 12.0,
-        "evidenceCount": 4
+        "weight": 15.0,
+        "evidenceCount": 5
       },
       {
         "source": "com_71de0611e528",
@@ -6362,6 +6536,34 @@
         "target": "pro_3cfb6c512875",
         "type": "reports",
         "weight": 2.4,
+        "evidenceCount": 1
+      },
+      {
+        "source": "rep_e9e93b429bd2",
+        "target": "com_395f86e49368",
+        "type": "contains",
+        "weight": 1.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_395f86e49368",
+        "target": "tec_7082c50ec651",
+        "type": "implements",
+        "weight": 6.0,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_395f86e49368",
+        "target": "pro_3cfb6c512875",
+        "type": "reports",
+        "weight": 2.4,
+        "evidenceCount": 1
+      },
+      {
+        "source": "com_395f86e49368",
+        "target": "pro_f2d6234611e0",
+        "type": "reports",
+        "weight": 2.6,
         "evidenceCount": 1
       },
       {
@@ -6640,6 +6842,34 @@
       {
         "source": "rep_7944c02b0969",
         "target": "can_8215b1533016",
+        "type": "evidences",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "tec_7082c50ec651",
+        "target": "can_efa6bf9b53f2",
+        "type": "yields",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "mec_cb93be7b160d",
+        "target": "can_efa6bf9b53f2",
+        "type": "realises",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "rep_7944c02b0969",
+        "target": "can_efa6bf9b53f2",
+        "type": "evidences",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "rep_fc1020ab433f",
+        "target": "can_efa6bf9b53f2",
         "type": "evidences",
         "weight": 1.0,
         "evidenceCount": 0
@@ -6729,6 +6959,34 @@
         "evidenceCount": 0
       },
       {
+        "source": "tec_7082c50ec651",
+        "target": "can_bcf0c979c1a7",
+        "type": "yields",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "mec_67bc622cf834",
+        "target": "can_bcf0c979c1a7",
+        "type": "realises",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "rep_7944c02b0969",
+        "target": "can_bcf0c979c1a7",
+        "type": "evidences",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "rep_fc1020ab433f",
+        "target": "can_bcf0c979c1a7",
+        "type": "evidences",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
         "source": "tec_d821cb73680b",
         "target": "can_abb21f89e407",
         "type": "yields",
@@ -6752,6 +7010,62 @@
       {
         "source": "rep_fc1020ab433f",
         "target": "can_abb21f89e407",
+        "type": "evidences",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "tec_7082c50ec651",
+        "target": "can_a343cd3ad275",
+        "type": "yields",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "mec_50e87b4fec0e",
+        "target": "can_a343cd3ad275",
+        "type": "realises",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "rep_7944c02b0969",
+        "target": "can_a343cd3ad275",
+        "type": "evidences",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "rep_fc1020ab433f",
+        "target": "can_a343cd3ad275",
+        "type": "evidences",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "tec_7082c50ec651",
+        "target": "can_0d063b3831b0",
+        "type": "yields",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "mec_d5e788b1e314",
+        "target": "can_0d063b3831b0",
+        "type": "realises",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "rep_7944c02b0969",
+        "target": "can_0d063b3831b0",
+        "type": "evidences",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "rep_fc1020ab433f",
+        "target": "can_0d063b3831b0",
         "type": "evidences",
         "weight": 1.0,
         "evidenceCount": 0
@@ -6792,6 +7106,34 @@
         "evidenceCount": 0
       },
       {
+        "source": "tec_7082c50ec651",
+        "target": "can_c7e1a7df1bc0",
+        "type": "yields",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "mec_35bd212f40af",
+        "target": "can_c7e1a7df1bc0",
+        "type": "realises",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "rep_7944c02b0969",
+        "target": "can_c7e1a7df1bc0",
+        "type": "evidences",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "rep_fc1020ab433f",
+        "target": "can_c7e1a7df1bc0",
+        "type": "evidences",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
         "source": "tec_27d654440f87",
         "target": "can_254ad51cf5f4",
         "type": "yields",
@@ -6849,21 +7191,28 @@
       },
       {
         "source": "tec_7082c50ec651",
-        "target": "can_a343cd3ad275",
+        "target": "can_2c58633ebd94",
         "type": "yields",
         "weight": 1.0,
         "evidenceCount": 0
       },
       {
-        "source": "mec_50e87b4fec0e",
-        "target": "can_a343cd3ad275",
+        "source": "mec_99f71c84dda7",
+        "target": "can_2c58633ebd94",
         "type": "realises",
         "weight": 1.0,
         "evidenceCount": 0
       },
       {
+        "source": "rep_fc1020ab433f",
+        "target": "can_2c58633ebd94",
+        "type": "evidences",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
         "source": "rep_7944c02b0969",
-        "target": "can_a343cd3ad275",
+        "target": "can_2c58633ebd94",
         "type": "evidences",
         "weight": 1.0,
         "evidenceCount": 0
@@ -6885,48 +7234,6 @@
       {
         "source": "rep_7944c02b0969",
         "target": "can_8a3c75589c89",
-        "type": "evidences",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "tec_7082c50ec651",
-        "target": "can_efa6bf9b53f2",
-        "type": "yields",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "mec_cb93be7b160d",
-        "target": "can_efa6bf9b53f2",
-        "type": "realises",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "rep_7944c02b0969",
-        "target": "can_efa6bf9b53f2",
-        "type": "evidences",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "tec_7082c50ec651",
-        "target": "can_0d063b3831b0",
-        "type": "yields",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "mec_d5e788b1e314",
-        "target": "can_0d063b3831b0",
-        "type": "realises",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "rep_7944c02b0969",
-        "target": "can_0d063b3831b0",
         "type": "evidences",
         "weight": 1.0,
         "evidenceCount": 0
@@ -6960,55 +7267,6 @@
         "evidenceCount": 0
       },
       {
-        "source": "tec_7082c50ec651",
-        "target": "can_bcf0c979c1a7",
-        "type": "yields",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "mec_67bc622cf834",
-        "target": "can_bcf0c979c1a7",
-        "type": "realises",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "rep_7944c02b0969",
-        "target": "can_bcf0c979c1a7",
-        "type": "evidences",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "tec_7082c50ec651",
-        "target": "can_2c58633ebd94",
-        "type": "yields",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "mec_99f71c84dda7",
-        "target": "can_2c58633ebd94",
-        "type": "realises",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "rep_fc1020ab433f",
-        "target": "can_2c58633ebd94",
-        "type": "evidences",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "rep_7944c02b0969",
-        "target": "can_2c58633ebd94",
-        "type": "evidences",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
         "source": "tec_3c8c51a0ac35",
         "target": "can_0469819f41d0",
         "type": "yields",
@@ -7039,27 +7297,6 @@
       {
         "source": "rep_e9e93b429bd2",
         "target": "can_0469819f41d0",
-        "type": "evidences",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "tec_7082c50ec651",
-        "target": "can_c7e1a7df1bc0",
-        "type": "yields",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "mec_35bd212f40af",
-        "target": "can_c7e1a7df1bc0",
-        "type": "realises",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "rep_7944c02b0969",
-        "target": "can_c7e1a7df1bc0",
         "type": "evidences",
         "weight": 1.0,
         "evidenceCount": 0
@@ -7116,6 +7353,27 @@
       {
         "source": "rep_7944c02b0969",
         "target": "can_8325caee4e14",
+        "type": "evidences",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "tec_b57cc6131571",
+        "target": "can_9fc8a0eb1b8e",
+        "type": "yields",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "mec_d5e788b1e314",
+        "target": "can_9fc8a0eb1b8e",
+        "type": "realises",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "rep_7944c02b0969",
+        "target": "can_9fc8a0eb1b8e",
         "type": "evidences",
         "weight": 1.0,
         "evidenceCount": 0
@@ -7390,11 +7648,11 @@
     "counts": {
       "organization": 2,
       "repository": 3,
-      "component": 46,
+      "component": 49,
       "technology": 16,
       "problem": 6,
       "mechanism": 10,
-      "candidate": 36
+      "candidate": 37
     }
   },
   "crossRepositoryTechnologies": [
@@ -7423,8 +7681,8 @@
         "scheduling-mechanism",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 204,
-      "weight": 981.0,
+      "evidenceCount": 222,
+      "weight": 1104.0,
       "crossRepository": true,
       "technologyLabel": "ISP 처리",
       "problemLabels": [
@@ -7449,25 +7707,13 @@
         {
           "id": "cand_9fe09ed8a807",
           "slug": "isp-calibration",
-          "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 보간",
+          "title": "ISP 처리: 타이밍 편차 대응을 위한 보간",
           "type": "patent+paper"
-        },
-        {
-          "id": "cand_845fcf870209",
-          "slug": "isp-partitioning",
-          "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 accelerator 오프로딩",
-          "type": "patent"
         },
         {
           "id": "cand_cecaedf99b18",
           "slug": "isp-adaptive-control",
           "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 hysteresis 감쇠",
-          "type": "patent"
-        },
-        {
-          "id": "cand_7abe84b2aa19",
-          "slug": "isp-synchronization-mechanism",
-          "title": "ISP 처리: 자원 고갈 대응을 위한 시퀀스 번호 부여",
           "type": "patent"
         },
         {
@@ -7477,15 +7723,27 @@
           "type": "patent"
         },
         {
-          "id": "cand_f5fcc282bf89",
-          "slug": "isp-buffer-mechanism",
-          "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 ring buffer 운용",
+          "id": "cand_845fcf870209",
+          "slug": "isp-partitioning",
+          "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 accelerator 오프로딩",
+          "type": "patent"
+        },
+        {
+          "id": "cand_7abe84b2aa19",
+          "slug": "isp-synchronization-mechanism",
+          "title": "ISP 처리: 자원 고갈 대응을 위한 시퀀스 번호 부여",
           "type": "patent"
         },
         {
           "id": "cand_8024ee726221",
           "slug": "isp-resilience",
           "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 fallback 경로",
+          "type": "patent"
+        },
+        {
+          "id": "cand_f5fcc282bf89",
+          "slug": "isp-buffer-mechanism",
+          "title": "ISP 처리: 프레임 정합성 결함 대응을 위한 ring buffer 운용",
           "type": "patent"
         }
       ]
@@ -7517,8 +7775,8 @@
         "state-machine",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 118,
-      "weight": 384.8,
+      "evidenceCount": 121,
+      "weight": 392.6,
       "crossRepository": true,
       "technologyLabel": "Camera Driver 계층",
       "problemLabels": [
@@ -7609,8 +7867,8 @@
         "state-machine",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 100,
-      "weight": 428.8,
+      "evidenceCount": 102,
+      "weight": 441.6,
       "crossRepository": true,
       "technologyLabel": "3A 제어",
       "problemLabels": [
@@ -7664,48 +7922,6 @@
       ]
     },
     {
-      "technology": "camera-framework",
-      "repositories": [
-        "intel/ipu6-camera-hal",
-        "raspberrypi/libcamera"
-      ],
-      "problems": [
-        "correctness",
-        "known-limitation",
-        "resource",
-        "timing"
-      ],
-      "mechanisms": [
-        "arbitration",
-        "calibration",
-        "prediction",
-        "resilience",
-        "scheduling-mechanism",
-        "state-machine",
-        "synchronization-mechanism"
-      ],
-      "evidenceCount": 54,
-      "weight": 184.6,
-      "crossRepository": true,
-      "technologyLabel": "Camera Framework",
-      "problemLabels": [
-        "프레임 정합성 결함",
-        "작성자가 직접 기록한 한계",
-        "자원 고갈",
-        "타이밍 편차"
-      ],
-      "mechanismLabels": [
-        "자원 중재",
-        "캘리브레이션과 보정",
-        "예측 기반 추정",
-        "점진적 성능 저하 대응",
-        "Deadline 인식 스케줄링",
-        "명시적 상태 기계 제어",
-        "타이밍 동기화"
-      ],
-      "candidates": []
-    },
-    {
       "technology": "sensor-control",
       "repositories": [
         "intel/ipu6-camera-hal",
@@ -7727,8 +7943,8 @@
         "state-machine",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 53,
-      "weight": 276.0,
+      "evidenceCount": 56,
+      "weight": 291.0,
       "crossRepository": true,
       "technologyLabel": "Sensor 제어",
       "problemLabels": [
@@ -7770,6 +7986,57 @@
           "id": "cand_5555849c4804",
           "slug": "sensor-control-calibration",
           "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 보정",
+          "type": "patent"
+        }
+      ]
+    },
+    {
+      "technology": "camera-framework",
+      "repositories": [
+        "intel/ipu6-camera-hal",
+        "raspberrypi/libcamera"
+      ],
+      "problems": [
+        "correctness",
+        "known-limitation",
+        "resource",
+        "timing"
+      ],
+      "mechanisms": [
+        "arbitration",
+        "buffer-mechanism",
+        "calibration",
+        "prediction",
+        "resilience",
+        "scheduling-mechanism",
+        "state-machine",
+        "synchronization-mechanism"
+      ],
+      "evidenceCount": 55,
+      "weight": 187.2,
+      "crossRepository": true,
+      "technologyLabel": "Camera Framework",
+      "problemLabels": [
+        "프레임 정합성 결함",
+        "작성자가 직접 기록한 한계",
+        "자원 고갈",
+        "타이밍 편차"
+      ],
+      "mechanismLabels": [
+        "자원 중재",
+        "Buffer 수명 제어",
+        "캘리브레이션과 보정",
+        "예측 기반 추정",
+        "점진적 성능 저하 대응",
+        "Deadline 인식 스케줄링",
+        "명시적 상태 기계 제어",
+        "타이밍 동기화"
+      ],
+      "candidates": [
+        {
+          "id": "cand_9126debbf094",
+          "slug": "camera-framework-synchronization-mechanism",
+          "title": "Camera Framework: 작성자가 직접 기록한 한계 대응을 위한 시퀀스 번호 부여",
           "type": "patent"
         }
       ]
@@ -7832,6 +8099,46 @@
       ]
     },
     {
+      "technology": "image-quality",
+      "repositories": [
+        "intel/ipu6-camera-hal",
+        "raspberrypi/libcamera"
+      ],
+      "problems": [
+        "correctness",
+        "known-limitation",
+        "quality-defect",
+        "timing"
+      ],
+      "mechanisms": [
+        "arbitration",
+        "calibration",
+        "partitioning",
+        "prediction",
+        "resilience",
+        "scheduling-mechanism"
+      ],
+      "evidenceCount": 33,
+      "weight": 92.4,
+      "crossRepository": true,
+      "technologyLabel": "화질",
+      "problemLabels": [
+        "프레임 정합성 결함",
+        "작성자가 직접 기록한 한계",
+        "화질 결함",
+        "타이밍 편차"
+      ],
+      "mechanismLabels": [
+        "자원 중재",
+        "캘리브레이션과 보정",
+        "작업 분할",
+        "예측 기반 추정",
+        "점진적 성능 저하 대응",
+        "Deadline 인식 스케줄링"
+      ],
+      "candidates": []
+    },
+    {
       "technology": "memory-buffer",
       "repositories": [
         "intel/ipu6-camera-hal",
@@ -7852,8 +8159,8 @@
         "scheduling-mechanism",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 26,
-      "weight": 96.0,
+      "evidenceCount": 27,
+      "weight": 105.0,
       "crossRepository": true,
       "technologyLabel": "Buffer 및 메모리 관리",
       "problemLabels": [
@@ -7884,46 +8191,6 @@
           "type": "patent"
         }
       ]
-    },
-    {
-      "technology": "image-quality",
-      "repositories": [
-        "intel/ipu6-camera-hal",
-        "raspberrypi/libcamera"
-      ],
-      "problems": [
-        "correctness",
-        "known-limitation",
-        "quality-defect",
-        "timing"
-      ],
-      "mechanisms": [
-        "arbitration",
-        "calibration",
-        "partitioning",
-        "prediction",
-        "resilience",
-        "scheduling-mechanism"
-      ],
-      "evidenceCount": 23,
-      "weight": 64.4,
-      "crossRepository": true,
-      "technologyLabel": "화질",
-      "problemLabels": [
-        "프레임 정합성 결함",
-        "작성자가 직접 기록한 한계",
-        "화질 결함",
-        "타이밍 편차"
-      ],
-      "mechanismLabels": [
-        "자원 중재",
-        "캘리브레이션과 보정",
-        "작업 분할",
-        "예측 기반 추정",
-        "점진적 성능 저하 대응",
-        "Deadline 인식 스케줄링"
-      ],
-      "candidates": []
     },
     {
       "technology": "camera-hal",
@@ -7987,8 +8254,8 @@
         "state-machine",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 18,
-      "weight": 69.0,
+      "evidenceCount": 19,
+      "weight": 72.0,
       "crossRepository": true,
       "technologyLabel": "Pipeline 스케줄링",
       "problemLabels": [
@@ -8119,8 +8386,8 @@
         "prediction",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 10,
-      "weight": 39.6,
+      "evidenceCount": 11,
+      "weight": 43.2,
       "crossRepository": true,
       "technologyLabel": "Sensor 동기화",
       "problemLabels": [

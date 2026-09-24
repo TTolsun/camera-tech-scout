@@ -8,12 +8,12 @@
       "default_branch": "HEAD",
       "head_sha": "6fefa86dfa14bb33d908a46f104a96c59b41c7eb",
       "last_scanned_sha": "6fefa86dfa14bb33d908a46f104a96c59b41c7eb",
-      "last_scan_time": "2026-09-24T13:06:19.578897+00:00",
-      "scan_mode": "incremental",
-      "status": "partial",
-      "status_detail": "HEAD가 이전 스캔과 동일하여 새로 수집한 파일이 없습니다. / incremental file scan over 0 changed paths",
-      "files_scanned": 0,
-      "evidence_count": 61,
+      "last_scan_time": "2026-09-24T14:19:59.812322+00:00",
+      "scan_mode": "full",
+      "status": "ok",
+      "status_detail": "",
+      "files_scanned": 601,
+      "evidence_count": 62,
       "candidate_count": 0,
       "topics": [
         "3a",
@@ -39,8 +39,8 @@
         "디버깅 및 프로파일링",
         "화질"
       ],
-      "evidenceCount": 61,
-      "candidateCount": 29
+      "evidenceCount": 62,
+      "candidateCount": 34
     },
     {
       "full_name": "raspberrypi/libcamera",
@@ -50,12 +50,12 @@
       "default_branch": "HEAD",
       "head_sha": "6c1dd9d55573010f710c9e190a73e7e76f0d9432",
       "last_scanned_sha": "6c1dd9d55573010f710c9e190a73e7e76f0d9432",
-      "last_scan_time": "2026-09-24T13:06:38.675416+00:00",
-      "scan_mode": "incremental",
-      "status": "partial",
-      "status_detail": "HEAD가 이전 스캔과 동일하여 새로 수집한 파일이 없습니다. / incremental file scan over 0 changed paths",
-      "files_scanned": 0,
-      "evidence_count": 334,
+      "last_scan_time": "2026-09-24T14:22:25.666603+00:00",
+      "scan_mode": "full",
+      "status": "ok",
+      "status_detail": "",
+      "files_scanned": 1205,
+      "evidence_count": 349,
       "candidate_count": 0,
       "topics": [
         "3a",
@@ -81,8 +81,8 @@
         "Computational Photography",
         "디버깅 및 프로파일링"
       ],
-      "evidenceCount": 334,
-      "candidateCount": 36
+      "evidenceCount": 349,
+      "candidateCount": 37
     },
     {
       "full_name": "raspberrypi/libpisp",
@@ -92,12 +92,12 @@
       "default_branch": "HEAD",
       "head_sha": "f8a5eb2af4c5dea76442785ef42b2fb1aa9e62f9",
       "last_scanned_sha": "f8a5eb2af4c5dea76442785ef42b2fb1aa9e62f9",
-      "last_scan_time": "2026-09-24T13:06:43.101838+00:00",
-      "scan_mode": "incremental",
-      "status": "partial",
-      "status_detail": "HEAD가 이전 스캔과 동일하여 새로 수집한 파일이 없습니다. / incremental file scan over 0 changed paths",
-      "files_scanned": 0,
-      "evidence_count": 16,
+      "last_scan_time": "2026-09-24T14:22:43.202573+00:00",
+      "scan_mode": "full",
+      "status": "ok",
+      "status_detail": "",
+      "files_scanned": 68,
+      "evidence_count": 19,
       "candidate_count": 0,
       "topics": [
         "camera-driver",
@@ -113,7 +113,7 @@
         "ISP 처리",
         "Buffer 및 메모리 관리"
       ],
-      "evidenceCount": 16,
+      "evidenceCount": 19,
       "candidateCount": 9
     }
   ]
