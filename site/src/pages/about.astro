@@ -1,0 +1,332 @@
+---
+import Base from '../layouts/Base.astro';
+import { meta } from '../lib/data';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const stages = [
+  { name: 'config', detail: 'config/sources.yaml 하나로 분석 대상과 예산을 관리합니다.' },
+  { name: 'Source Resolver', detail: 'Organization 탐색 결과와 직접 지정 Repository를 합치고 중복을 제거합니다.' },
+  { name: 'GitHub Collector', detail: 'Repository 메타데이터, Pull Request, Issue, Release를 수집합니다.' },
+  { name: 'Repository Scanner', detail: 'shallow clone 후 tree-sitter로 심볼과 라인 범위를 추출합니다.' },
+  { name: 'Evidence Builder', detail: '사실을 만들어 내는 유일한 단계입니다. 이후 단계는 새 사실을 추가할 수 없습니다.' },
+  { name: 'Technology Extractor', detail: 'Evidence를 Component, Technology, Problem, Mechanism 계층으로 연결합니다.' },
+  { name: 'Idea Scout', detail: '기술 영역과 메커니즘 계열 조합으로 Evidence를 묶어 후보를 만듭니다.' },
+  { name: 'Critic', detail: '후보를 반박합니다. 치명적 지적이 하나라도 있으면 Rejected Ideas로 보냅니다.' },
+  { name: 'Candidate Store', detail: 'SQLite에 저장하고, 직전 실행과 비교해 상태 변화를 결정합니다.' },
+  { name: 'JSON', detail: '페이지별 JSON을 생성합니다. 사이트는 데이터베이스에 의존하지 않습니다.' },
+  { name: 'Astro', detail: '정적 사이트를 빌드합니다.' },
+  { name: 'GitHub Pages', detail: '빌드 결과를 배포합니다.' },
+];
+
+const criticRules = [
+  { id: 'R1', title: '사소한 변경이나 유지보수 작업이 아닌가', fatal: true },
+  { id: 'R2', title: '설정 변경만으로 이루어진 것이 아닌가', fatal: true },
+  { id: 'R3', title: '흔한 software design pattern이 아닌가', fatal: false },
+  { id: 'R4', title: 'parameter tuning 수준이 아닌가', fatal: true },
+  { id: 'R5', title: '기존 Android, Linux, V4L2에서 일반적인 방법이 아닌가', fatal: false },
+  { id: 'R6', title: 'Evidence가 충분한가', fatal: true },
+  { id: 'R7', title: '주장과 실제 코드가 일치하는가', fatal: true },
+  { id: 'R8', title: '효과가 주장에 그치지 않고 측정되었는가', fatal: false },
+];
+
+const markers = [
+  {
+    marker: 'UNKNOWN',
+    meaning: '해당 항목을 뒷받침하는 서술을 수집된 자료에서 전혀 찾지 못했습니다.',
+  },
+  {
+    marker: 'LOW_CONFIDENCE',
+    meaning: '서술은 존재하지만 이를 뒷받침하는 측정값이 없습니다.',
+  },
+  {
+    marker: 'NEEDS_VERIFICATION',
+    meaning: '확인이 필요합니다. 수집된 자료만으로는 판단할 수 없습니다.',
+  },
+];
+---
+
+<Base title="About" active="about" description="분석 방법, 평가 기준, 한계를 설명합니다.">
+  <section class="band band--tight">
+    <div class="container">
+      <p class="eyebrow">About</p>
+      <h1>이 사이트의 분석 방법</h1>
+      <p class="lead">
+        이 도구의 최우선 원칙은 순서입니다. 파일을 모델에 넣어 아이디어를 얻는 방식이 아니라,
+        먼저 증거를 확보하고 그 증거에서 문제와 메커니즘과 효과를 읽어 낸 뒤에 후보를 만들고,
+        마지막으로 그 후보를 반박합니다.
+      </p>
+      <pre class="quote flow">Evidence
+  → Problem / Mechanism / Effect
+      → Candidate
+          → Critic
+              → Verified Discovery</pre>
+    </div>
+  </section>
+
+  <section class="band band--cloud">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Architecture</p>
+          <h2>파이프라인 단계</h2>
+        </div>
+      </div>
+      <ol class="list-none stages">
+        {
+          stages.map((stage, index) => (
+            <li class="stage">
+              <span class="stage__num mono">{String(index + 1).padStart(2, '0')}</span>
+              <span class="stage__name">{stage.name}</span>
+              <span class="stage__detail">{stage.detail}</span>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container stack-lg">
+      <div>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Scout와 Critic</p>
+            <h2>후보 생성과 검증을 분리하는 이유</h2>
+          </div>
+        </div>
+        <div class="grid grid--2">
+          <article class="card card--flat">
+            <h3 class="card-title">Scout</h3>
+            <p class="muted">
+              가능성이 있는 기술을 적극적으로 발굴합니다. 단순히 특이한 코드를 찾는 것이 아니라,
+              문제가 있고 그것을 해결하는 비자명한 메커니즘이 있고 기술적 효과가 있으며 재사용
+              가능한 아이디어로 보이는 형태를 찾습니다.
+            </p>
+            <p class="fine">
+              후보가 성립하려면 메커니즘을 구현한 실제 코드가 있어야 합니다. 문서나 Commit 메시지만
+              있는 경우에는 후보를 만들지 않습니다.
+            </p>
+          </article>
+          <article class="card card--flat">
+            <h3 class="card-title">Critic</h3>
+            <p class="muted">
+              Scout의 후보를 적극적으로 반박합니다. 균형을 맞추려 하지 않고, 각 항목이 그 후보가
+              발명이나 연구 결과가 아니라 평범한 엔지니어링임을 보이려 시도합니다.
+            </p>
+            <p class="fine">
+              통과하지 못한 후보도 삭제하지 않습니다. 반박 사유와 재검토 조건을
+              <a href={`${base}/rejected/`}>Rejected Ideas</a>에 보존하여 같은 아이디어를 반복해서
+              발굴하지 않도록 합니다.
+            </p>
+          </article>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">검토 항목</p>
+            <h2>Critic 규칙</h2>
+          </div>
+          <p class="caption">치명적 항목을 하나라도 위반하면 후보는 반박됩니다.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>규칙</th>
+                <th>검토 내용</th>
+                <th>성격</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                criticRules.map((rule) => (
+                  <tr>
+                    <td class="mono">{rule.id}</td>
+                    <td>{rule.title}</td>
+                    <td>
+                      {rule.fatal ? (
+                        <span class="badge badge--reject badge--sm">치명적</span>
+                      ) : (
+                        <span class="badge badge--warn badge--sm">유보</span>
+                      )}
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">평가 값 읽는 방법</p>
+            <h2>네 가지 점수</h2>
+          </div>
+        </div>
+        <div class="grid grid--2">
+          <article class="card card--flat">
+            <h3 class="card-title">Patent 가능성</h3>
+            <p class="muted">
+              메커니즘의 구체성, 문제 서술의 존재, 효과의 정량화, 여러 Component와 Repository에
+              걸친 일반화 가능성을 더하고, 사소한 변경 표지를 뺍니다.
+            </p>
+          </article>
+          <article class="card card--flat">
+            <h3 class="card-title">Paper 가능성</h3>
+            <p class="muted">
+              평가 어휘와 측정값의 존재, 알고리즘 계열 여부, test와 benchmark 경로의 증거, 설계
+              문서의 존재를 반영합니다.
+            </p>
+          </article>
+          <article class="card card--flat">
+            <h3 class="card-title">증거 강도</h3>
+            <p class="muted">
+              증거의 종류 수, 총 건수, 심볼명과 라인 범위를 지목하는 정확도, 여러 Repository에
+              걸쳐 있는지를 반영합니다.
+            </p>
+          </article>
+          <article class="card card--featured">
+            <h3 class="card-title">Novelty Confidence</h3>
+            <p class="muted">
+              이 값은 <strong>추가 조사의 우선순위</strong>를 뜻합니다. 특허 신규성 판단이 아니고,
+              특허 가능성에 대한 의견도 아닙니다. 선행기술 조사는 반드시 별도로 수행해야 합니다.
+            </p>
+            <p class="fine">
+              본 코퍼스 안에서 해당 조합이 얼마나 드문지, 메커니즘 계열이 설계된 기법을 시사하는지,
+              주변에 일반적인 설계 패턴이나 플랫폼 기본 코드가 지배적인지를 반영합니다.
+            </p>
+          </article>
+        </div>
+        <p class="fine">
+          모든 점수는 숫자만 보여주지 않고, 각 항목이 어떤 근거로 얼마만큼 가감되었는지 함께
+          표시합니다. 후보 상세 페이지에서 확인할 수 있습니다.
+        </p>
+      </div>
+
+      <div>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">표기 규칙</p>
+            <h2>근거가 부족할 때의 표시</h2>
+          </div>
+        </div>
+        <p class="lead">
+          근거가 부족한 항목을 그럴듯한 문장으로 채우지 않습니다. 대신 아래 표시를 붙여서 무엇이
+          확인되지 않았는지 드러냅니다.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>표시</th>
+                <th>의미</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                markers.map((row) => (
+                  <tr>
+                    <td><span class="marker">{row.marker}</span></td>
+                    <td>{row.meaning}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">한계</p>
+            <h2>이 도구가 하지 못하는 일</h2>
+          </div>
+        </div>
+        <ul class="list-plain limits">
+          <li>
+            선행기술 조사를 대신하지 않습니다. 제공하는 것은 검색어이며, 조사 결과가 아닙니다.
+          </li>
+          <li>
+            특허 가능성이나 신규성에 대한 판단을 제공하지 않습니다. 법적 자문도 아닙니다.
+          </li>
+          <li>
+            어휘 사전에 없는 기술 영역은 찾지 못합니다. 사전은
+            <span class="mono"> pipeline/src/scout/lexicon/terms.py</span>에서 확장합니다.
+          </li>
+          <li>
+            얕은 clone 범위를 벗어난 과거 이력은 읽지 못합니다. 이 경우 Timeline이 비어 있게
+            됩니다.
+          </li>
+          <li>
+            Repository가 문제를 서술하지 않으면 문제 항목은 UNKNOWN으로 남습니다. 코드만으로 의도를
+            추정하지 않습니다.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--cloud band--tight">
+    <div class="container">
+      <div class="card card--flat">
+        <h3>실행 주기</h3>
+        <p class="muted">
+          주 1회 실행됩니다. 현재 구현 단계에서는 GitHub Actions에서 dry-run으로 파이프라인 전체를
+          검증할 수 있으며, dry-run은 데이터베이스와 <span class="mono">data/</span>를 건드리지
+          않습니다. 사내 운영에서는 동일한 스크립트를 cronjob으로 실행합니다.
+        </p>
+        <p class="fine">{meta.disclaimer}</p>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .flow {
+      max-width: 44ch;
+      margin-top: var(--sp-md);
+    }
+    .stages {
+      counter-reset: stage;
+    }
+    .stage {
+      display: grid;
+      grid-template-columns: 40px 200px minmax(0, 1fr);
+      gap: var(--sp-md);
+      align-items: baseline;
+      padding: var(--sp-sm) 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+    @media (max-width: 767px) {
+      .stage {
+        grid-template-columns: 32px minmax(0, 1fr);
+      }
+      .stage__detail {
+        grid-column: 2;
+      }
+    }
+    .stage__num {
+      color: var(--steel);
+      font-size: 12px;
+    }
+    .stage__name {
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .stage__detail {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--charcoal);
+    }
+    .limits li {
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--charcoal);
+    }
+  </style>
+</Base>

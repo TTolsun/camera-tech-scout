@@ -1,0 +1,241 @@
+---
+import Base from '../layouts/Base.astro';
+import { history, meta, formatDateTime } from '../lib/data';
+
+const runs = history.runs ?? [];
+const current = history.currentRun ?? {};
+const states = history.repositoryStates ?? [];
+const engine = meta.engine ?? {};
+---
+
+<Base
+  title="Analysis History"
+  active="history"
+  description="실행 이력과 엔진 구성, Repository별 증분 스캔 상태입니다."
+>
+  <section class="band band--tight">
+    <div class="container">
+      <p class="eyebrow">Analysis History</p>
+      <h1>실행 이력</h1>
+      <p class="lead">
+        이 파이프라인은 주 1회 실행됩니다. 현재는 GitHub Actions가 실행하고, 사내에서는 동일한
+        스크립트를 cronjob으로 실행합니다. 실행 주체가 바뀌어도 파이프라인과 산출물은 같습니다.
+      </p>
+    </div>
+  </section>
+
+  <section class="band band--cloud">
+    <div class="container stack-lg">
+      <div>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">이번 실행</p>
+            <h2>현재 실행 정보</h2>
+          </div>
+          {current.dryRun && <span class="badge badge--warn">DRY RUN</span>}
+        </div>
+        <div class="grid grid--4">
+          <div class="stat">
+            <span class="stat__value">{current.repositories ?? 0}</span>
+            <span class="stat__label">분석 Repository</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">{current.evidence ?? 0}</span>
+            <span class="stat__label">수집 Evidence</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">{current.candidates ?? 0}</span>
+            <span class="stat__label">통과 후보</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">{current.rejected ?? 0}</span>
+            <span class="stat__label">반박된 후보</span>
+          </div>
+        </div>
+        <dl class="kv run-kv">
+          <dt>Run ID</dt>
+          <dd class="mono">{current.id ?? meta.runId}</dd>
+          <dt>실행 모드</dt>
+          <dd>{current.mode ?? meta.mode}</dd>
+          <dt>시작 시각</dt>
+          <dd>{formatDateTime(current.startedAt ?? meta.startedAt)}</dd>
+          <dt>JSON 생성 시각</dt>
+          <dd>{formatDateTime(meta.generatedAt)}</dd>
+        </dl>
+      </div>
+
+      <div>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Scout / Critic</p>
+            <h2>엔진 구성</h2>
+          </div>
+        </div>
+        <div class="card card--flat">
+          {
+            engine.skipped ? (
+              <>
+                <div class="badge-row">
+                  <span class="badge badge--quiet">규칙 기반 엔진만 사용</span>
+                </div>
+                <p class="muted engine__note">{engine.skipReason}</p>
+                <p class="fine">
+                  규칙 기반 엔진은 항상 동작합니다. 모델 계층은 이미 증거에 연결된 서술을 다듬고
+                  반박을 추가하는 역할만 하므로, 모델이 없어도 결과물은 완전합니다.
+                </p>
+              </>
+            ) : (
+              <>
+                <div class="badge-row">
+                  <span class="badge badge--outline">실행 주체 {engine.runner}</span>
+                  <span class="badge badge--outline">모델 {engine.scoutModel}</span>
+                  <span class={engine.reachable ? 'badge badge--ink' : 'badge badge--reject'}>
+                    {engine.reachable ? '엔드포인트 정상' : '엔드포인트 접속 실패'}
+                  </span>
+                </div>
+                <dl class="kv engine__kv">
+                  <dt>Scout 모델</dt>
+                  <dd class="mono">
+                    {engine.scoutModel} (temperature {engine.scoutTemperature})
+                  </dd>
+                  <dt>Critic 모델</dt>
+                  <dd class="mono">
+                    {engine.criticModel} (temperature {engine.criticTemperature})
+                  </dd>
+                  <dt>Endpoint</dt>
+                  <dd class="mono">{engine.baseUrl}</dd>
+                  <dt>검토한 후보</dt>
+                  <dd>{engine.candidatesConsidered ?? 0}건</dd>
+                  <dt>서술이 보강된 후보</dt>
+                  <dd>{engine.candidatesEnriched ?? 0}건</dd>
+                  <dt>추가된 반박</dt>
+                  <dd>{engine.objectionsAdded ?? 0}건</dd>
+                  <dt>근거 없어 폐기된 주장</dt>
+                  <dd>{engine.claimsDiscarded ?? 0}건</dd>
+                </dl>
+                {engine.note && <p class="fine">{engine.note}</p>}
+                {(engine.failures ?? []).length > 0 && (
+                  <details class="engine__fail">
+                    <summary>모델 호출 실패 {engine.failures.length}건 보기</summary>
+                    <ul class="list-plain">
+                      {engine.failures.map((failure: string) => (
+                        <li class="fine mono">{failure}</li>
+                      ))}
+                    </ul>
+                  </details>
+                )}
+              </>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">이력</p>
+          <h2>지난 실행 {runs.length}건</h2>
+        </div>
+      </div>
+
+      {runs.length === 0 && <p class="muted">기록된 실행이 없습니다.</p>}
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Run ID</th>
+              <th>모드</th>
+              <th>시작</th>
+              <th>종료</th>
+              <th class="num">Repository</th>
+              <th class="num">Evidence</th>
+              <th class="num">후보</th>
+              <th class="num">반박</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              runs.map((run: any) => (
+                <tr>
+                  <td class="mono">{run.id}</td>
+                  <td>{run.mode}</td>
+                  <td class="fine">{formatDateTime(run.started_at)}</td>
+                  <td class="fine">{formatDateTime(run.finished_at)}</td>
+                  <td class="num">{run.repositories}</td>
+                  <td class="num">{run.evidence}</td>
+                  <td class="num">{run.candidates}</td>
+                  <td class="num">{run.rejected}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--cloud">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Incremental Scan</p>
+          <h2>Repository별 스캔 상태</h2>
+        </div>
+        <p class="caption">
+          다음 실행은 각 Repository의 마지막 분석 Commit과 HEAD 사이의 변경을 중심으로 분석합니다.
+        </p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Repository</th>
+              <th>상태</th>
+              <th>방식</th>
+              <th>HEAD</th>
+              <th>last_scanned_sha</th>
+              <th>last_scan_time</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              states.map((state: any) => (
+                <tr>
+                  <td class="mono">{state.full_name}</td>
+                  <td>{state.status}</td>
+                  <td class="fine">{state.scan_mode}</td>
+                  <td class="mono fine">{String(state.head_sha ?? '-').slice(0, 12)}</td>
+                  <td class="mono fine">{String(state.last_scanned_sha ?? '-').slice(0, 12)}</td>
+                  <td class="fine">{formatDateTime(state.last_scan_time)}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .run-kv,
+    .engine__kv {
+      margin-top: var(--sp-md);
+    }
+    .engine__note {
+      margin-top: var(--sp-sm);
+    }
+    .engine__fail {
+      margin-top: var(--sp-sm);
+    }
+    .engine__fail summary {
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--primary);
+    }
+  </style>
+</Base>

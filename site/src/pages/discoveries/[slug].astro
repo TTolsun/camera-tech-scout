@@ -1,0 +1,592 @@
+---
+/**
+ * Candidate detail.
+ *
+ * The section order is fixed and numbered, exactly as specified:
+ * Summary, Problem, Existing Approach, Proposed Technique, Why It Is Different,
+ * Technical Effect, Evidence, Patent Angle, Paper Angle, Counter Evidence,
+ * Prior Art Search Keywords, Related Technologies, Related Repositories, Timeline.
+ */
+import Base from '../../layouts/Base.astro';
+import EvidenceItem from '../../components/EvidenceItem.astro';
+import NarrativeBlock from '../../components/NarrativeBlock.astro';
+import ScoreMeters from '../../components/ScoreMeters.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+import { candidates, formatDate, type Candidate, type EvidenceRow } from '../../lib/data';
+
+export function getStaticPaths() {
+  return candidates.map((candidate) => ({
+    params: { slug: candidate.slug },
+    props: { candidate },
+  }));
+}
+
+interface Props {
+  candidate: Candidate;
+}
+
+const { candidate } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const evidenceById: Record<string, EvidenceRow> = Object.fromEntries(
+  (candidate.evidence ?? []).map((item) => [item.id, item]),
+);
+
+const patent = candidate.patentAngle ?? {};
+const paper = candidate.paperAngle ?? {};
+const variations = patent.variations ?? {};
+const scope = patent.observedScope ?? {};
+
+const sections = [
+  { id: 'summary', label: 'Summary' },
+  { id: 'problem', label: 'Problem' },
+  { id: 'existing', label: 'Existing Approach' },
+  { id: 'proposed', label: 'Proposed Technique' },
+  { id: 'difference', label: 'Why It Is Different' },
+  { id: 'effect', label: 'Technical Effect' },
+  { id: 'evidence', label: 'Evidence' },
+  { id: 'patent-angle', label: 'Patent Angle' },
+  { id: 'paper-angle', label: 'Paper Angle' },
+  { id: 'counter', label: 'Counter Evidence' },
+  { id: 'prior-art', label: 'Prior Art Keywords' },
+  { id: 'related-tech', label: 'Related Technologies' },
+  { id: 'related-repos', label: 'Related Repositories' },
+  { id: 'timeline', label: 'Timeline' },
+];
+
+const passedFindings = (candidate.criticFindings ?? []).filter((f) => f.passed);
+const failedFindings = (candidate.criticFindings ?? []).filter((f) => !f.passed);
+---
+
+<Base title={candidate.title} active="discoveries" description={candidate.summary}>
+  <section class="band band--tight">
+    <div class="container">
+      <p class="eyebrow">
+        <a href={`${base}/discoveries/`}>Discoveries</a> / {candidate.topicLabel}
+      </p>
+      <h1>{candidate.title}</h1>
+
+      <div class="head-meta">
+        <StatusBadge
+          type={candidate.type}
+          typeLabel={candidate.typeLabel}
+          status={candidate.status}
+          statusLabel={candidate.statusLabel}
+          verdict={candidate.verdict}
+          verdictLabel={candidate.verdictLabel}
+        />
+        {candidate.statusReason && <p class="caption">{candidate.statusReason}</p>}
+      </div>
+
+      <dl class="kv head-kv">
+        <dt>기술 영역</dt>
+        <dd>{candidate.topicLabel} <span class="fine mono">{candidate.topic}</span></dd>
+        <dt>메커니즘 계열</dt>
+        <dd>{candidate.mechanismLabel} <span class="fine mono">{candidate.mechanismFamily}</span></dd>
+        <dt>Repository</dt>
+        <dd class="mono">{candidate.repositories.join(', ')}</dd>
+        <dt>최초 관측</dt>
+        <dd>{formatDate(candidate.firstSeenAt)}</dd>
+        <dt>최근 갱신</dt>
+        <dd>{formatDate(candidate.lastUpdatedAt)}</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="band band--cloud band--tight">
+    <div class="container">
+      <div class="card">
+        <p class="eyebrow">평가</p>
+        <ScoreMeters scores={candidate.scores} detailed />
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container detail">
+      <nav class="toc" aria-label="섹션 목차">
+        <p class="eyebrow">목차</p>
+        <ol class="toc__list">
+          {
+            sections.map((section, index) => (
+              <li>
+                <a href={`#${section.id}`}>
+                  <span class="mono toc__num">{String(index + 1).padStart(2, '0')}</span>
+                  {section.label}
+                </a>
+              </li>
+            ))
+          }
+        </ol>
+      </nav>
+
+      <div class="detail__body">
+        <section class="narr anchor-offset" id="summary">
+          <h3 class="narr__heading"><span class="narr__num mono">01</span>Summary</h3>
+          <p class="narr__text">{candidate.summary}</p>
+        </section>
+
+        <div id="problem">
+          <NarrativeBlock
+            heading="Problem"
+            index={2}
+            narrative={candidate.problem}
+            evidenceById={evidenceById}
+          />
+        </div>
+        <div id="existing">
+          <NarrativeBlock
+            heading="Existing Approach"
+            index={3}
+            narrative={candidate.existingApproach}
+            evidenceById={evidenceById}
+          />
+        </div>
+        <div id="proposed">
+          <NarrativeBlock
+            heading="Proposed Technique"
+            index={4}
+            narrative={candidate.proposedTechnique}
+            evidenceById={evidenceById}
+          />
+        </div>
+        <div id="difference">
+          <NarrativeBlock
+            heading="Why It Is Different"
+            index={5}
+            narrative={candidate.difference}
+            evidenceById={evidenceById}
+          />
+        </div>
+        <div id="effect">
+          <NarrativeBlock
+            heading="Technical Effect"
+            index={6}
+            narrative={candidate.technicalEffect}
+            evidenceById={evidenceById}
+          />
+        </div>
+
+        <section class="narr anchor-offset" id="evidence">
+          <h3 class="narr__heading"><span class="narr__num mono">07</span>Evidence</h3>
+          <div class="badge-row evidence-kinds">
+            {
+              (candidate.evidenceByKind ?? []).map((row) => (
+                <span class="badge badge--quiet badge--sm">
+                  {row.label} {row.count}
+                </span>
+              ))
+            }
+          </div>
+          <div class="evidence-list">
+            {(candidate.evidence ?? []).map((item) => <EvidenceItem item={item} />)}
+          </div>
+        </section>
+
+        <section class="narr anchor-offset" id="patent-angle">
+          <h3 class="narr__heading"><span class="narr__num mono">08</span>Patent Angle</h3>
+
+          <h4 class="sub">핵심 발명 개념</h4>
+          <p class="narr__text">{patent.coreConcept}</p>
+
+          <h4 class="sub">Claim이 될 수 있는 핵심 요소</h4>
+          <ol class="list-plain">
+            {(patent.claimElements ?? []).map((element: string) => <li>{element}</li>)}
+          </ol>
+
+          <h4 class="sub">
+            변형 아이디어
+            {variations.generated && <span class="marker">GENERATED</span>}
+          </h4>
+          {variations.note && <p class="fine">{variations.note}</p>}
+          <ul class="list-plain">
+            {(variations.ideas ?? []).map((idea: string) => <li>{idea}</li>)}
+          </ul>
+
+          <h4 class="sub">적용 범위</h4>
+          <dl class="kv">
+            <dt>Repository</dt>
+            <dd class="mono">{(scope.repositories ?? []).join(', ')}</dd>
+            <dt>Component</dt>
+            <dd class="mono">{(scope.components ?? []).join(', ') || '식별되지 않았습니다.'}</dd>
+            <dt>일반화 여부</dt>
+            <dd><span class="marker">{scope.generalisation}</span></dd>
+          </dl>
+          {scope.note && <p class="fine">{scope.note}</p>}
+        </section>
+
+        <section class="narr anchor-offset" id="paper-angle">
+          <h3 class="narr__heading"><span class="narr__num mono">09</span>Paper Angle</h3>
+
+          <h4 class="sub">Research Question</h4>
+          <p class="narr__text">{paper.researchQuestion}</p>
+
+          <h4 class="sub">Hypothesis</h4>
+          <p class="narr__text">{paper.hypothesis}</p>
+
+          <h4 class="sub">
+            Baseline
+            {paper.baselineConfidence && <span class="marker">{paper.baselineConfidence}</span>}
+          </h4>
+          <p class="narr__text">{paper.baseline}</p>
+
+          <h4 class="sub">
+            Metric
+            {paper.metricsConfidence && <span class="marker">{paper.metricsConfidence}</span>}
+          </h4>
+          <ul class="list-plain">
+            {(paper.metrics ?? []).map((metric: string) => <li>{metric}</li>)}
+          </ul>
+
+          <h4 class="sub">Experiment</h4>
+          <ol class="list-plain">
+            {(paper.experiments ?? []).map((item: string) => <li>{item}</li>)}
+          </ol>
+
+          <h4 class="sub">Ablation</h4>
+          <ul class="list-plain">
+            {(paper.ablation ?? []).map((item: string) => <li>{item}</li>)}
+          </ul>
+
+          <h4 class="sub">재현 가능성</h4>
+          <p class="narr__text">{paper.reproducibility}</p>
+
+          <h4 class="sub">논문화에 추가로 필요한 실험</h4>
+          <ul class="list-plain">
+            {(paper.additionalExperimentsNeeded ?? []).map((item: string) => <li>{item}</li>)}
+          </ul>
+
+          {
+            (paper.evaluationSignalsFound ?? []).length > 0 && (
+              <>
+                <h4 class="sub">발견된 평가 관련 어휘</h4>
+                <p class="mono fine">{(paper.evaluationSignalsFound ?? []).join(', ')}</p>
+              </>
+            )
+          }
+        </section>
+
+        <section class="narr anchor-offset" id="counter">
+          <h3 class="narr__heading"><span class="narr__num mono">10</span>Counter Evidence</h3>
+          <p class="fine">
+            Critic은 후보를 적극적으로 반박합니다. 아래 지적 중 치명적인 항목이 하나라도 있으면 그
+            후보는 Rejected Ideas로 이동합니다. 이 페이지에 남아 있다는 것은 치명적 지적이 없었다는
+            뜻입니다.
+          </p>
+
+          {
+            failedFindings.length > 0 ? (
+              <ul class="list-none findings">
+                {failedFindings.map((finding) => (
+                  <li class="finding finding--fail">
+                    <div class="finding__head">
+                      <span class="badge badge--warn badge--sm mono">{finding.rule}</span>
+                      <strong>{finding.title}</strong>
+                    </div>
+                    <p class="finding__detail">{finding.detail}</p>
+                    {finding.evidence_ids.length > 0 && (
+                      <p class="fine">
+                        관련 근거:
+                        {finding.evidence_ids.map((id) => (
+                          <a class="finding__cite mono" href={`#${id}`}>
+                            {id}
+                          </a>
+                        ))}
+                      </p>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p class="narr__text">미해결 지적이 없습니다. 모든 검토 항목을 통과했습니다.</p>
+            )
+          }
+
+          <details class="passed">
+            <summary>통과한 검토 항목 {passedFindings.length}건 보기</summary>
+            <ul class="list-none findings">
+              {
+                passedFindings.map((finding) => (
+                  <li class="finding">
+                    <div class="finding__head">
+                      <span class="badge badge--quiet badge--sm mono">{finding.rule}</span>
+                      <strong>{finding.title}</strong>
+                    </div>
+                    <p class="finding__detail">{finding.detail}</p>
+                  </li>
+                ))
+              }
+            </ul>
+          </details>
+        </section>
+
+        <section class="narr anchor-offset" id="prior-art">
+          <h3 class="narr__heading"><span class="narr__num mono">11</span>Prior Art Search Keywords</h3>
+          <p class="fine">
+            선행기술 데이터베이스는 영어로 색인되어 있으므로 검색어는 원어로 제시합니다. 이 목록은
+            조사의 출발점이며, 조사 결과를 대신하지 않습니다.
+          </p>
+          <ul class="list-none keywords">
+            {
+              (candidate.priorArtKeywords ?? []).map((keyword) => (
+                <li class="keyword mono">{keyword}</li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section class="narr anchor-offset" id="related-tech">
+          <h3 class="narr__heading"><span class="narr__num mono">12</span>Related Technologies</h3>
+          <div class="badge-row">
+            {
+              (candidate.technologyLabels ?? []).map((label) => (
+                <span class="badge badge--outline">{label}</span>
+              ))
+            }
+          </div>
+          {
+            (candidate.relatedCandidates ?? []).length > 0 && (
+              <>
+                <h4 class="sub">같은 기술 영역 또는 메커니즘의 다른 후보</h4>
+                <ul class="list-plain">
+                  {candidate.relatedCandidates.map((related) => (
+                    <li>
+                      <a
+                        href={`${base}/discoveries/${
+                          candidates.find((c) => c.id === related.id)?.slug ?? ''
+                        }/`}
+                      >
+                        {related.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )
+          }
+          <p class="fine">
+            <a href={`${base}/technology-map/`}>Technology Map</a>에서 Repository와 기술 사이의
+            관계를 함께 볼 수 있습니다.
+          </p>
+        </section>
+
+        <section class="narr anchor-offset" id="related-repos">
+          <h3 class="narr__heading"><span class="narr__num mono">13</span>Related Repositories</h3>
+          <ul class="list-none repos">
+            {
+              candidate.repositories.map((name) => (
+                <li class="repo">
+                  <a class="mono" href={`https://github.com/${name}`} target="_blank" rel="noopener noreferrer">
+                    {name}
+                  </a>
+                  <a class="fine" href={`${base}/repositories/#${name.replace('/', '--')}`}>
+                    스캔 상태 보기
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section class="narr anchor-offset" id="timeline">
+          <h3 class="narr__heading"><span class="narr__num mono">14</span>Timeline</h3>
+          {
+            (candidate.timeline ?? []).length > 0 ? (
+              <ol class="list-none timeline">
+                {candidate.timeline.map((entry) => (
+                  <li class="tl">
+                    <span class="tl__date mono">{formatDate(entry.at)}</span>
+                    <span class="badge badge--quiet badge--sm">{entry.kindLabel ?? entry.kind}</span>
+                    <span class="tl__title">
+                      {entry.url ? (
+                        <a href={entry.url} target="_blank" rel="noopener noreferrer">
+                          {entry.title}
+                        </a>
+                      ) : (
+                        entry.title
+                      )}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            ) : (
+              <p class="narr__text">
+                시점 정보가 있는 증거가 없습니다. 코드 증거만으로 구성된 후보의 경우 Commit 이력이
+                얕은 clone 범위를 벗어나면 이렇게 표시됩니다.
+              </p>
+            )
+          }
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .head-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--sp-md);
+      margin: var(--sp-md) 0;
+    }
+    .head-meta .caption {
+      margin: 0;
+    }
+    .head-kv {
+      margin-top: var(--sp-md);
+    }
+    .detail {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: var(--sp-section);
+      align-items: start;
+    }
+    @media (max-width: 1023px) {
+      .detail {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--sp-xl);
+      }
+    }
+    .toc {
+      position: sticky;
+      top: 96px;
+    }
+    @media (max-width: 1023px) {
+      .toc {
+        position: static;
+      }
+    }
+    .toc__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-left: 1px solid var(--hairline);
+    }
+    .toc__list li a {
+      display: flex;
+      gap: var(--sp-xs);
+      padding: 5px var(--sp-sm);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--charcoal);
+      border-left: 2px solid transparent;
+      margin-left: -1px;
+    }
+    .toc__list li a:hover {
+      text-decoration: none;
+      color: var(--primary);
+      border-left-color: var(--primary);
+    }
+    .toc__num {
+      color: var(--steel);
+      font-size: 11px;
+    }
+    .detail__body > *:first-child .narr,
+    .detail__body > .narr:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+    .sub {
+      font-size: 16px;
+      font-weight: 700;
+      margin: var(--sp-lg) 0 var(--sp-xs);
+      display: flex;
+      align-items: center;
+      gap: var(--sp-xs);
+      flex-wrap: wrap;
+    }
+    .evidence-kinds {
+      margin: var(--sp-md) 0;
+    }
+    .evidence-list {
+      margin-top: var(--sp-md);
+    }
+    .findings {
+      margin-top: var(--sp-md);
+    }
+    .finding {
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-lg);
+      padding: var(--sp-md);
+    }
+    .finding + .finding {
+      margin-top: var(--sp-xs);
+    }
+    .finding--fail {
+      border-color: var(--bloom-deep);
+    }
+    .finding__head {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-xs);
+      flex-wrap: wrap;
+    }
+    .finding__detail {
+      margin: var(--sp-xs) 0 0;
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--charcoal);
+    }
+    .finding__cite {
+      margin-left: var(--sp-xs);
+      font-size: 11px;
+    }
+    .passed {
+      margin-top: var(--sp-md);
+    }
+    .passed summary {
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--primary);
+    }
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-xs);
+      margin-top: var(--sp-md);
+    }
+    .keyword {
+      background: var(--cloud);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-sm);
+      padding: 4px 10px;
+      font-size: 12.5px;
+    }
+    .repos {
+      margin-top: var(--sp-md);
+    }
+    .repo {
+      display: flex;
+      align-items: baseline;
+      gap: var(--sp-md);
+      flex-wrap: wrap;
+      padding: var(--sp-xs) 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .timeline {
+      margin-top: var(--sp-md);
+    }
+    .tl {
+      display: grid;
+      grid-template-columns: 96px auto minmax(0, 1fr);
+      gap: var(--sp-sm);
+      align-items: baseline;
+      padding: var(--sp-xs) 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+    @media (max-width: 767px) {
+      .tl {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 4px;
+      }
+    }
+    .tl__date {
+      font-size: 12px;
+      color: var(--graphite);
+    }
+    .tl__title {
+      font-size: 14px;
+    }
+  </style>
+</Base>

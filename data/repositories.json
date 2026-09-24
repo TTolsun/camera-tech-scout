@@ -1,0 +1,120 @@
+{
+  "repositories": [
+    {
+      "full_name": "intel/ipu6-camera-hal",
+      "org": "intel",
+      "name": "ipu6-camera-hal",
+      "url": "https://github.com/intel/ipu6-camera-hal",
+      "default_branch": "HEAD",
+      "head_sha": "6fefa86dfa14bb33d908a46f104a96c59b41c7eb",
+      "last_scanned_sha": "6fefa86dfa14bb33d908a46f104a96c59b41c7eb",
+      "last_scan_time": "2026-09-23T17:20:14.844208+00:00",
+      "scan_mode": "full",
+      "status": "ok",
+      "status_detail": "",
+      "files_scanned": 601,
+      "evidence_count": 61,
+      "candidate_count": 0,
+      "topics": [
+        "3a",
+        "camera-driver",
+        "camera-framework",
+        "camera-hal",
+        "camera-pipeline",
+        "computational-photography",
+        "debug-profiling",
+        "image-quality"
+      ],
+      "description": "",
+      "stars": 51,
+      "language": "C",
+      "pushed_at": "2026-08-19T08:07:51Z",
+      "topicLabels": [
+        "3A 제어",
+        "Camera Driver 계층",
+        "Camera Framework",
+        "Camera HAL",
+        "Camera Pipeline",
+        "Computational Photography",
+        "디버깅 및 프로파일링",
+        "화질"
+      ],
+      "evidenceCount": 61,
+      "candidateCount": 29
+    },
+    {
+      "full_name": "raspberrypi/libcamera",
+      "org": "raspberrypi",
+      "name": "libcamera",
+      "url": "https://github.com/raspberrypi/libcamera",
+      "default_branch": "HEAD",
+      "head_sha": "6c1dd9d55573010f710c9e190a73e7e76f0d9432",
+      "last_scanned_sha": "6c1dd9d55573010f710c9e190a73e7e76f0d9432",
+      "last_scan_time": "2026-09-23T17:21:58.092018+00:00",
+      "scan_mode": "full",
+      "status": "ok",
+      "status_detail": "",
+      "files_scanned": 1205,
+      "evidence_count": 332,
+      "candidate_count": 0,
+      "topics": [
+        "3a",
+        "ai-camera",
+        "camera-driver",
+        "camera-framework",
+        "camera-hal",
+        "camera-pipeline",
+        "computational-photography",
+        "debug-profiling"
+      ],
+      "description": "",
+      "stars": 481,
+      "language": "C++",
+      "pushed_at": "2026-09-01T08:48:42Z",
+      "topicLabels": [
+        "3A 제어",
+        "AI 카메라 처리",
+        "Camera Driver 계층",
+        "Camera Framework",
+        "Camera HAL",
+        "Camera Pipeline",
+        "Computational Photography",
+        "디버깅 및 프로파일링"
+      ],
+      "evidenceCount": 332,
+      "candidateCount": 36
+    },
+    {
+      "full_name": "raspberrypi/libpisp",
+      "org": "raspberrypi",
+      "name": "libpisp",
+      "url": "https://github.com/raspberrypi/libpisp",
+      "default_branch": "HEAD",
+      "head_sha": "f8a5eb2af4c5dea76442785ef42b2fb1aa9e62f9",
+      "last_scanned_sha": "f8a5eb2af4c5dea76442785ef42b2fb1aa9e62f9",
+      "last_scan_time": "2026-09-23T17:22:10.007335+00:00",
+      "scan_mode": "full",
+      "status": "ok",
+      "status_detail": "",
+      "files_scanned": 68,
+      "evidence_count": 16,
+      "candidate_count": 0,
+      "topics": [
+        "camera-driver",
+        "isp",
+        "memory-buffer"
+      ],
+      "description": "",
+      "stars": 14,
+      "language": "C++",
+      "pushed_at": "2026-08-07T09:07:08Z",
+      "topicLabels": [
+        "Camera Driver 계층",
+        "ISP 처리",
+        "Buffer 및 메모리 관리"
+      ],
+      "evidenceCount": 16,
+      "candidateCount": 9
+    }
+  ]
+}

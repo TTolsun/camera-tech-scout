@@ -1,0 +1,298 @@
+---
+/**
+ * Technology Map.
+ *
+ * The graph is shown as a readable hierarchy rather than a force-directed blob:
+ * the requirement is to explore relationships, and a labelled table beats an
+ * unreadable node cloud at this density.
+ */
+import Base from '../layouts/Base.astro';
+import { technologyMap } from '../lib/data';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const technologies = technologyMap.technologies ?? [];
+const graph = technologyMap.graph ?? { nodes: [], edges: [], counts: {} };
+const cross = technologyMap.crossRepositoryTechnologies ?? [];
+
+const layerLabel: Record<string, string> = {
+  organization: 'Organization',
+  repository: 'Repository',
+  component: 'Component',
+  technology: 'Technology',
+  problem: 'Problem',
+  mechanism: 'Mechanism',
+  candidate: 'Candidate',
+};
+const layers = [
+  'organization',
+  'repository',
+  'component',
+  'technology',
+  'problem',
+  'mechanism',
+  'candidate',
+];
+
+const nodesByType = Object.fromEntries(
+  layers.map((layer) => [
+    layer,
+    (graph.nodes ?? [])
+      .filter((node: any) => node.type === layer)
+      .sort((a: any, b: any) => b.weight - a.weight),
+  ]),
+);
+
+const maxWeight = Math.max(1, ...technologies.map((t: any) => t.weight ?? 0));
+---
+
+<Base
+  title="Technology Map"
+  active="technology-map"
+  description="Repository와 기술, 문제, 메커니즘 사이의 관계입니다."
+>
+  <section class="band band--tight">
+    <div class="container">
+      <p class="eyebrow">Technology Map</p>
+      <h1>기술 관계도</h1>
+      <p class="lead">
+        파일 단위 분석에서 끝내지 않고 Repository와 기술 사이의 관계를 구축합니다. 아래 계층은
+        Organization에서 시작해 후보까지 이어지며, 모든 연결은 최소 한 건의 Evidence에 근거합니다.
+      </p>
+      <pre class="quote hierarchy">Organization
+  └ Repository
+      └ Component
+          └ Technology
+              └ Problem
+                  └ Mechanism
+                      └ Patent / Paper Candidate</pre>
+    </div>
+  </section>
+
+  <section class="band band--cloud">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">계층 규모</p>
+          <h2>Graph 구성</h2>
+        </div>
+      </div>
+      <div class="grid grid--4">
+        {
+          layers.map((layer) => (
+            <div class="stat">
+              <span class="stat__value">{graph.counts?.[layer] ?? 0}</span>
+              <span class="stat__label">{layerLabel[layer]}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">기술 영역별</p>
+          <h2>Technology 요약</h2>
+        </div>
+        <p class="caption">가중치는 해당 기술 영역에서 관측된 신호의 합입니다.</p>
+      </div>
+
+      {technologies.length === 0 && <p class="muted">아직 식별된 기술 영역이 없습니다.</p>}
+
+      <div class="stack">
+        {
+          technologies.map((row: any) => (
+            <article class="card card--flat tech">
+              <div class="tech__head">
+                <h3 class="card-title">
+                  {row.technologyLabel}
+                  <span class="fine mono"> {row.technology}</span>
+                </h3>
+                <div class="badge-row">
+                  {row.crossRepository && (
+                    <span class="badge badge--ink badge--sm">여러 Repository 공통</span>
+                  )}
+                  <span class="badge badge--quiet badge--sm">Evidence {row.evidenceCount}건</span>
+                </div>
+              </div>
+
+              <span class="meter__track tech__bar">
+                <span
+                  class="meter__fill"
+                  style={`width:${Math.max(2, ((row.weight ?? 0) / maxWeight) * 100)}%`}
+                />
+              </span>
+
+              <div class="grid grid--3 tech__grid">
+                <div>
+                  <p class="eyebrow">Repository</p>
+                  <ul class="list-none">
+                    {row.repositories.map((name: string) => (
+                      <li class="mono fine">{name}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p class="eyebrow">보고된 문제</p>
+                  <div class="badge-row">
+                    {(row.problemLabels ?? []).map((label: string) => (
+                      <span class="badge badge--quiet badge--sm">{label}</span>
+                    ))}
+                    {(row.problemLabels ?? []).length === 0 && <span class="fine">없음</span>}
+                  </div>
+                </div>
+                <div>
+                  <p class="eyebrow">사용된 메커니즘</p>
+                  <div class="badge-row">
+                    {(row.mechanismLabels ?? []).map((label: string) => (
+                      <span class="badge badge--outline badge--sm">{label}</span>
+                    ))}
+                    {(row.mechanismLabels ?? []).length === 0 && <span class="fine">없음</span>}
+                  </div>
+                </div>
+              </div>
+
+              {(row.candidates ?? []).length > 0 && (
+                <div class="tech__cands">
+                  <p class="eyebrow">이 기술에서 나온 후보</p>
+                  <ul class="list-plain">
+                    {row.candidates.map((candidate: any) => (
+                      <li>
+                        <a href={`${base}/discoveries/${candidate.slug}/`}>{candidate.title}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  {
+    cross.length > 0 && (
+      <section class="band band--cloud">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Repository 간 관계</p>
+              <h2>여러 Repository가 함께 구현하는 기술</h2>
+            </div>
+          </div>
+          <p class="lead">
+            서로 다른 Repository가 같은 기술을 구현하거나 발전시키는 경우입니다. 하나의 기술 후보가
+            여러 Repository에 걸쳐 있을 수 있으므로, 이 목록이 후보 통합의 출발점이 됩니다.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>기술 영역</th>
+                  <th>Repository</th>
+                  <th class="num">Evidence</th>
+                  <th>메커니즘</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cross.map((row: any) => (
+                  <tr>
+                    <td>
+                      <strong>{row.technologyLabel}</strong>
+                    </td>
+                    <td class="mono fine">{row.repositories.join(', ')}</td>
+                    <td class="num">{row.evidenceCount}</td>
+                    <td class="fine">{(row.mechanismLabels ?? []).join(', ')}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <section class="band">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Graph 원본</p>
+          <h2>계층별 노드</h2>
+        </div>
+        <p class="caption">각 노드의 수치는 신호 가중치 합이며, 괄호 안은 연결된 Evidence 수입니다.</p>
+      </div>
+
+      <div class="grid grid--2">
+        {
+          layers.map((layer) => (
+            <details class="card card--flat">
+              <summary class="layer__summary">
+                {layerLabel[layer]}
+                <span class="fine"> {nodesByType[layer]?.length ?? 0}개</span>
+              </summary>
+              <ul class="list-none layer__list">
+                {(nodesByType[layer] ?? []).slice(0, 40).map((node: any) => (
+                  <li class="layer__row">
+                    <span class="layer__name">{node.label}</span>
+                    <span class="mono fine">
+                      {node.weight.toFixed(1)} ({node.evidenceCount})
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .hierarchy {
+      margin-top: var(--sp-md);
+      max-width: 52ch;
+    }
+    .tech__head {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--sp-md);
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .tech__bar {
+      display: block;
+      margin: var(--sp-sm) 0 var(--sp-md);
+    }
+    .tech__grid {
+      gap: var(--sp-lg);
+    }
+    .tech__cands {
+      margin-top: var(--sp-md);
+      padding-top: var(--sp-sm);
+      border-top: 1px solid var(--hairline);
+    }
+    .layer__summary {
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .layer__list {
+      margin-top: var(--sp-sm);
+    }
+    .layer__row {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--sp-md);
+      padding: 4px 0;
+      border-bottom: 1px solid var(--hairline);
+      font-size: 14px;
+    }
+    .layer__name {
+      word-break: break-word;
+    }
+  </style>
+</Base>

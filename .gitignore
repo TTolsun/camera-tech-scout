@@ -1,0 +1,30 @@
+# Clone cache and scan state.
+# `candidates.sqlite3` is committed by the weekly workflow so that incremental
+# scanning survives across runs; everything else under .cache is disposable.
+.cache/*
+!.cache/candidates.sqlite3
+
+# Dry-run output. Never committed: a dry run must leave no trace.
+data-dryrun/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Node and Astro
+node_modules/
+site/dist/
+site/.astro/
+.DS_Store
+
+# Logs
+*.log
+dry-run-summary.txt
+weekly-summary.txt
+
+# Local editor and tooling scratch
+.claude/

@@ -1,0 +1,184 @@
+---
+import Base from '../layouts/Base.astro';
+import EvidenceItem from '../components/EvidenceItem.astro';
+import { evidence } from '../lib/data';
+
+const rows = evidence.evidence ?? [];
+const counts = evidence.counts ?? { total: 0, byKind: {}, byRepository: {} };
+
+const kinds = [...new Set(rows.map((r: any) => r.kind))];
+const kindLabelOf = (kind: string) =>
+  rows.find((r: any) => r.kind === kind)?.kindLabel ?? kind;
+const repos = [...new Set(rows.map((r: any) => r.repository))].sort();
+---
+
+<Base
+  title="Evidence"
+  active="evidence"
+  description="후보의 근거가 되는 모든 관측 기록입니다."
+>
+  <section class="band band--tight">
+    <div class="container">
+      <p class="eyebrow">Evidence</p>
+      <h1>근거 기록 {counts.total}건</h1>
+      <p class="lead">
+        모든 후보는 이 목록의 항목에 연결되어 있습니다. 각 항목은 Repository, 파일 경로, 심볼명,
+        라인 범위, Commit SHA, PR 또는 Issue 번호를 담고 있으며, 원본을 바로 열 수 있습니다.
+        인용문은 원문 그대로 보존합니다. 번역한 인용문은 근거로 쓸 수 없기 때문입니다.
+      </p>
+    </div>
+  </section>
+
+  <section class="band band--cloud">
+    <div class="container">
+      <div class="filters">
+        <div class="filter-group">
+          <label class="filter-label" for="kind-filter">종류</label>
+          <select id="kind-filter" data-filter="kind">
+            <option value="all">전체 ({counts.total})</option>
+            {
+              kinds.map((kind: string) => (
+                <option value={kind}>
+                  {kindLabelOf(kind)} ({counts.byKind?.[kind] ?? 0})
+                </option>
+              ))
+            }
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label" for="repo-filter">Repository</label>
+          <select id="repo-filter" data-filter="repository">
+            <option value="all">전체</option>
+            {
+              repos.map((repo: string) => (
+                <option value={repo}>
+                  {repo} ({counts.byRepository?.[repo] ?? 0})
+                </option>
+              ))
+            }
+          </select>
+        </div>
+
+        <div class="filter-group grow">
+          <label class="filter-label" for="text-filter">본문 검색</label>
+          <input id="text-filter" type="search" placeholder="심볼명, 경로, 인용문에서 찾기" />
+        </div>
+      </div>
+
+      <p class="caption" id="evidence-status">Evidence {rows.length}건을 표시하고 있습니다.</p>
+
+      <div id="evidence-list">
+        {
+          rows.map((item: any) => (
+            <div
+              class="ev-slot"
+              data-kind={item.kind}
+              data-repository={item.repository}
+              data-text={`${item.title} ${item.location} ${item.snippet}`.toLowerCase()}
+            >
+              <EvidenceItem item={item} />
+            </div>
+          ))
+        }
+      </div>
+
+      {rows.length === 0 && <p class="muted">수집된 Evidence가 없습니다.</p>}
+    </div>
+  </section>
+
+  <style>
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-xl);
+      align-items: flex-end;
+      margin-bottom: var(--sp-md);
+    }
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .filter-group.grow {
+      flex: 1 1 260px;
+    }
+    .filter-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: var(--graphite);
+    }
+    select,
+    input[type='search'] {
+      height: 44px;
+      padding: var(--sp-sm) var(--sp-md);
+      border: 1px solid var(--steel);
+      border-radius: var(--r-md);
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 14px;
+      width: 100%;
+    }
+    select:focus,
+    input[type='search']:focus {
+      outline: none;
+      border-color: var(--ink);
+    }
+    #evidence-list > .ev-slot + .ev-slot {
+      margin-top: var(--sp-xs);
+    }
+    .ev-slot[hidden] {
+      display: none;
+    }
+  </style>
+
+  <script>
+    const list = document.getElementById('evidence-list');
+    const status = document.getElementById('evidence-status');
+    if (list && status) {
+      const slots = Array.from(list.querySelectorAll<HTMLElement>('.ev-slot'));
+      const state = { kind: 'all', repository: 'all', text: '' };
+
+      // A repository can be pre-selected from the Repositories page.
+      const params = new URLSearchParams(window.location.search);
+      const requestedRepo = params.get('repo');
+      if (requestedRepo) state.repository = requestedRepo;
+
+      function apply() {
+        let visible = 0;
+        for (const slot of slots) {
+          const matches =
+            (state.kind === 'all' || slot.dataset.kind === state.kind) &&
+            (state.repository === 'all' || slot.dataset.repository === state.repository) &&
+            (state.text === '' || (slot.dataset.text ?? '').includes(state.text));
+          slot.hidden = !matches;
+          if (matches) visible += 1;
+        }
+        status.textContent =
+          visible === slots.length
+            ? `Evidence ${slots.length}건을 표시하고 있습니다.`
+            : `Evidence ${slots.length}건 중 ${visible}건이 조건에 맞습니다.`;
+      }
+
+      for (const select of document.querySelectorAll<HTMLSelectElement>('select[data-filter]')) {
+        const key = select.dataset.filter as 'kind' | 'repository';
+        if (state[key] !== 'all') select.value = state[key];
+        select.addEventListener('change', () => {
+          state[key] = select.value;
+          apply();
+        });
+      }
+
+      const textInput = document.getElementById('text-filter') as HTMLInputElement | null;
+      textInput?.addEventListener('input', () => {
+        state.text = textInput.value.trim().toLowerCase();
+        apply();
+      });
+
+      apply();
+    }
+  </script>
+</Base>

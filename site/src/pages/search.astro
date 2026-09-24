@@ -1,0 +1,162 @@
+---
+/**
+ * Lightweight client-side search.
+ *
+ * The index is a small JSON array the pipeline already produced, so the site
+ * stays a static bundle with no search service and no WASM download. At this
+ * corpus size a substring-and-token scorer is both faster and more predictable
+ * than a full-text engine.
+ */
+import Base from '../layouts/Base.astro';
+import { searchIndex } from '../lib/data';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const indexJson = JSON.stringify(searchIndex);
+---
+
+<Base title="Search" description="후보와 Repository를 검색합니다.">
+  <section class="band band--tight">
+    <div class="container">
+      <p class="eyebrow">Search</p>
+      <h1>검색</h1>
+      <p class="lead">
+        후보 제목, 요약, 문제와 메커니즘 서술, 선행기술 검색어, Repository 이름을 대상으로
+        검색합니다. 색인 항목은 {searchIndex.length}건입니다.
+      </p>
+
+      <form class="search-form" role="search" id="search-form">
+        <label class="visually-hidden" for="q">검색어</label>
+        <input id="q" name="q" type="search" placeholder="예: 동기화, buffer, prediction" autocomplete="off" />
+        <button class="btn btn--primary" type="submit">검색</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="band band--cloud">
+    <div class="container">
+      <p class="caption" id="search-status">검색어를 입력하십시오.</p>
+      <div class="stack" id="search-results"></div>
+    </div>
+  </section>
+
+  <script type="application/json" id="search-index" set:html={indexJson} />
+
+  <script>
+    type Row = { type: string; id: string; title: string; body: string; url: string; slug?: string };
+
+    const raw = document.getElementById('search-index')?.textContent ?? '[]';
+    const rows: Row[] = JSON.parse(raw);
+    const base = document.body.dataset.base ?? '';
+
+    const input = document.getElementById('q') as HTMLInputElement | null;
+    const form = document.getElementById('search-form');
+    const status = document.getElementById('search-status');
+    const results = document.getElementById('search-results');
+
+    const typeLabel: Record<string, string> = {
+      candidate: '후보',
+      repository: 'Repository',
+    };
+
+    function score(row: Row, terms: string[]): number {
+      const title = row.title.toLowerCase();
+      const body = (row.body ?? '').toLowerCase();
+      let total = 0;
+      for (const term of terms) {
+        if (title.includes(term)) total += 10;
+        if (body.includes(term)) total += 3;
+      }
+      // Every term has to appear somewhere, so unrelated rows score zero.
+      const all = terms.every((term) => title.includes(term) || body.includes(term));
+      return all ? total : 0;
+    }
+
+    function excerpt(row: Row, terms: string[]): string {
+      const body = row.body ?? '';
+      const lowered = body.toLowerCase();
+      const at = terms.map((t) => lowered.indexOf(t)).filter((i) => i >= 0).sort((a, b) => a - b)[0];
+      if (at === undefined) return body.slice(0, 180);
+      const start = Math.max(0, at - 70);
+      return (start > 0 ? '…' : '') + body.slice(start, start + 200).trim() + '…';
+    }
+
+    function run(query: string) {
+      if (!status || !results) return;
+      results.innerHTML = '';
+      const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+      if (terms.length === 0) {
+        status.textContent = '검색어를 입력하십시오.';
+        return;
+      }
+      const matched = rows
+        .map((row) => ({ row, value: score(row, terms) }))
+        .filter((entry) => entry.value > 0)
+        .sort((a, b) => b.value - a.value)
+        .slice(0, 50);
+
+      status.textContent =
+        matched.length === 0
+          ? `"${query}"와 일치하는 항목이 없습니다.`
+          : `"${query}" 검색 결과 ${matched.length}건입니다.`;
+
+      for (const { row } of matched) {
+        const article = document.createElement('article');
+        article.className = 'card card--flat';
+
+        const badge = document.createElement('span');
+        badge.className = 'badge badge--quiet badge--sm';
+        badge.textContent = typeLabel[row.type] ?? row.type;
+
+        const heading = document.createElement('h3');
+        heading.className = 'card-title';
+        const link = document.createElement('a');
+        link.href = base + row.url;
+        link.textContent = row.title;
+        heading.appendChild(link);
+
+        const snippet = document.createElement('p');
+        snippet.className = 'muted';
+        snippet.textContent = excerpt(row, terms);
+
+        article.append(badge, heading, snippet);
+        results.appendChild(article);
+      }
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const initial = params.get('q') ?? '';
+    if (input) {
+      input.value = initial;
+      input.addEventListener('input', () => run(input.value.trim()));
+    }
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      run(input?.value.trim() ?? '');
+    });
+    if (initial) run(initial.trim());
+  </script>
+
+  <style>
+    .search-form {
+      display: flex;
+      gap: var(--sp-xs);
+      margin-top: var(--sp-xl);
+      max-width: 560px;
+    }
+    .search-form input {
+      flex: 1 1 auto;
+      height: 44px;
+      padding: var(--sp-sm) var(--sp-md);
+      border: 1px solid var(--steel);
+      border-radius: var(--r-md);
+      font-family: var(--font);
+      font-size: 16px;
+      color: var(--ink);
+      background: var(--canvas);
+    }
+    .search-form input:focus {
+      outline: none;
+      border-color: var(--ink);
+    }
+  </style>
+</Base>

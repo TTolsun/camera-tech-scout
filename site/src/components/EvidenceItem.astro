@@ -1,0 +1,55 @@
+---
+/**
+ * One evidence record.
+ *
+ * The location line and the outbound link are the point of this component: a
+ * reader has to be able to open the exact place the claim came from. Quotes keep
+ * their original language, because a translated quote is no longer evidence.
+ */
+import type { EvidenceRow } from '../lib/data';
+
+interface Props {
+  item: EvidenceRow;
+  showSignals?: boolean;
+}
+const { item, showSignals = true } = Astro.props;
+---
+<article class="evidence" id={item.id}>
+  <div class="evidence__head">
+    <span class="badge badge--quiet badge--sm">{item.kindLabel}</span>
+    <strong class="evidence__title">{item.title || item.path || item.ref}</strong>
+    {item.url && <a class="evidence__link" href={item.url} target="_blank" rel="noopener noreferrer">원본 열기 &rarr;</a>}
+  </div>
+
+  <p class="evidence__loc">{item.location}</p>
+
+  {item.snippet && <pre class="quote">{item.snippet}</pre>}
+
+  {showSignals && item.signalSummary?.length > 0 && (
+    <ul class="list-none signals">
+      {item.signalSummary.map((group) => (
+        <li class="signal">
+          <span class="signal__label">{group.label}</span>
+          <span class="signal__terms mono">{group.terms.join(', ')}</span>
+        </li>
+      ))}
+    </ul>
+  )}
+
+  {(item.first_seen_commit || item.observed_at) && (
+    <p class="fine evidence__meta">
+      {item.observed_at && <span>관측 시점 {item.observed_at}</span>}
+      {item.first_seen_commit && <span class="mono"> · 최초 발견 commit {item.first_seen_commit.slice(0, 10)}</span>}
+    </p>
+  )}
+</article>
+
+<style>
+  .evidence__title { font-size: 15px; font-weight: 500; }
+  .evidence__link { font-size: 13px; margin-left: auto; white-space: nowrap; }
+  .signals { display: flex; flex-wrap: wrap; gap: var(--sp-xs) var(--sp-md); margin-top: var(--sp-xs); }
+  .signal { display: flex; gap: 6px; align-items: baseline; font-size: 12px; }
+  .signal__label { color: var(--graphite); font-weight: 500; }
+  .signal__terms { color: var(--charcoal); }
+  .evidence__meta { margin: var(--sp-xs) 0 0; }
+</style>

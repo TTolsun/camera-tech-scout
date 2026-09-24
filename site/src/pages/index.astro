@@ -1,0 +1,296 @@
+---
+import Base from '../layouts/Base.astro';
+import CandidateCard from '../components/CandidateCard.astro';
+import { overview, meta, dataAvailable, formatDateTime } from '../lib/data';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const c = overview.counts ?? {};
+
+const primaryStats = [
+  { value: overview.organizationCount, label: '분석 Organization' },
+  { value: overview.repositoryCount, label: '분석 Repository' },
+  { value: overview.evidenceCount, label: '수집 Evidence' },
+  { value: overview.candidateCount, label: '검증 통과 후보' },
+];
+
+const candidateStats = [
+  { value: c.new ?? 0, label: '신규 후보' },
+  { value: (c.patent ?? 0) + (c.patentAndPaper ?? 0), label: 'Patent 후보' },
+  { value: (c.paper ?? 0) + (c.patentAndPaper ?? 0), label: 'Paper 후보' },
+  { value: c.highEvidence ?? 0, label: 'High Evidence 후보' },
+];
+
+const changeStats = [
+  { value: c.strengthened ?? 0, label: '근거 강화' },
+  { value: c.weakened ?? 0, label: '근거 약화' },
+  { value: c.needsVerification ?? 0, label: '확인 필요' },
+  { value: c.rejected ?? 0, label: '반박됨' },
+];
+---
+
+<Base
+  title="Overview"
+  active="overview"
+  description="Camera Software 분야의 특허 및 논문 후보를 증거 기반으로 자동 발굴한 결과입니다."
+>
+  <section class="band">
+    <div class="container">
+      <div class="hero">
+        <span class="hero__chevron hero__chevron--left" aria-hidden="true"></span>
+        <span class="hero__chevron hero__chevron--right" aria-hidden="true"></span>
+        <div class="hero__body">
+          <p class="eyebrow">R&amp;D Technology Portal</p>
+          <h1>Camera Software 기술 후보 발굴</h1>
+          <p class="lead hero__lead">
+            지정된 GitHub Organization과 Repository를 주 1회 탐색하여, Camera HAL, ISP, 3A,
+            Sensor 동기화, Buffer 관리 등의 영역에서 특허 및 논문 후보를 찾습니다. 모든 후보는
+            실제 코드, 문서, Commit, Pull Request, Issue에 연결되어 있으며, 근거가 부족한 항목은
+            숨기지 않고 <span class="marker">UNKNOWN</span>
+            <span class="marker">LOW_CONFIDENCE</span>
+            <span class="marker">NEEDS_VERIFICATION</span>
+            으로 표시합니다.
+          </p>
+          <div class="badge-row hero__actions">
+            <a class="btn btn--primary" href={`${base}/discoveries/`}>후보 목록 보기</a>
+            <a class="btn btn--outline" href={`${base}/technology-map/`}>Technology Map</a>
+          </div>
+        </div>
+      </div>
+
+      {
+        !dataAvailable && (
+          <div class="card card--flat notice">
+            <h3>아직 분석 결과가 없습니다</h3>
+            <p class="muted">
+              파이프라인을 한 번 실행하면 이 페이지가 채워집니다. 오프라인 fixture로 즉시 확인하려면
+              다음 명령을 실행하십시오.
+            </p>
+            <pre class="quote">python -m scout scan --fixture --dry-run</pre>
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <section class="band band--cloud">
+    <div class="container stack-lg">
+      <div>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">분석 범위</p>
+            <h2>이번 실행이 다룬 범위</h2>
+          </div>
+          <p class="caption">
+            마지막 분석 {formatDateTime(overview.lastScanTime ?? meta.generatedAt)} · 실행 모드
+            <strong>{meta.mode || '미실행'}</strong>
+          </p>
+        </div>
+        <div class="grid grid--4">
+          {
+            primaryStats.map((stat) => (
+              <div class="stat">
+                <span class="stat__value">{stat.value}</span>
+                <span class="stat__label">{stat.label}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">후보 구성</p>
+            <h2>발굴된 후보</h2>
+          </div>
+          <a href={`${base}/discoveries/`}>전체 후보 보기 &rarr;</a>
+        </div>
+        <div class="grid grid--4">
+          {
+            candidateStats.map((stat) => (
+              <div class="stat">
+                <span class="stat__value">{stat.value}</span>
+                <span class="stat__label">{stat.label}</span>
+              </div>
+            ))
+          }
+        </div>
+        <p class="fine stat-note">
+          Patent 후보와 Paper 후보 집계에는 두 성격을 함께 가진 후보가 각각 포함됩니다. High
+          Evidence는 증거 강도 60점 이상을 뜻합니다.
+        </p>
+      </div>
+
+      <div>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">직전 실행 대비 변화</p>
+            <h2>상태 변화</h2>
+          </div>
+          <a href={`${base}/recent/`}>최근 변화 보기 &rarr;</a>
+        </div>
+        <div class="grid grid--4">
+          {
+            changeStats.map((stat) => (
+              <div class="stat">
+                <span class="stat__value">{stat.value}</span>
+                <span class="stat__label">{stat.label}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {
+    overview.recentTechnologyChanges?.length > 0 && (
+      <section class="band">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">기술 영역</p>
+              <h2>최근 기술 변화</h2>
+            </div>
+            <a href={`${base}/technology-map/`}>Technology Map &rarr;</a>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>기술 영역</th>
+                  <th class="num">Evidence</th>
+                  <th class="num">후보</th>
+                  <th class="num">신규 후보</th>
+                </tr>
+              </thead>
+              <tbody>
+                {overview.recentTechnologyChanges.map((row: any) => (
+                  <tr>
+                    <td>
+                      <strong>{row.technologyLabel}</strong>
+                      <span class="fine"> {row.technology}</span>
+                    </td>
+                    <td class="num">{row.evidenceCount}</td>
+                    <td class="num">{row.candidateCount}</td>
+                    <td class="num">{row.newCandidates}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    overview.topCandidates?.length > 0 && (
+      <section class="band band--cloud">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">우선 검토 대상</p>
+              <h2>상위 후보</h2>
+            </div>
+            <a href={`${base}/discoveries/`}>전체 후보 보기 &rarr;</a>
+          </div>
+          <div class="grid grid--3">
+            {overview.topCandidates.map((candidate: any, index: number) => (
+              <CandidateCard candidate={candidate} featured={index === 0} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <section class="band">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">스캔 상태</p>
+          <h2>수집 건전성</h2>
+        </div>
+        <a href={`${base}/history/`}>Analysis History &rarr;</a>
+      </div>
+      <div class="grid grid--4">
+        <div class="card card--flat">
+          <p class="card-title">정상 완료</p>
+          <span class="stat__value">{overview.scanHealth?.repositoriesOk ?? 0}</span>
+          <p class="fine">Repository 전체를 예산 안에서 분석했습니다.</p>
+        </div>
+        <div class="card card--flat">
+          <p class="card-title">부분 완료</p>
+          <span class="stat__value">{overview.scanHealth?.repositoriesPartial ?? 0}</span>
+          <p class="fine">파일 예산이나 히스토리 범위 제한으로 일부만 분석했습니다.</p>
+        </div>
+        <div class="card card--flat">
+          <p class="card-title">실패</p>
+          <span class="stat__value">{overview.scanHealth?.repositoriesError ?? 0}</span>
+          <p class="fine">clone 또는 fetch 단계에서 실패했습니다.</p>
+        </div>
+        <div class="card card--flat">
+          <p class="card-title">API 문제</p>
+          <span class="stat__value">{overview.scanHealth?.apiProblemCount ?? 0}</span>
+          <p class="fine">GitHub API가 응답하지 않은 요청 수입니다.</p>
+        </div>
+      </div>
+
+      {
+        overview.evidenceByKind?.length > 0 && (
+          <>
+            <hr class="divider" />
+            <p class="eyebrow">Evidence 구성</p>
+            <ul class="list-none kind-row">
+              {overview.evidenceByKind.map((row: any) => (
+                <li class="kind">
+                  <span class="kind__count">{row.count}</span>
+                  <span class="kind__label">{row.label}</span>
+                </li>
+              ))}
+            </ul>
+          </>
+        )
+      }
+    </div>
+  </section>
+
+  <style>
+    .hero__lead {
+      margin-top: var(--sp-md);
+      color: var(--ink);
+    }
+    .hero__actions {
+      margin-top: var(--sp-xl);
+    }
+    .notice {
+      margin-top: var(--sp-xxl);
+    }
+    .stat-note {
+      margin-top: var(--sp-sm);
+    }
+    .kind-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-md);
+      margin-top: var(--sp-sm);
+    }
+    .kind {
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-lg);
+      padding: var(--sp-xs) var(--sp-md);
+      display: flex;
+      align-items: baseline;
+      gap: var(--sp-xs);
+    }
+    .kind__count {
+      font-size: 20px;
+      font-weight: 500;
+    }
+    .kind__label {
+      font-size: 14px;
+      color: var(--graphite);
+    }
+  </style>
+</Base>

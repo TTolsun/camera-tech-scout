@@ -1,0 +1,55 @@
+{
+  "runId": "run_20260923T171848Z",
+  "mode": "live",
+  "startedAt": "2026-09-23T17:18:48.227123+00:00",
+  "generatedAt": "2026-09-23T17:22:19.539612+00:00",
+  "dryRun": false,
+  "configPath": "sources.yaml",
+  "engine": {
+    "enabled": false,
+    "runner": "hermes",
+    "base_url": "http://localhost:8000/v1",
+    "api_key_env": "SCOUT_LLM_API_KEY",
+    "model": "qwen",
+    "scout_model": "",
+    "critic_model": "",
+    "scout_temperature": 0.3,
+    "critic_temperature": 0.0,
+    "timeout_seconds": 120,
+    "max_candidates": 40,
+    "skipped": true,
+    "skipReason": "설정에서 LLM 계층이 비활성화되어 있습니다.",
+    "rulesEngine": "always active"
+  },
+  "labels": {
+    "status": {
+      "NEW": "신규",
+      "STRENGTHENED": "근거 강화",
+      "WEAKENED": "근거 약화",
+      "UPDATED": "내용 변경",
+      "REJECTED": "반박됨",
+      "NEEDS_VERIFICATION": "확인 필요",
+      "UNCHANGED": "변화 없음"
+    },
+    "verdict": {
+      "accepted": "통과",
+      "accepted_with_reservations": "유보 조건부 통과",
+      "rejected": "반박됨"
+    },
+    "type": {
+      "patent": "Patent 후보",
+      "paper": "Paper 후보",
+      "patent+paper": "Patent + Paper 후보"
+    },
+    "evidenceKind": {
+      "code": "Source Code",
+      "doc": "문서",
+      "commit": "Commit",
+      "pull_request": "Pull Request",
+      "issue": "Issue",
+      "release": "Release",
+      "config": "설정 및 빌드 파일"
+    }
+  },
+  "disclaimer": "이 사이트의 모든 후보는 공개 Repository에서 자동으로 수집한 증거에 근거합니다. Novelty Confidence는 추가 조사의 우선순위를 나타내는 값이며, 특허 신규성 판단이 아닙니다. UNKNOWN, LOW_CONFIDENCE, NEEDS_VERIFICATION 표시는 해당 항목을 뒷받침하는 증거가 부족하다는 뜻입니다."
+}

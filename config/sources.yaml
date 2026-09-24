@@ -1,0 +1,137 @@
+# Camera Tech Scout - analysis target configuration.
+#
+# Adding or removing an analysis target only requires editing this file.
+# Every key under `defaults` can be overridden per organization or per repository.
+
+version: 1
+
+sources:
+  organizations:
+    - url: https://github.com/raspberrypi
+      enabled: true
+      # Only repositories whose name matches one of these patterns are taken
+      # from the organization listing. Remove the filter to take every repo.
+      #
+      # `rpicam-apps` is deliberately absent: it is roughly 260 MB because of
+      # bundled test assets, and cloning it dominates the runtime of a weekly
+      # scan. Add it here when that cost is acceptable.
+      match:
+        - libcamera
+        - libpisp
+      max_repositories: 12
+
+  repositories:
+    - url: https://github.com/intel/ipu6-camera-hal
+      enabled: true
+      notes: Intel IPU6 camera HAL, 3A and ISP control stack.
+
+    - url: https://github.com/raspberrypi/libcamera
+      enabled: true
+      notes: Raspberry Pi downstream of the libcamera framework.
+
+    - url: https://github.com/torvalds/linux
+      enabled: false
+      notes: Disabled by default. Far too large for a routine scan.
+
+defaults:
+  branches:
+    - HEAD
+
+  include:
+    - src/**
+    - lib/**
+    - libcamera/**
+    - include/**
+    - core/**
+    - camera/**
+    - modules/**
+    - docs/**
+    - Documentation/**
+    - "*.md"
+    - "*.rst"
+
+  exclude:
+    - third_party/**
+    - 3rdparty/**
+    - external/**
+    - vendor/**
+    - node_modules/**
+    - test/data/**
+    - tests/data/**
+    - generated/**
+    - "**/*.min.js"
+    - "**/*.pb.go"
+    - "**/*_pb2.py"
+
+    # Vendored upstream headers. They live inside the repository but describe
+    # somebody else's interface, so a finding there is not a finding about this
+    # project. libcamera carries a copy of the Android camera HAL headers.
+    - include/android/**
+    - "**/libhardware/**"
+    - "**/hardware/libhardware/**"
+    - "**/linux/**/uapi/**"
+
+  analysis:
+    code: true
+    documents: true
+    commits: true
+    pull_requests: true
+    issues: true
+    releases: true
+    discussions: false
+
+  limits:
+    clone_depth: 400          # commits fetched on a first full clone
+    max_files: 4000           # files scanned per repository
+    max_file_bytes: 400000    # files larger than this are skipped
+    max_commits: 400          # commits inspected per scan
+    max_pull_requests: 120
+    max_issues: 120
+    max_releases: 30
+
+engine:
+  # `rules` - deterministic, evidence-anchored analysis. Always executed.
+  # `llm`   - additionally run the model layer on top of the rules output. The
+  #           model may only refine prose that is already anchored to evidence
+  #           and may only add objections that cite a real evidence id. It can
+  #           never create evidence.
+  #
+  # The weekly run is executed by Hermes, which serves a Qwen model. That is one
+  # model, so the Scout and Critic roles are separated by system prompt and
+  # sampling rather than by model identity. The Critic runs at temperature 0 so
+  # that the same candidate is challenged the same way on every run.
+  scout: llm
+  critic: llm
+
+  llm:
+    enabled: true
+
+    # Who executes the run. Informational, and shown on the Analysis History page.
+    runner: hermes
+
+    # OpenAI-compatible endpoint. Works with a Hermes deployment that exposes the
+    # OpenAI shape, and also with vLLM, Ollama, llama.cpp server and LM Studio.
+    base_url: http://localhost:8000/v1
+    api_key_env: SCOUT_LLM_API_KEY
+
+    model: qwen
+
+    # Leave both empty to use `model` for both roles. Set them only if the
+    # deployment really has two different models.
+    scout_model: ""
+    critic_model: ""
+
+    scout_temperature: 0.3
+    critic_temperature: 0.0
+
+    timeout_seconds: 120
+
+    # Only the strongest candidates are sent to the model, so a weekly run has a
+    # predictable cost.
+    max_candidates: 40
+
+thresholds:
+  # A scout candidate below this evidence score is dropped before the critic
+  # ever sees it, so that weak noise never reaches the site.
+  min_evidence_score: 3
+  min_signal_kinds: 2

@@ -1,0 +1,58 @@
+---
+/** The workhorse tile: one candidate, enough signal to decide whether to open it. */
+import ScoreMeters from './ScoreMeters.astro';
+import StatusBadge from './StatusBadge.astro';
+import type { CandidateCard as Card } from '../lib/data';
+
+interface Props {
+  candidate: Card & { statusReason?: string };
+  featured?: boolean;
+}
+const { candidate, featured = false } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<article class:list={['card', 'cand', { 'card--featured': featured }]}>
+  <StatusBadge
+    type={candidate.type}
+    typeLabel={candidate.typeLabel}
+    status={candidate.status}
+    statusLabel={candidate.statusLabel}
+    verdict={candidate.verdict}
+    verdictLabel={candidate.verdictLabel}
+  />
+
+  <h3 class="cand__title">
+    <a href={`${base}/discoveries/${candidate.slug}/`}>{candidate.title}</a>
+  </h3>
+
+  <p class="cand__summary">{candidate.summary}</p>
+
+  {candidate.statusReason && <p class="fine cand__reason">{candidate.statusReason}</p>}
+
+  <dl class="kv cand__kv">
+    <dt>기술 영역</dt>
+    <dd>{candidate.topicLabel}</dd>
+    <dt>메커니즘</dt>
+    <dd>{candidate.mechanismLabel}</dd>
+    <dt>Repository</dt>
+    <dd class="mono cand__repos">{candidate.repositories.join(', ')}</dd>
+    <dt>증거</dt>
+    <dd>{candidate.evidenceCount}건</dd>
+  </dl>
+
+  <div class="cand__scores">
+    <ScoreMeters scores={candidate.scores} compact />
+  </div>
+</article>
+
+<style>
+  .cand { display: flex; flex-direction: column; gap: var(--sp-sm); height: 100%; }
+  .cand__title { font-size: 20px; line-height: 1.2; margin: 0; }
+  .cand__title a { color: var(--ink); }
+  .cand__title a:hover { color: var(--primary); }
+  .cand__summary { font-size: 15px; line-height: 1.5; color: var(--charcoal); margin: 0; }
+  .cand__reason { margin: 0; }
+  .cand__kv { margin: 0; }
+  .cand__repos { font-size: 12px; word-break: break-all; }
+  .cand__scores { margin-top: auto; padding-top: var(--sp-sm); border-top: 1px solid var(--hairline); }
+</style>

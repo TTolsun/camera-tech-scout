@@ -1,0 +1,359 @@
+---
+/**
+ * Page shell.
+ *
+ * Follows the DESIGN.md section rhythm: ink utility strip -> white nav with a
+ * hairline bottom border -> page body -> ink slab -> ink footer.
+ */
+import '../styles/global.css';
+import { meta, overview, formatDateTime } from '../lib/data';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Nav key of the current page, used for the active underline. */
+  active?: string;
+}
+
+const { title, description = '', active = '' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const href = (p: string) => `${base}${p}`;
+
+const nav = [
+  { key: 'overview', label: 'Overview', path: '/' },
+  { key: 'discoveries', label: 'Discoveries', path: '/discoveries/' },
+  { key: 'technology-map', label: 'Technology Map', path: '/technology-map/' },
+  { key: 'recent', label: 'Recent', path: '/recent/' },
+  { key: 'sources', label: 'Sources', path: '/sources/' },
+  { key: 'repositories', label: 'Repositories', path: '/repositories/' },
+  { key: 'rejected', label: 'Rejected Ideas', path: '/rejected/' },
+  { key: 'evidence', label: 'Evidence', path: '/evidence/' },
+  { key: 'history', label: 'Analysis History', path: '/history/' },
+  { key: 'about', label: 'About', path: '/about/' },
+];
+
+const footerGroups = [
+  {
+    heading: '발견',
+    links: [
+      { label: 'Patent 후보', path: '/discoveries/?type=patent' },
+      { label: 'Paper 후보', path: '/discoveries/?type=paper' },
+      { label: 'Patent + Paper', path: '/discoveries/?type=patent%2Bpaper' },
+      { label: '최근 변화', path: '/recent/' },
+    ],
+  },
+  {
+    heading: '근거',
+    links: [
+      { label: 'Evidence 전체', path: '/evidence/' },
+      { label: 'Technology Map', path: '/technology-map/' },
+      { label: 'Rejected Ideas', path: '/rejected/' },
+    ],
+  },
+  {
+    heading: '분석 대상',
+    links: [
+      { label: 'Sources', path: '/sources/' },
+      { label: 'Repositories', path: '/repositories/' },
+    ],
+  },
+  {
+    heading: '운영',
+    links: [
+      { label: 'Analysis History', path: '/history/' },
+      { label: 'About', path: '/about/' },
+    ],
+  },
+];
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · Camera Tech Scout</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+  </head>
+  <!-- `data-base` lets client scripts build links that survive a GitHub Pages
+       project path such as /camera-tech-scout/. -->
+  <body data-base={base}>
+    <!-- utility strip: run provenance, visible on every page -->
+    <div class="utility">
+      <div class="container utility__inner">
+        <span class="utility__item">
+          마지막 분석 <strong>{formatDateTime(overview.lastScanTime ?? meta.generatedAt)}</strong>
+        </span>
+        <span class="utility__sep" aria-hidden="true">·</span>
+        <span class="utility__item">실행 모드 <strong>{meta.mode || '미실행'}</strong></span>
+        <span class="utility__sep" aria-hidden="true">·</span>
+        <span class="utility__item mono">{meta.runId || 'run 없음'}</span>
+        {meta.dryRun && <span class="badge badge--sm badge--warn utility__flag">DRY RUN</span>}
+      </div>
+    </div>
+
+    <header class="nav">
+      <div class="container nav__inner">
+        <a class="wordmark" href={href('/')}>
+          <span class="wordmark__slashes" aria-hidden="true"></span>
+          <span class="wordmark__text">Camera Tech Scout</span>
+        </a>
+
+        <nav class="nav__links" aria-label="주요 메뉴">
+          {
+            nav.map((item) => (
+              <a
+                class:list={['nav__link', { 'nav__link--active': item.key === active }]}
+                href={href(item.path)}
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </nav>
+
+        <form class="nav__search" action={href('/search/')} method="get" role="search">
+          <label class="visually-hidden" for="nav-q">후보 검색</label>
+          <input id="nav-q" name="q" type="search" placeholder="후보 검색" autocomplete="off" />
+        </form>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <!-- closing ink slab, per the DESIGN.md page rhythm -->
+    <section class="band band--ink band--tight">
+      <div class="container">
+        <h2>이 사이트의 결과를 읽는 방법</h2>
+        <p class="slab-lead">{meta.disclaimer}</p>
+        <div class="badge-row">
+          <a class="btn btn--outline-slab" href={href('/about/')}>분석 방법 보기</a>
+          <a class="btn btn--outline-slab" href={href('/evidence/')}>Evidence 전체 보기</a>
+          <a class="btn btn--outline-slab" href={href('/rejected/')}>반박된 후보 보기</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          {
+            footerGroups.map((group) => (
+              <div>
+                <p class="footer__heading">{group.heading}</p>
+                <ul class="list-none footer__list">
+                  {group.links.map((link) => (
+                    <li>
+                      <a href={href(link.path)}>{link.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+        <div class="footer__legal">
+          <p class="fine">
+            Camera Tech Scout는 공개 GitHub Repository를 자동으로 분석하여 특허 및 논문 후보를
+            정리하는 내부 도구입니다. 여기에 표시되는 모든 판단은 자동 분석 결과이며, 법적 자문이나
+            특허 가능성에 대한 의견이 아닙니다.
+          </p>
+          <p class="fine">
+            시각 디자인은 <span class="mono">getdesign</span>의 <span class="mono">hp</span> 템플릿을
+            참고한 자체 구현입니다. 특정 기업과 제휴 관계가 없습니다.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      /* utility strip */
+      .utility {
+        background: var(--ink);
+        color: var(--on-ink);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .utility__inner {
+        min-height: 36px;
+        display: flex;
+        align-items: center;
+        gap: var(--sp-xs);
+        flex-wrap: wrap;
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+      .utility__item strong {
+        font-weight: 700;
+      }
+      .utility__sep {
+        color: var(--steel);
+      }
+      .utility__flag {
+        margin-left: auto;
+      }
+
+      /* nav */
+      .nav {
+        background: var(--canvas);
+        border-bottom: 1px solid var(--hairline);
+        position: sticky;
+        top: 0;
+        z-index: 20;
+      }
+      .nav__inner {
+        display: flex;
+        align-items: center;
+        gap: var(--sp-xl);
+        min-height: 64px;
+        flex-wrap: wrap;
+        padding-top: var(--sp-xs);
+        padding-bottom: var(--sp-xs);
+      }
+      .wordmark {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--sp-sm);
+        color: var(--ink);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 18px;
+        white-space: nowrap;
+      }
+      .wordmark:hover {
+        text-decoration: none;
+      }
+      /* Two parallel slashes: the project's own mark, echoing the design
+         language's geometry without reusing anybody's wordmark. */
+      .wordmark__slashes {
+        display: inline-block;
+        width: 22px;
+        height: 20px;
+        background: linear-gradient(
+          105deg,
+          transparent 0 14%,
+          var(--primary) 14% 38%,
+          transparent 38% 52%,
+          var(--primary) 52% 76%,
+          transparent 76% 100%
+        );
+      }
+      .nav__links {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        flex-wrap: wrap;
+        flex: 1 1 auto;
+      }
+      .nav__link {
+        color: var(--ink);
+        font-size: 15px;
+        font-weight: 500;
+        padding: var(--sp-xs) var(--sp-sm);
+        border-bottom: 2px solid transparent;
+        white-space: nowrap;
+      }
+      .nav__link:hover {
+        text-decoration: none;
+        border-bottom-color: var(--steel);
+      }
+      .nav__link--active {
+        border-bottom-color: var(--primary);
+        color: var(--primary);
+      }
+      .nav__search input {
+        height: 40px;
+        width: 180px;
+        padding: var(--sp-sm) var(--sp-md);
+        border: 1px solid var(--steel);
+        border-radius: var(--r-md);
+        font-family: var(--font);
+        font-size: 14px;
+        color: var(--ink);
+        background: var(--canvas);
+      }
+      .nav__search input:focus {
+        outline: none;
+        border-color: var(--ink);
+      }
+
+      @media (max-width: 1023px) {
+        .nav {
+          position: static;
+        }
+        .nav__search input {
+          width: 140px;
+        }
+      }
+
+      /* closing slab */
+      .slab-lead {
+        font-size: 18px;
+        line-height: 1.5;
+        color: var(--on-ink);
+        max-width: 86ch;
+        margin-top: var(--sp-md);
+      }
+      .btn--outline-slab {
+        background: transparent;
+        color: var(--on-ink);
+        border-color: var(--on-ink);
+      }
+      .btn--outline-slab:hover {
+        text-decoration: none;
+        background: var(--ink-soft);
+      }
+
+      /* footer */
+      .footer {
+        background: var(--ink);
+        color: var(--on-ink);
+        padding: 64px 0 var(--sp-xxl);
+        border-top: 1px solid var(--ink-soft);
+      }
+      .footer__grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: var(--sp-xxl);
+      }
+      @media (max-width: 767px) {
+        .footer__grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      .footer__heading {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0 0 var(--sp-sm);
+      }
+      .footer__list li + li {
+        margin-top: 6px;
+      }
+      .footer__list a {
+        color: var(--steel);
+        font-size: 14px;
+        font-weight: 400;
+      }
+      .footer__list a:hover {
+        color: var(--on-ink);
+      }
+      .footer__legal {
+        margin-top: var(--sp-xxl);
+        padding-top: var(--sp-md);
+        border-top: 1px solid var(--ink-soft);
+      }
+      .footer__legal .fine {
+        color: var(--steel);
+        margin-bottom: var(--sp-xs);
+      }
+    </style>
+  </body>
+</html>

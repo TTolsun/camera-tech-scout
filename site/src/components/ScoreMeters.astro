@@ -1,0 +1,115 @@
+---
+/**
+ * The four scores, always in the same order and always with their reasons.
+ *
+ * A bare number would be the wrong thing to show: the requirement is that every
+ * score carries the argument that produced it. `detailed` expands the reasons.
+ */
+import { SCORE_KEYS, type Score } from '../lib/data';
+
+interface Props {
+  scores: Record<string, Score>;
+  detailed?: boolean;
+  compact?: boolean;
+}
+
+const { scores, detailed = false, compact = false } = Astro.props;
+
+function fillClass(value: number): string {
+  if (value >= 60) return 'meter__fill meter__fill--strong';
+  if (value >= 35) return 'meter__fill';
+  return 'meter__fill meter__fill--weak';
+}
+---
+
+<div class:list={['scores', { 'scores--compact': compact }]}>
+  {
+    SCORE_KEYS.map((key) => {
+      const score = scores?.[key];
+      if (!score) return null;
+      return (
+        <div class="score">
+          <div class="meter">
+            <span class="meter__label">{score.label}</span>
+            <span class="meter__value">{score.value.toFixed(0)}</span>
+            <span class="meter__track">
+              <span class={fillClass(score.value)} style={`width:${Math.max(2, score.value)}%`} />
+            </span>
+          </div>
+
+          {score.caveat && <p class="fine score__caveat">{score.caveat}</p>}
+
+          {
+            detailed && score.reasons.length > 0 && (
+              <ul class="list-none score__reasons">
+                {score.reasons.map((reason) => (
+                  <li class="score__reason">
+                    <span
+                      class:list={[
+                        'score__delta',
+                        { 'score__delta--minus': reason.delta < 0 },
+                      ]}
+                    >
+                      {reason.delta > 0 ? '+' : ''}
+                      {reason.delta.toFixed(1)}
+                    </span>
+                    <span class="score__text">{reason.text}</span>
+                  </li>
+                ))}
+              </ul>
+            )
+          }
+        </div>
+      );
+    })
+  }
+</div>
+
+<style>
+  .scores {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-lg) var(--sp-xxl);
+  }
+  .scores--compact {
+    gap: var(--sp-sm) var(--sp-lg);
+  }
+  @media (max-width: 767px) {
+    .scores {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  .score__caveat {
+    margin: var(--sp-xs) 0 0;
+  }
+  .score__reasons {
+    margin-top: var(--sp-sm);
+    border-top: 1px solid var(--hairline);
+    padding-top: var(--sp-xs);
+  }
+  .score__reason {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: var(--sp-xs);
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 4px 0;
+  }
+  .score__reason + .score__reason {
+    border-top: 1px solid var(--hairline);
+  }
+  .score__delta {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    text-align: right;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .score__delta--minus {
+    color: var(--bloom-deep);
+  }
+  .score__text {
+    color: var(--charcoal);
+  }
+</style>

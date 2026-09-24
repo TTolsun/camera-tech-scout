@@ -1,0 +1,151 @@
+---
+import Base from '../layouts/Base.astro';
+import CandidateCard from '../components/CandidateCard.astro';
+import EvidenceItem from '../components/EvidenceItem.astro';
+import { recent, meta } from '../lib/data';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const changed = recent.changedCandidates ?? [];
+const statusOrder = ['NEW', 'STRENGTHENED', 'UPDATED', 'WEAKENED'];
+const statusExplain: Record<string, string> = {
+  NEW: '이번 실행에서 처음 발견된 조합입니다.',
+  STRENGTHENED: '증거가 늘어나거나 증거 강도가 올라갔습니다.',
+  UPDATED: '증거 수는 같지만 서술 내용이 바뀌었습니다.',
+  WEAKENED: '증거가 줄어들거나 증거 강도가 내려갔습니다. 코드가 제거되었을 수 있습니다.',
+};
+
+const grouped = statusOrder
+  .map((status) => ({
+    status,
+    label: meta.labels?.status?.[status] ?? status,
+    explain: statusExplain[status],
+    items: changed.filter((c: any) => c.status === status),
+  }))
+  .filter((group) => group.items.length > 0);
+---
+
+<Base
+  title="Recent Discoveries"
+  active="recent"
+  description="직전 실행과 비교해 변화가 있는 후보와 최근 증거입니다."
+>
+  <section class="band band--tight">
+    <div class="container">
+      <p class="eyebrow">Recent Discoveries</p>
+      <h1>최근 변화</h1>
+      <p class="lead">
+        후보의 상태는 추측하지 않고 직전 실행의 저장된 기록과 비교해서 결정합니다. 증거 수와 증거
+        강도가 판단 기준이며, 변화 사유를 함께 표시합니다.
+      </p>
+    </div>
+  </section>
+
+  {
+    grouped.length === 0 ? (
+      <section class="band band--cloud">
+        <div class="container">
+          <div class="card card--flat">
+            <h3>변화가 없습니다</h3>
+            <p class="muted">
+              직전 실행과 비교해 새로 생기거나 강해지거나 약해진 후보가 없습니다. 첫 실행이라면 모든
+              후보가 신규로 표시됩니다.
+            </p>
+            <p>
+              <a href={`${base}/discoveries/`}>전체 후보 보기 &rarr;</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    ) : (
+      grouped.map((group, index) => (
+        <section class:list={['band', { 'band--cloud': index % 2 === 0 }]}>
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">{group.status}</p>
+                <h2>
+                  {group.label} {group.items.length}건
+                </h2>
+              </div>
+              <p class="caption">{group.explain}</p>
+            </div>
+            <div class="grid grid--3">
+              {group.items.map((candidate: any) => (
+                <CandidateCard candidate={candidate} />
+              ))}
+            </div>
+          </div>
+        </section>
+      ))
+    )
+  }
+
+  {
+    (recent.technologyChanges ?? []).length > 0 && (
+      <section class="band">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">기술 영역</p>
+              <h2>이번 실행이 건드린 기술</h2>
+            </div>
+            <a href={`${base}/technology-map/`}>Technology Map &rarr;</a>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>기술 영역</th>
+                  <th class="num">Evidence</th>
+                  <th class="num">후보</th>
+                  <th class="num">신규 후보</th>
+                </tr>
+              </thead>
+              <tbody>
+                {recent.technologyChanges.map((row: any) => (
+                  <tr>
+                    <td>{row.technologyLabel}</td>
+                    <td class="num">{row.evidenceCount}</td>
+                    <td class="num">{row.candidateCount}</td>
+                    <td class="num">{row.newCandidates}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    (recent.recentEvidence ?? []).length > 0 && (
+      <section class="band band--cloud">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">시점 기준</p>
+              <h2>최근 Evidence</h2>
+            </div>
+            <a href={`${base}/evidence/`}>Evidence 전체 &rarr;</a>
+          </div>
+          <p class="lead">
+            관측 시점이 기록된 Evidence를 최신순으로 보여줍니다. Commit, Pull Request, Issue,
+            Release가 여기에 해당하며, 코드 증거는 최초 발견 Commit이 확인된 경우에만 포함됩니다.
+          </p>
+          <div class="stack-tight">
+            {recent.recentEvidence.slice(0, 30).map((item: any) => (
+              <EvidenceItem item={item} showSignals={false} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <style>
+    .stack-tight > * + * {
+      margin-top: var(--sp-xs);
+    }
+  </style>
+</Base>

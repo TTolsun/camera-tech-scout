@@ -1,0 +1,30 @@
+---
+/** Status and verdict pills. Blue is never used here: it is reserved for links. */
+interface Props {
+  status?: string;
+  statusLabel?: string;
+  verdict?: string;
+  verdictLabel?: string;
+  type?: string;
+  typeLabel?: string;
+}
+const { status, statusLabel, verdict, verdictLabel, type, typeLabel } = Astro.props;
+
+const statusClass = (value?: string) => {
+  if (value === 'REJECTED') return 'badge badge--reject';
+  if (value === 'NEEDS_VERIFICATION') return 'badge badge--warn';
+  if (value === 'NEW' || value === 'STRENGTHENED') return 'badge badge--ink';
+  return 'badge badge--quiet';
+};
+
+const verdictClass = (value?: string) => {
+  if (value === 'rejected') return 'badge badge--reject';
+  if (value === 'accepted_with_reservations') return 'badge badge--warn';
+  return 'badge badge--outline';
+};
+---
+<span class="badge-row">
+  {type && <span class="badge badge--quiet">{typeLabel ?? type}</span>}
+  {status && <span class={statusClass(status)}>{statusLabel ?? status}</span>}
+  {verdict && <span class={verdictClass(verdict)}>{verdictLabel ?? verdict}</span>}
+</span>

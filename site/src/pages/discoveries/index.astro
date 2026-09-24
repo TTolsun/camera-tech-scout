@@ -1,0 +1,296 @@
+---
+import Base from '../../layouts/Base.astro';
+import CandidateCard from '../../components/CandidateCard.astro';
+import { candidateCards, candidatesFile } from '../../lib/data';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const groups = [
+  { key: 'all', label: '전체', match: () => true },
+  { key: 'patent', label: 'Patent 후보', match: (t: string) => t === 'patent' },
+  { key: 'paper', label: 'Paper 후보', match: (t: string) => t === 'paper' },
+  { key: 'patent+paper', label: 'Patent + Paper', match: (t: string) => t === 'patent+paper' },
+];
+
+const counts = Object.fromEntries(
+  groups.map((g) => [g.key, candidateCards.filter((c) => g.match(c.type)).length]),
+);
+
+const topics = [...new Set(candidateCards.map((c) => c.topicLabel))].sort();
+const mechanisms = [...new Set(candidateCards.map((c) => c.mechanismLabel))].sort();
+---
+
+<Base
+  title="Discoveries"
+  active="discoveries"
+  description="검증을 통과한 특허 및 논문 후보 목록입니다."
+>
+  <section class="band band--tight">
+    <div class="container">
+      <p class="eyebrow">Discoveries</p>
+      <h1>검증 통과 후보</h1>
+      <p class="lead">
+        Critic의 치명적 지적을 통과한 후보만 이 목록에 있습니다. 반박된 후보는 삭제하지 않고
+        <a href={`${base}/rejected/`}>Rejected Ideas</a>에 사유와 재검토 조건을 함께 보존합니다.
+      </p>
+    </div>
+  </section>
+
+  <section class="band band--cloud">
+    <div class="container">
+      <div class="filters">
+        <div class="filter-group" role="group" aria-label="후보 성격 필터">
+          <span class="filter-label">성격</span>
+          <div class="badge-row">
+            {
+              groups.map((group) => (
+                <button class="tab" type="button" data-filter="type" data-value={group.key}>
+                  {group.label}
+                  <span class="tab__count">{counts[group.key]}</span>
+                </button>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label" for="topic-filter">기술 영역</label>
+          <select id="topic-filter" data-filter="topic">
+            <option value="all">전체</option>
+            {topics.map((topic) => <option value={topic}>{topic}</option>)}
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label" for="mech-filter">메커니즘</label>
+          <select id="mech-filter" data-filter="mechanism">
+            <option value="all">전체</option>
+            {mechanisms.map((m) => <option value={m}>{m}</option>)}
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label" for="sort-filter">정렬</label>
+          <select id="sort-filter" data-filter="sort">
+            <option value="combined">Patent + Paper 합계</option>
+            <option value="patent">Patent 가능성</option>
+            <option value="paper">Paper 가능성</option>
+            <option value="evidence">증거 강도</option>
+            <option value="novelty">조사 우선순위</option>
+          </select>
+        </div>
+      </div>
+
+      <p class="caption filter-status" id="filter-status">
+        후보 {candidateCards.length}건을 표시하고 있습니다.
+      </p>
+
+      <div class="grid grid--3" id="candidate-grid">
+        {
+          candidateCards.map((candidate) => (
+            <div
+              class="cand-slot"
+              data-type={candidate.type}
+              data-topic={candidate.topicLabel}
+              data-mechanism={candidate.mechanismLabel}
+              data-patent={candidate.scores.patent_potential?.value ?? 0}
+              data-paper={candidate.scores.paper_potential?.value ?? 0}
+              data-evidence={candidate.scores.evidence_strength?.value ?? 0}
+              data-novelty={candidate.scores.novelty_confidence?.value ?? 0}
+            >
+              <CandidateCard candidate={candidate} />
+            </div>
+          ))
+        }
+      </div>
+
+      {
+        candidateCards.length === 0 && (
+          <div class="card card--flat">
+            <h3>표시할 후보가 없습니다</h3>
+            <p class="muted">
+              파이프라인을 실행하면 이 목록이 채워집니다. 모든 클러스터가 최소 조건에 미치지
+              못했다면 <a href={`${base}/rejected/`}>Rejected Ideas</a>에서 이유를 확인할 수
+              있습니다.
+            </p>
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  {
+    candidatesFile.droppedClusters?.length > 0 && (
+      <section class="band">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Critic 이전 단계</p>
+              <h2>후보가 되지 못한 클러스터</h2>
+            </div>
+            <a href={`${base}/rejected/`}>Rejected Ideas &rarr;</a>
+          </div>
+          <p class="lead">
+            아래 항목은 증거가 최소 조건에 미치지 못해 Critic 검토 전에 제외되었습니다. 통계적
+            노이즈가 Rejected Ideas 페이지를 덮지 않도록 분리해 둡니다.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Signature</th>
+                  <th>제외 사유</th>
+                  <th class="num">Evidence</th>
+                </tr>
+              </thead>
+              <tbody>
+                {candidatesFile.droppedClusters.map((row: any) => (
+                  <tr>
+                    <td class="mono">{row.signature}</td>
+                    <td>{row.reason}</td>
+                    <td class="num">{row.evidenceCount}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <style>
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-xl);
+      align-items: flex-end;
+      margin-bottom: var(--sp-md);
+    }
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .filter-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: var(--graphite);
+    }
+    .tab {
+      background: var(--canvas);
+      color: var(--ink);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-pill);
+      padding: var(--sp-xs) var(--sp-lg);
+      font-family: var(--font);
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-xs);
+    }
+    .tab[aria-pressed='true'] {
+      background: var(--ink);
+      color: var(--on-ink);
+      border-color: var(--ink);
+    }
+    .tab__count {
+      font-size: 12px;
+      font-family: var(--mono);
+      opacity: 0.7;
+    }
+    select {
+      height: 44px;
+      padding: var(--sp-sm) var(--sp-md);
+      border: 1px solid var(--steel);
+      border-radius: var(--r-md);
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 14px;
+    }
+    select:focus {
+      outline: none;
+      border-color: var(--ink);
+    }
+    .filter-status {
+      margin-bottom: var(--sp-xl);
+    }
+    .cand-slot[hidden] {
+      display: none;
+    }
+  </style>
+
+  <script>
+    // Filtering and sorting happen in the browser over already-rendered cards.
+    // The page stays a static file and needs no search service.
+    const grid = document.getElementById('candidate-grid');
+    const status = document.getElementById('filter-status');
+    if (grid && status) {
+      const slots = Array.from(grid.querySelectorAll<HTMLElement>('.cand-slot'));
+      const state = { type: 'all', topic: 'all', mechanism: 'all', sort: 'combined' };
+
+      const params = new URLSearchParams(window.location.search);
+      const requestedType = params.get('type');
+      if (requestedType) state.type = requestedType;
+
+      const scoreOf = (slot: HTMLElement) => {
+        const n = (k: string) => Number(slot.dataset[k] ?? 0);
+        switch (state.sort) {
+          case 'patent':
+            return n('patent');
+          case 'paper':
+            return n('paper');
+          case 'evidence':
+            return n('evidence');
+          case 'novelty':
+            return n('novelty');
+          default:
+            return n('patent') + n('paper');
+        }
+      };
+
+      function apply() {
+        let visible = 0;
+        for (const slot of slots) {
+          const matches =
+            (state.type === 'all' || slot.dataset.type === state.type) &&
+            (state.topic === 'all' || slot.dataset.topic === state.topic) &&
+            (state.mechanism === 'all' || slot.dataset.mechanism === state.mechanism);
+          slot.hidden = !matches;
+          if (matches) visible += 1;
+        }
+        const ordered = [...slots].sort((a, b) => scoreOf(b) - scoreOf(a));
+        for (const slot of ordered) grid.appendChild(slot);
+        status.textContent =
+          visible === slots.length
+            ? `후보 ${slots.length}건을 표시하고 있습니다.`
+            : `후보 ${slots.length}건 중 ${visible}건이 조건에 맞습니다.`;
+
+        for (const button of document.querySelectorAll<HTMLButtonElement>('[data-filter="type"]')) {
+          button.setAttribute('aria-pressed', String(button.dataset.value === state.type));
+        }
+      }
+
+      for (const button of document.querySelectorAll<HTMLButtonElement>('[data-filter="type"]')) {
+        button.addEventListener('click', () => {
+          state.type = button.dataset.value ?? 'all';
+          apply();
+        });
+      }
+      for (const select of document.querySelectorAll<HTMLSelectElement>('select[data-filter]')) {
+        select.addEventListener('change', () => {
+          const key = select.dataset.filter as keyof typeof state;
+          state[key] = select.value;
+          apply();
+        });
+      }
+
+      apply();
+    }
+  </script>
+</Base>

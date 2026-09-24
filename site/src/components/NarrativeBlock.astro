@@ -1,0 +1,61 @@
+---
+/**
+ * A narrative section with its citations.
+ *
+ * When the pipeline could not ground a statement it sets a confidence marker,
+ * and the marker is shown rather than hidden. That is the whole point of the
+ * evidence-first rule: an ungrounded section must look ungrounded.
+ */
+import { CONFIDENCE_NOTE, type EvidenceRow, type Narrative } from '../lib/data';
+
+interface Props {
+  heading: string;
+  index?: number;
+  narrative: Narrative;
+  evidenceById: Record<string, EvidenceRow>;
+}
+const { heading, index, narrative, evidenceById } = Astro.props;
+const cited = (narrative.evidence_ids ?? [])
+  .map((id) => evidenceById[id])
+  .filter(Boolean) as EvidenceRow[];
+---
+<section class="narr anchor-offset">
+  <h3 class="narr__heading">
+    {index !== undefined && <span class="narr__num mono">{String(index).padStart(2, '0')}</span>}
+    {heading}
+    {narrative.confidence && <span class="marker">{narrative.confidence}</span>}
+  </h3>
+
+  <p class="narr__text">{narrative.text}</p>
+
+  {narrative.confidence && <p class="fine narr__note">{CONFIDENCE_NOTE[narrative.confidence] ?? ''}</p>}
+
+  {cited.length > 0 && (
+    <div class="narr__cites">
+      <span class="fine narr__cites-label">근거</span>
+      <ul class="list-none narr__cite-list">
+        {cited.map((item) => (
+          <li>
+            <a href={`#${item.id}`} class="narr__cite">
+              <span class="badge badge--quiet badge--sm">{item.kindLabel}</span>
+              <span class="mono narr__cite-loc">{item.location}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+</section>
+
+<style>
+  .narr { padding: var(--sp-xl) 0; border-top: 1px solid var(--hairline); }
+  .narr__heading { display: flex; align-items: center; gap: var(--sp-sm); flex-wrap: wrap; font-size: 20px; }
+  .narr__num { color: var(--steel); font-size: 14px; font-weight: 500; }
+  .narr__text { font-size: 17px; line-height: 1.55; margin: var(--sp-md) 0 0; max-width: 84ch; }
+  .narr__note { margin: var(--sp-xs) 0 0; }
+  .narr__cites { margin-top: var(--sp-md); }
+  .narr__cites-label { text-transform: uppercase; letter-spacing: 0.7px; font-weight: 700; }
+  .narr__cite-list { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; }
+  .narr__cite { display: inline-flex; align-items: center; gap: var(--sp-xs); font-weight: 400; }
+  .narr__cite-loc { font-size: 12px; color: var(--graphite); word-break: break-all; }
+</style>

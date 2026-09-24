@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+import { repositories, formatDateTime } from '../lib/data';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const rows = repositories.repositories ?? [];
+
+const statusLabel: Record<string, string> = {
+  ok: '정상 완료',
+  partial: '부분 완료',
+  error: '실패',
+  pending: '미분석',
+};
+---
+
+<Base
+  title="Repositories"
+  active="repositories"
+  description="Repository별 스캔 상태와 발굴 결과입니다."
+>
+  <section class="band band--tight">
+    <div class="container">
+      <p class="eyebrow">Repositories</p>
+      <h1>Repository 상세</h1>
+      <p class="lead">
+        각 Repository의 마지막 분석 Commit, 스캔 방식, 수집한 Evidence와 후보 수를 함께 보여줍니다.
+        증분 스캔은 저장된 <span class="mono">last_scanned_sha</span>와 현재 HEAD 사이의 변경만
+        분석하므로, 전체를 매번 다시 읽지 않습니다.
+      </p>
+    </div>
+  </section>
+
+  <section class="band band--cloud">
+    <div class="container">
+      {rows.length === 0 && <p class="muted">분석된 Repository가 없습니다.</p>}
+
+      <div class="grid grid--2">
+        {
+          rows.map((repo: any) => (
+            <article class="card anchor-offset" id={String(repo.full_name).split('/').join('--')}>
+              <h3 class="card-title">
+                <a class="mono" href={repo.url} target="_blank" rel="noopener noreferrer">
+                  {repo.full_name}
+                </a>
+              </h3>
+
+              {repo.description && <p class="caption">{repo.description}</p>}
+
+              <div class="badge-row">
+                <span class="badge badge--quiet">{statusLabel[repo.status] ?? repo.status}</span>
+                <span class="badge badge--quiet">
+                  {repo.scan_mode === 'incremental' ? '증분 스캔' : '전체 스캔'}
+                </span>
+                {repo.language && <span class="badge badge--quiet">{repo.language}</span>}
+              </div>
+
+              {repo.status_detail && <p class="fine">{repo.status_detail}</p>}
+
+              <dl class="kv">
+                <dt>HEAD</dt>
+                <dd class="mono">{String(repo.head_sha ?? '기록 없음').slice(0, 12)}</dd>
+                <dt>마지막 분석 Commit</dt>
+                <dd class="mono">{String(repo.last_scanned_sha ?? '기록 없음').slice(0, 12)}</dd>
+                <dt>Last Scan</dt>
+                <dd>{formatDateTime(repo.last_scan_time)}</dd>
+                <dt>분석 파일</dt>
+                <dd>{repo.files_scanned}개</dd>
+                <dt>Evidence</dt>
+                <dd>{repo.evidenceCount}건</dd>
+                <dt>후보</dt>
+                <dd>{repo.candidateCount}건</dd>
+              </dl>
+
+              <div>
+                <p class="eyebrow">주요 기술 영역</p>
+                <div class="badge-row">
+                  {(repo.topicLabels ?? []).map((label: string) => (
+                    <span class="badge badge--outline badge--sm">{label}</span>
+                  ))}
+                  {(repo.topicLabels ?? []).length === 0 && (
+                    <span class="fine">식별되지 않았습니다.</span>
+                  )}
+                </div>
+              </div>
+
+              <p class="fine">
+                <a href={`${base}/evidence/?repo=${encodeURIComponent(repo.full_name)}`}>
+                  이 Repository의 Evidence 보기
+                </a>
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>

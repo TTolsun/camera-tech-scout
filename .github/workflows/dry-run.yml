@@ -1,0 +1,177 @@
+name: Dry run
+
+# The implementation-phase safety net.
+#
+# Runs the whole pipeline without touching the committed database or `data/`,
+# and without calling the model. The fixture mode makes it fully offline, so a
+# GitHub API rate limit can never turn a code change into a red build.
+#
+# A live dry run against the real repositories is available on demand, for when
+# the configuration itself is what changed.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'pipeline/**'
+      - 'config/**'
+      - 'site/**'
+      - '.github/workflows/**'
+  pull_request:
+    paths:
+      - 'pipeline/**'
+      - 'config/**'
+      - 'site/**'
+      - '.github/workflows/**'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: '분석 대상'
+        type: choice
+        default: fixture
+        options:
+          - fixture
+          - live
+      max_repos:
+        description: 'live 모드에서 분석할 Repository 개수 상한 (비우면 전체)'
+        type: string
+        default: '2'
+      use_llm:
+        description: 'LLM 계층을 호출할지 여부'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dry-run-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pipeline:
+    name: 파이프라인 dry run
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: 의존성 설치
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r pipeline/requirements.txt
+
+      - name: 설정 파일 검증
+        run: python -m scout check-config --config config/sources.yaml
+        env:
+          PYTHONPATH: pipeline/src
+
+      - name: dry run 실행
+        env:
+          PYTHONPATH: pipeline/src
+          PYTHONIOENCODING: utf-8
+          # Only used by the live mode. The fixture mode makes no API call.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SCOUT_LLM_API_KEY: ${{ secrets.SCOUT_LLM_API_KEY }}
+        run: |
+          MODE="${{ inputs.mode || 'fixture' }}"
+          ARGS="scan --dry-run --fail-on-empty"
+
+          if [ "$MODE" = "fixture" ]; then
+            ARGS="$ARGS --fixture"
+          elif [ -n "${{ inputs.max_repos }}" ]; then
+            ARGS="$ARGS --max-repos ${{ inputs.max_repos }}"
+          fi
+
+          if [ "${{ inputs.use_llm }}" = "true" ]; then
+            ARGS="$ARGS --llm"
+          else
+            ARGS="$ARGS --no-llm"
+          fi
+
+          echo "실행: python -m scout $ARGS"
+          python -m scout $ARGS | tee dry-run-summary.txt
+
+      - name: 요약을 작업 결과에 기록
+        if: always()
+        run: |
+          {
+            echo '## Dry run 요약'
+            echo
+            echo '```'
+            tail -n 60 dry-run-summary.txt 2>/dev/null || echo '요약을 생성하지 못했습니다.'
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: 산출 JSON 업로드
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dry-run-data
+          path: |
+            data-dryrun/
+            dry-run-summary.txt
+          if-no-files-found: warn
+          retention-days: 14
+
+  site:
+    name: 사이트 빌드 검증
+    runs-on: ubuntu-latest
+    needs: pipeline
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: dry run 산출물 내려받기
+        uses: actions/download-artifact@v4
+        with:
+          name: dry-run-data
+          path: artifacts
+
+      - name: 산출물을 data/ 로 배치
+        run: |
+          mkdir -p data
+          if [ -d artifacts/data-dryrun ] && [ -n "$(ls -A artifacts/data-dryrun)" ]; then
+            cp artifacts/data-dryrun/*.json data/
+            echo "dry run 산출물 $(ls data | wc -l)개를 배치했습니다."
+          else
+            echo "dry run 산출물이 없습니다. 빈 데이터로 빌드가 통과하는지 확인합니다."
+          fi
+
+      - name: 의존성 설치
+        working-directory: site
+        run: npm ci
+
+      - name: 사이트 빌드
+        working-directory: site
+        run: npm run build
+
+      - name: 생성된 페이지 확인
+        run: |
+          COUNT=$(find site/dist -name '*.html' | wc -l)
+          echo "생성된 HTML 페이지: $COUNT개"
+          if [ "$COUNT" -lt 10 ]; then
+            echo "::error::페이지가 10개 미만입니다. 라우트 생성에 문제가 있습니다."
+            exit 1
+          fi
+
+      - name: 빌드 결과 업로드
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-dry-run
+          path: site/dist
+          retention-days: 7

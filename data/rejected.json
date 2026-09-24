@@ -1,0 +1,748 @@
+{
+  "rejected": [
+    {
+      "id": "rej_555d9aa0ba22",
+      "slug": "scheduling-partitioning",
+      "title": "Pipeline 스케줄링: 타이밍 편차 대응을 위한 위임",
+      "signature": "scheduling|partitioning",
+      "reason": "모든 증거가 한 종류(Source Code)이므로 서로 교차 확인되지 않습니다.",
+      "failed_rules": [
+        "R6: Evidence가 충분한가"
+      ],
+      "evidence_ids": [
+        "ev_da4fbb342c78",
+        "ev_d8a0274776a5",
+        "ev_9551652050e8",
+        "ev_8955c7f97293",
+        "ev_73daec554acc",
+        "ev_3087e5d413b3",
+        "ev_0e41afd70240",
+        "ev_b8ac909a3089",
+        "ev_6bd9eae2d08b"
+      ],
+      "repositories": [
+        "intel/ipu6-camera-hal",
+        "raspberrypi/libcamera"
+      ],
+      "recheck_conditions": [
+        "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
+      ],
+      "rejected_at": "2026-09-23T17:22:19.215527+00:00",
+      "scores": {
+        "evidence_strength": {
+          "value": 52.0,
+          "label": "증거 강도",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "증거가 서로 다른 1종의 출처에서 확보되었습니다(Source Code).",
+              "delta": 14.0,
+              "evidence_ids": [
+                "ev_da4fbb342c78",
+                "ev_d8a0274776a5",
+                "ev_9551652050e8",
+                "ev_8955c7f97293"
+              ]
+            },
+            {
+              "text": "증거 레코드가 총 9건입니다.",
+              "delta": 18.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "9건은 심볼명과 라인 범위를 함께 지목합니다.",
+              "delta": 10.0,
+              "evidence_ids": [
+                "ev_da4fbb342c78",
+                "ev_d8a0274776a5",
+                "ev_9551652050e8",
+                "ev_8955c7f97293"
+              ]
+            },
+            {
+              "text": "동일한 기술이 2개 Repository에 나타납니다.",
+              "delta": 10.0,
+              "evidence_ids": []
+            }
+          ]
+        },
+        "patent_potential": {
+          "value": 62.4,
+          "label": "Patent 가능성",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "메커니즘 계열 `partitioning`의 사전 가중치가 3.4입니다.",
+              "delta": 20.4,
+              "evidence_ids": []
+            },
+            {
+              "text": "Repository가 해결하려는 문제를 직접 서술하고 있습니다.",
+              "delta": 12.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "기술적 효과가 주장되어 있습니다.",
+              "delta": 12.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "메커니즘이 1개 Component, 2개 Repository에 걸쳐 나타나므로 일반화 가능성이 있습니다.",
+              "delta": 10.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "서로 다른 9개의 코드 위치가 이를 구현합니다.",
+              "delta": 8.0,
+              "evidence_ids": []
+            }
+          ]
+        },
+        "paper_potential": {
+          "value": 10.0,
+          "label": "Paper 가능성",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "`partitioning`은 알고리즘 계열이므로 기준선과 비교할 수 있습니다.",
+              "delta": 12.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "연구 질문에 대응하는 문제 서술이 존재합니다.",
+              "delta": 8.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "측정값도 평가 구성도 찾지 못했습니다.",
+              "delta": -10.0,
+              "evidence_ids": []
+            }
+          ]
+        },
+        "novelty_confidence": {
+          "value": 69.6,
+          "label": "Novelty Confidence (조사 우선순위)",
+          "caveat": "이 수치는 추가 조사의 우선순위를 나타냅니다. 특허 신규성 판단이나 특허 가능성에 대한 의견이 아닙니다. 선행기술 조사는 별도로 수행해야 합니다.",
+          "reasons": [
+            {
+              "text": "모든 후보는 50점에서 시작합니다.",
+              "delta": 50.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "이 topic과 메커니즘 조합은 본 코퍼스에서 찾은 클러스터의 1.8%를 차지하므로, 상대적으로 특이한 조합입니다.",
+              "delta": 19.6,
+              "evidence_ids": []
+            }
+          ]
+        }
+      },
+      "timesSeen": 1,
+      "recheckConditions": [
+        "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
+      ],
+      "failedRules": [
+        "R6: Evidence가 충분한가"
+      ]
+    },
+    {
+      "id": "rej_7871b4f61f55",
+      "slug": "scheduling-calibration",
+      "title": "Pipeline 스케줄링: 타이밍 편차 대응을 위한 보정",
+      "signature": "scheduling|calibration",
+      "reason": "모든 증거가 한 종류(Source Code)이므로 서로 교차 확인되지 않습니다.",
+      "failed_rules": [
+        "R6: Evidence가 충분한가"
+      ],
+      "evidence_ids": [
+        "ev_f573fc82c0fa",
+        "ev_d8a0274776a5",
+        "ev_9551652050e8",
+        "ev_8955c7f97293",
+        "ev_73daec554acc",
+        "ev_3087e5d413b3",
+        "ev_0e41afd70240",
+        "ev_b8ac909a3089",
+        "ev_6bd9eae2d08b"
+      ],
+      "repositories": [
+        "raspberrypi/libcamera",
+        "intel/ipu6-camera-hal"
+      ],
+      "recheck_conditions": [
+        "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
+      ],
+      "rejected_at": "2026-09-23T17:22:19.215527+00:00",
+      "scores": {
+        "evidence_strength": {
+          "value": 52.0,
+          "label": "증거 강도",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "증거가 서로 다른 1종의 출처에서 확보되었습니다(Source Code).",
+              "delta": 14.0,
+              "evidence_ids": [
+                "ev_f573fc82c0fa",
+                "ev_d8a0274776a5",
+                "ev_9551652050e8",
+                "ev_8955c7f97293"
+              ]
+            },
+            {
+              "text": "증거 레코드가 총 9건입니다.",
+              "delta": 18.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "9건은 심볼명과 라인 범위를 함께 지목합니다.",
+              "delta": 10.0,
+              "evidence_ids": [
+                "ev_f573fc82c0fa",
+                "ev_d8a0274776a5",
+                "ev_9551652050e8",
+                "ev_8955c7f97293"
+              ]
+            },
+            {
+              "text": "동일한 기술이 2개 Repository에 나타납니다.",
+              "delta": 10.0,
+              "evidence_ids": []
+            }
+          ]
+        },
+        "patent_potential": {
+          "value": 62.4,
+          "label": "Patent 가능성",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "메커니즘 계열 `calibration`의 사전 가중치가 3.4입니다.",
+              "delta": 20.4,
+              "evidence_ids": []
+            },
+            {
+              "text": "Repository가 해결하려는 문제를 직접 서술하고 있습니다.",
+              "delta": 12.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "기술적 효과가 주장되어 있습니다.",
+              "delta": 12.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "메커니즘이 1개 Component, 2개 Repository에 걸쳐 나타나므로 일반화 가능성이 있습니다.",
+              "delta": 10.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "서로 다른 9개의 코드 위치가 이를 구현합니다.",
+              "delta": 8.0,
+              "evidence_ids": []
+            }
+          ]
+        },
+        "paper_potential": {
+          "value": 0.0,
+          "label": "Paper 가능성",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "연구 질문에 대응하는 문제 서술이 존재합니다.",
+              "delta": 8.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "측정값도 평가 구성도 찾지 못했습니다.",
+              "delta": -10.0,
+              "evidence_ids": []
+            }
+          ]
+        },
+        "novelty_confidence": {
+          "value": 69.6,
+          "label": "Novelty Confidence (조사 우선순위)",
+          "caveat": "이 수치는 추가 조사의 우선순위를 나타냅니다. 특허 신규성 판단이나 특허 가능성에 대한 의견이 아닙니다. 선행기술 조사는 별도로 수행해야 합니다.",
+          "reasons": [
+            {
+              "text": "모든 후보는 50점에서 시작합니다.",
+              "delta": 50.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "이 topic과 메커니즘 조합은 본 코퍼스에서 찾은 클러스터의 1.8%를 차지하므로, 상대적으로 특이한 조합입니다.",
+              "delta": 19.6,
+              "evidence_ids": []
+            }
+          ]
+        }
+      },
+      "timesSeen": 1,
+      "recheckConditions": [
+        "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
+      ],
+      "failedRules": [
+        "R6: Evidence가 충분한가"
+      ]
+    },
+    {
+      "id": "rej_3a40929f5322",
+      "slug": "camera-framework-calibration",
+      "title": "Camera Framework: 자원 고갈 대응을 위한 특성화",
+      "signature": "camera-framework|calibration",
+      "reason": "모든 증거가 한 종류(Source Code)이므로 서로 교차 확인되지 않습니다.",
+      "failed_rules": [
+        "R6: Evidence가 충분한가"
+      ],
+      "evidence_ids": [
+        "ev_10be601cc844",
+        "ev_be3b24db2f00",
+        "ev_9cd56ab90412",
+        "ev_f97034180f64",
+        "ev_b3fa0e4a6b9d",
+        "ev_8233693fee99",
+        "ev_4f73b601c6f6"
+      ],
+      "repositories": [
+        "intel/ipu6-camera-hal",
+        "raspberrypi/libcamera"
+      ],
+      "recheck_conditions": [
+        "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
+      ],
+      "rejected_at": "2026-09-23T17:22:19.215527+00:00",
+      "scores": {
+        "evidence_strength": {
+          "value": 48.0,
+          "label": "증거 강도",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "증거가 서로 다른 1종의 출처에서 확보되었습니다(Source Code).",
+              "delta": 14.0,
+              "evidence_ids": [
+                "ev_10be601cc844",
+                "ev_be3b24db2f00",
+                "ev_9cd56ab90412",
+                "ev_f97034180f64"
+              ]
+            },
+            {
+              "text": "증거 레코드가 총 7건입니다.",
+              "delta": 14.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "7건은 심볼명과 라인 범위를 함께 지목합니다.",
+              "delta": 10.0,
+              "evidence_ids": [
+                "ev_10be601cc844",
+                "ev_be3b24db2f00",
+                "ev_9cd56ab90412",
+                "ev_f97034180f64"
+              ]
+            },
+            {
+              "text": "동일한 기술이 2개 Repository에 나타납니다.",
+              "delta": 10.0,
+              "evidence_ids": []
+            }
+          ]
+        },
+        "patent_potential": {
+          "value": 50.4,
+          "label": "Patent 가능성",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "메커니즘 계열 `calibration`의 사전 가중치가 3.4입니다.",
+              "delta": 20.4,
+              "evidence_ids": []
+            },
+            {
+              "text": "Repository가 해결하려는 문제를 직접 서술하고 있습니다.",
+              "delta": 12.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "메커니즘이 2개 Component, 2개 Repository에 걸쳐 나타나므로 일반화 가능성이 있습니다.",
+              "delta": 10.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "서로 다른 7개의 코드 위치가 이를 구현합니다.",
+              "delta": 8.0,
+              "evidence_ids": []
+            }
+          ]
+        },
+        "paper_potential": {
+          "value": 0.0,
+          "label": "Paper 가능성",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "연구 질문에 대응하는 문제 서술이 존재합니다.",
+              "delta": 8.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "측정값도 평가 구성도 찾지 못했습니다.",
+              "delta": -10.0,
+              "evidence_ids": []
+            }
+          ]
+        },
+        "novelty_confidence": {
+          "value": 69.6,
+          "label": "Novelty Confidence (조사 우선순위)",
+          "caveat": "이 수치는 추가 조사의 우선순위를 나타냅니다. 특허 신규성 판단이나 특허 가능성에 대한 의견이 아닙니다. 선행기술 조사는 별도로 수행해야 합니다.",
+          "reasons": [
+            {
+              "text": "모든 후보는 50점에서 시작합니다.",
+              "delta": 50.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "이 topic과 메커니즘 조합은 본 코퍼스에서 찾은 클러스터의 1.8%를 차지하므로, 상대적으로 특이한 조합입니다.",
+              "delta": 19.6,
+              "evidence_ids": []
+            }
+          ]
+        }
+      },
+      "timesSeen": 1,
+      "recheckConditions": [
+        "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
+      ],
+      "failedRules": [
+        "R6: Evidence가 충분한가"
+      ]
+    },
+    {
+      "id": "rej_200d72f7e6a8",
+      "slug": "camera-framework-synchronization-mechanism",
+      "title": "Camera Framework: 자원 고갈 대응을 위한 시퀀스 번호 부여",
+      "signature": "camera-framework|synchronization-mechanism",
+      "reason": "모든 증거가 한 종류(Source Code)이므로 서로 교차 확인되지 않습니다.",
+      "failed_rules": [
+        "R6: Evidence가 충분한가"
+      ],
+      "evidence_ids": [
+        "ev_cbc92d2dbde5",
+        "ev_9cd56ab90412",
+        "ev_f97034180f64",
+        "ev_b3fa0e4a6b9d",
+        "ev_8233693fee99",
+        "ev_4f73b601c6f6"
+      ],
+      "repositories": [
+        "raspberrypi/libcamera"
+      ],
+      "recheck_conditions": [
+        "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
+      ],
+      "rejected_at": "2026-09-23T17:22:19.215527+00:00",
+      "scores": {
+        "evidence_strength": {
+          "value": 36.0,
+          "label": "증거 강도",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "증거가 서로 다른 1종의 출처에서 확보되었습니다(Source Code).",
+              "delta": 14.0,
+              "evidence_ids": [
+                "ev_cbc92d2dbde5",
+                "ev_9cd56ab90412",
+                "ev_f97034180f64",
+                "ev_b3fa0e4a6b9d"
+              ]
+            },
+            {
+              "text": "증거 레코드가 총 6건입니다.",
+              "delta": 12.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "6건은 심볼명과 라인 범위를 함께 지목합니다.",
+              "delta": 10.0,
+              "evidence_ids": [
+                "ev_cbc92d2dbde5",
+                "ev_9cd56ab90412",
+                "ev_f97034180f64",
+                "ev_b3fa0e4a6b9d"
+              ]
+            }
+          ]
+        },
+        "patent_potential": {
+          "value": 44.0,
+          "label": "Patent 가능성",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "메커니즘 계열 `synchronization-mechanism`의 사전 가중치가 4.2입니다.",
+              "delta": 24.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "Repository가 해결하려는 문제를 직접 서술하고 있습니다.",
+              "delta": 12.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "서로 다른 6개의 코드 위치가 이를 구현합니다.",
+              "delta": 8.0,
+              "evidence_ids": []
+            }
+          ]
+        },
+        "paper_potential": {
+          "value": 0.0,
+          "label": "Paper 가능성",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "연구 질문에 대응하는 문제 서술이 존재합니다.",
+              "delta": 8.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "측정값도 평가 구성도 찾지 못했습니다.",
+              "delta": -10.0,
+              "evidence_ids": []
+            }
+          ]
+        },
+        "novelty_confidence": {
+          "value": 79.6,
+          "label": "Novelty Confidence (조사 우선순위)",
+          "caveat": "이 수치는 추가 조사의 우선순위를 나타냅니다. 특허 신규성 판단이나 특허 가능성에 대한 의견이 아닙니다. 선행기술 조사는 별도로 수행해야 합니다.",
+          "reasons": [
+            {
+              "text": "모든 후보는 50점에서 시작합니다.",
+              "delta": 50.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "이 topic과 메커니즘 조합은 본 코퍼스에서 찾은 클러스터의 1.8%를 차지하므로, 상대적으로 특이한 조합입니다.",
+              "delta": 19.6,
+              "evidence_ids": []
+            },
+            {
+              "text": "`synchronization-mechanism`은 일반적인 연결 코드가 아니라 설계된 기법을 시사합니다.",
+              "delta": 10.0,
+              "evidence_ids": []
+            }
+          ]
+        }
+      },
+      "timesSeen": 1,
+      "recheckConditions": [
+        "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
+      ],
+      "failedRules": [
+        "R6: Evidence가 충분한가"
+      ]
+    },
+    {
+      "id": "rej_ec21bf0cfb56",
+      "slug": "camera-framework-state-machine",
+      "title": "Camera Framework: 작성자가 직접 기록한 한계 대응을 위한 명시적 상태 기계",
+      "signature": "camera-framework|state-machine",
+      "reason": "모든 증거가 한 종류(Source Code)이므로 서로 교차 확인되지 않습니다.",
+      "failed_rules": [
+        "R6: Evidence가 충분한가"
+      ],
+      "evidence_ids": [
+        "ev_e4ed3d140d90",
+        "ev_9cd56ab90412",
+        "ev_f97034180f64",
+        "ev_b3fa0e4a6b9d",
+        "ev_8233693fee99",
+        "ev_4f73b601c6f6"
+      ],
+      "repositories": [
+        "raspberrypi/libcamera"
+      ],
+      "recheck_conditions": [
+        "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
+      ],
+      "rejected_at": "2026-09-23T17:22:19.215527+00:00",
+      "scores": {
+        "evidence_strength": {
+          "value": 36.0,
+          "label": "증거 강도",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "증거가 서로 다른 1종의 출처에서 확보되었습니다(Source Code).",
+              "delta": 14.0,
+              "evidence_ids": [
+                "ev_e4ed3d140d90",
+                "ev_9cd56ab90412",
+                "ev_f97034180f64",
+                "ev_b3fa0e4a6b9d"
+              ]
+            },
+            {
+              "text": "증거 레코드가 총 6건입니다.",
+              "delta": 12.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "6건은 심볼명과 라인 범위를 함께 지목합니다.",
+              "delta": 10.0,
+              "evidence_ids": [
+                "ev_e4ed3d140d90",
+                "ev_9cd56ab90412",
+                "ev_f97034180f64",
+                "ev_b3fa0e4a6b9d"
+              ]
+            }
+          ]
+        },
+        "patent_potential": {
+          "value": 36.8,
+          "label": "Patent 가능성",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "메커니즘 계열 `state-machine`의 사전 가중치가 2.8입니다.",
+              "delta": 16.799999999999997,
+              "evidence_ids": []
+            },
+            {
+              "text": "Repository가 해결하려는 문제를 직접 서술하고 있습니다.",
+              "delta": 12.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "서로 다른 6개의 코드 위치가 이를 구현합니다.",
+              "delta": 8.0,
+              "evidence_ids": []
+            }
+          ]
+        },
+        "paper_potential": {
+          "value": 0.0,
+          "label": "Paper 가능성",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "연구 질문에 대응하는 문제 서술이 존재합니다.",
+              "delta": 8.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "측정값도 평가 구성도 찾지 못했습니다.",
+              "delta": -10.0,
+              "evidence_ids": []
+            }
+          ]
+        },
+        "novelty_confidence": {
+          "value": 69.6,
+          "label": "Novelty Confidence (조사 우선순위)",
+          "caveat": "이 수치는 추가 조사의 우선순위를 나타냅니다. 특허 신규성 판단이나 특허 가능성에 대한 의견이 아닙니다. 선행기술 조사는 별도로 수행해야 합니다.",
+          "reasons": [
+            {
+              "text": "모든 후보는 50점에서 시작합니다.",
+              "delta": 50.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "이 topic과 메커니즘 조합은 본 코퍼스에서 찾은 클러스터의 1.8%를 차지하므로, 상대적으로 특이한 조합입니다.",
+              "delta": 19.6,
+              "evidence_ids": []
+            }
+          ]
+        }
+      },
+      "timesSeen": 1,
+      "recheckConditions": [
+        "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
+      ],
+      "failedRules": [
+        "R6: Evidence가 충분한가"
+      ]
+    }
+  ],
+  "note": "반박된 후보도 삭제하지 않습니다. 같은 아이디어를 반복해서 발굴하고 다시 검토하는 일을 막기 위해, 반박 사유와 재검토 조건을 함께 보존합니다.",
+  "droppedClusters": [
+    {
+      "signature": "debug-profiling|partitioning",
+      "reason": "증거 점수가 1.1이며, 기준값 3.0에 미치지 못합니다.",
+      "evidenceCount": 2
+    },
+    {
+      "signature": "debug-profiling|prediction",
+      "reason": "증거 점수가 1.2이며, 기준값 3.0에 미치지 못합니다.",
+      "evidenceCount": 2
+    },
+    {
+      "signature": "debug-profiling|arbitration",
+      "reason": "증거 점수가 1.1이며, 기준값 3.0에 미치지 못합니다.",
+      "evidenceCount": 2
+    },
+    {
+      "signature": "3a|state-machine",
+      "reason": "이 메커니즘을 구현한 코드가 없고, 문장으로만 언급되어 있습니다.",
+      "evidenceCount": 9
+    },
+    {
+      "signature": "memory-buffer|synchronization-mechanism",
+      "reason": "이 메커니즘을 구현한 코드가 없고, 문장으로만 언급되어 있습니다.",
+      "evidenceCount": 9
+    },
+    {
+      "signature": "camera-pipeline|prediction",
+      "reason": "이 메커니즘을 구현한 코드가 없고, 문장으로만 언급되어 있습니다.",
+      "evidenceCount": 1
+    },
+    {
+      "signature": "image-quality|prediction",
+      "reason": "증거 점수가 1.0이며, 기준값 3.0에 미치지 못합니다.",
+      "evidenceCount": 1
+    },
+    {
+      "signature": "camera-pipeline|arbitration",
+      "reason": "증거 점수가 1.0이며, 기준값 3.0에 미치지 못합니다.",
+      "evidenceCount": 1
+    },
+    {
+      "signature": "isp|arbitration",
+      "reason": "이 메커니즘을 구현한 코드가 없고, 문장으로만 언급되어 있습니다.",
+      "evidenceCount": 9
+    },
+    {
+      "signature": "image-quality|calibration",
+      "reason": "이 메커니즘을 구현한 코드가 없고, 문장으로만 언급되어 있습니다.",
+      "evidenceCount": 1
+    },
+    {
+      "signature": "3a|resilience",
+      "reason": "이 메커니즘을 구현한 코드가 없고, 문장으로만 언급되어 있습니다.",
+      "evidenceCount": 9
+    },
+    {
+      "signature": "scheduling|state-machine",
+      "reason": "이 메커니즘을 구현한 코드가 없고, 문장으로만 언급되어 있습니다.",
+      "evidenceCount": 9
+    },
+    {
+      "signature": "ai-camera|state-machine",
+      "reason": "이 메커니즘을 구현한 코드가 없고, 문장으로만 언급되어 있습니다.",
+      "evidenceCount": 1
+    },
+    {
+      "signature": "memory-buffer|resilience",
+      "reason": "이 메커니즘을 구현한 코드가 없고, 문장으로만 언급되어 있습니다.",
+      "evidenceCount": 9
+    }
+  ],
+  "droppedNote": "아래 항목은 후보가 되기 위한 최소 조건에 미치지 못해 Critic 이전 단계에서 제외된 클러스터입니다."
+}

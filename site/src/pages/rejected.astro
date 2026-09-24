@@ -1,0 +1,194 @@
+---
+import Base from '../layouts/Base.astro';
+import { rejected, formatDate } from '../lib/data';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const rows = rejected.rejected ?? [];
+const dropped = rejected.droppedClusters ?? [];
+---
+
+<Base
+  title="Rejected Ideas"
+  active="rejected"
+  description="Critic이 반박한 후보와 그 사유, 재검토 조건입니다."
+>
+  <section class="band band--tight">
+    <div class="container">
+      <p class="eyebrow">Rejected Ideas</p>
+      <h1>반박된 후보</h1>
+      <p class="lead">{rejected.note}</p>
+    </div>
+  </section>
+
+  <section class="band band--cloud">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Critic 반박</p>
+          <h2>치명적 지적으로 제외된 후보 {rows.length}건</h2>
+        </div>
+      </div>
+
+      {rows.length === 0 && <p class="muted">반박된 후보가 없습니다.</p>}
+
+      <div class="stack">
+        {
+          rows.map((row: any) => (
+            <article class="card rej">
+              <div class="rej__head">
+                <h3 class="card-title">{row.title}</h3>
+                <div class="badge-row">
+                  <span class="badge badge--reject">반박됨</span>
+                  {row.timesSeen > 1 && (
+                    <span class="badge badge--warn badge--sm">{row.timesSeen}회 반복 발굴</span>
+                  )}
+                </div>
+              </div>
+
+              <p class="fine mono">{row.signature}</p>
+
+              <div>
+                <p class="eyebrow">위반한 검토 항목</p>
+                <ul class="list-none badge-row">
+                  {(row.failedRules ?? []).map((rule: string) => (
+                    <li class="badge badge--outline badge--sm mono">{rule}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <p class="eyebrow">반박 사유</p>
+                <p class="rej__reason">{row.reason}</p>
+              </div>
+
+              <div>
+                <p class="eyebrow">재검토 조건</p>
+                <ul class="list-plain">
+                  {(row.recheckConditions ?? []).map((condition: string) => (
+                    <li>{condition}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <dl class="kv">
+                <dt>Repository</dt>
+                <dd class="mono">{(row.repositories ?? []).join(', ')}</dd>
+                <dt>연결된 Evidence</dt>
+                <dd>{(row.evidence_ids ?? []).length}건</dd>
+                <dt>반박 시점</dt>
+                <dd>{formatDate(row.rejected_at)}</dd>
+              </dl>
+
+              {row.scores && (
+                <details class="rej__scores">
+                  <summary>반박 당시 평가 점수 보기</summary>
+                  <div class="table-wrap rej__table">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>평가 항목</th>
+                          <th class="num">점수</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {Object.entries(row.scores).map(([key, score]: [string, any]) => (
+                          <tr>
+                            <td>{score.label ?? key}</td>
+                            <td class="num">{score.value}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </details>
+              )}
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  {
+    dropped.length > 0 && (
+      <section class="band">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Critic 이전 단계</p>
+              <h2>최소 조건 미달로 제외된 클러스터 {dropped.length}건</h2>
+            </div>
+          </div>
+          <p class="lead">{rejected.droppedNote}</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Signature</th>
+                  <th>제외 사유</th>
+                  <th class="num">Evidence</th>
+                </tr>
+              </thead>
+              <tbody>
+                {dropped.map((row: any) => (
+                  <tr>
+                    <td class="mono">{row.signature}</td>
+                    <td>{row.reason}</td>
+                    <td class="num">{row.evidenceCount}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <section class="band band--cloud band--tight">
+    <div class="container">
+      <div class="card card--flat">
+        <h3>이 기록을 남기는 이유</h3>
+        <p class="muted">
+          반박 기록이 없으면 같은 아이디어가 매주 다시 발굴되고, 매주 같은 논의를 반복하게 됩니다.
+          반박 사유와 재검토 조건을 함께 보존하면, 다음 실행에서는 조건이 실제로 충족되었을 때에만
+          다시 검토하면 됩니다.
+        </p>
+        <p>
+          <a href={`${base}/about/`}>Critic의 검토 항목 전체 보기 &rarr;</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .rej {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-md);
+    }
+    .rej__head {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--sp-md);
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .rej__reason {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--charcoal);
+    }
+    .rej__scores summary {
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--primary);
+    }
+    .rej__table {
+      margin-top: var(--sp-sm);
+      max-width: 420px;
+    }
+  </style>
+</Base>
