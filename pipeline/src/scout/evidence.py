@@ -112,6 +112,33 @@ def _line_containing(lines: list[str], term: str) -> str | None:
     return None
 
 
+def _code_haystack(symbol: Symbol) -> str:
+    """The text a code symbol is matched against.
+
+    The body is split as well as the name: mechanisms usually appear as calls
+    inside a plainly named function, e.g. `applyDriftCompensation()` in `run()`.
+    """
+    return split_identifier(symbol.name) + "\n" + _searchable(symbol.searchable)
+
+
+def _quote_source(signals: list[Signal], raw: str) -> list[Signal]:
+    """Point contexts found only in the split form back at the source line.
+
+    A term matched through `_searchable` carries the lowercased, split text as
+    its context, e.g. `apply drift compensation(x)`. That is not something the
+    code says, so it is replaced by the raw line the term came from.
+    """
+    flat = " ".join(raw.split())
+    lines = raw.splitlines()
+    for signal in signals:
+        if not signal.context or signal.context in flat:
+            continue
+        line = _line_containing(lines, signal.term)
+        if line is not None:
+            signal.context = " ".join(line.split())
+    return signals
+
+
 def _best_context(signals: list[Signal]) -> str:
     ranked = sorted(
         signals,
@@ -226,10 +253,10 @@ class EvidenceBuilder:
 
         produced = 0
         for symbol in symbols:
-            haystack = split_identifier(symbol.name) + "\n" + symbol.searchable
-            signals = LEXICON.match(haystack)
+            signals = LEXICON.match(_code_haystack(symbol))
             if not _is_interesting(signals):
                 continue
+            _quote_source(signals, symbol.searchable)
             self._add(
                 kind="code",
                 path=rel,
