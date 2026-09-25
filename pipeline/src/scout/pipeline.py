@@ -414,6 +414,7 @@ def _run_llm_layer(config: ScoutConfig, options: RunOptions, candidates: list[Ca
     with step(f"LLM layer ({settings.runner}, model {settings.model})"):
         if not client.probe():
             report = client.report.to_dict()
+            report.update(_engine_roles(config))
             report["skipped"] = True
             report["skipReason"] = "엔드포인트에 접속할 수 없어 규칙 기반 결과를 그대로 유지했습니다."
             return report
@@ -428,9 +429,16 @@ def _run_llm_layer(config: ScoutConfig, options: RunOptions, candidates: list[Ca
                     client.challenge_candidate(candidate, items)
                 )
         report = client.report.to_dict()
+        report.update(_engine_roles(config))
         report["candidatesConsidered"] = len(targets)
         report["skipped"] = False
         return report
+
+
+def _engine_roles(config: ScoutConfig) -> dict[str, str]:
+    """Which engine each role actually ran, so the history page does not name a
+    critic model when the critic is the rules engine (#3)."""
+    return {"scoutEngine": config.engine.scout, "criticEngine": config.engine.critic}
 
 
 def _api_problems(client: GitHubClient | None) -> list[dict[str, Any]]:

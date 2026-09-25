@@ -96,11 +96,15 @@ const engine = meta.engine ?? {};
                 <dl class="kv engine__kv">
                   <dt>Scout 모델</dt>
                   <dd class="mono">
-                    {engine.scoutModel} (temperature {engine.scoutTemperature})
+                    {engine.scoutEngine === 'rules'
+                      ? '규칙 기반 (모델 미사용)'
+                      : `${engine.scoutModel} (temperature ${engine.scoutTemperature})`}
                   </dd>
                   <dt>Critic 모델</dt>
                   <dd class="mono">
-                    {engine.criticModel} (temperature {engine.criticTemperature})
+                    {engine.criticEngine === 'rules'
+                      ? '규칙 기반 (모델 미사용)'
+                      : `${engine.criticModel} (temperature ${engine.criticTemperature})`}
                   </dd>
                   <dt>Endpoint</dt>
                   <dd class="mono">{engine.baseUrl}</dd>
