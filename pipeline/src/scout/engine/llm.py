@@ -40,6 +40,10 @@ from ..models import Candidate, CriticFinding, Evidence, Narrative
 from ..util import log, truncate
 
 _JSON_BLOCK_RE = re.compile(r"\{.*\}", re.DOTALL)
+# Small Qwen models drift into Chinese mid-sentence ("기준线与", "최적화范畴").
+# The output is Korean with English terms, so any Han character marks a
+# sentence that is not fit to publish, cited or not.
+_HAN_RE = re.compile("[\\u3400-\\u4dbf\\u4e00-\\u9fff\\uf900-\\ufaff]")
 
 _SCOUT_SYSTEM = """당신은 Camera Software 분야의 기술 발굴 분석자입니다.
 
@@ -47,7 +51,7 @@ _SCOUT_SYSTEM = """당신은 Camera Software 분야의 기술 발굴 분석자�
 1. 제공된 Evidence에 실제로 기재된 내용만 서술합니다. 추측을 서술하지 않습니다.
 2. 모든 주장에는 그 근거가 되는 evidence id를 함께 제시합니다. 근거가 없으면 그 문장을 쓰지 않습니다.
 3. 근거가 부족하면 UNKNOWN, LOW_CONFIDENCE, NEEDS_VERIFICATION 중 하나를 명시합니다.
-4. 한국어로 서술합니다. 다만 심볼명, 파일 경로, Repository 이름, 정착된 기술 용어는 원어를 유지합니다.
+4. 한국어로 서술합니다. 다만 심볼명, 파일 경로, Repository 이름, 기술 용어는 원어를 유지합니다. 기술 용어를 한글로 음차하지 않습니다. 예: drift를 "드리프트"로, closed loop를 "클로즈드 루프"로 쓰지 않고 원어로 씁니다.
 5. 조사와 어미를 생략하지 않고, 종결어미를 갖춘 완성된 문장으로 끝맺습니다.
 6. 오직 JSON만 출력합니다. 설명 문장이나 코드 블록 표시를 덧붙이지 않습니다."""
 
@@ -66,8 +70,10 @@ _CRITIC_SYSTEM = """당신은 Camera Software 분야의 기술 심사자입니�
 규칙:
 1. 반박은 제공된 Evidence에 근거해야 합니다. 각 반박에 evidence id를 제시합니다.
 2. 근거 없는 반박은 제시하지 않습니다.
-3. 한국어로 서술하되 심볼명과 기술 용어는 원어를 유지합니다.
-4. 오직 JSON만 출력합니다."""
+3. quote는 원본의 일부만 발췌한 것입니다. quote에 보이지 않는다는 이유로 구현이 없다거나 로직이 없다고 주장하지 않습니다. 부재를 주장하려면 그 부재를 직접 보여 주는 Evidence가 있어야 합니다.
+4. 이전 방식과 현재 방식을 구분합니다. prior로 표시된 줄은 삭제된 이전 코드이며, 현재 기법이 아닙니다.
+5. 한국어로 서술하되 심볼명과 기술 용어는 원어를 유지하고, 한글로 음차하지 않습니다.
+6. 오직 JSON만 출력합니다."""
 
 
 @dataclass
@@ -85,6 +91,10 @@ class LLMSettings:
     critic_temperature: float = 0.0
     timeout_seconds: int = 120
     max_candidates: int = 40
+    # Extra fields merged into every request body, for server specific switches
+    # such as turning off Qwen's thinking output (`reasoning_effort: none` on
+    # Ollama). The fields this client sets itself always win.
+    extra_body: dict[str, Any] = field(default_factory=dict)
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "LLMSettings":
@@ -114,7 +124,13 @@ class LLMReport:
     base_url: str = ""
     candidates_enriched: int = 0
     objections_added: int = 0
+    # Accepted and discarded together give the citation rate, which is what
+    # says whether the prompts need work (#3).
+    claims_accepted: int = 0
     claims_discarded: int = 0
+    # Cited, but written partly in another script. Kept apart from
+    # claims_discarded, which measures citation, so each rate stays readable.
+    claims_off_language: int = 0
     failures: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
@@ -129,7 +145,9 @@ class LLMReport:
             "baseUrl": self.base_url,
             "candidatesEnriched": self.candidates_enriched,
             "objectionsAdded": self.objections_added,
+            "claimsAccepted": self.claims_accepted,
             "claimsDiscarded": self.claims_discarded,
+            "claimsOffLanguage": self.claims_off_language,
             "failures": self.failures[:10],
             "note": ("LLM은 증거를 새로 만들 수 없습니다. evidence id를 인용하지 않은 문장은 "
                      "버립니다. Scout과 Critic은 같은 모델을 쓰지만 system prompt와 "
@@ -177,6 +195,7 @@ class LLMClient:
     def _chat(self, model: str, system: str, user: str,
               temperature: float) -> dict[str, Any] | None:
         payload = {
+            **(self.settings.extra_body or {}),
             "model": model,
             "temperature": temperature,
             "messages": [
@@ -234,18 +253,36 @@ class LLMClient:
                 # not publish.
                 self.report.claims_discarded += 1
                 continue
+            if _HAN_RE.search(text):
+                self.report.claims_off_language += 1
+                continue
             current: Narrative = getattr(candidate, attribute)
             # The model may not upgrade a marker into a confident claim.
             confidence = current.confidence
             setattr(candidate, attribute, Narrative(
                 text=text, evidence_ids=cited, confidence=confidence,
             ))
+            self.report.claims_accepted += 1
             changed = True
 
-        summary = str(result.get("summary") or "").strip()
-        if summary:
-            candidate.summary = summary
-            changed = True
+        # The summary is held to the same rule as every other sentence. It used
+        # to be taken as a bare string, so it was the one place a model could
+        # publish text that cited nothing.
+        summary = result.get("summary")
+        if isinstance(summary, dict):
+            text = str(summary.get("text") or "").strip()
+            cited = [i for i in (summary.get("evidenceIds") or []) if i in valid_ids]
+        else:
+            text, cited = str(summary or "").strip(), []
+        if text:
+            if cited and _HAN_RE.search(text):
+                self.report.claims_off_language += 1
+            elif cited:
+                candidate.summary = text
+                self.report.claims_accepted += 1
+                changed = True
+            else:
+                self.report.claims_discarded += 1
 
         if changed:
             self.report.candidates_enriched += 1
@@ -272,6 +309,9 @@ class LLMClient:
             if not cited:
                 self.report.claims_discarded += 1
                 continue
+            if _HAN_RE.search(detail):
+                self.report.claims_off_language += 1
+                continue
             findings.append(CriticFinding(
                 rule=f"LLM{index}",
                 title=truncate(str(raw.get("title") or "모델이 제기한 반박"), 90),
@@ -280,6 +320,7 @@ class LLMClient:
                 evidence_ids=cited,
             ))
         self.report.objections_added += len(findings)
+        self.report.claims_accepted += len(findings)
         return findings
 
 
@@ -294,6 +335,23 @@ def _evidence_block(evidence: list[Evidence], limit: int = 24) -> str:
             f"lines={item.line_start or '-'}..{item.line_end or '-'}\n"
             f"  quote: {truncate(item.snippet, 260)}"
         )
+        # The quote is a 260 character excerpt, and a model reading only the
+        # excerpt concluded that code it could not see did not exist. The source
+        # lines behind the mechanism terms narrow that gap, and removed lines are
+        # labelled so that the replaced approach is not read as the current one.
+        seen = {item.snippet}
+        shown = 0
+        for signal in item.signals:
+            if not signal.context or signal.context in seen:
+                continue
+            if signal.kind == "prior":
+                lines.append(f"  prior (삭제된 이전 코드): {truncate(signal.context, 160)}")
+            elif signal.kind == "mechanism" and shown < 2:
+                lines.append(f"  line: {truncate(signal.context, 160)}")
+                shown += 1
+            else:
+                continue
+            seen.add(signal.context)
     return "\n".join(lines)
 
 
@@ -316,7 +374,7 @@ Evidence 목록:
 
 다음 JSON 형식으로만 답하십시오. 근거가 없는 항목은 아예 생략하십시오.
 {{
-  "summary": "한 문장에서 세 문장",
+  "summary": {{"text": "한 문장에서 세 문장", "evidenceIds": ["ev_..."]}},
   "problem": {{"text": "...", "evidenceIds": ["ev_..."]}},
   "proposedTechnique": {{"text": "...", "evidenceIds": ["ev_..."]}},
   "difference": {{"text": "...", "evidenceIds": ["ev_..."]}},

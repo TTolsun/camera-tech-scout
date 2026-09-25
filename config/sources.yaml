@@ -105,8 +105,14 @@ engine:
   # model, so the Scout and Critic roles are separated by system prompt and
   # sampling rather than by model identity. The Critic runs at temperature 0 so
   # that the same candidate is challenged the same way on every run.
+  #
+  # The critic stays on `rules` (#3). Validated against qwen3.5:4b, its
+  # objections cited real evidence but mostly misread it: it called existing
+  # drift estimation absent and read the removed lookup table as the current
+  # technique. Citation checks cannot catch a misreading. Re-validate on the
+  # fixture before switching it to `llm` with a larger model.
   scout: llm
-  critic: llm
+  critic: rules
 
   llm:
     enabled: true
@@ -130,6 +136,13 @@ engine:
     critic_temperature: 0.0
 
     timeout_seconds: 120
+
+    # Extra fields sent with every request. Qwen models emit a long thinking
+    # block before the answer unless it is turned off, which roughly doubles the
+    # time per call. Ollama takes `reasoning_effort: none`; vLLM takes
+    # `chat_template_kwargs: {enable_thinking: false}`.
+    # extra_body:
+    #   reasoning_effort: none
 
     # Only the strongest candidates are sent to the model, so a weekly run has a
     # predictable cost.

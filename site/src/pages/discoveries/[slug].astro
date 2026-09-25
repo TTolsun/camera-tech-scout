@@ -283,6 +283,12 @@ const failedFindings = (candidate.criticFindings ?? []).filter((f) => !f.passed)
                       <span class="badge badge--warn badge--sm mono">{finding.rule}</span>
                       <strong>{finding.title}</strong>
                     </div>
+                    {finding.rule.startsWith('LLM') && (
+                      <p class="fine">
+                        모델이 제기한 의견입니다. 근거를 인용했지만 사실 여부는 검증되지 않았으므로,
+                        인용된 근거를 직접 확인해야 합니다.
+                      </p>
+                    )}
                     <p class="finding__detail">{finding.detail}</p>
                     {finding.evidence_ids.length > 0 && (
                       <p class="fine">
