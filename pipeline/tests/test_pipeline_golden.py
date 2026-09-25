@@ -42,7 +42,12 @@ EXPECTED_ACCEPTED = {
 EXPECTED_REJECTED = {"3a|adaptive-control"}
 # Rose from 24 when commit diffs began to be read: three commits whose
 # messages carry no camera vocabulary turned out to have it in their diffs.
-EXPECTED_EVIDENCE_TOTAL = 27
+# Rose from 27 when function bodies began to be identifier-split (#9):
+# `IspBufferPool::updateWatermarks` sets `highWaterMark_` from the measured
+# pipeline depth, a real mechanism the raw body hid. The other addition,
+# `SensorSyncController::configure`, only resets `predictedSofNs_` and is weak;
+# it changes no candidate outcome, so it is accepted as the cost of recall.
+EXPECTED_EVIDENCE_TOTAL = 29
 EXPECTED_EVIDENCE_KINDS = {"code", "doc", "commit", "pull_request", "issue", "release", "config"}
 
 

@@ -78,8 +78,8 @@ def _prior_signals(diff: DiffText) -> list[Signal]:
             continue
         # Prefer quoting the deleted code over the deleted comment about it.
         line = (
-            _line_containing(code_lines, signal.term)
-            or _line_containing(diff.removed, signal.term)
+            _line_containing(code_lines, signal.term, signal.kind)
+            or _line_containing(diff.removed, signal.term, signal.kind)
             or signal.context
         )
         out.append(
@@ -103,13 +103,44 @@ def _searchable(text: str) -> str:
     return text + "\n" + split_identifier(text)
 
 
-def _line_containing(lines: list[str], term: str) -> str | None:
-    """Find the line a term came from, matching camelCase as well as prose."""
-    lowered = term.lower()
+def _line_containing(lines: list[str], term: str, kind: str) -> str | None:
+    """Find the line a term came from, matching camelCase as well as prose.
+
+    The line is matched with the lexicon itself rather than as a substring, so
+    that a short term keeps its word boundary: `sof` must not quote a line that
+    only says `software`.
+    """
     for line in lines:
-        if lowered in line.lower() or lowered in split_identifier(line):
+        if any(s.term == term for s in LEXICON.match(_searchable(line), kinds=(kind,))):
             return line
     return None
+
+
+def _code_haystack(symbol: Symbol) -> str:
+    """The text a code symbol is matched against.
+
+    The body is split as well as the name: mechanisms usually appear as calls
+    inside a plainly named function, e.g. `applyDriftCompensation()` in `run()`.
+    """
+    return split_identifier(symbol.name) + "\n" + _searchable(symbol.searchable)
+
+
+def _quote_source(signals: list[Signal], raw: str) -> list[Signal]:
+    """Point contexts found only in the split form back at the source line.
+
+    A term matched through `_searchable` carries the lowercased, split text as
+    its context, e.g. `apply drift compensation(x)`. That is not something the
+    code says, so it is replaced by the raw line the term came from.
+    """
+    flat = " ".join(raw.split())
+    lines = raw.splitlines()
+    for signal in signals:
+        if not signal.context or signal.context in flat:
+            continue
+        line = _line_containing(lines, signal.term, signal.kind)
+        if line is not None:
+            signal.context = " ".join(line.split())
+    return signals
 
 
 def _best_context(signals: list[Signal]) -> str:
@@ -226,10 +257,10 @@ class EvidenceBuilder:
 
         produced = 0
         for symbol in symbols:
-            haystack = split_identifier(symbol.name) + "\n" + symbol.searchable
-            signals = LEXICON.match(haystack)
+            signals = LEXICON.match(_code_haystack(symbol))
             if not _is_interesting(signals):
                 continue
+            _quote_source(signals, symbol.searchable)
             self._add(
                 kind="code",
                 path=rel,
