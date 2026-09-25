@@ -180,3 +180,33 @@ def test_platform_standard_hits():
 
 def test_platform_standard_does_not_fire_on_ordinary_text():
     assert LEXICON.platform_standard_hits("an adaptive controller") == []
+
+
+# ---------------------------------------------------------------------------
+# Evaluation
+# ---------------------------------------------------------------------------
+@pytest.mark.parametrize(
+    "text",
+    [
+        "Tested on OV2740 behind Intel IPU6 ISYS (ThinkPad X1 Carbon Gen 10)",
+        "Analogue gain model (measured on ThinkPad X9-15 Gen 1, Fedora 44)",
+        "Latency measured with a scope on the strobe output",
+    ],
+)
+def test_field_validation_is_evaluation(text):
+    """How camera repositories record an evaluation that was actually run (#4)."""
+    assert "evaluation" in kinds_of(text)
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "buffer timestamp, it's a time reference measured in nanosecond",
+        "Define per-frame time measurement parameters in software ISP",
+        "fragment compared to the frame",
+        "custom initialization and cleanup before and after the run",
+    ],
+)
+def test_units_and_instrumentation_are_not_evaluation(text):
+    """A unit, a measurement option or a geometric comparison is not an experiment."""
+    assert "evaluation" not in kinds_of(text)
