@@ -131,6 +131,13 @@ engine:
 
     timeout_seconds: 120
 
+    # Extra fields sent with every request. Qwen models emit a long thinking
+    # block before the answer unless it is turned off, which roughly doubles the
+    # time per call. Ollama takes `reasoning_effort: none`; vLLM takes
+    # `chat_template_kwargs: {enable_thinking: false}`.
+    # extra_body:
+    #   reasoning_effort: none
+
     # Only the strongest candidates are sent to the model, so a weekly run has a
     # predictable cost.
     max_candidates: 40

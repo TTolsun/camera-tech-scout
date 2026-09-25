@@ -110,8 +110,12 @@ const engine = meta.engine ?? {};
                   <dd>{engine.candidatesEnriched ?? 0}건</dd>
                   <dt>추가된 반박</dt>
                   <dd>{engine.objectionsAdded ?? 0}건</dd>
+                  <dt>근거를 인용해 채택된 주장</dt>
+                  <dd>{engine.claimsAccepted ?? 0}건</dd>
                   <dt>근거 없어 폐기된 주장</dt>
                   <dd>{engine.claimsDiscarded ?? 0}건</dd>
+                  <dt>다른 문자가 섞여 폐기된 주장</dt>
+                  <dd>{engine.claimsOffLanguage ?? 0}건</dd>
                 </dl>
                 {engine.note && <p class="fine">{engine.note}</p>}
                 {(engine.failures ?? []).length > 0 && (
