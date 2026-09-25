@@ -78,8 +78,8 @@ def _prior_signals(diff: DiffText) -> list[Signal]:
             continue
         # Prefer quoting the deleted code over the deleted comment about it.
         line = (
-            _line_containing(code_lines, signal.term)
-            or _line_containing(diff.removed, signal.term)
+            _line_containing(code_lines, signal.term, signal.kind)
+            or _line_containing(diff.removed, signal.term, signal.kind)
             or signal.context
         )
         out.append(
@@ -103,11 +103,15 @@ def _searchable(text: str) -> str:
     return text + "\n" + split_identifier(text)
 
 
-def _line_containing(lines: list[str], term: str) -> str | None:
-    """Find the line a term came from, matching camelCase as well as prose."""
-    lowered = term.lower()
+def _line_containing(lines: list[str], term: str, kind: str) -> str | None:
+    """Find the line a term came from, matching camelCase as well as prose.
+
+    The line is matched with the lexicon itself rather than as a substring, so
+    that a short term keeps its word boundary: `sof` must not quote a line that
+    only says `software`.
+    """
     for line in lines:
-        if lowered in line.lower() or lowered in split_identifier(line):
+        if any(s.term == term for s in LEXICON.match(_searchable(line), kinds=(kind,))):
             return line
     return None
 
@@ -133,7 +137,7 @@ def _quote_source(signals: list[Signal], raw: str) -> list[Signal]:
     for signal in signals:
         if not signal.context or signal.context in flat:
             continue
-        line = _line_containing(lines, signal.term)
+        line = _line_containing(lines, signal.term, signal.kind)
         if line is not None:
             signal.context = " ".join(line.split())
     return signals

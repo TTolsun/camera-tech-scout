@@ -54,3 +54,14 @@ def test_raw_matches_keep_their_context():
     _quote_source(signals, symbol.searchable)
 
     assert {s.term: s.context for s in signals} == before
+
+
+def test_short_terms_are_not_quoted_from_a_longer_word():
+    text = "// uses a software timer\nvoid f() {\n  predictedSofNs_ = next;\n}"
+    symbol = _symbol(text, name="f")
+    signals = LEXICON.match(_code_haystack(symbol))
+
+    _quote_source(signals, symbol.searchable)
+
+    sof = next(s for s in signals if s.term == "sof")
+    assert sof.context == "predictedSofNs_ = next;"
