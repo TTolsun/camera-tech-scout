@@ -22,6 +22,23 @@ class ConfigError(ValueError):
     """Raised when the configuration file cannot be used as written."""
 
 
+def _known_fields(cls: type, data: dict[str, Any], section: str) -> dict[str, Any]:
+    """Return ``data`` restricted to the dataclass fields, rejecting the rest.
+
+    A key that is silently dropped looks like a setting that works. Setting
+    `discussions: true` used to do nothing, with no hint why (#5), so an
+    unknown key is an error that names the keys that do exist.
+    """
+    fields = cls.__dataclass_fields__
+    unknown = sorted(set(data) - set(fields))
+    if unknown:
+        raise ConfigError(
+            f"unknown key(s) under `{section}`: {', '.join(unknown)}; "
+            f"expected one of: {', '.join(fields)}"
+        )
+    return dict(data)
+
+
 @dataclass
 class Limits:
     clone_depth: int = 400
@@ -38,8 +55,7 @@ class Limits:
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "Limits":
-        known = {f: data[f] for f in cls.__dataclass_fields__ if f in data}
-        return cls(**known)
+        return cls(**_known_fields(cls, data, "limits"))
 
 
 @dataclass
@@ -50,12 +66,11 @@ class AnalysisToggles:
     pull_requests: bool = True
     issues: bool = True
     releases: bool = True
-    discussions: bool = False
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "AnalysisToggles":
-        known = {f: bool(data[f]) for f in cls.__dataclass_fields__ if f in data}
-        return cls(**known)
+        known = _known_fields(cls, data, "analysis")
+        return cls(**{key: bool(value) for key, value in known.items()})
 
 
 @dataclass
