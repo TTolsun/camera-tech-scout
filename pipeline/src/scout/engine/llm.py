@@ -195,7 +195,7 @@ class LLMClient:
     def _chat(self, model: str, system: str, user: str,
               temperature: float) -> dict[str, Any] | None:
         payload = {
-            **self.settings.extra_body,
+            **(self.settings.extra_body or {}),
             "model": model,
             "temperature": temperature,
             "messages": [

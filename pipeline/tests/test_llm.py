@@ -162,3 +162,22 @@ def test_objections_mixing_chinese_are_dropped():
 
     assert client.challenge_candidate(_candidate(), EVIDENCE) == []
     assert client.report.claims_off_language == 1
+
+
+def test_an_empty_extra_body_in_yaml_is_harmless():
+    """`extra_body:` with no value arrives as None."""
+    sent = {}
+
+    class Response:
+        status_code = 200
+
+        @staticmethod
+        def json():
+            return {"choices": [{"message": {"content": "{}"}}]}
+
+    client = LLMClient(LLMSettings.from_dict({"enabled": True, "extra_body": None}))
+    client.session.post = lambda url, json, timeout: sent.update(json) or Response()
+
+    client._chat("qwen", "system", "user", 0.0)
+
+    assert sent["model"] == "qwen"
