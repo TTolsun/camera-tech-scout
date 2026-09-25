@@ -78,7 +78,6 @@ defaults:
     pull_requests: true
     issues: true
     releases: true
-    discussions: false
 
   limits:
     clone_depth: 400          # commits fetched on a first full clone
