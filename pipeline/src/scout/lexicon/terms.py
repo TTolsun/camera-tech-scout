@@ -323,18 +323,20 @@ EVALUATION: dict[str, tuple[float, list[str]]] = {
             "evaluation metric", "ground truth", "statistical significance",
         ],
     ),
-    # How camera repositories actually record evaluation: on named hardware, as
-    # a timing run, or as a comparison around a change. Chosen from phrase counts
-    # over ipu6-camera-hal, libcamera and libpisp (#4). Image quality metrics
-    # (PSNR, SSIM, MTF) were counted too and occur zero or one time, so they are
-    # not listed. Rejected as mostly noise: "compared to" (geometry comments),
-    # "profiling" (an atrace option) and "time measurement" (a configuration
-    # option describing instrumentation, not an evaluation that was run). CPU
-    # usage and power consumption are already domain terms and frame drops a
-    # problem term, so they are not double counted here.
+    # How camera repositories actually record evaluation: on named hardware or
+    # on a named machine. Chosen from phrase counts over ipu6-camera-hal,
+    # libcamera and libpisp (#4).
+    #
+    # Image quality metrics (PSNR, SSIM, MTF) occur zero or one time there, so
+    # they are not listed. Rejected as mostly noise: "compared to" (geometry
+    # comments), "profiling" (an atrace option), "time measurement" (an option
+    # describing instrumentation, not an evaluation that was run) and "before
+    # and after" (setup and cleanup comments; its one real use already says
+    # "benchmark"). CPU usage and power consumption are already domain terms and
+    # frame drops a problem term, so they are not counted twice.
     "field-validation": (
         2.4,
-        ["tested on", "measured on", "measured with", "before and after"],
+        ["tested on", "measured on", "measured with"],
     ),
 }
 

@@ -190,7 +190,7 @@ def test_platform_standard_does_not_fire_on_ordinary_text():
     [
         "Tested on OV2740 behind Intel IPU6 ISYS (ThinkPad X1 Carbon Gen 10)",
         "Analogue gain model (measured on ThinkPad X9-15 Gen 1, Fedora 44)",
-        "always benchmark the Software ISP before and after making changes",
+        "Latency measured with a scope on the strobe output",
     ],
 )
 def test_field_validation_is_evaluation(text):
@@ -204,6 +204,7 @@ def test_field_validation_is_evaluation(text):
         "buffer timestamp, it's a time reference measured in nanosecond",
         "Define per-frame time measurement parameters in software ISP",
         "fragment compared to the frame",
+        "custom initialization and cleanup before and after the run",
     ],
 )
 def test_units_and_instrumentation_are_not_evaluation(text):
