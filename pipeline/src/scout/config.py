@@ -48,6 +48,9 @@ class GitHubConfig:
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "GitHubConfig":
+        if not isinstance(data, dict):
+            raise ConfigError("github must be a mapping")
+        _known_fields(cls, data, "github")
         web = str(data.get("web_url", "https://github.com")).rstrip("/")
         api = str(data.get("api_url") or (
             "https://api.github.com" if web == "https://github.com" else web + "/api/v3"

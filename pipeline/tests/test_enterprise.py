@@ -92,6 +92,12 @@ def test_host_requires_https_without_credentials(url):
         GitHubConfig.from_dict({"web_url": url})
 
 
+@pytest.mark.parametrize("settings", ["github.example.invalid", {"web_urll": "https://github.example.invalid"}])
+def test_invalid_github_section_is_not_silently_ignored(settings):
+    with pytest.raises(ConfigError):
+        GitHubConfig.from_dict(settings)
+
+
 def test_enterprise_api_and_private_organization_listing():
     session = Mock()
     response = Mock(status_code=200, headers={})
