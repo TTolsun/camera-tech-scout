@@ -28,3 +28,7 @@ weekly-summary.txt
 
 # Local editor and tooling scratch
 .claude/
+
+# Internal deployment settings and generated results stay local.
+config/*.local.yaml
+data-internal*/

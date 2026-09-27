@@ -14,6 +14,7 @@ import subprocess
 import time
 from dataclasses import dataclass, field
 from typing import Any, Iterator
+from urllib.parse import urlsplit
 
 import requests
 
@@ -23,16 +24,17 @@ API_ROOT = "https://api.github.com"
 USER_AGENT = "camera-tech-scout/0.1"
 
 
-def discover_token() -> str | None:
+def discover_token(host: str = "github.com", token_env: str = "GITHUB_TOKEN") -> str | None:
     """Find a usable token: environment first, then the GitHub CLI."""
-    for name in ("GITHUB_TOKEN", "GH_TOKEN"):
+    names = (token_env, "GH_TOKEN") if token_env == "GITHUB_TOKEN" else (token_env,)
+    for name in names:
         value = os.environ.get(name)
         if value:
             log.debug("using token from %s", name)
             return value.strip()
     try:
         result = subprocess.run(
-            ["gh", "auth", "token"],
+            ["gh", "auth", "token", "--hostname", host],
             capture_output=True, text=True, timeout=20, check=False,
         )
         if result.returncode == 0 and result.stdout.strip():
@@ -55,6 +57,10 @@ class ApiProblem:
 @dataclass
 class GitHubClient:
     token: str | None = None
+    web_url: str = "https://github.com"
+    api_url: str = API_ROOT
+    token_env: str = "GITHUB_TOKEN"
+    repository_type: str = "all"
     session: requests.Session = field(default_factory=requests.Session)
     problems: list[ApiProblem] = field(default_factory=list)
     requests_made: int = 0
@@ -63,7 +69,7 @@ class GitHubClient:
 
     def __post_init__(self) -> None:
         if self.token is None:
-            self.token = discover_token()
+            self.token = discover_token(urlsplit(self.web_url).netloc, self.token_env)
         headers = {
             "Accept": "application/vnd.github+json",
             "X-GitHub-Api-Version": "2022-11-28",
@@ -82,7 +88,7 @@ class GitHubClient:
     # ------------------------------------------------------------------
     def get(self, path: str, params: dict[str, Any] | None = None,
             retries: int = 3) -> Any | None:
-        url = path if path.startswith("http") else API_ROOT + path
+        url = path if path.startswith("http") else self.api_url.rstrip("/") + path
         for attempt in range(1, retries + 1):
             try:
                 response = self.session.get(url, params=params, timeout=45)
@@ -176,7 +182,7 @@ class GitHubClient:
     def list_org_repos(self, org: str, limit: int = 100) -> list[dict[str, Any]]:
         """List an organization's repositories, falling back to the user route."""
         repos = self.paginate(
-            f"/orgs/{org}/repos", params={"type": "public", "sort": "pushed"}, limit=limit
+            f"/orgs/{org}/repos", params={"type": self.repository_type, "sort": "pushed"}, limit=limit
         )
         if repos:
             return [r for r in repos if isinstance(r, dict)]
@@ -234,8 +240,9 @@ def _short_error(response: requests.Response) -> str:
 # URL builders. Kept here so every deep link in the site has one source.
 # ----------------------------------------------------------------------
 def blob_url(full_name: str, ref: str, path: str,
-             line_start: int | None = None, line_end: int | None = None) -> str:
-    url = f"https://github.com/{full_name}/blob/{ref}/{path}"
+             line_start: int | None = None, line_end: int | None = None,
+             *, web_url: str = "https://github.com") -> str:
+    url = f"{web_url}/{full_name}/blob/{ref}/{path}"
     if line_start:
         url += f"#L{line_start}"
         if line_end and line_end != line_start:
@@ -243,17 +250,17 @@ def blob_url(full_name: str, ref: str, path: str,
     return url
 
 
-def commit_url(full_name: str, sha: str) -> str:
-    return f"https://github.com/{full_name}/commit/{sha}"
+def commit_url(full_name: str, sha: str, *, web_url: str = "https://github.com") -> str:
+    return f"{web_url}/{full_name}/commit/{sha}"
 
 
-def pull_url(full_name: str, number: int) -> str:
-    return f"https://github.com/{full_name}/pull/{number}"
+def pull_url(full_name: str, number: int, *, web_url: str = "https://github.com") -> str:
+    return f"{web_url}/{full_name}/pull/{number}"
 
 
-def issue_url(full_name: str, number: int) -> str:
-    return f"https://github.com/{full_name}/issues/{number}"
+def issue_url(full_name: str, number: int, *, web_url: str = "https://github.com") -> str:
+    return f"{web_url}/{full_name}/issues/{number}"
 
 
-def release_url(full_name: str, tag: str) -> str:
-    return f"https://github.com/{full_name}/releases/tag/{tag}"
+def release_url(full_name: str, tag: str, *, web_url: str = "https://github.com") -> str:
+    return f"{web_url}/{full_name}/releases/tag/{tag}"

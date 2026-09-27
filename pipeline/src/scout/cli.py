@@ -15,7 +15,7 @@ from pathlib import Path
 
 from .config import ConfigError, load_config
 from .labels import domain_label
-from .pipeline import RunOptions, run
+from .pipeline import CollectionError, RunOptions, run
 from .store import Store
 from .util import log, setup_logging
 
@@ -89,6 +89,9 @@ def main(argv: list[str] | None = None) -> int:
     except ConfigError as exc:
         log.error("설정 오류: %s", exc)
         return 2
+    except CollectionError as exc:
+        log.error("수집 오류: %s", exc)
+        return 1
     except KeyboardInterrupt:
         log.error("사용자가 중단했습니다.")
         return 130
@@ -111,6 +114,10 @@ def _cmd_scan(args: argparse.Namespace) -> int:
     )
     result = run(options)
     _print_summary(result)
+
+    if any(repo.status == "error" for repo in result.repositories):
+        log.error("저장소 수집이 실패했습니다. 인증과 분석 브랜치를 확인하십시오.")
+        return 1
 
     if args.fail_on_empty and result.candidate_count == 0:
         log.error("후보가 생성되지 않았습니다. --fail-on-empty 조건에 따라 실패로 처리합니다.")
@@ -236,6 +243,9 @@ def _cmd_search(args: argparse.Namespace) -> int:
 def _cmd_check_config(args: argparse.Namespace) -> int:
     config = load_config(args.config)
     print(f"설정 파일         : {config.path}")
+    print(f"GitHub 웹 주소    : {config.github.web_url}")
+    print(f"GitHub API 주소   : {config.github.api_url}")
+    print(f"기본 분석 브랜치  : {config.defaults.branches[0]}")
     print(f"Organization      : {len(config.enabled_organizations())}개 활성")
     for org in config.enabled_organizations():
         print(f"  - {org.org} (match={org.match or '전체'}, "

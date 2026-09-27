@@ -1,0 +1,37 @@
+# Copy to sources.local.yaml and replace example.invalid inside your company.
+version: 1
+
+github:
+  web_url: https://github.example.invalid
+  # Defaults to <web_url>/api/v3 on GitHub Enterprise Server.
+  api_url: https://github.example.invalid/api/v3
+  token_env: SCOUT_GITHUB_TOKEN
+  repository_type: all
+
+sources:
+  organizations: []
+  repositories:
+    - url: https://github.example.invalid/camera/camera-hal
+      enabled: true
+      # Optional per-repository override; exactly one branch is supported.
+      # branches: [development]
+
+defaults:
+  branches: [main]
+  # Adjust these paths to the mirrored repository's actual structure.
+  include: [src/**, include/**, camera/**, vendor/**, docs/**, "*.md"]
+  exclude: [third_party/**, generated/**, tests/data/**]
+  analysis:
+    code: true
+    documents: true
+    commits: true
+    # Gerrit reviews are not GitHub pull requests; Git mirroring does not copy them.
+    pull_requests: false
+    issues: false
+    releases: false
+
+engine:
+  scout: rules
+  critic: rules
+  llm:
+    enabled: false

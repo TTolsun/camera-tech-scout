@@ -26,7 +26,7 @@ from typing import Any
 
 from . import fixtures
 from .collect import Commit, GitError, GitRepo
-from .config import ScoutConfig, TargetDefaults, load_config
+from .config import ConfigError, ScoutConfig, TargetDefaults, load_config
 from .critic import Critic
 from .emit import EmitInput, emit_all
 from .engine import LLMClient, LLMSettings
@@ -38,6 +38,10 @@ from .scouting import Scout, link_related
 from .store import Store
 from .technology import build_graph
 from .util import log, step, warn_if_path_too_long
+
+
+class CollectionError(RuntimeError):
+    """Collection failed; keep the previous published JSON intact."""
 
 
 @dataclass
@@ -94,7 +98,7 @@ def run(options: RunOptions) -> RunResult:
                 resolve_report = _resolve_fixtures(config, options)
                 client = None
             else:
-                client = GitHubClient()
+                client = GitHubClient(**config.github.__dict__)
                 if not client.authenticated:
                     result.warnings.append(
                         "GitHub 토큰을 찾지 못했습니다. 비인증 요청은 시간당 60건으로 제한되므로 "
@@ -108,12 +112,21 @@ def run(options: RunOptions) -> RunResult:
                 repos = repos[: options.max_repos]
                 resolve_report.repositories = repos
             log.info("  %d repositories in scope", len(repos))
+            failed_targets = [s["target"] for s in resolve_report.skipped
+                              if s["reason"] != "disabled in configuration"]
+            if not repos or failed_targets:
+                raise CollectionError(
+                    "repository resolution failed or returned no targets; check configuration and API access"
+                )
 
         repo_states: list[RepoState] = []
         with step("repository scan and evidence building"):
             for repo in repos:
                 state = _scan_repository(repo, config, options, store, client, run_id)
                 repo_states.append(state)
+
+        if any(state.status == "error" for state in repo_states):
+            raise CollectionError("repository collection failed; previous published JSON was preserved")
 
         all_evidence = store.load_evidence_for_repos([r.full_name for r in repos])
         log.info("  %d evidence records available for analysis", len(all_evidence))
@@ -262,7 +275,7 @@ def _resolve_fixtures(config: ScoutConfig, options: RunOptions) -> ResolveReport
 def _fixture_settings(defaults: TargetDefaults) -> TargetDefaults:
     """Fixtures are tiny, so the include filter is relaxed to cover every file."""
     relaxed = TargetDefaults(
-        branches=defaults.branches,
+        branches=["main"],
         include=["src/**", "docs/**", "test/**", "*.md", "CMakeLists.txt"],
         exclude=defaults.exclude,
         analysis=defaults.analysis,
@@ -285,11 +298,22 @@ def _scan_repository(repo: ResolvedRepo, config: ScoutConfig, options: RunOption
                      store: Store, client: GitHubClient | None, run_id: str) -> RepoState:
     settings = repo.settings if not options.fixture else _fixture_settings(config.defaults)
     previous = store.get_repo_state(repo.full_name)
+    branch = settings.branches[0]
     metadata = repo.metadata or {}
+    if previous and not options.fixture:
+        # Older scans stored the checkout's branch name, even in HEAD mode.
+        same_branch = previous.default_branch == branch or (
+            branch == "HEAD" and previous.default_branch == metadata.get("default_branch")
+        )
+        if previous.url != repo.url or not same_branch:
+            raise ConfigError(
+                f"{repo.full_name}: repository URL or analysis branch differs from stored state; "
+                "use a separate --db for each host/branch configuration"
+            )
 
     state = RepoState(
         full_name=repo.full_name, org=repo.org, name=repo.name, url=repo.url,
-        default_branch=metadata.get("default_branch") or "HEAD",
+        default_branch=branch,
         last_scanned_sha=previous.last_scanned_sha if previous else None,
         description=metadata.get("description") or "",
         stars=int(metadata.get("stargazers_count") or 0),
@@ -304,7 +328,7 @@ def _scan_repository(repo: ResolvedRepo, config: ScoutConfig, options: RunOption
         path = options.cache_dir / "repos" / repo.org / repo.name
         git = GitRepo(full_name=repo.full_name, clone_url=repo.clone_url, path=path)
         try:
-            action = git.ensure(depth=settings.limits.clone_depth)
+            action = git.ensure(depth=settings.limits.clone_depth, branch=branch)
             log.info("  %s: %s", repo.full_name, action)
         except GitError as exc:
             state.status = "error"
@@ -314,7 +338,7 @@ def _scan_repository(repo: ResolvedRepo, config: ScoutConfig, options: RunOption
             return state
 
     state.head_sha = git.head_sha()
-    state.default_branch = git.current_branch()
+    state.default_branch = branch
 
     changed_files: list[str] | None = None
     if not options.full and state.last_scanned_sha and state.last_scanned_sha != state.head_sha:
@@ -396,6 +420,8 @@ def _run_llm_layer(config: ScoutConfig, options: RunOptions, candidates: list[Ca
                    evidence_by_id: dict[str, Evidence]) -> dict[str, Any]:
     settings = LLMSettings.from_dict(config.engine.llm)
     wanted = config.engine.uses_llm if options.use_llm is None else options.use_llm
+    if options.dry_run and options.use_llm is None:
+        wanted = False
 
     if not wanted:
         reason = ("dry-run에서는 기본적으로 모델을 호출하지 않습니다."

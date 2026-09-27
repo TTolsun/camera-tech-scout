@@ -6,7 +6,6 @@ instead of cloning, which is what makes the incremental scan cheap.
 
 from __future__ import annotations
 
-import shutil
 import subprocess
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -96,28 +95,43 @@ class GitRepo:
     path: Path
 
     # ------------------------------------------------------------------
-    def ensure(self, depth: int = 400) -> str:
+    def ensure(self, depth: int = 400, branch: str = "main") -> str:
         """Clone or update the working copy. Returns ``"clone"`` or ``"fetch"``."""
+        if branch != "HEAD":
+            code, _, _ = _run(["git", "check-ref-format", "--branch", branch])
+            if code != 0 or branch.startswith("-"):
+                raise GitError(f"invalid branch: {branch}")
+        ref = "HEAD" if branch == "HEAD" else f"refs/heads/{branch}"
         if (self.path / ".git").exists():
+            code, origin, _ = _run(["git", "remote", "get-url", "origin"], cwd=self.path)
+            if code != 0 or origin.strip() != self.clone_url:
+                raise GitError("cached origin differs from configured repository; use a new --cache")
             code, _, err = _run(
-                ["git", "fetch", "--depth", str(depth), "--force", "origin", "HEAD"],
+                ["git", "fetch", "--depth", str(depth), "--force", "origin", ref],
                 cwd=self.path,
             )
             if code != 0:
-                log.warning("fetch failed for %s: %s", self.full_name, err.strip()[:200])
-            else:
-                _run(["git", "checkout", "--force", "FETCH_HEAD"], cwd=self.path)
-                return "fetch"
-            # A broken cache is cheaper to discard than to repair.
-            shutil.rmtree(self.path, ignore_errors=True)
+                raise GitError(f"fetch failed for {self.full_name} ({branch}): {err.strip()[:300]}")
+            code, _, err = _run(["git", "checkout", "--detach", "--force", "FETCH_HEAD"], cwd=self.path)
+            if code != 0:
+                raise GitError(f"checkout failed for {self.full_name}: {err.strip()[:300]}")
+            return "fetch"
 
         self.path.parent.mkdir(parents=True, exist_ok=True)
         code, _, err = _run([
             "git", "clone", "--depth", str(depth), "--single-branch",
+            *(["--branch", branch] if branch != "HEAD" else []),
             "--no-tags", self.clone_url, str(self.path),
         ])
         if code != 0:
             raise GitError(f"clone failed for {self.full_name}: {err.strip()[:300]}")
+        if branch != "HEAD":
+            # git clone --branch also accepts tags; analysis must use a branch.
+            code, _, _ = _run(
+                ["git", "show-ref", "--verify", f"refs/remotes/origin/{branch}"], cwd=self.path,
+            )
+            if code != 0:
+                raise GitError(f"configured branch does not exist: {branch}")
         return "clone"
 
     # ------------------------------------------------------------------

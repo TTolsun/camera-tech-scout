@@ -11,7 +11,8 @@ import Base from '../layouts/Base.astro';
 import { searchIndex } from '../lib/data';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const indexJson = JSON.stringify(searchIndex);
+// Repository text can contain </script>; keep it inside the JSON script node.
+const indexJson = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
 ---
 
 <Base title="Search" description="후보와 Repository를 검색합니다.">
