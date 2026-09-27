@@ -272,7 +272,7 @@ class EvidenceBuilder:
                 snippet=truncate(symbol.doc or _best_context(signals) or symbol.text, 320),
                 signals=signals,
                 url=gh.blob_url(self.repo.full_name, self.ref, rel,
-                                symbol.line_start, symbol.line_end),
+                                symbol.line_start, symbol.line_end, web_url=self.repo.web_url),
             )
             produced += 1
             if produced >= 25:      # one file should not dominate a repository
@@ -293,7 +293,8 @@ class EvidenceBuilder:
                 title=section_title or Path(rel).name,
                 snippet=truncate(_best_context(signals) or body, 320),
                 signals=signals,
-                url=gh.blob_url(self.repo.full_name, self.ref, rel, start_line),
+                url=gh.blob_url(self.repo.full_name, self.ref, rel, start_line,
+                                web_url=self.repo.web_url),
             )
 
     def _scan_config(self, rel: str, text: str) -> None:
@@ -310,7 +311,7 @@ class EvidenceBuilder:
             title=Path(rel).name,
             snippet=truncate(_best_context(signals), 240),
             signals=signals,
-            url=gh.blob_url(self.repo.full_name, self.ref, rel),
+            url=gh.blob_url(self.repo.full_name, self.ref, rel, web_url=self.repo.web_url),
         )
 
     # ------------------------------------------------------------------
@@ -370,7 +371,7 @@ class EvidenceBuilder:
                 snippet=snippet,
                 observed_at=commit.date,
                 signals=signals + prior,
-                url=gh.commit_url(self.repo.full_name, commit.sha),
+                url=gh.commit_url(self.repo.full_name, commit.sha, web_url=self.repo.web_url),
                 extra_id_parts=(commit.sha,),
             )
 
@@ -385,7 +386,7 @@ class EvidenceBuilder:
             if not _is_interesting(signals):
                 continue
             url = (gh.pull_url if kind == "pull_request" else gh.issue_url)(
-                self.repo.full_name, int(number)
+                self.repo.full_name, int(number), web_url=self.repo.web_url
             )
             label = "PR" if kind == "pull_request" else "Issue"
             self._add(
@@ -425,7 +426,7 @@ class EvidenceBuilder:
                 snippet=truncate(_best_context(signals) or body, 320),
                 observed_at=release.get("published_at") or release.get("created_at"),
                 signals=signals,
-                url=gh.release_url(self.repo.full_name, str(tag)),
+                url=gh.release_url(self.repo.full_name, str(tag), web_url=self.repo.web_url),
                 extra_id_parts=(str(tag),),
             )
 

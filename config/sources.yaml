@@ -35,6 +35,8 @@ sources:
 
 defaults:
   branches:
+    # Public demo repositories use their remote default branch.
+    # For internal mirrors, set [main] or one explicit branch name instead.
     - HEAD
 
   include:

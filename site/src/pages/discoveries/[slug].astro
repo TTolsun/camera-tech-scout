@@ -12,7 +12,7 @@ import EvidenceItem from '../../components/EvidenceItem.astro';
 import NarrativeBlock from '../../components/NarrativeBlock.astro';
 import ScoreMeters from '../../components/ScoreMeters.astro';
 import StatusBadge from '../../components/StatusBadge.astro';
-import { candidates, formatDate, type Candidate, type EvidenceRow } from '../../lib/data';
+import { candidates, repositories, formatDate, type Candidate, type EvidenceRow } from '../../lib/data';
 
 export function getStaticPaths() {
   return candidates.map((candidate) => ({
@@ -27,6 +27,7 @@ interface Props {
 
 const { candidate } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const repositoryUrls = new Map(repositories.repositories.map((repo) => [repo.full_name, repo.url]));
 
 const evidenceById: Record<string, EvidenceRow> = Object.fromEntries(
   (candidate.evidence ?? []).map((item) => [item.id, item]),
@@ -382,7 +383,7 @@ const failedFindings = (candidate.criticFindings ?? []).filter((f) => !f.passed)
             {
               candidate.repositories.map((name) => (
                 <li class="repo">
-                  <a class="mono" href={`https://github.com/${name}`} target="_blank" rel="noopener noreferrer">
+                  <a class="mono" href={repositoryUrls.get(name) ?? `${base}/repositories/#${name.replace('/', '--')}`} target="_blank" rel="noopener noreferrer">
                     {name}
                   </a>
                   <a class="fine" href={`${base}/repositories/#${name.replace('/', '--')}`}>

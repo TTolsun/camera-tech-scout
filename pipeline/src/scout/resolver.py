@@ -32,7 +32,11 @@ class ResolvedRepo:
 
     @property
     def clone_url(self) -> str:
-        return f"https://github.com/{self.full_name}.git"
+        return self.url.rstrip("/").removesuffix(".git") + ".git"
+
+    @property
+    def web_url(self) -> str:
+        return self.url.rsplit("/", 2)[0]
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -46,6 +50,7 @@ class ResolvedRepo:
             "stars": self.metadata.get("stargazers_count") or 0,
             "language": self.metadata.get("language") or "",
             "defaultBranch": self.metadata.get("default_branch") or "HEAD",
+            "analysisBranch": self.settings.branches[0],
             "pushedAt": self.metadata.get("pushed_at"),
             "archived": bool(self.metadata.get("archived")),
         }
@@ -132,7 +137,7 @@ def _expand_organization(
                 full_name=f"{source.org}/{name}",
                 org=source.org,
                 name=name,
-                url=item.get("html_url") or f"https://github.com/{source.org}/{name}",
+                url=f"{config.github.web_url}/{source.org}/{name}",
                 settings=settings,
                 origins=[f"organization:{source.org}"],
                 notes=source.notes,

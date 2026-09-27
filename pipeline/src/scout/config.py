@@ -11,11 +11,11 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlsplit
 
 import yaml
 
-GITHUB_ORG_RE = re.compile(r"^https?://github\.com/([A-Za-z0-9._-]+)/?$")
-GITHUB_REPO_RE = re.compile(r"^https?://github\.com/([A-Za-z0-9._-]+)/([A-Za-z0-9._-]+?)(?:\.git)?/?$")
+SOURCE_PART_RE = re.compile(r"^[A-Za-z0-9._-]+$")
 
 
 class ConfigError(ValueError):
@@ -37,6 +37,50 @@ def _known_fields(cls: type, data: dict[str, Any], section: str) -> dict[str, An
             f"expected one of: {', '.join(fields)}"
         )
     return dict(data)
+
+
+@dataclass
+class GitHubConfig:
+    web_url: str = "https://github.com"
+    api_url: str = "https://api.github.com"
+    token_env: str = "GITHUB_TOKEN"
+    repository_type: str = "all"
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> "GitHubConfig":
+        if not isinstance(data, dict):
+            raise ConfigError("github must be a mapping")
+        _known_fields(cls, data, "github")
+        web = str(data.get("web_url", "https://github.com")).rstrip("/")
+        api = str(data.get("api_url") or (
+            "https://api.github.com" if web == "https://github.com" else web + "/api/v3"
+        )).rstrip("/")
+        for label, value in (("web_url", web), ("api_url", api)):
+            parts = urlsplit(value)
+            if (parts.scheme != "https" or not parts.hostname or parts.username
+                    or parts.password or parts.query or parts.fragment
+                    or (label == "web_url" and parts.path)):
+                raise ConfigError(f"github.{label} must be an HTTPS URL without credentials")
+        kind = str(data.get("repository_type", "all"))
+        if kind not in {"all", "public", "private"}:
+            raise ConfigError("github.repository_type must be all, public, or private")
+        token_env = str(data.get("token_env", "GITHUB_TOKEN"))
+        if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", token_env):
+            raise ConfigError("github.token_env must name an environment variable")
+        return cls(web, api, token_env, kind)
+
+
+def _branches(value: Any) -> list[str]:
+    # The store holds one analysis branch per repository, not multiple branches.
+    if (not isinstance(value, list) or len(value) != 1
+            or not isinstance(value[0], str) or not value[0]
+            or value[0].startswith(("-", "/")) or value[0].endswith(("/", "."))
+            or value[0] == "@"
+            or any(c.isspace() or ord(c) < 32 or ord(c) == 127 or c in "~^:?*[\\" for c in value[0])
+            or any(s in value[0] for s in ("..", "@{", "//"))
+            or any(p.startswith(".") or p.endswith(".lock") for p in value[0].split("/"))):
+        raise ConfigError("branches must contain exactly one branch name, e.g. [main]")
+    return value.copy()
 
 
 @dataclass
@@ -75,7 +119,7 @@ class AnalysisToggles:
 
 @dataclass
 class TargetDefaults:
-    branches: list[str] = field(default_factory=lambda: ["HEAD"])
+    branches: list[str] = field(default_factory=lambda: ["main"])
     include: list[str] = field(default_factory=list)
     exclude: list[str] = field(default_factory=list)
     analysis: AnalysisToggles = field(default_factory=AnalysisToggles)
@@ -84,7 +128,7 @@ class TargetDefaults:
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "TargetDefaults":
         return cls(
-            branches=list(data.get("branches") or ["HEAD"]),
+            branches=_branches(data.get("branches", ["main"])),
             include=list(data.get("include") or []),
             exclude=list(data.get("exclude") or []),
             analysis=AnalysisToggles.from_dict(data.get("analysis") or {}),
@@ -94,9 +138,9 @@ class TargetDefaults:
     def merged_with(self, override: dict[str, Any]) -> "TargetDefaults":
         """Return a copy where keys present in ``override`` win."""
         merged = TargetDefaults(
-            branches=list(override.get("branches") or self.branches),
-            include=list(override.get("include") or self.include),
-            exclude=list(override.get("exclude") or self.exclude),
+            branches=_branches(override.get("branches", self.branches)),
+            include=list(override.get("include", self.include)),
+            exclude=list(override.get("exclude", self.exclude)),
             analysis=AnalysisToggles.from_dict(
                 {**self.analysis.__dict__, **(override.get("analysis") or {})}
             ),
@@ -168,6 +212,7 @@ class ScoutConfig:
     defaults: TargetDefaults
     engine: EngineConfig
     thresholds: Thresholds
+    github: GitHubConfig = field(default_factory=GitHubConfig)
 
     def enabled_organizations(self) -> list[OrganizationSource]:
         return [o for o in self.organizations if o.enabled]
@@ -176,22 +221,26 @@ class ScoutConfig:
         return [r for r in self.repositories if r.enabled]
 
 
-def _parse_org_url(url: str) -> str:
-    match = GITHUB_ORG_RE.match(str(url).strip())
-    if not match:
-        raise ConfigError(
-            "organization url must look like https://github.com/<ORG>, got: " + str(url)
-        )
-    return match.group(1)
+def _source_parts(url: str, web_url: str, count: int) -> list[str]:
+    parsed, base = urlsplit(str(url).strip()), urlsplit(web_url)
+    parts = parsed.path.strip("/").split("/")
+    if (parsed.scheme != base.scheme or parsed.netloc.lower() != base.netloc.lower()
+            or parsed.query or parsed.fragment or len(parts) != count
+            or any(not SOURCE_PART_RE.fullmatch(p) or p in {".", ".."} for p in parts)):
+        raise ConfigError("source URL must belong to github.web_url and name an organization/repository")
+    return parts
 
 
-def _parse_repo_url(url: str) -> tuple[str, str]:
-    match = GITHUB_REPO_RE.match(str(url).strip())
-    if not match:
-        raise ConfigError(
-            "repository url must look like https://github.com/<OWNER>/<REPO>, got: " + str(url)
-        )
-    return match.group(1), match.group(2)
+def _parse_org_url(url: str, web_url: str = "https://github.com") -> str:
+    return _source_parts(url, web_url, 1)[0]
+
+
+def _parse_repo_url(url: str, web_url: str = "https://github.com") -> tuple[str, str]:
+    org, name = _source_parts(url, web_url, 2)
+    name = name.removesuffix(".git")
+    if not name or name in {".", ".."}:
+        raise ConfigError("repository name must not be empty or a relative path")
+    return org, name
 
 
 def load_config(path: str | Path) -> ScoutConfig:
@@ -203,6 +252,7 @@ def load_config(path: str | Path) -> ScoutConfig:
     if not isinstance(raw, dict):
         raise ConfigError("configuration root must be a mapping")
 
+    github = GitHubConfig.from_dict(raw.get("github") or {})
     defaults = TargetDefaults.from_dict(raw.get("defaults") or {})
     sources = raw.get("sources") or {}
     if not isinstance(sources, dict):
@@ -211,10 +261,10 @@ def load_config(path: str | Path) -> ScoutConfig:
     organizations: list[OrganizationSource] = []
     for entry in sources.get("organizations") or []:
         entry = _as_entry(entry)
-        org = _parse_org_url(entry["url"])
+        org = _parse_org_url(entry["url"], github.web_url)
         organizations.append(
             OrganizationSource(
-                url=entry["url"].rstrip("/"),
+                url=f"{github.web_url}/{org}",
                 org=org,
                 enabled=bool(entry.get("enabled", True)),
                 match=[str(m) for m in (entry.get("match") or [])],
@@ -227,10 +277,10 @@ def load_config(path: str | Path) -> ScoutConfig:
     repositories: list[RepositorySource] = []
     for entry in sources.get("repositories") or []:
         entry = _as_entry(entry)
-        org, name = _parse_repo_url(entry["url"])
+        org, name = _parse_repo_url(entry["url"], github.web_url)
         repositories.append(
             RepositorySource(
-                url=entry["url"].rstrip("/"),
+                url=f"{github.web_url}/{org}/{name}",
                 org=org,
                 name=name,
                 enabled=bool(entry.get("enabled", True)),
@@ -264,6 +314,7 @@ def load_config(path: str | Path) -> ScoutConfig:
         defaults=defaults,
         engine=engine,
         thresholds=thresholds,
+        github=github,
     )
 
 

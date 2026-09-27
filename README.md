@@ -126,6 +126,52 @@ python -m scout search "동기화"               # 저장된 후보 전문 검�
 python -m scout scan --cache C:/scout-cache --db C:/scout-cache/candidates.sqlite3
 ```
 
+## 사내 GitHub Enterprise 미러 설정
+
+Gerrit에서 GitHub Enterprise로 미러링한 저장소는 코드, 문서, 커밋 메시지와 diff를
+분석할 수 있습니다. Gerrit 리뷰 의견과 패치셋 이력은 별도 연동 대상이며 현재 수집하지 않습니다.
+
+`config/sources.enterprise.example.yaml`을 `config/sources.local.yaml`로 복사한 뒤,
+사내에서 예시 도메인과 저장소 경로를 바꾸십시오. `*.local.yaml`은 Git에서 제외됩니다.
+한 설정 파일은 하나의 GitHub 호스트를 대상으로 합니다.
+
+- `github.web_url`: 사내 GitHub 웹 주소입니다.
+- `github.api_url`: API 주소입니다. 생략하면 Enterprise는 웹 주소 뒤에 `/api/v3`를 붙입니다.
+- `github.token_env`: 읽기 권한이 있는 API 토큰을 담을 환경 변수 이름입니다.
+  토큰이 없으면 해당 호스트의 `gh auth token --hostname ...`을 시도합니다.
+- `github.repository_type`: 조직 조회 범위이며 `all`, `public`, `private` 중 하나입니다.
+- `defaults.branches: [main]`: 분석 브랜치입니다. 저장소 항목의 `branches`로 덮어쓸 수 있습니다.
+  저장소당 하나의 브랜치만 지원합니다. 생략하면 `main`, `[HEAD]`이면 원격 기본 브랜치입니다.
+  지정한 브랜치가 없으면 해당 저장소 수집을 실패로 기록합니다.
+
+API 인증과 Git 인증은 별개입니다. 실행 계정의 Git credential helper 등을 통해 미러 저장소를
+HTTPS로 읽을 수 있도록 설정하십시오. 토큰을 URL이나 YAML에 넣지 마십시오.
+사내 인증서가 필요하면 Requests에는 `REQUESTS_CA_BUNDLE`, Git에는 `http.sslCAInfo`로
+신뢰할 CA 파일을 지정할 수 있습니다.
+문법 파서는 실행 중 추가 다운로드가 필요 없는 `tree-sitter-language-pack==0.13.0`을 사용합니다.
+외부 패키지 설치가 제한된 환경에서는 의존성을 사내 패키지 저장소나 wheel 파일로 미리 준비하십시오.
+
+PowerShell에서는 다음과 같이 검증합니다. Python 의존성과 Git 인증을 먼저 준비하십시오.
+
+```powershell
+Copy-Item config/sources.enterprise.example.yaml config/sources.local.yaml
+# 복사한 파일에서 사내 도메인, 저장소, 수집 경로를 수정합니다.
+# SCOUT_GITHUB_TOKEN 환경 변수는 사내 비밀 관리 방식으로 설정합니다.
+$env:PYTHONPATH = 'pipeline/src'
+python -m scout check-config --config config/sources.local.yaml
+python -m scout scan --config config/sources.local.yaml --dry-run --no-llm --max-repos 1 --cache .cache/internal-main --db .cache/internal-main/candidates.sqlite3 --data data-internal
+```
+
+dry-run 결과는 `data-internal-dryrun/`에 생성됩니다. 사이트를 확인하려면
+`$env:SCOUT_DATA_DIR = '../data-internal-dryrun'` 설정 후 `npm --prefix site run dev`를 실행하십시오.
+정기 실행에서는 `--dry-run`을 빼고 같은 경로를 사용합니다. 실제 결과는 `data-internal/`에 생성됩니다.
+사이트 빌드 시에는 `SCOUT_DATA_DIR`도 `../data-internal`로 변경하십시오.
+
+호스트나 분석 브랜치를 바꿀 때는 별도의 `--db`를 지정해야 기존 분석 이력이 섞이지 않습니다.
+호스트별로 `--cache`도 분리하십시오. 사내 예시는 LLM을 끄며 `vendor/**`를 수집 대상에 포함합니다.
+JSON, DB, 빌드 결과에도 코드 발췌가 포함되므로 사내에 보관하십시오.
+기본 주간 워크플로는 공개 예시 설정을 사용하므로, 사내 스케줄러에서는 위 명령을 기준으로 실행하십시오.
+
 ## 실행 주기
 
 주 1회 실행합니다.
