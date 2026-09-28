@@ -1,8 +1,8 @@
 {
-  "runId": "run_20260924T141757Z",
+  "runId": "run_20260928T225251Z",
   "mode": "live",
-  "startedAt": "2026-09-24T14:17:57.307154+00:00",
-  "generatedAt": "2026-09-24T14:22:45.375227+00:00",
+  "startedAt": "2026-09-28T22:52:51.614266+00:00",
+  "generatedAt": "2026-09-28T22:53:16.428368+00:00",
   "dryRun": false,
   "configPath": "sources.yaml",
   "engine": {
@@ -16,11 +16,15 @@
     "baseUrl": "http://localhost:8000/v1",
     "candidatesEnriched": 0,
     "objectionsAdded": 0,
+    "claimsAccepted": 0,
     "claimsDiscarded": 0,
+    "claimsOffLanguage": 0,
     "failures": [
       "endpoint probe failed: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /v1/models (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 111] Connection refused\"))"
     ],
     "note": "LLM은 증거를 새로 만들 수 없습니다. evidence id를 인용하지 않은 문장은 버립니다. Scout과 Critic은 같은 모델을 쓰지만 system prompt와 temperature가 다릅니다.",
+    "scoutEngine": "llm",
+    "criticEngine": "rules",
     "skipped": true,
     "skipReason": "엔드포인트에 접속할 수 없어 규칙 기반 결과를 그대로 유지했습니다."
   },
