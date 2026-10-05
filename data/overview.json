@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T22:53:16.428368+00:00",
+  "generatedAt": "2026-10-05T23:38:52.025904+00:00",
   "dryRun": false,
   "organizationCount": 2,
   "organizations": [
@@ -7,7 +7,7 @@
     "raspberrypi"
   ],
   "repositoryCount": 3,
-  "lastScanTime": "2026-09-28T22:53:15.854026+00:00",
+  "lastScanTime": "2026-10-05T23:38:51.365562+00:00",
   "evidenceCount": 430,
   "candidateCount": 37,
   "counts": {
