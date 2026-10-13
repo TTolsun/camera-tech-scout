@@ -8,12 +8,12 @@
       "default_branch": "HEAD",
       "head_sha": "7ccab62d133e053c8628f3591b636a761f06c956",
       "last_scanned_sha": "7ccab62d133e053c8628f3591b636a761f06c956",
-      "last_scan_time": "2026-10-05T23:38:27.159987+00:00",
+      "last_scan_time": "2026-10-13T00:04:14.917982+00:00",
       "scan_mode": "incremental",
       "status": "partial",
       "status_detail": "HEAD가 이전 스캔과 동일하여 새로 수집한 파일이 없습니다. / incremental file scan over 0 changed paths",
       "files_scanned": 0,
-      "evidence_count": 62,
+      "evidence_count": 63,
       "candidate_count": 0,
       "topics": [
         "3a",
@@ -39,8 +39,8 @@
         "디버깅 및 프로파일링",
         "화질"
       ],
-      "evidenceCount": 62,
-      "candidateCount": 34
+      "evidenceCount": 63,
+      "candidateCount": 31
     },
     {
       "full_name": "raspberrypi/libcamera",
@@ -48,14 +48,14 @@
       "name": "libcamera",
       "url": "https://github.com/raspberrypi/libcamera",
       "default_branch": "HEAD",
-      "head_sha": "6c1dd9d55573010f710c9e190a73e7e76f0d9432",
-      "last_scanned_sha": "6c1dd9d55573010f710c9e190a73e7e76f0d9432",
-      "last_scan_time": "2026-10-05T23:38:46.835888+00:00",
+      "head_sha": "c682979b50695b93526adb1e66db33743484b63b",
+      "last_scanned_sha": "c682979b50695b93526adb1e66db33743484b63b",
+      "last_scan_time": "2026-10-13T00:08:00.914997+00:00",
       "scan_mode": "incremental",
       "status": "partial",
-      "status_detail": "HEAD가 이전 스캔과 동일하여 새로 수집한 파일이 없습니다. / incremental file scan over 0 changed paths",
-      "files_scanned": 0,
-      "evidence_count": 349,
+      "status_detail": "incremental file scan over 263 changed paths",
+      "files_scanned": 246,
+      "evidence_count": 385,
       "candidate_count": 0,
       "topics": [
         "3a",
@@ -68,9 +68,9 @@
         "debug-profiling"
       ],
       "description": "",
-      "stars": 484,
+      "stars": 485,
       "language": "C++",
-      "pushed_at": "2026-09-01T08:48:42Z",
+      "pushed_at": "2026-10-09T11:42:18Z",
       "topicLabels": [
         "3A 제어",
         "AI 카메라 처리",
@@ -81,8 +81,8 @@
         "Computational Photography",
         "디버깅 및 프로파일링"
       ],
-      "evidenceCount": 349,
-      "candidateCount": 37
+      "evidenceCount": 385,
+      "candidateCount": 40
     },
     {
       "full_name": "raspberrypi/libpisp",
@@ -92,7 +92,7 @@
       "default_branch": "HEAD",
       "head_sha": "f8a5eb2af4c5dea76442785ef42b2fb1aa9e62f9",
       "last_scanned_sha": "f8a5eb2af4c5dea76442785ef42b2fb1aa9e62f9",
-      "last_scan_time": "2026-10-05T23:38:51.365562+00:00",
+      "last_scan_time": "2026-10-13T00:08:05.609526+00:00",
       "scan_mode": "incremental",
       "status": "partial",
       "status_detail": "HEAD가 이전 스캔과 동일하여 새로 수집한 파일이 없습니다. / incremental file scan over 0 changed paths",
@@ -107,14 +107,14 @@
       "description": "",
       "stars": 14,
       "language": "C++",
-      "pushed_at": "2026-08-07T09:07:08Z",
+      "pushed_at": "2026-10-09T11:28:13Z",
       "topicLabels": [
         "Camera Driver 계층",
         "ISP 처리",
         "Buffer 및 메모리 관리"
       ],
       "evidenceCount": 19,
-      "candidateCount": 9
+      "candidateCount": 10
     }
   ]
 }

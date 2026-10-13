@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T23:38:52.025904+00:00",
+  "generatedAt": "2026-10-13T00:08:06.527822+00:00",
   "dryRun": false,
   "organizationCount": 2,
   "organizations": [
@@ -7,32 +7,32 @@
     "raspberrypi"
   ],
   "repositoryCount": 3,
-  "lastScanTime": "2026-10-05T23:38:51.365562+00:00",
-  "evidenceCount": 430,
-  "candidateCount": 37,
+  "lastScanTime": "2026-10-13T00:08:05.609526+00:00",
+  "evidenceCount": 467,
+  "candidateCount": 40,
   "counts": {
-    "new": 0,
-    "strengthened": 0,
-    "weakened": 0,
-    "updated": 0,
+    "new": 3,
+    "strengthened": 9,
+    "weakened": 4,
+    "updated": 8,
     "needsVerification": 0,
-    "unchanged": 37,
-    "patent": 31,
+    "unchanged": 16,
+    "patent": 33,
     "paper": 0,
-    "patentAndPaper": 6,
-    "highEvidence": 35,
+    "patentAndPaper": 7,
+    "highEvidence": 38,
     "rejected": 5
   },
   "evidenceByKind": [
     {
       "kind": "code",
       "label": "Source Code",
-      "count": 305
+      "count": 329
     },
     {
       "kind": "commit",
       "label": "Commit",
-      "count": 57
+      "count": 69
     },
     {
       "kind": "issue",
@@ -47,7 +47,7 @@
     {
       "kind": "pull_request",
       "label": "Pull Request",
-      "count": 10
+      "count": 11
     },
     {
       "kind": "config",
@@ -64,18 +64,18 @@
     {
       "id": "cand_1d9429c9f6e8",
       "slug": "computational-photography-prediction",
-      "title": "Computational Photography: 프레임 정합성 결함 대응을 위한 예측",
+      "title": "Computational Photography: 타이밍 편차 대응을 위한 예측",
       "type": "patent+paper",
       "typeLabel": "Patent + Paper 후보",
-      "status": "UNCHANGED",
-      "statusLabel": "변화 없음",
+      "status": "UPDATED",
+      "statusLabel": "내용 변경",
       "verdict": "accepted",
       "verdictLabel": "통과",
       "topic": "computational-photography",
       "topicLabel": "Computational Photography",
       "mechanismFamily": "prediction",
       "mechanismLabel": "예측 기반 추정",
-      "summary": "Computational Photography 영역의 코드가 예측 기법을 구현하고 있습니다. 그리고 해당 Repository는 프레임 정합성 결함 문제를 스스로 보고하고 있습니다. 주변 서술에는 141.0479s라는 측정값이 함께 기재되어 있습니다.",
+      "summary": "Computational Photography 영역의 코드가 예측 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다. 주변 서술에는 0s라는 측정값이 함께 기재되어 있습니다.",
       "repositories": [
         "raspberrypi/libcamera",
         "intel/ipu6-camera-hal"
@@ -99,24 +99,24 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-05-18T15:22:27+01:00",
+      "lastUpdatedAt": "2026-05-04T02:20:11+03:00",
       "firstSeenAt": "2026-03-23T14:59:14Z"
     },
     {
       "id": "cand_70aef3b6f574",
       "slug": "computational-photography-adaptive-control",
-      "title": "Computational Photography: 프레임 정합성 결함 대응을 위한 적응 제어",
+      "title": "Computational Photography: 타이밍 편차 대응을 위한 적응 제어",
       "type": "patent+paper",
       "typeLabel": "Patent + Paper 후보",
-      "status": "UNCHANGED",
-      "statusLabel": "변화 없음",
-      "verdict": "accepted",
-      "verdictLabel": "통과",
+      "status": "UPDATED",
+      "statusLabel": "내용 변경",
+      "verdict": "accepted_with_reservations",
+      "verdictLabel": "유보 조건부 통과",
       "topic": "computational-photography",
       "topicLabel": "Computational Photography",
       "mechanismFamily": "adaptive-control",
       "mechanismLabel": "적응 제어",
-      "summary": "Computational Photography 영역의 코드가 적응 제어 기법을 구현하고 있습니다. 그리고 해당 Repository는 프레임 정합성 결함 문제를 스스로 보고하고 있습니다. 주변 서술에는 141.0479s라는 측정값이 함께 기재되어 있습니다.",
+      "summary": "Computational Photography 영역의 코드가 적응 제어 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다. 주변 서술에는 0s라는 측정값이 함께 기재되어 있습니다.",
       "repositories": [
         "raspberrypi/libcamera",
         "intel/ipu6-camera-hal"
@@ -140,29 +140,29 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-05-18T15:22:27+01:00",
+      "lastUpdatedAt": "2026-03-23T14:59:14Z",
       "firstSeenAt": "2026-03-23T14:59:14Z"
     },
     {
       "id": "cand_4d79ec4af76d",
       "slug": "3a-adaptive-control",
-      "title": "3A 제어: 프레임 정합성 결함 대응을 위한 적응 제어",
+      "title": "3A 제어: 프레임 정합성 결함 대응을 위한 hysteresis 감쇠",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "UNCHANGED",
-      "statusLabel": "변화 없음",
+      "status": "STRENGTHENED",
+      "statusLabel": "근거 강화",
       "verdict": "accepted",
       "verdictLabel": "통과",
       "topic": "3a",
       "topicLabel": "3A 제어",
       "mechanismFamily": "adaptive-control",
       "mechanismLabel": "적응 제어",
-      "summary": "3A 제어 영역의 코드가 적응 제어 기법을 구현하고 있습니다. 그리고 해당 Repository는 프레임 정합성 결함 문제를 스스로 보고하고 있습니다. 주변 서술에는 20%라는 측정값이 함께 기재되어 있습니다.",
+      "summary": "3A 제어 영역의 코드가 hysteresis 감쇠 기법을 구현하고 있습니다. 그리고 해당 Repository는 프레임 정합성 결함 문제를 스스로 보고하고 있습니다. 주변 서술에는 10%라는 측정값이 함께 기재되어 있습니다.",
       "repositories": [
         "raspberrypi/libcamera",
         "intel/ipu6-camera-hal"
       ],
-      "evidenceCount": 11,
+      "evidenceCount": 13,
       "scores": {
         "evidence_strength": {
           "value": 96.0,
@@ -181,8 +181,49 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-08-07T08:37:15+01:00",
+      "lastUpdatedAt": "2026-08-05T15:09:22+01:00",
       "firstSeenAt": "2024-12-13T05:20:18Z"
+    },
+    {
+      "id": "cand_ae623bf42bbd",
+      "slug": "computational-photography-synchronization-mechanism",
+      "title": "Computational Photography: 타이밍 편차 대응을 위한 시퀀스 번호 부여",
+      "type": "patent",
+      "typeLabel": "Patent 후보",
+      "status": "NEW",
+      "statusLabel": "신규",
+      "verdict": "accepted_with_reservations",
+      "verdictLabel": "유보 조건부 통과",
+      "topic": "computational-photography",
+      "topicLabel": "Computational Photography",
+      "mechanismFamily": "synchronization-mechanism",
+      "mechanismLabel": "타이밍 동기화",
+      "summary": "Computational Photography 영역의 코드가 시퀀스 번호 부여 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다. 주변 서술에는 0s라는 측정값이 함께 기재되어 있습니다.",
+      "repositories": [
+        "raspberrypi/libcamera",
+        "intel/ipu6-camera-hal"
+      ],
+      "evidenceCount": 9,
+      "scores": {
+        "evidence_strength": {
+          "value": 66.0,
+          "label": "증거 강도"
+        },
+        "patent_potential": {
+          "value": 76.0,
+          "label": "Patent 가능성"
+        },
+        "paper_potential": {
+          "value": 38.0,
+          "label": "Paper 가능성"
+        },
+        "novelty_confidence": {
+          "value": 79.6,
+          "label": "Novelty Confidence (조사 우선순위)"
+        }
+      },
+      "lastUpdatedAt": "2026-03-23T14:59:14Z",
+      "firstSeenAt": "2024-07-18T14:37:27+08:00"
     },
     {
       "id": "cand_6263dd646166",
@@ -269,18 +310,18 @@
     {
       "id": "cand_bd9160653c6e",
       "slug": "computational-photography-buffer-mechanism",
-      "title": "Computational Photography: 프레임 정합성 결함 대응을 위한 watermark 기반 buffer 제어",
+      "title": "Computational Photography: 타이밍 편차 대응을 위한 watermark 기반 buffer 제어",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "UNCHANGED",
-      "statusLabel": "변화 없음",
-      "verdict": "accepted",
-      "verdictLabel": "통과",
+      "status": "UPDATED",
+      "statusLabel": "내용 변경",
+      "verdict": "accepted_with_reservations",
+      "verdictLabel": "유보 조건부 통과",
       "topic": "computational-photography",
       "topicLabel": "Computational Photography",
       "mechanismFamily": "buffer-mechanism",
       "mechanismLabel": "Buffer 수명 제어",
-      "summary": "Computational Photography 영역의 코드가 watermark 기반 buffer 제어 기법을 구현하고 있습니다. 그리고 해당 Repository는 프레임 정합성 결함 문제를 스스로 보고하고 있습니다. 주변 서술에는 141.0479s라는 측정값이 함께 기재되어 있습니다.",
+      "summary": "Computational Photography 영역의 코드가 watermark 기반 buffer 제어 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다. 주변 서술에는 0s라는 측정값이 함께 기재되어 있습니다.",
       "repositories": [
         "intel/ipu6-camera-hal",
         "raspberrypi/libcamera"
@@ -304,24 +345,24 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-05-18T15:22:27+01:00",
+      "lastUpdatedAt": "2026-03-23T14:59:14Z",
       "firstSeenAt": "2026-03-23T14:59:14Z"
     },
     {
       "id": "cand_8d7ed430ed11",
       "slug": "computational-photography-calibration",
-      "title": "Computational Photography: 프레임 정합성 결함 대응을 위한 보간",
+      "title": "Computational Photography: 타이밍 편차 대응을 위한 보간",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "UNCHANGED",
-      "statusLabel": "변화 없음",
-      "verdict": "accepted",
-      "verdictLabel": "통과",
+      "status": "UPDATED",
+      "statusLabel": "내용 변경",
+      "verdict": "accepted_with_reservations",
+      "verdictLabel": "유보 조건부 통과",
       "topic": "computational-photography",
       "topicLabel": "Computational Photography",
       "mechanismFamily": "calibration",
       "mechanismLabel": "캘리브레이션과 보정",
-      "summary": "Computational Photography 영역의 코드가 보간 기법을 구현하고 있습니다. 그리고 해당 Repository는 프레임 정합성 결함 문제를 스스로 보고하고 있습니다. 주변 서술에는 141.0479s라는 측정값이 함께 기재되어 있습니다.",
+      "summary": "Computational Photography 영역의 코드가 보간 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다. 주변 서술에는 0s라는 측정값이 함께 기재되어 있습니다.",
       "repositories": [
         "intel/ipu6-camera-hal",
         "raspberrypi/libcamera"
@@ -345,100 +386,59 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-05-18T15:22:27+01:00",
+      "lastUpdatedAt": "2026-03-23T14:59:14Z",
       "firstSeenAt": "2026-03-23T14:59:14Z"
-    },
-    {
-      "id": "cand_025b396adab4",
-      "slug": "3a-calibration",
-      "title": "3A 제어: 확장성 한계 대응을 위한 보간",
-      "type": "patent+paper",
-      "typeLabel": "Patent + Paper 후보",
-      "status": "UNCHANGED",
-      "statusLabel": "변화 없음",
-      "verdict": "accepted",
-      "verdictLabel": "통과",
-      "topic": "3a",
-      "topicLabel": "3A 제어",
-      "mechanismFamily": "calibration",
-      "mechanismLabel": "캘리브레이션과 보정",
-      "summary": "3A 제어 영역의 코드가 보간 기법을 구현하고 있습니다. 그리고 해당 Repository는 확장성 한계 문제를 스스로 보고하고 있습니다. 주변 서술에는 3 x라는 측정값이 함께 기재되어 있습니다.",
-      "repositories": [
-        "intel/ipu6-camera-hal",
-        "raspberrypi/libcamera"
-      ],
-      "evidenceCount": 51,
-      "scores": {
-        "evidence_strength": {
-          "value": 100.0,
-          "label": "증거 강도"
-        },
-        "patent_potential": {
-          "value": 57.4,
-          "label": "Patent 가능성"
-        },
-        "paper_potential": {
-          "value": 48.0,
-          "label": "Paper 가능성"
-        },
-        "novelty_confidence": {
-          "value": 59.6,
-          "label": "Novelty Confidence (조사 우선순위)"
-        }
-      },
-      "lastUpdatedAt": "2026-08-07T08:37:15+01:00",
-      "firstSeenAt": "2024-12-13T05:20:18Z"
     }
   ],
   "recentTechnologyChanges": [
     {
       "technology": "isp",
       "technologyLabel": "ISP 처리",
-      "evidenceCount": 368,
-      "candidateCount": 7,
+      "evidenceCount": 430,
+      "candidateCount": 8,
+      "newCandidates": 1
+    },
+    {
+      "technology": "3a",
+      "technologyLabel": "3A 제어",
+      "evidenceCount": 162,
+      "candidateCount": 5,
       "newCandidates": 0
     },
     {
       "technology": "camera-driver",
       "technologyLabel": "Camera Driver 계층",
-      "evidenceCount": 151,
+      "evidenceCount": 161,
       "candidateCount": 7,
-      "newCandidates": 0
-    },
-    {
-      "technology": "3a",
-      "technologyLabel": "3A 제어",
-      "evidenceCount": 138,
-      "candidateCount": 5,
-      "newCandidates": 0
-    },
-    {
-      "technology": "sensor-control",
-      "technologyLabel": "Sensor 제어",
-      "evidenceCount": 97,
-      "candidateCount": 4,
       "newCandidates": 0
     },
     {
       "technology": "camera-framework",
       "technologyLabel": "Camera Framework",
-      "evidenceCount": 72,
+      "evidenceCount": 109,
       "candidateCount": 1,
+      "newCandidates": 0
+    },
+    {
+      "technology": "sensor-control",
+      "technologyLabel": "Sensor 제어",
+      "evidenceCount": 103,
+      "candidateCount": 4,
       "newCandidates": 0
     },
     {
       "technology": "performance",
       "technologyLabel": "카메라 성능",
-      "evidenceCount": 46,
+      "evidenceCount": 49,
       "candidateCount": 3,
       "newCandidates": 0
     },
     {
       "technology": "memory-buffer",
       "technologyLabel": "Buffer 및 메모리 관리",
-      "evidenceCount": 35,
-      "candidateCount": 2,
-      "newCandidates": 0
+      "evidenceCount": 41,
+      "candidateCount": 3,
+      "newCandidates": 1
     },
     {
       "technology": "image-quality",
@@ -450,7 +450,7 @@
     {
       "technology": "scheduling",
       "technologyLabel": "Pipeline 스케줄링",
-      "evidenceCount": 24,
+      "evidenceCount": 23,
       "candidateCount": 0,
       "newCandidates": 0
     },

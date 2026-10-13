@@ -27,7 +27,7 @@
       "recheck_conditions": [
         "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
       ],
-      "rejected_at": "2026-10-05T23:38:51.516927+00:00",
+      "rejected_at": "2026-10-13T00:08:05.970457+00:00",
       "scores": {
         "evidence_strength": {
           "value": 52.0,
@@ -138,7 +138,7 @@
           ]
         }
       },
-      "timesSeen": 5,
+      "timesSeen": 6,
       "recheckConditions": [
         "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
       ],
@@ -149,7 +149,7 @@
     {
       "id": "rej_3a40929f5322",
       "slug": "camera-framework-calibration",
-      "title": "Camera Framework: 작성자가 직접 기록한 한계 대응을 위한 특성화",
+      "title": "Camera Framework: 자원 고갈 대응을 위한 특성화",
       "signature": "camera-framework|calibration",
       "reason": "모든 증거가 한 종류(Source Code)이므로 서로 교차 확인되지 않습니다.",
       "failed_rules": [
@@ -158,11 +158,14 @@
       "evidence_ids": [
         "ev_10be601cc844",
         "ev_be3b24db2f00",
+        "ev_81735985a2c7",
         "ev_f97034180f64",
+        "ev_4f73b601c6f6",
         "ev_9cd56ab90412",
+        "ev_4576e650d757",
         "ev_b3fa0e4a6b9d",
         "ev_8233693fee99",
-        "ev_4f73b601c6f6"
+        "ev_63f67507c6ae"
       ],
       "repositories": [
         "intel/ipu6-camera-hal",
@@ -171,10 +174,10 @@
       "recheck_conditions": [
         "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
       ],
-      "rejected_at": "2026-10-05T23:38:51.516927+00:00",
+      "rejected_at": "2026-10-13T00:08:05.970457+00:00",
       "scores": {
         "evidence_strength": {
-          "value": 48.0,
+          "value": 54.0,
           "label": "증거 강도",
           "caveat": null,
           "reasons": [
@@ -184,23 +187,23 @@
               "evidence_ids": [
                 "ev_10be601cc844",
                 "ev_be3b24db2f00",
-                "ev_f97034180f64",
-                "ev_9cd56ab90412"
+                "ev_81735985a2c7",
+                "ev_f97034180f64"
               ]
             },
             {
-              "text": "증거 레코드가 총 7건입니다.",
-              "delta": 14.0,
+              "text": "증거 레코드가 총 10건입니다.",
+              "delta": 20.0,
               "evidence_ids": []
             },
             {
-              "text": "7건은 심볼명과 라인 범위를 함께 지목합니다.",
+              "text": "10건은 심볼명과 라인 범위를 함께 지목합니다.",
               "delta": 10.0,
               "evidence_ids": [
                 "ev_10be601cc844",
                 "ev_be3b24db2f00",
-                "ev_f97034180f64",
-                "ev_9cd56ab90412"
+                "ev_81735985a2c7",
+                "ev_f97034180f64"
               ]
             },
             {
@@ -236,7 +239,7 @@
               "evidence_ids": []
             },
             {
-              "text": "서로 다른 7개의 코드 위치가 이를 구현합니다.",
+              "text": "서로 다른 10개의 코드 위치가 이를 구현합니다.",
               "delta": 8.0,
               "evidence_ids": []
             }
@@ -277,7 +280,7 @@
           ]
         }
       },
-      "timesSeen": 5,
+      "timesSeen": 6,
       "recheckConditions": [
         "설계 문서나 Pull Request처럼 두 번째 종류의 증거가 나타나면 다시 검토합니다."
       ],
@@ -709,19 +712,9 @@
       "evidenceCount": 1
     },
     {
-      "signature": "camera-pipeline|arbitration",
-      "reason": "증거 점수가 1.0이며, 기준값 3.0에 미치지 못합니다.",
-      "evidenceCount": 1
-    },
-    {
       "signature": "3a|state-machine",
       "reason": "이 메커니즘을 구현한 코드가 없고, 문장으로만 언급되어 있습니다.",
       "evidenceCount": 9
-    },
-    {
-      "signature": "camera-pipeline|prediction",
-      "reason": "이 메커니즘을 구현한 코드가 없고, 문장으로만 언급되어 있습니다.",
-      "evidenceCount": 1
     },
     {
       "signature": "memory-buffer|synchronization-mechanism",
@@ -754,9 +747,14 @@
       "evidenceCount": 1
     },
     {
-      "signature": "memory-buffer|resilience",
+      "signature": "camera-pipeline|prediction",
       "reason": "이 메커니즘을 구현한 코드가 없고, 문장으로만 언급되어 있습니다.",
-      "evidenceCount": 9
+      "evidenceCount": 2
+    },
+    {
+      "signature": "camera-pipeline|arbitration",
+      "reason": "증거 점수가 1.5이며, 기준값 3.0에 미치지 못합니다.",
+      "evidenceCount": 2
     }
   ],
   "droppedNote": "아래 항목은 후보가 되기 위한 최소 조건에 미치지 못해 Critic 이전 단계에서 제외된 클러스터입니다."
