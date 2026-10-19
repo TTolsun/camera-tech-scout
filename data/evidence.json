@@ -4401,10 +4401,10 @@
       "line_end": null,
       "commit_sha": null,
       "ref": "PR #187",
-      "title": "Add acpi, d4xx, ar0234 to utilize SSDT Overlay enabled sensors",
+      "title": "Add acpi, ar0234 to utilize SSDT Overlay enabled sensors",
       "snippet": "17:45:45.533] CamHAL[ERR] Poll: Device node fd 27 poll timeout. [10-05 17:45:46.534] CamHAL[ERR] Poll: Device node f",
       "url": "https://github.com/intel/ipu6-camera-hal/pull/187",
-      "observed_at": "2026-10-08T06:46:04Z",
+      "observed_at": "2026-10-16T07:43:12Z",
       "first_seen_commit": null,
       "first_seen_at": null,
       "signals": [

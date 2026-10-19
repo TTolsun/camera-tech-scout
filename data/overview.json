@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T00:08:06.527822+00:00",
+  "generatedAt": "2026-10-19T21:57:32.089244+00:00",
   "dryRun": false,
   "organizationCount": 2,
   "organizations": [
@@ -7,16 +7,16 @@
     "raspberrypi"
   ],
   "repositoryCount": 3,
-  "lastScanTime": "2026-10-13T00:08:05.609526+00:00",
+  "lastScanTime": "2026-10-19T21:57:31.676337+00:00",
   "evidenceCount": 467,
   "candidateCount": 40,
   "counts": {
-    "new": 3,
-    "strengthened": 9,
-    "weakened": 4,
-    "updated": 8,
+    "new": 0,
+    "strengthened": 0,
+    "weakened": 0,
+    "updated": 0,
     "needsVerification": 0,
-    "unchanged": 16,
+    "unchanged": 40,
     "patent": 33,
     "paper": 0,
     "patentAndPaper": 7,
@@ -67,8 +67,8 @@
       "title": "Computational Photography: 타이밍 편차 대응을 위한 예측",
       "type": "patent+paper",
       "typeLabel": "Patent + Paper 후보",
-      "status": "UPDATED",
-      "statusLabel": "내용 변경",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted",
       "verdictLabel": "통과",
       "topic": "computational-photography",
@@ -99,7 +99,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-05-04T02:20:11+03:00",
+      "lastUpdatedAt": "2026-10-09T08:33:59+01:00",
       "firstSeenAt": "2026-03-23T14:59:14Z"
     },
     {
@@ -108,8 +108,8 @@
       "title": "Computational Photography: 타이밍 편차 대응을 위한 적응 제어",
       "type": "patent+paper",
       "typeLabel": "Patent + Paper 후보",
-      "status": "UPDATED",
-      "statusLabel": "내용 변경",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "computational-photography",
@@ -140,7 +140,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-03-23T14:59:14Z",
+      "lastUpdatedAt": "2026-10-09T08:33:59+01:00",
       "firstSeenAt": "2026-03-23T14:59:14Z"
     },
     {
@@ -149,8 +149,8 @@
       "title": "3A 제어: 프레임 정합성 결함 대응을 위한 hysteresis 감쇠",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "STRENGTHENED",
-      "statusLabel": "근거 강화",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted",
       "verdictLabel": "통과",
       "topic": "3a",
@@ -181,7 +181,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-08-05T15:09:22+01:00",
+      "lastUpdatedAt": "2026-10-09T08:33:59+01:00",
       "firstSeenAt": "2024-12-13T05:20:18Z"
     },
     {
@@ -190,8 +190,8 @@
       "title": "Computational Photography: 타이밍 편차 대응을 위한 시퀀스 번호 부여",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "NEW",
-      "statusLabel": "신규",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "computational-photography",
@@ -222,7 +222,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-03-23T14:59:14Z",
+      "lastUpdatedAt": "2026-10-09T08:33:59+01:00",
       "firstSeenAt": "2024-07-18T14:37:27+08:00"
     },
     {
@@ -263,7 +263,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-08-05T03:55:35Z",
+      "lastUpdatedAt": "2026-09-23T22:30:42+05:30",
       "firstSeenAt": "2025-03-03T15:25:00Z"
     },
     {
@@ -304,7 +304,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-08-05T03:55:35Z",
+      "lastUpdatedAt": "2026-09-23T22:30:42+05:30",
       "firstSeenAt": "2025-03-03T15:25:00Z"
     },
     {
@@ -313,8 +313,8 @@
       "title": "Computational Photography: 타이밍 편차 대응을 위한 watermark 기반 buffer 제어",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "UPDATED",
-      "statusLabel": "내용 변경",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "computational-photography",
@@ -345,7 +345,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-03-23T14:59:14Z",
+      "lastUpdatedAt": "2026-10-09T08:33:59+01:00",
       "firstSeenAt": "2026-03-23T14:59:14Z"
     },
     {
@@ -354,8 +354,8 @@
       "title": "Computational Photography: 타이밍 편차 대응을 위한 보간",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "UPDATED",
-      "statusLabel": "내용 변경",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "computational-photography",
@@ -386,7 +386,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-03-23T14:59:14Z",
+      "lastUpdatedAt": "2026-10-09T08:33:59+01:00",
       "firstSeenAt": "2026-03-23T14:59:14Z"
     }
   ],
@@ -396,7 +396,7 @@
       "technologyLabel": "ISP 처리",
       "evidenceCount": 430,
       "candidateCount": 8,
-      "newCandidates": 1
+      "newCandidates": 0
     },
     {
       "technology": "3a",
@@ -438,7 +438,7 @@
       "technologyLabel": "Buffer 및 메모리 관리",
       "evidenceCount": 41,
       "candidateCount": 3,
-      "newCandidates": 1
+      "newCandidates": 0
     },
     {
       "technology": "image-quality",
