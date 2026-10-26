@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T21:57:32.089244+00:00",
+  "generatedAt": "2026-10-26T22:13:53.901654+00:00",
   "dryRun": false,
   "organizationCount": 2,
   "organizations": [
@@ -7,20 +7,20 @@
     "raspberrypi"
   ],
   "repositoryCount": 3,
-  "lastScanTime": "2026-10-19T21:57:31.676337+00:00",
-  "evidenceCount": 467,
+  "lastScanTime": "2026-10-26T22:13:53.222560+00:00",
+  "evidenceCount": 468,
   "candidateCount": 40,
   "counts": {
     "new": 0,
-    "strengthened": 0,
+    "strengthened": 3,
     "weakened": 0,
     "updated": 0,
     "needsVerification": 0,
-    "unchanged": 40,
-    "patent": 33,
+    "unchanged": 37,
+    "patent": 32,
     "paper": 0,
-    "patentAndPaper": 7,
-    "highEvidence": 38,
+    "patentAndPaper": 8,
+    "highEvidence": 39,
     "rejected": 5
   },
   "evidenceByKind": [
@@ -47,7 +47,7 @@
     {
       "kind": "pull_request",
       "label": "Pull Request",
-      "count": 11
+      "count": 12
     },
     {
       "kind": "config",
@@ -429,7 +429,7 @@
     {
       "technology": "performance",
       "technologyLabel": "카메라 성능",
-      "evidenceCount": 49,
+      "evidenceCount": 51,
       "candidateCount": 3,
       "newCandidates": 0
     },

@@ -4771,9 +4771,9 @@
         "cand_bd9160653c6e",
         "cand_8d7ed430ed11",
         "cand_d5fdbd816463",
+        "cand_0a7e2de377db",
         "cand_1da23885c6fa",
-        "cand_9f4128cd1d1d",
-        "cand_0a7e2de377db"
+        "cand_9f4128cd1d1d"
       ],
       "technologies": [
         "3a",
@@ -5096,16 +5096,16 @@
           "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여"
         },
         {
+          "id": "cand_0a7e2de377db",
+          "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원"
+        },
+        {
           "id": "cand_1da23885c6fa",
           "title": "Sensor 동기화: 타이밍 편차 대응을 위한 시퀀스 번호 부여"
         },
         {
           "id": "cand_9f4128cd1d1d",
           "title": "3A 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여"
-        },
-        {
-          "id": "cand_0a7e2de377db",
-          "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원"
         }
       ],
       "evidence": [
@@ -7438,8 +7438,8 @@
         "cand_6263dd646166",
         "cand_5555849c4804",
         "cand_d5fdbd816463",
-        "cand_dcead55cc594",
         "cand_61de9f76ed9e",
+        "cand_dcead55cc594",
         "cand_9dbc024d5788",
         "cand_4e7dd03e97a3"
       ],
@@ -7754,12 +7754,12 @@
           "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여"
         },
         {
-          "id": "cand_dcead55cc594",
-          "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 협상"
+          "id": "cand_61de9f76ed9e",
+          "title": "카메라 성능: 타이밍 편차 대응을 위한 협상"
         },
         {
-          "id": "cand_61de9f76ed9e",
-          "title": "카메라 성능: 프레임 정합성 결함 대응을 위한 협상"
+          "id": "cand_dcead55cc594",
+          "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 협상"
         },
         {
           "id": "cand_9dbc024d5788",
@@ -10179,7 +10179,7 @@
         "cand_025b396adab4",
         "cand_5555849c4804",
         "cand_9fe09ed8a807",
-        "cand_115eab8f53f7"
+        "cand_c1329f0074f9"
       ],
       "technologies": [
         "3a",
@@ -10503,6 +10503,10 @@
         {
           "id": "cand_9fe09ed8a807",
           "title": "ISP 처리: 화질 결함 대응을 위한 보간"
+        },
+        {
+          "id": "cand_c1329f0074f9",
+          "title": "카메라 성능: 타이밍 편차 대응을 위한 보정"
         }
       ],
       "evidence": [
@@ -11652,7 +11656,7 @@
         "cand_8d7ed430ed11",
         "cand_5555849c4804",
         "cand_9fe09ed8a807",
-        "cand_115eab8f53f7"
+        "cand_c1329f0074f9"
       ],
       "technologies": [
         "3a",
@@ -12243,6 +12247,10 @@
         {
           "id": "cand_9fe09ed8a807",
           "title": "ISP 처리: 화질 결함 대응을 위한 보간"
+        },
+        {
+          "id": "cand_c1329f0074f9",
+          "title": "카메라 성능: 타이밍 편차 대응을 위한 보정"
         }
       ],
       "evidence": [
@@ -17491,8 +17499,8 @@
         "cand_8d7ed430ed11",
         "cand_025b396adab4",
         "cand_9fe09ed8a807",
-        "cand_115eab8f53f7",
-        "cand_fb3a967b42e5"
+        "cand_c1329f0074f9",
+        "cand_115eab8f53f7"
       ],
       "technologies": [
         "camera-driver",
@@ -17849,8 +17857,8 @@
           "title": "ISP 처리: 화질 결함 대응을 위한 보간"
         },
         {
-          "id": "cand_fb3a967b42e5",
-          "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 특성화"
+          "id": "cand_c1329f0074f9",
+          "title": "카메라 성능: 타이밍 편차 대응을 위한 보정"
         }
       ],
       "evidence": [
@@ -24961,6 +24969,1044 @@
       ]
     },
     {
+      "id": "cand_61de9f76ed9e",
+      "slug": "performance-arbitration",
+      "title": "카메라 성능: 타이밍 편차 대응을 위한 협상",
+      "type": "patent+paper",
+      "signature": "performance|arbitration",
+      "topic": "performance",
+      "mechanismFamily": "arbitration",
+      "summary": "카메라 성능 영역의 코드가 협상 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다.",
+      "problem": {
+        "text": "수집된 자료는 타이밍 편차, 프레임 정합성 결함, 작성자가 직접 기록한 한계 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “out of order frames when recording with libcamera-raw For a scienti”",
+        "evidence_ids": [
+          "ev_efeca92f2c76",
+          "ev_78e66a0e388b",
+          "ev_a764e14a9075",
+          "ev_bd3da7ef9f7f",
+          "ev_5f9ee1b3ed63",
+          "ev_a947a1fd2dec"
+        ],
+        "confidence": ""
+      },
+      "existingApproach": {
+        "text": "이 메커니즘이 도입되기 전에 무엇을 했는지 수집된 자료가 서술하지 않습니다. 기준선을 확정하려면 전체 Commit 이력을 읽거나 작성자에게 확인해야 합니다.",
+        "evidence_ids": [],
+        "confidence": "NEEDS_VERIFICATION"
+      },
+      "proposedTechnique": {
+        "text": "구현은 카메라 성능 내부에서 협상 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: gst_libcamera_src_negotiate (src/gstreamer/gstlibcamerasrc.cpp).",
+        "evidence_ids": [
+          "ev_fffa41803494"
+        ],
+        "confidence": ""
+      },
+      "difference": {
+        "text": "Repository만으로는 차별점을 확정할 수 없습니다. 관측 가능한 사실은 현재 코드가 협상 기법을 사용한다는 점이며, 그것이 무엇을 대체했는지는 수집된 자료에 기록되어 있지 않습니다.",
+        "evidence_ids": [],
+        "confidence": "LOW_CONFIDENCE"
+      },
+      "technicalEffect": {
+        "text": "효과가 문장으로 주장되어 있습니다(prevent). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다.",
+        "evidence_ids": [
+          "ev_80ed53b793be"
+        ],
+        "confidence": "LOW_CONFIDENCE"
+      },
+      "patentAngle": {
+        "coreConcept": "카메라 성능 내부에서 타이밍 편차 문제에 대응하기 위해 협상 기법을 사용합니다.",
+        "claimElements": [
+          "카메라 성능 내부의 런타임 수치를 관측하는 단계",
+          "협상 기법을 사용하여 제어 결정을 도출하는 단계",
+          "다음 프레임이 생성되기 전에 그 결정을 Camera Pipeline에 적용하는 단계",
+          "Pipeline에 대한 측정 가능한 효과 (NEEDS_VERIFICATION: 수치를 찾지 못했습니다)"
+        ],
+        "variations": {
+          "generated": true,
+          "note": "아래 항목은 검토자를 위해 생성한 제안입니다. 발견 사항이 아니며, 이를 뒷받침하는 증거도 없습니다.",
+          "ideas": [
+            "정적 우선순위를 각 Stream의 남은 deadline 여유로 계산한 입찰값으로 대체합니다.",
+            "중재 범위를 단일 Camera session 내부가 아니라 프로세스 사이로 확장합니다.",
+            "기아 상태가 발생하지 않음을 보장하고 최악의 대기 시간을 해석적으로 증명합니다."
+          ]
+        },
+        "observedScope": {
+          "repositories": [
+            "raspberrypi/libcamera"
+          ],
+          "components": [
+            "raspberrypi/libcamera:(root)",
+            "raspberrypi/libcamera:(repository level)",
+            "raspberrypi/libcamera:gstreamer"
+          ],
+          "generalisation": "NEEDS_VERIFICATION",
+          "note": "적용 범위는 스캔이 실제로 관측한 범위입니다. 이 아이디어가 해당 Component를 넘어 일반화되는지는 확인되지 않았습니다."
+        }
+      },
+      "paperAngle": {
+        "researchQuestion": "카메라 성능에서 자원 중재 기법은 그것이 대체한 구성보다 보고된 실패 양상을 더 많이 줄이는가?",
+        "hypothesis": "자원 중재 기법을 적용하면, 고정 정책이 한정하지 못하는 편차를 한정할 수 있다.",
+        "baseline": "NEEDS_VERIFICATION: 대체된 정책이 수집된 자료에 기록되어 있지 않으므로, 기준선으로 사용하려면 먼저 복원해야 합니다.",
+        "baselineConfidence": "NEEDS_VERIFICATION",
+        "metrics": [
+          "초당 프레임 수 (fps)",
+          "프레임 시간 p99 (ms)",
+          "CPU 부하 (%)"
+        ],
+        "metricsConfidence": "LOW_CONFIDENCE",
+        "experiments": [
+          "카메라 성능에서 동일한 캡처 워크로드를 메커니즘 활성 상태와 비활성 상태로 각각 실행합니다.",
+          "동작점(프레임 레이트, Sensor mode, 카메라 개수)을 변화시키면서 단일 평균이 아니라 지표의 분포를 기록합니다.",
+          "Repository가 보고한 실패를 주입하여 메커니즘이 실제로 반응하는지 확인합니다."
+        ],
+        "ablation": [
+          "협상 요소만 비활성화하고 나머지 메커니즘은 유지합니다."
+        ],
+        "reproducibility": "구현이 공개되어 있으므로 메커니즘 자체는 재구성할 수 있습니다. 다만 측정을 재현하는 데 필요한 캡처 하드웨어와 튜닝 데이터는 NEEDS_VERIFICATION 상태입니다.",
+        "evaluationSignalsFound": [
+          "reproduc"
+        ],
+        "additionalExperimentsNeeded": [
+          "Repository에 존재하지 않는, 정량화된 기준선 측정이 필요합니다.",
+          "메커니즘과 플랫폼 고유 특성을 분리하기 위해 두 번째 하드웨어 플랫폼이 필요합니다."
+        ]
+      },
+      "priorArtKeywords": [
+        "performance negotiat",
+        "camera negotiat",
+        "negotiat timing camera",
+        "negotiat correctness camera",
+        "image sensor performance control"
+      ],
+      "evidenceIds": [
+        "ev_80ed53b793be",
+        "ev_a947a1fd2dec",
+        "ev_fffa41803494",
+        "ev_a764e14a9075",
+        "ev_efeca92f2c76",
+        "ev_5f9ee1b3ed63",
+        "ev_78e66a0e388b",
+        "ev_7e57d1dccfe0",
+        "ev_bd3da7ef9f7f"
+      ],
+      "repositories": [
+        "raspberrypi/libcamera"
+      ],
+      "relatedCandidateIds": [
+        "cand_0a7e2de377db",
+        "cand_c1329f0074f9",
+        "cand_08af7f723865",
+        "cand_dcead55cc594",
+        "cand_9dbc024d5788",
+        "cand_4e7dd03e97a3"
+      ],
+      "technologies": [
+        "camera-framework",
+        "performance"
+      ],
+      "scores": {
+        "evidence_strength": {
+          "value": 84.0,
+          "label": "증거 강도",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "증거가 서로 다른 4종의 출처에서 확보되었습니다(Source Code, 문서, Issue, Pull Request).",
+              "delta": 56.0,
+              "evidence_ids": [
+                "ev_80ed53b793be",
+                "ev_a947a1fd2dec",
+                "ev_fffa41803494",
+                "ev_a764e14a9075"
+              ]
+            },
+            {
+              "text": "증거 레코드가 총 9건입니다.",
+              "delta": 18.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "2건은 심볼명과 라인 범위를 함께 지목합니다.",
+              "delta": 10.0,
+              "evidence_ids": [
+                "ev_fffa41803494",
+                "ev_7e57d1dccfe0"
+              ]
+            }
+          ]
+        },
+        "patent_potential": {
+          "value": 56.8,
+          "label": "Patent 가능성",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "메커니즘 계열 `arbitration`의 사전 가중치가 3.8입니다.",
+              "delta": 22.799999999999997,
+              "evidence_ids": []
+            },
+            {
+              "text": "Repository가 해결하려는 문제를 직접 서술하고 있습니다.",
+              "delta": 12.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "기술적 효과가 주장되어 있습니다.",
+              "delta": 12.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "메커니즘이 3개 Component, 1개 Repository에 걸쳐 나타나므로 일반화 가능성이 있습니다.",
+              "delta": 10.0,
+              "evidence_ids": []
+            }
+          ]
+        },
+        "paper_potential": {
+          "value": 48.0,
+          "label": "Paper 가능성",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "평가 관련 어휘가 존재합니다(reproduc).",
+              "delta": 18.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "`arbitration`은 알고리즘 계열이므로 기준선과 비교할 수 있습니다.",
+              "delta": 12.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "설계 문서 1건이 해당 영역을 서술합니다.",
+              "delta": 10.0,
+              "evidence_ids": [
+                "ev_80ed53b793be"
+              ]
+            },
+            {
+              "text": "연구 질문에 대응하는 문제 서술이 존재합니다.",
+              "delta": 8.0,
+              "evidence_ids": []
+            }
+          ]
+        },
+        "novelty_confidence": {
+          "value": 79.6,
+          "label": "Novelty Confidence (조사 우선순위)",
+          "caveat": "이 수치는 추가 조사의 우선순위를 나타냅니다. 특허 신규성 판단이나 특허 가능성에 대한 의견이 아닙니다. 선행기술 조사는 별도로 수행해야 합니다.",
+          "reasons": [
+            {
+              "text": "모든 후보는 50점에서 시작합니다.",
+              "delta": 50.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "이 topic과 메커니즘 조합은 본 코퍼스에서 찾은 클러스터의 1.8%를 차지하므로, 상대적으로 특이한 조합입니다.",
+              "delta": 19.6,
+              "evidence_ids": []
+            },
+            {
+              "text": "`arbitration`은 일반적인 연결 코드가 아니라 설계된 기법을 시사합니다.",
+              "delta": 10.0,
+              "evidence_ids": []
+            }
+          ]
+        }
+      },
+      "criticFindings": [
+        {
+          "rule": "R1",
+          "title": "사소한 변경이나 유지보수 작업이 아닌가",
+          "passed": true,
+          "detail": "코드 증거 2건이 메커니즘을 담고 있으며, 사소한 변경 표지가 증거를 지배하지 않습니다.",
+          "evidence_ids": [
+            "ev_fffa41803494",
+            "ev_7e57d1dccfe0"
+          ]
+        },
+        {
+          "rule": "R2",
+          "title": "설정 변경만으로 이루어진 것이 아닌가",
+          "passed": true,
+          "detail": "증거 3건이 빌드 및 설정 파일 밖에 있습니다.",
+          "evidence_ids": []
+        },
+        {
+          "rule": "R3",
+          "title": "흔한 software design pattern이 아닌가",
+          "passed": true,
+          "detail": "증거를 지배하는 일반적인 설계 패턴이 없습니다.",
+          "evidence_ids": []
+        },
+        {
+          "rule": "R4",
+          "title": "parameter tuning 수준이 아닌가",
+          "passed": true,
+          "detail": "코드 증거에 상수 대입 이외의 로직이 존재합니다.",
+          "evidence_ids": []
+        },
+        {
+          "rule": "R5",
+          "title": "기존 Android, Linux, V4L2에서 일반적인 방법이 아닌가",
+          "passed": true,
+          "detail": "발견된 플랫폼 연결 코드: 없음. 증거를 지배하지 않습니다.",
+          "evidence_ids": []
+        },
+        {
+          "rule": "R6",
+          "title": "Evidence가 충분한가",
+          "passed": true,
+          "detail": "증거 9건이 4종에 걸쳐 있습니다(Source Code, 문서, Issue, Pull Request).",
+          "evidence_ids": []
+        },
+        {
+          "rule": "R7",
+          "title": "주장과 실제 코드가 일치하는가",
+          "passed": true,
+          "detail": "코드 자체가 메커니즘 어휘를 포함합니다(negotiat).",
+          "evidence_ids": [
+            "ev_fffa41803494",
+            "ev_7e57d1dccfe0"
+          ]
+        },
+        {
+          "rule": "R8",
+          "title": "효과가 주장에 그치지 않고 측정되었는가",
+          "passed": false,
+          "detail": "수집된 자료 어디에도 기술적 효과가 정량화되어 있지 않습니다. 따라서 이점은 입증된 것이 아니라 주장된 상태입니다.",
+          "evidence_ids": [
+            "ev_80ed53b793be"
+          ]
+        }
+      ],
+      "verdict": "accepted_with_reservations",
+      "status": "STRENGTHENED",
+      "statusReason": "증거가 8건에서 9건으로 늘었습니다.",
+      "timeline": [
+        {
+          "at": "2024-11-26T09:58:20Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function libcamera",
+          "evidenceId": "ev_7e57d1dccfe0",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/libcamera/internal/clock_recovery.h#L11-L68"
+        },
+        {
+          "at": "2025-01-09T09:05:08Z",
+          "kind": "issue",
+          "kindLabel": "Issue",
+          "title": "Random Gstreamer pipeline crash in libcamerasrc",
+          "evidenceId": "ev_bd3da7ef9f7f",
+          "url": "https://github.com/raspberrypi/libcamera/issues/228"
+        },
+        {
+          "at": "2025-07-18T09:36:37Z",
+          "kind": "issue",
+          "kindLabel": "Issue",
+          "title": "GStreamer IMX296 GS camera problem with resolution 1456x1088",
+          "evidenceId": "ev_a947a1fd2dec",
+          "url": "https://github.com/raspberrypi/libcamera/issues/234"
+        },
+        {
+          "at": "2025-09-23T21:53:54Z",
+          "kind": "issue",
+          "kindLabel": "Issue",
+          "title": "Libcamera FPS regression",
+          "evidenceId": "ev_78e66a0e388b",
+          "url": "https://github.com/raspberrypi/libcamera/issues/308"
+        },
+        {
+          "at": "2026-05-22T06:45:55Z",
+          "kind": "issue",
+          "kindLabel": "Issue",
+          "title": "IMX219 - inconsistent frame rate",
+          "evidenceId": "ev_5f9ee1b3ed63",
+          "url": "https://github.com/raspberrypi/libcamera/issues/336"
+        },
+        {
+          "at": "2026-06-30T10:03:25Z",
+          "kind": "issue",
+          "kindLabel": "Issue",
+          "title": "out of order frames when recording with libcamera-raw",
+          "evidenceId": "ev_efeca92f2c76",
+          "url": "https://github.com/raspberrypi/libcamera/issues/344"
+        },
+        {
+          "at": "2026-08-18T18:45:07+09:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function gst_libcamera_src_negotiate",
+          "evidenceId": "ev_fffa41803494",
+          "url": "https://github.com/raspberrypi/libcamera/blob/c682979b50695b93526adb1e66db33743484b63b/src/gstreamer/gstlibcamerasrc.cpp#L587-L706"
+        },
+        {
+          "at": "2026-10-23T15:31:32Z",
+          "kind": "pull_request",
+          "kindLabel": "Pull Request",
+          "title": "Fix rounding of negative frame period errors",
+          "evidenceId": "ev_a764e14a9075",
+          "url": "https://github.com/raspberrypi/libcamera/pull/363"
+        }
+      ],
+      "firstSeenAt": "2025-01-09T09:05:08Z",
+      "lastUpdatedAt": "2026-10-23T15:31:32Z",
+      "typeLabel": "Patent + Paper 후보",
+      "statusLabel": "근거 강화",
+      "verdictLabel": "유보 조건부 통과",
+      "topicLabel": "카메라 성능",
+      "mechanismLabel": "자원 중재",
+      "technologyLabels": [
+        "Camera Framework",
+        "카메라 성능"
+      ],
+      "relatedCandidates": [
+        {
+          "id": "cand_0a7e2de377db",
+          "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원"
+        },
+        {
+          "id": "cand_c1329f0074f9",
+          "title": "카메라 성능: 타이밍 편차 대응을 위한 보정"
+        },
+        {
+          "id": "cand_08af7f723865",
+          "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 협상"
+        },
+        {
+          "id": "cand_dcead55cc594",
+          "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 협상"
+        },
+        {
+          "id": "cand_9dbc024d5788",
+          "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 협상"
+        },
+        {
+          "id": "cand_4e7dd03e97a3",
+          "title": "Buffer 및 메모리 관리: 타이밍 편차 대응을 위한 협상"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ev_80ed53b793be",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "doc",
+          "path": "README.rst",
+          "symbol": "Using GStreamer plugin",
+          "symbol_kind": "section",
+          "line_start": 152,
+          "line_end": 152,
+          "commit_sha": null,
+          "ref": null,
+          "title": "Using GStreamer plugin",
+          "snippet": "le to ``libcamera*:7``. Presently, to prevent element negotiation failures it is required to specify the colorimetry and",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/README.rst#L152",
+          "observed_at": null,
+          "first_seen_commit": null,
+          "first_seen_at": null,
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "framerate",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "failures it is required to specify the colorimetry and framerate as part of your pipeline construction. For instance, t"
+            },
+            {
+              "kind": "mechanism",
+              "term": "negotiat",
+              "family": "arbitration",
+              "weight": 3.8,
+              "context": "le to ``libcamera*:7``. Presently, to prevent element negotiation failures it is required to specify the colorimetry and"
+            },
+            {
+              "kind": "effect",
+              "term": "prevent",
+              "family": "reduction",
+              "weight": 2.6,
+              "context": "vironment variable to ``libcamera*:7``. Presently, to prevent element negotiation failures it is required to specify"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "문서",
+          "location": "raspberrypi/libcamera / README.rst / Using GStreamer plugin / L152",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "framerate"
+              ]
+            },
+            {
+              "kind": "mechanism",
+              "label": "메커니즘",
+              "terms": [
+                "negotiat"
+              ]
+            },
+            {
+              "kind": "effect",
+              "label": "효과",
+              "terms": [
+                "prevent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ev_a947a1fd2dec",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "issue",
+          "path": null,
+          "symbol": null,
+          "symbol_kind": null,
+          "line_start": null,
+          "line_end": null,
+          "commit_sha": null,
+          "ref": "Issue #234",
+          "title": "GStreamer IMX296 GS camera problem with resolution 1456x1088",
+          "snippet": "ing or metadata. (might be somewhere gst_libcamera_src_negotiate and GstVideoFormat ???) Here's what the camera list l",
+          "url": "https://github.com/raspberrypi/libcamera/issues/234",
+          "observed_at": "2025-07-18T09:36:37Z",
+          "first_seen_commit": null,
+          "first_seen_at": null,
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "framerate",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "gst-launch-1.0 libcamerasrc ! video/x-raw,format=I420,framerate=30/1 ! jpegenc ! tcpserversink host=0.0.0.0 port=5000"
+            },
+            {
+              "kind": "domain",
+              "term": "fps",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "x296@1a) Modes: 'SRGGB10_CSI2P' : 1456x1088 [60.38 fps - (0, 0)/1456x1088 crop] ``` I'd like the native reso"
+            },
+            {
+              "kind": "problem",
+              "term": "corrupt",
+              "family": "correctness",
+              "weight": 3.0,
+              "context": "It starts the pipeline successfully, but the image is corrupted - lots of horizontal lines (under a little angle) - it"
+            },
+            {
+              "kind": "mechanism",
+              "term": "negotiat",
+              "family": "arbitration",
+              "weight": 3.8,
+              "context": "ing or metadata. (might be somewhere gst_libcamera_src_negotiate and GstVideoFormat ???) Here's what the camera list l"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "Issue",
+          "location": "raspberrypi/libcamera / Issue #234",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "framerate",
+                "fps"
+              ]
+            },
+            {
+              "kind": "problem",
+              "label": "문제",
+              "terms": [
+                "corrupt"
+              ]
+            },
+            {
+              "kind": "mechanism",
+              "label": "메커니즘",
+              "terms": [
+                "negotiat"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ev_fffa41803494",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "code",
+          "path": "src/gstreamer/gstlibcamerasrc.cpp",
+          "symbol": "gst_libcamera_src_negotiate",
+          "symbol_kind": "function",
+          "line_start": 587,
+          "line_end": 706,
+          "commit_sha": null,
+          "ref": null,
+          "title": "function gst_libcamera_src_negotiate",
+          "snippet": "Must be called with stream_lock held.",
+          "url": "https://github.com/raspberrypi/libcamera/blob/c682979b50695b93526adb1e66db33743484b63b/src/gstreamer/gstlibcamerasrc.cpp#L587-L706",
+          "observed_at": "2026-08-18T18:45:07+09:00",
+          "first_seen_commit": "94d17442094d30f81c5af73325186e376146ab10",
+          "first_seen_at": "2026-08-18T18:45:07+09:00",
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "framerate",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "s(stream_cfg, caps, &transfer[i]); gst_libcamera_get_framerate_from_caps(caps, element_caps); } /* Validate the co"
+            },
+            {
+              "kind": "domain",
+              "term": "stream configuration",
+              "family": "camera-framework",
+              "weight": 2.6,
+              "context": "ig_->at(i); g_autoptr(GstCaps) caps = gst_libcamera_stream_configuration_to_caps(stream_cfg, transfer[i]); gst_libcamera_fram"
+            },
+            {
+              "kind": "domain",
+              "term": "camera configuration",
+              "family": "camera-framework",
+              "weight": 2.6,
+              "context": "CameraConfiguration::Status status = state->config_->validate();"
+            },
+            {
+              "kind": "mechanism",
+              "term": "negotiat",
+              "family": "arbitration",
+              "weight": 3.8,
+              "context": "gst_libcamera_src_negotiate(GstLibcameraSrc *self)"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "Source Code",
+          "location": "raspberrypi/libcamera / src/gstreamer/gstlibcamerasrc.cpp / gst_libcamera_src_negotiate / L587-L706",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "framerate",
+                "stream configuration",
+                "camera configuration"
+              ]
+            },
+            {
+              "kind": "mechanism",
+              "label": "메커니즘",
+              "terms": [
+                "negotiat"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ev_a764e14a9075",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "pull_request",
+          "path": null,
+          "symbol": null,
+          "symbol_kind": null,
+          "line_start": null,
+          "line_end": null,
+          "commit_sha": null,
+          "ref": "PR #363",
+          "title": "Fix rounding of negative frame period errors",
+          "snippet": "d in 27 samples in the affected range. (Some remaining jitter we see at 16 MP comes from dropped frames and is not a",
+          "url": "https://github.com/raspberrypi/libcamera/pull/363",
+          "observed_at": "2026-10-23T15:31:32Z",
+          "first_seen_commit": null,
+          "first_seen_at": null,
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "fps",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "ions are one-sided. ### Reproduce Arithmetic only, 6 fps (frame duration 166667 us): | delta (us) | framePerio"
+            },
+            {
+              "kind": "domain",
+              "term": "jitter",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "d in 27 samples in the affected range. (Some remaining jitter we see at 16 MP comes from dropped frames and is not a"
+            },
+            {
+              "kind": "problem",
+              "term": "jitter",
+              "family": "timing",
+              "weight": 3.2,
+              "context": "d in 27 samples in the affected range. (Some remaining jitter we see at 16 MP comes from dropped frames and is not a"
+            },
+            {
+              "kind": "evaluation",
+              "term": "reproduc",
+              "family": "experiment",
+              "weight": 3.0,
+              "context": "ve deltas are fine, so corrections are one-sided. ### Reproduce Arithmetic only, 6 fps (frame duration 166667 us): |"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "Pull Request",
+          "location": "raspberrypi/libcamera / PR #363",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "fps",
+                "jitter"
+              ]
+            },
+            {
+              "kind": "problem",
+              "label": "문제",
+              "terms": [
+                "jitter"
+              ]
+            },
+            {
+              "kind": "evaluation",
+              "label": "평가",
+              "terms": [
+                "reproduc"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ev_efeca92f2c76",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "issue",
+          "path": null,
+          "symbol": null,
+          "symbol_kind": null,
+          "line_start": null,
+          "line_end": null,
+          "commit_sha": null,
+          "ref": "Issue #344",
+          "title": "out of order frames when recording with libcamera-raw",
+          "snippet": "out of order frames when recording with libcamera-raw For a scienti",
+          "url": "https://github.com/raspberrypi/libcamera/issues/344",
+          "observed_at": "2026-06-30T10:03:25Z",
+          "first_seen_commit": null,
+          "first_seen_at": null,
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "fps",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "this: rpicam-raw -t 20000 --shutter 2000 --gain 1.0 --fps 30 -o image_%04d.raw Then, I used a python script to"
+            },
+            {
+              "kind": "problem",
+              "term": "out of order",
+              "family": "timing",
+              "weight": 3.2,
+              "context": "out of order frames when recording with libcamera-raw For a scienti"
+            },
+            {
+              "kind": "problem",
+              "term": "known issue",
+              "family": "known-limitation",
+              "weight": 2.4,
+              "context": "tal chronometer or a constant moving object Is this a known issue?"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "Issue",
+          "location": "raspberrypi/libcamera / Issue #344",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "fps"
+              ]
+            },
+            {
+              "kind": "problem",
+              "label": "문제",
+              "terms": [
+                "out of order",
+                "known issue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ev_5f9ee1b3ed63",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "issue",
+          "path": null,
+          "symbol": null,
+          "symbol_kind": null,
+          "line_start": null,
+          "line_end": null,
+          "commit_sha": null,
+          "ref": "Issue #336",
+          "title": "IMX219 - inconsistent frame rate",
+          "snippet": "IMX219 - inconsistent frame rate Hi, I'm working on IM219, - ran gstreamer p",
+          "url": "https://github.com/raspberrypi/libcamera/issues/336",
+          "observed_at": "2026-05-22T06:45:55Z",
+          "first_seen_commit": null,
+          "first_seen_at": null,
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "frame rate",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "IMX219 - inconsistent frame rate Hi, I'm working on IM219, - ran gstreamer pipeline wit"
+            },
+            {
+              "kind": "domain",
+              "term": "fps",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "480 and frame rate to 120. - But getting inconsistent fps. FPS drops from 120 to 90 to sometimes 60 and then 40'"
+            },
+            {
+              "kind": "problem",
+              "term": "inconsistent",
+              "family": "correctness",
+              "weight": 3.0,
+              "context": "IMX219 - inconsistent frame rate Hi, I'm working on IM219, - ran gstreamer p"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "Issue",
+          "location": "raspberrypi/libcamera / Issue #336",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "frame rate",
+                "fps"
+              ]
+            },
+            {
+              "kind": "problem",
+              "label": "문제",
+              "terms": [
+                "inconsistent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ev_78e66a0e388b",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "issue",
+          "path": null,
+          "symbol": null,
+          "symbol_kind": null,
+          "line_start": null,
+          "line_end": null,
+          "commit_sha": null,
+          "ref": "Issue #308",
+          "title": "Libcamera FPS regression",
+          "snippet": "Libcamera FPS regression I have a raspberry pi 5 with a camera v2 module (imx21",
+          "url": "https://github.com/raspberrypi/libcamera/issues/308",
+          "observed_at": "2025-09-23T21:53:54Z",
+          "first_seen_commit": null,
+          "first_seen_at": null,
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "fps",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "Libcamera FPS regression I have a raspberry pi 5 with a camera v2 mo"
+            },
+            {
+              "kind": "problem",
+              "term": "regression",
+              "family": "correctness",
+              "weight": 3.0,
+              "context": "Libcamera FPS regression I have a raspberry pi 5 with a camera v2 module (imx21"
+            },
+            {
+              "kind": "problem",
+              "term": "workaround",
+              "family": "known-limitation",
+              "weight": 2.4,
+              "context": "definetely looks like a regression. Can you advise a workaround or possibly how to fix this? Cause is seems that senso"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "Issue",
+          "location": "raspberrypi/libcamera / Issue #308",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "fps"
+              ]
+            },
+            {
+              "kind": "problem",
+              "label": "문제",
+              "terms": [
+                "regression",
+                "workaround"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ev_7e57d1dccfe0",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "code",
+          "path": "include/libcamera/internal/clock_recovery.h",
+          "symbol": "libcamera",
+          "symbol_kind": "function",
+          "line_start": 11,
+          "line_end": 68,
+          "commit_sha": null,
+          "ref": null,
+          "title": "function libcamera",
+          "snippet": "include <stdint.h>",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/libcamera/internal/clock_recovery.h#L11-L68",
+          "observed_at": "2024-11-26T09:58:20Z",
+          "first_seen_commit": "1282e7dcad974d7a40643c6c50df5a81da389b30",
+          "first_seen_at": "2024-11-26T09:58:20Z",
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "jitter",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "s. */ unsigned int numSamples_; /* Remove any output jitter larger than this immediately. */ unsigned int maxJitt"
+            },
+            {
+              "kind": "problem",
+              "term": "jitter",
+              "family": "timing",
+              "weight": 3.2,
+              "context": "s. */ unsigned int numSamples_; /* Remove any output jitter larger than this immediately. */ unsigned int maxJitt"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "Source Code",
+          "location": "raspberrypi/libcamera / include/libcamera/internal/clock_recovery.h / libcamera / L11-L68",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "jitter"
+              ]
+            },
+            {
+              "kind": "problem",
+              "label": "문제",
+              "terms": [
+                "jitter"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ev_bd3da7ef9f7f",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "issue",
+          "path": null,
+          "symbol": null,
+          "symbol_kind": null,
+          "line_start": null,
+          "line_end": null,
+          "commit_sha": null,
+          "ref": "Issue #228",
+          "title": "Random Gstreamer pipeline crash in libcamerasrc",
+          "snippet": "an someone point to the reason for this assertion? Any race condition could cause this? I suspect requestCompleted gets c",
+          "url": "https://github.com/raspberrypi/libcamera/issues/228",
+          "observed_at": "2025-01-09T09:05:08Z",
+          "first_seen_commit": null,
+          "first_seen_at": null,
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "framerate",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "w,colorimetry=bt709,format=NV12,width=3840,height=3040,framerate=10/1 ! queue name=q1 ! videoconvert ! jpegenc quality="
+            },
+            {
+              "kind": "problem",
+              "term": "race condition",
+              "family": "timing",
+              "weight": 3.2,
+              "context": "an someone point to the reason for this assertion? Any race condition could cause this? I suspect requestCompleted gets c"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "Issue",
+          "location": "raspberrypi/libcamera / Issue #228",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "framerate"
+              ]
+            },
+            {
+              "kind": "problem",
+              "label": "문제",
+              "terms": [
+                "race condition"
+              ]
+            }
+          ]
+        }
+      ],
+      "counterEvidence": [
+        {
+          "rule": "R8",
+          "title": "효과가 주장에 그치지 않고 측정되었는가",
+          "passed": false,
+          "detail": "수집된 자료 어디에도 기술적 효과가 정량화되어 있지 않습니다. 따라서 이점은 입증된 것이 아니라 주장된 상태입니다.",
+          "evidence_ids": [
+            "ev_80ed53b793be"
+          ]
+        }
+      ],
+      "evidenceByKind": [
+        {
+          "kind": "issue",
+          "label": "Issue",
+          "count": 5
+        },
+        {
+          "kind": "code",
+          "label": "Source Code",
+          "count": 2
+        },
+        {
+          "kind": "doc",
+          "label": "문서",
+          "count": 1
+        },
+        {
+          "kind": "pull_request",
+          "label": "Pull Request",
+          "count": 1
+        }
+      ]
+    },
+    {
       "id": "cand_591d7f2d8c16",
       "slug": "sensor-sync-prediction",
       "title": "Sensor 동기화: 타이밍 편차 대응을 위한 예측",
@@ -26616,7 +27662,7 @@
         },
         {
           "id": "cand_61de9f76ed9e",
-          "title": "카메라 성능: 프레임 정합성 결함 대응을 위한 협상"
+          "title": "카메라 성능: 타이밍 편차 대응을 위한 협상"
         },
         {
           "id": "cand_9dbc024d5788",
@@ -27544,9 +28590,9 @@
         "cand_08af7f723865",
         "cand_5555849c4804",
         "cand_ae623bf42bbd",
+        "cand_0a7e2de377db",
         "cand_1da23885c6fa",
         "cand_9f4128cd1d1d",
-        "cand_0a7e2de377db",
         "cand_9126debbf094"
       ],
       "technologies": [
@@ -27859,16 +28905,16 @@
           "title": "Computational Photography: 타이밍 편차 대응을 위한 시퀀스 번호 부여"
         },
         {
+          "id": "cand_0a7e2de377db",
+          "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원"
+        },
+        {
           "id": "cand_1da23885c6fa",
           "title": "Sensor 동기화: 타이밍 편차 대응을 위한 시퀀스 번호 부여"
         },
         {
           "id": "cand_9f4128cd1d1d",
           "title": "3A 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여"
-        },
-        {
-          "id": "cand_0a7e2de377db",
-          "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원"
         },
         {
           "id": "cand_9126debbf094",
@@ -28748,6 +29794,978 @@
       ]
     },
     {
+      "id": "cand_0a7e2de377db",
+      "slug": "performance-synchronization-mechanism",
+      "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원",
+      "type": "patent",
+      "signature": "performance|synchronization-mechanism",
+      "topic": "performance",
+      "mechanismFamily": "synchronization-mechanism",
+      "summary": "카메라 성능 영역의 코드가 clock 복원 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다.",
+      "problem": {
+        "text": "수집된 자료는 타이밍 편차, 작성자가 직접 기록한 한계, 프레임 정합성 결함 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “out of order frames when recording with libcamera-raw For a scienti”",
+        "evidence_ids": [
+          "ev_efeca92f2c76",
+          "ev_78e66a0e388b",
+          "ev_a764e14a9075",
+          "ev_bd3da7ef9f7f",
+          "ev_5f9ee1b3ed63",
+          "ev_563257252e35"
+        ],
+        "confidence": ""
+      },
+      "existingApproach": {
+        "text": "이 메커니즘이 도입되기 전에 무엇을 했는지 수집된 자료가 서술하지 않습니다. 기준선을 확정하려면 전체 Commit 이력을 읽거나 작성자에게 확인해야 합니다.",
+        "evidence_ids": [],
+        "confidence": "NEEDS_VERIFICATION"
+      },
+      "proposedTechnique": {
+        "text": "구현은 카메라 성능 내부에서 clock 복원 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: ClockRecovery (include/libcamera/internal/clock_recovery.h); ClockRecovery::configure (src/libcamera/clock_recovery.cpp).",
+        "evidence_ids": [
+          "ev_bf0292fa3d5c",
+          "ev_563257252e35"
+        ],
+        "confidence": ""
+      },
+      "difference": {
+        "text": "Repository만으로는 차별점을 확정할 수 없습니다. 관측 가능한 사실은 현재 코드가 clock 복원 기법을 사용한다는 점이며, 그것이 무엇을 대체했는지는 수집된 자료에 기록되어 있지 않습니다.",
+        "evidence_ids": [],
+        "confidence": "LOW_CONFIDENCE"
+      },
+      "technicalEffect": {
+        "text": "효과가 문장으로 주장되어 있습니다(prevent). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다.",
+        "evidence_ids": [
+          "ev_563257252e35"
+        ],
+        "confidence": "LOW_CONFIDENCE"
+      },
+      "patentAngle": {
+        "coreConcept": "카메라 성능 내부에서 타이밍 편차 문제에 대응하기 위해 clock 복원 기법을 사용합니다.",
+        "claimElements": [
+          "카메라 성능 내부의 런타임 수치를 관측하는 단계",
+          "clock 복원 기법을 사용하여 제어 결정을 도출하는 단계",
+          "다음 프레임이 생성되기 전에 그 결정을 Camera Pipeline에 적용하는 단계",
+          "Pipeline에 대한 측정 가능한 효과 (NEEDS_VERIFICATION: 수치를 찾지 못했습니다)"
+        ],
+        "variations": {
+          "generated": true,
+          "note": "아래 항목은 검토자를 위해 생성한 제안입니다. 발견 사항이 아니며, 이를 뒷받침하는 증거도 없습니다.",
+          "ideas": [
+            "기준 시간축을 외부 trigger가 아니라 Sensor 데이터 스트림에서 복원합니다.",
+            "readout 타이밍이 서로 다른 이기종 Sensor까지 동기화 범위를 확장합니다.",
+            "잔여 offset을 한정하고 이를 프레임별 품질 신호로 노출합니다."
+          ]
+        },
+        "observedScope": {
+          "repositories": [
+            "raspberrypi/libcamera"
+          ],
+          "components": [
+            "raspberrypi/libcamera:libcamera/internal",
+            "raspberrypi/libcamera:libcamera"
+          ],
+          "generalisation": "NEEDS_VERIFICATION",
+          "note": "적용 범위는 스캔이 실제로 관측한 범위입니다. 이 아이디어가 해당 Component를 넘어 일반화되는지는 확인되지 않았습니다."
+        }
+      },
+      "paperAngle": {
+        "researchQuestion": "카메라 성능에서 타이밍 동기화 기법은 그것이 대체한 구성보다 보고된 실패 양상을 더 많이 줄이는가?",
+        "hypothesis": "타이밍 동기화 기법을 적용하면, 고정 정책이 한정하지 못하는 편차를 한정할 수 있다.",
+        "baseline": "NEEDS_VERIFICATION: 대체된 정책이 수집된 자료에 기록되어 있지 않으므로, 기준선으로 사용하려면 먼저 복원해야 합니다.",
+        "baselineConfidence": "NEEDS_VERIFICATION",
+        "metrics": [
+          "초당 프레임 수 (fps)",
+          "프레임 시간 p99 (ms)",
+          "CPU 부하 (%)"
+        ],
+        "metricsConfidence": "LOW_CONFIDENCE",
+        "experiments": [
+          "카메라 성능에서 동일한 캡처 워크로드를 메커니즘 활성 상태와 비활성 상태로 각각 실행합니다.",
+          "동작점(프레임 레이트, Sensor mode, 카메라 개수)을 변화시키면서 단일 평균이 아니라 지표의 분포를 기록합니다.",
+          "Repository가 보고한 실패를 주입하여 메커니즘이 실제로 반응하는지 확인합니다."
+        ],
+        "ablation": [
+          "clock 복원 요소만 비활성화하고 나머지 메커니즘은 유지합니다."
+        ],
+        "reproducibility": "구현이 공개되어 있으므로 메커니즘 자체는 재구성할 수 있습니다. 다만 측정을 재현하는 데 필요한 캡처 하드웨어와 튜닝 데이터는 NEEDS_VERIFICATION 상태입니다.",
+        "evaluationSignalsFound": [
+          "reproduc"
+        ],
+        "additionalExperimentsNeeded": [
+          "Repository에 존재하지 않는, 정량화된 기준선 측정이 필요합니다.",
+          "메커니즘과 플랫폼 고유 특성을 분리하기 위해 두 번째 하드웨어 플랫폼이 필요합니다."
+        ]
+      },
+      "priorArtKeywords": [
+        "performance clock recovery",
+        "camera clock recovery",
+        "clock recovery timing camera",
+        "clock recovery known limitation camera",
+        "image sensor performance control"
+      ],
+      "evidenceIds": [
+        "ev_bf0292fa3d5c",
+        "ev_563257252e35",
+        "ev_a764e14a9075",
+        "ev_efeca92f2c76",
+        "ev_5f9ee1b3ed63",
+        "ev_78e66a0e388b",
+        "ev_7e57d1dccfe0",
+        "ev_bd3da7ef9f7f"
+      ],
+      "repositories": [
+        "raspberrypi/libcamera"
+      ],
+      "relatedCandidateIds": [
+        "cand_61de9f76ed9e",
+        "cand_c1329f0074f9",
+        "cand_ae623bf42bbd",
+        "cand_d5fdbd816463",
+        "cand_1da23885c6fa",
+        "cand_9f4128cd1d1d",
+        "cand_9126debbf094",
+        "cand_7abe84b2aa19"
+      ],
+      "technologies": [
+        "performance"
+      ],
+      "scores": {
+        "evidence_strength": {
+          "value": 68.0,
+          "label": "증거 강도",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "증거가 서로 다른 3종의 출처에서 확보되었습니다(Source Code, Issue, Pull Request).",
+              "delta": 42.0,
+              "evidence_ids": [
+                "ev_bf0292fa3d5c",
+                "ev_563257252e35",
+                "ev_a764e14a9075",
+                "ev_efeca92f2c76"
+              ]
+            },
+            {
+              "text": "증거 레코드가 총 8건입니다.",
+              "delta": 16.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "3건은 심볼명과 라인 범위를 함께 지목합니다.",
+              "delta": 10.0,
+              "evidence_ids": [
+                "ev_bf0292fa3d5c",
+                "ev_563257252e35",
+                "ev_7e57d1dccfe0"
+              ]
+            }
+          ]
+        },
+        "patent_potential": {
+          "value": 66.0,
+          "label": "Patent 가능성",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "메커니즘 계열 `synchronization-mechanism`의 사전 가중치가 4.2입니다.",
+              "delta": 24.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "Repository가 해결하려는 문제를 직접 서술하고 있습니다.",
+              "delta": 12.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "기술적 효과가 주장되어 있습니다.",
+              "delta": 12.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "메커니즘이 2개 Component, 1개 Repository에 걸쳐 나타나므로 일반화 가능성이 있습니다.",
+              "delta": 10.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "서로 다른 3개의 코드 위치가 이를 구현합니다.",
+              "delta": 8.0,
+              "evidence_ids": []
+            }
+          ]
+        },
+        "paper_potential": {
+          "value": 26.0,
+          "label": "Paper 가능성",
+          "caveat": null,
+          "reasons": [
+            {
+              "text": "평가 관련 어휘가 존재합니다(reproduc).",
+              "delta": 18.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "연구 질문에 대응하는 문제 서술이 존재합니다.",
+              "delta": 8.0,
+              "evidence_ids": []
+            }
+          ]
+        },
+        "novelty_confidence": {
+          "value": 79.6,
+          "label": "Novelty Confidence (조사 우선순위)",
+          "caveat": "이 수치는 추가 조사의 우선순위를 나타냅니다. 특허 신규성 판단이나 특허 가능성에 대한 의견이 아닙니다. 선행기술 조사는 별도로 수행해야 합니다.",
+          "reasons": [
+            {
+              "text": "모든 후보는 50점에서 시작합니다.",
+              "delta": 50.0,
+              "evidence_ids": []
+            },
+            {
+              "text": "이 topic과 메커니즘 조합은 본 코퍼스에서 찾은 클러스터의 1.8%를 차지하므로, 상대적으로 특이한 조합입니다.",
+              "delta": 19.6,
+              "evidence_ids": []
+            },
+            {
+              "text": "`synchronization-mechanism`은 일반적인 연결 코드가 아니라 설계된 기법을 시사합니다.",
+              "delta": 10.0,
+              "evidence_ids": []
+            }
+          ]
+        }
+      },
+      "criticFindings": [
+        {
+          "rule": "R1",
+          "title": "사소한 변경이나 유지보수 작업이 아닌가",
+          "passed": true,
+          "detail": "코드 증거 3건이 메커니즘을 담고 있으며, 사소한 변경 표지가 증거를 지배하지 않습니다.",
+          "evidence_ids": [
+            "ev_bf0292fa3d5c",
+            "ev_563257252e35",
+            "ev_7e57d1dccfe0"
+          ]
+        },
+        {
+          "rule": "R2",
+          "title": "설정 변경만으로 이루어진 것이 아닌가",
+          "passed": true,
+          "detail": "증거 3건이 빌드 및 설정 파일 밖에 있습니다.",
+          "evidence_ids": []
+        },
+        {
+          "rule": "R3",
+          "title": "흔한 software design pattern이 아닌가",
+          "passed": true,
+          "detail": "증거를 지배하는 일반적인 설계 패턴이 없습니다.",
+          "evidence_ids": []
+        },
+        {
+          "rule": "R4",
+          "title": "parameter tuning 수준이 아닌가",
+          "passed": true,
+          "detail": "코드 증거에 상수 대입 이외의 로직이 존재합니다.",
+          "evidence_ids": []
+        },
+        {
+          "rule": "R5",
+          "title": "기존 Android, Linux, V4L2에서 일반적인 방법이 아닌가",
+          "passed": true,
+          "detail": "발견된 플랫폼 연결 코드: 없음. 증거를 지배하지 않습니다.",
+          "evidence_ids": []
+        },
+        {
+          "rule": "R6",
+          "title": "Evidence가 충분한가",
+          "passed": true,
+          "detail": "증거 8건이 3종에 걸쳐 있습니다(Source Code, Issue, Pull Request).",
+          "evidence_ids": []
+        },
+        {
+          "rule": "R7",
+          "title": "주장과 실제 코드가 일치하는가",
+          "passed": true,
+          "detail": "코드 자체가 메커니즘 어휘를 포함합니다(clock recovery).",
+          "evidence_ids": [
+            "ev_bf0292fa3d5c",
+            "ev_563257252e35",
+            "ev_7e57d1dccfe0"
+          ]
+        },
+        {
+          "rule": "R8",
+          "title": "효과가 주장에 그치지 않고 측정되었는가",
+          "passed": false,
+          "detail": "수집된 자료 어디에도 기술적 효과가 정량화되어 있지 않습니다. 따라서 이점은 입증된 것이 아니라 주장된 상태입니다.",
+          "evidence_ids": [
+            "ev_563257252e35"
+          ]
+        }
+      ],
+      "verdict": "accepted_with_reservations",
+      "status": "STRENGTHENED",
+      "statusReason": "증거가 7건에서 8건으로 늘었습니다.",
+      "timeline": [
+        {
+          "at": "2024-11-26T09:58:20Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ClockRecovery",
+          "evidenceId": "ev_bf0292fa3d5c",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/libcamera/internal/clock_recovery.h#L13-L66"
+        },
+        {
+          "at": "2024-11-26T09:58:20Z",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function libcamera",
+          "evidenceId": "ev_7e57d1dccfe0",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/libcamera/internal/clock_recovery.h#L11-L68"
+        },
+        {
+          "at": "2025-01-09T09:05:08Z",
+          "kind": "issue",
+          "kindLabel": "Issue",
+          "title": "Random Gstreamer pipeline crash in libcamerasrc",
+          "evidenceId": "ev_bd3da7ef9f7f",
+          "url": "https://github.com/raspberrypi/libcamera/issues/228"
+        },
+        {
+          "at": "2025-08-25T20:44:35+09:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function ClockRecovery::configure",
+          "evidenceId": "ev_563257252e35",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/clock_recovery.cpp#L66-L76"
+        },
+        {
+          "at": "2025-09-23T21:53:54Z",
+          "kind": "issue",
+          "kindLabel": "Issue",
+          "title": "Libcamera FPS regression",
+          "evidenceId": "ev_78e66a0e388b",
+          "url": "https://github.com/raspberrypi/libcamera/issues/308"
+        },
+        {
+          "at": "2026-05-22T06:45:55Z",
+          "kind": "issue",
+          "kindLabel": "Issue",
+          "title": "IMX219 - inconsistent frame rate",
+          "evidenceId": "ev_5f9ee1b3ed63",
+          "url": "https://github.com/raspberrypi/libcamera/issues/336"
+        },
+        {
+          "at": "2026-06-30T10:03:25Z",
+          "kind": "issue",
+          "kindLabel": "Issue",
+          "title": "out of order frames when recording with libcamera-raw",
+          "evidenceId": "ev_efeca92f2c76",
+          "url": "https://github.com/raspberrypi/libcamera/issues/344"
+        },
+        {
+          "at": "2026-10-23T15:31:32Z",
+          "kind": "pull_request",
+          "kindLabel": "Pull Request",
+          "title": "Fix rounding of negative frame period errors",
+          "evidenceId": "ev_a764e14a9075",
+          "url": "https://github.com/raspberrypi/libcamera/pull/363"
+        }
+      ],
+      "firstSeenAt": "2025-01-09T09:05:08Z",
+      "lastUpdatedAt": "2026-10-23T15:31:32Z",
+      "typeLabel": "Patent 후보",
+      "statusLabel": "근거 강화",
+      "verdictLabel": "유보 조건부 통과",
+      "topicLabel": "카메라 성능",
+      "mechanismLabel": "타이밍 동기화",
+      "technologyLabels": [
+        "카메라 성능"
+      ],
+      "relatedCandidates": [
+        {
+          "id": "cand_61de9f76ed9e",
+          "title": "카메라 성능: 타이밍 편차 대응을 위한 협상"
+        },
+        {
+          "id": "cand_c1329f0074f9",
+          "title": "카메라 성능: 타이밍 편차 대응을 위한 보정"
+        },
+        {
+          "id": "cand_ae623bf42bbd",
+          "title": "Computational Photography: 타이밍 편차 대응을 위한 시퀀스 번호 부여"
+        },
+        {
+          "id": "cand_d5fdbd816463",
+          "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여"
+        },
+        {
+          "id": "cand_1da23885c6fa",
+          "title": "Sensor 동기화: 타이밍 편차 대응을 위한 시퀀스 번호 부여"
+        },
+        {
+          "id": "cand_9f4128cd1d1d",
+          "title": "3A 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여"
+        },
+        {
+          "id": "cand_9126debbf094",
+          "title": "Camera Framework: 자원 고갈 대응을 위한 시퀀스 번호 부여"
+        },
+        {
+          "id": "cand_7abe84b2aa19",
+          "title": "ISP 처리: 자원 고갈 대응을 위한 시퀀스 번호 부여"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ev_bf0292fa3d5c",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "code",
+          "path": "include/libcamera/internal/clock_recovery.h",
+          "symbol": "ClockRecovery",
+          "symbol_kind": "function",
+          "line_start": 13,
+          "line_end": 66,
+          "commit_sha": null,
+          "ref": null,
+          "title": "function ClockRecovery",
+          "snippet": "clock recovery class ClockRecovery { public: ClockRecovery(); void",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/libcamera/internal/clock_recovery.h#L13-L66",
+          "observed_at": "2024-11-26T09:58:20Z",
+          "first_seen_commit": "1282e7dcad974d7a40643c6c50df5a81da389b30",
+          "first_seen_at": "2024-11-26T09:58:20Z",
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "jitter",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "s. */ unsigned int numSamples_; /* Remove any output jitter larger than this immediately. */ unsigned int maxJitt"
+            },
+            {
+              "kind": "problem",
+              "term": "jitter",
+              "family": "timing",
+              "weight": 3.2,
+              "context": "s. */ unsigned int numSamples_; /* Remove any output jitter larger than this immediately. */ unsigned int maxJitt"
+            },
+            {
+              "kind": "mechanism",
+              "term": "clock recovery",
+              "family": "synchronization-mechanism",
+              "weight": 4.2,
+              "context": "clock recovery class ClockRecovery { public: ClockRecovery(); void"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "Source Code",
+          "location": "raspberrypi/libcamera / include/libcamera/internal/clock_recovery.h / ClockRecovery / L13-L66",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "jitter"
+              ]
+            },
+            {
+              "kind": "problem",
+              "label": "문제",
+              "terms": [
+                "jitter"
+              ]
+            },
+            {
+              "kind": "mechanism",
+              "label": "메커니즘",
+              "terms": [
+                "clock recovery"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ev_563257252e35",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "code",
+          "path": "src/libcamera/clock_recovery.cpp",
+          "symbol": "ClockRecovery::configure",
+          "symbol_kind": "function",
+          "line_start": 66,
+          "line_end": 76,
+          "commit_sha": null,
+          "ref": null,
+          "title": "function ClockRecovery::configure",
+          "snippet": "\\brief Set configuration parameters \\param[in] numSamples The approximate duration for which the state of the model is persistent \\param[in] maxJitter New output samples are clamped to no more than this amount of jitter, to prevent sudden swings from having a large effect \\param[in] minSamples The fitted clock model i…",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/clock_recovery.cpp#L66-L76",
+          "observed_at": "2025-08-25T20:44:35+09:00",
+          "first_seen_commit": "bfd68f786964636b09f8122e6c09c230367390e7",
+          "first_seen_at": "2025-08-25T20:44:35+09:00",
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "jitter",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "put samples are clamped to no more than this amount of jitter, to prevent sudden swings from having a large effect \\"
+            },
+            {
+              "kind": "problem",
+              "term": "jitter",
+              "family": "timing",
+              "weight": 3.2,
+              "context": "put samples are clamped to no more than this amount of jitter, to prevent sudden swings from having a large effect \\"
+            },
+            {
+              "kind": "mechanism",
+              "term": "clock recovery",
+              "family": "synchronization-mechanism",
+              "weight": 4.2,
+              "context": "clock recovery configure \\brief Set configuration parameters \\param[i"
+            },
+            {
+              "kind": "effect",
+              "term": "prevent",
+              "family": "reduction",
+              "weight": 2.6,
+              "context": "are clamped to no more than this amount of jitter, to prevent sudden swings from having a large effect \\param[in] mi"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "Source Code",
+          "location": "raspberrypi/libcamera / src/libcamera/clock_recovery.cpp / ClockRecovery::configure / L66-L76",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "jitter"
+              ]
+            },
+            {
+              "kind": "problem",
+              "label": "문제",
+              "terms": [
+                "jitter"
+              ]
+            },
+            {
+              "kind": "mechanism",
+              "label": "메커니즘",
+              "terms": [
+                "clock recovery"
+              ]
+            },
+            {
+              "kind": "effect",
+              "label": "효과",
+              "terms": [
+                "prevent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ev_a764e14a9075",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "pull_request",
+          "path": null,
+          "symbol": null,
+          "symbol_kind": null,
+          "line_start": null,
+          "line_end": null,
+          "commit_sha": null,
+          "ref": "PR #363",
+          "title": "Fix rounding of negative frame period errors",
+          "snippet": "d in 27 samples in the affected range. (Some remaining jitter we see at 16 MP comes from dropped frames and is not a",
+          "url": "https://github.com/raspberrypi/libcamera/pull/363",
+          "observed_at": "2026-10-23T15:31:32Z",
+          "first_seen_commit": null,
+          "first_seen_at": null,
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "fps",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "ions are one-sided. ### Reproduce Arithmetic only, 6 fps (frame duration 166667 us): | delta (us) | framePerio"
+            },
+            {
+              "kind": "domain",
+              "term": "jitter",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "d in 27 samples in the affected range. (Some remaining jitter we see at 16 MP comes from dropped frames and is not a"
+            },
+            {
+              "kind": "problem",
+              "term": "jitter",
+              "family": "timing",
+              "weight": 3.2,
+              "context": "d in 27 samples in the affected range. (Some remaining jitter we see at 16 MP comes from dropped frames and is not a"
+            },
+            {
+              "kind": "evaluation",
+              "term": "reproduc",
+              "family": "experiment",
+              "weight": 3.0,
+              "context": "ve deltas are fine, so corrections are one-sided. ### Reproduce Arithmetic only, 6 fps (frame duration 166667 us): |"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "Pull Request",
+          "location": "raspberrypi/libcamera / PR #363",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "fps",
+                "jitter"
+              ]
+            },
+            {
+              "kind": "problem",
+              "label": "문제",
+              "terms": [
+                "jitter"
+              ]
+            },
+            {
+              "kind": "evaluation",
+              "label": "평가",
+              "terms": [
+                "reproduc"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ev_efeca92f2c76",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "issue",
+          "path": null,
+          "symbol": null,
+          "symbol_kind": null,
+          "line_start": null,
+          "line_end": null,
+          "commit_sha": null,
+          "ref": "Issue #344",
+          "title": "out of order frames when recording with libcamera-raw",
+          "snippet": "out of order frames when recording with libcamera-raw For a scienti",
+          "url": "https://github.com/raspberrypi/libcamera/issues/344",
+          "observed_at": "2026-06-30T10:03:25Z",
+          "first_seen_commit": null,
+          "first_seen_at": null,
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "fps",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "this: rpicam-raw -t 20000 --shutter 2000 --gain 1.0 --fps 30 -o image_%04d.raw Then, I used a python script to"
+            },
+            {
+              "kind": "problem",
+              "term": "out of order",
+              "family": "timing",
+              "weight": 3.2,
+              "context": "out of order frames when recording with libcamera-raw For a scienti"
+            },
+            {
+              "kind": "problem",
+              "term": "known issue",
+              "family": "known-limitation",
+              "weight": 2.4,
+              "context": "tal chronometer or a constant moving object Is this a known issue?"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "Issue",
+          "location": "raspberrypi/libcamera / Issue #344",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "fps"
+              ]
+            },
+            {
+              "kind": "problem",
+              "label": "문제",
+              "terms": [
+                "out of order",
+                "known issue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ev_5f9ee1b3ed63",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "issue",
+          "path": null,
+          "symbol": null,
+          "symbol_kind": null,
+          "line_start": null,
+          "line_end": null,
+          "commit_sha": null,
+          "ref": "Issue #336",
+          "title": "IMX219 - inconsistent frame rate",
+          "snippet": "IMX219 - inconsistent frame rate Hi, I'm working on IM219, - ran gstreamer p",
+          "url": "https://github.com/raspberrypi/libcamera/issues/336",
+          "observed_at": "2026-05-22T06:45:55Z",
+          "first_seen_commit": null,
+          "first_seen_at": null,
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "frame rate",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "IMX219 - inconsistent frame rate Hi, I'm working on IM219, - ran gstreamer pipeline wit"
+            },
+            {
+              "kind": "domain",
+              "term": "fps",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "480 and frame rate to 120. - But getting inconsistent fps. FPS drops from 120 to 90 to sometimes 60 and then 40'"
+            },
+            {
+              "kind": "problem",
+              "term": "inconsistent",
+              "family": "correctness",
+              "weight": 3.0,
+              "context": "IMX219 - inconsistent frame rate Hi, I'm working on IM219, - ran gstreamer p"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "Issue",
+          "location": "raspberrypi/libcamera / Issue #336",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "frame rate",
+                "fps"
+              ]
+            },
+            {
+              "kind": "problem",
+              "label": "문제",
+              "terms": [
+                "inconsistent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ev_78e66a0e388b",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "issue",
+          "path": null,
+          "symbol": null,
+          "symbol_kind": null,
+          "line_start": null,
+          "line_end": null,
+          "commit_sha": null,
+          "ref": "Issue #308",
+          "title": "Libcamera FPS regression",
+          "snippet": "Libcamera FPS regression I have a raspberry pi 5 with a camera v2 module (imx21",
+          "url": "https://github.com/raspberrypi/libcamera/issues/308",
+          "observed_at": "2025-09-23T21:53:54Z",
+          "first_seen_commit": null,
+          "first_seen_at": null,
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "fps",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "Libcamera FPS regression I have a raspberry pi 5 with a camera v2 mo"
+            },
+            {
+              "kind": "problem",
+              "term": "regression",
+              "family": "correctness",
+              "weight": 3.0,
+              "context": "Libcamera FPS regression I have a raspberry pi 5 with a camera v2 module (imx21"
+            },
+            {
+              "kind": "problem",
+              "term": "workaround",
+              "family": "known-limitation",
+              "weight": 2.4,
+              "context": "definetely looks like a regression. Can you advise a workaround or possibly how to fix this? Cause is seems that senso"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "Issue",
+          "location": "raspberrypi/libcamera / Issue #308",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "fps"
+              ]
+            },
+            {
+              "kind": "problem",
+              "label": "문제",
+              "terms": [
+                "regression",
+                "workaround"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ev_7e57d1dccfe0",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "code",
+          "path": "include/libcamera/internal/clock_recovery.h",
+          "symbol": "libcamera",
+          "symbol_kind": "function",
+          "line_start": 11,
+          "line_end": 68,
+          "commit_sha": null,
+          "ref": null,
+          "title": "function libcamera",
+          "snippet": "include <stdint.h>",
+          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/libcamera/internal/clock_recovery.h#L11-L68",
+          "observed_at": "2024-11-26T09:58:20Z",
+          "first_seen_commit": "1282e7dcad974d7a40643c6c50df5a81da389b30",
+          "first_seen_at": "2024-11-26T09:58:20Z",
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "jitter",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "s. */ unsigned int numSamples_; /* Remove any output jitter larger than this immediately. */ unsigned int maxJitt"
+            },
+            {
+              "kind": "problem",
+              "term": "jitter",
+              "family": "timing",
+              "weight": 3.2,
+              "context": "s. */ unsigned int numSamples_; /* Remove any output jitter larger than this immediately. */ unsigned int maxJitt"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "Source Code",
+          "location": "raspberrypi/libcamera / include/libcamera/internal/clock_recovery.h / libcamera / L11-L68",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "jitter"
+              ]
+            },
+            {
+              "kind": "problem",
+              "label": "문제",
+              "terms": [
+                "jitter"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ev_bd3da7ef9f7f",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "issue",
+          "path": null,
+          "symbol": null,
+          "symbol_kind": null,
+          "line_start": null,
+          "line_end": null,
+          "commit_sha": null,
+          "ref": "Issue #228",
+          "title": "Random Gstreamer pipeline crash in libcamerasrc",
+          "snippet": "an someone point to the reason for this assertion? Any race condition could cause this? I suspect requestCompleted gets c",
+          "url": "https://github.com/raspberrypi/libcamera/issues/228",
+          "observed_at": "2025-01-09T09:05:08Z",
+          "first_seen_commit": null,
+          "first_seen_at": null,
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "framerate",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "w,colorimetry=bt709,format=NV12,width=3840,height=3040,framerate=10/1 ! queue name=q1 ! videoconvert ! jpegenc quality="
+            },
+            {
+              "kind": "problem",
+              "term": "race condition",
+              "family": "timing",
+              "weight": 3.2,
+              "context": "an someone point to the reason for this assertion? Any race condition could cause this? I suspect requestCompleted gets c"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "Issue",
+          "location": "raspberrypi/libcamera / Issue #228",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "framerate"
+              ]
+            },
+            {
+              "kind": "problem",
+              "label": "문제",
+              "terms": [
+                "race condition"
+              ]
+            }
+          ]
+        }
+      ],
+      "counterEvidence": [
+        {
+          "rule": "R8",
+          "title": "효과가 주장에 그치지 않고 측정되었는가",
+          "passed": false,
+          "detail": "수집된 자료 어디에도 기술적 효과가 정량화되어 있지 않습니다. 따라서 이점은 입증된 것이 아니라 주장된 상태입니다.",
+          "evidence_ids": [
+            "ev_563257252e35"
+          ]
+        }
+      ],
+      "evidenceByKind": [
+        {
+          "kind": "issue",
+          "label": "Issue",
+          "count": 4
+        },
+        {
+          "kind": "code",
+          "label": "Source Code",
+          "count": 3
+        },
+        {
+          "kind": "pull_request",
+          "label": "Pull Request",
+          "count": 1
+        }
+      ]
+    },
+    {
       "id": "cand_1da23885c6fa",
       "slug": "sensor-sync-synchronization-mechanism",
       "title": "Sensor 동기화: 타이밍 편차 대응을 위한 시퀀스 번호 부여",
@@ -28888,8 +30906,8 @@
         "cand_591d7f2d8c16",
         "cand_ae623bf42bbd",
         "cand_d5fdbd816463",
-        "cand_9f4128cd1d1d",
         "cand_0a7e2de377db",
+        "cand_9f4128cd1d1d",
         "cand_9126debbf094",
         "cand_7abe84b2aa19",
         "cand_445b31297303"
@@ -29224,12 +31242,12 @@
           "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여"
         },
         {
-          "id": "cand_9f4128cd1d1d",
-          "title": "3A 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여"
-        },
-        {
           "id": "cand_0a7e2de377db",
           "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원"
+        },
+        {
+          "id": "cand_9f4128cd1d1d",
+          "title": "3A 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여"
         },
         {
           "id": "cand_9126debbf094",
@@ -35032,22 +37050,22 @@
       ]
     },
     {
-      "id": "cand_61de9f76ed9e",
-      "slug": "performance-arbitration",
-      "title": "카메라 성능: 프레임 정합성 결함 대응을 위한 협상",
+      "id": "cand_c1329f0074f9",
+      "slug": "performance-calibration",
+      "title": "카메라 성능: 타이밍 편차 대응을 위한 보정",
       "type": "patent",
-      "signature": "performance|arbitration",
+      "signature": "performance|calibration",
       "topic": "performance",
-      "mechanismFamily": "arbitration",
-      "summary": "카메라 성능 영역의 코드가 협상 기법을 구현하고 있습니다. 그리고 해당 Repository는 프레임 정합성 결함 문제를 스스로 보고하고 있습니다.",
+      "mechanismFamily": "calibration",
+      "summary": "카메라 성능 영역의 코드가 보정 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다.",
       "problem": {
-        "text": "수집된 자료는 프레임 정합성 결함, 타이밍 편차, 작성자가 직접 기록한 한계 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “out of order frames when recording with libcamera-raw For a scienti”",
+        "text": "수집된 자료는 타이밍 편차, 작성자가 직접 기록한 한계, 프레임 정합성 결함 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “out of order frames when recording with libcamera-raw For a scienti”",
         "evidence_ids": [
           "ev_efeca92f2c76",
           "ev_78e66a0e388b",
+          "ev_a764e14a9075",
           "ev_bd3da7ef9f7f",
           "ev_5f9ee1b3ed63",
-          "ev_a947a1fd2dec",
           "ev_7e57d1dccfe0"
         ],
         "confidence": ""
@@ -35058,29 +37076,28 @@
         "confidence": "NEEDS_VERIFICATION"
       },
       "proposedTechnique": {
-        "text": "구현은 카메라 성능 내부에서 협상 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: gst_libcamera_src_negotiate (src/gstreamer/gstlibcamerasrc.cpp).",
+        "text": "구현은 카메라 성능 내부에서 보정 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: icamera_metadata_enum_snprint (src/metadata/icamera_metadata_tag_info.c); CameraParser::handleStaticMetaData (src/platformdata/CameraParser.cpp).",
         "evidence_ids": [
-          "ev_fffa41803494"
+          "ev_d9607eae5f35",
+          "ev_964852de7251"
         ],
         "confidence": ""
       },
       "difference": {
-        "text": "Repository만으로는 차별점을 확정할 수 없습니다. 관측 가능한 사실은 현재 코드가 협상 기법을 사용한다는 점이며, 그것이 무엇을 대체했는지는 수집된 자료에 기록되어 있지 않습니다.",
+        "text": "Repository만으로는 차별점을 확정할 수 없습니다. 관측 가능한 사실은 현재 코드가 보정 기법을 사용한다는 점이며, 그것이 무엇을 대체했는지는 수집된 자료에 기록되어 있지 않습니다.",
         "evidence_ids": [],
         "confidence": "LOW_CONFIDENCE"
       },
       "technicalEffect": {
-        "text": "효과가 문장으로 주장되어 있습니다(prevent). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다.",
-        "evidence_ids": [
-          "ev_80ed53b793be"
-        ],
-        "confidence": "LOW_CONFIDENCE"
+        "text": "수집된 자료에는 기술적 효과가 서술되어 있지 않습니다. 본 후보를 주장하려면 효과를 먼저 측정해야 합니다.",
+        "evidence_ids": [],
+        "confidence": "UNKNOWN"
       },
       "patentAngle": {
-        "coreConcept": "카메라 성능 내부에서 프레임 정합성 결함 문제에 대응하기 위해 협상 기법을 사용합니다.",
+        "coreConcept": "카메라 성능 내부에서 타이밍 편차 문제에 대응하기 위해 보정 기법을 사용합니다.",
         "claimElements": [
           "카메라 성능 내부의 런타임 수치를 관측하는 단계",
-          "협상 기법을 사용하여 제어 결정을 도출하는 단계",
+          "보정 기법을 사용하여 제어 결정을 도출하는 단계",
           "다음 프레임이 생성되기 전에 그 결정을 Camera Pipeline에 적용하는 단계",
           "Pipeline에 대한 측정 가능한 효과 (NEEDS_VERIFICATION: 수치를 찾지 못했습니다)"
         ],
@@ -35088,27 +37105,27 @@
           "generated": true,
           "note": "아래 항목은 검토자를 위해 생성한 제안입니다. 발견 사항이 아니며, 이를 뒷받침하는 증거도 없습니다.",
           "ideas": [
-            "정적 우선순위를 각 Stream의 남은 deadline 여유로 계산한 입찰값으로 대체합니다.",
-            "중재 범위를 단일 Camera session 내부가 아니라 프로세스 사이로 확장합니다.",
-            "기아 상태가 발생하지 않음을 보장하고 최악의 대기 시간을 해석적으로 증명합니다."
+            "보정값을 저장된 표가 아니라 캡처된 프레임에서 온라인으로 도출합니다.",
+            "캘리브레이션 지점 사이를 선형이 아니라 물리 모델로 보간합니다.",
+            "캘리브레이션 자체의 drift를 검출하여 재캘리브레이션을 촉발합니다."
           ]
         },
         "observedScope": {
           "repositories": [
+            "intel/ipu6-camera-hal",
             "raspberrypi/libcamera"
           ],
           "components": [
-            "raspberrypi/libcamera:(root)",
-            "raspberrypi/libcamera:(repository level)",
-            "raspberrypi/libcamera:gstreamer"
+            "intel/ipu6-camera-hal:metadata",
+            "intel/ipu6-camera-hal:platformdata"
           ],
           "generalisation": "NEEDS_VERIFICATION",
           "note": "적용 범위는 스캔이 실제로 관측한 범위입니다. 이 아이디어가 해당 Component를 넘어 일반화되는지는 확인되지 않았습니다."
         }
       },
       "paperAngle": {
-        "researchQuestion": "카메라 성능에서 자원 중재 기법은 그것이 대체한 구성보다 보고된 실패 양상을 더 많이 줄이는가?",
-        "hypothesis": "자원 중재 기법을 적용하면, 고정 정책이 한정하지 못하는 편차를 한정할 수 있다.",
+        "researchQuestion": "카메라 성능에서 캘리브레이션과 보정 기법은 그것이 대체한 구성보다 보고된 실패 양상을 더 많이 줄이는가?",
+        "hypothesis": "캘리브레이션과 보정 기법을 적용하면, 고정 정책이 한정하지 못하는 편차를 한정할 수 있다.",
         "baseline": "NEEDS_VERIFICATION: 대체된 정책이 수집된 자료에 기록되어 있지 않으므로, 기준선으로 사용하려면 먼저 복원해야 합니다.",
         "baselineConfidence": "NEEDS_VERIFICATION",
         "metrics": [
@@ -35123,26 +37140,28 @@
           "Repository가 보고한 실패를 주입하여 메커니즘이 실제로 반응하는지 확인합니다."
         ],
         "ablation": [
-          "협상 요소만 비활성화하고 나머지 메커니즘은 유지합니다."
+          "보정 요소만 비활성화하고 나머지 메커니즘은 유지합니다."
         ],
         "reproducibility": "구현이 공개되어 있으므로 메커니즘 자체는 재구성할 수 있습니다. 다만 측정을 재현하는 데 필요한 캡처 하드웨어와 튜닝 데이터는 NEEDS_VERIFICATION 상태입니다.",
-        "evaluationSignalsFound": [],
+        "evaluationSignalsFound": [
+          "reproduc"
+        ],
         "additionalExperimentsNeeded": [
           "Repository에 존재하지 않는, 정량화된 기준선 측정이 필요합니다.",
           "메커니즘과 플랫폼 고유 특성을 분리하기 위해 두 번째 하드웨어 플랫폼이 필요합니다."
         ]
       },
       "priorArtKeywords": [
-        "performance negotiat",
-        "camera negotiat",
-        "negotiat correctness camera",
-        "negotiat timing camera",
+        "performance compensat",
+        "camera compensat",
+        "compensat timing camera",
+        "compensat known limitation camera",
         "image sensor performance control"
       ],
       "evidenceIds": [
-        "ev_80ed53b793be",
-        "ev_a947a1fd2dec",
-        "ev_fffa41803494",
+        "ev_d9607eae5f35",
+        "ev_964852de7251",
+        "ev_a764e14a9075",
         "ev_efeca92f2c76",
         "ev_5f9ee1b3ed63",
         "ev_78e66a0e388b",
@@ -35150,33 +37169,36 @@
         "ev_bd3da7ef9f7f"
       ],
       "repositories": [
+        "intel/ipu6-camera-hal",
         "raspberrypi/libcamera"
       ],
       "relatedCandidateIds": [
+        "cand_61de9f76ed9e",
         "cand_0a7e2de377db",
-        "cand_c1329f0074f9",
-        "cand_08af7f723865",
-        "cand_dcead55cc594",
-        "cand_9dbc024d5788",
-        "cand_4e7dd03e97a3"
+        "cand_8d7ed430ed11",
+        "cand_025b396adab4",
+        "cand_5555849c4804",
+        "cand_9fe09ed8a807",
+        "cand_115eab8f53f7",
+        "cand_fb3a967b42e5"
       ],
       "technologies": [
-        "camera-framework",
+        "debug-profiling",
         "performance"
       ],
       "scores": {
         "evidence_strength": {
-          "value": 68.0,
+          "value": 78.0,
           "label": "증거 강도",
           "caveat": null,
           "reasons": [
             {
-              "text": "증거가 서로 다른 3종의 출처에서 확보되었습니다(Source Code, 문서, Issue).",
+              "text": "증거가 서로 다른 3종의 출처에서 확보되었습니다(Source Code, Issue, Pull Request).",
               "delta": 42.0,
               "evidence_ids": [
-                "ev_80ed53b793be",
-                "ev_a947a1fd2dec",
-                "ev_fffa41803494",
+                "ev_d9607eae5f35",
+                "ev_964852de7251",
+                "ev_a764e14a9075",
                 "ev_efeca92f2c76"
               ]
             },
@@ -35186,23 +37208,29 @@
               "evidence_ids": []
             },
             {
-              "text": "2건은 심볼명과 라인 범위를 함께 지목합니다.",
+              "text": "3건은 심볼명과 라인 범위를 함께 지목합니다.",
               "delta": 10.0,
               "evidence_ids": [
-                "ev_fffa41803494",
+                "ev_d9607eae5f35",
+                "ev_964852de7251",
                 "ev_7e57d1dccfe0"
               ]
+            },
+            {
+              "text": "동일한 기술이 2개 Repository에 나타납니다.",
+              "delta": 10.0,
+              "evidence_ids": []
             }
           ]
         },
         "patent_potential": {
-          "value": 56.8,
+          "value": 50.4,
           "label": "Patent 가능성",
           "caveat": null,
           "reasons": [
             {
-              "text": "메커니즘 계열 `arbitration`의 사전 가중치가 3.8입니다.",
-              "delta": 22.799999999999997,
+              "text": "메커니즘 계열 `calibration`의 사전 가중치가 3.4입니다.",
+              "delta": 20.4,
               "evidence_ids": []
             },
             {
@@ -35211,48 +37239,36 @@
               "evidence_ids": []
             },
             {
-              "text": "기술적 효과가 주장되어 있습니다.",
-              "delta": 12.0,
+              "text": "메커니즘이 2개 Component, 2개 Repository에 걸쳐 나타나므로 일반화 가능성이 있습니다.",
+              "delta": 10.0,
               "evidence_ids": []
             },
             {
-              "text": "메커니즘이 3개 Component, 1개 Repository에 걸쳐 나타나므로 일반화 가능성이 있습니다.",
-              "delta": 10.0,
+              "text": "서로 다른 3개의 코드 위치가 이를 구현합니다.",
+              "delta": 8.0,
               "evidence_ids": []
             }
           ]
         },
         "paper_potential": {
-          "value": 20.0,
+          "value": 26.0,
           "label": "Paper 가능성",
           "caveat": null,
           "reasons": [
             {
-              "text": "`arbitration`은 알고리즘 계열이므로 기준선과 비교할 수 있습니다.",
-              "delta": 12.0,
+              "text": "평가 관련 어휘가 존재합니다(reproduc).",
+              "delta": 18.0,
               "evidence_ids": []
-            },
-            {
-              "text": "설계 문서 1건이 해당 영역을 서술합니다.",
-              "delta": 10.0,
-              "evidence_ids": [
-                "ev_80ed53b793be"
-              ]
             },
             {
               "text": "연구 질문에 대응하는 문제 서술이 존재합니다.",
               "delta": 8.0,
               "evidence_ids": []
-            },
-            {
-              "text": "측정값도 평가 구성도 찾지 못했습니다.",
-              "delta": -10.0,
-              "evidence_ids": []
             }
           ]
         },
         "novelty_confidence": {
-          "value": 79.6,
+          "value": 69.6,
           "label": "Novelty Confidence (조사 우선순위)",
           "caveat": "이 수치는 추가 조사의 우선순위를 나타냅니다. 특허 신규성 판단이나 특허 가능성에 대한 의견이 아닙니다. 선행기술 조사는 별도로 수행해야 합니다.",
           "reasons": [
@@ -35265,11 +37281,6 @@
               "text": "이 topic과 메커니즘 조합은 본 코퍼스에서 찾은 클러스터의 1.8%를 차지하므로, 상대적으로 특이한 조합입니다.",
               "delta": 19.6,
               "evidence_ids": []
-            },
-            {
-              "text": "`arbitration`은 일반적인 연결 코드가 아니라 설계된 기법을 시사합니다.",
-              "delta": 10.0,
-              "evidence_ids": []
             }
           ]
         }
@@ -35279,9 +37290,10 @@
           "rule": "R1",
           "title": "사소한 변경이나 유지보수 작업이 아닌가",
           "passed": true,
-          "detail": "코드 증거 2건이 메커니즘을 담고 있으며, 사소한 변경 표지가 증거를 지배하지 않습니다.",
+          "detail": "코드 증거 3건이 메커니즘을 담고 있으며, 사소한 변경 표지가 증거를 지배하지 않습니다.",
           "evidence_ids": [
-            "ev_fffa41803494",
+            "ev_d9607eae5f35",
+            "ev_964852de7251",
             "ev_7e57d1dccfe0"
           ]
         },
@@ -35317,16 +37329,17 @@
           "rule": "R6",
           "title": "Evidence가 충분한가",
           "passed": true,
-          "detail": "증거 8건이 3종에 걸쳐 있습니다(Source Code, 문서, Issue).",
+          "detail": "증거 8건이 3종에 걸쳐 있습니다(Source Code, Issue, Pull Request).",
           "evidence_ids": []
         },
         {
           "rule": "R7",
           "title": "주장과 실제 코드가 일치하는가",
           "passed": true,
-          "detail": "코드 자체가 메커니즘 어휘를 포함합니다(negotiat).",
+          "detail": "코드 자체가 메커니즘 어휘를 포함합니다(compensat).",
           "evidence_ids": [
-            "ev_fffa41803494",
+            "ev_d9607eae5f35",
+            "ev_964852de7251",
             "ev_7e57d1dccfe0"
           ]
         },
@@ -35335,15 +37348,21 @@
           "title": "효과가 주장에 그치지 않고 측정되었는가",
           "passed": false,
           "detail": "수집된 자료 어디에도 기술적 효과가 정량화되어 있지 않습니다. 따라서 이점은 입증된 것이 아니라 주장된 상태입니다.",
-          "evidence_ids": [
-            "ev_80ed53b793be"
-          ]
+          "evidence_ids": []
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "UNCHANGED",
-      "statusReason": "직전 스캔 이후 변화가 없습니다.",
+      "status": "STRENGTHENED",
+      "statusReason": "증거가 7건에서 8건으로 늘었습니다.",
       "timeline": [
+        {
+          "at": "2020-10-21T06:15:07+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function icamera_metadata_enum_snprint",
+          "evidenceId": "ev_d9607eae5f35",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/metadata/icamera_metadata_tag_info.c#L532-L2696"
+        },
         {
           "at": "2024-11-26T09:58:20Z",
           "kind": "code",
@@ -35361,12 +37380,12 @@
           "url": "https://github.com/raspberrypi/libcamera/issues/228"
         },
         {
-          "at": "2025-07-18T09:36:37Z",
-          "kind": "issue",
-          "kindLabel": "Issue",
-          "title": "GStreamer IMX296 GS camera problem with resolution 1456x1088",
-          "evidenceId": "ev_a947a1fd2dec",
-          "url": "https://github.com/raspberrypi/libcamera/issues/234"
+          "at": "2025-06-26T18:11:36+08:00",
+          "kind": "code",
+          "kindLabel": "Source Code",
+          "title": "function CameraParser::handleStaticMetaData",
+          "evidenceId": "ev_964852de7251",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/platformdata/CameraParser.cpp#L1871-L2042"
         },
         {
           "at": "2025-09-23T21:53:54Z",
@@ -35393,262 +37412,244 @@
           "url": "https://github.com/raspberrypi/libcamera/issues/344"
         },
         {
-          "at": "2026-08-18T18:45:07+09:00",
-          "kind": "code",
-          "kindLabel": "Source Code",
-          "title": "function gst_libcamera_src_negotiate",
-          "evidenceId": "ev_fffa41803494",
-          "url": "https://github.com/raspberrypi/libcamera/blob/c682979b50695b93526adb1e66db33743484b63b/src/gstreamer/gstlibcamerasrc.cpp#L587-L706"
+          "at": "2026-10-23T15:31:32Z",
+          "kind": "pull_request",
+          "kindLabel": "Pull Request",
+          "title": "Fix rounding of negative frame period errors",
+          "evidenceId": "ev_a764e14a9075",
+          "url": "https://github.com/raspberrypi/libcamera/pull/363"
         }
       ],
       "firstSeenAt": "2025-01-09T09:05:08Z",
-      "lastUpdatedAt": "2026-08-18T18:45:07+09:00",
+      "lastUpdatedAt": "2026-10-23T15:31:32Z",
       "typeLabel": "Patent 후보",
-      "statusLabel": "변화 없음",
+      "statusLabel": "근거 강화",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "카메라 성능",
-      "mechanismLabel": "자원 중재",
+      "mechanismLabel": "캘리브레이션과 보정",
       "technologyLabels": [
-        "Camera Framework",
+        "디버깅 및 프로파일링",
         "카메라 성능"
       ],
       "relatedCandidates": [
+        {
+          "id": "cand_61de9f76ed9e",
+          "title": "카메라 성능: 타이밍 편차 대응을 위한 협상"
+        },
         {
           "id": "cand_0a7e2de377db",
           "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원"
         },
         {
-          "id": "cand_c1329f0074f9",
-          "title": "카메라 성능: 타이밍 편차 대응을 위한 보정"
+          "id": "cand_8d7ed430ed11",
+          "title": "Computational Photography: 타이밍 편차 대응을 위한 보간"
         },
         {
-          "id": "cand_08af7f723865",
-          "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 협상"
+          "id": "cand_025b396adab4",
+          "title": "3A 제어: 확장성 한계 대응을 위한 보간"
         },
         {
-          "id": "cand_dcead55cc594",
-          "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 협상"
+          "id": "cand_5555849c4804",
+          "title": "Sensor 제어: 타이밍 편차 대응을 위한 보정"
         },
         {
-          "id": "cand_9dbc024d5788",
-          "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 협상"
+          "id": "cand_9fe09ed8a807",
+          "title": "ISP 처리: 화질 결함 대응을 위한 보간"
         },
         {
-          "id": "cand_4e7dd03e97a3",
-          "title": "Buffer 및 메모리 관리: 타이밍 편차 대응을 위한 협상"
+          "id": "cand_fb3a967b42e5",
+          "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 특성화"
         }
       ],
       "evidence": [
         {
-          "id": "ev_80ed53b793be",
-          "org": "raspberrypi",
-          "repo": "libcamera",
-          "kind": "doc",
-          "path": "README.rst",
-          "symbol": "Using GStreamer plugin",
-          "symbol_kind": "section",
-          "line_start": 152,
-          "line_end": 152,
+          "id": "ev_d9607eae5f35",
+          "org": "intel",
+          "repo": "ipu6-camera-hal",
+          "kind": "code",
+          "path": "src/metadata/icamera_metadata_tag_info.c",
+          "symbol": "icamera_metadata_enum_snprint",
+          "symbol_kind": "function",
+          "line_start": 532,
+          "line_end": 2696,
           "commit_sha": null,
           "ref": null,
-          "title": "Using GStreamer plugin",
-          "snippet": "le to ``libcamera*:7``. Presently, to prevent element negotiation failures it is required to specify the colorimetry and",
-          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/README.rst#L152",
-          "observed_at": null,
-          "first_seen_commit": null,
-          "first_seen_at": null,
+          "title": "function icamera_metadata_enum_snprint",
+          "snippet": "} break; } case CAMERA_AE_COMPENSATION: { break; } case CAMERA_AE",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/metadata/icamera_metadata_tag_info.c#L532-L2696",
+          "observed_at": "2020-10-21T06:15:07+08:00",
+          "first_seen_commit": "45469119a4d669ce2f0b594ff4d36479f1c9378b",
+          "first_seen_at": "2020-10-21T06:15:07+08:00",
           "signals": [
             {
               "kind": "domain",
-              "term": "framerate",
+              "term": "fps",
               "family": "performance",
               "weight": 2.6,
-              "context": "failures it is required to specify the colorimetry and framerate as part of your pipeline construction. For instance, t"
+              "context": "break; } case CAMERA_AE_TARGET_FPS_RANGE: { break; } case CAM"
             },
             {
               "kind": "mechanism",
-              "term": "negotiat",
-              "family": "arbitration",
-              "weight": 3.8,
-              "context": "le to ``libcamera*:7``. Presently, to prevent element negotiation failures it is required to specify the colorimetry and"
-            },
-            {
-              "kind": "effect",
-              "term": "prevent",
-              "family": "reduction",
-              "weight": 2.6,
-              "context": "vironment variable to ``libcamera*:7``. Presently, to prevent element negotiation failures it is required to specify"
+              "term": "compensat",
+              "family": "calibration",
+              "weight": 3.4,
+              "context": "} break; } case CAMERA_AE_COMPENSATION: { break; } case CAMERA_AE"
             }
           ],
-          "repository": "raspberrypi/libcamera",
-          "kindLabel": "문서",
-          "location": "raspberrypi/libcamera / README.rst / Using GStreamer plugin / L152",
+          "repository": "intel/ipu6-camera-hal",
+          "kindLabel": "Source Code",
+          "location": "intel/ipu6-camera-hal / src/metadata/icamera_metadata_tag_info.c / icamera_metadata_enum_snprint / L532-L2696",
           "signalSummary": [
             {
               "kind": "domain",
               "label": "기술 영역",
               "terms": [
-                "framerate"
+                "fps"
               ]
             },
             {
               "kind": "mechanism",
               "label": "메커니즘",
               "terms": [
-                "negotiat"
-              ]
-            },
-            {
-              "kind": "effect",
-              "label": "효과",
-              "terms": [
-                "prevent"
+                "compensat"
               ]
             }
           ]
         },
         {
-          "id": "ev_a947a1fd2dec",
-          "org": "raspberrypi",
-          "repo": "libcamera",
-          "kind": "issue",
-          "path": null,
-          "symbol": null,
-          "symbol_kind": null,
-          "line_start": null,
-          "line_end": null,
+          "id": "ev_964852de7251",
+          "org": "intel",
+          "repo": "ipu6-camera-hal",
+          "kind": "code",
+          "path": "src/platformdata/CameraParser.cpp",
+          "symbol": "CameraParser::handleStaticMetaData",
+          "symbol_kind": "function",
+          "line_start": 1871,
+          "line_end": 2042,
           "commit_sha": null,
-          "ref": "Issue #234",
-          "title": "GStreamer IMX296 GS camera problem with resolution 1456x1088",
-          "snippet": "ing or metadata. (might be somewhere gst_libcamera_src_negotiate and GstVideoFormat ???) Here's what the camera list l",
-          "url": "https://github.com/raspberrypi/libcamera/issues/234",
-          "observed_at": "2025-07-18T09:36:37Z",
-          "first_seen_commit": null,
-          "first_seen_at": null,
+          "ref": null,
+          "title": "function CameraParser::handleStaticMetaData",
+          "snippet": "This function will handle all the StaticMetadata related elements. It will be called in the function startElement \\param profiles: the pointer of the CameraParser. \\param name: the element's name. \\param atts: the element's attribute.",
+          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/platformdata/CameraParser.cpp#L1871-L2042",
+          "observed_at": "2025-06-26T18:11:36+08:00",
+          "first_seen_commit": "930a974a6ea20e059bf18deb167277f82d14525d",
+          "first_seen_at": "2025-06-26T18:11:36+08:00",
           "signals": [
             {
               "kind": "domain",
-              "term": "framerate",
-              "family": "performance",
-              "weight": 2.6,
-              "context": "gst-launch-1.0 libcamerasrc ! video/x-raw,format=I420,framerate=30/1 ! jpegenc ! tcpserversink host=0.0.0.0 port=5000"
+              "term": "profil",
+              "family": "debug-profiling",
+              "weight": 2.2,
+              "context": "It will be called in the function startElement \\param profiles: the pointer of the CameraParser. \\param name: the ele"
             },
             {
               "kind": "domain",
               "term": "fps",
               "family": "performance",
               "weight": 2.6,
-              "context": "x296@1a) Modes: 'SRGGB10_CSI2P' : 1456x1088 [60.38 fps - (0, 0)/1456x1088 crop] ``` I'd like the native reso"
-            },
-            {
-              "kind": "problem",
-              "term": "corrupt",
-              "family": "correctness",
-              "weight": 3.0,
-              "context": "It starts the pipeline successfully, but the image is corrupted - lots of horizontal lines (under a little angle) - it"
+              "context": "rangeArray[i]); } LOG2(\"@%s, supported fps range size: %zu\", __func__, rangeArray.size());"
             },
             {
               "kind": "mechanism",
-              "term": "negotiat",
-              "family": "arbitration",
-              "weight": 3.8,
-              "context": "ing or metadata. (might be somewhere gst_libcamera_src_negotiate and GstVideoFormat ???) Here's what the camera list l"
+              "term": "compensat",
+              "family": "calibration",
+              "weight": 3.4,
+              "context": "rangeArray.size()); mMetadata.update(CAMERA_AE_COMPENSATION_RANGE, evRange, ARRAY_SIZE(evRange)); } else if (strcmp("
             }
           ],
-          "repository": "raspberrypi/libcamera",
-          "kindLabel": "Issue",
-          "location": "raspberrypi/libcamera / Issue #234",
+          "repository": "intel/ipu6-camera-hal",
+          "kindLabel": "Source Code",
+          "location": "intel/ipu6-camera-hal / src/platformdata/CameraParser.cpp / CameraParser::handleStaticMetaData / L1871-L2042",
           "signalSummary": [
             {
               "kind": "domain",
               "label": "기술 영역",
               "terms": [
-                "framerate",
+                "profil",
                 "fps"
+              ]
+            },
+            {
+              "kind": "mechanism",
+              "label": "메커니즘",
+              "terms": [
+                "compensat"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ev_a764e14a9075",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "pull_request",
+          "path": null,
+          "symbol": null,
+          "symbol_kind": null,
+          "line_start": null,
+          "line_end": null,
+          "commit_sha": null,
+          "ref": "PR #363",
+          "title": "Fix rounding of negative frame period errors",
+          "snippet": "d in 27 samples in the affected range. (Some remaining jitter we see at 16 MP comes from dropped frames and is not a",
+          "url": "https://github.com/raspberrypi/libcamera/pull/363",
+          "observed_at": "2026-10-23T15:31:32Z",
+          "first_seen_commit": null,
+          "first_seen_at": null,
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "fps",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "ions are one-sided. ### Reproduce Arithmetic only, 6 fps (frame duration 166667 us): | delta (us) | framePerio"
+            },
+            {
+              "kind": "domain",
+              "term": "jitter",
+              "family": "performance",
+              "weight": 2.6,
+              "context": "d in 27 samples in the affected range. (Some remaining jitter we see at 16 MP comes from dropped frames and is not a"
+            },
+            {
+              "kind": "problem",
+              "term": "jitter",
+              "family": "timing",
+              "weight": 3.2,
+              "context": "d in 27 samples in the affected range. (Some remaining jitter we see at 16 MP comes from dropped frames and is not a"
+            },
+            {
+              "kind": "evaluation",
+              "term": "reproduc",
+              "family": "experiment",
+              "weight": 3.0,
+              "context": "ve deltas are fine, so corrections are one-sided. ### Reproduce Arithmetic only, 6 fps (frame duration 166667 us): |"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "Pull Request",
+          "location": "raspberrypi/libcamera / PR #363",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "fps",
+                "jitter"
               ]
             },
             {
               "kind": "problem",
               "label": "문제",
               "terms": [
-                "corrupt"
+                "jitter"
               ]
             },
             {
-              "kind": "mechanism",
-              "label": "메커니즘",
+              "kind": "evaluation",
+              "label": "평가",
               "terms": [
-                "negotiat"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "ev_fffa41803494",
-          "org": "raspberrypi",
-          "repo": "libcamera",
-          "kind": "code",
-          "path": "src/gstreamer/gstlibcamerasrc.cpp",
-          "symbol": "gst_libcamera_src_negotiate",
-          "symbol_kind": "function",
-          "line_start": 587,
-          "line_end": 706,
-          "commit_sha": null,
-          "ref": null,
-          "title": "function gst_libcamera_src_negotiate",
-          "snippet": "Must be called with stream_lock held.",
-          "url": "https://github.com/raspberrypi/libcamera/blob/c682979b50695b93526adb1e66db33743484b63b/src/gstreamer/gstlibcamerasrc.cpp#L587-L706",
-          "observed_at": "2026-08-18T18:45:07+09:00",
-          "first_seen_commit": "94d17442094d30f81c5af73325186e376146ab10",
-          "first_seen_at": "2026-08-18T18:45:07+09:00",
-          "signals": [
-            {
-              "kind": "domain",
-              "term": "framerate",
-              "family": "performance",
-              "weight": 2.6,
-              "context": "s(stream_cfg, caps, &transfer[i]); gst_libcamera_get_framerate_from_caps(caps, element_caps); } /* Validate the co"
-            },
-            {
-              "kind": "domain",
-              "term": "stream configuration",
-              "family": "camera-framework",
-              "weight": 2.6,
-              "context": "ig_->at(i); g_autoptr(GstCaps) caps = gst_libcamera_stream_configuration_to_caps(stream_cfg, transfer[i]); gst_libcamera_fram"
-            },
-            {
-              "kind": "domain",
-              "term": "camera configuration",
-              "family": "camera-framework",
-              "weight": 2.6,
-              "context": "CameraConfiguration::Status status = state->config_->validate();"
-            },
-            {
-              "kind": "mechanism",
-              "term": "negotiat",
-              "family": "arbitration",
-              "weight": 3.8,
-              "context": "gst_libcamera_src_negotiate(GstLibcameraSrc *self)"
-            }
-          ],
-          "repository": "raspberrypi/libcamera",
-          "kindLabel": "Source Code",
-          "location": "raspberrypi/libcamera / src/gstreamer/gstlibcamerasrc.cpp / gst_libcamera_src_negotiate / L587-L706",
-          "signalSummary": [
-            {
-              "kind": "domain",
-              "label": "기술 영역",
-              "terms": [
-                "framerate",
-                "stream configuration",
-                "camera configuration"
-              ]
-            },
-            {
-              "kind": "mechanism",
-              "label": "메커니즘",
-              "terms": [
-                "negotiat"
+                "reproduc"
               ]
             }
           ]
@@ -35954,25 +37955,23 @@
           "title": "효과가 주장에 그치지 않고 측정되었는가",
           "passed": false,
           "detail": "수집된 자료 어디에도 기술적 효과가 정량화되어 있지 않습니다. 따라서 이점은 입증된 것이 아니라 주장된 상태입니다.",
-          "evidence_ids": [
-            "ev_80ed53b793be"
-          ]
+          "evidence_ids": []
         }
       ],
       "evidenceByKind": [
         {
           "kind": "issue",
           "label": "Issue",
-          "count": 5
+          "count": 4
         },
         {
           "kind": "code",
           "label": "Source Code",
-          "count": 2
+          "count": 3
         },
         {
-          "kind": "doc",
-          "label": "문서",
+          "kind": "pull_request",
+          "label": "Pull Request",
           "count": 1
         }
       ]
@@ -36119,8 +38118,8 @@
         "cand_58caa3e73d53",
         "cand_ae623bf42bbd",
         "cand_d5fdbd816463",
-        "cand_1da23885c6fa",
-        "cand_0a7e2de377db"
+        "cand_0a7e2de377db",
+        "cand_1da23885c6fa"
       ],
       "technologies": [
         "3a",
@@ -36448,12 +38447,12 @@
           "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여"
         },
         {
-          "id": "cand_1da23885c6fa",
-          "title": "Sensor 동기화: 타이밍 편차 대응을 위한 시퀀스 번호 부여"
-        },
-        {
           "id": "cand_0a7e2de377db",
           "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원"
+        },
+        {
+          "id": "cand_1da23885c6fa",
+          "title": "Sensor 동기화: 타이밍 편차 대응을 위한 시퀀스 번호 부여"
         }
       ],
       "evidence": [
@@ -39231,886 +41230,6 @@
       ]
     },
     {
-      "id": "cand_0a7e2de377db",
-      "slug": "performance-synchronization-mechanism",
-      "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원",
-      "type": "patent",
-      "signature": "performance|synchronization-mechanism",
-      "topic": "performance",
-      "mechanismFamily": "synchronization-mechanism",
-      "summary": "카메라 성능 영역의 코드가 clock 복원 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다.",
-      "problem": {
-        "text": "수집된 자료는 타이밍 편차, 작성자가 직접 기록한 한계, 프레임 정합성 결함 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “out of order frames when recording with libcamera-raw For a scienti”",
-        "evidence_ids": [
-          "ev_efeca92f2c76",
-          "ev_78e66a0e388b",
-          "ev_bd3da7ef9f7f",
-          "ev_5f9ee1b3ed63",
-          "ev_563257252e35",
-          "ev_bf0292fa3d5c"
-        ],
-        "confidence": ""
-      },
-      "existingApproach": {
-        "text": "이 메커니즘이 도입되기 전에 무엇을 했는지 수집된 자료가 서술하지 않습니다. 기준선을 확정하려면 전체 Commit 이력을 읽거나 작성자에게 확인해야 합니다.",
-        "evidence_ids": [],
-        "confidence": "NEEDS_VERIFICATION"
-      },
-      "proposedTechnique": {
-        "text": "구현은 카메라 성능 내부에서 clock 복원 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: ClockRecovery (include/libcamera/internal/clock_recovery.h); ClockRecovery::configure (src/libcamera/clock_recovery.cpp).",
-        "evidence_ids": [
-          "ev_bf0292fa3d5c",
-          "ev_563257252e35"
-        ],
-        "confidence": ""
-      },
-      "difference": {
-        "text": "Repository만으로는 차별점을 확정할 수 없습니다. 관측 가능한 사실은 현재 코드가 clock 복원 기법을 사용한다는 점이며, 그것이 무엇을 대체했는지는 수집된 자료에 기록되어 있지 않습니다.",
-        "evidence_ids": [],
-        "confidence": "LOW_CONFIDENCE"
-      },
-      "technicalEffect": {
-        "text": "효과가 문장으로 주장되어 있습니다(prevent). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다.",
-        "evidence_ids": [
-          "ev_563257252e35"
-        ],
-        "confidence": "LOW_CONFIDENCE"
-      },
-      "patentAngle": {
-        "coreConcept": "카메라 성능 내부에서 타이밍 편차 문제에 대응하기 위해 clock 복원 기법을 사용합니다.",
-        "claimElements": [
-          "카메라 성능 내부의 런타임 수치를 관측하는 단계",
-          "clock 복원 기법을 사용하여 제어 결정을 도출하는 단계",
-          "다음 프레임이 생성되기 전에 그 결정을 Camera Pipeline에 적용하는 단계",
-          "Pipeline에 대한 측정 가능한 효과 (NEEDS_VERIFICATION: 수치를 찾지 못했습니다)"
-        ],
-        "variations": {
-          "generated": true,
-          "note": "아래 항목은 검토자를 위해 생성한 제안입니다. 발견 사항이 아니며, 이를 뒷받침하는 증거도 없습니다.",
-          "ideas": [
-            "기준 시간축을 외부 trigger가 아니라 Sensor 데이터 스트림에서 복원합니다.",
-            "readout 타이밍이 서로 다른 이기종 Sensor까지 동기화 범위를 확장합니다.",
-            "잔여 offset을 한정하고 이를 프레임별 품질 신호로 노출합니다."
-          ]
-        },
-        "observedScope": {
-          "repositories": [
-            "raspberrypi/libcamera"
-          ],
-          "components": [
-            "raspberrypi/libcamera:libcamera/internal",
-            "raspberrypi/libcamera:libcamera"
-          ],
-          "generalisation": "NEEDS_VERIFICATION",
-          "note": "적용 범위는 스캔이 실제로 관측한 범위입니다. 이 아이디어가 해당 Component를 넘어 일반화되는지는 확인되지 않았습니다."
-        }
-      },
-      "paperAngle": {
-        "researchQuestion": "카메라 성능에서 타이밍 동기화 기법은 그것이 대체한 구성보다 보고된 실패 양상을 더 많이 줄이는가?",
-        "hypothesis": "타이밍 동기화 기법을 적용하면, 고정 정책이 한정하지 못하는 편차를 한정할 수 있다.",
-        "baseline": "NEEDS_VERIFICATION: 대체된 정책이 수집된 자료에 기록되어 있지 않으므로, 기준선으로 사용하려면 먼저 복원해야 합니다.",
-        "baselineConfidence": "NEEDS_VERIFICATION",
-        "metrics": [
-          "초당 프레임 수 (fps)",
-          "프레임 시간 p99 (ms)",
-          "CPU 부하 (%)"
-        ],
-        "metricsConfidence": "LOW_CONFIDENCE",
-        "experiments": [
-          "카메라 성능에서 동일한 캡처 워크로드를 메커니즘 활성 상태와 비활성 상태로 각각 실행합니다.",
-          "동작점(프레임 레이트, Sensor mode, 카메라 개수)을 변화시키면서 단일 평균이 아니라 지표의 분포를 기록합니다.",
-          "Repository가 보고한 실패를 주입하여 메커니즘이 실제로 반응하는지 확인합니다."
-        ],
-        "ablation": [
-          "clock 복원 요소만 비활성화하고 나머지 메커니즘은 유지합니다."
-        ],
-        "reproducibility": "구현이 공개되어 있으므로 메커니즘 자체는 재구성할 수 있습니다. 다만 측정을 재현하는 데 필요한 캡처 하드웨어와 튜닝 데이터는 NEEDS_VERIFICATION 상태입니다.",
-        "evaluationSignalsFound": [],
-        "additionalExperimentsNeeded": [
-          "Repository에 존재하지 않는, 정량화된 기준선 측정이 필요합니다.",
-          "메커니즘과 플랫폼 고유 특성을 분리하기 위해 두 번째 하드웨어 플랫폼이 필요합니다."
-        ]
-      },
-      "priorArtKeywords": [
-        "performance clock recovery",
-        "camera clock recovery",
-        "clock recovery timing camera",
-        "clock recovery known limitation camera",
-        "image sensor performance control"
-      ],
-      "evidenceIds": [
-        "ev_bf0292fa3d5c",
-        "ev_563257252e35",
-        "ev_efeca92f2c76",
-        "ev_5f9ee1b3ed63",
-        "ev_78e66a0e388b",
-        "ev_7e57d1dccfe0",
-        "ev_bd3da7ef9f7f"
-      ],
-      "repositories": [
-        "raspberrypi/libcamera"
-      ],
-      "relatedCandidateIds": [
-        "cand_61de9f76ed9e",
-        "cand_c1329f0074f9",
-        "cand_ae623bf42bbd",
-        "cand_d5fdbd816463",
-        "cand_1da23885c6fa",
-        "cand_9f4128cd1d1d",
-        "cand_9126debbf094",
-        "cand_7abe84b2aa19"
-      ],
-      "technologies": [
-        "performance"
-      ],
-      "scores": {
-        "evidence_strength": {
-          "value": 52.0,
-          "label": "증거 강도",
-          "caveat": null,
-          "reasons": [
-            {
-              "text": "증거가 서로 다른 2종의 출처에서 확보되었습니다(Source Code, Issue).",
-              "delta": 28.0,
-              "evidence_ids": [
-                "ev_bf0292fa3d5c",
-                "ev_563257252e35",
-                "ev_efeca92f2c76",
-                "ev_5f9ee1b3ed63"
-              ]
-            },
-            {
-              "text": "증거 레코드가 총 7건입니다.",
-              "delta": 14.0,
-              "evidence_ids": []
-            },
-            {
-              "text": "3건은 심볼명과 라인 범위를 함께 지목합니다.",
-              "delta": 10.0,
-              "evidence_ids": [
-                "ev_bf0292fa3d5c",
-                "ev_563257252e35",
-                "ev_7e57d1dccfe0"
-              ]
-            }
-          ]
-        },
-        "patent_potential": {
-          "value": 66.0,
-          "label": "Patent 가능성",
-          "caveat": null,
-          "reasons": [
-            {
-              "text": "메커니즘 계열 `synchronization-mechanism`의 사전 가중치가 4.2입니다.",
-              "delta": 24.0,
-              "evidence_ids": []
-            },
-            {
-              "text": "Repository가 해결하려는 문제를 직접 서술하고 있습니다.",
-              "delta": 12.0,
-              "evidence_ids": []
-            },
-            {
-              "text": "기술적 효과가 주장되어 있습니다.",
-              "delta": 12.0,
-              "evidence_ids": []
-            },
-            {
-              "text": "메커니즘이 2개 Component, 1개 Repository에 걸쳐 나타나므로 일반화 가능성이 있습니다.",
-              "delta": 10.0,
-              "evidence_ids": []
-            },
-            {
-              "text": "서로 다른 3개의 코드 위치가 이를 구현합니다.",
-              "delta": 8.0,
-              "evidence_ids": []
-            }
-          ]
-        },
-        "paper_potential": {
-          "value": 0.0,
-          "label": "Paper 가능성",
-          "caveat": null,
-          "reasons": [
-            {
-              "text": "연구 질문에 대응하는 문제 서술이 존재합니다.",
-              "delta": 8.0,
-              "evidence_ids": []
-            },
-            {
-              "text": "측정값도 평가 구성도 찾지 못했습니다.",
-              "delta": -10.0,
-              "evidence_ids": []
-            }
-          ]
-        },
-        "novelty_confidence": {
-          "value": 79.6,
-          "label": "Novelty Confidence (조사 우선순위)",
-          "caveat": "이 수치는 추가 조사의 우선순위를 나타냅니다. 특허 신규성 판단이나 특허 가능성에 대한 의견이 아닙니다. 선행기술 조사는 별도로 수행해야 합니다.",
-          "reasons": [
-            {
-              "text": "모든 후보는 50점에서 시작합니다.",
-              "delta": 50.0,
-              "evidence_ids": []
-            },
-            {
-              "text": "이 topic과 메커니즘 조합은 본 코퍼스에서 찾은 클러스터의 1.8%를 차지하므로, 상대적으로 특이한 조합입니다.",
-              "delta": 19.6,
-              "evidence_ids": []
-            },
-            {
-              "text": "`synchronization-mechanism`은 일반적인 연결 코드가 아니라 설계된 기법을 시사합니다.",
-              "delta": 10.0,
-              "evidence_ids": []
-            }
-          ]
-        }
-      },
-      "criticFindings": [
-        {
-          "rule": "R1",
-          "title": "사소한 변경이나 유지보수 작업이 아닌가",
-          "passed": true,
-          "detail": "코드 증거 3건이 메커니즘을 담고 있으며, 사소한 변경 표지가 증거를 지배하지 않습니다.",
-          "evidence_ids": [
-            "ev_bf0292fa3d5c",
-            "ev_563257252e35",
-            "ev_7e57d1dccfe0"
-          ]
-        },
-        {
-          "rule": "R2",
-          "title": "설정 변경만으로 이루어진 것이 아닌가",
-          "passed": true,
-          "detail": "증거 3건이 빌드 및 설정 파일 밖에 있습니다.",
-          "evidence_ids": []
-        },
-        {
-          "rule": "R3",
-          "title": "흔한 software design pattern이 아닌가",
-          "passed": true,
-          "detail": "증거를 지배하는 일반적인 설계 패턴이 없습니다.",
-          "evidence_ids": []
-        },
-        {
-          "rule": "R4",
-          "title": "parameter tuning 수준이 아닌가",
-          "passed": true,
-          "detail": "코드 증거에 상수 대입 이외의 로직이 존재합니다.",
-          "evidence_ids": []
-        },
-        {
-          "rule": "R5",
-          "title": "기존 Android, Linux, V4L2에서 일반적인 방법이 아닌가",
-          "passed": true,
-          "detail": "발견된 플랫폼 연결 코드: 없음. 증거를 지배하지 않습니다.",
-          "evidence_ids": []
-        },
-        {
-          "rule": "R6",
-          "title": "Evidence가 충분한가",
-          "passed": true,
-          "detail": "증거 7건이 2종에 걸쳐 있습니다(Source Code, Issue).",
-          "evidence_ids": []
-        },
-        {
-          "rule": "R7",
-          "title": "주장과 실제 코드가 일치하는가",
-          "passed": true,
-          "detail": "코드 자체가 메커니즘 어휘를 포함합니다(clock recovery).",
-          "evidence_ids": [
-            "ev_bf0292fa3d5c",
-            "ev_563257252e35",
-            "ev_7e57d1dccfe0"
-          ]
-        },
-        {
-          "rule": "R8",
-          "title": "효과가 주장에 그치지 않고 측정되었는가",
-          "passed": false,
-          "detail": "수집된 자료 어디에도 기술적 효과가 정량화되어 있지 않습니다. 따라서 이점은 입증된 것이 아니라 주장된 상태입니다.",
-          "evidence_ids": [
-            "ev_563257252e35"
-          ]
-        }
-      ],
-      "verdict": "accepted_with_reservations",
-      "status": "UNCHANGED",
-      "statusReason": "직전 스캔 이후 변화가 없습니다.",
-      "timeline": [
-        {
-          "at": "2024-11-26T09:58:20Z",
-          "kind": "code",
-          "kindLabel": "Source Code",
-          "title": "function ClockRecovery",
-          "evidenceId": "ev_bf0292fa3d5c",
-          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/libcamera/internal/clock_recovery.h#L13-L66"
-        },
-        {
-          "at": "2024-11-26T09:58:20Z",
-          "kind": "code",
-          "kindLabel": "Source Code",
-          "title": "function libcamera",
-          "evidenceId": "ev_7e57d1dccfe0",
-          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/libcamera/internal/clock_recovery.h#L11-L68"
-        },
-        {
-          "at": "2025-01-09T09:05:08Z",
-          "kind": "issue",
-          "kindLabel": "Issue",
-          "title": "Random Gstreamer pipeline crash in libcamerasrc",
-          "evidenceId": "ev_bd3da7ef9f7f",
-          "url": "https://github.com/raspberrypi/libcamera/issues/228"
-        },
-        {
-          "at": "2025-08-25T20:44:35+09:00",
-          "kind": "code",
-          "kindLabel": "Source Code",
-          "title": "function ClockRecovery::configure",
-          "evidenceId": "ev_563257252e35",
-          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/clock_recovery.cpp#L66-L76"
-        },
-        {
-          "at": "2025-09-23T21:53:54Z",
-          "kind": "issue",
-          "kindLabel": "Issue",
-          "title": "Libcamera FPS regression",
-          "evidenceId": "ev_78e66a0e388b",
-          "url": "https://github.com/raspberrypi/libcamera/issues/308"
-        },
-        {
-          "at": "2026-05-22T06:45:55Z",
-          "kind": "issue",
-          "kindLabel": "Issue",
-          "title": "IMX219 - inconsistent frame rate",
-          "evidenceId": "ev_5f9ee1b3ed63",
-          "url": "https://github.com/raspberrypi/libcamera/issues/336"
-        },
-        {
-          "at": "2026-06-30T10:03:25Z",
-          "kind": "issue",
-          "kindLabel": "Issue",
-          "title": "out of order frames when recording with libcamera-raw",
-          "evidenceId": "ev_efeca92f2c76",
-          "url": "https://github.com/raspberrypi/libcamera/issues/344"
-        }
-      ],
-      "firstSeenAt": "2025-01-09T09:05:08Z",
-      "lastUpdatedAt": "2026-06-30T10:03:25Z",
-      "typeLabel": "Patent 후보",
-      "statusLabel": "변화 없음",
-      "verdictLabel": "유보 조건부 통과",
-      "topicLabel": "카메라 성능",
-      "mechanismLabel": "타이밍 동기화",
-      "technologyLabels": [
-        "카메라 성능"
-      ],
-      "relatedCandidates": [
-        {
-          "id": "cand_61de9f76ed9e",
-          "title": "카메라 성능: 프레임 정합성 결함 대응을 위한 협상"
-        },
-        {
-          "id": "cand_c1329f0074f9",
-          "title": "카메라 성능: 타이밍 편차 대응을 위한 보정"
-        },
-        {
-          "id": "cand_ae623bf42bbd",
-          "title": "Computational Photography: 타이밍 편차 대응을 위한 시퀀스 번호 부여"
-        },
-        {
-          "id": "cand_d5fdbd816463",
-          "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여"
-        },
-        {
-          "id": "cand_1da23885c6fa",
-          "title": "Sensor 동기화: 타이밍 편차 대응을 위한 시퀀스 번호 부여"
-        },
-        {
-          "id": "cand_9f4128cd1d1d",
-          "title": "3A 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여"
-        },
-        {
-          "id": "cand_9126debbf094",
-          "title": "Camera Framework: 자원 고갈 대응을 위한 시퀀스 번호 부여"
-        },
-        {
-          "id": "cand_7abe84b2aa19",
-          "title": "ISP 처리: 자원 고갈 대응을 위한 시퀀스 번호 부여"
-        }
-      ],
-      "evidence": [
-        {
-          "id": "ev_bf0292fa3d5c",
-          "org": "raspberrypi",
-          "repo": "libcamera",
-          "kind": "code",
-          "path": "include/libcamera/internal/clock_recovery.h",
-          "symbol": "ClockRecovery",
-          "symbol_kind": "function",
-          "line_start": 13,
-          "line_end": 66,
-          "commit_sha": null,
-          "ref": null,
-          "title": "function ClockRecovery",
-          "snippet": "clock recovery class ClockRecovery { public: ClockRecovery(); void",
-          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/libcamera/internal/clock_recovery.h#L13-L66",
-          "observed_at": "2024-11-26T09:58:20Z",
-          "first_seen_commit": "1282e7dcad974d7a40643c6c50df5a81da389b30",
-          "first_seen_at": "2024-11-26T09:58:20Z",
-          "signals": [
-            {
-              "kind": "domain",
-              "term": "jitter",
-              "family": "performance",
-              "weight": 2.6,
-              "context": "s. */ unsigned int numSamples_; /* Remove any output jitter larger than this immediately. */ unsigned int maxJitt"
-            },
-            {
-              "kind": "problem",
-              "term": "jitter",
-              "family": "timing",
-              "weight": 3.2,
-              "context": "s. */ unsigned int numSamples_; /* Remove any output jitter larger than this immediately. */ unsigned int maxJitt"
-            },
-            {
-              "kind": "mechanism",
-              "term": "clock recovery",
-              "family": "synchronization-mechanism",
-              "weight": 4.2,
-              "context": "clock recovery class ClockRecovery { public: ClockRecovery(); void"
-            }
-          ],
-          "repository": "raspberrypi/libcamera",
-          "kindLabel": "Source Code",
-          "location": "raspberrypi/libcamera / include/libcamera/internal/clock_recovery.h / ClockRecovery / L13-L66",
-          "signalSummary": [
-            {
-              "kind": "domain",
-              "label": "기술 영역",
-              "terms": [
-                "jitter"
-              ]
-            },
-            {
-              "kind": "problem",
-              "label": "문제",
-              "terms": [
-                "jitter"
-              ]
-            },
-            {
-              "kind": "mechanism",
-              "label": "메커니즘",
-              "terms": [
-                "clock recovery"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "ev_563257252e35",
-          "org": "raspberrypi",
-          "repo": "libcamera",
-          "kind": "code",
-          "path": "src/libcamera/clock_recovery.cpp",
-          "symbol": "ClockRecovery::configure",
-          "symbol_kind": "function",
-          "line_start": 66,
-          "line_end": 76,
-          "commit_sha": null,
-          "ref": null,
-          "title": "function ClockRecovery::configure",
-          "snippet": "\\brief Set configuration parameters \\param[in] numSamples The approximate duration for which the state of the model is persistent \\param[in] maxJitter New output samples are clamped to no more than this amount of jitter, to prevent sudden swings from having a large effect \\param[in] minSamples The fitted clock model i…",
-          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/clock_recovery.cpp#L66-L76",
-          "observed_at": "2025-08-25T20:44:35+09:00",
-          "first_seen_commit": "bfd68f786964636b09f8122e6c09c230367390e7",
-          "first_seen_at": "2025-08-25T20:44:35+09:00",
-          "signals": [
-            {
-              "kind": "domain",
-              "term": "jitter",
-              "family": "performance",
-              "weight": 2.6,
-              "context": "put samples are clamped to no more than this amount of jitter, to prevent sudden swings from having a large effect \\"
-            },
-            {
-              "kind": "problem",
-              "term": "jitter",
-              "family": "timing",
-              "weight": 3.2,
-              "context": "put samples are clamped to no more than this amount of jitter, to prevent sudden swings from having a large effect \\"
-            },
-            {
-              "kind": "mechanism",
-              "term": "clock recovery",
-              "family": "synchronization-mechanism",
-              "weight": 4.2,
-              "context": "clock recovery configure \\brief Set configuration parameters \\param[i"
-            },
-            {
-              "kind": "effect",
-              "term": "prevent",
-              "family": "reduction",
-              "weight": 2.6,
-              "context": "are clamped to no more than this amount of jitter, to prevent sudden swings from having a large effect \\param[in] mi"
-            }
-          ],
-          "repository": "raspberrypi/libcamera",
-          "kindLabel": "Source Code",
-          "location": "raspberrypi/libcamera / src/libcamera/clock_recovery.cpp / ClockRecovery::configure / L66-L76",
-          "signalSummary": [
-            {
-              "kind": "domain",
-              "label": "기술 영역",
-              "terms": [
-                "jitter"
-              ]
-            },
-            {
-              "kind": "problem",
-              "label": "문제",
-              "terms": [
-                "jitter"
-              ]
-            },
-            {
-              "kind": "mechanism",
-              "label": "메커니즘",
-              "terms": [
-                "clock recovery"
-              ]
-            },
-            {
-              "kind": "effect",
-              "label": "효과",
-              "terms": [
-                "prevent"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "ev_efeca92f2c76",
-          "org": "raspberrypi",
-          "repo": "libcamera",
-          "kind": "issue",
-          "path": null,
-          "symbol": null,
-          "symbol_kind": null,
-          "line_start": null,
-          "line_end": null,
-          "commit_sha": null,
-          "ref": "Issue #344",
-          "title": "out of order frames when recording with libcamera-raw",
-          "snippet": "out of order frames when recording with libcamera-raw For a scienti",
-          "url": "https://github.com/raspberrypi/libcamera/issues/344",
-          "observed_at": "2026-06-30T10:03:25Z",
-          "first_seen_commit": null,
-          "first_seen_at": null,
-          "signals": [
-            {
-              "kind": "domain",
-              "term": "fps",
-              "family": "performance",
-              "weight": 2.6,
-              "context": "this: rpicam-raw -t 20000 --shutter 2000 --gain 1.0 --fps 30 -o image_%04d.raw Then, I used a python script to"
-            },
-            {
-              "kind": "problem",
-              "term": "out of order",
-              "family": "timing",
-              "weight": 3.2,
-              "context": "out of order frames when recording with libcamera-raw For a scienti"
-            },
-            {
-              "kind": "problem",
-              "term": "known issue",
-              "family": "known-limitation",
-              "weight": 2.4,
-              "context": "tal chronometer or a constant moving object Is this a known issue?"
-            }
-          ],
-          "repository": "raspberrypi/libcamera",
-          "kindLabel": "Issue",
-          "location": "raspberrypi/libcamera / Issue #344",
-          "signalSummary": [
-            {
-              "kind": "domain",
-              "label": "기술 영역",
-              "terms": [
-                "fps"
-              ]
-            },
-            {
-              "kind": "problem",
-              "label": "문제",
-              "terms": [
-                "out of order",
-                "known issue"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "ev_5f9ee1b3ed63",
-          "org": "raspberrypi",
-          "repo": "libcamera",
-          "kind": "issue",
-          "path": null,
-          "symbol": null,
-          "symbol_kind": null,
-          "line_start": null,
-          "line_end": null,
-          "commit_sha": null,
-          "ref": "Issue #336",
-          "title": "IMX219 - inconsistent frame rate",
-          "snippet": "IMX219 - inconsistent frame rate Hi, I'm working on IM219, - ran gstreamer p",
-          "url": "https://github.com/raspberrypi/libcamera/issues/336",
-          "observed_at": "2026-05-22T06:45:55Z",
-          "first_seen_commit": null,
-          "first_seen_at": null,
-          "signals": [
-            {
-              "kind": "domain",
-              "term": "frame rate",
-              "family": "performance",
-              "weight": 2.6,
-              "context": "IMX219 - inconsistent frame rate Hi, I'm working on IM219, - ran gstreamer pipeline wit"
-            },
-            {
-              "kind": "domain",
-              "term": "fps",
-              "family": "performance",
-              "weight": 2.6,
-              "context": "480 and frame rate to 120. - But getting inconsistent fps. FPS drops from 120 to 90 to sometimes 60 and then 40'"
-            },
-            {
-              "kind": "problem",
-              "term": "inconsistent",
-              "family": "correctness",
-              "weight": 3.0,
-              "context": "IMX219 - inconsistent frame rate Hi, I'm working on IM219, - ran gstreamer p"
-            }
-          ],
-          "repository": "raspberrypi/libcamera",
-          "kindLabel": "Issue",
-          "location": "raspberrypi/libcamera / Issue #336",
-          "signalSummary": [
-            {
-              "kind": "domain",
-              "label": "기술 영역",
-              "terms": [
-                "frame rate",
-                "fps"
-              ]
-            },
-            {
-              "kind": "problem",
-              "label": "문제",
-              "terms": [
-                "inconsistent"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "ev_78e66a0e388b",
-          "org": "raspberrypi",
-          "repo": "libcamera",
-          "kind": "issue",
-          "path": null,
-          "symbol": null,
-          "symbol_kind": null,
-          "line_start": null,
-          "line_end": null,
-          "commit_sha": null,
-          "ref": "Issue #308",
-          "title": "Libcamera FPS regression",
-          "snippet": "Libcamera FPS regression I have a raspberry pi 5 with a camera v2 module (imx21",
-          "url": "https://github.com/raspberrypi/libcamera/issues/308",
-          "observed_at": "2025-09-23T21:53:54Z",
-          "first_seen_commit": null,
-          "first_seen_at": null,
-          "signals": [
-            {
-              "kind": "domain",
-              "term": "fps",
-              "family": "performance",
-              "weight": 2.6,
-              "context": "Libcamera FPS regression I have a raspberry pi 5 with a camera v2 mo"
-            },
-            {
-              "kind": "problem",
-              "term": "regression",
-              "family": "correctness",
-              "weight": 3.0,
-              "context": "Libcamera FPS regression I have a raspberry pi 5 with a camera v2 module (imx21"
-            },
-            {
-              "kind": "problem",
-              "term": "workaround",
-              "family": "known-limitation",
-              "weight": 2.4,
-              "context": "definetely looks like a regression. Can you advise a workaround or possibly how to fix this? Cause is seems that senso"
-            }
-          ],
-          "repository": "raspberrypi/libcamera",
-          "kindLabel": "Issue",
-          "location": "raspberrypi/libcamera / Issue #308",
-          "signalSummary": [
-            {
-              "kind": "domain",
-              "label": "기술 영역",
-              "terms": [
-                "fps"
-              ]
-            },
-            {
-              "kind": "problem",
-              "label": "문제",
-              "terms": [
-                "regression",
-                "workaround"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "ev_7e57d1dccfe0",
-          "org": "raspberrypi",
-          "repo": "libcamera",
-          "kind": "code",
-          "path": "include/libcamera/internal/clock_recovery.h",
-          "symbol": "libcamera",
-          "symbol_kind": "function",
-          "line_start": 11,
-          "line_end": 68,
-          "commit_sha": null,
-          "ref": null,
-          "title": "function libcamera",
-          "snippet": "include <stdint.h>",
-          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/libcamera/internal/clock_recovery.h#L11-L68",
-          "observed_at": "2024-11-26T09:58:20Z",
-          "first_seen_commit": "1282e7dcad974d7a40643c6c50df5a81da389b30",
-          "first_seen_at": "2024-11-26T09:58:20Z",
-          "signals": [
-            {
-              "kind": "domain",
-              "term": "jitter",
-              "family": "performance",
-              "weight": 2.6,
-              "context": "s. */ unsigned int numSamples_; /* Remove any output jitter larger than this immediately. */ unsigned int maxJitt"
-            },
-            {
-              "kind": "problem",
-              "term": "jitter",
-              "family": "timing",
-              "weight": 3.2,
-              "context": "s. */ unsigned int numSamples_; /* Remove any output jitter larger than this immediately. */ unsigned int maxJitt"
-            }
-          ],
-          "repository": "raspberrypi/libcamera",
-          "kindLabel": "Source Code",
-          "location": "raspberrypi/libcamera / include/libcamera/internal/clock_recovery.h / libcamera / L11-L68",
-          "signalSummary": [
-            {
-              "kind": "domain",
-              "label": "기술 영역",
-              "terms": [
-                "jitter"
-              ]
-            },
-            {
-              "kind": "problem",
-              "label": "문제",
-              "terms": [
-                "jitter"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "ev_bd3da7ef9f7f",
-          "org": "raspberrypi",
-          "repo": "libcamera",
-          "kind": "issue",
-          "path": null,
-          "symbol": null,
-          "symbol_kind": null,
-          "line_start": null,
-          "line_end": null,
-          "commit_sha": null,
-          "ref": "Issue #228",
-          "title": "Random Gstreamer pipeline crash in libcamerasrc",
-          "snippet": "an someone point to the reason for this assertion? Any race condition could cause this? I suspect requestCompleted gets c",
-          "url": "https://github.com/raspberrypi/libcamera/issues/228",
-          "observed_at": "2025-01-09T09:05:08Z",
-          "first_seen_commit": null,
-          "first_seen_at": null,
-          "signals": [
-            {
-              "kind": "domain",
-              "term": "framerate",
-              "family": "performance",
-              "weight": 2.6,
-              "context": "w,colorimetry=bt709,format=NV12,width=3840,height=3040,framerate=10/1 ! queue name=q1 ! videoconvert ! jpegenc quality="
-            },
-            {
-              "kind": "problem",
-              "term": "race condition",
-              "family": "timing",
-              "weight": 3.2,
-              "context": "an someone point to the reason for this assertion? Any race condition could cause this? I suspect requestCompleted gets c"
-            }
-          ],
-          "repository": "raspberrypi/libcamera",
-          "kindLabel": "Issue",
-          "location": "raspberrypi/libcamera / Issue #228",
-          "signalSummary": [
-            {
-              "kind": "domain",
-              "label": "기술 영역",
-              "terms": [
-                "framerate"
-              ]
-            },
-            {
-              "kind": "problem",
-              "label": "문제",
-              "terms": [
-                "race condition"
-              ]
-            }
-          ]
-        }
-      ],
-      "counterEvidence": [
-        {
-          "rule": "R8",
-          "title": "효과가 주장에 그치지 않고 측정되었는가",
-          "passed": false,
-          "detail": "수집된 자료 어디에도 기술적 효과가 정량화되어 있지 않습니다. 따라서 이점은 입증된 것이 아니라 주장된 상태입니다.",
-          "evidence_ids": [
-            "ev_563257252e35"
-          ]
-        }
-      ],
-      "evidenceByKind": [
-        {
-          "kind": "issue",
-          "label": "Issue",
-          "count": 4
-        },
-        {
-          "kind": "code",
-          "label": "Source Code",
-          "count": 3
-        }
-      ]
-    },
-    {
       "id": "cand_9126debbf094",
       "slug": "camera-framework-synchronization-mechanism",
       "title": "Camera Framework: 자원 고갈 대응을 위한 시퀀스 번호 부여",
@@ -40242,9 +41361,9 @@
         "cand_115eab8f53f7",
         "cand_ae623bf42bbd",
         "cand_d5fdbd816463",
+        "cand_0a7e2de377db",
         "cand_1da23885c6fa",
         "cand_9f4128cd1d1d",
-        "cand_0a7e2de377db",
         "cand_7abe84b2aa19",
         "cand_445b31297303"
       ],
@@ -40533,16 +41652,16 @@
           "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여"
         },
         {
+          "id": "cand_0a7e2de377db",
+          "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원"
+        },
+        {
           "id": "cand_1da23885c6fa",
           "title": "Sensor 동기화: 타이밍 편차 대응을 위한 시퀀스 번호 부여"
         },
         {
           "id": "cand_9f4128cd1d1d",
           "title": "3A 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여"
-        },
-        {
-          "id": "cand_0a7e2de377db",
-          "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원"
         },
         {
           "id": "cand_7abe84b2aa19",
@@ -41387,9 +42506,9 @@
         "cand_025b396adab4",
         "cand_5555849c4804",
         "cand_9fe09ed8a807",
+        "cand_c1329f0074f9",
         "cand_115eab8f53f7",
-        "cand_b9adf8eb5c8e",
-        "cand_c1329f0074f9"
+        "cand_b9adf8eb5c8e"
       ],
       "technologies": [
         "camera-hal",
@@ -41693,12 +42812,12 @@
           "title": "ISP 처리: 화질 결함 대응을 위한 보간"
         },
         {
-          "id": "cand_b9adf8eb5c8e",
-          "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 보간"
-        },
-        {
           "id": "cand_c1329f0074f9",
           "title": "카메라 성능: 타이밍 편차 대응을 위한 보정"
+        },
+        {
+          "id": "cand_b9adf8eb5c8e",
+          "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 보간"
         }
       ],
       "evidence": [
@@ -45034,7 +46153,7 @@
         "cand_445b31297303",
         "cand_3b51353652cc",
         "cand_08af7f723865",
-        "cand_dcead55cc594"
+        "cand_61de9f76ed9e"
       ],
       "technologies": [
         "camera-driver",
@@ -45374,8 +46493,8 @@
           "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 협상"
         },
         {
-          "id": "cand_dcead55cc594",
-          "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 협상"
+          "id": "cand_61de9f76ed9e",
+          "title": "카메라 성능: 타이밍 편차 대응을 위한 협상"
         }
       ],
       "evidence": [
@@ -46179,8 +47298,8 @@
         "cand_34624054088c",
         "cand_039e3b905efe",
         "cand_08af7f723865",
-        "cand_dcead55cc594",
         "cand_61de9f76ed9e",
+        "cand_dcead55cc594",
         "cand_9dbc024d5788"
       ],
       "technologies": [
@@ -46462,7 +47581,7 @@
           "url": "https://github.com/raspberrypi/libcamera/blob/c682979b50695b93526adb1e66db33743484b63b/src/gstreamer/gstlibcamerasrc.cpp#L537-L584"
         },
         {
-          "at": "2026-10-16T07:43:12Z",
+          "at": "2026-10-21T14:59:10Z",
           "kind": "pull_request",
           "kindLabel": "Pull Request",
           "title": "Add acpi, ar0234 to utilize SSDT Overlay enabled sensors",
@@ -46471,7 +47590,7 @@
         }
       ],
       "firstSeenAt": "2021-11-01T14:58:19+08:00",
-      "lastUpdatedAt": "2026-10-16T07:43:12Z",
+      "lastUpdatedAt": "2026-10-21T14:59:10Z",
       "typeLabel": "Patent 후보",
       "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
@@ -46498,12 +47617,12 @@
           "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 협상"
         },
         {
-          "id": "cand_dcead55cc594",
-          "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 협상"
+          "id": "cand_61de9f76ed9e",
+          "title": "카메라 성능: 타이밍 편차 대응을 위한 협상"
         },
         {
-          "id": "cand_61de9f76ed9e",
-          "title": "카메라 성능: 프레임 정합성 결함 대응을 위한 협상"
+          "id": "cand_dcead55cc594",
+          "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 협상"
         },
         {
           "id": "cand_9dbc024d5788",
@@ -47120,7 +48239,7 @@
           "title": "Add acpi, ar0234 to utilize SSDT Overlay enabled sensors",
           "snippet": "17:45:45.533] CamHAL[ERR] Poll: Device node fd 27 poll timeout. [10-05 17:45:46.534] CamHAL[ERR] Poll: Device node f",
           "url": "https://github.com/intel/ipu6-camera-hal/pull/187",
-          "observed_at": "2026-10-16T07:43:12Z",
+          "observed_at": "2026-10-21T14:59:10Z",
           "first_seen_commit": null,
           "first_seen_at": null,
           "signals": [
@@ -51236,7 +52355,7 @@
           "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/dma_buf_allocator.cpp#L163-L187"
         },
         {
-          "at": "2026-10-16T07:43:12Z",
+          "at": "2026-10-21T14:59:10Z",
           "kind": "pull_request",
           "kindLabel": "Pull Request",
           "title": "Add acpi, ar0234 to utilize SSDT Overlay enabled sensors",
@@ -51245,7 +52364,7 @@
         }
       ],
       "firstSeenAt": "2021-11-01T14:58:19+08:00",
-      "lastUpdatedAt": "2026-10-16T07:43:12Z",
+      "lastUpdatedAt": "2026-10-21T14:59:10Z",
       "typeLabel": "Patent 후보",
       "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
@@ -51818,7 +52937,7 @@
           "title": "Add acpi, ar0234 to utilize SSDT Overlay enabled sensors",
           "snippet": "17:45:45.533] CamHAL[ERR] Poll: Device node fd 27 poll timeout. [10-05 17:45:46.534] CamHAL[ERR] Poll: Device node f",
           "url": "https://github.com/intel/ipu6-camera-hal/pull/187",
-          "observed_at": "2026-10-16T07:43:12Z",
+          "observed_at": "2026-10-21T14:59:10Z",
           "first_seen_commit": null,
           "first_seen_at": null,
           "signals": [
@@ -59041,840 +60160,6 @@
       ]
     },
     {
-      "id": "cand_c1329f0074f9",
-      "slug": "performance-calibration",
-      "title": "카메라 성능: 타이밍 편차 대응을 위한 보정",
-      "type": "patent",
-      "signature": "performance|calibration",
-      "topic": "performance",
-      "mechanismFamily": "calibration",
-      "summary": "카메라 성능 영역의 코드가 보정 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다.",
-      "problem": {
-        "text": "수집된 자료는 타이밍 편차, 작성자가 직접 기록한 한계, 프레임 정합성 결함 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “out of order frames when recording with libcamera-raw For a scienti”",
-        "evidence_ids": [
-          "ev_efeca92f2c76",
-          "ev_78e66a0e388b",
-          "ev_bd3da7ef9f7f",
-          "ev_5f9ee1b3ed63",
-          "ev_7e57d1dccfe0"
-        ],
-        "confidence": ""
-      },
-      "existingApproach": {
-        "text": "이 메커니즘이 도입되기 전에 무엇을 했는지 수집된 자료가 서술하지 않습니다. 기준선을 확정하려면 전체 Commit 이력을 읽거나 작성자에게 확인해야 합니다.",
-        "evidence_ids": [],
-        "confidence": "NEEDS_VERIFICATION"
-      },
-      "proposedTechnique": {
-        "text": "구현은 카메라 성능 내부에서 보정 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: icamera_metadata_enum_snprint (src/metadata/icamera_metadata_tag_info.c); CameraParser::handleStaticMetaData (src/platformdata/CameraParser.cpp).",
-        "evidence_ids": [
-          "ev_d9607eae5f35",
-          "ev_964852de7251"
-        ],
-        "confidence": ""
-      },
-      "difference": {
-        "text": "Repository만으로는 차별점을 확정할 수 없습니다. 관측 가능한 사실은 현재 코드가 보정 기법을 사용한다는 점이며, 그것이 무엇을 대체했는지는 수집된 자료에 기록되어 있지 않습니다.",
-        "evidence_ids": [],
-        "confidence": "LOW_CONFIDENCE"
-      },
-      "technicalEffect": {
-        "text": "수집된 자료에는 기술적 효과가 서술되어 있지 않습니다. 본 후보를 주장하려면 효과를 먼저 측정해야 합니다.",
-        "evidence_ids": [],
-        "confidence": "UNKNOWN"
-      },
-      "patentAngle": {
-        "coreConcept": "카메라 성능 내부에서 타이밍 편차 문제에 대응하기 위해 보정 기법을 사용합니다.",
-        "claimElements": [
-          "카메라 성능 내부의 런타임 수치를 관측하는 단계",
-          "보정 기법을 사용하여 제어 결정을 도출하는 단계",
-          "다음 프레임이 생성되기 전에 그 결정을 Camera Pipeline에 적용하는 단계",
-          "Pipeline에 대한 측정 가능한 효과 (NEEDS_VERIFICATION: 수치를 찾지 못했습니다)"
-        ],
-        "variations": {
-          "generated": true,
-          "note": "아래 항목은 검토자를 위해 생성한 제안입니다. 발견 사항이 아니며, 이를 뒷받침하는 증거도 없습니다.",
-          "ideas": [
-            "보정값을 저장된 표가 아니라 캡처된 프레임에서 온라인으로 도출합니다.",
-            "캘리브레이션 지점 사이를 선형이 아니라 물리 모델로 보간합니다.",
-            "캘리브레이션 자체의 drift를 검출하여 재캘리브레이션을 촉발합니다."
-          ]
-        },
-        "observedScope": {
-          "repositories": [
-            "intel/ipu6-camera-hal",
-            "raspberrypi/libcamera"
-          ],
-          "components": [
-            "intel/ipu6-camera-hal:metadata",
-            "intel/ipu6-camera-hal:platformdata"
-          ],
-          "generalisation": "NEEDS_VERIFICATION",
-          "note": "적용 범위는 스캔이 실제로 관측한 범위입니다. 이 아이디어가 해당 Component를 넘어 일반화되는지는 확인되지 않았습니다."
-        }
-      },
-      "paperAngle": {
-        "researchQuestion": "카메라 성능에서 캘리브레이션과 보정 기법은 그것이 대체한 구성보다 보고된 실패 양상을 더 많이 줄이는가?",
-        "hypothesis": "캘리브레이션과 보정 기법을 적용하면, 고정 정책이 한정하지 못하는 편차를 한정할 수 있다.",
-        "baseline": "NEEDS_VERIFICATION: 대체된 정책이 수집된 자료에 기록되어 있지 않으므로, 기준선으로 사용하려면 먼저 복원해야 합니다.",
-        "baselineConfidence": "NEEDS_VERIFICATION",
-        "metrics": [
-          "초당 프레임 수 (fps)",
-          "프레임 시간 p99 (ms)",
-          "CPU 부하 (%)"
-        ],
-        "metricsConfidence": "LOW_CONFIDENCE",
-        "experiments": [
-          "카메라 성능에서 동일한 캡처 워크로드를 메커니즘 활성 상태와 비활성 상태로 각각 실행합니다.",
-          "동작점(프레임 레이트, Sensor mode, 카메라 개수)을 변화시키면서 단일 평균이 아니라 지표의 분포를 기록합니다.",
-          "Repository가 보고한 실패를 주입하여 메커니즘이 실제로 반응하는지 확인합니다."
-        ],
-        "ablation": [
-          "보정 요소만 비활성화하고 나머지 메커니즘은 유지합니다."
-        ],
-        "reproducibility": "구현이 공개되어 있으므로 메커니즘 자체는 재구성할 수 있습니다. 다만 측정을 재현하는 데 필요한 캡처 하드웨어와 튜닝 데이터는 NEEDS_VERIFICATION 상태입니다.",
-        "evaluationSignalsFound": [],
-        "additionalExperimentsNeeded": [
-          "Repository에 존재하지 않는, 정량화된 기준선 측정이 필요합니다.",
-          "메커니즘과 플랫폼 고유 특성을 분리하기 위해 두 번째 하드웨어 플랫폼이 필요합니다."
-        ]
-      },
-      "priorArtKeywords": [
-        "performance compensat",
-        "camera compensat",
-        "compensat timing camera",
-        "compensat known limitation camera",
-        "image sensor performance control"
-      ],
-      "evidenceIds": [
-        "ev_d9607eae5f35",
-        "ev_964852de7251",
-        "ev_efeca92f2c76",
-        "ev_5f9ee1b3ed63",
-        "ev_78e66a0e388b",
-        "ev_7e57d1dccfe0",
-        "ev_bd3da7ef9f7f"
-      ],
-      "repositories": [
-        "intel/ipu6-camera-hal",
-        "raspberrypi/libcamera"
-      ],
-      "relatedCandidateIds": [
-        "cand_61de9f76ed9e",
-        "cand_0a7e2de377db",
-        "cand_8d7ed430ed11",
-        "cand_025b396adab4",
-        "cand_5555849c4804",
-        "cand_9fe09ed8a807",
-        "cand_115eab8f53f7",
-        "cand_fb3a967b42e5"
-      ],
-      "technologies": [
-        "debug-profiling",
-        "performance"
-      ],
-      "scores": {
-        "evidence_strength": {
-          "value": 62.0,
-          "label": "증거 강도",
-          "caveat": null,
-          "reasons": [
-            {
-              "text": "증거가 서로 다른 2종의 출처에서 확보되었습니다(Source Code, Issue).",
-              "delta": 28.0,
-              "evidence_ids": [
-                "ev_d9607eae5f35",
-                "ev_964852de7251",
-                "ev_efeca92f2c76",
-                "ev_5f9ee1b3ed63"
-              ]
-            },
-            {
-              "text": "증거 레코드가 총 7건입니다.",
-              "delta": 14.0,
-              "evidence_ids": []
-            },
-            {
-              "text": "3건은 심볼명과 라인 범위를 함께 지목합니다.",
-              "delta": 10.0,
-              "evidence_ids": [
-                "ev_d9607eae5f35",
-                "ev_964852de7251",
-                "ev_7e57d1dccfe0"
-              ]
-            },
-            {
-              "text": "동일한 기술이 2개 Repository에 나타납니다.",
-              "delta": 10.0,
-              "evidence_ids": []
-            }
-          ]
-        },
-        "patent_potential": {
-          "value": 50.4,
-          "label": "Patent 가능성",
-          "caveat": null,
-          "reasons": [
-            {
-              "text": "메커니즘 계열 `calibration`의 사전 가중치가 3.4입니다.",
-              "delta": 20.4,
-              "evidence_ids": []
-            },
-            {
-              "text": "Repository가 해결하려는 문제를 직접 서술하고 있습니다.",
-              "delta": 12.0,
-              "evidence_ids": []
-            },
-            {
-              "text": "메커니즘이 2개 Component, 2개 Repository에 걸쳐 나타나므로 일반화 가능성이 있습니다.",
-              "delta": 10.0,
-              "evidence_ids": []
-            },
-            {
-              "text": "서로 다른 3개의 코드 위치가 이를 구현합니다.",
-              "delta": 8.0,
-              "evidence_ids": []
-            }
-          ]
-        },
-        "paper_potential": {
-          "value": 0.0,
-          "label": "Paper 가능성",
-          "caveat": null,
-          "reasons": [
-            {
-              "text": "연구 질문에 대응하는 문제 서술이 존재합니다.",
-              "delta": 8.0,
-              "evidence_ids": []
-            },
-            {
-              "text": "측정값도 평가 구성도 찾지 못했습니다.",
-              "delta": -10.0,
-              "evidence_ids": []
-            }
-          ]
-        },
-        "novelty_confidence": {
-          "value": 69.6,
-          "label": "Novelty Confidence (조사 우선순위)",
-          "caveat": "이 수치는 추가 조사의 우선순위를 나타냅니다. 특허 신규성 판단이나 특허 가능성에 대한 의견이 아닙니다. 선행기술 조사는 별도로 수행해야 합니다.",
-          "reasons": [
-            {
-              "text": "모든 후보는 50점에서 시작합니다.",
-              "delta": 50.0,
-              "evidence_ids": []
-            },
-            {
-              "text": "이 topic과 메커니즘 조합은 본 코퍼스에서 찾은 클러스터의 1.8%를 차지하므로, 상대적으로 특이한 조합입니다.",
-              "delta": 19.6,
-              "evidence_ids": []
-            }
-          ]
-        }
-      },
-      "criticFindings": [
-        {
-          "rule": "R1",
-          "title": "사소한 변경이나 유지보수 작업이 아닌가",
-          "passed": true,
-          "detail": "코드 증거 3건이 메커니즘을 담고 있으며, 사소한 변경 표지가 증거를 지배하지 않습니다.",
-          "evidence_ids": [
-            "ev_d9607eae5f35",
-            "ev_964852de7251",
-            "ev_7e57d1dccfe0"
-          ]
-        },
-        {
-          "rule": "R2",
-          "title": "설정 변경만으로 이루어진 것이 아닌가",
-          "passed": true,
-          "detail": "증거 3건이 빌드 및 설정 파일 밖에 있습니다.",
-          "evidence_ids": []
-        },
-        {
-          "rule": "R3",
-          "title": "흔한 software design pattern이 아닌가",
-          "passed": true,
-          "detail": "증거를 지배하는 일반적인 설계 패턴이 없습니다.",
-          "evidence_ids": []
-        },
-        {
-          "rule": "R4",
-          "title": "parameter tuning 수준이 아닌가",
-          "passed": true,
-          "detail": "코드 증거에 상수 대입 이외의 로직이 존재합니다.",
-          "evidence_ids": []
-        },
-        {
-          "rule": "R5",
-          "title": "기존 Android, Linux, V4L2에서 일반적인 방법이 아닌가",
-          "passed": true,
-          "detail": "발견된 플랫폼 연결 코드: 없음. 증거를 지배하지 않습니다.",
-          "evidence_ids": []
-        },
-        {
-          "rule": "R6",
-          "title": "Evidence가 충분한가",
-          "passed": true,
-          "detail": "증거 7건이 2종에 걸쳐 있습니다(Source Code, Issue).",
-          "evidence_ids": []
-        },
-        {
-          "rule": "R7",
-          "title": "주장과 실제 코드가 일치하는가",
-          "passed": true,
-          "detail": "코드 자체가 메커니즘 어휘를 포함합니다(compensat).",
-          "evidence_ids": [
-            "ev_d9607eae5f35",
-            "ev_964852de7251",
-            "ev_7e57d1dccfe0"
-          ]
-        },
-        {
-          "rule": "R8",
-          "title": "효과가 주장에 그치지 않고 측정되었는가",
-          "passed": false,
-          "detail": "수집된 자료 어디에도 기술적 효과가 정량화되어 있지 않습니다. 따라서 이점은 입증된 것이 아니라 주장된 상태입니다.",
-          "evidence_ids": []
-        }
-      ],
-      "verdict": "accepted_with_reservations",
-      "status": "UNCHANGED",
-      "statusReason": "직전 스캔 이후 변화가 없습니다.",
-      "timeline": [
-        {
-          "at": "2020-10-21T06:15:07+08:00",
-          "kind": "code",
-          "kindLabel": "Source Code",
-          "title": "function icamera_metadata_enum_snprint",
-          "evidenceId": "ev_d9607eae5f35",
-          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/metadata/icamera_metadata_tag_info.c#L532-L2696"
-        },
-        {
-          "at": "2024-11-26T09:58:20Z",
-          "kind": "code",
-          "kindLabel": "Source Code",
-          "title": "function libcamera",
-          "evidenceId": "ev_7e57d1dccfe0",
-          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/libcamera/internal/clock_recovery.h#L11-L68"
-        },
-        {
-          "at": "2025-01-09T09:05:08Z",
-          "kind": "issue",
-          "kindLabel": "Issue",
-          "title": "Random Gstreamer pipeline crash in libcamerasrc",
-          "evidenceId": "ev_bd3da7ef9f7f",
-          "url": "https://github.com/raspberrypi/libcamera/issues/228"
-        },
-        {
-          "at": "2025-06-26T18:11:36+08:00",
-          "kind": "code",
-          "kindLabel": "Source Code",
-          "title": "function CameraParser::handleStaticMetaData",
-          "evidenceId": "ev_964852de7251",
-          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/platformdata/CameraParser.cpp#L1871-L2042"
-        },
-        {
-          "at": "2025-09-23T21:53:54Z",
-          "kind": "issue",
-          "kindLabel": "Issue",
-          "title": "Libcamera FPS regression",
-          "evidenceId": "ev_78e66a0e388b",
-          "url": "https://github.com/raspberrypi/libcamera/issues/308"
-        },
-        {
-          "at": "2026-05-22T06:45:55Z",
-          "kind": "issue",
-          "kindLabel": "Issue",
-          "title": "IMX219 - inconsistent frame rate",
-          "evidenceId": "ev_5f9ee1b3ed63",
-          "url": "https://github.com/raspberrypi/libcamera/issues/336"
-        },
-        {
-          "at": "2026-06-30T10:03:25Z",
-          "kind": "issue",
-          "kindLabel": "Issue",
-          "title": "out of order frames when recording with libcamera-raw",
-          "evidenceId": "ev_efeca92f2c76",
-          "url": "https://github.com/raspberrypi/libcamera/issues/344"
-        }
-      ],
-      "firstSeenAt": "2025-01-09T09:05:08Z",
-      "lastUpdatedAt": "2026-06-30T10:03:25Z",
-      "typeLabel": "Patent 후보",
-      "statusLabel": "변화 없음",
-      "verdictLabel": "유보 조건부 통과",
-      "topicLabel": "카메라 성능",
-      "mechanismLabel": "캘리브레이션과 보정",
-      "technologyLabels": [
-        "디버깅 및 프로파일링",
-        "카메라 성능"
-      ],
-      "relatedCandidates": [
-        {
-          "id": "cand_61de9f76ed9e",
-          "title": "카메라 성능: 프레임 정합성 결함 대응을 위한 협상"
-        },
-        {
-          "id": "cand_0a7e2de377db",
-          "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원"
-        },
-        {
-          "id": "cand_8d7ed430ed11",
-          "title": "Computational Photography: 타이밍 편차 대응을 위한 보간"
-        },
-        {
-          "id": "cand_025b396adab4",
-          "title": "3A 제어: 확장성 한계 대응을 위한 보간"
-        },
-        {
-          "id": "cand_5555849c4804",
-          "title": "Sensor 제어: 타이밍 편차 대응을 위한 보정"
-        },
-        {
-          "id": "cand_9fe09ed8a807",
-          "title": "ISP 처리: 화질 결함 대응을 위한 보간"
-        },
-        {
-          "id": "cand_fb3a967b42e5",
-          "title": "Camera HAL: 작성자가 직접 기록한 한계 대응을 위한 특성화"
-        }
-      ],
-      "evidence": [
-        {
-          "id": "ev_d9607eae5f35",
-          "org": "intel",
-          "repo": "ipu6-camera-hal",
-          "kind": "code",
-          "path": "src/metadata/icamera_metadata_tag_info.c",
-          "symbol": "icamera_metadata_enum_snprint",
-          "symbol_kind": "function",
-          "line_start": 532,
-          "line_end": 2696,
-          "commit_sha": null,
-          "ref": null,
-          "title": "function icamera_metadata_enum_snprint",
-          "snippet": "} break; } case CAMERA_AE_COMPENSATION: { break; } case CAMERA_AE",
-          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/metadata/icamera_metadata_tag_info.c#L532-L2696",
-          "observed_at": "2020-10-21T06:15:07+08:00",
-          "first_seen_commit": "45469119a4d669ce2f0b594ff4d36479f1c9378b",
-          "first_seen_at": "2020-10-21T06:15:07+08:00",
-          "signals": [
-            {
-              "kind": "domain",
-              "term": "fps",
-              "family": "performance",
-              "weight": 2.6,
-              "context": "break; } case CAMERA_AE_TARGET_FPS_RANGE: { break; } case CAM"
-            },
-            {
-              "kind": "mechanism",
-              "term": "compensat",
-              "family": "calibration",
-              "weight": 3.4,
-              "context": "} break; } case CAMERA_AE_COMPENSATION: { break; } case CAMERA_AE"
-            }
-          ],
-          "repository": "intel/ipu6-camera-hal",
-          "kindLabel": "Source Code",
-          "location": "intel/ipu6-camera-hal / src/metadata/icamera_metadata_tag_info.c / icamera_metadata_enum_snprint / L532-L2696",
-          "signalSummary": [
-            {
-              "kind": "domain",
-              "label": "기술 영역",
-              "terms": [
-                "fps"
-              ]
-            },
-            {
-              "kind": "mechanism",
-              "label": "메커니즘",
-              "terms": [
-                "compensat"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "ev_964852de7251",
-          "org": "intel",
-          "repo": "ipu6-camera-hal",
-          "kind": "code",
-          "path": "src/platformdata/CameraParser.cpp",
-          "symbol": "CameraParser::handleStaticMetaData",
-          "symbol_kind": "function",
-          "line_start": 1871,
-          "line_end": 2042,
-          "commit_sha": null,
-          "ref": null,
-          "title": "function CameraParser::handleStaticMetaData",
-          "snippet": "This function will handle all the StaticMetadata related elements. It will be called in the function startElement \\param profiles: the pointer of the CameraParser. \\param name: the element's name. \\param atts: the element's attribute.",
-          "url": "https://github.com/intel/ipu6-camera-hal/blob/6fefa86dfa14bb33d908a46f104a96c59b41c7eb/src/platformdata/CameraParser.cpp#L1871-L2042",
-          "observed_at": "2025-06-26T18:11:36+08:00",
-          "first_seen_commit": "930a974a6ea20e059bf18deb167277f82d14525d",
-          "first_seen_at": "2025-06-26T18:11:36+08:00",
-          "signals": [
-            {
-              "kind": "domain",
-              "term": "profil",
-              "family": "debug-profiling",
-              "weight": 2.2,
-              "context": "It will be called in the function startElement \\param profiles: the pointer of the CameraParser. \\param name: the ele"
-            },
-            {
-              "kind": "domain",
-              "term": "fps",
-              "family": "performance",
-              "weight": 2.6,
-              "context": "rangeArray[i]); } LOG2(\"@%s, supported fps range size: %zu\", __func__, rangeArray.size());"
-            },
-            {
-              "kind": "mechanism",
-              "term": "compensat",
-              "family": "calibration",
-              "weight": 3.4,
-              "context": "rangeArray.size()); mMetadata.update(CAMERA_AE_COMPENSATION_RANGE, evRange, ARRAY_SIZE(evRange)); } else if (strcmp("
-            }
-          ],
-          "repository": "intel/ipu6-camera-hal",
-          "kindLabel": "Source Code",
-          "location": "intel/ipu6-camera-hal / src/platformdata/CameraParser.cpp / CameraParser::handleStaticMetaData / L1871-L2042",
-          "signalSummary": [
-            {
-              "kind": "domain",
-              "label": "기술 영역",
-              "terms": [
-                "profil",
-                "fps"
-              ]
-            },
-            {
-              "kind": "mechanism",
-              "label": "메커니즘",
-              "terms": [
-                "compensat"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "ev_efeca92f2c76",
-          "org": "raspberrypi",
-          "repo": "libcamera",
-          "kind": "issue",
-          "path": null,
-          "symbol": null,
-          "symbol_kind": null,
-          "line_start": null,
-          "line_end": null,
-          "commit_sha": null,
-          "ref": "Issue #344",
-          "title": "out of order frames when recording with libcamera-raw",
-          "snippet": "out of order frames when recording with libcamera-raw For a scienti",
-          "url": "https://github.com/raspberrypi/libcamera/issues/344",
-          "observed_at": "2026-06-30T10:03:25Z",
-          "first_seen_commit": null,
-          "first_seen_at": null,
-          "signals": [
-            {
-              "kind": "domain",
-              "term": "fps",
-              "family": "performance",
-              "weight": 2.6,
-              "context": "this: rpicam-raw -t 20000 --shutter 2000 --gain 1.0 --fps 30 -o image_%04d.raw Then, I used a python script to"
-            },
-            {
-              "kind": "problem",
-              "term": "out of order",
-              "family": "timing",
-              "weight": 3.2,
-              "context": "out of order frames when recording with libcamera-raw For a scienti"
-            },
-            {
-              "kind": "problem",
-              "term": "known issue",
-              "family": "known-limitation",
-              "weight": 2.4,
-              "context": "tal chronometer or a constant moving object Is this a known issue?"
-            }
-          ],
-          "repository": "raspberrypi/libcamera",
-          "kindLabel": "Issue",
-          "location": "raspberrypi/libcamera / Issue #344",
-          "signalSummary": [
-            {
-              "kind": "domain",
-              "label": "기술 영역",
-              "terms": [
-                "fps"
-              ]
-            },
-            {
-              "kind": "problem",
-              "label": "문제",
-              "terms": [
-                "out of order",
-                "known issue"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "ev_5f9ee1b3ed63",
-          "org": "raspberrypi",
-          "repo": "libcamera",
-          "kind": "issue",
-          "path": null,
-          "symbol": null,
-          "symbol_kind": null,
-          "line_start": null,
-          "line_end": null,
-          "commit_sha": null,
-          "ref": "Issue #336",
-          "title": "IMX219 - inconsistent frame rate",
-          "snippet": "IMX219 - inconsistent frame rate Hi, I'm working on IM219, - ran gstreamer p",
-          "url": "https://github.com/raspberrypi/libcamera/issues/336",
-          "observed_at": "2026-05-22T06:45:55Z",
-          "first_seen_commit": null,
-          "first_seen_at": null,
-          "signals": [
-            {
-              "kind": "domain",
-              "term": "frame rate",
-              "family": "performance",
-              "weight": 2.6,
-              "context": "IMX219 - inconsistent frame rate Hi, I'm working on IM219, - ran gstreamer pipeline wit"
-            },
-            {
-              "kind": "domain",
-              "term": "fps",
-              "family": "performance",
-              "weight": 2.6,
-              "context": "480 and frame rate to 120. - But getting inconsistent fps. FPS drops from 120 to 90 to sometimes 60 and then 40'"
-            },
-            {
-              "kind": "problem",
-              "term": "inconsistent",
-              "family": "correctness",
-              "weight": 3.0,
-              "context": "IMX219 - inconsistent frame rate Hi, I'm working on IM219, - ran gstreamer p"
-            }
-          ],
-          "repository": "raspberrypi/libcamera",
-          "kindLabel": "Issue",
-          "location": "raspberrypi/libcamera / Issue #336",
-          "signalSummary": [
-            {
-              "kind": "domain",
-              "label": "기술 영역",
-              "terms": [
-                "frame rate",
-                "fps"
-              ]
-            },
-            {
-              "kind": "problem",
-              "label": "문제",
-              "terms": [
-                "inconsistent"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "ev_78e66a0e388b",
-          "org": "raspberrypi",
-          "repo": "libcamera",
-          "kind": "issue",
-          "path": null,
-          "symbol": null,
-          "symbol_kind": null,
-          "line_start": null,
-          "line_end": null,
-          "commit_sha": null,
-          "ref": "Issue #308",
-          "title": "Libcamera FPS regression",
-          "snippet": "Libcamera FPS regression I have a raspberry pi 5 with a camera v2 module (imx21",
-          "url": "https://github.com/raspberrypi/libcamera/issues/308",
-          "observed_at": "2025-09-23T21:53:54Z",
-          "first_seen_commit": null,
-          "first_seen_at": null,
-          "signals": [
-            {
-              "kind": "domain",
-              "term": "fps",
-              "family": "performance",
-              "weight": 2.6,
-              "context": "Libcamera FPS regression I have a raspberry pi 5 with a camera v2 mo"
-            },
-            {
-              "kind": "problem",
-              "term": "regression",
-              "family": "correctness",
-              "weight": 3.0,
-              "context": "Libcamera FPS regression I have a raspberry pi 5 with a camera v2 module (imx21"
-            },
-            {
-              "kind": "problem",
-              "term": "workaround",
-              "family": "known-limitation",
-              "weight": 2.4,
-              "context": "definetely looks like a regression. Can you advise a workaround or possibly how to fix this? Cause is seems that senso"
-            }
-          ],
-          "repository": "raspberrypi/libcamera",
-          "kindLabel": "Issue",
-          "location": "raspberrypi/libcamera / Issue #308",
-          "signalSummary": [
-            {
-              "kind": "domain",
-              "label": "기술 영역",
-              "terms": [
-                "fps"
-              ]
-            },
-            {
-              "kind": "problem",
-              "label": "문제",
-              "terms": [
-                "regression",
-                "workaround"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "ev_7e57d1dccfe0",
-          "org": "raspberrypi",
-          "repo": "libcamera",
-          "kind": "code",
-          "path": "include/libcamera/internal/clock_recovery.h",
-          "symbol": "libcamera",
-          "symbol_kind": "function",
-          "line_start": 11,
-          "line_end": 68,
-          "commit_sha": null,
-          "ref": null,
-          "title": "function libcamera",
-          "snippet": "include <stdint.h>",
-          "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/include/libcamera/internal/clock_recovery.h#L11-L68",
-          "observed_at": "2024-11-26T09:58:20Z",
-          "first_seen_commit": "1282e7dcad974d7a40643c6c50df5a81da389b30",
-          "first_seen_at": "2024-11-26T09:58:20Z",
-          "signals": [
-            {
-              "kind": "domain",
-              "term": "jitter",
-              "family": "performance",
-              "weight": 2.6,
-              "context": "s. */ unsigned int numSamples_; /* Remove any output jitter larger than this immediately. */ unsigned int maxJitt"
-            },
-            {
-              "kind": "problem",
-              "term": "jitter",
-              "family": "timing",
-              "weight": 3.2,
-              "context": "s. */ unsigned int numSamples_; /* Remove any output jitter larger than this immediately. */ unsigned int maxJitt"
-            }
-          ],
-          "repository": "raspberrypi/libcamera",
-          "kindLabel": "Source Code",
-          "location": "raspberrypi/libcamera / include/libcamera/internal/clock_recovery.h / libcamera / L11-L68",
-          "signalSummary": [
-            {
-              "kind": "domain",
-              "label": "기술 영역",
-              "terms": [
-                "jitter"
-              ]
-            },
-            {
-              "kind": "problem",
-              "label": "문제",
-              "terms": [
-                "jitter"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "ev_bd3da7ef9f7f",
-          "org": "raspberrypi",
-          "repo": "libcamera",
-          "kind": "issue",
-          "path": null,
-          "symbol": null,
-          "symbol_kind": null,
-          "line_start": null,
-          "line_end": null,
-          "commit_sha": null,
-          "ref": "Issue #228",
-          "title": "Random Gstreamer pipeline crash in libcamerasrc",
-          "snippet": "an someone point to the reason for this assertion? Any race condition could cause this? I suspect requestCompleted gets c",
-          "url": "https://github.com/raspberrypi/libcamera/issues/228",
-          "observed_at": "2025-01-09T09:05:08Z",
-          "first_seen_commit": null,
-          "first_seen_at": null,
-          "signals": [
-            {
-              "kind": "domain",
-              "term": "framerate",
-              "family": "performance",
-              "weight": 2.6,
-              "context": "w,colorimetry=bt709,format=NV12,width=3840,height=3040,framerate=10/1 ! queue name=q1 ! videoconvert ! jpegenc quality="
-            },
-            {
-              "kind": "problem",
-              "term": "race condition",
-              "family": "timing",
-              "weight": 3.2,
-              "context": "an someone point to the reason for this assertion? Any race condition could cause this? I suspect requestCompleted gets c"
-            }
-          ],
-          "repository": "raspberrypi/libcamera",
-          "kindLabel": "Issue",
-          "location": "raspberrypi/libcamera / Issue #228",
-          "signalSummary": [
-            {
-              "kind": "domain",
-              "label": "기술 영역",
-              "terms": [
-                "framerate"
-              ]
-            },
-            {
-              "kind": "problem",
-              "label": "문제",
-              "terms": [
-                "race condition"
-              ]
-            }
-          ]
-        }
-      ],
-      "counterEvidence": [
-        {
-          "rule": "R8",
-          "title": "효과가 주장에 그치지 않고 측정되었는가",
-          "passed": false,
-          "detail": "수집된 자료 어디에도 기술적 효과가 정량화되어 있지 않습니다. 따라서 이점은 입증된 것이 아니라 주장된 상태입니다.",
-          "evidence_ids": []
-        }
-      ],
-      "evidenceByKind": [
-        {
-          "kind": "issue",
-          "label": "Issue",
-          "count": 4
-        },
-        {
-          "kind": "code",
-          "label": "Source Code",
-          "count": 3
-        }
-      ]
-    },
-    {
       "id": "cand_3b51353652cc",
       "slug": "camera-driver-resilience",
       "title": "Camera Driver 계층: 타이밍 편차 대응을 위한 watchdog 복구",
@@ -61542,7 +61827,7 @@
           "url": "https://github.com/raspberrypi/libcamera/blob/6c1dd9d55573010f710c9e190a73e7e76f0d9432/src/libcamera/dma_buf_allocator.cpp#L163-L187"
         },
         {
-          "at": "2026-10-16T07:43:12Z",
+          "at": "2026-10-21T14:59:10Z",
           "kind": "pull_request",
           "kindLabel": "Pull Request",
           "title": "Add acpi, ar0234 to utilize SSDT Overlay enabled sensors",
@@ -61551,7 +61836,7 @@
         }
       ],
       "firstSeenAt": "2021-11-01T14:58:19+08:00",
-      "lastUpdatedAt": "2026-10-16T07:43:12Z",
+      "lastUpdatedAt": "2026-10-21T14:59:10Z",
       "typeLabel": "Patent 후보",
       "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
@@ -62219,7 +62504,7 @@
           "title": "Add acpi, ar0234 to utilize SSDT Overlay enabled sensors",
           "snippet": "17:45:45.533] CamHAL[ERR] Poll: Device node fd 27 poll timeout. [10-05 17:45:46.534] CamHAL[ERR] Poll: Device node f",
           "url": "https://github.com/intel/ipu6-camera-hal/pull/187",
-          "observed_at": "2026-10-16T07:43:12Z",
+          "observed_at": "2026-10-21T14:59:10Z",
           "first_seen_commit": null,
           "first_seen_at": null,
           "signals": [
@@ -64213,6 +64498,46 @@
       "firstSeenAt": "2024-06-14T08:13:05Z"
     },
     {
+      "id": "cand_61de9f76ed9e",
+      "slug": "performance-arbitration",
+      "title": "카메라 성능: 타이밍 편차 대응을 위한 협상",
+      "type": "patent+paper",
+      "typeLabel": "Patent + Paper 후보",
+      "status": "STRENGTHENED",
+      "statusLabel": "근거 강화",
+      "verdict": "accepted_with_reservations",
+      "verdictLabel": "유보 조건부 통과",
+      "topic": "performance",
+      "topicLabel": "카메라 성능",
+      "mechanismFamily": "arbitration",
+      "mechanismLabel": "자원 중재",
+      "summary": "카메라 성능 영역의 코드가 협상 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다.",
+      "repositories": [
+        "raspberrypi/libcamera"
+      ],
+      "evidenceCount": 9,
+      "scores": {
+        "evidence_strength": {
+          "value": 84.0,
+          "label": "증거 강도"
+        },
+        "patent_potential": {
+          "value": 56.8,
+          "label": "Patent 가능성"
+        },
+        "paper_potential": {
+          "value": 48.0,
+          "label": "Paper 가능성"
+        },
+        "novelty_confidence": {
+          "value": 79.6,
+          "label": "Novelty Confidence (조사 우선순위)"
+        }
+      },
+      "lastUpdatedAt": "2026-10-23T15:31:32Z",
+      "firstSeenAt": "2025-01-09T09:05:08Z"
+    },
+    {
       "id": "cand_591d7f2d8c16",
       "slug": "sensor-sync-prediction",
       "title": "Sensor 동기화: 타이밍 편차 대응을 위한 예측",
@@ -64334,6 +64659,46 @@
       },
       "lastUpdatedAt": "2026-09-23T22:30:42+05:30",
       "firstSeenAt": "2025-03-03T15:25:00Z"
+    },
+    {
+      "id": "cand_0a7e2de377db",
+      "slug": "performance-synchronization-mechanism",
+      "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원",
+      "type": "patent",
+      "typeLabel": "Patent 후보",
+      "status": "STRENGTHENED",
+      "statusLabel": "근거 강화",
+      "verdict": "accepted_with_reservations",
+      "verdictLabel": "유보 조건부 통과",
+      "topic": "performance",
+      "topicLabel": "카메라 성능",
+      "mechanismFamily": "synchronization-mechanism",
+      "mechanismLabel": "타이밍 동기화",
+      "summary": "카메라 성능 영역의 코드가 clock 복원 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다.",
+      "repositories": [
+        "raspberrypi/libcamera"
+      ],
+      "evidenceCount": 8,
+      "scores": {
+        "evidence_strength": {
+          "value": 68.0,
+          "label": "증거 강도"
+        },
+        "patent_potential": {
+          "value": 66.0,
+          "label": "Patent 가능성"
+        },
+        "paper_potential": {
+          "value": 26.0,
+          "label": "Paper 가능성"
+        },
+        "novelty_confidence": {
+          "value": 79.6,
+          "label": "Novelty Confidence (조사 우선순위)"
+        }
+      },
+      "lastUpdatedAt": "2026-10-23T15:31:32Z",
+      "firstSeenAt": "2025-01-09T09:05:08Z"
     },
     {
       "id": "cand_1da23885c6fa",
@@ -64501,43 +64866,44 @@
       "firstSeenAt": "2024-12-13T05:20:18Z"
     },
     {
-      "id": "cand_61de9f76ed9e",
-      "slug": "performance-arbitration",
-      "title": "카메라 성능: 프레임 정합성 결함 대응을 위한 협상",
+      "id": "cand_c1329f0074f9",
+      "slug": "performance-calibration",
+      "title": "카메라 성능: 타이밍 편차 대응을 위한 보정",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "UNCHANGED",
-      "statusLabel": "변화 없음",
+      "status": "STRENGTHENED",
+      "statusLabel": "근거 강화",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "performance",
       "topicLabel": "카메라 성능",
-      "mechanismFamily": "arbitration",
-      "mechanismLabel": "자원 중재",
-      "summary": "카메라 성능 영역의 코드가 협상 기법을 구현하고 있습니다. 그리고 해당 Repository는 프레임 정합성 결함 문제를 스스로 보고하고 있습니다.",
+      "mechanismFamily": "calibration",
+      "mechanismLabel": "캘리브레이션과 보정",
+      "summary": "카메라 성능 영역의 코드가 보정 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다.",
       "repositories": [
+        "intel/ipu6-camera-hal",
         "raspberrypi/libcamera"
       ],
       "evidenceCount": 8,
       "scores": {
         "evidence_strength": {
-          "value": 68.0,
+          "value": 78.0,
           "label": "증거 강도"
         },
         "patent_potential": {
-          "value": 56.8,
+          "value": 50.4,
           "label": "Patent 가능성"
         },
         "paper_potential": {
-          "value": 20.0,
+          "value": 26.0,
           "label": "Paper 가능성"
         },
         "novelty_confidence": {
-          "value": 79.6,
+          "value": 69.6,
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-08-18T18:45:07+09:00",
+      "lastUpdatedAt": "2026-10-23T15:31:32Z",
       "firstSeenAt": "2025-01-09T09:05:08Z"
     },
     {
@@ -64620,46 +64986,6 @@
       },
       "lastUpdatedAt": "2026-10-09T08:33:59+01:00",
       "firstSeenAt": "2025-04-25T07:43:16Z"
-    },
-    {
-      "id": "cand_0a7e2de377db",
-      "slug": "performance-synchronization-mechanism",
-      "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원",
-      "type": "patent",
-      "typeLabel": "Patent 후보",
-      "status": "UNCHANGED",
-      "statusLabel": "변화 없음",
-      "verdict": "accepted_with_reservations",
-      "verdictLabel": "유보 조건부 통과",
-      "topic": "performance",
-      "topicLabel": "카메라 성능",
-      "mechanismFamily": "synchronization-mechanism",
-      "mechanismLabel": "타이밍 동기화",
-      "summary": "카메라 성능 영역의 코드가 clock 복원 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다.",
-      "repositories": [
-        "raspberrypi/libcamera"
-      ],
-      "evidenceCount": 7,
-      "scores": {
-        "evidence_strength": {
-          "value": 52.0,
-          "label": "증거 강도"
-        },
-        "patent_potential": {
-          "value": 66.0,
-          "label": "Patent 가능성"
-        },
-        "paper_potential": {
-          "value": 0.0,
-          "label": "Paper 가능성"
-        },
-        "novelty_confidence": {
-          "value": 79.6,
-          "label": "Novelty Confidence (조사 우선순위)"
-        }
-      },
-      "lastUpdatedAt": "2026-06-30T10:03:25Z",
-      "firstSeenAt": "2025-01-09T09:05:08Z"
     },
     {
       "id": "cand_9126debbf094",
@@ -64905,7 +65231,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-10-16T07:43:12Z",
+      "lastUpdatedAt": "2026-10-21T14:59:10Z",
       "firstSeenAt": "2021-11-01T14:58:19+08:00"
     },
     {
@@ -65027,7 +65353,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-10-16T07:43:12Z",
+      "lastUpdatedAt": "2026-10-21T14:59:10Z",
       "firstSeenAt": "2021-11-01T14:58:19+08:00"
     },
     {
@@ -65238,47 +65564,6 @@
       "firstSeenAt": "2024-03-28T14:40:33Z"
     },
     {
-      "id": "cand_c1329f0074f9",
-      "slug": "performance-calibration",
-      "title": "카메라 성능: 타이밍 편차 대응을 위한 보정",
-      "type": "patent",
-      "typeLabel": "Patent 후보",
-      "status": "UNCHANGED",
-      "statusLabel": "변화 없음",
-      "verdict": "accepted_with_reservations",
-      "verdictLabel": "유보 조건부 통과",
-      "topic": "performance",
-      "topicLabel": "카메라 성능",
-      "mechanismFamily": "calibration",
-      "mechanismLabel": "캘리브레이션과 보정",
-      "summary": "카메라 성능 영역의 코드가 보정 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다.",
-      "repositories": [
-        "intel/ipu6-camera-hal",
-        "raspberrypi/libcamera"
-      ],
-      "evidenceCount": 7,
-      "scores": {
-        "evidence_strength": {
-          "value": 62.0,
-          "label": "증거 강도"
-        },
-        "patent_potential": {
-          "value": 50.4,
-          "label": "Patent 가능성"
-        },
-        "paper_potential": {
-          "value": 0.0,
-          "label": "Paper 가능성"
-        },
-        "novelty_confidence": {
-          "value": 69.6,
-          "label": "Novelty Confidence (조사 우선순위)"
-        }
-      },
-      "lastUpdatedAt": "2026-06-30T10:03:25Z",
-      "firstSeenAt": "2025-01-09T09:05:08Z"
-    },
-    {
       "id": "cand_3b51353652cc",
       "slug": "camera-driver-resilience",
       "title": "Camera Driver 계층: 타이밍 편차 대응을 위한 watchdog 복구",
@@ -65359,7 +65644,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-10-16T07:43:12Z",
+      "lastUpdatedAt": "2026-10-21T14:59:10Z",
       "firstSeenAt": "2021-11-01T14:58:19+08:00"
     },
     {

@@ -4404,7 +4404,7 @@
       "title": "Add acpi, ar0234 to utilize SSDT Overlay enabled sensors",
       "snippet": "17:45:45.533] CamHAL[ERR] Poll: Device node fd 27 poll timeout. [10-05 17:45:46.534] CamHAL[ERR] Poll: Device node f",
       "url": "https://github.com/intel/ipu6-camera-hal/pull/187",
-      "observed_at": "2026-10-16T07:43:12Z",
+      "observed_at": "2026-10-21T14:59:10Z",
       "first_seen_commit": null,
       "first_seen_at": null,
       "signals": [
@@ -17551,7 +17551,7 @@
       "title": "IMX500 sensor state machine fails (\"failed to load loader firmware\") during sustained streaming, despite correct power sequencing",
       "snippet": "IMX500 sensor state machine fails (\"failed to load loader firmware\") during sustai",
       "url": "https://github.com/raspberrypi/libcamera/issues/355",
-      "observed_at": "2026-08-17T09:52:57Z",
+      "observed_at": "2026-10-22T12:17:30Z",
       "first_seen_commit": null,
       "first_seen_at": null,
       "signals": [
@@ -32752,6 +32752,82 @@
       ]
     },
     {
+      "id": "ev_a764e14a9075",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "pull_request",
+      "path": null,
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": null,
+      "ref": "PR #363",
+      "title": "Fix rounding of negative frame period errors",
+      "snippet": "d in 27 samples in the affected range. (Some remaining jitter we see at 16 MP comes from dropped frames and is not a",
+      "url": "https://github.com/raspberrypi/libcamera/pull/363",
+      "observed_at": "2026-10-23T15:31:32Z",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "fps",
+          "family": "performance",
+          "weight": 2.6,
+          "context": "ions are one-sided. ### Reproduce Arithmetic only, 6 fps (frame duration 166667 us): | delta (us) | framePerio"
+        },
+        {
+          "kind": "domain",
+          "term": "jitter",
+          "family": "performance",
+          "weight": 2.6,
+          "context": "d in 27 samples in the affected range. (Some remaining jitter we see at 16 MP comes from dropped frames and is not a"
+        },
+        {
+          "kind": "problem",
+          "term": "jitter",
+          "family": "timing",
+          "weight": 3.2,
+          "context": "d in 27 samples in the affected range. (Some remaining jitter we see at 16 MP comes from dropped frames and is not a"
+        },
+        {
+          "kind": "evaluation",
+          "term": "reproduc",
+          "family": "experiment",
+          "weight": 3.0,
+          "context": "ve deltas are fine, so corrections are one-sided. ### Reproduce Arithmetic only, 6 fps (frame duration 166667 us): |"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Pull Request",
+      "location": "raspberrypi/libcamera / PR #363",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "fps",
+            "jitter"
+          ]
+        },
+        {
+          "kind": "problem",
+          "label": "문제",
+          "terms": [
+            "jitter"
+          ]
+        },
+        {
+          "kind": "evaluation",
+          "label": "평가",
+          "terms": [
+            "reproduc"
+          ]
+        }
+      ]
+    },
+    {
       "id": "ev_3b8607c3ed91",
       "org": "raspberrypi",
       "repo": "libpisp",
@@ -33921,19 +33997,19 @@
     }
   ],
   "counts": {
-    "total": 467,
+    "total": 468,
     "byKind": {
       "code": 329,
       "issue": 36,
       "commit": 69,
-      "pull_request": 11,
+      "pull_request": 12,
       "doc": 18,
       "config": 3,
       "release": 1
     },
     "byRepository": {
       "intel/ipu6-camera-hal": 63,
-      "raspberrypi/libcamera": 385,
+      "raspberrypi/libcamera": 386,
       "raspberrypi/libpisp": 19
     }
   }

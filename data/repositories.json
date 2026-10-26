@@ -8,7 +8,7 @@
       "default_branch": "HEAD",
       "head_sha": "7ccab62d133e053c8628f3591b636a761f06c956",
       "last_scanned_sha": "7ccab62d133e053c8628f3591b636a761f06c956",
-      "last_scan_time": "2026-10-19T21:57:15.160234+00:00",
+      "last_scan_time": "2026-10-26T22:13:26.754478+00:00",
       "scan_mode": "incremental",
       "status": "partial",
       "status_detail": "HEAD가 이전 스캔과 동일하여 새로 수집한 파일이 없습니다. / incremental file scan over 0 changed paths",
@@ -28,7 +28,7 @@
       "description": "",
       "stars": 50,
       "language": "C",
-      "pushed_at": "2026-09-25T04:37:21Z",
+      "pushed_at": "2026-10-21T14:59:09Z",
       "topicLabels": [
         "3A 제어",
         "Camera Driver 계층",
@@ -50,12 +50,12 @@
       "default_branch": "HEAD",
       "head_sha": "c682979b50695b93526adb1e66db33743484b63b",
       "last_scanned_sha": "c682979b50695b93526adb1e66db33743484b63b",
-      "last_scan_time": "2026-10-19T21:57:28.163232+00:00",
+      "last_scan_time": "2026-10-26T22:13:48.103290+00:00",
       "scan_mode": "incremental",
       "status": "partial",
       "status_detail": "HEAD가 이전 스캔과 동일하여 새로 수집한 파일이 없습니다. / incremental file scan over 0 changed paths",
       "files_scanned": 0,
-      "evidence_count": 385,
+      "evidence_count": 386,
       "candidate_count": 0,
       "topics": [
         "3a",
@@ -68,9 +68,9 @@
         "debug-profiling"
       ],
       "description": "",
-      "stars": 487,
+      "stars": 490,
       "language": "C++",
-      "pushed_at": "2026-10-19T12:17:08Z",
+      "pushed_at": "2026-10-21T12:16:14Z",
       "topicLabels": [
         "3A 제어",
         "AI 카메라 처리",
@@ -81,7 +81,7 @@
         "Computational Photography",
         "디버깅 및 프로파일링"
       ],
-      "evidenceCount": 385,
+      "evidenceCount": 386,
       "candidateCount": 40
     },
     {
@@ -90,13 +90,13 @@
       "name": "libpisp",
       "url": "https://github.com/raspberrypi/libpisp",
       "default_branch": "HEAD",
-      "head_sha": "f8a5eb2af4c5dea76442785ef42b2fb1aa9e62f9",
-      "last_scanned_sha": "f8a5eb2af4c5dea76442785ef42b2fb1aa9e62f9",
-      "last_scan_time": "2026-10-19T21:57:31.676337+00:00",
+      "head_sha": "8e86f4052027ca6a8e3452316d0deebc500d3215",
+      "last_scanned_sha": "8e86f4052027ca6a8e3452316d0deebc500d3215",
+      "last_scan_time": "2026-10-26T22:13:53.222560+00:00",
       "scan_mode": "incremental",
       "status": "partial",
-      "status_detail": "HEAD가 이전 스캔과 동일하여 새로 수집한 파일이 없습니다. / incremental file scan over 0 changed paths",
-      "files_scanned": 0,
+      "status_detail": "incremental file scan over 1 changed paths",
+      "files_scanned": 1,
       "evidence_count": 19,
       "candidate_count": 0,
       "topics": [
@@ -105,9 +105,9 @@
         "memory-buffer"
       ],
       "description": "",
-      "stars": 14,
+      "stars": 15,
       "language": "C++",
-      "pushed_at": "2026-10-09T11:28:13Z",
+      "pushed_at": "2026-10-20T11:05:08Z",
       "topicLabels": [
         "Camera Driver 계층",
         "ISP 처리",

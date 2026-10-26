@@ -89,6 +89,14 @@
   },
   {
     "type": "candidate",
+    "id": "cand_61de9f76ed9e",
+    "slug": "performance-arbitration",
+    "title": "카메라 성능: 타이밍 편차 대응을 위한 협상",
+    "body": "카메라 성능 영역의 코드가 협상 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다. 수집된 자료는 타이밍 편차, 프레임 정합성 결함, 작성자가 직접 기록한 한계 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “out of order frames when recording with libcamera-raw For a scienti” 구현은 카메라 성능 내부에서 협상 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: gst_libcamera_src_negotiate (src/gstreamer/gstlibcamerasrc.cpp). 효과가 문장으로 주장되어 있습니다(prevent). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. performance negotiat camera negotiat negotiat timing camera negotiat correctness camera image sensor performance control raspberrypi/libcamera 카메라 성능 자원 중재",
+    "url": "/discoveries/performance-arbitration/"
+  },
+  {
+    "type": "candidate",
     "id": "cand_591d7f2d8c16",
     "slug": "sensor-sync-prediction",
     "title": "Sensor 동기화: 타이밍 편차 대응을 위한 예측",
@@ -110,6 +118,14 @@
     "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 시퀀스 번호 부여",
     "body": "Sensor 제어 영역의 코드가 시퀀스 번호 부여 기법을 구현하고 있습니다. 그리고 해당 Repository는 프레임 정합성 결함 문제를 스스로 보고하고 있습니다. 수집된 자료는 프레임 정합성 결함, 작성자가 직접 기록한 한계, 타이밍 편차 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “ash in the first way (it just hangs forever, even with timeout set), so attached is a output from a run with the seco” 구현은 Sensor 제어 내부에서 시퀀스 번호 부여 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: drm_vblank_seq_type (include/linux/drm.h); drm_crtc_get_sequence (include/linux/drm.h). 효과가 문장으로 주장되어 있습니다(lower, decreas, save). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. sensor control sequence number camera sequence number sequence number correctness camera sequence number known limitation camera image sensor sensor control control raspberrypi/libcamera intel/ipu6-camera-hal Sensor 제어 타이밍 동기화",
     "url": "/discoveries/sensor-control-synchronization-mechanism/"
+  },
+  {
+    "type": "candidate",
+    "id": "cand_0a7e2de377db",
+    "slug": "performance-synchronization-mechanism",
+    "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원",
+    "body": "카메라 성능 영역의 코드가 clock 복원 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다. 수집된 자료는 타이밍 편차, 작성자가 직접 기록한 한계, 프레임 정합성 결함 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “out of order frames when recording with libcamera-raw For a scienti” 구현은 카메라 성능 내부에서 clock 복원 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: ClockRecovery (include/libcamera/internal/clock_recovery.h); ClockRecovery::configure (src/libcamera/clock_recovery.cpp). 효과가 문장으로 주장되어 있습니다(prevent). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. performance clock recovery camera clock recovery clock recovery timing camera clock recovery known limitation camera image sensor performance control raspberrypi/libcamera 카메라 성능 타이밍 동기화",
+    "url": "/discoveries/performance-synchronization-mechanism/"
   },
   {
     "type": "candidate",
@@ -145,11 +161,11 @@
   },
   {
     "type": "candidate",
-    "id": "cand_61de9f76ed9e",
-    "slug": "performance-arbitration",
-    "title": "카메라 성능: 프레임 정합성 결함 대응을 위한 협상",
-    "body": "카메라 성능 영역의 코드가 협상 기법을 구현하고 있습니다. 그리고 해당 Repository는 프레임 정합성 결함 문제를 스스로 보고하고 있습니다. 수집된 자료는 프레임 정합성 결함, 타이밍 편차, 작성자가 직접 기록한 한계 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “out of order frames when recording with libcamera-raw For a scienti” 구현은 카메라 성능 내부에서 협상 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: gst_libcamera_src_negotiate (src/gstreamer/gstlibcamerasrc.cpp). 효과가 문장으로 주장되어 있습니다(prevent). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. performance negotiat camera negotiat negotiat correctness camera negotiat timing camera image sensor performance control raspberrypi/libcamera 카메라 성능 자원 중재",
-    "url": "/discoveries/performance-arbitration/"
+    "id": "cand_c1329f0074f9",
+    "slug": "performance-calibration",
+    "title": "카메라 성능: 타이밍 편차 대응을 위한 보정",
+    "body": "카메라 성능 영역의 코드가 보정 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다. 수집된 자료는 타이밍 편차, 작성자가 직접 기록한 한계, 프레임 정합성 결함 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “out of order frames when recording with libcamera-raw For a scienti” 구현은 카메라 성능 내부에서 보정 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: icamera_metadata_enum_snprint (src/metadata/icamera_metadata_tag_info.c); CameraParser::handleStaticMetaData (src/platformdata/CameraParser.cpp). 수집된 자료에는 기술적 효과가 서술되어 있지 않습니다. 본 후보를 주장하려면 효과를 먼저 측정해야 합니다. performance compensat camera compensat compensat timing camera compensat known limitation camera image sensor performance control intel/ipu6-camera-hal raspberrypi/libcamera 카메라 성능 캘리브레이션과 보정",
+    "url": "/discoveries/performance-calibration/"
   },
   {
     "type": "candidate",
@@ -166,14 +182,6 @@
     "title": "ISP 처리: 작성자가 직접 기록한 한계 대응을 위한 accelerator 오프로딩",
     "body": "ISP 처리 영역의 코드가 accelerator 오프로딩 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 프레임 정합성 결함, 타이밍 편차 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “] [265] ERROR IPCPipe ipc_pipe_unixsocket.cpp:134 Call timeout! [0:05:59.429475071] [265] ERROR IPCPipe ipc_pipe_unix” 구현은 ISP 처리 내부에서 accelerator 오프로딩, 연산 오프로딩 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: ipu3_uapi_params (include/linux/intel-ipu3.h). 효과가 문장으로 주장되어 있습니다(improv, reduc). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. isp accelerator camera accelerator accelerator known limitation camera accelerator correctness camera isp offload camera offload offload known limitation camera offload correctness camera image sensor isp control raspberrypi/libcamera ISP 처리 작업 분할",
     "url": "/discoveries/isp-partitioning/"
-  },
-  {
-    "type": "candidate",
-    "id": "cand_0a7e2de377db",
-    "slug": "performance-synchronization-mechanism",
-    "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원",
-    "body": "카메라 성능 영역의 코드가 clock 복원 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다. 수집된 자료는 타이밍 편차, 작성자가 직접 기록한 한계, 프레임 정합성 결함 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “out of order frames when recording with libcamera-raw For a scienti” 구현은 카메라 성능 내부에서 clock 복원 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: ClockRecovery (include/libcamera/internal/clock_recovery.h); ClockRecovery::configure (src/libcamera/clock_recovery.cpp). 효과가 문장으로 주장되어 있습니다(prevent). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. performance clock recovery camera clock recovery clock recovery timing camera clock recovery known limitation camera image sensor performance control raspberrypi/libcamera 카메라 성능 타이밍 동기화",
-    "url": "/discoveries/performance-synchronization-mechanism/"
   },
   {
     "type": "candidate",
@@ -286,14 +294,6 @@
     "title": "Camera Driver 계층: 작성자가 직접 기록한 한계 대응을 위한 시퀀스 번호 부여",
     "body": "Camera Driver 계층 영역의 코드가 시퀀스 번호 부여 기법을 구현하고 있습니다. 그리고 해당 Repository는 작성자가 직접 기록한 한계 문제를 스스로 보고하고 있습니다. 수집된 자료는 작성자가 직접 기록한 한계, 프레임 정합성 결함, 타이밍 편차 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “Important memory leak of v4l2-relayd service after each camera start Hi dear” 구현은 Camera Driver 계층 내부에서 시퀀스 번호 부여 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: v4l2_event_motion_det (include/linux/videodev2.h); DelayedControls::applyControls (src/libcamera/delayed_controls.cpp); DelayedControls::applyControls (src/libcamera/pipeline/rpi/common/delayed_controls.cpp); V4L2VideoDevice::dequeueBuffer (src/libcamera/v4l2_videodevice.cpp). 효과가 문장으로 주장되어 있습니다(prevent, optimiz). 다만 수집된 자료에는 이를 뒷받침하는 측정값이 함께 기재되어 있지 않습니다. camera driver sequence number camera sequence number sequence number known limitation camera sequence number correctness camera image sensor camera driver control raspberrypi/libcamera raspberrypi/libpisp intel/ipu6-camera-hal Camera Driver 계층 타이밍 동기화",
     "url": "/discoveries/camera-driver-synchronization-mechanism/"
-  },
-  {
-    "type": "candidate",
-    "id": "cand_c1329f0074f9",
-    "slug": "performance-calibration",
-    "title": "카메라 성능: 타이밍 편차 대응을 위한 보정",
-    "body": "카메라 성능 영역의 코드가 보정 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다. 수집된 자료는 타이밍 편차, 작성자가 직접 기록한 한계, 프레임 정합성 결함 문제를 보고하고 있습니다. 그 내용이 기재된 위치 중 하나는 다음과 같습니다: “out of order frames when recording with libcamera-raw For a scienti” 구현은 카메라 성능 내부에서 보정 기법을 결합하고 있습니다. 해당 구현은 다음 위치에서 확인됩니다: icamera_metadata_enum_snprint (src/metadata/icamera_metadata_tag_info.c); CameraParser::handleStaticMetaData (src/platformdata/CameraParser.cpp). 수집된 자료에는 기술적 효과가 서술되어 있지 않습니다. 본 후보를 주장하려면 효과를 먼저 측정해야 합니다. performance compensat camera compensat compensat timing camera compensat known limitation camera image sensor performance control intel/ipu6-camera-hal raspberrypi/libcamera 카메라 성능 캘리브레이션과 보정",
-    "url": "/discoveries/performance-calibration/"
   },
   {
     "type": "candidate",

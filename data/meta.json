@@ -1,8 +1,8 @@
 {
-  "runId": "run_20261019T215707Z",
+  "runId": "run_20261026T221316Z",
   "mode": "live",
-  "startedAt": "2026-10-19T21:57:07.265067+00:00",
-  "generatedAt": "2026-10-19T21:57:32.089244+00:00",
+  "startedAt": "2026-10-26T22:13:16.070056+00:00",
+  "generatedAt": "2026-10-26T22:13:53.901654+00:00",
   "dryRun": false,
   "configPath": "sources.yaml",
   "engine": {

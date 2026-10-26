@@ -414,8 +414,8 @@
         "state-machine",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 42,
-      "weight": 127.4,
+      "evidenceCount": 43,
+      "weight": 132.6,
       "crossRepository": true,
       "technologyLabel": "카메라 성능",
       "problemLabels": [
@@ -435,8 +435,8 @@
         {
           "id": "cand_61de9f76ed9e",
           "slug": "performance-arbitration",
-          "title": "카메라 성능: 프레임 정합성 결함 대응을 위한 협상",
-          "type": "patent"
+          "title": "카메라 성능: 타이밍 편차 대응을 위한 협상",
+          "type": "patent+paper"
         },
         {
           "id": "cand_0a7e2de377db",
@@ -874,8 +874,8 @@
         "id": "org_0a28693c6218",
         "type": "organization",
         "label": "raspberrypi",
-        "weight": 80.8,
-        "evidenceCount": 404,
+        "weight": 81.0,
+        "evidenceCount": 405,
         "evidenceIds": [
           "ev_80ed53b793be",
           "ev_674f01781504",
@@ -974,8 +974,8 @@
         "id": "rep_7944c02b0969",
         "type": "repository",
         "label": "raspberrypi/libcamera",
-        "weight": 192.5,
-        "evidenceCount": 385,
+        "weight": 193.0,
+        "evidenceCount": 386,
         "evidenceIds": [
           "ev_80ed53b793be",
           "ev_674f01781504",
@@ -1262,8 +1262,8 @@
         "id": "com_8ee491f156d2",
         "type": "component",
         "label": "(repository level)",
-        "weight": 35.0,
-        "evidenceCount": 35,
+        "weight": 36.0,
+        "evidenceCount": 36,
         "evidenceIds": [
           "ev_7bd1058e4cb1",
           "ev_2ae1f5fd18e0",
@@ -1299,7 +1299,8 @@
           "ev_bd3da7ef9f7f",
           "ev_876fe59020c2",
           "ev_194506306769",
-          "ev_c9cf064b0aab"
+          "ev_c9cf064b0aab",
+          "ev_a764e14a9075"
         ],
         "meta": {
           "repository": "raspberrypi/libcamera"
@@ -2409,8 +2410,8 @@
         "id": "tec_e73eb10d40b8",
         "type": "technology",
         "label": "performance",
-        "weight": 127.4,
-        "evidenceCount": 42,
+        "weight": 132.6,
+        "evidenceCount": 43,
         "evidenceIds": [
           "ev_10be601cc844",
           "ev_38ffda84c456",
@@ -2822,8 +2823,8 @@
         "id": "pro_c00f61703122",
         "type": "problem",
         "label": "timing",
-        "weight": 208.0,
-        "evidenceCount": 65,
+        "weight": 211.2,
+        "evidenceCount": 66,
         "evidenceIds": [
           "ev_384c3730687c",
           "ev_ca9100d095bd",
@@ -3322,6 +3323,19 @@
         }
       },
       {
+        "id": "can_8325caee4e14",
+        "type": "candidate",
+        "label": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원",
+        "weight": 66.0,
+        "evidenceCount": 0,
+        "evidenceIds": [],
+        "meta": {
+          "slug": "performance-synchronization-mechanism",
+          "type": "patent",
+          "verdict": "accepted_with_reservations"
+        }
+      },
+      {
         "id": "can_abb21f89e407",
         "type": "candidate",
         "label": "Sensor 동기화: 타이밍 편차 대응을 위한 시퀀스 번호 부여",
@@ -3356,19 +3370,6 @@
         "evidenceIds": [],
         "meta": {
           "slug": "3a-synchronization-mechanism",
-          "type": "patent",
-          "verdict": "accepted_with_reservations"
-        }
-      },
-      {
-        "id": "can_8325caee4e14",
-        "type": "candidate",
-        "label": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원",
-        "weight": 66.0,
-        "evidenceCount": 0,
-        "evidenceIds": [],
-        "meta": {
-          "slug": "performance-synchronization-mechanism",
           "type": "patent",
           "verdict": "accepted_with_reservations"
         }
@@ -3480,13 +3481,13 @@
       {
         "id": "can_8a3c75589c89",
         "type": "candidate",
-        "label": "카메라 성능: 프레임 정합성 결함 대응을 위한 협상",
+        "label": "카메라 성능: 타이밍 편차 대응을 위한 협상",
         "weight": 56.8,
         "evidenceCount": 0,
         "evidenceIds": [],
         "meta": {
           "slug": "performance-arbitration",
-          "type": "patent",
+          "type": "patent+paper",
           "verdict": "accepted_with_reservations"
         }
       },
@@ -4486,8 +4487,8 @@
         "source": "org_0a28693c6218",
         "target": "rep_7944c02b0969",
         "type": "owns",
-        "weight": 385.0,
-        "evidenceCount": 385
+        "weight": 386.0,
+        "evidenceCount": 386
       },
       {
         "source": "rep_7944c02b0969",
@@ -5746,8 +5747,8 @@
         "source": "rep_7944c02b0969",
         "target": "com_8ee491f156d2",
         "type": "contains",
-        "weight": 35.0,
-        "evidenceCount": 35
+        "weight": 36.0,
+        "evidenceCount": 36
       },
       {
         "source": "com_8ee491f156d2",
@@ -5823,8 +5824,8 @@
         "source": "com_8ee491f156d2",
         "target": "tec_e73eb10d40b8",
         "type": "implements",
-        "weight": 46.8,
-        "evidenceCount": 13
+        "weight": 52.0,
+        "evidenceCount": 14
       },
       {
         "source": "com_8ee491f156d2",
@@ -5851,8 +5852,8 @@
         "source": "com_8ee491f156d2",
         "target": "pro_c00f61703122",
         "type": "reports",
-        "weight": 32.0,
-        "evidenceCount": 10
+        "weight": 35.2,
+        "evidenceCount": 11
       },
       {
         "source": "com_8ee491f156d2",
@@ -7199,6 +7200,27 @@
         "evidenceCount": 0
       },
       {
+        "source": "tec_e73eb10d40b8",
+        "target": "can_8a3c75589c89",
+        "type": "yields",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "mec_5ee0a4a72961",
+        "target": "can_8a3c75589c89",
+        "type": "realises",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "rep_7944c02b0969",
+        "target": "can_8a3c75589c89",
+        "type": "evidences",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
         "source": "tec_d821cb73680b",
         "target": "can_8215b1533016",
         "type": "yields",
@@ -7278,6 +7300,27 @@
       {
         "source": "rep_fc1020ab433f",
         "target": "can_fd8c17a361c5",
+        "type": "evidences",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "tec_e73eb10d40b8",
+        "target": "can_8325caee4e14",
+        "type": "yields",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "mec_d5e788b1e314",
+        "target": "can_8325caee4e14",
+        "type": "realises",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
+        "source": "rep_7944c02b0969",
+        "target": "can_8325caee4e14",
         "type": "evidences",
         "weight": 1.0,
         "evidenceCount": 0
@@ -7403,21 +7446,28 @@
       },
       {
         "source": "tec_e73eb10d40b8",
-        "target": "can_8a3c75589c89",
+        "target": "can_8df834a79e1f",
         "type": "yields",
         "weight": 1.0,
         "evidenceCount": 0
       },
       {
-        "source": "mec_5ee0a4a72961",
-        "target": "can_8a3c75589c89",
+        "source": "mec_a05b0c4ba6a0",
+        "target": "can_8df834a79e1f",
         "type": "realises",
         "weight": 1.0,
         "evidenceCount": 0
       },
       {
+        "source": "rep_fc1020ab433f",
+        "target": "can_8df834a79e1f",
+        "type": "evidences",
+        "weight": 1.0,
+        "evidenceCount": 0
+      },
+      {
         "source": "rep_7944c02b0969",
-        "target": "can_8a3c75589c89",
+        "target": "can_8df834a79e1f",
         "type": "evidences",
         "weight": 1.0,
         "evidenceCount": 0
@@ -7467,27 +7517,6 @@
       {
         "source": "rep_7944c02b0969",
         "target": "can_a343cd3ad275",
-        "type": "evidences",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "tec_e73eb10d40b8",
-        "target": "can_8325caee4e14",
-        "type": "yields",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "mec_d5e788b1e314",
-        "target": "can_8325caee4e14",
-        "type": "realises",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "rep_7944c02b0969",
-        "target": "can_8325caee4e14",
         "type": "evidences",
         "weight": 1.0,
         "evidenceCount": 0
@@ -7894,34 +7923,6 @@
       {
         "source": "rep_fc1020ab433f",
         "target": "can_a9fb0670b222",
-        "type": "evidences",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "tec_e73eb10d40b8",
-        "target": "can_8df834a79e1f",
-        "type": "yields",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "mec_a05b0c4ba6a0",
-        "target": "can_8df834a79e1f",
-        "type": "realises",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "rep_fc1020ab433f",
-        "target": "can_8df834a79e1f",
-        "type": "evidences",
-        "weight": 1.0,
-        "evidenceCount": 0
-      },
-      {
-        "source": "rep_7944c02b0969",
-        "target": "can_8df834a79e1f",
         "type": "evidences",
         "weight": 1.0,
         "evidenceCount": 0
@@ -8443,8 +8444,8 @@
         "state-machine",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 42,
-      "weight": 127.4,
+      "evidenceCount": 43,
+      "weight": 132.6,
       "crossRepository": true,
       "technologyLabel": "카메라 성능",
       "problemLabels": [
@@ -8464,8 +8465,8 @@
         {
           "id": "cand_61de9f76ed9e",
           "slug": "performance-arbitration",
-          "title": "카메라 성능: 프레임 정합성 결함 대응을 위한 협상",
-          "type": "patent"
+          "title": "카메라 성능: 타이밍 편차 대응을 위한 협상",
+          "type": "patent+paper"
         },
         {
           "id": "cand_0a7e2de377db",
