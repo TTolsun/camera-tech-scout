@@ -1,31 +1,32 @@
 {
   "changedCandidates": [
     {
-      "id": "cand_61de9f76ed9e",
-      "slug": "performance-arbitration",
-      "title": "카메라 성능: 타이밍 편차 대응을 위한 협상",
+      "id": "cand_025b396adab4",
+      "slug": "3a-calibration",
+      "title": "3A 제어: 확장성 한계 대응을 위한 보간",
       "type": "patent+paper",
       "typeLabel": "Patent + Paper 후보",
       "status": "STRENGTHENED",
       "statusLabel": "근거 강화",
-      "verdict": "accepted_with_reservations",
-      "verdictLabel": "유보 조건부 통과",
-      "topic": "performance",
-      "topicLabel": "카메라 성능",
-      "mechanismFamily": "arbitration",
-      "mechanismLabel": "자원 중재",
-      "summary": "카메라 성능 영역의 코드가 협상 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다.",
+      "verdict": "accepted",
+      "verdictLabel": "통과",
+      "topic": "3a",
+      "topicLabel": "3A 제어",
+      "mechanismFamily": "calibration",
+      "mechanismLabel": "캘리브레이션과 보정",
+      "summary": "3A 제어 영역의 코드가 보간 기법을 구현하고 있습니다. 그리고 해당 Repository는 확장성 한계 문제를 스스로 보고하고 있습니다. 주변 서술에는 3 x라는 측정값이 함께 기재되어 있습니다.",
       "repositories": [
+        "intel/ipu6-camera-hal",
         "raspberrypi/libcamera"
       ],
-      "evidenceCount": 9,
+      "evidenceCount": 59,
       "scores": {
         "evidence_strength": {
-          "value": 84.0,
+          "value": 100.0,
           "label": "증거 강도"
         },
         "patent_potential": {
-          "value": 56.8,
+          "value": 57.4,
           "label": "Patent 가능성"
         },
         "paper_potential": {
@@ -33,99 +34,102 @@
           "label": "Paper 가능성"
         },
         "novelty_confidence": {
-          "value": 79.6,
+          "value": 59.6,
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-10-23T15:31:32Z",
-      "firstSeenAt": "2025-01-09T09:05:08Z",
-      "statusReason": "증거가 8건에서 9건으로 늘었습니다."
-    },
-    {
-      "id": "cand_c1329f0074f9",
-      "slug": "performance-calibration",
-      "title": "카메라 성능: 타이밍 편차 대응을 위한 보정",
-      "type": "patent",
-      "typeLabel": "Patent 후보",
-      "status": "STRENGTHENED",
-      "statusLabel": "근거 강화",
-      "verdict": "accepted_with_reservations",
-      "verdictLabel": "유보 조건부 통과",
-      "topic": "performance",
-      "topicLabel": "카메라 성능",
-      "mechanismFamily": "calibration",
-      "mechanismLabel": "캘리브레이션과 보정",
-      "summary": "카메라 성능 영역의 코드가 보정 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다.",
-      "repositories": [
-        "intel/ipu6-camera-hal",
-        "raspberrypi/libcamera"
-      ],
-      "evidenceCount": 8,
-      "scores": {
-        "evidence_strength": {
-          "value": 78.0,
-          "label": "증거 강도"
-        },
-        "patent_potential": {
-          "value": 50.4,
-          "label": "Patent 가능성"
-        },
-        "paper_potential": {
-          "value": 26.0,
-          "label": "Paper 가능성"
-        },
-        "novelty_confidence": {
-          "value": 69.6,
-          "label": "Novelty Confidence (조사 우선순위)"
-        }
-      },
-      "lastUpdatedAt": "2026-10-23T15:31:32Z",
-      "firstSeenAt": "2025-01-09T09:05:08Z",
-      "statusReason": "증거가 7건에서 8건으로 늘었습니다."
-    },
-    {
-      "id": "cand_0a7e2de377db",
-      "slug": "performance-synchronization-mechanism",
-      "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원",
-      "type": "patent",
-      "typeLabel": "Patent 후보",
-      "status": "STRENGTHENED",
-      "statusLabel": "근거 강화",
-      "verdict": "accepted_with_reservations",
-      "verdictLabel": "유보 조건부 통과",
-      "topic": "performance",
-      "topicLabel": "카메라 성능",
-      "mechanismFamily": "synchronization-mechanism",
-      "mechanismLabel": "타이밍 동기화",
-      "summary": "카메라 성능 영역의 코드가 clock 복원 기법을 구현하고 있습니다. 그리고 해당 Repository는 타이밍 편차 문제를 스스로 보고하고 있습니다.",
-      "repositories": [
-        "raspberrypi/libcamera"
-      ],
-      "evidenceCount": 8,
-      "scores": {
-        "evidence_strength": {
-          "value": 68.0,
-          "label": "증거 강도"
-        },
-        "patent_potential": {
-          "value": 66.0,
-          "label": "Patent 가능성"
-        },
-        "paper_potential": {
-          "value": 26.0,
-          "label": "Paper 가능성"
-        },
-        "novelty_confidence": {
-          "value": 79.6,
-          "label": "Novelty Confidence (조사 우선순위)"
-        }
-      },
-      "lastUpdatedAt": "2026-10-23T15:31:32Z",
-      "firstSeenAt": "2025-01-09T09:05:08Z",
-      "statusReason": "증거가 7건에서 8건으로 늘었습니다."
+      "lastUpdatedAt": "2026-10-30T15:59:41Z",
+      "firstSeenAt": "2024-12-13T05:20:18Z",
+      "statusReason": "증거가 58건에서 59건으로 늘었습니다."
     }
   ],
   "recentEvidence": [
+    {
+      "id": "ev_2b42f7a6225c",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "pull_request",
+      "path": null,
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": null,
+      "ref": "PR #366",
+      "title": "ipa: rpi: Update IMX477 tuning files",
+      "snippet": "ipa: rpi: Update IMX477 tuning files ## Summary - Calibrate IMX477 tuning for Pi 4 and Pi 5 from 3025 K to 6550 K",
+      "url": "https://github.com/raspberrypi/libcamera/pull/366",
+      "observed_at": "2026-10-30T15:59:41Z",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "ipa",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: rpi: Update IMX477 tuning files ## Summary - Calibra"
+        },
+        {
+          "kind": "domain",
+          "term": "black level",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ning for Pi 4 and Pi 5 from 3025 K to 6550 K with CTT: black level, lux, noise, GEQ, AWB and CCM - Keep stock lens shadin"
+        },
+        {
+          "kind": "domain",
+          "term": "awb",
+          "family": "3a",
+          "weight": 3.2,
+          "context": "25 K to 6550 K with CTT: black level, lux, noise, GEQ, AWB and CCM - Keep stock lens shading and all other blocks"
+        },
+        {
+          "kind": "domain",
+          "term": "ccm",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "6550 K with CTT: black level, lux, noise, GEQ, AWB and CCM - Keep stock lens shading and all other blocks - Fix s"
+        },
+        {
+          "kind": "domain",
+          "term": "lens shading",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "black level, lux, noise, GEQ, AWB and CCM - Keep stock lens shading and all other blocks - Fix strong magenta cast on modu"
+        },
+        {
+          "kind": "mechanism",
+          "term": "calibrat",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "ipa: rpi: Update IMX477 tuning files ## Summary - Calibrate IMX477 tuning for Pi 4 and Pi 5 from 3025 K to 6550 K"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Pull Request",
+      "location": "raspberrypi/libcamera / PR #366",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "ipa",
+            "black level",
+            "awb",
+            "ccm",
+            "lens shading"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "label": "메커니즘",
+          "terms": [
+            "calibrat"
+          ]
+        }
+      ]
+    },
     {
       "id": "ev_a764e14a9075",
       "org": "raspberrypi",
@@ -4937,106 +4941,20 @@
           ]
         }
       ]
-    },
-    {
-      "id": "ev_8a9452310835",
-      "org": "raspberrypi",
-      "repo": "libcamera",
-      "kind": "commit",
-      "path": "src/ipa/rpi/common/ipa_base.cpp",
-      "symbol": null,
-      "symbol_kind": null,
-      "line_start": null,
-      "line_end": null,
-      "commit_sha": "93bed4da915c8c88d68d1a286048f10147cc831a",
-      "ref": null,
-      "title": "ipa: rpi: Gate CamHelper::prepare() by the mistrust count",
-      "snippet": "ipa: rpi: Gate CamHelper::prepare() by the mistrust count The current logic in the IPA gates the controller/algorithms from running on a the frame if mistrustCount_ > 0. This logic is somewhat incorrect, as the image data is indeed valid, just the embedded data and other bits of metadata are possibly invalid. This com…",
-      "url": "https://github.com/raspberrypi/libcamera/commit/93bed4da915c8c88d68d1a286048f10147cc831a",
-      "observed_at": "2026-08-05T15:09:22+01:00",
-      "first_seen_commit": null,
-      "first_seen_at": null,
-      "signals": [
-        {
-          "kind": "domain",
-          "term": "ipa",
-          "family": "isp",
-          "weight": 3.0,
-          "context": "ipa: rpi: Gate CamHelper::prepare() by the mistrust count"
-        },
-        {
-          "kind": "domain",
-          "term": "pipeline handler",
-          "family": "camera-framework",
-          "weight": 2.6,
-          "context": "simply use the DelayedControls values provided by the pipeline handler. Closes: https://github.com/raspberrypi/libcamera/issu"
-        },
-        {
-          "kind": "domain",
-          "term": "convergence",
-          "family": "3a",
-          "weight": 3.2,
-          "context": "ustCount_) that they won't see. But if zero (i.e. * no convergence necessary), no frames need to be dropped. if (agc) { i"
-        },
-        {
-          "kind": "domain",
-          "term": "agc",
-          "family": "3a",
-          "weight": 3.2,
-          "context": "vergence necessary), no frames need to be dropped. if (agc) { if (agcConvergenceFrames) agcConvergenceFrames += m"
-        },
-        {
-          "kind": "domain",
-          "term": "awb",
-          "family": "3a",
-          "weight": 3.2,
-          "context": "eFrames) agcConvergenceFrames += mistrustCount_; } if (awb) { if (awbConvergenceFrames) awbConvergenceFrames += m"
-        },
-        {
-          "kind": "problem",
-          "term": "incorrect",
-          "family": "correctness",
-          "weight": 3.0,
-          "context": "he frame if mistrustCount_ > 0. This logic is somewhat incorrect, as the image data is indeed valid, just the embedded"
-        }
-      ],
-      "repository": "raspberrypi/libcamera",
-      "kindLabel": "Commit",
-      "location": "raspberrypi/libcamera / src/ipa/rpi/common/ipa_base.cpp / 93bed4da91",
-      "signalSummary": [
-        {
-          "kind": "domain",
-          "label": "기술 영역",
-          "terms": [
-            "ipa",
-            "pipeline handler",
-            "convergence",
-            "agc",
-            "awb"
-          ]
-        },
-        {
-          "kind": "problem",
-          "label": "문제",
-          "terms": [
-            "incorrect"
-          ]
-        }
-      ]
     }
   ],
   "technologyChanges": [
     {
       "technology": "isp",
       "technologyLabel": "ISP 처리",
-      "evidenceCount": 430,
+      "evidenceCount": 434,
       "candidateCount": 8,
       "newCandidates": 0
     },
     {
       "technology": "3a",
       "technologyLabel": "3A 제어",
-      "evidenceCount": 162,
+      "evidenceCount": 163,
       "candidateCount": 5,
       "newCandidates": 0
     },

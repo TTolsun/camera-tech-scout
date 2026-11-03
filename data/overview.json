@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T22:13:53.901654+00:00",
+  "generatedAt": "2026-11-03T00:24:35.363179+00:00",
   "dryRun": false,
   "organizationCount": 2,
   "organizations": [
@@ -7,16 +7,16 @@
     "raspberrypi"
   ],
   "repositoryCount": 3,
-  "lastScanTime": "2026-10-26T22:13:53.222560+00:00",
-  "evidenceCount": 468,
+  "lastScanTime": "2026-11-03T00:24:34.659049+00:00",
+  "evidenceCount": 469,
   "candidateCount": 40,
   "counts": {
     "new": 0,
-    "strengthened": 3,
+    "strengthened": 1,
     "weakened": 0,
     "updated": 0,
     "needsVerification": 0,
-    "unchanged": 37,
+    "unchanged": 39,
     "patent": 32,
     "paper": 0,
     "patentAndPaper": 8,
@@ -47,7 +47,7 @@
     {
       "kind": "pull_request",
       "label": "Pull Request",
-      "count": 12
+      "count": 13
     },
     {
       "kind": "config",
@@ -394,14 +394,14 @@
     {
       "technology": "isp",
       "technologyLabel": "ISP 처리",
-      "evidenceCount": 430,
+      "evidenceCount": 434,
       "candidateCount": 8,
       "newCandidates": 0
     },
     {
       "technology": "3a",
       "technologyLabel": "3A 제어",
-      "evidenceCount": 162,
+      "evidenceCount": 163,
       "candidateCount": 5,
       "newCandidates": 0
     },

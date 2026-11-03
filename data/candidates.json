@@ -11635,6 +11635,7 @@
         "ev_696d416a3f86",
         "ev_c94ebd396b22",
         "ev_67223661afbe",
+        "ev_2b42f7a6225c",
         "ev_4f18796fa947",
         "ev_6427a4096a55",
         "ev_2a5d6cdedcab",
@@ -11677,8 +11678,8 @@
           "caveat": null,
           "reasons": [
             {
-              "text": "증거가 서로 다른 5종의 출처에서 확보되었습니다(Source Code, Commit, 설정 및 빌드 파일, 문서, Issue).",
-              "delta": 70.0,
+              "text": "증거가 서로 다른 6종의 출처에서 확보되었습니다(Source Code, Commit, 설정 및 빌드 파일, 문서, Issue, Pull Request).",
+              "delta": 84.0,
               "evidence_ids": [
                 "ev_b8cd3c962099",
                 "ev_3b1e81342642",
@@ -11687,7 +11688,7 @@
               ]
             },
             {
-              "text": "증거 레코드가 총 58건입니다.",
+              "text": "증거 레코드가 총 59건입니다.",
               "delta": 20.0,
               "evidence_ids": []
             },
@@ -11847,7 +11848,7 @@
           "rule": "R6",
           "title": "Evidence가 충분한가",
           "passed": true,
-          "detail": "증거 58건이 5종에 걸쳐 있습니다(Source Code, Commit, 설정 및 빌드 파일, 문서, Issue).",
+          "detail": "증거 59건이 6종에 걸쳐 있습니다(Source Code, Commit, 설정 및 빌드 파일, 문서, Issue, Pull Request).",
           "evidence_ids": []
         },
         {
@@ -11876,8 +11877,8 @@
         }
       ],
       "verdict": "accepted",
-      "status": "UNCHANGED",
-      "statusReason": "직전 스캔 이후 변화가 없습니다.",
+      "status": "STRENGTHENED",
+      "statusReason": "증거가 58건에서 59건으로 늘었습니다.",
       "timeline": [
         {
           "at": "2020-10-21T06:15:07+08:00",
@@ -12201,9 +12202,9 @@
         }
       ],
       "firstSeenAt": "2024-12-13T05:20:18Z",
-      "lastUpdatedAt": "2026-10-09T08:33:59+01:00",
+      "lastUpdatedAt": "2026-10-30T15:59:41Z",
       "typeLabel": "Patent + Paper 후보",
-      "statusLabel": "변화 없음",
+      "statusLabel": "근거 강화",
       "verdictLabel": "통과",
       "topicLabel": "3A 제어",
       "mechanismLabel": "캘리브레이션과 보정",
@@ -16443,6 +16444,92 @@
           ]
         },
         {
+          "id": "ev_2b42f7a6225c",
+          "org": "raspberrypi",
+          "repo": "libcamera",
+          "kind": "pull_request",
+          "path": null,
+          "symbol": null,
+          "symbol_kind": null,
+          "line_start": null,
+          "line_end": null,
+          "commit_sha": null,
+          "ref": "PR #366",
+          "title": "ipa: rpi: Update IMX477 tuning files",
+          "snippet": "ipa: rpi: Update IMX477 tuning files ## Summary - Calibrate IMX477 tuning for Pi 4 and Pi 5 from 3025 K to 6550 K",
+          "url": "https://github.com/raspberrypi/libcamera/pull/366",
+          "observed_at": "2026-10-30T15:59:41Z",
+          "first_seen_commit": null,
+          "first_seen_at": null,
+          "signals": [
+            {
+              "kind": "domain",
+              "term": "ipa",
+              "family": "isp",
+              "weight": 3.0,
+              "context": "ipa: rpi: Update IMX477 tuning files ## Summary - Calibra"
+            },
+            {
+              "kind": "domain",
+              "term": "black level",
+              "family": "isp",
+              "weight": 3.0,
+              "context": "ning for Pi 4 and Pi 5 from 3025 K to 6550 K with CTT: black level, lux, noise, GEQ, AWB and CCM - Keep stock lens shadin"
+            },
+            {
+              "kind": "domain",
+              "term": "awb",
+              "family": "3a",
+              "weight": 3.2,
+              "context": "25 K to 6550 K with CTT: black level, lux, noise, GEQ, AWB and CCM - Keep stock lens shading and all other blocks"
+            },
+            {
+              "kind": "domain",
+              "term": "ccm",
+              "family": "isp",
+              "weight": 3.0,
+              "context": "6550 K with CTT: black level, lux, noise, GEQ, AWB and CCM - Keep stock lens shading and all other blocks - Fix s"
+            },
+            {
+              "kind": "domain",
+              "term": "lens shading",
+              "family": "isp",
+              "weight": 3.0,
+              "context": "black level, lux, noise, GEQ, AWB and CCM - Keep stock lens shading and all other blocks - Fix strong magenta cast on modu"
+            },
+            {
+              "kind": "mechanism",
+              "term": "calibrat",
+              "family": "calibration",
+              "weight": 3.4,
+              "context": "ipa: rpi: Update IMX477 tuning files ## Summary - Calibrate IMX477 tuning for Pi 4 and Pi 5 from 3025 K to 6550 K"
+            }
+          ],
+          "repository": "raspberrypi/libcamera",
+          "kindLabel": "Pull Request",
+          "location": "raspberrypi/libcamera / PR #366",
+          "signalSummary": [
+            {
+              "kind": "domain",
+              "label": "기술 영역",
+              "terms": [
+                "ipa",
+                "black level",
+                "awb",
+                "ccm",
+                "lens shading"
+              ]
+            },
+            {
+              "kind": "mechanism",
+              "label": "메커니즘",
+              "terms": [
+                "calibrat"
+              ]
+            }
+          ]
+        },
+        {
           "id": "ev_4f18796fa947",
           "org": "raspberrypi",
           "repo": "libcamera",
@@ -17336,6 +17423,11 @@
         {
           "kind": "config",
           "label": "설정 및 빌드 파일",
+          "count": 1
+        },
+        {
+          "kind": "pull_request",
+          "label": "Pull Request",
           "count": 1
         },
         {
@@ -25281,8 +25373,8 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "STRENGTHENED",
-      "statusReason": "증거가 8건에서 9건으로 늘었습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
         {
           "at": "2024-11-26T09:58:20Z",
@@ -25352,7 +25444,7 @@
       "firstSeenAt": "2025-01-09T09:05:08Z",
       "lastUpdatedAt": "2026-10-23T15:31:32Z",
       "typeLabel": "Patent + Paper 후보",
-      "statusLabel": "근거 강화",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "카메라 성능",
       "mechanismLabel": "자원 중재",
@@ -30102,8 +30194,8 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "STRENGTHENED",
-      "statusReason": "증거가 7건에서 8건으로 늘었습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
         {
           "at": "2024-11-26T09:58:20Z",
@@ -30173,7 +30265,7 @@
       "firstSeenAt": "2025-01-09T09:05:08Z",
       "lastUpdatedAt": "2026-10-23T15:31:32Z",
       "typeLabel": "Patent 후보",
-      "statusLabel": "근거 강화",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "카메라 성능",
       "mechanismLabel": "타이밍 동기화",
@@ -37352,8 +37444,8 @@
         }
       ],
       "verdict": "accepted_with_reservations",
-      "status": "STRENGTHENED",
-      "statusReason": "증거가 7건에서 8건으로 늘었습니다.",
+      "status": "UNCHANGED",
+      "statusReason": "직전 스캔 이후 변화가 없습니다.",
       "timeline": [
         {
           "at": "2020-10-21T06:15:07+08:00",
@@ -37423,7 +37515,7 @@
       "firstSeenAt": "2025-01-09T09:05:08Z",
       "lastUpdatedAt": "2026-10-23T15:31:32Z",
       "typeLabel": "Patent 후보",
-      "statusLabel": "근거 강화",
+      "statusLabel": "변화 없음",
       "verdictLabel": "유보 조건부 통과",
       "topicLabel": "카메라 성능",
       "mechanismLabel": "캘리브레이션과 보정",
@@ -64380,8 +64472,8 @@
       "title": "3A 제어: 확장성 한계 대응을 위한 보간",
       "type": "patent+paper",
       "typeLabel": "Patent + Paper 후보",
-      "status": "UNCHANGED",
-      "statusLabel": "변화 없음",
+      "status": "STRENGTHENED",
+      "statusLabel": "근거 강화",
       "verdict": "accepted",
       "verdictLabel": "통과",
       "topic": "3a",
@@ -64393,7 +64485,7 @@
         "intel/ipu6-camera-hal",
         "raspberrypi/libcamera"
       ],
-      "evidenceCount": 58,
+      "evidenceCount": 59,
       "scores": {
         "evidence_strength": {
           "value": 100.0,
@@ -64412,7 +64504,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-10-09T08:33:59+01:00",
+      "lastUpdatedAt": "2026-10-30T15:59:41Z",
       "firstSeenAt": "2024-12-13T05:20:18Z"
     },
     {
@@ -64503,8 +64595,8 @@
       "title": "카메라 성능: 타이밍 편차 대응을 위한 협상",
       "type": "patent+paper",
       "typeLabel": "Patent + Paper 후보",
-      "status": "STRENGTHENED",
-      "statusLabel": "근거 강화",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "performance",
@@ -64666,8 +64758,8 @@
       "title": "카메라 성능: 타이밍 편차 대응을 위한 clock 복원",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "STRENGTHENED",
-      "statusLabel": "근거 강화",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "performance",
@@ -64871,8 +64963,8 @@
       "title": "카메라 성능: 타이밍 편차 대응을 위한 보정",
       "type": "patent",
       "typeLabel": "Patent 후보",
-      "status": "STRENGTHENED",
-      "statusLabel": "근거 강화",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
       "verdict": "accepted_with_reservations",
       "verdictLabel": "유보 조건부 통과",
       "topic": "performance",

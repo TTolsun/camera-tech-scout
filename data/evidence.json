@@ -32828,6 +32828,92 @@
       ]
     },
     {
+      "id": "ev_2b42f7a6225c",
+      "org": "raspberrypi",
+      "repo": "libcamera",
+      "kind": "pull_request",
+      "path": null,
+      "symbol": null,
+      "symbol_kind": null,
+      "line_start": null,
+      "line_end": null,
+      "commit_sha": null,
+      "ref": "PR #366",
+      "title": "ipa: rpi: Update IMX477 tuning files",
+      "snippet": "ipa: rpi: Update IMX477 tuning files ## Summary - Calibrate IMX477 tuning for Pi 4 and Pi 5 from 3025 K to 6550 K",
+      "url": "https://github.com/raspberrypi/libcamera/pull/366",
+      "observed_at": "2026-10-30T15:59:41Z",
+      "first_seen_commit": null,
+      "first_seen_at": null,
+      "signals": [
+        {
+          "kind": "domain",
+          "term": "ipa",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ipa: rpi: Update IMX477 tuning files ## Summary - Calibra"
+        },
+        {
+          "kind": "domain",
+          "term": "black level",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "ning for Pi 4 and Pi 5 from 3025 K to 6550 K with CTT: black level, lux, noise, GEQ, AWB and CCM - Keep stock lens shadin"
+        },
+        {
+          "kind": "domain",
+          "term": "awb",
+          "family": "3a",
+          "weight": 3.2,
+          "context": "25 K to 6550 K with CTT: black level, lux, noise, GEQ, AWB and CCM - Keep stock lens shading and all other blocks"
+        },
+        {
+          "kind": "domain",
+          "term": "ccm",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "6550 K with CTT: black level, lux, noise, GEQ, AWB and CCM - Keep stock lens shading and all other blocks - Fix s"
+        },
+        {
+          "kind": "domain",
+          "term": "lens shading",
+          "family": "isp",
+          "weight": 3.0,
+          "context": "black level, lux, noise, GEQ, AWB and CCM - Keep stock lens shading and all other blocks - Fix strong magenta cast on modu"
+        },
+        {
+          "kind": "mechanism",
+          "term": "calibrat",
+          "family": "calibration",
+          "weight": 3.4,
+          "context": "ipa: rpi: Update IMX477 tuning files ## Summary - Calibrate IMX477 tuning for Pi 4 and Pi 5 from 3025 K to 6550 K"
+        }
+      ],
+      "repository": "raspberrypi/libcamera",
+      "kindLabel": "Pull Request",
+      "location": "raspberrypi/libcamera / PR #366",
+      "signalSummary": [
+        {
+          "kind": "domain",
+          "label": "기술 영역",
+          "terms": [
+            "ipa",
+            "black level",
+            "awb",
+            "ccm",
+            "lens shading"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "label": "메커니즘",
+          "terms": [
+            "calibrat"
+          ]
+        }
+      ]
+    },
+    {
       "id": "ev_3b8607c3ed91",
       "org": "raspberrypi",
       "repo": "libpisp",
@@ -33997,19 +34083,19 @@
     }
   ],
   "counts": {
-    "total": 468,
+    "total": 469,
     "byKind": {
       "code": 329,
       "issue": 36,
       "commit": 69,
-      "pull_request": 12,
+      "pull_request": 13,
       "doc": 18,
       "config": 3,
       "release": 1
     },
     "byRepository": {
       "intel/ipu6-camera-hal": 63,
-      "raspberrypi/libcamera": 386,
+      "raspberrypi/libcamera": 387,
       "raspberrypi/libpisp": 19
     }
   }

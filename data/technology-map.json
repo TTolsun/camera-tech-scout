@@ -26,8 +26,8 @@
         "state-machine",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 254,
-      "weight": 1290.0,
+      "evidenceCount": 255,
+      "weight": 1302.0,
       "crossRepository": true,
       "technologyLabel": "ISP 처리",
       "problemLabels": [
@@ -219,8 +219,8 @@
         "state-machine",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 120,
-      "weight": 518.4,
+      "evidenceCount": 121,
+      "weight": 521.6,
       "crossRepository": true,
       "technologyLabel": "3A 제어",
       "problemLabels": [
@@ -874,8 +874,8 @@
         "id": "org_0a28693c6218",
         "type": "organization",
         "label": "raspberrypi",
-        "weight": 81.0,
-        "evidenceCount": 405,
+        "weight": 81.2,
+        "evidenceCount": 406,
         "evidenceIds": [
           "ev_80ed53b793be",
           "ev_674f01781504",
@@ -974,8 +974,8 @@
         "id": "rep_7944c02b0969",
         "type": "repository",
         "label": "raspberrypi/libcamera",
-        "weight": 193.0,
-        "evidenceCount": 386,
+        "weight": 193.5,
+        "evidenceCount": 387,
         "evidenceIds": [
           "ev_80ed53b793be",
           "ev_674f01781504",
@@ -1262,8 +1262,8 @@
         "id": "com_8ee491f156d2",
         "type": "component",
         "label": "(repository level)",
-        "weight": 36.0,
-        "evidenceCount": 36,
+        "weight": 37.0,
+        "evidenceCount": 37,
         "evidenceIds": [
           "ev_7bd1058e4cb1",
           "ev_2ae1f5fd18e0",
@@ -1300,7 +1300,8 @@
           "ev_876fe59020c2",
           "ev_194506306769",
           "ev_c9cf064b0aab",
-          "ev_a764e14a9075"
+          "ev_a764e14a9075",
+          "ev_2b42f7a6225c"
         ],
         "meta": {
           "repository": "raspberrypi/libcamera"
@@ -2160,8 +2161,8 @@
         "id": "tec_7082c50ec651",
         "type": "technology",
         "label": "isp",
-        "weight": 1290.0,
-        "evidenceCount": 254,
+        "weight": 1302.0,
+        "evidenceCount": 255,
         "evidenceIds": [
           "ev_1950c340a8e9",
           "ev_3d9223cbcb1e",
@@ -2210,8 +2211,8 @@
         "id": "tec_27d654440f87",
         "type": "technology",
         "label": "3a",
-        "weight": 518.4,
-        "evidenceCount": 120,
+        "weight": 521.6,
+        "evidenceCount": 121,
         "evidenceIds": [
           "ev_b8cd3c962099",
           "ev_3b1e81342642",
@@ -2959,8 +2960,8 @@
         "id": "mec_a05b0c4ba6a0",
         "type": "mechanism",
         "label": "calibration",
-        "weight": 479.4,
-        "evidenceCount": 134,
+        "weight": 482.8,
+        "evidenceCount": 135,
         "evidenceIds": [
           "ev_b8cd3c962099",
           "ev_10be601cc844",
@@ -4487,8 +4488,8 @@
         "source": "org_0a28693c6218",
         "target": "rep_7944c02b0969",
         "type": "owns",
-        "weight": 386.0,
-        "evidenceCount": 386
+        "weight": 387.0,
+        "evidenceCount": 387
       },
       {
         "source": "rep_7944c02b0969",
@@ -5747,15 +5748,15 @@
         "source": "rep_7944c02b0969",
         "target": "com_8ee491f156d2",
         "type": "contains",
-        "weight": 36.0,
-        "evidenceCount": 36
+        "weight": 37.0,
+        "evidenceCount": 37
       },
       {
         "source": "com_8ee491f156d2",
         "target": "tec_7082c50ec651",
         "type": "implements",
-        "weight": 105.0,
-        "evidenceCount": 17
+        "weight": 117.0,
+        "evidenceCount": 18
       },
       {
         "source": "com_8ee491f156d2",
@@ -5782,8 +5783,8 @@
         "source": "com_8ee491f156d2",
         "target": "tec_27d654440f87",
         "type": "implements",
-        "weight": 51.2,
-        "evidenceCount": 10
+        "weight": 54.4,
+        "evidenceCount": 11
       },
       {
         "source": "com_8ee491f156d2",
@@ -5803,8 +5804,8 @@
         "source": "com_8ee491f156d2",
         "target": "mec_a05b0c4ba6a0",
         "type": "uses",
-        "weight": 23.8,
-        "evidenceCount": 7
+        "weight": 27.2,
+        "evidenceCount": 8
       },
       {
         "source": "com_8ee491f156d2",
@@ -8056,8 +8057,8 @@
         "state-machine",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 254,
-      "weight": 1290.0,
+      "evidenceCount": 255,
+      "weight": 1302.0,
       "crossRepository": true,
       "technologyLabel": "ISP 처리",
       "problemLabels": [
@@ -8249,8 +8250,8 @@
         "state-machine",
         "synchronization-mechanism"
       ],
-      "evidenceCount": 120,
-      "weight": 518.4,
+      "evidenceCount": 121,
+      "weight": 521.6,
       "crossRepository": true,
       "technologyLabel": "3A 제어",
       "problemLabels": [
