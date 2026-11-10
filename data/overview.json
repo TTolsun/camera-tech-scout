@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T00:24:35.363179+00:00",
+  "generatedAt": "2026-11-10T01:07:34.068314+00:00",
   "dryRun": false,
   "organizationCount": 2,
   "organizations": [
@@ -7,18 +7,18 @@
     "raspberrypi"
   ],
   "repositoryCount": 3,
-  "lastScanTime": "2026-11-03T00:24:34.659049+00:00",
-  "evidenceCount": 469,
+  "lastScanTime": "2026-11-10T01:07:33.515438+00:00",
+  "evidenceCount": 485,
   "candidateCount": 40,
   "counts": {
     "new": 0,
-    "strengthened": 1,
+    "strengthened": 3,
     "weakened": 0,
-    "updated": 0,
+    "updated": 4,
     "needsVerification": 0,
-    "unchanged": 39,
-    "patent": 32,
-    "paper": 0,
+    "unchanged": 33,
+    "patent": 29,
+    "paper": 3,
     "patentAndPaper": 8,
     "highEvidence": 39,
     "rejected": 5
@@ -27,12 +27,12 @@
     {
       "kind": "code",
       "label": "Source Code",
-      "count": 329
+      "count": 336
     },
     {
       "kind": "commit",
       "label": "Commit",
-      "count": 69
+      "count": 78
     },
     {
       "kind": "issue",
@@ -181,8 +181,49 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-10-09T08:33:59+01:00",
+      "lastUpdatedAt": "2026-08-05T15:09:22+01:00",
       "firstSeenAt": "2024-12-13T05:20:18Z"
+    },
+    {
+      "id": "cand_6263dd646166",
+      "slug": "sensor-control-adaptive-control",
+      "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 closed-loop 제어",
+      "type": "patent+paper",
+      "typeLabel": "Patent + Paper 후보",
+      "status": "UNCHANGED",
+      "statusLabel": "변화 없음",
+      "verdict": "accepted_with_reservations",
+      "verdictLabel": "유보 조건부 통과",
+      "topic": "sensor-control",
+      "topicLabel": "Sensor 제어",
+      "mechanismFamily": "adaptive-control",
+      "mechanismLabel": "적응 제어",
+      "summary": "Sensor 제어 영역의 코드가 closed-loop 제어 기법을 구현하고 있습니다. 그리고 해당 Repository는 프레임 정합성 결함 문제를 스스로 보고하고 있습니다.",
+      "repositories": [
+        "raspberrypi/libcamera",
+        "intel/ipu6-camera-hal"
+      ],
+      "evidenceCount": 9,
+      "scores": {
+        "evidence_strength": {
+          "value": 80.0,
+          "label": "증거 강도"
+        },
+        "patent_potential": {
+          "value": 66.0,
+          "label": "Patent 가능성"
+        },
+        "paper_potential": {
+          "value": 48.0,
+          "label": "Paper 가능성"
+        },
+        "novelty_confidence": {
+          "value": 79.6,
+          "label": "Novelty Confidence (조사 우선순위)"
+        }
+      },
+      "lastUpdatedAt": "2026-09-15T13:37:30+02:00",
+      "firstSeenAt": "2025-03-03T15:25:00Z"
     },
     {
       "id": "cand_ae623bf42bbd",
@@ -226,47 +267,6 @@
       "firstSeenAt": "2024-07-18T14:37:27+08:00"
     },
     {
-      "id": "cand_6263dd646166",
-      "slug": "sensor-control-adaptive-control",
-      "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 closed-loop 제어",
-      "type": "patent+paper",
-      "typeLabel": "Patent + Paper 후보",
-      "status": "UNCHANGED",
-      "statusLabel": "변화 없음",
-      "verdict": "accepted_with_reservations",
-      "verdictLabel": "유보 조건부 통과",
-      "topic": "sensor-control",
-      "topicLabel": "Sensor 제어",
-      "mechanismFamily": "adaptive-control",
-      "mechanismLabel": "적응 제어",
-      "summary": "Sensor 제어 영역의 코드가 closed-loop 제어 기법을 구현하고 있습니다. 그리고 해당 Repository는 프레임 정합성 결함 문제를 스스로 보고하고 있습니다.",
-      "repositories": [
-        "raspberrypi/libcamera",
-        "intel/ipu6-camera-hal"
-      ],
-      "evidenceCount": 9,
-      "scores": {
-        "evidence_strength": {
-          "value": 80.0,
-          "label": "증거 강도"
-        },
-        "patent_potential": {
-          "value": 66.0,
-          "label": "Patent 가능성"
-        },
-        "paper_potential": {
-          "value": 48.0,
-          "label": "Paper 가능성"
-        },
-        "novelty_confidence": {
-          "value": 79.6,
-          "label": "Novelty Confidence (조사 우선순위)"
-        }
-      },
-      "lastUpdatedAt": "2026-09-23T22:30:42+05:30",
-      "firstSeenAt": "2025-03-03T15:25:00Z"
-    },
-    {
       "id": "cand_08af7f723865",
       "slug": "sensor-control-arbitration",
       "title": "Sensor 제어: 프레임 정합성 결함 대응을 위한 협상",
@@ -304,7 +304,7 @@
           "label": "Novelty Confidence (조사 우선순위)"
         }
       },
-      "lastUpdatedAt": "2026-09-23T22:30:42+05:30",
+      "lastUpdatedAt": "2026-09-15T13:37:30+02:00",
       "firstSeenAt": "2025-03-03T15:25:00Z"
     },
     {
@@ -394,28 +394,28 @@
     {
       "technology": "isp",
       "technologyLabel": "ISP 처리",
-      "evidenceCount": 434,
+      "evidenceCount": 483,
       "candidateCount": 8,
       "newCandidates": 0
     },
     {
       "technology": "3a",
       "technologyLabel": "3A 제어",
-      "evidenceCount": 163,
+      "evidenceCount": 169,
       "candidateCount": 5,
       "newCandidates": 0
     },
     {
       "technology": "camera-driver",
       "technologyLabel": "Camera Driver 계층",
-      "evidenceCount": 161,
+      "evidenceCount": 162,
       "candidateCount": 7,
       "newCandidates": 0
     },
     {
       "technology": "camera-framework",
       "technologyLabel": "Camera Framework",
-      "evidenceCount": 109,
+      "evidenceCount": 122,
       "candidateCount": 1,
       "newCandidates": 0
     },
@@ -436,7 +436,7 @@
     {
       "technology": "memory-buffer",
       "technologyLabel": "Buffer 및 메모리 관리",
-      "evidenceCount": 41,
+      "evidenceCount": 44,
       "candidateCount": 3,
       "newCandidates": 0
     },
@@ -450,14 +450,14 @@
     {
       "technology": "scheduling",
       "technologyLabel": "Pipeline 스케줄링",
-      "evidenceCount": 23,
+      "evidenceCount": 24,
       "candidateCount": 0,
       "newCandidates": 0
     },
     {
       "technology": "camera-hal",
       "technologyLabel": "Camera HAL",
-      "evidenceCount": 22,
+      "evidenceCount": 23,
       "candidateCount": 2,
       "newCandidates": 0
     }

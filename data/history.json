@@ -1,8 +1,8 @@
 {
   "runs": [
     {
-      "id": "run_20261103T002400Z",
-      "started_at": "2026-11-03T00:24:00.535521+00:00",
+      "id": "run_20261110T010614Z",
+      "started_at": "2026-11-10T01:06:14.451504+00:00",
       "finished_at": null,
       "mode": "live",
       "repositories": 0,
@@ -10,6 +10,43 @@
       "candidates": 0,
       "rejected": 0,
       "notes": null
+    },
+    {
+      "id": "run_20261103T002400Z",
+      "started_at": "2026-11-03T00:24:00.535521+00:00",
+      "finished_at": "2026-11-03T00:24:35.538261+00:00",
+      "mode": "live",
+      "repositories": 3,
+      "evidence": 469,
+      "candidates": 40,
+      "rejected": 2,
+      "notes": {
+        "mode": "live",
+        "warnings": [],
+        "engine": {
+          "enabled": true,
+          "reachable": false,
+          "runner": "hermes",
+          "scoutModel": "qwen",
+          "criticModel": "qwen",
+          "scoutTemperature": 0.3,
+          "criticTemperature": 0.0,
+          "baseUrl": "http://localhost:8000/v1",
+          "candidatesEnriched": 0,
+          "objectionsAdded": 0,
+          "claimsAccepted": 0,
+          "claimsDiscarded": 0,
+          "claimsOffLanguage": 0,
+          "failures": [
+            "endpoint probe failed: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /v1/models (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+          ],
+          "note": "LLM은 증거를 새로 만들 수 없습니다. evidence id를 인용하지 않은 문장은 버립니다. Scout과 Critic은 같은 모델을 쓰지만 system prompt와 temperature가 다릅니다.",
+          "scoutEngine": "llm",
+          "criticEngine": "rules",
+          "skipped": true,
+          "skipReason": "엔드포인트에 접속할 수 없어 규칙 기반 결과를 그대로 유지했습니다."
+        }
+      }
     },
     {
       "id": "run_20261026T221316Z",
@@ -297,12 +334,12 @@
     }
   ],
   "currentRun": {
-    "id": "run_20261103T002400Z",
+    "id": "run_20261110T010614Z",
     "mode": "live",
-    "startedAt": "2026-11-03T00:24:00.527481+00:00",
+    "startedAt": "2026-11-10T01:06:14.443697+00:00",
     "dryRun": false,
     "repositories": 3,
-    "evidence": 469,
+    "evidence": 485,
     "candidates": 40,
     "rejected": 5,
     "engine": {
@@ -338,7 +375,7 @@
       "default_branch": "HEAD",
       "head_sha": "7ccab62d133e053c8628f3591b636a761f06c956",
       "last_scanned_sha": "7ccab62d133e053c8628f3591b636a761f06c956",
-      "last_scan_time": "2026-11-03T00:24:10.387297+00:00",
+      "last_scan_time": "2026-11-10T01:06:22.901682+00:00",
       "scan_mode": "incremental",
       "status": "partial",
       "status_detail": "HEAD가 이전 스캔과 동일하여 새로 수집한 파일이 없습니다. / incremental file scan over 0 changed paths",
@@ -366,14 +403,14 @@
       "name": "libcamera",
       "url": "https://github.com/raspberrypi/libcamera",
       "default_branch": "HEAD",
-      "head_sha": "c682979b50695b93526adb1e66db33743484b63b",
-      "last_scanned_sha": "c682979b50695b93526adb1e66db33743484b63b",
-      "last_scan_time": "2026-11-03T00:24:30.115907+00:00",
+      "head_sha": "9fe1678b8ad5fbae875942b55b58ade23014194c",
+      "last_scanned_sha": "9fe1678b8ad5fbae875942b55b58ade23014194c",
+      "last_scan_time": "2026-11-10T01:07:27.382102+00:00",
       "scan_mode": "incremental",
       "status": "partial",
-      "status_detail": "HEAD가 이전 스캔과 동일하여 새로 수집한 파일이 없습니다. / incremental file scan over 0 changed paths",
-      "files_scanned": 0,
-      "evidence_count": 387,
+      "status_detail": "incremental file scan over 113 changed paths",
+      "files_scanned": 100,
+      "evidence_count": 403,
       "candidate_count": 0,
       "topics": [
         "3a",
@@ -388,7 +425,7 @@
       "description": "",
       "stars": 491,
       "language": "C++",
-      "pushed_at": "2026-10-21T12:16:14Z"
+      "pushed_at": "2026-11-09T12:21:54Z"
     },
     {
       "full_name": "raspberrypi/libpisp",
@@ -396,13 +433,13 @@
       "name": "libpisp",
       "url": "https://github.com/raspberrypi/libpisp",
       "default_branch": "HEAD",
-      "head_sha": "8e86f4052027ca6a8e3452316d0deebc500d3215",
-      "last_scanned_sha": "8e86f4052027ca6a8e3452316d0deebc500d3215",
-      "last_scan_time": "2026-11-03T00:24:34.659049+00:00",
+      "head_sha": "c77865739bbde5be918d5a7692c8a8050e0abc25",
+      "last_scanned_sha": "c77865739bbde5be918d5a7692c8a8050e0abc25",
+      "last_scan_time": "2026-11-10T01:07:33.515438+00:00",
       "scan_mode": "incremental",
       "status": "partial",
-      "status_detail": "HEAD가 이전 스캔과 동일하여 새로 수집한 파일이 없습니다. / incremental file scan over 0 changed paths",
-      "files_scanned": 0,
+      "status_detail": "incremental file scan over 4 changed paths",
+      "files_scanned": 2,
       "evidence_count": 19,
       "candidate_count": 0,
       "topics": [
@@ -413,7 +450,7 @@
       "description": "",
       "stars": 15,
       "language": "C++",
-      "pushed_at": "2026-10-20T11:05:08Z"
+      "pushed_at": "2026-11-09T14:02:55Z"
     }
   ]
 }

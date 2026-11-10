@@ -11,21 +11,43 @@
       "maxRepositories": 12,
       "repositoriesListed": 48,
       "repositoriesSelected": [
-        "raspberrypi/libcamera",
-        "raspberrypi/libpisp"
+        "raspberrypi/libpisp",
+        "raspberrypi/libcamera"
       ],
       "listingAvailable": true,
       "selectedDetails": [
         {
+          "fullName": "raspberrypi/libpisp",
+          "status": "partial",
+          "statusDetail": "incremental file scan over 4 changed paths",
+          "scanMode": "incremental",
+          "headSha": "c77865739bbde5be918d5a7692c8a8050e0abc25",
+          "lastScannedSha": "c77865739bbde5be918d5a7692c8a8050e0abc25",
+          "lastScanTime": "2026-11-10T01:07:33.515438+00:00",
+          "filesScanned": 2,
+          "evidenceCount": 19,
+          "candidateCount": 0,
+          "topics": [
+            "camera-driver",
+            "isp",
+            "memory-buffer"
+          ],
+          "topicLabels": [
+            "Camera Driver 계층",
+            "ISP 처리",
+            "Buffer 및 메모리 관리"
+          ]
+        },
+        {
           "fullName": "raspberrypi/libcamera",
           "status": "partial",
-          "statusDetail": "HEAD가 이전 스캔과 동일하여 새로 수집한 파일이 없습니다. / incremental file scan over 0 changed paths",
+          "statusDetail": "incremental file scan over 113 changed paths",
           "scanMode": "incremental",
-          "headSha": "c682979b50695b93526adb1e66db33743484b63b",
-          "lastScannedSha": "c682979b50695b93526adb1e66db33743484b63b",
-          "lastScanTime": "2026-11-03T00:24:30.115907+00:00",
-          "filesScanned": 0,
-          "evidenceCount": 387,
+          "headSha": "9fe1678b8ad5fbae875942b55b58ade23014194c",
+          "lastScannedSha": "9fe1678b8ad5fbae875942b55b58ade23014194c",
+          "lastScanTime": "2026-11-10T01:07:27.382102+00:00",
+          "filesScanned": 100,
+          "evidenceCount": 403,
           "candidateCount": 0,
           "topics": [
             "3a",
@@ -46,28 +68,6 @@
             "Camera Pipeline",
             "Computational Photography",
             "디버깅 및 프로파일링"
-          ]
-        },
-        {
-          "fullName": "raspberrypi/libpisp",
-          "status": "partial",
-          "statusDetail": "HEAD가 이전 스캔과 동일하여 새로 수집한 파일이 없습니다. / incremental file scan over 0 changed paths",
-          "scanMode": "incremental",
-          "headSha": "8e86f4052027ca6a8e3452316d0deebc500d3215",
-          "lastScannedSha": "8e86f4052027ca6a8e3452316d0deebc500d3215",
-          "lastScanTime": "2026-11-03T00:24:34.659049+00:00",
-          "filesScanned": 0,
-          "evidenceCount": 19,
-          "candidateCount": 0,
-          "topics": [
-            "camera-driver",
-            "isp",
-            "memory-buffer"
-          ],
-          "topicLabels": [
-            "Camera Driver 계층",
-            "ISP 처리",
-            "Buffer 및 메모리 관리"
           ]
         }
       ]
@@ -95,7 +95,7 @@
       "scanMode": "incremental",
       "headSha": "7ccab62d133e053c8628f3591b636a761f06c956",
       "lastScannedSha": "7ccab62d133e053c8628f3591b636a761f06c956",
-      "lastScanTime": "2026-11-03T00:24:10.387297+00:00",
+      "lastScanTime": "2026-11-10T01:06:22.901682+00:00",
       "filesScanned": 0,
       "evidenceCount": 63,
       "candidateCount": 0,
@@ -135,16 +135,16 @@
       "language": "C++",
       "defaultBranch": "main",
       "analysisBranch": "HEAD",
-      "pushedAt": "2026-10-21T12:16:14Z",
+      "pushedAt": "2026-11-09T12:21:54Z",
       "archived": false,
       "status": "partial",
-      "statusDetail": "HEAD가 이전 스캔과 동일하여 새로 수집한 파일이 없습니다. / incremental file scan over 0 changed paths",
+      "statusDetail": "incremental file scan over 113 changed paths",
       "scanMode": "incremental",
-      "headSha": "c682979b50695b93526adb1e66db33743484b63b",
-      "lastScannedSha": "c682979b50695b93526adb1e66db33743484b63b",
-      "lastScanTime": "2026-11-03T00:24:30.115907+00:00",
-      "filesScanned": 0,
-      "evidenceCount": 387,
+      "headSha": "9fe1678b8ad5fbae875942b55b58ade23014194c",
+      "lastScannedSha": "9fe1678b8ad5fbae875942b55b58ade23014194c",
+      "lastScanTime": "2026-11-10T01:07:27.382102+00:00",
+      "filesScanned": 100,
+      "evidenceCount": 403,
       "candidateCount": 0,
       "topics": [
         "3a",
@@ -181,15 +181,15 @@
       "language": "C++",
       "defaultBranch": "main",
       "analysisBranch": "HEAD",
-      "pushedAt": "2026-10-20T11:05:08Z",
+      "pushedAt": "2026-11-09T14:02:55Z",
       "archived": false,
       "status": "partial",
-      "statusDetail": "HEAD가 이전 스캔과 동일하여 새로 수집한 파일이 없습니다. / incremental file scan over 0 changed paths",
+      "statusDetail": "incremental file scan over 4 changed paths",
       "scanMode": "incremental",
-      "headSha": "8e86f4052027ca6a8e3452316d0deebc500d3215",
-      "lastScannedSha": "8e86f4052027ca6a8e3452316d0deebc500d3215",
-      "lastScanTime": "2026-11-03T00:24:34.659049+00:00",
-      "filesScanned": 0,
+      "headSha": "c77865739bbde5be918d5a7692c8a8050e0abc25",
+      "lastScannedSha": "c77865739bbde5be918d5a7692c8a8050e0abc25",
+      "lastScanTime": "2026-11-10T01:07:33.515438+00:00",
+      "filesScanned": 2,
       "evidenceCount": 19,
       "candidateCount": 0,
       "topics": [
